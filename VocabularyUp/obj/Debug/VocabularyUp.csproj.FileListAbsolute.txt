@@ -1,0 +1,12 @@
+D:\Lam\LTTQ\DoAn\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.exe.config
+D:\Lam\LTTQ\DoAn\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.exe
+D:\Lam\LTTQ\DoAn\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.pdb
+D:\Lam\LTTQ\DoAn\Vocabulary-Up\VocabularyUp\bin\Debug\Guna.UI2.dll
+D:\Lam\LTTQ\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csprojAssemblyReference.cache
+D:\Lam\LTTQ\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.NavForm.resources
+D:\Lam\LTTQ\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.Properties.Resources.resources
+D:\Lam\LTTQ\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.GenerateResource.cache
+D:\Lam\LTTQ\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.CoreCompileInputs.cache
+D:\Lam\LTTQ\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.CopyComplete
+D:\Lam\LTTQ\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe
+D:\Lam\LTTQ\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.pdb

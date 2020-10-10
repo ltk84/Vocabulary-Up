@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace VocabularyUp
 {
-    public partial class Form1 : Form
+    public partial class NavForm : Form
     {
-        public Form1()
+        public NavForm()
         {
             InitializeComponent();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
