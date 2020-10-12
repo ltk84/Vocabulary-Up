@@ -1,0 +1,14 @@
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.exe.config
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.exe
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.pdb
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\bin\Debug\Guna.UI2.dll
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.MainForm.resources
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.Properties.Resources.resources
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ReviseForm.resources
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.GenerateResource.cache
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.CopyComplete
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe
+C:\Users\PC\Desktop\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.pdb
