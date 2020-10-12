@@ -39,10 +39,21 @@
             this.btnRight = new Guna.UI2.WinForms.Guna2Button();
             this.btnRevise = new Guna.UI2.WinForms.Guna2Button();
             this.btnStatistics = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnMain = new Guna.UI2.WinForms.Guna2Button();
             this.navPanel = new System.Windows.Forms.Panel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnCustomize = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCategorize = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
             this.barTop.SuspendLayout();
             this.navPanel.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
+            this.guna2CustomGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // barTop
@@ -54,9 +65,10 @@
             this.barTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
             this.barTop.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
             this.barTop.Location = new System.Drawing.Point(0, 0);
+            this.barTop.Margin = new System.Windows.Forms.Padding(4);
             this.barTop.Name = "barTop";
             this.barTop.ShadowDecoration.Parent = this.barTop;
-            this.barTop.Size = new System.Drawing.Size(794, 28);
+            this.barTop.Size = new System.Drawing.Size(1063, 34);
             this.barTop.TabIndex = 0;
             // 
             // btnHide
@@ -73,10 +85,11 @@
             this.btnHide.Image = ((System.Drawing.Image)(resources.GetObject("btnHide.Image")));
             this.btnHide.ImageOffset = new System.Drawing.Point(1, -1);
             this.btnHide.ImageSize = new System.Drawing.Size(15, 20);
-            this.btnHide.Location = new System.Drawing.Point(703, 0);
+            this.btnHide.Location = new System.Drawing.Point(942, 0);
+            this.btnHide.Margin = new System.Windows.Forms.Padding(4);
             this.btnHide.Name = "btnHide";
             this.btnHide.ShadowDecoration.Parent = this.btnHide;
-            this.btnHide.Size = new System.Drawing.Size(33, 28);
+            this.btnHide.Size = new System.Drawing.Size(44, 34);
             this.btnHide.TabIndex = 2;
             // 
             // btnFullScr
@@ -92,10 +105,11 @@
             this.btnFullScr.HoverState.Parent = this.btnFullScr;
             this.btnFullScr.Image = ((System.Drawing.Image)(resources.GetObject("btnFullScr.Image")));
             this.btnFullScr.ImageSize = new System.Drawing.Size(19, 19);
-            this.btnFullScr.Location = new System.Drawing.Point(736, 0);
+            this.btnFullScr.Location = new System.Drawing.Point(986, 0);
+            this.btnFullScr.Margin = new System.Windows.Forms.Padding(4);
             this.btnFullScr.Name = "btnFullScr";
             this.btnFullScr.ShadowDecoration.Parent = this.btnFullScr;
-            this.btnFullScr.Size = new System.Drawing.Size(33, 28);
+            this.btnFullScr.Size = new System.Drawing.Size(44, 34);
             this.btnFullScr.TabIndex = 1;
             // 
             // btnExit
@@ -112,10 +126,11 @@
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageOffset = new System.Drawing.Point(-1, -1);
             this.btnExit.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnExit.Location = new System.Drawing.Point(769, 0);
+            this.btnExit.Location = new System.Drawing.Point(1030, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(25, 28);
+            this.btnExit.Size = new System.Drawing.Size(33, 34);
             this.btnExit.TabIndex = 0;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -136,10 +151,11 @@
             this.btnLeft.HoverState.Parent = this.btnLeft;
             this.btnLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft.Image")));
             this.btnLeft.ImageSize = new System.Drawing.Size(100, 100);
-            this.btnLeft.Location = new System.Drawing.Point(0, 28);
+            this.btnLeft.Location = new System.Drawing.Point(0, 34);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.ShadowDecoration.Parent = this.btnLeft;
-            this.btnLeft.Size = new System.Drawing.Size(227, 500);
+            this.btnLeft.Size = new System.Drawing.Size(303, 616);
             this.btnLeft.TabIndex = 7;
             // 
             // btnRight
@@ -154,10 +170,11 @@
             this.btnRight.HoverState.Parent = this.btnRight;
             this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
             this.btnRight.ImageSize = new System.Drawing.Size(120, 100);
-            this.btnRight.Location = new System.Drawing.Point(567, 28);
+            this.btnRight.Location = new System.Drawing.Point(760, 34);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(4);
             this.btnRight.Name = "btnRight";
             this.btnRight.ShadowDecoration.Parent = this.btnRight;
-            this.btnRight.Size = new System.Drawing.Size(227, 500);
+            this.btnRight.Size = new System.Drawing.Size(303, 616);
             this.btnRight.TabIndex = 8;
             // 
             // btnRevise
@@ -166,17 +183,18 @@
             this.btnRevise.AutoRoundedCorners = true;
             this.btnRevise.BackColor = System.Drawing.Color.Transparent;
             this.btnRevise.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRevise.BorderRadius = 12;
+            this.btnRevise.BorderRadius = 15;
             this.btnRevise.CheckedState.Parent = this.btnRevise;
             this.btnRevise.CustomImages.Parent = this.btnRevise;
             this.btnRevise.FillColor = System.Drawing.Color.White;
             this.btnRevise.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevise.ForeColor = System.Drawing.Color.Black;
             this.btnRevise.HoverState.Parent = this.btnRevise;
-            this.btnRevise.Location = new System.Drawing.Point(191, 0);
+            this.btnRevise.Location = new System.Drawing.Point(255, 0);
+            this.btnRevise.Margin = new System.Windows.Forms.Padding(4);
             this.btnRevise.Name = "btnRevise";
             this.btnRevise.ShadowDecoration.Parent = this.btnRevise;
-            this.btnRevise.Size = new System.Drawing.Size(135, 26);
+            this.btnRevise.Size = new System.Drawing.Size(180, 32);
             this.btnRevise.TabIndex = 3;
             this.btnRevise.Text = "Revise";
             // 
@@ -186,7 +204,7 @@
             this.btnStatistics.AutoRoundedCorners = true;
             this.btnStatistics.BackColor = System.Drawing.Color.Transparent;
             this.btnStatistics.BorderColor = System.Drawing.Color.Transparent;
-            this.btnStatistics.BorderRadius = 12;
+            this.btnStatistics.BorderRadius = 15;
             this.btnStatistics.CheckedState.Parent = this.btnStatistics;
             this.btnStatistics.CustomImages.Parent = this.btnStatistics;
             this.btnStatistics.FillColor = System.Drawing.Color.White;
@@ -194,56 +212,177 @@
             this.btnStatistics.ForeColor = System.Drawing.Color.Black;
             this.btnStatistics.HoverState.Parent = this.btnStatistics;
             this.btnStatistics.Location = new System.Drawing.Point(1, 0);
+            this.btnStatistics.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatistics.Name = "btnStatistics";
             this.btnStatistics.ShadowDecoration.Parent = this.btnStatistics;
-            this.btnStatistics.Size = new System.Drawing.Size(135, 26);
+            this.btnStatistics.Size = new System.Drawing.Size(180, 32);
             this.btnStatistics.TabIndex = 1;
             this.btnStatistics.Text = "Statistics";
             // 
-            // guna2Button2
+            // btnMain
             // 
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.White;
-            this.guna2Button2.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(116, 0);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(105, 26);
-            this.guna2Button2.TabIndex = 2;
-            this.guna2Button2.Text = "Main";
+            this.btnMain.Animated = true;
+            this.btnMain.BackColor = System.Drawing.Color.Transparent;
+            this.btnMain.BorderColor = System.Drawing.Color.Transparent;
+            this.btnMain.CheckedState.Parent = this.btnMain;
+            this.btnMain.CustomImages.Parent = this.btnMain;
+            this.btnMain.FillColor = System.Drawing.Color.White;
+            this.btnMain.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMain.ForeColor = System.Drawing.Color.Black;
+            this.btnMain.HoverState.Parent = this.btnMain;
+            this.btnMain.Location = new System.Drawing.Point(155, 0);
+            this.btnMain.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMain.Name = "btnMain";
+            this.btnMain.ShadowDecoration.Parent = this.btnMain;
+            this.btnMain.Size = new System.Drawing.Size(140, 32);
+            this.btnMain.TabIndex = 2;
+            this.btnMain.Text = "Main";
             // 
             // navPanel
             // 
-            this.navPanel.Controls.Add(this.guna2Button2);
+            this.navPanel.Controls.Add(this.btnMain);
             this.navPanel.Controls.Add(this.btnStatistics);
             this.navPanel.Controls.Add(this.btnRevise);
-            this.navPanel.Location = new System.Drawing.Point(233, 34);
+            this.navPanel.Location = new System.Drawing.Point(313, 42);
+            this.navPanel.Margin = new System.Windows.Forms.Padding(4);
             this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(326, 26);
+            this.navPanel.Size = new System.Drawing.Size(435, 32);
             this.navPanel.TabIndex = 4;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Location = new System.Drawing.Point(315, 81);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
+            this.guna2Panel1.Size = new System.Drawing.Size(434, 482);
+            this.guna2Panel1.TabIndex = 9;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Controls.Add(this.btnCustomize);
+            this.guna2Panel2.Controls.Add(this.btnCategorize);
+            this.guna2Panel2.Location = new System.Drawing.Point(315, 582);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
+            this.guna2Panel2.Size = new System.Drawing.Size(434, 32);
+            this.guna2Panel2.TabIndex = 10;
+            // 
+            // btnCustomize
+            // 
+            this.btnCustomize.Animated = true;
+            this.btnCustomize.AutoRoundedCorners = true;
+            this.btnCustomize.BackColor = System.Drawing.Color.Transparent;
+            this.btnCustomize.BorderColor = System.Drawing.Color.Transparent;
+            this.btnCustomize.BorderRadius = 15;
+            this.btnCustomize.CheckedState.Parent = this.btnCustomize;
+            this.btnCustomize.CustomImages.Parent = this.btnCustomize;
+            this.btnCustomize.FillColor = System.Drawing.Color.White;
+            this.btnCustomize.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomize.ForeColor = System.Drawing.Color.Black;
+            this.btnCustomize.HoverState.Parent = this.btnCustomize;
+            this.btnCustomize.Location = new System.Drawing.Point(-1, 0);
+            this.btnCustomize.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCustomize.Name = "btnCustomize";
+            this.btnCustomize.ShadowDecoration.Parent = this.btnCustomize;
+            this.btnCustomize.Size = new System.Drawing.Size(180, 32);
+            this.btnCustomize.TabIndex = 4;
+            this.btnCustomize.Text = "Customize";
+            // 
+            // btnCategorize
+            // 
+            this.btnCategorize.Animated = true;
+            this.btnCategorize.AutoRoundedCorners = true;
+            this.btnCategorize.BackColor = System.Drawing.Color.Transparent;
+            this.btnCategorize.BorderColor = System.Drawing.Color.Transparent;
+            this.btnCategorize.BorderRadius = 15;
+            this.btnCategorize.CheckedState.Parent = this.btnCategorize;
+            this.btnCategorize.CustomImages.Parent = this.btnCategorize;
+            this.btnCategorize.FillColor = System.Drawing.Color.White;
+            this.btnCategorize.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategorize.ForeColor = System.Drawing.Color.Black;
+            this.btnCategorize.HoverState.Parent = this.btnCategorize;
+            this.btnCategorize.Location = new System.Drawing.Point(253, 0);
+            this.btnCategorize.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCategorize.Name = "btnCategorize";
+            this.btnCategorize.ShadowDecoration.Parent = this.btnCategorize;
+            this.btnCategorize.Size = new System.Drawing.Size(180, 32);
+            this.btnCategorize.TabIndex = 5;
+            this.btnCategorize.Text = "Categorize";
+            // 
+            // guna2CustomGradientPanel1
+            // 
+            this.guna2CustomGradientPanel1.BorderRadius = 20;
+            this.guna2CustomGradientPanel1.Controls.Add(this.bunifuCards1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.label1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox1);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(314, 84);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(434, 479);
+            this.guna2CustomGradientPanel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(22, 397);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(408, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(173, 429);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 28);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Window";
+            // 
+            // bunifuCards1
+            // 
+            this.bunifuCards1.BackColor = System.Drawing.Color.White;
+            this.bunifuCards1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCards1.BackgroundImage")));
+            this.bunifuCards1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuCards1.BorderRadius = 30;
+            this.bunifuCards1.BottomSahddow = true;
+            this.bunifuCards1.color = System.Drawing.Color.Transparent;
+            this.bunifuCards1.LeftSahddow = false;
+            this.bunifuCards1.Location = new System.Drawing.Point(22, 20);
+            this.bunifuCards1.Name = "bunifuCards1";
+            this.bunifuCards1.RightSahddow = true;
+            this.bunifuCards1.ShadowDepth = 20;
+            this.bunifuCards1.Size = new System.Drawing.Size(392, 371);
+            this.bunifuCards1.TabIndex = 11;
             // 
             // NavForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.ClientSize = new System.Drawing.Size(794, 528);
+            this.ClientSize = new System.Drawing.Size(1063, 650);
+            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.navPanel);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.barTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NavForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.barTop.ResumeLayout(false);
             this.navPanel.ResumeLayout(false);
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.guna2CustomGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -259,8 +398,16 @@
         private Guna.UI2.WinForms.Guna2Button btnRight;
         private Guna.UI2.WinForms.Guna2Button btnRevise;
         private Guna.UI2.WinForms.Guna2Button btnStatistics;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnMain;
         private System.Windows.Forms.Panel navPanel;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Button btnCustomize;
+        private Guna.UI2.WinForms.Guna2Button btnCategorize;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
     }
 }
 
