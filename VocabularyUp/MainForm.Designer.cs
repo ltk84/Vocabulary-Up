@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlDash = new System.Windows.Forms.Panel();
+            this.pnlMain = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.guna2CustomGradientPanel1.SuspendLayout();
+            this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -58,26 +58,26 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // panel1
+            // pnlDash
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.panel1.Location = new System.Drawing.Point(23, 391);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(392, 4);
-            this.panel1.TabIndex = 9;
+            this.pnlDash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlDash.Location = new System.Drawing.Point(23, 391);
+            this.pnlDash.Name = "pnlDash";
+            this.pnlDash.Size = new System.Drawing.Size(392, 4);
+            this.pnlDash.TabIndex = 9;
             // 
-            // guna2CustomGradientPanel1
+            // pnlMain
             // 
-            this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel1.BorderRadius = 20;
-            this.guna2CustomGradientPanel1.Controls.Add(this.label1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox1);
-            this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(434, 479);
-            this.guna2CustomGradientPanel1.TabIndex = 10;
+            this.pnlMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlMain.BorderRadius = 20;
+            this.pnlMain.Controls.Add(this.label1);
+            this.pnlMain.Controls.Add(this.pictureBox1);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.ShadowDecoration.Parent = this.pnlMain;
+            this.pnlMain.Size = new System.Drawing.Size(434, 479);
+            this.pnlMain.TabIndex = 10;
             // 
             // MainForm
             // 
@@ -86,8 +86,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(434, 479);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Controls.Add(this.pnlDash);
+            this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
@@ -95,8 +95,8 @@
             this.Text = "Vocabulary Up";
             this.TransparencyKey = System.Drawing.Color.Black;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.guna2CustomGradientPanel1.ResumeLayout(false);
-            this.guna2CustomGradientPanel1.PerformLayout();
+            this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -104,8 +104,8 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private System.Windows.Forms.Panel pnlDash;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlMain;
     }
 }
 

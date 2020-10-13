@@ -68,5 +68,24 @@ namespace VocabularyUp
         {
             ToStatisticsTab();
         }
+
+        private void btnCustomize_Click(object sender, EventArgs e)
+        {
+            CustomizeDialog customizeDialog = new CustomizeDialog(this);
+            customizeDialog.ShowDialog();
+        }
+
+        public void ChangeTheme(Color titleBarColor, Color primaryColor, Color secondaryColor)
+        {
+            this.pnlTitleBar.FillColor = titleBarColor;
+            this.pnlTitleBar.FillColor2 = titleBarColor;
+
+            this.BackColor = primaryColor;
+            this.pnlTab.BackColor = primaryColor;
+
+            mainTab.ChangeTheme(primaryColor, secondaryColor);
+            reviseTab.ChangeTheme(primaryColor, secondaryColor);
+            statisticsTab.ChangeTheme(primaryColor, secondaryColor);
+        }
     }
 }

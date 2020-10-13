@@ -16,5 +16,11 @@ namespace VocabularyUp
         {
             InitializeComponent();
         }
+        public void ChangeTheme(Color primaryColor, Color secondaryColor)
+        {
+            this.BackColor = primaryColor;
+            this.pnlMain.BackColor = primaryColor;
+            this.pnlDash.BackColor = primaryColor;
+        }
     }
 }

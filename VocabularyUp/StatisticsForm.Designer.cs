@@ -28,40 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlStatistics = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlBody_2_a = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.guna2CustomGradientPanel5 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2CustomGradientPanel1.SuspendLayout();
-            this.guna2CustomGradientPanel4.SuspendLayout();
-            this.guna2CustomGradientPanel5.SuspendLayout();
-            this.guna2CustomGradientPanel2.SuspendLayout();
-            this.guna2CustomGradientPanel3.SuspendLayout();
+            this.pnlBody_1_a = new System.Windows.Forms.Panel();
+            this.pnlHeader_2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlBody_2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlBody_2_b = new System.Windows.Forms.Panel();
+            this.pnlHeader_1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlBody_1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlBody_1_b = new System.Windows.Forms.Panel();
+            this.pnlDash = new System.Windows.Forms.Panel();
+            this.pnlStatistics.SuspendLayout();
+            this.pnlHeader_2.SuspendLayout();
+            this.pnlBody_2.SuspendLayout();
+            this.pnlHeader_1.SuspendLayout();
+            this.pnlBody_1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2CustomGradientPanel1
+            // pnlStatistics
             // 
-            this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel1.BorderRadius = 20;
-            this.guna2CustomGradientPanel1.Controls.Add(this.panel4);
-            this.guna2CustomGradientPanel1.Controls.Add(this.label1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.panel3);
-            this.guna2CustomGradientPanel1.Controls.Add(this.guna2CustomGradientPanel4);
-            this.guna2CustomGradientPanel1.Controls.Add(this.guna2CustomGradientPanel2);
-            this.guna2CustomGradientPanel1.Controls.Add(this.panel1);
-            this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(434, 479);
-            this.guna2CustomGradientPanel1.TabIndex = 0;
+            this.pnlStatistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlStatistics.BorderRadius = 20;
+            this.pnlStatistics.Controls.Add(this.pnlBody_2_a);
+            this.pnlStatistics.Controls.Add(this.label1);
+            this.pnlStatistics.Controls.Add(this.pnlBody_1_a);
+            this.pnlStatistics.Controls.Add(this.pnlHeader_2);
+            this.pnlStatistics.Controls.Add(this.pnlHeader_1);
+            this.pnlStatistics.Controls.Add(this.pnlDash);
+            this.pnlStatistics.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlStatistics.Location = new System.Drawing.Point(0, 0);
+            this.pnlStatistics.Name = "pnlStatistics";
+            this.pnlStatistics.ShadowDecoration.Parent = this.pnlStatistics;
+            this.pnlStatistics.Size = new System.Drawing.Size(434, 479);
+            this.pnlStatistics.TabIndex = 0;
+            // 
+            // pnlBody_2_a
+            // 
+            this.pnlBody_2_a.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlBody_2_a.Location = new System.Drawing.Point(23, 257);
+            this.pnlBody_2_a.Name = "pnlBody_2_a";
+            this.pnlBody_2_a.Size = new System.Drawing.Size(40, 59);
+            this.pnlBody_2_a.TabIndex = 5;
             // 
             // label1
             // 
@@ -74,104 +82,96 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Beginner";
             // 
-            // panel3
+            // pnlBody_1_a
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.panel3.Location = new System.Drawing.Point(23, 66);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(40, 59);
-            this.panel3.TabIndex = 5;
+            this.pnlBody_1_a.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlBody_1_a.Location = new System.Drawing.Point(23, 66);
+            this.pnlBody_1_a.Name = "pnlBody_1_a";
+            this.pnlBody_1_a.Size = new System.Drawing.Size(40, 59);
+            this.pnlBody_1_a.TabIndex = 5;
             // 
-            // guna2CustomGradientPanel4
+            // pnlHeader_2
             // 
-            this.guna2CustomGradientPanel4.BackColor = System.Drawing.Color.White;
-            this.guna2CustomGradientPanel4.BorderRadius = 30;
-            this.guna2CustomGradientPanel4.Controls.Add(this.guna2CustomGradientPanel5);
-            this.guna2CustomGradientPanel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
-            this.guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
-            this.guna2CustomGradientPanel4.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
-            this.guna2CustomGradientPanel4.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
-            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(23, 218);
-            this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
-            this.guna2CustomGradientPanel4.ShadowDecoration.Parent = this.guna2CustomGradientPanel4;
-            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(392, 158);
-            this.guna2CustomGradientPanel4.TabIndex = 6;
+            this.pnlHeader_2.BackColor = System.Drawing.Color.Transparent;
+            this.pnlHeader_2.BorderRadius = 30;
+            this.pnlHeader_2.Controls.Add(this.pnlBody_2);
+            this.pnlHeader_2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
+            this.pnlHeader_2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
+            this.pnlHeader_2.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
+            this.pnlHeader_2.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
+            this.pnlHeader_2.Location = new System.Drawing.Point(23, 218);
+            this.pnlHeader_2.Name = "pnlHeader_2";
+            this.pnlHeader_2.ShadowDecoration.Parent = this.pnlHeader_2;
+            this.pnlHeader_2.Size = new System.Drawing.Size(392, 158);
+            this.pnlHeader_2.TabIndex = 6;
             // 
-            // panel4
+            // pnlBody_2
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.panel4.Location = new System.Drawing.Point(23, 257);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(40, 59);
-            this.panel4.TabIndex = 5;
+            this.pnlBody_2.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBody_2.BorderRadius = 30;
+            this.pnlBody_2.Controls.Add(this.pnlBody_2_b);
+            this.pnlBody_2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlBody_2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlBody_2.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlBody_2.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlBody_2.Location = new System.Drawing.Point(0, 38);
+            this.pnlBody_2.Name = "pnlBody_2";
+            this.pnlBody_2.ShadowDecoration.Parent = this.pnlBody_2;
+            this.pnlBody_2.Size = new System.Drawing.Size(392, 120);
+            this.pnlBody_2.TabIndex = 3;
             // 
-            // guna2CustomGradientPanel5
+            // pnlBody_2_b
             // 
-            this.guna2CustomGradientPanel5.BackColor = System.Drawing.Color.White;
-            this.guna2CustomGradientPanel5.BorderRadius = 30;
-            this.guna2CustomGradientPanel5.Controls.Add(this.panel5);
-            this.guna2CustomGradientPanel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel5.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel5.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel5.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel5.Location = new System.Drawing.Point(0, 38);
-            this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
-            this.guna2CustomGradientPanel5.ShadowDecoration.Parent = this.guna2CustomGradientPanel5;
-            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(392, 120);
-            this.guna2CustomGradientPanel5.TabIndex = 3;
+            this.pnlBody_2_b.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlBody_2_b.Location = new System.Drawing.Point(345, 1);
+            this.pnlBody_2_b.Name = "pnlBody_2_b";
+            this.pnlBody_2_b.Size = new System.Drawing.Size(47, 60);
+            this.pnlBody_2_b.TabIndex = 6;
             // 
-            // panel5
+            // pnlHeader_1
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.panel5.Location = new System.Drawing.Point(345, 1);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(47, 60);
-            this.panel5.TabIndex = 6;
+            this.pnlHeader_1.BackColor = System.Drawing.Color.Transparent;
+            this.pnlHeader_1.BorderRadius = 30;
+            this.pnlHeader_1.Controls.Add(this.pnlBody_1);
+            this.pnlHeader_1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
+            this.pnlHeader_1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
+            this.pnlHeader_1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
+            this.pnlHeader_1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
+            this.pnlHeader_1.Location = new System.Drawing.Point(23, 27);
+            this.pnlHeader_1.Name = "pnlHeader_1";
+            this.pnlHeader_1.ShadowDecoration.Parent = this.pnlHeader_1;
+            this.pnlHeader_1.Size = new System.Drawing.Size(392, 158);
+            this.pnlHeader_1.TabIndex = 2;
             // 
-            // guna2CustomGradientPanel2
+            // pnlBody_1
             // 
-            this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.White;
-            this.guna2CustomGradientPanel2.BorderRadius = 30;
-            this.guna2CustomGradientPanel2.Controls.Add(this.guna2CustomGradientPanel3);
-            this.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
-            this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
-            this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
-            this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(209)))), ((int)(((byte)(137)))));
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(23, 27);
-            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.ShadowDecoration.Parent = this.guna2CustomGradientPanel2;
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(392, 158);
-            this.guna2CustomGradientPanel2.TabIndex = 2;
+            this.pnlBody_1.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBody_1.BorderRadius = 30;
+            this.pnlBody_1.Controls.Add(this.pnlBody_1_b);
+            this.pnlBody_1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlBody_1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlBody_1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlBody_1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlBody_1.Location = new System.Drawing.Point(0, 38);
+            this.pnlBody_1.Name = "pnlBody_1";
+            this.pnlBody_1.ShadowDecoration.Parent = this.pnlBody_1;
+            this.pnlBody_1.Size = new System.Drawing.Size(392, 120);
+            this.pnlBody_1.TabIndex = 3;
             // 
-            // guna2CustomGradientPanel3
+            // pnlBody_1_b
             // 
-            this.guna2CustomGradientPanel3.BackColor = System.Drawing.Color.White;
-            this.guna2CustomGradientPanel3.BorderRadius = 30;
-            this.guna2CustomGradientPanel3.Controls.Add(this.panel2);
-            this.guna2CustomGradientPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(0, 38);
-            this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
-            this.guna2CustomGradientPanel3.ShadowDecoration.Parent = this.guna2CustomGradientPanel3;
-            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(392, 120);
-            this.guna2CustomGradientPanel3.TabIndex = 3;
+            this.pnlBody_1_b.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlBody_1_b.Location = new System.Drawing.Point(345, 1);
+            this.pnlBody_1_b.Name = "pnlBody_1_b";
+            this.pnlBody_1_b.Size = new System.Drawing.Size(47, 60);
+            this.pnlBody_1_b.TabIndex = 6;
             // 
-            // panel2
+            // pnlDash
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.panel2.Location = new System.Drawing.Point(345, 1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(47, 60);
-            this.panel2.TabIndex = 6;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(23, 391);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(392, 4);
-            this.panel1.TabIndex = 0;
+            this.pnlDash.Location = new System.Drawing.Point(23, 391);
+            this.pnlDash.Name = "pnlDash";
+            this.pnlDash.Size = new System.Drawing.Size(392, 4);
+            this.pnlDash.TabIndex = 0;
             // 
             // StatisticsForm
             // 
@@ -179,33 +179,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(434, 479);
-            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Controls.Add(this.pnlStatistics);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StatisticsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StatisticsForm";
-            this.guna2CustomGradientPanel1.ResumeLayout(false);
-            this.guna2CustomGradientPanel1.PerformLayout();
-            this.guna2CustomGradientPanel4.ResumeLayout(false);
-            this.guna2CustomGradientPanel5.ResumeLayout(false);
-            this.guna2CustomGradientPanel2.ResumeLayout(false);
-            this.guna2CustomGradientPanel3.ResumeLayout(false);
+            this.pnlStatistics.ResumeLayout(false);
+            this.pnlStatistics.PerformLayout();
+            this.pnlHeader_2.ResumeLayout(false);
+            this.pnlBody_2.ResumeLayout(false);
+            this.pnlHeader_1.ResumeLayout(false);
+            this.pnlBody_1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel4;
-        private System.Windows.Forms.Panel panel4;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel5;
-        private System.Windows.Forms.Panel panel5;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlStatistics;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlBody_1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlHeader_1;
+        private System.Windows.Forms.Panel pnlBody_1_a;
+        private System.Windows.Forms.Panel pnlDash;
+        private System.Windows.Forms.Panel pnlBody_1_b;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlHeader_2;
+        private System.Windows.Forms.Panel pnlBody_2_a;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlBody_2;
+        private System.Windows.Forms.Panel pnlBody_2_b;
         private System.Windows.Forms.Label label1;
     }
 }

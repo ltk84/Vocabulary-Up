@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomizeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomizeDialog.Designer.cs">
+      <DependentUpon>CustomizeDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="StatisticsForm.Designer.cs">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomizeDialog.resx">
+      <DependentUpon>CustomizeDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

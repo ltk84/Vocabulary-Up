@@ -25,3 +25,4 @@ C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\Vo
 C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.MainForm.resources
 C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ReviseForm.resources
 C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticsForm.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CustomizeDialog.resources

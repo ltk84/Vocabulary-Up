@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NavForm));
-            this.barTop = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.pnlTitleBar = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.btnHide = new Guna.UI2.WinForms.Guna2Button();
             this.btnFullScr = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
@@ -39,32 +39,31 @@
             this.btnStatistics = new Guna.UI2.WinForms.Guna2Button();
             this.btnMain = new Guna.UI2.WinForms.Guna2Button();
             this.navPanel = new System.Windows.Forms.Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnCustomize = new Guna.UI2.WinForms.Guna2Button();
             this.btnCategorize = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnRight = new Guna.UI2.WinForms.Guna2Button();
             this.btnLeft = new Guna.UI2.WinForms.Guna2Button();
-            this.barTop.SuspendLayout();
+            this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlTitleBar.SuspendLayout();
             this.navPanel.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // barTop
+            // pnlTitleBar
             // 
-            this.barTop.Controls.Add(this.btnHide);
-            this.barTop.Controls.Add(this.btnFullScr);
-            this.barTop.Controls.Add(this.btnExit);
-            this.barTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
-            this.barTop.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
-            this.barTop.Location = new System.Drawing.Point(0, 0);
-            this.barTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barTop.Name = "barTop";
-            this.barTop.ShadowDecoration.Parent = this.barTop;
-            this.barTop.Size = new System.Drawing.Size(1063, 34);
-            this.barTop.TabIndex = 0;
+            this.pnlTitleBar.Controls.Add(this.btnHide);
+            this.pnlTitleBar.Controls.Add(this.btnFullScr);
+            this.pnlTitleBar.Controls.Add(this.btnExit);
+            this.pnlTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitleBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
+            this.pnlTitleBar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
+            this.pnlTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitleBar.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlTitleBar.Name = "pnlTitleBar";
+            this.pnlTitleBar.ShadowDecoration.Parent = this.pnlTitleBar;
+            this.pnlTitleBar.Size = new System.Drawing.Size(1063, 34);
+            this.pnlTitleBar.TabIndex = 0;
             // 
             // btnHide
             // 
@@ -131,7 +130,7 @@
             // 
             // guna2DragControl1
             // 
-            this.guna2DragControl1.TargetControl = this.barTop;
+            this.guna2DragControl1.TargetControl = this.pnlTitleBar;
             // 
             // btnRevise
             // 
@@ -205,14 +204,6 @@
             this.navPanel.Size = new System.Drawing.Size(435, 32);
             this.navPanel.TabIndex = 4;
             // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Location = new System.Drawing.Point(315, 81);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(434, 482);
-            this.guna2Panel1.TabIndex = 9;
-            // 
             // guna2Panel2
             // 
             this.guna2Panel2.Controls.Add(this.btnCustomize);
@@ -243,6 +234,7 @@
             this.btnCustomize.Size = new System.Drawing.Size(180, 32);
             this.btnCustomize.TabIndex = 4;
             this.btnCustomize.Text = "Customize";
+            this.btnCustomize.Click += new System.EventHandler(this.btnCustomize_Click);
             // 
             // btnCategorize
             // 
@@ -264,15 +256,6 @@
             this.btnCategorize.Size = new System.Drawing.Size(180, 32);
             this.btnCategorize.TabIndex = 5;
             this.btnCategorize.Text = "Categorize";
-            // 
-            // pnlTab
-            // 
-            this.pnlTab.BorderRadius = 20;
-            this.pnlTab.Location = new System.Drawing.Point(314, 84);
-            this.pnlTab.Name = "pnlTab";
-            this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
-            this.pnlTab.Size = new System.Drawing.Size(434, 479);
-            this.pnlTab.TabIndex = 0;
             // 
             // btnRight
             // 
@@ -313,6 +296,16 @@
             this.btnLeft.Size = new System.Drawing.Size(303, 616);
             this.btnLeft.TabIndex = 7;
             // 
+            // pnlTab
+            // 
+            this.pnlTab.BackColor = System.Drawing.Color.Transparent;
+            this.pnlTab.BorderRadius = 20;
+            this.pnlTab.Location = new System.Drawing.Point(314, 84);
+            this.pnlTab.Name = "pnlTab";
+            this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
+            this.pnlTab.Size = new System.Drawing.Size(434, 479);
+            this.pnlTab.TabIndex = 0;
+            // 
             // NavForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -321,17 +314,16 @@
             this.ClientSize = new System.Drawing.Size(1063, 650);
             this.Controls.Add(this.pnlTab);
             this.Controls.Add(this.guna2Panel2);
-            this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.navPanel);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnLeft);
-            this.Controls.Add(this.barTop);
+            this.Controls.Add(this.pnlTitleBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NavForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.barTop.ResumeLayout(false);
+            this.pnlTitleBar.ResumeLayout(false);
             this.navPanel.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -340,7 +332,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2GradientPanel barTop;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnlTitleBar;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2Button btnFullScr;
         private Guna.UI2.WinForms.Guna2Button btnExit;
@@ -351,7 +343,6 @@
         private Guna.UI2.WinForms.Guna2Button btnStatistics;
         private Guna.UI2.WinForms.Guna2Button btnMain;
         private System.Windows.Forms.Panel navPanel;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button btnCustomize;
         private Guna.UI2.WinForms.Guna2Button btnCategorize;
