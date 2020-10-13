@@ -77,6 +77,9 @@
     <Compile Include="ReviseForm.Designer.cs">
       <DependentUpon>ReviseForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NavForm.resx">
       <DependentUpon>NavForm.cs</DependentUpon>
     </EmbeddedResource>

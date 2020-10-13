@@ -29,74 +29,72 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.cardMain = new Bunifu.Framework.UI.BunifuCards();
-            this.lbMain = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.sepMain = new Bunifu.Framework.UI.BunifuSeparator();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cardMain
-            // 
-            this.cardMain.BackColor = System.Drawing.Color.DimGray;
-            this.cardMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cardMain.BackgroundImage")));
-            this.cardMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cardMain.BorderRadius = 60;
-            this.cardMain.BottomSahddow = true;
-            this.cardMain.color = System.Drawing.Color.Teal;
-            this.cardMain.LeftSahddow = false;
-            this.cardMain.Location = new System.Drawing.Point(11, 6);
-            this.cardMain.Name = "cardMain";
-            this.cardMain.RightSahddow = true;
-            this.cardMain.ShadowDepth = 20;
-            this.cardMain.Size = new System.Drawing.Size(357, 390);
-            this.cardMain.TabIndex = 5;
-            // 
-            // lbMain
-            // 
-            this.lbMain.BackColor = System.Drawing.Color.Transparent;
-            this.lbMain.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMain.Location = new System.Drawing.Point(136, 418);
-            this.lbMain.Name = "lbMain";
-            this.lbMain.Size = new System.Drawing.Size(108, 34);
-            this.lbMain.TabIndex = 1;
-            this.lbMain.Text = "Window";
             // 
             // sepMain
             // 
             this.sepMain.BackColor = System.Drawing.Color.Transparent;
             this.sepMain.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.sepMain.LineThickness = 5;
-            this.sepMain.Location = new System.Drawing.Point(0, 402);
+            this.sepMain.Location = new System.Drawing.Point(22, 414);
+            this.sepMain.Margin = new System.Windows.Forms.Padding(5);
             this.sepMain.Name = "sepMain";
-            this.sepMain.Size = new System.Drawing.Size(378, 10);
+            this.sepMain.Size = new System.Drawing.Size(392, 3);
             this.sepMain.TabIndex = 6;
             this.sepMain.Transparency = 255;
             this.sepMain.Vertical = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(168, 428);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 28);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Window";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(22, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(392, 390);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(378, 464);
+            this.ClientSize = new System.Drawing.Size(434, 479);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.sepMain);
-            this.Controls.Add(this.cardMain);
-            this.Controls.Add(this.lbMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vocabulary Up";
             this.TransparencyKey = System.Drawing.Color.Black;
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuCards cardMain;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbMain;
         private Bunifu.Framework.UI.BunifuSeparator sepMain;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

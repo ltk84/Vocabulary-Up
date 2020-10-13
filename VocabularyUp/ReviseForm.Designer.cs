@@ -29,70 +29,69 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReviseForm));
-            this.sepRevise = new Bunifu.Framework.UI.BunifuSeparator();
-            this.lbRevise = new System.Windows.Forms.Label();
-            this.cardRevise = new Bunifu.Framework.UI.BunifuCards();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sepMain = new Bunifu.Framework.UI.BunifuSeparator();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // sepRevise
+            // label1
             // 
-            this.sepRevise.BackColor = System.Drawing.Color.Transparent;
-            this.sepRevise.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.sepRevise.LineThickness = 5;
-            this.sepRevise.Location = new System.Drawing.Point(-1, 402);
-            this.sepRevise.Name = "sepRevise";
-            this.sepRevise.Size = new System.Drawing.Size(375, 8);
-            this.sepRevise.TabIndex = 0;
-            this.sepRevise.Transparency = 255;
-            this.sepRevise.Vertical = false;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(190, 428);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 28);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Car";
             // 
-            // lbRevise
+            // sepMain
             // 
-            this.lbRevise.AutoSize = true;
-            this.lbRevise.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold);
-            this.lbRevise.Location = new System.Drawing.Point(157, 413);
-            this.lbRevise.Name = "lbRevise";
-            this.lbRevise.Size = new System.Drawing.Size(61, 32);
-            this.lbRevise.TabIndex = 1;
-            this.lbRevise.Text = "Car";
+            this.sepMain.BackColor = System.Drawing.Color.Transparent;
+            this.sepMain.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.sepMain.LineThickness = 5;
+            this.sepMain.Location = new System.Drawing.Point(22, 414);
+            this.sepMain.Margin = new System.Windows.Forms.Padding(5);
+            this.sepMain.Name = "sepMain";
+            this.sepMain.Size = new System.Drawing.Size(392, 3);
+            this.sepMain.TabIndex = 8;
+            this.sepMain.Transparency = 255;
+            this.sepMain.Vertical = false;
             // 
-            // cardRevise
+            // pictureBox1
             // 
-            this.cardRevise.BackColor = System.Drawing.Color.Transparent;
-            this.cardRevise.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cardRevise.BackgroundImage")));
-            this.cardRevise.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cardRevise.BorderRadius = 60;
-            this.cardRevise.BottomSahddow = true;
-            this.cardRevise.color = System.Drawing.Color.LightBlue;
-            this.cardRevise.LeftSahddow = false;
-            this.cardRevise.Location = new System.Drawing.Point(12, 12);
-            this.cardRevise.Name = "cardRevise";
-            this.cardRevise.RightSahddow = true;
-            this.cardRevise.ShadowDepth = 20;
-            this.cardRevise.Size = new System.Drawing.Size(351, 384);
-            this.cardRevise.TabIndex = 2;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(22, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(392, 390);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // ReviseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 454);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(434, 479);
             this.ControlBox = false;
-            this.Controls.Add(this.cardRevise);
-            this.Controls.Add(this.lbRevise);
-            this.Controls.Add(this.sepRevise);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.sepMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReviseForm";
             this.Text = "ReviseForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuSeparator sepRevise;
-        private System.Windows.Forms.Label lbRevise;
-        private Bunifu.Framework.UI.BunifuCards cardRevise;
+        private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuSeparator sepMain;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

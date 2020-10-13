@@ -35,8 +35,6 @@
             this.btnFullScr = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.btnLeft = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRight = new Guna.UI2.WinForms.Guna2Button();
             this.btnRevise = new Guna.UI2.WinForms.Guna2Button();
             this.btnStatistics = new Guna.UI2.WinForms.Guna2Button();
             this.btnMain = new Guna.UI2.WinForms.Guna2Button();
@@ -45,15 +43,12 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnCustomize = new Guna.UI2.WinForms.Guna2Button();
             this.btnCategorize = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnRight = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLeft = new Guna.UI2.WinForms.Guna2Button();
             this.barTop.SuspendLayout();
             this.navPanel.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            this.guna2CustomGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // barTop
@@ -138,48 +133,8 @@
             // 
             this.guna2DragControl1.TargetControl = this.barTop;
             // 
-            // btnLeft
-            // 
-            this.btnLeft.BackColor = System.Drawing.Color.Transparent;
-            this.btnLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnLeft.CheckedState.Parent = this.btnLeft;
-            this.btnLeft.CustomImages.Parent = this.btnLeft;
-            this.btnLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnLeft.FillColor = System.Drawing.Color.Transparent;
-            this.btnLeft.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLeft.ForeColor = System.Drawing.Color.White;
-            this.btnLeft.HoverState.Parent = this.btnLeft;
-            this.btnLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft.Image")));
-            this.btnLeft.ImageSize = new System.Drawing.Size(100, 100);
-            this.btnLeft.Location = new System.Drawing.Point(0, 34);
-            this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLeft.Name = "btnLeft";
-            this.btnLeft.ShadowDecoration.Parent = this.btnLeft;
-            this.btnLeft.Size = new System.Drawing.Size(303, 616);
-            this.btnLeft.TabIndex = 7;
-            // 
-            // btnRight
-            // 
-            this.btnRight.BackColor = System.Drawing.Color.Transparent;
-            this.btnRight.CheckedState.Parent = this.btnRight;
-            this.btnRight.CustomImages.Parent = this.btnRight;
-            this.btnRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnRight.FillColor = System.Drawing.Color.Transparent;
-            this.btnRight.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRight.ForeColor = System.Drawing.Color.White;
-            this.btnRight.HoverState.Parent = this.btnRight;
-            this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
-            this.btnRight.ImageSize = new System.Drawing.Size(120, 100);
-            this.btnRight.Location = new System.Drawing.Point(760, 34);
-            this.btnRight.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRight.Name = "btnRight";
-            this.btnRight.ShadowDecoration.Parent = this.btnRight;
-            this.btnRight.Size = new System.Drawing.Size(303, 616);
-            this.btnRight.TabIndex = 8;
-            // 
             // btnRevise
             // 
-            this.btnRevise.Animated = true;
             this.btnRevise.AutoRoundedCorners = true;
             this.btnRevise.BackColor = System.Drawing.Color.Transparent;
             this.btnRevise.BorderColor = System.Drawing.Color.Transparent;
@@ -197,10 +152,10 @@
             this.btnRevise.Size = new System.Drawing.Size(180, 32);
             this.btnRevise.TabIndex = 3;
             this.btnRevise.Text = "Revise";
+            this.btnRevise.Click += new System.EventHandler(this.btnRevise_Click);
             // 
             // btnStatistics
             // 
-            this.btnStatistics.Animated = true;
             this.btnStatistics.AutoRoundedCorners = true;
             this.btnStatistics.BackColor = System.Drawing.Color.Transparent;
             this.btnStatistics.BorderColor = System.Drawing.Color.Transparent;
@@ -221,7 +176,6 @@
             // 
             // btnMain
             // 
-            this.btnMain.Animated = true;
             this.btnMain.BackColor = System.Drawing.Color.Transparent;
             this.btnMain.BorderColor = System.Drawing.Color.Transparent;
             this.btnMain.CheckedState.Parent = this.btnMain;
@@ -237,6 +191,7 @@
             this.btnMain.Size = new System.Drawing.Size(140, 32);
             this.btnMain.TabIndex = 2;
             this.btnMain.Text = "Main";
+            this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
             // 
             // navPanel
             // 
@@ -309,55 +264,53 @@
             this.btnCategorize.TabIndex = 5;
             this.btnCategorize.Text = "Categorize";
             // 
-            // guna2CustomGradientPanel1
+            // pnlTab
             // 
-            this.guna2CustomGradientPanel1.BorderRadius = 20;
-            this.guna2CustomGradientPanel1.Controls.Add(this.bunifuCards1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.label1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox1);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(314, 84);
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(434, 479);
-            this.guna2CustomGradientPanel1.TabIndex = 0;
+            this.pnlTab.BorderRadius = 20;
+            this.pnlTab.Location = new System.Drawing.Point(314, 84);
+            this.pnlTab.Name = "pnlTab";
+            this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
+            this.pnlTab.Size = new System.Drawing.Size(434, 479);
+            this.pnlTab.TabIndex = 0;
             // 
-            // pictureBox1
+            // btnRight
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 397);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(408, 29);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.btnRight.BackColor = System.Drawing.Color.Transparent;
+            this.btnRight.CheckedState.Parent = this.btnRight;
+            this.btnRight.CustomImages.Parent = this.btnRight;
+            this.btnRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnRight.FillColor = System.Drawing.Color.Transparent;
+            this.btnRight.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRight.ForeColor = System.Drawing.Color.White;
+            this.btnRight.HoverState.Parent = this.btnRight;
+            this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
+            this.btnRight.ImageSize = new System.Drawing.Size(120, 100);
+            this.btnRight.Location = new System.Drawing.Point(760, 34);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRight.Name = "btnRight";
+            this.btnRight.ShadowDecoration.Parent = this.btnRight;
+            this.btnRight.Size = new System.Drawing.Size(303, 616);
+            this.btnRight.TabIndex = 8;
             // 
-            // label1
+            // btnLeft
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(173, 429);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 28);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Window";
-            // 
-            // bunifuCards1
-            // 
-            this.bunifuCards1.BackColor = System.Drawing.Color.White;
-            this.bunifuCards1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCards1.BackgroundImage")));
-            this.bunifuCards1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuCards1.BorderRadius = 30;
-            this.bunifuCards1.BottomSahddow = true;
-            this.bunifuCards1.color = System.Drawing.Color.Transparent;
-            this.bunifuCards1.LeftSahddow = false;
-            this.bunifuCards1.Location = new System.Drawing.Point(22, 20);
-            this.bunifuCards1.Name = "bunifuCards1";
-            this.bunifuCards1.RightSahddow = true;
-            this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(392, 371);
-            this.bunifuCards1.TabIndex = 11;
+            this.btnLeft.BackColor = System.Drawing.Color.Transparent;
+            this.btnLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLeft.CheckedState.Parent = this.btnLeft;
+            this.btnLeft.CustomImages.Parent = this.btnLeft;
+            this.btnLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnLeft.FillColor = System.Drawing.Color.Transparent;
+            this.btnLeft.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLeft.ForeColor = System.Drawing.Color.White;
+            this.btnLeft.HoverState.Parent = this.btnLeft;
+            this.btnLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft.Image")));
+            this.btnLeft.ImageSize = new System.Drawing.Size(100, 100);
+            this.btnLeft.Location = new System.Drawing.Point(0, 34);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLeft.Name = "btnLeft";
+            this.btnLeft.ShadowDecoration.Parent = this.btnLeft;
+            this.btnLeft.Size = new System.Drawing.Size(303, 616);
+            this.btnLeft.TabIndex = 7;
             // 
             // NavForm
             // 
@@ -365,7 +318,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(1063, 650);
-            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Controls.Add(this.pnlTab);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.navPanel);
@@ -380,9 +333,6 @@
             this.barTop.ResumeLayout(false);
             this.navPanel.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
-            this.guna2CustomGradientPanel1.ResumeLayout(false);
-            this.guna2CustomGradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -404,10 +354,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Button btnCustomize;
         private Guna.UI2.WinForms.Guna2Button btnCategorize;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlTab;
     }
 }
 
