@@ -173,6 +173,7 @@
             this.btnStatistics.Size = new System.Drawing.Size(180, 32);
             this.btnStatistics.TabIndex = 1;
             this.btnStatistics.Text = "Statistics";
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
             // btnMain
             // 

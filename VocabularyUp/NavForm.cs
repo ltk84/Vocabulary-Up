@@ -14,6 +14,7 @@ namespace VocabularyUp
     {
         MainForm mainTab = new MainForm();
         ReviseForm reviseTab = new ReviseForm();
+        StatisticsForm statisticsTab = new StatisticsForm();
         public NavForm()
         {
             InitializeComponent();
@@ -51,6 +52,21 @@ namespace VocabularyUp
         private void btnMain_Click(object sender, EventArgs e)
         {
             ToMainTab();
+        }
+
+        private void ToStatisticsTab()
+        {
+            statisticsTab.TopLevel = false;
+            pnlTab.Controls.Clear();
+            pnlTab.Controls.Add(statisticsTab);
+            statisticsTab.FormBorderStyle = FormBorderStyle.None;
+            //statisticsTab.Dock = DockStyle.Fill;
+            statisticsTab.Show();
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+            ToStatisticsTab();
         }
     }
 }
