@@ -34,7 +34,7 @@
             this.btnHide = new Guna.UI2.WinForms.Guna2Button();
             this.btnFullScr = new Guna.UI2.WinForms.Guna2Button();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.dragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.btnRevise = new Guna.UI2.WinForms.Guna2Button();
             this.btnStatistics = new Guna.UI2.WinForms.Guna2Button();
             this.btnMain = new Guna.UI2.WinForms.Guna2Button();
@@ -46,6 +46,7 @@
             this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnRight = new Guna.UI2.WinForms.Guna2Button();
             this.btnLeft = new Guna.UI2.WinForms.Guna2Button();
+            this.elipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.barTop.SuspendLayout();
             this.navPanel.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -60,10 +61,9 @@
             this.barTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
             this.barTop.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
             this.barTop.Location = new System.Drawing.Point(0, 0);
-            this.barTop.Margin = new System.Windows.Forms.Padding(4);
             this.barTop.Name = "barTop";
             this.barTop.ShadowDecoration.Parent = this.barTop;
-            this.barTop.Size = new System.Drawing.Size(1063, 34);
+            this.barTop.Size = new System.Drawing.Size(797, 28);
             this.barTop.TabIndex = 0;
             // 
             // btnHide
@@ -80,11 +80,10 @@
             this.btnHide.Image = ((System.Drawing.Image)(resources.GetObject("btnHide.Image")));
             this.btnHide.ImageOffset = new System.Drawing.Point(1, -1);
             this.btnHide.ImageSize = new System.Drawing.Size(15, 20);
-            this.btnHide.Location = new System.Drawing.Point(942, 0);
-            this.btnHide.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHide.Location = new System.Drawing.Point(706, 0);
             this.btnHide.Name = "btnHide";
             this.btnHide.ShadowDecoration.Parent = this.btnHide;
-            this.btnHide.Size = new System.Drawing.Size(44, 34);
+            this.btnHide.Size = new System.Drawing.Size(33, 28);
             this.btnHide.TabIndex = 2;
             // 
             // btnFullScr
@@ -100,11 +99,10 @@
             this.btnFullScr.HoverState.Parent = this.btnFullScr;
             this.btnFullScr.Image = ((System.Drawing.Image)(resources.GetObject("btnFullScr.Image")));
             this.btnFullScr.ImageSize = new System.Drawing.Size(19, 19);
-            this.btnFullScr.Location = new System.Drawing.Point(986, 0);
-            this.btnFullScr.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFullScr.Location = new System.Drawing.Point(739, 0);
             this.btnFullScr.Name = "btnFullScr";
             this.btnFullScr.ShadowDecoration.Parent = this.btnFullScr;
-            this.btnFullScr.Size = new System.Drawing.Size(44, 34);
+            this.btnFullScr.Size = new System.Drawing.Size(33, 28);
             this.btnFullScr.TabIndex = 1;
             // 
             // btnExit
@@ -121,35 +119,33 @@
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageOffset = new System.Drawing.Point(-1, -1);
             this.btnExit.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnExit.Location = new System.Drawing.Point(1030, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExit.Location = new System.Drawing.Point(772, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(33, 34);
+            this.btnExit.Size = new System.Drawing.Size(25, 28);
             this.btnExit.TabIndex = 0;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // guna2DragControl1
+            // dragControl
             // 
-            this.guna2DragControl1.TargetControl = this.barTop;
+            this.dragControl.TargetControl = this.barTop;
             // 
             // btnRevise
             // 
             this.btnRevise.AutoRoundedCorners = true;
             this.btnRevise.BackColor = System.Drawing.Color.Transparent;
             this.btnRevise.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRevise.BorderRadius = 15;
+            this.btnRevise.BorderRadius = 12;
             this.btnRevise.CheckedState.Parent = this.btnRevise;
             this.btnRevise.CustomImages.Parent = this.btnRevise;
             this.btnRevise.FillColor = System.Drawing.Color.White;
-            this.btnRevise.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevise.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRevise.ForeColor = System.Drawing.Color.Black;
             this.btnRevise.HoverState.Parent = this.btnRevise;
-            this.btnRevise.Location = new System.Drawing.Point(255, 0);
-            this.btnRevise.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRevise.Location = new System.Drawing.Point(191, 0);
             this.btnRevise.Name = "btnRevise";
             this.btnRevise.ShadowDecoration.Parent = this.btnRevise;
-            this.btnRevise.Size = new System.Drawing.Size(180, 32);
+            this.btnRevise.Size = new System.Drawing.Size(135, 26);
             this.btnRevise.TabIndex = 3;
             this.btnRevise.Text = "Revise";
             this.btnRevise.Click += new System.EventHandler(this.btnRevise_Click);
@@ -159,18 +155,17 @@
             this.btnStatistics.AutoRoundedCorners = true;
             this.btnStatistics.BackColor = System.Drawing.Color.Transparent;
             this.btnStatistics.BorderColor = System.Drawing.Color.Transparent;
-            this.btnStatistics.BorderRadius = 15;
+            this.btnStatistics.BorderRadius = 12;
             this.btnStatistics.CheckedState.Parent = this.btnStatistics;
             this.btnStatistics.CustomImages.Parent = this.btnStatistics;
             this.btnStatistics.FillColor = System.Drawing.Color.White;
-            this.btnStatistics.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatistics.ForeColor = System.Drawing.Color.Black;
             this.btnStatistics.HoverState.Parent = this.btnStatistics;
             this.btnStatistics.Location = new System.Drawing.Point(1, 0);
-            this.btnStatistics.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatistics.Name = "btnStatistics";
             this.btnStatistics.ShadowDecoration.Parent = this.btnStatistics;
-            this.btnStatistics.Size = new System.Drawing.Size(180, 32);
+            this.btnStatistics.Size = new System.Drawing.Size(135, 26);
             this.btnStatistics.TabIndex = 1;
             this.btnStatistics.Text = "Statistics";
             this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
@@ -182,14 +177,13 @@
             this.btnMain.CheckedState.Parent = this.btnMain;
             this.btnMain.CustomImages.Parent = this.btnMain;
             this.btnMain.FillColor = System.Drawing.Color.White;
-            this.btnMain.Font = new System.Drawing.Font("Montserrat SemiBold", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMain.ForeColor = System.Drawing.Color.Black;
             this.btnMain.HoverState.Parent = this.btnMain;
-            this.btnMain.Location = new System.Drawing.Point(155, 0);
-            this.btnMain.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMain.Location = new System.Drawing.Point(116, 0);
             this.btnMain.Name = "btnMain";
             this.btnMain.ShadowDecoration.Parent = this.btnMain;
-            this.btnMain.Size = new System.Drawing.Size(140, 32);
+            this.btnMain.Size = new System.Drawing.Size(105, 26);
             this.btnMain.TabIndex = 2;
             this.btnMain.Text = "Main";
             this.btnMain.Click += new System.EventHandler(this.btnMain_Click);
@@ -199,28 +193,29 @@
             this.navPanel.Controls.Add(this.btnMain);
             this.navPanel.Controls.Add(this.btnStatistics);
             this.navPanel.Controls.Add(this.btnRevise);
-            this.navPanel.Location = new System.Drawing.Point(313, 42);
-            this.navPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.navPanel.Location = new System.Drawing.Point(235, 34);
             this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(435, 32);
+            this.navPanel.Size = new System.Drawing.Size(326, 26);
             this.navPanel.TabIndex = 4;
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Location = new System.Drawing.Point(315, 81);
+            this.guna2Panel1.Location = new System.Drawing.Point(236, 66);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(434, 482);
+            this.guna2Panel1.Size = new System.Drawing.Size(326, 392);
             this.guna2Panel1.TabIndex = 9;
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.Controls.Add(this.btnCustomize);
             this.guna2Panel2.Controls.Add(this.btnCategorize);
-            this.guna2Panel2.Location = new System.Drawing.Point(315, 582);
+            this.guna2Panel2.Location = new System.Drawing.Point(236, 473);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Size = new System.Drawing.Size(434, 32);
+            this.guna2Panel2.Size = new System.Drawing.Size(326, 26);
             this.guna2Panel2.TabIndex = 10;
             // 
             // btnCustomize
@@ -229,18 +224,17 @@
             this.btnCustomize.AutoRoundedCorners = true;
             this.btnCustomize.BackColor = System.Drawing.Color.Transparent;
             this.btnCustomize.BorderColor = System.Drawing.Color.Transparent;
-            this.btnCustomize.BorderRadius = 15;
+            this.btnCustomize.BorderRadius = 12;
             this.btnCustomize.CheckedState.Parent = this.btnCustomize;
             this.btnCustomize.CustomImages.Parent = this.btnCustomize;
             this.btnCustomize.FillColor = System.Drawing.Color.White;
-            this.btnCustomize.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomize.ForeColor = System.Drawing.Color.Black;
             this.btnCustomize.HoverState.Parent = this.btnCustomize;
             this.btnCustomize.Location = new System.Drawing.Point(-1, 0);
-            this.btnCustomize.Margin = new System.Windows.Forms.Padding(4);
             this.btnCustomize.Name = "btnCustomize";
             this.btnCustomize.ShadowDecoration.Parent = this.btnCustomize;
-            this.btnCustomize.Size = new System.Drawing.Size(180, 32);
+            this.btnCustomize.Size = new System.Drawing.Size(135, 26);
             this.btnCustomize.TabIndex = 4;
             this.btnCustomize.Text = "Customize";
             // 
@@ -250,28 +244,28 @@
             this.btnCategorize.AutoRoundedCorners = true;
             this.btnCategorize.BackColor = System.Drawing.Color.Transparent;
             this.btnCategorize.BorderColor = System.Drawing.Color.Transparent;
-            this.btnCategorize.BorderRadius = 15;
+            this.btnCategorize.BorderRadius = 12;
             this.btnCategorize.CheckedState.Parent = this.btnCategorize;
             this.btnCategorize.CustomImages.Parent = this.btnCategorize;
             this.btnCategorize.FillColor = System.Drawing.Color.White;
-            this.btnCategorize.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategorize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategorize.ForeColor = System.Drawing.Color.Black;
             this.btnCategorize.HoverState.Parent = this.btnCategorize;
-            this.btnCategorize.Location = new System.Drawing.Point(253, 0);
-            this.btnCategorize.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCategorize.Location = new System.Drawing.Point(190, 0);
             this.btnCategorize.Name = "btnCategorize";
             this.btnCategorize.ShadowDecoration.Parent = this.btnCategorize;
-            this.btnCategorize.Size = new System.Drawing.Size(180, 32);
+            this.btnCategorize.Size = new System.Drawing.Size(135, 26);
             this.btnCategorize.TabIndex = 5;
             this.btnCategorize.Text = "Categorize";
             // 
             // pnlTab
             // 
             this.pnlTab.BorderRadius = 20;
-            this.pnlTab.Location = new System.Drawing.Point(314, 84);
+            this.pnlTab.Location = new System.Drawing.Point(236, 68);
+            this.pnlTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
-            this.pnlTab.Size = new System.Drawing.Size(434, 479);
+            this.pnlTab.Size = new System.Drawing.Size(326, 389);
             this.pnlTab.TabIndex = 0;
             // 
             // btnRight
@@ -286,11 +280,10 @@
             this.btnRight.HoverState.Parent = this.btnRight;
             this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
             this.btnRight.ImageSize = new System.Drawing.Size(120, 100);
-            this.btnRight.Location = new System.Drawing.Point(760, 34);
-            this.btnRight.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRight.Location = new System.Drawing.Point(570, 28);
             this.btnRight.Name = "btnRight";
             this.btnRight.ShadowDecoration.Parent = this.btnRight;
-            this.btnRight.Size = new System.Drawing.Size(303, 616);
+            this.btnRight.Size = new System.Drawing.Size(227, 500);
             this.btnRight.TabIndex = 8;
             // 
             // btnLeft
@@ -306,19 +299,23 @@
             this.btnLeft.HoverState.Parent = this.btnLeft;
             this.btnLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft.Image")));
             this.btnLeft.ImageSize = new System.Drawing.Size(100, 100);
-            this.btnLeft.Location = new System.Drawing.Point(0, 34);
-            this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLeft.Location = new System.Drawing.Point(0, 28);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.ShadowDecoration.Parent = this.btnLeft;
-            this.btnLeft.Size = new System.Drawing.Size(303, 616);
+            this.btnLeft.Size = new System.Drawing.Size(227, 500);
             this.btnLeft.TabIndex = 7;
+            // 
+            // elipseForm
+            // 
+            this.elipseForm.BorderRadius = 20;
+            this.elipseForm.TargetControl = this;
             // 
             // NavForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.ClientSize = new System.Drawing.Size(1063, 650);
+            this.ClientSize = new System.Drawing.Size(797, 528);
             this.Controls.Add(this.pnlTab);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
@@ -327,10 +324,8 @@
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.barTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NavForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
             this.barTop.ResumeLayout(false);
             this.navPanel.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
@@ -341,7 +336,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2GradientPanel barTop;
-        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2DragControl dragControl;
         private Guna.UI2.WinForms.Guna2Button btnFullScr;
         private Guna.UI2.WinForms.Guna2Button btnExit;
         private Guna.UI2.WinForms.Guna2Button btnHide;
@@ -356,6 +351,7 @@
         private Guna.UI2.WinForms.Guna2Button btnCustomize;
         private Guna.UI2.WinForms.Guna2Button btnCategorize;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlTab;
+        private Guna.UI2.WinForms.Guna2Elipse elipseForm;
     }
 }
 

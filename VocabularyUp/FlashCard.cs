@@ -17,13 +17,13 @@ namespace VocabularyUp
         private string example;
         private string field;
 
-        public FlashCard(int idCard, string eng, string viet, string definition, string Pronunciation, string imgPath, string example, string field)
+        public FlashCard(int idCard, string eng, string viet, string definition, string pronunciation, string imgPath, string example, string field)
         {
             this.idCard = idCard;
             this.eng = eng;
             this.viet = viet;
             this.definition = definition;
-            this.Pronunciation = Pronunciation;
+            this.pronunciation = pronunciation;
             this.imgPath = imgPath;
             this.example = example;
             this.field = field;

@@ -28,81 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReviseForm));
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.guna2CustomGradientPanel1.SuspendLayout();
+            this.lbRevise = new System.Windows.Forms.Label();
+            this.pbRevise = new System.Windows.Forms.PictureBox();
+            this.pnlDash = new System.Windows.Forms.Panel();
+            this.pnlRevise = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.elipseRevForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pbRevise)).BeginInit();
+            this.pnlRevise.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lbRevise
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 19.8F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(178, 409);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 46);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Car";
+            this.lbRevise.AutoSize = true;
+            this.lbRevise.BackColor = System.Drawing.Color.Transparent;
+            this.lbRevise.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
+            this.lbRevise.Location = new System.Drawing.Point(134, 332);
+            this.lbRevise.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbRevise.Name = "lbRevise";
+            this.lbRevise.Size = new System.Drawing.Size(61, 31);
+            this.lbRevise.TabIndex = 9;
+            this.lbRevise.Text = "Car";
             // 
-            // pictureBox1
+            // pbRevise
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(392, 354);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.pbRevise.Image = ((System.Drawing.Image)(resources.GetObject("pbRevise.Image")));
+            this.pbRevise.Location = new System.Drawing.Point(17, 19);
+            this.pbRevise.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbRevise.Name = "pbRevise";
+            this.pbRevise.Size = new System.Drawing.Size(294, 288);
+            this.pbRevise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbRevise.TabIndex = 10;
+            this.pbRevise.TabStop = false;
             // 
-            // panel1
+            // pnlDash
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.panel1.Location = new System.Drawing.Point(23, 391);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(392, 4);
-            this.panel1.TabIndex = 11;
+            this.pnlDash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlDash.Location = new System.Drawing.Point(17, 318);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDash.Name = "pnlDash";
+            this.pnlDash.Size = new System.Drawing.Size(294, 3);
+            this.pnlDash.TabIndex = 11;
             // 
-            // guna2CustomGradientPanel1
+            // pnlRevise
             // 
-            this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel1.BorderRadius = 20;
-            this.guna2CustomGradientPanel1.Controls.Add(this.pictureBox1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.panel1);
-            this.guna2CustomGradientPanel1.Controls.Add(this.label1);
-            this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(434, 479);
-            this.guna2CustomGradientPanel1.TabIndex = 12;
+            this.pnlRevise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlRevise.BorderRadius = 20;
+            this.pnlRevise.Controls.Add(this.pbRevise);
+            this.pnlRevise.Controls.Add(this.pnlDash);
+            this.pnlRevise.Controls.Add(this.lbRevise);
+            this.pnlRevise.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRevise.Location = new System.Drawing.Point(0, 0);
+            this.pnlRevise.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlRevise.Name = "pnlRevise";
+            this.pnlRevise.ShadowDecoration.Parent = this.pnlRevise;
+            this.pnlRevise.Size = new System.Drawing.Size(326, 389);
+            this.pnlRevise.TabIndex = 12;
+            // 
+            // elipseRevForm
+            // 
+            this.elipseRevForm.BorderRadius = 20;
+            this.elipseRevForm.TargetControl = this.pbRevise;
             // 
             // ReviseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(434, 479);
+            this.ClientSize = new System.Drawing.Size(326, 389);
             this.ControlBox = false;
-            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Controls.Add(this.pnlRevise);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReviseForm";
             this.Text = "ReviseForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.guna2CustomGradientPanel1.ResumeLayout(false);
-            this.guna2CustomGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRevise)).EndInit();
+            this.pnlRevise.ResumeLayout(false);
+            this.pnlRevise.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private System.Windows.Forms.Label lbRevise;
+        private System.Windows.Forms.PictureBox pbRevise;
+        private System.Windows.Forms.Panel pnlDash;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlRevise;
+        private Guna.UI2.WinForms.Guna2Elipse elipseRevForm;
     }
 }

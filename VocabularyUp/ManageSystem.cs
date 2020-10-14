@@ -28,7 +28,7 @@ namespace VocabularyUp
             connection.Open();
 
             //Chuan bi cau lenh query viet bang SQL 
-            String sqlQuery = "select * from USERS";
+            String sqlQuery = "select * from USERS, USER_INFO where USERS.ID = USER_INFO.ID_USER";
             //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
             SqlCommand command = new SqlCommand(sqlQuery, connection);
 
@@ -39,7 +39,7 @@ namespace VocabularyUp
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                User u = new User(reader.GetByte(0), reader.GetString(1), reader.GetString(2));
+                User u = new User(reader.GetByte(0), reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetDateTime(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8));
                 users.Add(u);
 
             }
@@ -59,7 +59,7 @@ namespace VocabularyUp
                 String sqlQuery = "insert into users(id, username, pass) values(@id, @username, @pass)";
                 //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
-                command.Parameters.AddWithValue("@id", numOfUser++);
+                command.Parameters.AddWithValue("@id", numOfUser);
                 command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@pass", password);
                 //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
@@ -71,7 +71,47 @@ namespace VocabularyUp
                     throw new Exception("Failed Query");
                 }
             }
-            catch (InvalidCastException ex)
+            catch (Exception)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
+        }
+
+        public static void AddUserInfoToDatabase(string email, DateTime beginDate, int totalWord, int hiWCount, int reWCount)
+        {
+            string constr = @"Server=DESKTOP-GNVB183;Database=VOCAB_UP;User Id=sa;Password=123456789;";
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "insert into USER_INFO(ID_USER, EMAIL, BEGINDATE, TOTALWORD, HIGHEST_WORDS_COUNT, RECENT_WORDS_COUNT) values(@ID_USER, @EMAIL, @BEGINDATE, @TOTALWORD, @HIGHEST_WORDS_COUNT, @RECENT_WORDS_COUNT)";
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID_USER", numOfUser);
+                command.Parameters.AddWithValue("@EMAIL", email);
+                command.Parameters.AddWithValue("@BEGINDATE", beginDate.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+                command.Parameters.AddWithValue("@TOTALWORD", totalWord);
+                command.Parameters.AddWithValue("@HIGHEST_WORDS_COUNT", hiWCount);
+                command.Parameters.AddWithValue("@RECENT_WORDS_COUNT", reWCount);
+
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                int rs = command.ExecuteNonQuery();
+                //Su dung reader de doc tung dong du lieu
+                //va thuc hien thao tac xu ly mong muon voi du lieu doc len
+                if (rs != 1)
+                {
+                    throw new Exception("Failed Query");
+                }
+            }
+            catch (InvalidCastException)
             {
                 //xu ly khi ket noi co van de
                 MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
@@ -113,14 +153,52 @@ namespace VocabularyUp
             {
                 if (username == "")
                 {
-                    MessageBox.Show("Email can not be empty", "Warning");
+                    MessageBox.Show("Username can not be empty", "Notification");
                 }
                 else
                 {
-                    MessageBox.Show("Password can not be empty", "Warning");
+                    MessageBox.Show("Password can not be empty", "Notification");
                 }
                 return false;
             }
+
+            return true;
+        }
+
+
+       static bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool CheckSignUpIfValid(string username, string email, string password, string rePassword)
+        {
+            if (username == "" || email == "" || password == "" || rePassword == "")
+            {
+                if (username == "")
+                    MessageBox.Show("Username can not be empty", "Notification");
+                else if (email == "")
+                    MessageBox.Show("Email can not be empty", "Notification");
+                else if (rePassword == "")
+                    MessageBox.Show("Re-password can not be empty", "Notification");
+                else
+                    MessageBox.Show("Password can not be empty", "Notification");
+                return false;
+            }
+            else if (!IsValidEmail(email))
+            {
+                MessageBox.Show("Email is not valid", "Notification");
+                return false;
+            }
+                
 
             return true;
         }
@@ -128,24 +206,46 @@ namespace VocabularyUp
 
 
         // SIGN UP
-        public static bool CheckSignUp(string username, string password, string rePassword)
+        public static bool CheckSignUp(string username, string email, string password, string rePassword)
         {
             foreach (var u in users)
             {
                 // Nếu trùng username thì không cho đăng ký
-                if (u.Username == username || password != rePassword)
+                if (u.Username == username  || u.Email == email)
+                {
+                    MessageBox.Show("Username or Email has existed", "Notification");
                     return false;
+                }
+                else if (password != rePassword)
+                {
+                    MessageBox.Show("Password is not match Repassword", "Notification");
+                    return false;
+                }
+                    
             }
 
             // Không trùng thì cho đăng ký
             return true;
         } 
 
-        public static void AddUser(string username, string password)
+        public static void AddUser(string username, string email, string password)
         {
             numOfUser = GetNumberOfUser();
-            users.Add(new User(numOfUser, username, password));
             numOfUser++;
+            users.Add(new User(numOfUser, username, email, password, DateTime.Now, 0, 0, 0));
+            AddSingleUserToDatabase(username, password);
+            AddUserInfoToDatabase(email, DateTime.Now, 0, 0, 0);
+        }
+
+        // Cải tiến thuật toán bằng bảng băm
+        public static int GetUserID(string username)
+        {
+            foreach (var user in users)
+            {
+                if (user.Username == username)
+                    return user.IdUser;
+            }
+            return -1;
         }
         // 
 
@@ -169,20 +269,9 @@ namespace VocabularyUp
             return sBuilder.ToString();
         }
 
-        public static bool VerifyMd5HashWithMySecurityAlgo(MD5 md5Hash, string input, string hash)
+        public static string EncryptPassword(string password)
         {
-            // Hash the input.  
-            string hashOfInput = GetMd5HashWithMySecurityAlgo(md5Hash, input);
-            // Create a StringComparer an compare the hashes.  
-            StringComparer comparer = StringComparer.OrdinalIgnoreCase;
-            if (0 == comparer.Compare(hashOfInput, hash))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return GetMd5HashWithMySecurityAlgo(md5Hash, password);
         }
         // 
     }

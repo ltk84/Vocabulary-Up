@@ -40,3 +40,4 @@ D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\Vocab
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.CopyComplete
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.pdb
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.UserAccessForm.resources

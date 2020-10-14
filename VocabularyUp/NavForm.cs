@@ -15,15 +15,20 @@ namespace VocabularyUp
         MainForm mainTab = new MainForm();
         ReviseForm reviseTab = new ReviseForm();
         StatisticsForm statisticsTab = new StatisticsForm();
-        public NavForm()
+        UserAccessForm userAccess = new UserAccessForm();
+        int currentID;
+        public NavForm(UserAccessForm userAccess, int currentID)
         {
+            this.userAccess = userAccess;
+            this.currentID = currentID;
             InitializeComponent();
             ToMainTab();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            userAccess.Show();
+            this.Close();
         }
 
         private void ToMainTab()
