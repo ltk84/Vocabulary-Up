@@ -30,7 +30,9 @@ namespace LoginForm
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             pnSignup.Visible = true;
+            pnLogin.Visible = false;
             guna2Transition1.ShowSync(pnSignup);
+            this.AcceptButton = this.btCreate;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -41,7 +43,9 @@ namespace LoginForm
         private void label6_Click(object sender, EventArgs e)
         {
             pnSignup.Visible = false;
+            pnLogin.Visible = true;
             guna2Transition1.HideSync(pnSignup);
+            this.AcceptButton = this.btLogin;
         }
 
         private void btCreate_Click(object sender, EventArgs e)

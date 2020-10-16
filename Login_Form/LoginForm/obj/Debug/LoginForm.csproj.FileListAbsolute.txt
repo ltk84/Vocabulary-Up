@@ -10,3 +10,14 @@ C:\Users\Admin\Desktop\ToDoList\LoginForm\LoginForm\obj\Debug\LoginForm.csproj.C
 C:\Users\Admin\Desktop\ToDoList\LoginForm\LoginForm\obj\Debug\LoginForm.csproj.CopyComplete
 C:\Users\Admin\Desktop\ToDoList\LoginForm\LoginForm\obj\Debug\LoginForm.exe
 C:\Users\Admin\Desktop\ToDoList\LoginForm\LoginForm\obj\Debug\LoginForm.pdb
+D:\UIT\LTTQ\Dự án\LoginForm\LoginForm\bin\Debug\LoginForm.exe.config
+D:\UIT\LTTQ\Dự án\LoginForm\LoginForm\bin\Debug\LoginForm.exe
+D:\UIT\LTTQ\Dự án\LoginForm\LoginForm\bin\Debug\LoginForm.pdb
+D:\UIT\LTTQ\Dự án\LoginForm\LoginForm\obj\Debug\LoginForm.csprojAssemblyReference.cache
+D:\UIT\LTTQ\Dự án\LoginForm\LoginForm\obj\Debug\LoginForm.Login.resources
+D:\UIT\LTTQ\Dự án\LoginForm\LoginForm\obj\Debug\LoginForm.Properties.Resources.resources
+D:\UIT\LTTQ\Dự án\LoginForm\LoginForm\obj\Debug\LoginForm.csproj.GenerateResource.cache
+D:\UIT\LTTQ\Dự án\LoginForm\LoginForm\obj\Debug\LoginForm.csproj.CoreCompileInputs.cache
+D:\UIT\LTTQ\Dự án\LoginForm\LoginForm\obj\Debug\LoginForm.csproj.CopyComplete
+D:\UIT\LTTQ\Dự án\LoginForm\LoginForm\obj\Debug\LoginForm.exe
+D:\UIT\LTTQ\Dự án\LoginForm\LoginForm\obj\Debug\LoginForm.pdb
