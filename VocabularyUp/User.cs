@@ -39,5 +39,6 @@ namespace VocabularyUp
         public int TotalWord { get => totalWord; set => totalWord = value; }
         public int HighestWordsCount { get => highestWordsCount; set => highestWordsCount = value; }
         public int RecentWordsCount { get => recentWordsCount; set => recentWordsCount = value; }
+        public List<FlashCard> ReFlashCard { get => reFlashCard; set => reFlashCard = value; }
     }
 }

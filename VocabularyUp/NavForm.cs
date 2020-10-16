@@ -12,16 +12,21 @@ namespace VocabularyUp
 {
     public partial class NavForm : Form
     {
+        int flag = 1;
         MainForm mainTab = new MainForm();
+        FlashCard curMainFl = null;
+        FlashCard curReviseFl = null;
         ReviseForm reviseTab = new ReviseForm();
         StatisticsForm statisticsTab = new StatisticsForm();
-        UserAccessForm userAccess = new UserAccessForm();
+        UserAccessForm userAccess;
         int currentID;
         public NavForm(UserAccessForm userAccess, int currentID)
         {
             this.userAccess = userAccess;
             this.currentID = currentID;
             InitializeComponent();
+            ManageUserAction.UpdateUserInfo(currentID);
+            ManageUserAction.UpdateMainFlashCard(currentID);
             ToMainTab();
         }
 
@@ -38,6 +43,7 @@ namespace VocabularyUp
             pnlTab.Controls.Add(mainTab);
             mainTab.FormBorderStyle = FormBorderStyle.None;
             mainTab.Show();
+            flag = 1;
         }
 
         private void btnRevise_Click(object sender, EventArgs e)
@@ -52,6 +58,7 @@ namespace VocabularyUp
             pnlTab.Controls.Add(reviseTab);
             reviseTab.FormBorderStyle = FormBorderStyle.None;
             reviseTab.Show();
+            flag = 2;
         }
 
         private void btnMain_Click(object sender, EventArgs e)
@@ -67,11 +74,62 @@ namespace VocabularyUp
             statisticsTab.FormBorderStyle = FormBorderStyle.None;
             //statisticsTab.Dock = DockStyle.Fill;
             statisticsTab.Show();
+            flag = 3;
         }
 
         private void btnStatistics_Click(object sender, EventArgs e)
         {
             ToStatisticsTab();
+        }
+
+        private void NextFlashCard()
+        {
+            if (flag == 1)
+            {
+                FlashCard tempt = ManageUserAction.RandomMainFlashCard();
+                while (tempt == curMainFl)
+                {
+                    tempt = ManageUserAction.RandomMainFlashCard();
+                }
+                curMainFl = tempt;
+                mainTab.ChangeLabelMain(curMainFl.Eng);
+            }
+            else if (flag == 2)
+            {
+                FlashCard tempt = ManageUserAction.RandomReviseFlashCard();
+                while (tempt == curReviseFl)
+                {
+                    tempt = ManageUserAction.RandomReviseFlashCard();
+                }
+                curReviseFl = tempt;
+                reviseTab.ChangeLabelRevise(curReviseFl.Eng);
+            }
+        }
+
+        private void btnRight_Click(object sender, EventArgs e)
+        {
+            if (curMainFl != null)
+            {
+                if (flag == 1 && curMainFl.IdCard != -1)
+                {
+                    ManageUserAction.RemoveMain(curMainFl);
+                    ManageUserAction.AddRevise(curMainFl);
+                }
+            }
+            NextFlashCard();
+        }
+
+        private void btnLeft_Click(object sender, EventArgs e)
+        {
+            if (curReviseFl != null)
+            {
+                if (flag == 2 && curReviseFl.IdCard != -1)
+                {
+                    ManageUserAction.RemoveRevise(curReviseFl);
+                    ManageUserAction.AddMain(curReviseFl);
+                }
+            }
+            NextFlashCard();
         }
     }
 }

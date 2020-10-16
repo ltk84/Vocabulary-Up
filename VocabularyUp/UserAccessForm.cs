@@ -25,6 +25,7 @@ namespace VocabularyUp
         {
             pnlSignup.Visible = true;
             transitionPanel.ShowSync(pnlSignup);
+            ClearTextBox();
         }
 
         
@@ -33,6 +34,7 @@ namespace VocabularyUp
         {
             pnlSignup.Visible = false;
             transitionPanel.HideSync(pnlSignup);
+            ClearTextBox();
         }
 
         private void btnCreateAccount_SignUp_Click(object sender, EventArgs e)
@@ -78,9 +80,12 @@ namespace VocabularyUp
         
         private void ToNavTab(int currentID)
         {
+            pnlSignup.Visible = false;
+            transitionPanel.HideSync(pnlSignup);
             NavForm navTab = new NavForm(this, currentID);
             navTab.Show();
             this.Hide();
+            ClearTextBox();
         }
 
         private void txtEmail_SignUp_KeyDown(object sender, KeyEventArgs e)
@@ -89,6 +94,16 @@ namespace VocabularyUp
             {
                 SendKeys.Send("{TAB}");
             }
+        }
+
+        public void ClearTextBox()
+        {
+            txtEmail_SignUp.Text = "";
+            txtPassword_Login.Text = "";
+            txtPassword_SignUp.Text = "";
+            txtRePassword_SignUp.Text = "";
+            txtUsename_Login.Text = "";
+            txtUsername_SignUp.Text = "";
         }
     }
 }

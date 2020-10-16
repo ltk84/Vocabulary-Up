@@ -16,5 +16,11 @@ namespace VocabularyUp
         {
             InitializeComponent();
         }
+
+        public void ChangeLabelMain(string content)
+        {
+            lbMain.Text = content;
+        }
+
     }
 }

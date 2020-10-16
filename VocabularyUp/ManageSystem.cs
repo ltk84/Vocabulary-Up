@@ -41,7 +41,6 @@ namespace VocabularyUp
                 if (reader.Read() == false) break;
                 User u = new User(reader.GetByte(0), reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetDateTime(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8));
                 users.Add(u);
-
             }
             numOfUser = users.Count();
         }
@@ -274,5 +273,11 @@ namespace VocabularyUp
             return GetMd5HashWithMySecurityAlgo(md5Hash, password);
         }
         // 
+
+
+        public static User GetUserInfo(int idUser)
+        {
+            return users[idUser];
+        }
     }
 }

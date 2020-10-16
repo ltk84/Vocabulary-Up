@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="FlashCard.cs" />
     <Compile Include="ManageSystem.cs" />
+    <Compile Include="ManageUserAction.cs" />
     <Compile Include="NavForm.cs">
       <SubType>Form</SubType>
     </Compile>

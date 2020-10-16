@@ -201,7 +201,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.Location = new System.Drawing.Point(236, 66);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(326, 392);
@@ -212,7 +212,7 @@
             this.guna2Panel2.Controls.Add(this.btnCustomize);
             this.guna2Panel2.Controls.Add(this.btnCategorize);
             this.guna2Panel2.Location = new System.Drawing.Point(236, 473);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.Size = new System.Drawing.Size(326, 26);
@@ -262,7 +262,7 @@
             // 
             this.pnlTab.BorderRadius = 20;
             this.pnlTab.Location = new System.Drawing.Point(236, 68);
-            this.pnlTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTab.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
             this.pnlTab.Size = new System.Drawing.Size(326, 389);
@@ -285,6 +285,7 @@
             this.btnRight.ShadowDecoration.Parent = this.btnRight;
             this.btnRight.Size = new System.Drawing.Size(227, 500);
             this.btnRight.TabIndex = 8;
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
             // btnLeft
             // 
@@ -304,6 +305,7 @@
             this.btnLeft.ShadowDecoration.Parent = this.btnLeft;
             this.btnLeft.Size = new System.Drawing.Size(227, 500);
             this.btnLeft.TabIndex = 7;
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
             // elipseForm
             // 
