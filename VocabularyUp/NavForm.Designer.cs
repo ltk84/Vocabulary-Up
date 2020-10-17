@@ -47,13 +47,18 @@
             this.btnRight = new Guna.UI2.WinForms.Guna2Button();
             this.btnLeft = new Guna.UI2.WinForms.Guna2Button();
             this.elipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.pbIconNav = new System.Windows.Forms.PictureBox();
+            this.lbTitleNav = new System.Windows.Forms.Label();
             this.barTop.SuspendLayout();
             this.navPanel.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIconNav)).BeginInit();
             this.SuspendLayout();
             // 
             // barTop
             // 
+            this.barTop.Controls.Add(this.lbTitleNav);
+            this.barTop.Controls.Add(this.pbIconNav);
             this.barTop.Controls.Add(this.btnHide);
             this.barTop.Controls.Add(this.btnFullScr);
             this.barTop.Controls.Add(this.btnExit);
@@ -85,6 +90,7 @@
             this.btnHide.ShadowDecoration.Parent = this.btnHide;
             this.btnHide.Size = new System.Drawing.Size(33, 28);
             this.btnHide.TabIndex = 2;
+            this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
             // 
             // btnFullScr
             // 
@@ -104,6 +110,7 @@
             this.btnFullScr.ShadowDecoration.Parent = this.btnFullScr;
             this.btnFullScr.Size = new System.Drawing.Size(33, 28);
             this.btnFullScr.TabIndex = 1;
+            this.btnFullScr.Click += new System.EventHandler(this.btnFullScr_Click);
             // 
             // btnExit
             // 
@@ -312,6 +319,30 @@
             this.elipseForm.BorderRadius = 20;
             this.elipseForm.TargetControl = this;
             // 
+            // pbIconNav
+            // 
+            this.pbIconNav.BackColor = System.Drawing.Color.Transparent;
+            this.pbIconNav.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbIconNav.BackgroundImage")));
+            this.pbIconNav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pbIconNav.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbIconNav.Location = new System.Drawing.Point(0, 0);
+            this.pbIconNav.Name = "pbIconNav";
+            this.pbIconNav.Size = new System.Drawing.Size(39, 28);
+            this.pbIconNav.TabIndex = 3;
+            this.pbIconNav.TabStop = false;
+            // 
+            // lbTitleNav
+            // 
+            this.lbTitleNav.AutoSize = true;
+            this.lbTitleNav.BackColor = System.Drawing.Color.Transparent;
+            this.lbTitleNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitleNav.ForeColor = System.Drawing.Color.White;
+            this.lbTitleNav.Location = new System.Drawing.Point(45, 6);
+            this.lbTitleNav.Name = "lbTitleNav";
+            this.lbTitleNav.Size = new System.Drawing.Size(111, 16);
+            this.lbTitleNav.TabIndex = 4;
+            this.lbTitleNav.Text = "Vocabulary Up";
+            // 
             // NavForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,11 +357,14 @@
             this.Controls.Add(this.btnLeft);
             this.Controls.Add(this.barTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NavForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.barTop.ResumeLayout(false);
+            this.barTop.PerformLayout();
             this.navPanel.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbIconNav)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -354,6 +388,8 @@
         private Guna.UI2.WinForms.Guna2Button btnCategorize;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlTab;
         private Guna.UI2.WinForms.Guna2Elipse elipseForm;
+        private System.Windows.Forms.PictureBox pbIconNav;
+        private System.Windows.Forms.Label lbTitleNav;
     }
 }
 

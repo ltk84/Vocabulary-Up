@@ -31,8 +31,10 @@ namespace VocabularyUp
 
         private void btnCreateAccount_Login_Click(object sender, EventArgs e)
         {
+            pnlUserLogin.Visible = false;
             pnlSignup.Visible = true;
             transitionPanel.ShowSync(pnlSignup);
+            this.AcceptButton = this.btnCreateAccount_SignUp;
             ClearTextBox();
         }
 
@@ -57,8 +59,10 @@ namespace VocabularyUp
 
         private void lbLoginAccess_SignUp_Click(object sender, EventArgs e)
         {
+            pnlUserLogin.Visible = true;
             pnlSignup.Visible = false;
             transitionPanel.HideSync(pnlSignup);
+            this.AcceptButton = this.btnCreateAccount_Login;
             ClearTextBox();
         }
 

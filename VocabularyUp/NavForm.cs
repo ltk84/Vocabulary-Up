@@ -40,6 +40,9 @@ namespace VocabularyUp
         private void btnMain_Click(object sender, EventArgs e)
         {
             ToMainTab();
+            btnMain.Font = new Font("Microsoft Sans Serif", 9.75f, FontStyle.Bold);
+            btnRevise.Font = new Font("Microsoft Sans Serif", 9f, FontStyle.Regular);
+            btnStatistics.Font = new Font("Microsoft Sans Serif", 9f, FontStyle.Regular);
         }
         
         private void ToMainTab()
@@ -55,6 +58,9 @@ namespace VocabularyUp
         private void btnRevise_Click(object sender, EventArgs e)
         {
             ToReviseTab();
+            btnRevise.Font = new Font("Microsoft Sans Serif", 9.75f, FontStyle.Bold);
+            btnMain.Font = new Font("Microsoft Sans Serif", 9f, FontStyle.Regular);
+            btnStatistics.Font = new Font("Microsoft Sans Serif", 9f, FontStyle.Regular);
         }
 
         private void ToReviseTab()
@@ -70,6 +76,9 @@ namespace VocabularyUp
         private void btnStatistics_Click(object sender, EventArgs e)
         {
             ToStatisticsTab();
+            btnStatistics.Font = new Font("Microsoft Sans Serif", 9.75f, FontStyle.Bold);
+            btnMain.Font = new Font("Microsoft Sans Serif", 9f, FontStyle.Regular);
+            btnRevise.Font = new Font("Microsoft Sans Serif", 9f, FontStyle.Regular);
         }
 
         private void ToStatisticsTab()
@@ -138,6 +147,20 @@ namespace VocabularyUp
         {
             userAccess.Show();
             this.Close();
+        }
+
+        private void btnFullScr_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+                this.WindowState = FormWindowState.Normal;
+            else
+                this.WindowState = FormWindowState.Maximized;
+
+        }
+
+        private void btnHide_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
