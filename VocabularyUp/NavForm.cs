@@ -13,29 +13,35 @@ namespace VocabularyUp
     public partial class NavForm : Form
     {
         int flag = 1;
-        MainForm mainTab = new MainForm();
         FlashCard curMainFl = null;
         FlashCard curReviseFl = null;
+        MainForm mainTab = new MainForm();
         ReviseForm reviseTab = new ReviseForm();
         StatisticsForm statisticsTab = new StatisticsForm();
         UserAccessForm userAccess;
         int currentID;
+
         public NavForm(UserAccessForm userAccess, int currentID)
         {
             this.userAccess = userAccess;
             this.currentID = currentID;
             InitializeComponent();
+
+            // Update UserID và Connect đến database để load ReFlashCard của User 
             ManageUserAction.UpdateUserInfo(currentID);
+
+            // Connect đến database để load MainFlashCard
             ManageUserAction.UpdateMainFlashCard(currentID);
+
+            // Chuyển đến MainTab
             ToMainTab();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void btnMain_Click(object sender, EventArgs e)
         {
-            userAccess.Show();
-            this.Close();
+            ToMainTab();
         }
-
+        
         private void ToMainTab()
         {
             mainTab.TopLevel = false;
@@ -60,10 +66,10 @@ namespace VocabularyUp
             reviseTab.Show();
             flag = 2;
         }
-
-        private void btnMain_Click(object sender, EventArgs e)
+        
+        private void btnStatistics_Click(object sender, EventArgs e)
         {
-            ToMainTab();
+            ToStatisticsTab();
         }
 
         private void ToStatisticsTab()
@@ -77,11 +83,7 @@ namespace VocabularyUp
             flag = 3;
         }
 
-        private void btnStatistics_Click(object sender, EventArgs e)
-        {
-            ToStatisticsTab();
-        }
-
+        // LOAD FLASHCARD TIẾP THEO
         private void NextFlashCard()
         {
             if (flag == 1)
@@ -130,6 +132,12 @@ namespace VocabularyUp
                 }
             }
             NextFlashCard();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            userAccess.Show();
+            this.Close();
         }
     }
 }

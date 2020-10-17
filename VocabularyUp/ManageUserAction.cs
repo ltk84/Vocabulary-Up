@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,9 @@ namespace VocabularyUp
     {
         private static User currentUser;
         private static List<FlashCard> mainFlashCard = new List<FlashCard>();
-        private static string constr = @"Server=DESKTOP-GNVB183;Database=VOCAB_UP;User Id=sa;Password=123456789;";
+        private static string constr = @ConfigurationManager.AppSettings.Get("connectString");
 
-      
+        // CONNECT ĐẾN DATABASE ĐỂ LOAD REVISE FLASHCARD
         public static void UpdateReFlashCard(int idUser)
         {
             SqlConnection connection = new SqlConnection(constr);
@@ -27,7 +28,6 @@ namespace VocabularyUp
                 //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
     
-
                 //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -51,12 +51,14 @@ namespace VocabularyUp
             }
         }
 
+        // LẤY ID USER VÀ UPDATE REVISE FLASHCARD 
         public static void UpdateUserInfo(int idUser)
         {
             currentUser = ManageSystem.GetUserInfo(idUser-1);
             UpdateReFlashCard(idUser);
         }
 
+        // CONNECT ĐẾN DATABASE ĐỂ LOAD MAIN FLASHCARD
         public static void UpdateMainFlashCard(int idUser)
         {
             SqlConnection connection = new SqlConnection(constr);
@@ -93,11 +95,12 @@ namespace VocabularyUp
             }
         }
 
+        // TẠO 1 RANDOM FLASHCARD TRONG MAINFLASHCARD
         public static FlashCard RandomMainFlashCard()
         {
             if (mainFlashCard.Count == 0)
             {
-                FlashCard phaDaoFl = new FlashCard(-1, "Congratulations", "Chuc mung", "may thang roi do", "", "", "", "");
+                FlashCard phaDaoFl = new FlashCard(-1, "Welcome !", "Chao mung !", "Chao mung den voi Vocalbulary Up !", "", "", "", "");
                 return phaDaoFl;
             }
             var rd = new Random();
@@ -105,11 +108,12 @@ namespace VocabularyUp
             return mainFlashCard[i];
         }
 
+        // TẠO 1 RANDOM FLASHCARD TRONG REVISEFLASHCARD
         public static FlashCard RandomReviseFlashCard()
         {
             if (currentUser.ReFlashCard.Count == 0)
             {
-                FlashCard phaDaoFl = new FlashCard(-1, "Learn more baby", "Chuc mung", "may thang roi do", "", "", "", "");
+                FlashCard phaDaoFl = new FlashCard(-1, "Welcome !", "Chao mung !", "Chao mung den voi Vocalbulary Up !", "", "", "", "");
                 return phaDaoFl;
             }
             var rd = new Random();
@@ -143,6 +147,7 @@ namespace VocabularyUp
             DeleteFromDB(fl);
         }
 
+        // INSERT FLASHCARD VÀO DATABASE
         public static void InsertIntoDB(FlashCard fl)
         {
             SqlConnection connection = new SqlConnection(constr);
@@ -178,6 +183,7 @@ namespace VocabularyUp
             }
         }
         
+        // REMOVE FLASHCARD KHỎI DATABASE
         public static void DeleteFromDB(FlashCard fl)
         {
             SqlConnection connection = new SqlConnection(constr);

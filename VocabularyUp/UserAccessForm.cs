@@ -19,27 +19,21 @@ namespace VocabularyUp
             ManageSystem.ConnectDatabase();
         }
 
-        
+        public void ClearTextBox()
+        {
+            txtEmail_SignUp.Text = "";
+            txtPassword_Login.Text = "";
+            txtPassword_SignUp.Text = "";
+            txtRePassword_SignUp.Text = "";
+            txtUsename_Login.Text = "";
+            txtUsername_SignUp.Text = "";
+        }
 
         private void btnCreateAccount_Login_Click(object sender, EventArgs e)
         {
             pnlSignup.Visible = true;
             transitionPanel.ShowSync(pnlSignup);
             ClearTextBox();
-        }
-
-        
-
-        private void lbLoginAccess_SignUp_Click(object sender, EventArgs e)
-        {
-            pnlSignup.Visible = false;
-            transitionPanel.HideSync(pnlSignup);
-            ClearTextBox();
-        }
-
-        private void btnCreateAccount_SignUp_Click(object sender, EventArgs e)
-        {
-            SignUp();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -59,6 +53,18 @@ namespace VocabularyUp
             }
             else
                 return;
+        }
+
+        private void lbLoginAccess_SignUp_Click(object sender, EventArgs e)
+        {
+            pnlSignup.Visible = false;
+            transitionPanel.HideSync(pnlSignup);
+            ClearTextBox();
+        }
+
+        private void btnCreateAccount_SignUp_Click(object sender, EventArgs e)
+        {
+            SignUp();
         }
 
         private void SignUp()
@@ -94,16 +100,6 @@ namespace VocabularyUp
             {
                 SendKeys.Send("{TAB}");
             }
-        }
-
-        public void ClearTextBox()
-        {
-            txtEmail_SignUp.Text = "";
-            txtPassword_Login.Text = "";
-            txtPassword_SignUp.Text = "";
-            txtRePassword_SignUp.Text = "";
-            txtUsename_Login.Text = "";
-            txtUsername_SignUp.Text = "";
         }
     }
 }

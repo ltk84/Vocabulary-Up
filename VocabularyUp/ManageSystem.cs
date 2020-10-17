@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography;
@@ -14,15 +15,11 @@ namespace VocabularyUp
         private static List<User> users = new List<User>();
         private static int numOfUser;
         private static MD5 md5Hash = MD5.Create();
+        private static String connString = @ConfigurationManager.AppSettings.Get("connectString");
 
-
-
-        // DATABASE
+        //KẾT NỐI VỚI DATABASE
         public static void ConnectDatabase()
         {
-            //xac dinh duong dan den database 
-            String connString = @"Server=DESKTOP-GNVB183;Database=VOCAB_UP;User Id=sa;Password=123456789;";
-
             //ket noi csdl bang Sqlconnection 
             SqlConnection connection = new SqlConnection(connString);
             connection.Open();
@@ -45,11 +42,10 @@ namespace VocabularyUp
             numOfUser = users.Count();
         }
 
-
+        // THÊM THÔNG TIN CỦA USER VÀO TRONG DATABASE
         public static void AddSingleUserToDatabase(string username, string password)
         {
-            string constr = @"Server=DESKTOP-GNVB183;Database=VOCAB_UP;User Id=sa;Password=123456789;";
-            SqlConnection connection = new SqlConnection(constr);
+            SqlConnection connection = new SqlConnection(connString);
             try
             {
                 //Mo ket noi
@@ -82,10 +78,10 @@ namespace VocabularyUp
             }
         }
 
+        // THÊM NHỮNG THÔNG TIN PHỤ CỦA USER VÀO TRONG DATABASE
         public static void AddUserInfoToDatabase(string email, DateTime beginDate, int totalWord, int hiWCount, int reWCount)
         {
-            string constr = @"Server=DESKTOP-GNVB183;Database=VOCAB_UP;User Id=sa;Password=123456789;";
-            SqlConnection connection = new SqlConnection(constr);
+            SqlConnection connection = new SqlConnection(connString);
             try
             {
                 //Mo ket noi
@@ -122,10 +118,7 @@ namespace VocabularyUp
             }
         }
 
-        //
-
-
-        // SIGN IN
+        // KIỂM TRA ĐĂNG NHẬP 
         public static bool CheckSignIn(string username, string password)
         {
             foreach (var u in users)
@@ -141,11 +134,13 @@ namespace VocabularyUp
             return false;
         }
 
+        // LẤY SỐ USER TRONG MẢNG
         public static int GetNumberOfUser()
         {
             return users.Count();
         }
 
+        // KIÊM TRA HỢP LỆ KHI ĐĂNG NHẬP
         public static bool CheckLoginIfValid(string username, string password)
         {
             if (username == "" || password == "")
@@ -164,7 +159,7 @@ namespace VocabularyUp
             return true;
         }
 
-
+        // KIỂM TRA HỢP LỆ EMAIL
        static bool IsValidEmail(string email)
         {
             try
@@ -178,6 +173,29 @@ namespace VocabularyUp
             }
         }
 
+        // KIỂM TRA ĐĂNG KÝ
+        public static bool CheckSignUp(string username, string email, string password, string rePassword)
+        {
+            foreach (var u in users)
+            {
+                // Nếu trùng username thì không cho đăng ký
+                if (u.Username == username  || u.Email == email)
+                {
+                    MessageBox.Show("Username or Email has existed", "Notification");
+                    return false;
+                }
+                else if (password != rePassword)
+                {
+                    MessageBox.Show("Password is not match Repassword", "Notification");
+                    return false;
+                }
+            }
+
+            // Không trùng thì cho đăng ký
+            return true;
+        }
+
+        // KIỂM TRA HỢP LỆ ĐĂNG KÝ
         public static bool CheckSignUpIfValid(string username, string email, string password, string rePassword)
         {
             if (username == "" || email == "" || password == "" || rePassword == "")
@@ -197,36 +215,11 @@ namespace VocabularyUp
                 MessageBox.Show("Email is not valid", "Notification");
                 return false;
             }
-                
 
             return true;
         }
-        //
 
-
-        // SIGN UP
-        public static bool CheckSignUp(string username, string email, string password, string rePassword)
-        {
-            foreach (var u in users)
-            {
-                // Nếu trùng username thì không cho đăng ký
-                if (u.Username == username  || u.Email == email)
-                {
-                    MessageBox.Show("Username or Email has existed", "Notification");
-                    return false;
-                }
-                else if (password != rePassword)
-                {
-                    MessageBox.Show("Password is not match Repassword", "Notification");
-                    return false;
-                }
-                    
-            }
-
-            // Không trùng thì cho đăng ký
-            return true;
-        } 
-
+        // THÊM USER (THÔNG TIN ĐẦY ĐỦ) VÀO MẢNG VÀ DATABASE
         public static void AddUser(string username, string email, string password)
         {
             numOfUser = GetNumberOfUser();
@@ -236,7 +229,8 @@ namespace VocabularyUp
             AddUserInfoToDatabase(email, DateTime.Now, 0, 0, 0);
         }
 
-        // Cải tiến thuật toán bằng bảng băm
+        
+        // LẤY ID CỦA USER THÔNG QUA USERNAME
         public static int GetUserID(string username)
         {
             foreach (var user in users)
@@ -245,12 +239,10 @@ namespace VocabularyUp
                     return user.IdUser;
             }
             return -1;
+            // Cải tiến thuật toán bằng bảng băm
         }
-        // 
 
-
-
-        // ENCRYPT PASSWORD
+        // MÃ HÓA PASSWORD
         public static string GetMd5HashWithMySecurityAlgo(MD5 md5Hash, string input)
         {
             // Convert the input string to a byte array and compute the hash.  
@@ -272,9 +264,8 @@ namespace VocabularyUp
         {
             return GetMd5HashWithMySecurityAlgo(md5Hash, password);
         }
-        // 
 
-
+        // LẤY THÔNG TIN CỦA USER THÔNG QUA ID
         public static User GetUserInfo(int idUser)
         {
             return users[idUser];
