@@ -100,7 +100,7 @@ namespace VocabularyUp
         {
             if (mainFlashCard.Count == 0)
             {
-                FlashCard phaDaoFl = new FlashCard(-1, "Welcome !", "Chao mung !", "Chao mung den voi Vocalbulary Up !", "", "", "");
+                FlashCard phaDaoFl = new FlashCard(-1, "I love you", "Anh yêu em!", "Thật đó!", "", "", "");
                 return phaDaoFl;
             }
             var rd = new Random();
@@ -113,7 +113,7 @@ namespace VocabularyUp
         {
             if (currentUser.ReFlashCard.Count == 0)
             {
-                FlashCard phaDaoFl = new FlashCard(-1, "Welcome !", "Chao mung !", "Chao mung den voi Vocalbulary Up !",  "", "", "");
+                FlashCard phaDaoFl = new FlashCard(-1, "Learn more", "Chăm chỉ lên nào!", "Có làm mới có ăn.",  "", "", "");
                 return phaDaoFl;
             }
             var rd = new Random();
