@@ -13,18 +13,16 @@ namespace VocabularyUp
         private string viet;
         private string definition;
         private string pronunciation;
-        private string imgPath;
         private string example;
         private string field;
 
-        public FlashCard(int idCard, string eng, string viet, string definition, string pronunciation, string imgPath, string example, string field)
+        public FlashCard(int idCard, string eng, string viet, string definition, string pronunciation, string example, string field)
         {
             this.idCard = idCard;
             this.eng = eng;
             this.viet = viet;
             this.definition = definition;
             this.pronunciation = pronunciation;
-            this.imgPath = imgPath;
             this.example = example;
             this.field = field;
         }
@@ -34,7 +32,6 @@ namespace VocabularyUp
         public string Viet { get => viet; set => viet = value; }
         public string Definition { get => definition; set => definition = value; }
         public string Pronunciation { get => pronunciation; set => pronunciation = value; }
-        public string ImgPath { get => imgPath; set => imgPath = value; }
         public string Example { get => example; set => example = value; }
         public string Field { get => field; set => field = value; }
     }

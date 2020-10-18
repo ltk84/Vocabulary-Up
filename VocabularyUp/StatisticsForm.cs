@@ -24,5 +24,7 @@ namespace VocabularyUp
             lbBeginDate.Text = beginDate.ToString();
             lbTotal.Text = total.ToString();
         }
+
+        //public void 
     }
 }

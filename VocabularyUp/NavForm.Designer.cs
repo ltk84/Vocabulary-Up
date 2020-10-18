@@ -76,7 +76,7 @@
             this.lbTitleNav.BackColor = System.Drawing.Color.Transparent;
             this.lbTitleNav.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitleNav.ForeColor = System.Drawing.Color.White;
-            this.lbTitleNav.Location = new System.Drawing.Point(45, 6);
+            this.lbTitleNav.Location = new System.Drawing.Point(39, 6);
             this.lbTitleNav.Name = "lbTitleNav";
             this.lbTitleNav.Size = new System.Drawing.Size(111, 16);
             this.lbTitleNav.TabIndex = 4;
@@ -108,7 +108,7 @@
             this.btnHide.Image = ((System.Drawing.Image)(resources.GetObject("btnHide.Image")));
             this.btnHide.ImageOffset = new System.Drawing.Point(1, -1);
             this.btnHide.ImageSize = new System.Drawing.Size(15, 20);
-            this.btnHide.Location = new System.Drawing.Point(706, 0);
+            this.btnHide.Location = new System.Drawing.Point(697, 0);
             this.btnHide.Name = "btnHide";
             this.btnHide.ShadowDecoration.Parent = this.btnHide;
             this.btnHide.Size = new System.Drawing.Size(33, 28);
@@ -128,11 +128,12 @@
             this.btnFullScr.HoverState.Parent = this.btnFullScr;
             this.btnFullScr.Image = ((System.Drawing.Image)(resources.GetObject("btnFullScr.Image")));
             this.btnFullScr.ImageSize = new System.Drawing.Size(19, 19);
-            this.btnFullScr.Location = new System.Drawing.Point(739, 0);
+            this.btnFullScr.Location = new System.Drawing.Point(730, 0);
             this.btnFullScr.Name = "btnFullScr";
             this.btnFullScr.ShadowDecoration.Parent = this.btnFullScr;
             this.btnFullScr.Size = new System.Drawing.Size(33, 28);
             this.btnFullScr.TabIndex = 1;
+            this.btnFullScr.Visible = false;
             this.btnFullScr.Click += new System.EventHandler(this.btnFullScr_Click);
             // 
             // btnExit
@@ -147,12 +148,12 @@
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.HoverState.Parent = this.btnExit;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.ImageOffset = new System.Drawing.Point(-1, -1);
-            this.btnExit.ImageSize = new System.Drawing.Size(18, 18);
-            this.btnExit.Location = new System.Drawing.Point(772, 0);
+            this.btnExit.ImageOffset = new System.Drawing.Point(-3, -1);
+            this.btnExit.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnExit.Location = new System.Drawing.Point(763, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(25, 28);
+            this.btnExit.Size = new System.Drawing.Size(34, 28);
             this.btnExit.TabIndex = 0;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 

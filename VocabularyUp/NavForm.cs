@@ -95,7 +95,8 @@ namespace VocabularyUp
 
         private void UpdateStatistics()
         {
-            statisticsTab.UpdateInfo(ManageSystem.GetUserInfo(currentID).Username, ManageSystem.GetUserInfo(currentID).Email, ManageSystem.GetUserInfo(currentID).BeginDate, ManageSystem.GetUserInfo(currentID).TotalWord);
+            ManageUserAction.UpdateTotalWord();
+            statisticsTab.UpdateInfo(ManageSystem.GetUserInfo(currentID-1).Username, ManageSystem.GetUserInfo(currentID-1).Email, ManageSystem.GetUserInfo(currentID-1).BeginDate, ManageSystem.GetUserInfo(currentID-1).TotalWord);
         }
 
         // LOAD FLASHCARD TIẾP THEO
