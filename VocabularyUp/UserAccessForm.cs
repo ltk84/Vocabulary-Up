@@ -90,8 +90,10 @@ namespace VocabularyUp
         
         private void ToNavTab(int currentID)
         {
+            pnlUserLogin.Visible = true;
             pnlSignup.Visible = false;
             transitionPanel.HideSync(pnlSignup);
+            this.AcceptButton = this.btnCreateAccount_Login;
             NavForm navTab = new NavForm(this, currentID);
             navTab.Show();
             this.Hide();

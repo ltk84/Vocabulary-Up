@@ -224,7 +224,7 @@ namespace VocabularyUp
         {
             numOfUser = GetNumberOfUser();
             numOfUser++;
-            users.Add(new User(numOfUser, username, email, password, DateTime.Now, 0, 0, 0));
+            users.Add(new User(numOfUser, username, password, email, DateTime.Now, 0, 0, 0));
             AddSingleUserToDatabase(username, password);
             AddUserInfoToDatabase(email, DateTime.Now, 0, 0, 0);
         }
