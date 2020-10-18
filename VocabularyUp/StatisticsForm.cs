@@ -16,5 +16,13 @@ namespace VocabularyUp
         {
             InitializeComponent();
         }
+
+        public void UpdateInfo(string name, string email, DateTime beginDate, int total)
+        {
+            lbName.Text = name;
+            lbEmail.Text = email;
+            lbBeginDate.Text = beginDate.ToString();
+            lbTotal.Text = total.ToString();
+        }
     }
 }
