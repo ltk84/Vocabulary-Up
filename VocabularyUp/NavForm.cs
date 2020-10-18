@@ -88,8 +88,14 @@ namespace VocabularyUp
             pnlTab.Controls.Add(statisticsTab);
             statisticsTab.FormBorderStyle = FormBorderStyle.None;
             //statisticsTab.Dock = DockStyle.Fill;
+            UpdateStatistics();
             statisticsTab.Show();
             flag = 3;
+        }
+
+        private void UpdateStatistics()
+        {
+            statisticsTab.UpdateInfo(ManageSystem.GetUserInfo(currentID).Username, ManageSystem.GetUserInfo(currentID).Email, ManageSystem.GetUserInfo(currentID).BeginDate, ManageSystem.GetUserInfo(currentID).TotalWord);
         }
 
         // LOAD FLASHCARD TIẾP THEO
