@@ -62,7 +62,7 @@ namespace VocabularyUp
             pnlUserLogin.Visible = true;
             pnlSignup.Visible = false;
             transitionPanel.HideSync(pnlSignup);
-            this.AcceptButton = this.btnCreateAccount_Login;
+            this.AcceptButton = this.btnLogin;
             ClearTextBox();
         }
 
@@ -98,14 +98,6 @@ namespace VocabularyUp
             navTab.Show();
             this.Hide();
             ClearTextBox();
-        }
-
-        private void txtEmail_SignUp_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Enter)
-            {
-                SendKeys.Send("{TAB}");
-            }
         }
     }
 }
