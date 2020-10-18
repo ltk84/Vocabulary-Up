@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -17,9 +18,10 @@ namespace VocabularyUp
             InitializeComponent();
         }
 
-        public void ChangeLabelRevise(string content)
+        public void ChangeLabelRevise(string content, int id)
         {
             lbRevise.Text = content;
+            pbRevise.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
         }
     }
 }

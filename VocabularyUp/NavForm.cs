@@ -103,7 +103,7 @@ namespace VocabularyUp
                     tempt = ManageUserAction.RandomMainFlashCard();
                 }
                 curMainFl = tempt;
-                mainTab.ChangeLabelMain(curMainFl.Eng);
+                mainTab.ChangeLabelMain(curMainFl.Eng, curMainFl.IdCard);
             }
             else if (flag == 2)
             {
@@ -113,7 +113,7 @@ namespace VocabularyUp
                     tempt = ManageUserAction.RandomReviseFlashCard();
                 }
                 curReviseFl = tempt;
-                reviseTab.ChangeLabelRevise(curReviseFl.Eng);
+                reviseTab.ChangeLabelRevise(curReviseFl.Eng, curReviseFl.IdCard);
             }
         }
 
@@ -161,6 +161,34 @@ namespace VocabularyUp
         private void btnHide_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void NavForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Left)
+            {
+                if (curReviseFl != null)
+                {
+                    if (flag == 2 && curReviseFl.IdCard != -1)
+                    {
+                        ManageUserAction.RemoveRevise(curReviseFl);
+                        ManageUserAction.AddMain(curReviseFl);
+                    }
+                }
+                NextFlashCard();
+            }
+            else if (e.KeyData == Keys.Right)
+            {
+                if (curMainFl != null)
+                {
+                    if (flag == 1 && curMainFl.IdCard != -1)
+                    {
+                        ManageUserAction.RemoveMain(curMainFl);
+                        ManageUserAction.AddRevise(curMainFl);
+                    }
+                }
+                NextFlashCard();
+            }
         }
     }
 }
