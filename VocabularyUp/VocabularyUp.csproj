@@ -59,6 +59,12 @@
     <Compile Include="CampaignForm.Designer.cs">
       <DependentUpon>CampaignForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Display_CampaignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Display_CampaignForm.Designer.cs">
+      <DependentUpon>Display_CampaignForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CampaignFormExt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,12 @@
     <Compile Include="CollectionForm.Designer.cs">
       <DependentUpon>CollectionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FillBlankForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FillBlankForm.Designer.cs">
+      <DependentUpon>FillBlankForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FlashCard.cs" />
     <Compile Include="LibraryForm.cs">
       <SubType>Form</SubType>
@@ -80,6 +92,12 @@
     </Compile>
     <Compile Include="ManageSystem.cs" />
     <Compile Include="ManageUserAction.cs" />
+    <Compile Include="MultipleChoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultipleChoiceForm.Designer.cs">
+      <DependentUpon>MultipleChoiceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +120,18 @@
     <Compile Include="ReviseForm.Designer.cs">
       <DependentUpon>ReviseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RevisionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RevisionForm.Designer.cs">
+      <DependentUpon>RevisionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticForm.Designer.cs">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,17 +148,26 @@
     <EmbeddedResource Include="CampaignForm.resx">
       <DependentUpon>CampaignForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Display_CampaignForm.resx">
+      <DependentUpon>Display_CampaignForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CampaignFormExt.resx">
       <DependentUpon>CampaignFormExt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CollectionForm.resx">
       <DependentUpon>CollectionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FillBlankForm.resx">
+      <DependentUpon>FillBlankForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LibraryForm.resx">
       <DependentUpon>LibraryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultipleChoiceForm.resx">
+      <DependentUpon>MultipleChoiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavForm.resx">
       <DependentUpon>NavForm.cs</DependentUpon>
@@ -145,6 +184,12 @@
     </Compile>
     <EmbeddedResource Include="ReviseForm.resx">
       <DependentUpon>ReviseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RevisionForm.resx">
+      <DependentUpon>RevisionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticForm.resx">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>

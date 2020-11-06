@@ -209,6 +209,7 @@
             this.btnStatistics.BorderRadius = 15;
             this.btnStatistics.CheckedState.Parent = this.btnStatistics;
             this.btnStatistics.CustomImages.Parent = this.btnStatistics;
+            this.btnStatistics.Enabled = false;
             this.btnStatistics.FillColor = System.Drawing.Color.White;
             this.btnStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatistics.ForeColor = System.Drawing.Color.Black;
@@ -374,7 +375,7 @@
             this.guna2TextBox1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(48, 8);
+            this.guna2TextBox1.Location = new System.Drawing.Point(72, 8);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';

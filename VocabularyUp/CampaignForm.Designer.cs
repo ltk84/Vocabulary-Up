@@ -28,142 +28,186 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CampaignForm));
-            this.pnlMainNav = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pnlLib = new System.Windows.Forms.Panel();
-            this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.btnToCollection = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlSearching = new System.Windows.Forms.Panel();
-            this.btnLeft = new Guna.UI2.WinForms.Guna2Button();
-            this.btnRight = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlMainNav.SuspendLayout();
-            this.pnlLib.SuspendLayout();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // pnlMainNav
+            // guna2Button1
             // 
-            this.pnlMainNav.BorderRadius = 20;
-            this.pnlMainNav.Controls.Add(this.pnlLib);
-            this.pnlMainNav.Controls.Add(this.btnLeft);
-            this.pnlMainNav.Controls.Add(this.btnRight);
-            this.pnlMainNav.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMainNav.Location = new System.Drawing.Point(0, 0);
-            this.pnlMainNav.Name = "pnlMainNav";
-            this.pnlMainNav.ShadowDecoration.Parent = this.pnlMainNav;
-            this.pnlMainNav.Size = new System.Drawing.Size(1000, 520);
-            this.pnlMainNav.TabIndex = 13;
+            this.guna2Button1.BorderRadius = 16;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(515, 53);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(190, 82);
+            this.guna2Button1.TabIndex = 0;
+            this.guna2Button1.Text = "Animals";
             // 
-            // pnlLib
+            // guna2Button2
             // 
-            this.pnlLib.BackColor = System.Drawing.Color.Transparent;
-            this.pnlLib.Controls.Add(this.pnlTab);
-            this.pnlLib.Controls.Add(this.btnToCollection);
-            this.pnlLib.Controls.Add(this.pnlSearching);
-            this.pnlLib.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLib.Location = new System.Drawing.Point(303, 0);
-            this.pnlLib.Name = "pnlLib";
-            this.pnlLib.Size = new System.Drawing.Size(394, 520);
-            this.pnlLib.TabIndex = 9;
+            this.guna2Button2.BorderRadius = 16;
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Location = new System.Drawing.Point(761, 53);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(190, 82);
+            this.guna2Button2.TabIndex = 1;
+            this.guna2Button2.Text = "Plants";
             // 
-            // pnlTab
+            // guna2Button3
             // 
-            this.pnlTab.BorderRadius = 20;
-            this.pnlTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTab.FillColor3 = System.Drawing.Color.Snow;
-            this.pnlTab.FillColor4 = System.Drawing.Color.Snow;
-            this.pnlTab.Location = new System.Drawing.Point(0, 45);
-            this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlTab.Name = "pnlTab";
-            this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
-            this.pnlTab.Size = new System.Drawing.Size(394, 430);
-            this.pnlTab.TabIndex = 0;
+            this.guna2Button3.BorderRadius = 16;
+            this.guna2Button3.CheckedState.Parent = this.guna2Button3;
+            this.guna2Button3.CustomImages.Parent = this.guna2Button3;
+            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.HoverState.Parent = this.guna2Button3;
+            this.guna2Button3.Location = new System.Drawing.Point(515, 163);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
+            this.guna2Button3.Size = new System.Drawing.Size(190, 82);
+            this.guna2Button3.TabIndex = 2;
+            this.guna2Button3.Text = "Fruits";
             // 
-            // btnToCollection
+            // guna2Button4
             // 
-            this.btnToCollection.BorderRadius = 15;
-            this.btnToCollection.CheckedState.Parent = this.btnToCollection;
-            this.btnToCollection.CustomImages.Parent = this.btnToCollection;
-            this.btnToCollection.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnToCollection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnToCollection.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnToCollection.ForeColor = System.Drawing.Color.White;
-            this.btnToCollection.HoverState.Parent = this.btnToCollection;
-            this.btnToCollection.Location = new System.Drawing.Point(0, 475);
-            this.btnToCollection.Name = "btnToCollection";
-            this.btnToCollection.ShadowDecoration.Parent = this.btnToCollection;
-            this.btnToCollection.Size = new System.Drawing.Size(394, 45);
-            this.btnToCollection.TabIndex = 0;
+            this.guna2Button4.BorderRadius = 16;
+            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
+            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
+            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button4.ForeColor = System.Drawing.Color.White;
+            this.guna2Button4.HoverState.Parent = this.guna2Button4;
+            this.guna2Button4.Location = new System.Drawing.Point(515, 379);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
+            this.guna2Button4.Size = new System.Drawing.Size(190, 82);
+            this.guna2Button4.TabIndex = 3;
+            this.guna2Button4.Text = "Clothing";
             // 
-            // pnlSearching
+            // guna2Button5
             // 
-            this.pnlSearching.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSearching.Location = new System.Drawing.Point(0, 0);
-            this.pnlSearching.Name = "pnlSearching";
-            this.pnlSearching.Size = new System.Drawing.Size(394, 45);
-            this.pnlSearching.TabIndex = 0;
+            this.guna2Button5.BorderRadius = 16;
+            this.guna2Button5.CheckedState.Parent = this.guna2Button5;
+            this.guna2Button5.CustomImages.Parent = this.guna2Button5;
+            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button5.ForeColor = System.Drawing.Color.White;
+            this.guna2Button5.HoverState.Parent = this.guna2Button5;
+            this.guna2Button5.Location = new System.Drawing.Point(761, 163);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
+            this.guna2Button5.Size = new System.Drawing.Size(190, 82);
+            this.guna2Button5.TabIndex = 4;
+            this.guna2Button5.Text = "Hobbies";
             // 
-            // btnLeft
+            // guna2Button6
             // 
-            this.btnLeft.BackColor = System.Drawing.Color.Transparent;
-            this.btnLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnLeft.CheckedState.Parent = this.btnLeft;
-            this.btnLeft.CustomImages.Parent = this.btnLeft;
-            this.btnLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnLeft.FillColor = System.Drawing.Color.Transparent;
-            this.btnLeft.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLeft.ForeColor = System.Drawing.Color.White;
-            this.btnLeft.HoverState.Parent = this.btnLeft;
-            this.btnLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft.Image")));
-            this.btnLeft.ImageSize = new System.Drawing.Size(115, 130);
-            this.btnLeft.Location = new System.Drawing.Point(0, 0);
-            this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLeft.Name = "btnLeft";
-            this.btnLeft.ShadowDecoration.Parent = this.btnLeft;
-            this.btnLeft.Size = new System.Drawing.Size(303, 520);
-            this.btnLeft.TabIndex = 7;
+            this.guna2Button6.BorderRadius = 16;
+            this.guna2Button6.CheckedState.Parent = this.guna2Button6;
+            this.guna2Button6.CustomImages.Parent = this.guna2Button6;
+            this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button6.ForeColor = System.Drawing.Color.White;
+            this.guna2Button6.HoverState.Parent = this.guna2Button6;
+            this.guna2Button6.Location = new System.Drawing.Point(761, 268);
+            this.guna2Button6.Name = "guna2Button6";
+            this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
+            this.guna2Button6.Size = new System.Drawing.Size(190, 82);
+            this.guna2Button6.TabIndex = 5;
+            this.guna2Button6.Text = "Sports";
             // 
-            // btnRight
+            // guna2Button7
             // 
-            this.btnRight.BackColor = System.Drawing.Color.Transparent;
-            this.btnRight.CheckedState.Parent = this.btnRight;
-            this.btnRight.CustomImages.Parent = this.btnRight;
-            this.btnRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnRight.FillColor = System.Drawing.Color.Transparent;
-            this.btnRight.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRight.ForeColor = System.Drawing.Color.White;
-            this.btnRight.HoverState.Parent = this.btnRight;
-            this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
-            this.btnRight.ImageSize = new System.Drawing.Size(115, 130);
-            this.btnRight.Location = new System.Drawing.Point(697, 0);
-            this.btnRight.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRight.Name = "btnRight";
-            this.btnRight.ShadowDecoration.Parent = this.btnRight;
-            this.btnRight.Size = new System.Drawing.Size(303, 520);
-            this.btnRight.TabIndex = 8;
+            this.guna2Button7.BorderRadius = 16;
+            this.guna2Button7.CheckedState.Parent = this.guna2Button7;
+            this.guna2Button7.CustomImages.Parent = this.guna2Button7;
+            this.guna2Button7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button7.ForeColor = System.Drawing.Color.White;
+            this.guna2Button7.HoverState.Parent = this.guna2Button7;
+            this.guna2Button7.Location = new System.Drawing.Point(515, 268);
+            this.guna2Button7.Name = "guna2Button7";
+            this.guna2Button7.ShadowDecoration.Parent = this.guna2Button7;
+            this.guna2Button7.Size = new System.Drawing.Size(190, 82);
+            this.guna2Button7.TabIndex = 6;
+            this.guna2Button7.Text = "Personality";
+            // 
+            // guna2Button8
+            // 
+            this.guna2Button8.BorderRadius = 16;
+            this.guna2Button8.CheckedState.Parent = this.guna2Button8;
+            this.guna2Button8.CustomImages.Parent = this.guna2Button8;
+            this.guna2Button8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button8.ForeColor = System.Drawing.Color.White;
+            this.guna2Button8.HoverState.Parent = this.guna2Button8;
+            this.guna2Button8.Location = new System.Drawing.Point(761, 379);
+            this.guna2Button8.Name = "guna2Button8";
+            this.guna2Button8.ShadowDecoration.Parent = this.guna2Button8;
+            this.guna2Button8.Size = new System.Drawing.Size(190, 82);
+            this.guna2Button8.TabIndex = 7;
+            this.guna2Button8.Text = "Technology";
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Montserrat", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(83, 111);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(332, 289);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Click to study mother fucker";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CampaignForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 520);
-            this.Controls.Add(this.pnlMainNav);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.guna2Button8);
+            this.Controls.Add(this.guna2Button7);
+            this.Controls.Add(this.guna2Button6);
+            this.Controls.Add(this.guna2Button5);
+            this.Controls.Add(this.guna2Button4);
+            this.Controls.Add(this.guna2Button3);
+            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.guna2Button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CampaignForm";
             this.Text = "CampaignForm";
-            this.pnlMainNav.ResumeLayout(false);
-            this.pnlLib.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlMainNav;
-        private System.Windows.Forms.Panel pnlLib;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlTab;
-        private Guna.UI2.WinForms.Guna2Button btnToCollection;
-        private System.Windows.Forms.Panel pnlSearching;
-        private Guna.UI2.WinForms.Guna2Button btnLeft;
-        private Guna.UI2.WinForms.Guna2Button btnRight;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2Button guna2Button7;
+        private Guna.UI2.WinForms.Guna2Button guna2Button8;
+        private System.Windows.Forms.Label label1;
     }
 }
