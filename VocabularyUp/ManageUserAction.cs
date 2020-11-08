@@ -24,7 +24,7 @@ namespace VocabularyUp
                 //Mo ket noi
                 connection.Open();
                 //Chuan bi cau lenh query viet bang SQL
-                String sqlQuery = "select fl.ID, fl.ENG, fl.VIE, fl.MEAN, fl.PRONUNCIATION, fl.EXAMPLE, fl.FIELD from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and u_fl.ID_USER = " + idUser.ToString();
+                String sqlQuery = "select fl.ID, fl.ENG, fl.VIE, fl.PRONUNCIATION, fl.FIELD from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and u_fl.ID_USER = " + idUser.ToString();
                 //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
     
@@ -35,7 +35,7 @@ namespace VocabularyUp
                 while (reader.HasRows)
                 {
                     if (reader.Read() == false) break;
-                    FlashCard fl = new FlashCard(reader.GetByte(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4),  reader.GetString(5), reader.GetString(6));
+                    FlashCard fl = new FlashCard(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
                     currentUser.ReFlashCard.Add(fl);
                 }
             }
@@ -79,7 +79,7 @@ namespace VocabularyUp
                 while (reader.HasRows)
                 {
                     if (reader.Read() == false) break;
-                    FlashCard fl = new FlashCard(reader.GetByte(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6));
+                    FlashCard fl = new FlashCard(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
                     mainFlashCard.Add(fl);
                 }
             }
@@ -100,7 +100,7 @@ namespace VocabularyUp
         {
             if (mainFlashCard.Count == 0)
             {
-                FlashCard phaDaoFl = new FlashCard(-1, "I love you", "Anh yêu em!", "Thật đó!", "", "", "");
+                FlashCard phaDaoFl = new FlashCard(-1, "I love you", "Anh yêu em!", "Thật đó!", "");
                 return phaDaoFl;
             }
             var rd = new Random();
@@ -113,7 +113,7 @@ namespace VocabularyUp
         {
             if (currentUser.ReFlashCard.Count == 0)
             {
-                FlashCard phaDaoFl = new FlashCard(-1, "Learn more", "Chăm chỉ lên nào!", "Có làm mới có ăn.",  "", "", "");
+                FlashCard phaDaoFl = new FlashCard(-1, "Learn more", "Chăm chỉ lên nào!", "Có làm mới có ăn.",  "");
                 return phaDaoFl;
             }
             var rd = new Random();

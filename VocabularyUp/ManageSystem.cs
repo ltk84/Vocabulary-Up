@@ -16,6 +16,7 @@ namespace VocabularyUp
         private static int numOfUser;
         private static MD5 md5Hash = MD5.Create();
         private static String connString = @ConfigurationManager.AppSettings.Get("connectString");
+        private static List<FlashCard> allFlashCards = new List<FlashCard>();
 
         //KẾT NỐI VỚI DATABASE
         public static void ConnectDatabase()
@@ -36,10 +37,33 @@ namespace VocabularyUp
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                User u = new User(reader.GetByte(0), reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetDateTime(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8));
+                User u = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetDateTime(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8));
                 users.Add(u);
             }
             numOfUser = users.Count();
+        }
+
+        // KHỞI TẠO THƯ VIỆN CÁC FLASHCARDS
+        public static void InitLibrary()
+        {
+            SqlConnection connection = new SqlConnection(connString);
+            connection.Open();
+
+            //Chuan bi cau lenh query viet bang SQL 
+            String sqlQuery = "select * from FLASHCARD";
+            //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+            //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+            SqlDataReader reader = command.ExecuteReader();
+
+            //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
+            while (reader.HasRows)
+            {
+                if (reader.Read() == false) break;
+                FlashCard f = new FlashCard(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
+                allFlashCards.Add(f);
+            }
         }
 
         // THÊM THÔNG TIN CỦA USER VÀO TRONG DATABASE
@@ -269,6 +293,21 @@ namespace VocabularyUp
         public static User GetUserInfo(int idUser)
         {
             return users[idUser];
+        }
+
+        public static FlashCard GetFlashCard(int index)
+        {
+            return allFlashCards[index];
+        }
+        
+        public static int CountAllFlashCards()
+        {
+            return allFlashCards.Count();
+        }
+
+        public static int SearchFlashCard(string content)
+        {
+            return allFlashCards.FindIndex(f => f.Eng == content);
         }
     }
 }
