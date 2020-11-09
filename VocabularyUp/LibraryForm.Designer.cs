@@ -31,23 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibraryForm));
             this.pnlMainNav = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlLib = new System.Windows.Forms.Panel();
-            this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlToCollection = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnToCollection = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lbMain = new System.Windows.Forms.Label();
+            this.pbMain = new System.Windows.Forms.PictureBox();
+            this.pnlDash = new System.Windows.Forms.Panel();
             this.pnlSearching = new System.Windows.Forms.Panel();
+            this.btnSearch = new Guna.UI2.WinForms.Guna2ImageButton();
             this.txtSearching = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLeft = new Guna.UI2.WinForms.Guna2Button();
             this.btnRight = new Guna.UI2.WinForms.Guna2Button();
-            this.pbMain = new System.Windows.Forms.PictureBox();
-            this.pnlMain = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.lbMain = new System.Windows.Forms.Label();
-            this.pnlDash = new System.Windows.Forms.Panel();
-            this.btnSearch = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pnlMainNav.SuspendLayout();
             this.pnlLib.SuspendLayout();
+            this.pnlToCollection.SuspendLayout();
             this.pnlTab.SuspendLayout();
-            this.pnlSearching.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
-            this.pnlMain.SuspendLayout();
+            this.pnlSearching.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMainNav
@@ -66,8 +67,8 @@
             // pnlLib
             // 
             this.pnlLib.BackColor = System.Drawing.Color.Transparent;
+            this.pnlLib.Controls.Add(this.pnlToCollection);
             this.pnlLib.Controls.Add(this.pnlTab);
-            this.pnlLib.Controls.Add(this.btnToCollection);
             this.pnlLib.Controls.Add(this.pnlSearching);
             this.pnlLib.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLib.Location = new System.Drawing.Point(303, 0);
@@ -75,35 +76,101 @@
             this.pnlLib.Size = new System.Drawing.Size(394, 520);
             this.pnlLib.TabIndex = 9;
             // 
+            // pnlToCollection
+            // 
+            this.pnlToCollection.Controls.Add(this.guna2ComboBox1);
+            this.pnlToCollection.Controls.Add(this.btnToCollection);
+            this.pnlToCollection.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlToCollection.Location = new System.Drawing.Point(0, 470);
+            this.pnlToCollection.Name = "pnlToCollection";
+            this.pnlToCollection.ShadowDecoration.Parent = this.pnlToCollection;
+            this.pnlToCollection.Size = new System.Drawing.Size(394, 50);
+            this.pnlToCollection.TabIndex = 10;
+            // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Empty;
+            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.FormattingEnabled = true;
+            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Location = new System.Drawing.Point(0, 0);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Size = new System.Drawing.Size(343, 36);
+            this.guna2ComboBox1.TabIndex = 13;
+            // 
+            // btnToCollection
+            // 
+            this.btnToCollection.BackColor = System.Drawing.Color.Transparent;
+            this.btnToCollection.BorderRadius = 15;
+            this.btnToCollection.CheckedState.Parent = this.btnToCollection;
+            this.btnToCollection.CustomImages.Parent = this.btnToCollection;
+            this.btnToCollection.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnToCollection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnToCollection.Font = new System.Drawing.Font("Montserrat Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToCollection.ForeColor = System.Drawing.Color.Black;
+            this.btnToCollection.HoverState.Parent = this.btnToCollection;
+            this.btnToCollection.Image = ((System.Drawing.Image)(resources.GetObject("btnToCollection.Image")));
+            this.btnToCollection.Location = new System.Drawing.Point(349, 0);
+            this.btnToCollection.Name = "btnToCollection";
+            this.btnToCollection.ShadowDecoration.Parent = this.btnToCollection;
+            this.btnToCollection.Size = new System.Drawing.Size(45, 50);
+            this.btnToCollection.TabIndex = 0;
+            // 
             // pnlTab
             // 
             this.pnlTab.BorderRadius = 20;
-            this.pnlTab.Controls.Add(this.pnlMain);
-            this.pnlTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTab.Controls.Add(this.lbMain);
+            this.pnlTab.Controls.Add(this.pbMain);
+            this.pnlTab.Controls.Add(this.pnlDash);
+            this.pnlTab.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTab.FillColor2 = System.Drawing.Color.LightGreen;
             this.pnlTab.FillColor3 = System.Drawing.Color.LightGreen;
             this.pnlTab.Location = new System.Drawing.Point(0, 45);
             this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
-            this.pnlTab.Size = new System.Drawing.Size(394, 430);
+            this.pnlTab.Size = new System.Drawing.Size(394, 420);
             this.pnlTab.TabIndex = 0;
             // 
-            // btnToCollection
+            // lbMain
             // 
-            this.btnToCollection.BorderRadius = 15;
-            this.btnToCollection.CheckedState.Parent = this.btnToCollection;
-            this.btnToCollection.CustomImages.Parent = this.btnToCollection;
-            this.btnToCollection.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnToCollection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnToCollection.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnToCollection.ForeColor = System.Drawing.Color.White;
-            this.btnToCollection.HoverState.Parent = this.btnToCollection;
-            this.btnToCollection.Location = new System.Drawing.Point(0, 475);
-            this.btnToCollection.Name = "btnToCollection";
-            this.btnToCollection.ShadowDecoration.Parent = this.btnToCollection;
-            this.btnToCollection.Size = new System.Drawing.Size(394, 45);
-            this.btnToCollection.TabIndex = 0;
+            this.lbMain.BackColor = System.Drawing.Color.Transparent;
+            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
+            this.lbMain.Location = new System.Drawing.Point(-3, 362);
+            this.lbMain.Name = "lbMain";
+            this.lbMain.Size = new System.Drawing.Size(394, 38);
+            this.lbMain.TabIndex = 7;
+            this.lbMain.Text = "Welcome";
+            this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbMain
+            // 
+            this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
+            this.pbMain.Location = new System.Drawing.Point(19, 21);
+            this.pbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbMain.Name = "pbMain";
+            this.pbMain.Size = new System.Drawing.Size(354, 320);
+            this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMain.TabIndex = 8;
+            this.pbMain.TabStop = false;
+            // 
+            // pnlDash
+            // 
+            this.pnlDash.BackColor = System.Drawing.Color.White;
+            this.pnlDash.Location = new System.Drawing.Point(19, 345);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlDash.Name = "pnlDash";
+            this.pnlDash.Size = new System.Drawing.Size(354, 5);
+            this.pnlDash.TabIndex = 11;
             // 
             // pnlSearching
             // 
@@ -114,6 +181,21 @@
             this.pnlSearching.Name = "pnlSearching";
             this.pnlSearching.Size = new System.Drawing.Size(394, 45);
             this.pnlSearching.TabIndex = 0;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.CheckedState.Parent = this.btnSearch;
+            this.btnSearch.HoverState.Parent = this.btnSearch;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.ImageOffset = new System.Drawing.Point(0, -2);
+            this.btnSearch.ImageSize = new System.Drawing.Size(23, 23);
+            this.btnSearch.Location = new System.Drawing.Point(324, 8);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.PressedState.Parent = this.btnSearch;
+            this.btnSearch.Size = new System.Drawing.Size(27, 31);
+            this.btnSearch.TabIndex = 10;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearching
             // 
@@ -182,69 +264,6 @@
             this.btnRight.TabIndex = 8;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
-            // pbMain
-            // 
-            this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
-            this.pbMain.Location = new System.Drawing.Point(21, 19);
-            this.pbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbMain.Name = "pbMain";
-            this.pbMain.Size = new System.Drawing.Size(354, 320);
-            this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMain.TabIndex = 8;
-            this.pbMain.TabStop = false;
-            // 
-            // pnlMain
-            // 
-            this.pnlMain.BackColor = System.Drawing.Color.Transparent;
-            this.pnlMain.BorderRadius = 20;
-            this.pnlMain.Controls.Add(this.lbMain);
-            this.pnlMain.Controls.Add(this.pbMain);
-            this.pnlMain.Controls.Add(this.pnlDash);
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.FillColor2 = System.Drawing.Color.LightGreen;
-            this.pnlMain.FillColor3 = System.Drawing.Color.LightGreen;
-            this.pnlMain.Location = new System.Drawing.Point(0, 0);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.ShadowDecoration.Parent = this.pnlMain;
-            this.pnlMain.Size = new System.Drawing.Size(394, 430);
-            this.pnlMain.TabIndex = 12;
-            // 
-            // lbMain
-            // 
-            this.lbMain.BackColor = System.Drawing.Color.Transparent;
-            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
-            this.lbMain.Location = new System.Drawing.Point(0, 373);
-            this.lbMain.Name = "lbMain";
-            this.lbMain.Size = new System.Drawing.Size(394, 38);
-            this.lbMain.TabIndex = 7;
-            this.lbMain.Text = "Welcome";
-            this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlDash
-            // 
-            this.pnlDash.BackColor = System.Drawing.Color.White;
-            this.pnlDash.Location = new System.Drawing.Point(21, 354);
-            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlDash.Name = "pnlDash";
-            this.pnlDash.Size = new System.Drawing.Size(354, 5);
-            this.pnlDash.TabIndex = 11;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.CheckedState.Parent = this.btnSearch;
-            this.btnSearch.HoverState.Parent = this.btnSearch;
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.ImageOffset = new System.Drawing.Point(0, -2);
-            this.btnSearch.ImageSize = new System.Drawing.Size(23, 23);
-            this.btnSearch.Location = new System.Drawing.Point(324, 8);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.PressedState.Parent = this.btnSearch;
-            this.btnSearch.Size = new System.Drawing.Size(27, 31);
-            this.btnSearch.TabIndex = 10;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // LibraryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -257,10 +276,10 @@
             this.Text = "LibraryForm";
             this.pnlMainNav.ResumeLayout(false);
             this.pnlLib.ResumeLayout(false);
+            this.pnlToCollection.ResumeLayout(false);
             this.pnlTab.ResumeLayout(false);
-            this.pnlSearching.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
-            this.pnlMain.ResumeLayout(false);
+            this.pnlSearching.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -275,10 +294,11 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSearching;
         private Guna.UI2.WinForms.Guna2Button btnLeft;
         private Guna.UI2.WinForms.Guna2Button btnRight;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlMain;
         private System.Windows.Forms.Label lbMain;
         private System.Windows.Forms.PictureBox pbMain;
         private System.Windows.Forms.Panel pnlDash;
         private Guna.UI2.WinForms.Guna2ImageButton btnSearch;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlToCollection;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
     }
 }

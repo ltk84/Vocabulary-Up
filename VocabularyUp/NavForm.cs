@@ -251,6 +251,12 @@ namespace VocabularyUp
 
         private void ToCampaignTab()
         {
+            dashLibraryTab.Hide();
+            dashCollectionTab.Hide();
+            dashCampaignTab.Show();
+            dashRevisionTab.Hide();
+            dashStatisticTab.Hide();
+
             campaignTab.TopLevel = false;
             pnlTab.Controls.Clear();
             pnlTab.Controls.Add(campaignTab);
@@ -260,6 +266,12 @@ namespace VocabularyUp
 
         private void ToRevisionTab()
         {
+            dashLibraryTab.Hide();
+            dashCollectionTab.Hide();
+            dashCampaignTab.Hide();
+            dashRevisionTab.Show();
+            dashStatisticTab.Hide();
+
             revisionTab.TopLevel = false;
             pnlTab.Controls.Clear();
             pnlTab.Controls.Add(revisionTab);
@@ -269,6 +281,12 @@ namespace VocabularyUp
 
         private void ToLibraryTab()
         {
+            dashLibraryTab.Show();
+            dashCollectionTab.Hide();
+            dashCampaignTab.Hide();
+            dashRevisionTab.Hide();
+            dashStatisticTab.Hide();
+
             libraryTab.TopLevel = false;
             pnlTab.Controls.Clear();
             pnlTab.Controls.Add(libraryTab);
@@ -278,6 +296,12 @@ namespace VocabularyUp
 
         private void ToCollectionTab()
         {
+            dashLibraryTab.Hide();
+            dashCollectionTab.Show();
+            dashCampaignTab.Hide();
+            dashRevisionTab.Hide();
+            dashStatisticTab.Hide();
+
             collectionTab.TopLevel = false;
             pnlTab.Controls.Clear();
             pnlTab.Controls.Add(collectionTab);
@@ -287,6 +311,12 @@ namespace VocabularyUp
 
         private void ToStatisticTab()
         {
+            dashLibraryTab.Hide();
+            dashCollectionTab.Hide();
+            dashCampaignTab.Hide();
+            dashRevisionTab.Hide();
+            dashStatisticTab.Show();
+
             statisticTab.TopLevel = false;
             pnlTab.Controls.Clear();
             pnlTab.Controls.Add(statisticTab);

@@ -57,5 +57,10 @@ namespace VocabularyUp
             curFlashCard = ManageSystem.GetFlashCard(index);
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
         }
+
+        private void LoadComboBox()
+        {
+
+        }
     }
 }

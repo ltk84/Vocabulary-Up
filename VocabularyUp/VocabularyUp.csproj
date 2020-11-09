@@ -59,6 +59,7 @@
     <Compile Include="CampaignForm.Designer.cs">
       <DependentUpon>CampaignForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Collection.cs" />
     <Compile Include="Display_CampaignForm.cs">
       <SubType>Form</SubType>
     </Compile>

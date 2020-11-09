@@ -13,7 +13,60 @@ namespace VocabularyUp
     {
         private static User currentUser;
         private static List<FlashCard> mainFlashCard = new List<FlashCard>();
+        private static List<Collection> allCollections = new List<Collection>();
         private static string constr = @ConfigurationManager.AppSettings.Get("connectString");
+
+        // Load All Connections
+        public static void InitAllCollections()
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            connection.Open();
+
+            //Chuan bi cau lenh query viet bang SQL 
+            String sqlQuery = "select ID_COLLECTION, COLLECTION_NAME from USER_FLASHCARD where ID_USER = " + currentUser.IdUser.ToString();
+            //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+            //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+            SqlDataReader reader = command.ExecuteReader();
+
+            //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
+            while (reader.HasRows)
+            {
+                if (reader.Read() == false) break;
+                List<FlashCard> a;
+       
+                Collection c = new Collection(reader.GetInt32(0), reader.GetString(1), UpdateFlashCardOfCollection(reader.GetInt32(0)));
+
+                allCollections.Add(c);
+            }
+        }
+
+        public static List<FlashCard> UpdateFlashCardOfCollection(int idCollection)
+        {
+            List<FlashCard> flashCards = new List<FlashCard>();
+
+            SqlConnection connection = new SqlConnection(constr);
+            connection.Open();
+
+            //Chuan bi cau lenh query viet bang SQL 
+            String sqlQuery = "select id_card, eng, vie, pronunciation, field from USER_FLASHCARD, flashcard where ID_USER = " + currentUser.IdUser.ToString() + " and id_collection = " + idCollection.ToString();
+            //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+            //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+            SqlDataReader reader = command.ExecuteReader();
+
+            //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
+            while (reader.HasRows)
+            {
+                if (reader.Read() == false) break;
+                FlashCard f = new FlashCard(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
+
+                flashCards.Add(f);
+            }
+            return flashCards;
+        }
 
         // CONNECT ĐẾN DATABASE ĐỂ LOAD REVISE FLASHCARD
         public static void UpdateReFlashCard(int idUser)
