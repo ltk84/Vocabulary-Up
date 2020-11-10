@@ -58,9 +58,26 @@ namespace VocabularyUp
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
         }
 
-        private void LoadComboBox()
+        public void LoadComboBox()
         {
+            cbCollection.Items.Clear();
+            for (int i = 1; i < ManageUserAction.CollectionCount(); i++)
+            {
+                cbCollection.Items.Add(ManageUserAction.GetItemOfAllCollection(i).NameCOllection);
+               
+            }
+        }
 
+        public void AddFlashCard()
+        {
+            ManageUserAction.AddFlashCardToCollection(cbCollection.SelectedIndex + 1, curFlashCard);
+            ManageUserAction.AddFlashCardToDatabase(cbCollection.SelectedIndex + 1, cbCollection.SelectedItem.ToString(), curFlashCard);
+        }
+
+        private void btnToCollection_Click(object sender, EventArgs e)
+        {
+            if (!ManageUserAction.IsFlashCardExist(cbCollection.SelectedIndex + 1, curFlashCard.IdCard) && cbCollection.SelectedIndex >= 0)
+                AddFlashCard();
         }
     }
 }

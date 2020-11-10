@@ -220,8 +220,11 @@ namespace VocabularyUp
             // Update UserID và Connect đến database để load ReFlashCard của User 
             ManageUserAction.UpdateUserInfo(currentID);
 
+            //
+            ManageUserAction.InitAllCollections();
+
             // Connect đến database để load MainFlashCard
-            ManageUserAction.UpdateMainFlashCard(currentID);
+            //ManageUserAction.UpdateMainFlashCard();
 
             // Khởi tạo Campaign Tab
             ToCampaignTab();
@@ -292,6 +295,7 @@ namespace VocabularyUp
             pnlTab.Controls.Add(libraryTab);
             libraryTab.FormBorderStyle = FormBorderStyle.None;
             libraryTab.Show();
+            libraryTab.LoadComboBox();
         }
 
         private void ToCollectionTab()
@@ -307,6 +311,7 @@ namespace VocabularyUp
             pnlTab.Controls.Add(collectionTab);
             collectionTab.FormBorderStyle = FormBorderStyle.None;
             collectionTab.Show();
+            collectionTab.LoadListView();
         }
 
         private void ToStatisticTab()

@@ -39,6 +39,11 @@
             this.dragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.elipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnlNavigation = new System.Windows.Forms.Panel();
+            this.dashStatisticTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.dashRevisionTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.dashCampaignTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.dashCollectionTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.dashLibraryTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnRevision = new Guna.UI2.WinForms.Guna2Button();
             this.btnCampaign = new Guna.UI2.WinForms.Guna2Button();
             this.btnCollection = new Guna.UI2.WinForms.Guna2Button();
@@ -47,11 +52,6 @@
             this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.dashFix2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.dashFix1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.dashLibraryTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.dashCollectionTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.dashCampaignTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.dashRevisionTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.dashStatisticTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.barTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconNav)).BeginInit();
             this.pnlNavigation.SuspendLayout();
@@ -192,6 +192,76 @@
             this.pnlNavigation.Name = "pnlNavigation";
             this.pnlNavigation.Size = new System.Drawing.Size(730, 35);
             this.pnlNavigation.TabIndex = 12;
+            // 
+            // dashStatisticTab
+            // 
+            this.dashStatisticTab.BackColor = System.Drawing.Color.Transparent;
+            this.dashStatisticTab.BorderRadius = 10;
+            this.dashStatisticTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashStatisticTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashStatisticTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashStatisticTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashStatisticTab.Location = new System.Drawing.Point(575, 28);
+            this.dashStatisticTab.Name = "dashStatisticTab";
+            this.dashStatisticTab.ShadowDecoration.Parent = this.dashStatisticTab;
+            this.dashStatisticTab.Size = new System.Drawing.Size(140, 3);
+            this.dashStatisticTab.TabIndex = 6;
+            // 
+            // dashRevisionTab
+            // 
+            this.dashRevisionTab.BackColor = System.Drawing.Color.Transparent;
+            this.dashRevisionTab.BorderRadius = 10;
+            this.dashRevisionTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashRevisionTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashRevisionTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashRevisionTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashRevisionTab.Location = new System.Drawing.Point(435, 28);
+            this.dashRevisionTab.Name = "dashRevisionTab";
+            this.dashRevisionTab.ShadowDecoration.Parent = this.dashRevisionTab;
+            this.dashRevisionTab.Size = new System.Drawing.Size(140, 3);
+            this.dashRevisionTab.TabIndex = 5;
+            // 
+            // dashCampaignTab
+            // 
+            this.dashCampaignTab.BackColor = System.Drawing.Color.Transparent;
+            this.dashCampaignTab.BorderRadius = 10;
+            this.dashCampaignTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashCampaignTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashCampaignTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashCampaignTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashCampaignTab.Location = new System.Drawing.Point(295, 28);
+            this.dashCampaignTab.Name = "dashCampaignTab";
+            this.dashCampaignTab.ShadowDecoration.Parent = this.dashCampaignTab;
+            this.dashCampaignTab.Size = new System.Drawing.Size(140, 3);
+            this.dashCampaignTab.TabIndex = 4;
+            // 
+            // dashCollectionTab
+            // 
+            this.dashCollectionTab.BackColor = System.Drawing.Color.Transparent;
+            this.dashCollectionTab.BorderRadius = 10;
+            this.dashCollectionTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashCollectionTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashCollectionTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashCollectionTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashCollectionTab.Location = new System.Drawing.Point(155, 28);
+            this.dashCollectionTab.Name = "dashCollectionTab";
+            this.dashCollectionTab.ShadowDecoration.Parent = this.dashCollectionTab;
+            this.dashCollectionTab.Size = new System.Drawing.Size(140, 3);
+            this.dashCollectionTab.TabIndex = 3;
+            // 
+            // dashLibraryTab
+            // 
+            this.dashLibraryTab.BackColor = System.Drawing.Color.Transparent;
+            this.dashLibraryTab.BorderRadius = 10;
+            this.dashLibraryTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashLibraryTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashLibraryTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashLibraryTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.dashLibraryTab.Location = new System.Drawing.Point(15, 28);
+            this.dashLibraryTab.Name = "dashLibraryTab";
+            this.dashLibraryTab.ShadowDecoration.Parent = this.dashLibraryTab;
+            this.dashLibraryTab.Size = new System.Drawing.Size(140, 3);
+            this.dashLibraryTab.TabIndex = 2;
             // 
             // btnRevision
             // 
@@ -337,76 +407,6 @@
             this.dashFix1.ShadowDecoration.Parent = this.dashFix1;
             this.dashFix1.Size = new System.Drawing.Size(780, 1);
             this.dashFix1.TabIndex = 1;
-            // 
-            // dashLibraryTab
-            // 
-            this.dashLibraryTab.BackColor = System.Drawing.Color.Transparent;
-            this.dashLibraryTab.BorderRadius = 10;
-            this.dashLibraryTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashLibraryTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashLibraryTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashLibraryTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashLibraryTab.Location = new System.Drawing.Point(15, 28);
-            this.dashLibraryTab.Name = "dashLibraryTab";
-            this.dashLibraryTab.ShadowDecoration.Parent = this.dashLibraryTab;
-            this.dashLibraryTab.Size = new System.Drawing.Size(140, 3);
-            this.dashLibraryTab.TabIndex = 2;
-            // 
-            // dashCollectionTab
-            // 
-            this.dashCollectionTab.BackColor = System.Drawing.Color.Transparent;
-            this.dashCollectionTab.BorderRadius = 10;
-            this.dashCollectionTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashCollectionTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashCollectionTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashCollectionTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashCollectionTab.Location = new System.Drawing.Point(155, 28);
-            this.dashCollectionTab.Name = "dashCollectionTab";
-            this.dashCollectionTab.ShadowDecoration.Parent = this.dashCollectionTab;
-            this.dashCollectionTab.Size = new System.Drawing.Size(140, 3);
-            this.dashCollectionTab.TabIndex = 3;
-            // 
-            // dashCampaignTab
-            // 
-            this.dashCampaignTab.BackColor = System.Drawing.Color.Transparent;
-            this.dashCampaignTab.BorderRadius = 10;
-            this.dashCampaignTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashCampaignTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashCampaignTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashCampaignTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashCampaignTab.Location = new System.Drawing.Point(295, 28);
-            this.dashCampaignTab.Name = "dashCampaignTab";
-            this.dashCampaignTab.ShadowDecoration.Parent = this.dashCampaignTab;
-            this.dashCampaignTab.Size = new System.Drawing.Size(140, 3);
-            this.dashCampaignTab.TabIndex = 4;
-            // 
-            // dashRevisionTab
-            // 
-            this.dashRevisionTab.BackColor = System.Drawing.Color.Transparent;
-            this.dashRevisionTab.BorderRadius = 10;
-            this.dashRevisionTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashRevisionTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashRevisionTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashRevisionTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashRevisionTab.Location = new System.Drawing.Point(435, 28);
-            this.dashRevisionTab.Name = "dashRevisionTab";
-            this.dashRevisionTab.ShadowDecoration.Parent = this.dashRevisionTab;
-            this.dashRevisionTab.Size = new System.Drawing.Size(140, 3);
-            this.dashRevisionTab.TabIndex = 5;
-            // 
-            // dashStatisticTab
-            // 
-            this.dashStatisticTab.BackColor = System.Drawing.Color.Transparent;
-            this.dashStatisticTab.BorderRadius = 10;
-            this.dashStatisticTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashStatisticTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashStatisticTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashStatisticTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashStatisticTab.Location = new System.Drawing.Point(575, 28);
-            this.dashStatisticTab.Name = "dashStatisticTab";
-            this.dashStatisticTab.ShadowDecoration.Parent = this.dashStatisticTab;
-            this.dashStatisticTab.Size = new System.Drawing.Size(140, 3);
-            this.dashStatisticTab.TabIndex = 6;
             // 
             // NavForm
             // 

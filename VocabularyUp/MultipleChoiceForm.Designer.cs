@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MultipleChoiceForm));
             this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlMainNav = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnD = new Guna.UI2.WinForms.Guna2Button();
@@ -36,13 +37,21 @@
             this.btnA = new Guna.UI2.WinForms.Guna2Button();
             this.pnlLib = new System.Windows.Forms.Panel();
             this.pnlSearching = new System.Windows.Forms.Panel();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lbMain = new System.Windows.Forms.Label();
+            this.pbMain = new System.Windows.Forms.PictureBox();
+            this.pnlDash = new System.Windows.Forms.Panel();
+            this.pnlTab.SuspendLayout();
             this.pnlMainNav.SuspendLayout();
             this.pnlLib.SuspendLayout();
+            this.guna2CustomGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTab
             // 
             this.pnlTab.BorderRadius = 20;
+            this.pnlTab.Controls.Add(this.guna2CustomGradientPanel1);
             this.pnlTab.FillColor3 = System.Drawing.Color.Snow;
             this.pnlTab.FillColor4 = System.Drawing.Color.Snow;
             this.pnlTab.Location = new System.Drawing.Point(0, 45);
@@ -155,6 +164,53 @@
             this.pnlSearching.Size = new System.Drawing.Size(54, 520);
             this.pnlSearching.TabIndex = 0;
             // 
+            // guna2CustomGradientPanel1
+            // 
+            this.guna2CustomGradientPanel1.BorderRadius = 20;
+            this.guna2CustomGradientPanel1.Controls.Add(this.lbMain);
+            this.guna2CustomGradientPanel1.Controls.Add(this.pbMain);
+            this.guna2CustomGradientPanel1.Controls.Add(this.pnlDash);
+            this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.LightGreen;
+            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.LightGreen;
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(394, 420);
+            this.guna2CustomGradientPanel1.TabIndex = 1;
+            // 
+            // lbMain
+            // 
+            this.lbMain.BackColor = System.Drawing.Color.Transparent;
+            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
+            this.lbMain.Location = new System.Drawing.Point(0, 362);
+            this.lbMain.Name = "lbMain";
+            this.lbMain.Size = new System.Drawing.Size(391, 38);
+            this.lbMain.TabIndex = 7;
+            this.lbMain.Text = "Welcome";
+            this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbMain
+            // 
+            this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
+            this.pbMain.Location = new System.Drawing.Point(19, 21);
+            this.pbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbMain.Name = "pbMain";
+            this.pbMain.Size = new System.Drawing.Size(354, 320);
+            this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMain.TabIndex = 8;
+            this.pbMain.TabStop = false;
+            // 
+            // pnlDash
+            // 
+            this.pnlDash.BackColor = System.Drawing.Color.White;
+            this.pnlDash.Location = new System.Drawing.Point(19, 345);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlDash.Name = "pnlDash";
+            this.pnlDash.Size = new System.Drawing.Size(354, 5);
+            this.pnlDash.TabIndex = 11;
+            // 
             // MultipleChoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -164,8 +220,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MultipleChoiceForm";
             this.Text = "MultipleChoiceForm";
+            this.pnlTab.ResumeLayout(false);
             this.pnlMainNav.ResumeLayout(false);
             this.pnlLib.ResumeLayout(false);
+            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,5 +239,9 @@
         private Guna.UI2.WinForms.Guna2Button btnA;
         private System.Windows.Forms.Panel pnlLib;
         private System.Windows.Forms.Panel pnlSearching;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private System.Windows.Forms.Label lbMain;
+        private System.Windows.Forms.PictureBox pbMain;
+        private System.Windows.Forms.Panel pnlDash;
     }
 }

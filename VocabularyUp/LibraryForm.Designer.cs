@@ -32,7 +32,7 @@
             this.pnlMainNav = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlLib = new System.Windows.Forms.Panel();
             this.pnlToCollection = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbCollection = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnToCollection = new Guna.UI2.WinForms.Guna2Button();
             this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lbMain = new System.Windows.Forms.Label();
@@ -78,7 +78,7 @@
             // 
             // pnlToCollection
             // 
-            this.pnlToCollection.Controls.Add(this.guna2ComboBox1);
+            this.pnlToCollection.Controls.Add(this.cbCollection);
             this.pnlToCollection.Controls.Add(this.btnToCollection);
             this.pnlToCollection.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlToCollection.Location = new System.Drawing.Point(0, 470);
@@ -87,25 +87,25 @@
             this.pnlToCollection.Size = new System.Drawing.Size(394, 50);
             this.pnlToCollection.TabIndex = 10;
             // 
-            // guna2ComboBox1
+            // cbCollection
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Empty;
-            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.FormattingEnabled = true;
-            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(0, 0);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Size = new System.Drawing.Size(343, 36);
-            this.guna2ComboBox1.TabIndex = 13;
+            this.cbCollection.BackColor = System.Drawing.Color.Transparent;
+            this.cbCollection.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbCollection.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbCollection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCollection.FocusedColor = System.Drawing.Color.Empty;
+            this.cbCollection.FocusedState.Parent = this.cbCollection;
+            this.cbCollection.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbCollection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbCollection.FormattingEnabled = true;
+            this.cbCollection.HoverState.Parent = this.cbCollection;
+            this.cbCollection.ItemHeight = 30;
+            this.cbCollection.ItemsAppearance.Parent = this.cbCollection;
+            this.cbCollection.Location = new System.Drawing.Point(0, 0);
+            this.cbCollection.Name = "cbCollection";
+            this.cbCollection.ShadowDecoration.Parent = this.cbCollection;
+            this.cbCollection.Size = new System.Drawing.Size(343, 36);
+            this.cbCollection.TabIndex = 13;
             // 
             // btnToCollection
             // 
@@ -124,6 +124,7 @@
             this.btnToCollection.ShadowDecoration.Parent = this.btnToCollection;
             this.btnToCollection.Size = new System.Drawing.Size(45, 50);
             this.btnToCollection.TabIndex = 0;
+            this.btnToCollection.Click += new System.EventHandler(this.btnToCollection_Click);
             // 
             // pnlTab
             // 
@@ -299,6 +300,6 @@
         private System.Windows.Forms.Panel pnlDash;
         private Guna.UI2.WinForms.Guna2ImageButton btnSearch;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlToCollection;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbCollection;
     }
 }

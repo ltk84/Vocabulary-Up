@@ -16,5 +16,27 @@ namespace VocabularyUp
         {
             InitializeComponent();
         }
+
+        public void LoadImageListView()
+        {
+            imageList1.Images.Add("Collection", Image.FromFile("../../icons/book-icon.png"));
+        }
+
+        public void LoadListView()
+        {
+            lvCollection.Items.Clear();
+            imageList1.Images.Add("Collection", Image.FromFile("../../icons/book-icon.png"));
+            lvCollection.SmallImageList = imageList1;
+            lvCollection.LargeImageList = imageList1;
+            for (int i = 0; i < ManageUserAction.CollectionCount(); i++)
+            {
+                lvCollection.Items.Add(ManageUserAction.GetItemOfAllCollection(i).NameCOllection);
+            }
+
+            for (int i = 0; i < lvCollection.Items.Count; i++)
+            {
+                lvCollection.Items[i].ImageIndex = 0;
+            }
+        }
     }
 }

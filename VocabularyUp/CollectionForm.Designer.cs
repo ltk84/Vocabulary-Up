@@ -32,7 +32,7 @@ namespace VocabularyUp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Your damn Collection here!", "book-icon.png");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Your damn Collection here!", "book-icon.png");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectionForm));
             this.lvCollection = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -50,11 +50,12 @@ namespace VocabularyUp
             this.lvCollection.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvCollection.HideSelection = false;
             this.lvCollection.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.lvCollection.LargeImageList = this.imageList1;
             this.lvCollection.Location = new System.Drawing.Point(36, 76);
             this.lvCollection.Name = "lvCollection";
             this.lvCollection.Size = new System.Drawing.Size(804, 418);
+            this.lvCollection.SmallImageList = this.imageList1;
             this.lvCollection.TabIndex = 0;
             this.lvCollection.UseCompatibleStateImageBehavior = false;
             // 
@@ -72,7 +73,7 @@ namespace VocabularyUp
             this.btnAdd.CustomImages.Parent = this.btnAdd;
             this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.HoverState.Parent = this.btnAdd;
             this.btnAdd.Location = new System.Drawing.Point(846, 90);
             this.btnAdd.Name = "btnAdd";
@@ -89,7 +90,7 @@ namespace VocabularyUp
             this.btnDel.CustomImages.Parent = this.btnDel;
             this.btnDel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnDel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDel.ForeColor = System.Drawing.Color.White;
+            this.btnDel.ForeColor = System.Drawing.Color.Black;
             this.btnDel.HoverState.Parent = this.btnDel;
             this.btnDel.Location = new System.Drawing.Point(846, 201);
             this.btnDel.Name = "btnDel";

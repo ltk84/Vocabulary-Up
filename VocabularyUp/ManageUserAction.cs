@@ -23,7 +23,7 @@ namespace VocabularyUp
             connection.Open();
 
             //Chuan bi cau lenh query viet bang SQL 
-            String sqlQuery = "select ID_COLLECTION, COLLECTION_NAME from USER_FLASHCARD where ID_USER = " + currentUser.IdUser.ToString();
+            String sqlQuery = "select distinct ID_COLLECTION, COLLECTION_NAME from USER_FLASHCARD where ID_USER = " + currentUser.IdUser.ToString();
             //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
             SqlCommand command = new SqlCommand(sqlQuery, connection);
 
@@ -34,8 +34,7 @@ namespace VocabularyUp
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                List<FlashCard> a;
-       
+
                 Collection c = new Collection(reader.GetInt32(0), reader.GetString(1), UpdateFlashCardOfCollection(reader.GetInt32(0)));
 
                 allCollections.Add(c);
@@ -108,19 +107,50 @@ namespace VocabularyUp
         public static void UpdateUserInfo(int idUser)
         {
             currentUser = ManageSystem.GetUserInfo(idUser-1);
-            UpdateReFlashCard(idUser);
+            //UpdateReFlashCard(idUser);
         }
 
         // CONNECT ĐẾN DATABASE ĐỂ LOAD MAIN FLASHCARD
-        public static void UpdateMainFlashCard(int idUser)
+        public static void UpdateMainFlashCard(int currentTopic)
         {
+            string nameTopic = null;
+            switch (currentTopic)
+            {
+                case 1:
+                    nameTopic = "Animals"; //
+                    break;
+                case 2:
+                    nameTopic = "Plants";
+                    break;
+                case 3:
+                    nameTopic = "Fruits";
+                    break;
+                case 4:
+                    nameTopic = "Hobbies";
+                    break;
+                case 5:
+                    nameTopic = "Character"; // khac
+                    break;
+                case 6:
+                    nameTopic = "Sport"; // khac
+                    break;
+                case 7:
+                    nameTopic = "Clothing"; //
+                    break;
+                case 8:
+                    nameTopic = "Technology"; //
+                    break;
+                default:
+                    nameTopic = "";
+                    break;
+            }
             SqlConnection connection = new SqlConnection(constr);
             try
             {
                 //Mo ket noi
                 connection.Open();
                 //Chuan bi cau lenh query viet bang SQL
-                String sqlQuery = "	select * from FLASHCARD fl_m where not exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = " + idUser.ToString() + ')';
+                String sqlQuery = "	select top 10 * from FLASHCARD fl_m where not exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = " + currentUser.IdUser.ToString() + " and u_fl.ID_COLLECTION = 0) and fl_m.FIELD = " + nameTopic + " order by NEWID()";
                 //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
 
@@ -277,5 +307,64 @@ namespace VocabularyUp
             currentUser.TotalWord = ManageSystem.GetUserInfo(currentUser.IdUser - 1).ReFlashCard.Count();
         }
 
+        public static Collection GetItemOfAllCollection(int id)
+        {
+            return allCollections[id];
+        }
+
+        public static int CollectionCount()
+        {
+            return allCollections.Count;
+        }
+
+        public static void AddFlashCardToCollection(int idCollection, FlashCard fl)
+        {
+            allCollections[idCollection].ListFL.Add(fl);
+        }
+
+        public static void AddFlashCardToDatabase(int idCollection, string collectionName, FlashCard fl)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "insert into USER_FLASHCARD (ID_USER, ID_CARD, ID_COLLECTION, COLLECTION_NAME) values(@ID_USER, @ID_CARD, @ID_COLLECTION, @COLLECTION_NAME)";
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID_USER", currentUser.IdUser);
+                command.Parameters.AddWithValue("@ID_CARD", fl.IdCard);
+                command.Parameters.AddWithValue("@ID_COLLECTION", idCollection);
+                command.Parameters.AddWithValue("@COLLECTION_NAME", collectionName);
+
+
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                int rs = command.ExecuteNonQuery();
+                //Su dung reader de doc tung dong du lieu
+                //va thuc hien thao tac xu ly mong muon voi du lieu doc len
+                if (rs != 1)
+                {
+                    throw new Exception("Failed Query");
+                }
+            }
+            catch (InvalidCastException)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
+        }
+
+        public static bool IsFlashCardExist(int idCollection,  int idFlashCard)
+        {
+            if (allCollections[idCollection].ListFL.FindIndex(f => f.IdCard == idFlashCard) == -1)
+                return false;
+            return true;
+        }
     }
 }
