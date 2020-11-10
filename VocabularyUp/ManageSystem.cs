@@ -266,6 +266,17 @@ namespace VocabularyUp
             // Cải tiến thuật toán bằng bảng băm
         }
 
+        public static int GetUserID_Email(string email)
+        {
+            foreach (var user in users)
+            {
+                if (user.Email == email)
+                    return user.IdUser;
+            }
+            return -1;
+            // Cải tiến thuật toán bằng bảng băm
+        }
+
         // MÃ HÓA PASSWORD
         public static string GetMd5HashWithMySecurityAlgo(MD5 md5Hash, string input)
         {
@@ -308,6 +319,45 @@ namespace VocabularyUp
         public static int SearchFlashCard(string content)
         {
             return allFlashCards.FindIndex(f => f.Eng == content);
+        }
+        public static int SearchEmail(string content)
+        {
+            return users.FindIndex(u => u.Email == content);
+        }
+
+        public static void UpdateNewPassword(int id, string newPass)
+        {
+            string encrytedPass = GetMd5HashWithMySecurityAlgo(md5Hash, newPass);
+            users[id-1].Password = encrytedPass;
+        }
+        public static void UpdateNewPasswordToDatabase(int id, string newPass)
+        {
+            string encrytedPass = GetMd5HashWithMySecurityAlgo(md5Hash, newPass);
+
+            //string constr = @"Server=DESKTOP-52N97T0\SQLEXPRESS;Database=todo;User Id=sa;Password=*****;";
+            SqlConnection connection = new SqlConnection(connString);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "update users set pass= @pass where id = " + id.ToString();
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@pass", encrytedPass);
+                //Thuc hien cau truy van
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
         }
     }
 }
