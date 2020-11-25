@@ -141,6 +141,7 @@ namespace VocabularyUp
             pnlCollection.Show();
             pnlTab.Visible = false;
             pnlTab.Hide();
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchingText = txtSearching.Text;
