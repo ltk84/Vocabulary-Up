@@ -16,9 +16,36 @@ namespace VocabularyUp
         private static List<Collection> allCollections = new List<Collection>();
         private static string constr = @ConfigurationManager.AppSettings.Get("connectString");
 
+        // Delete collection
+        public static void DeleteCollection(int id)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "delete from USER_FLASHCARD where ID_COLLECTION = " + id.ToString();
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.ExecuteNonQuery();
+            }
+            catch (InvalidCastException)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }  
+        }
+
         // Load All Connections
         public static void InitAllCollections()
         {
+            allCollections.Clear();
             SqlConnection connection = new SqlConnection(constr);
             connection.Open();
 
@@ -310,6 +337,15 @@ namespace VocabularyUp
         public static Collection GetItemOfAllCollection(int id)
         {
             return allCollections[id];
+        }
+        public static int GetCollectionId(string name)
+        {
+            foreach (var collection in allCollections)
+            {
+                if (collection.NameCollection == name)
+                    return collection.IdCollection;
+            }
+            return -1;
         }
 
         public static int CollectionCount()
