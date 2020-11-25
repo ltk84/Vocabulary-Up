@@ -58,7 +58,19 @@ namespace VocabularyUp
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-
+            if (lvCollection.SelectedItems.Count != 0)
+            {
+                for (int i = 0; i< lvCollection.SelectedItems.Count; i++)
+                {
+                    int id = ManageUserAction.GetCollectionId(lvCollection.SelectedItems[i].Text);
+                    if (id != 0)
+                    {
+                        ManageUserAction.DeleteCollection(id);
+                    }
+                }
+                ManageUserAction.InitAllCollections();
+                LoadListView();
+            }
         }
 
         private void lvCollection_AfterLabelEdit(object sender, LabelEditEventArgs e)
