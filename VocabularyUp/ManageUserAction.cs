@@ -80,6 +80,35 @@ namespace VocabularyUp
             }  
         }
 
+        public static void AfterDelete(int id)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "UPDATE USER_FLASHCARD SET ID_COLLECTION = @NEWID WHERE ID_COLLECTION = @OLDID";
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@NEWID", id - 1);
+                command.Parameters.AddWithValue("@OLDID", id);
+
+                //Thuc hien cau truy van
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
+        }
+
         // Load All Connections
         public static void InitAllCollections()
         {
@@ -467,5 +496,23 @@ namespace VocabularyUp
                 connection.Close();
             }
         }
+
+        // Search Collection
+        public static List<Collection> SearchCollectionName(string text)
+        {
+            List<Collection> findedList = new List<Collection>();
+            foreach (var col in allCollections)
+            {
+                string upperCaseText = text.ToUpper();
+                string lowerCaseText = text.ToLower();
+                if (col.NameCollection.IndexOf(upperCaseText) >= 0 || col.NameCollection.IndexOf(lowerCaseText) >= 0)
+                {
+                    findedList.Add(col);
+                }
+            }
+            return findedList;
+        }
+
+        
     }
 }
