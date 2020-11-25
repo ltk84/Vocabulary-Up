@@ -41,7 +41,7 @@ namespace VocabularyUp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int diffNameCount = lvCollection.Items.Count;
+            int diffNameCount = ManageUserAction.CollectionCount();
             string nameCol = "New collection " + diffNameCount.ToString();
             while (ManageUserAction.GetCollectionId(nameCol) != -1)
             {
@@ -62,14 +62,16 @@ namespace VocabularyUp
 
         private void btnRename_Click(object sender, EventArgs e)
         {
-            if (lvCollection.Items[0].Text == lvCollection.SelectedItems[0].Text)
-                return;
-
-            if (lvCollection.SelectedItems.Count == 1)
+            if (lvCollection.SelectedItems.Count != 0)
             {
-                lvCollection.LabelEdit = true;
-                lvCollection.SelectedItems[0].BeginEdit();
+                int id = ManageUserAction.GetCollectionId(lvCollection.SelectedItems[0].Text);
+                if (id != 0)
+                {
+                    lvCollection.LabelEdit = true;
+                    lvCollection.SelectedItems[0].BeginEdit();
+                }
             }
+
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -82,6 +84,11 @@ namespace VocabularyUp
                     if (id != 0)
                     {
                         ManageUserAction.DeleteCollection(id);
+                        for (int j = id + 1; j <= ManageUserAction.CollectionCount() + 1; j++)
+                        {
+                            ManageUserAction.AfterDelete(j);
+                            ManageUserAction.InitAllCollections();
+                        }
                     }
                 }
                 UpdateListView();
@@ -98,11 +105,9 @@ namespace VocabularyUp
                     newName = oldName;
                 ManageUserAction.RenameCollection(oldName, newName);
             }    
-            /*lvCollection.BeginInvoke(new MethodInvoker(() => UpdateListView()))*/;
             lvCollection.BeginInvoke(new MethodInvoker(() => UpdateListView()));
             
 
-            //UpdateListView();
         }
         private void UpdateListView()
         {
@@ -136,6 +141,21 @@ namespace VocabularyUp
             pnlCollection.Show();
             pnlTab.Visible = false;
             pnlTab.Hide();
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchingText = txtSearching.Text;
+            List<Collection> findedCol = ManageUserAction.SearchCollectionName(searchingText);
+            lvCollection.Items.Clear();
+            foreach (var col in findedCol)
+            {
+                lvCollection.Items.Add(col.NameCollection);
+            }
+
+            for (int i = 0; i < lvCollection.Items.Count; i++)
+            {
+                lvCollection.Items[i].ImageIndex = 0;
+            }
+
         }
     }
 }
