@@ -78,20 +78,51 @@ namespace VocabularyUp
         {
             if (lvCollection.SelectedItems.Count != 0)
             {
-                for (int i = 0; i< lvCollection.SelectedItems.Count; i++)
+                if (lvCollection.SelectedItems[0].Text == ManageUserAction.GetItemOfAllCollection(0).NameCollection)
                 {
-                    int id = ManageUserAction.GetCollectionId(lvCollection.SelectedItems[i].Text);
-                    if (id != 0)
+                    int size = lvCollection.SelectedItems.Count;
+                    for (int i = 1; i < size ; i++)
                     {
-                        ManageUserAction.DeleteCollection(id);
-                        for (int j = id + 1; j <= ManageUserAction.CollectionCount() + 1; j++)
+                        int id;
+                        id = ManageUserAction.GetCollectionId(lvCollection.SelectedItems[1].Text);
+
+                        if (id != 0)
                         {
-                            ManageUserAction.AfterDelete(j);
-                            ManageUserAction.InitAllCollections();
+                            lvCollection.Items.Remove(lvCollection.SelectedItems[1]);
+
+                            ManageUserAction.DeleteCollection(id);
+
+                            for (int j = id + 1; j <= ManageUserAction.CollectionCount() + 1; j++)
+                            {
+                                ManageUserAction.AfterDelete(j);
+                                ManageUserAction.InitAllCollections();
+                            }
                         }
                     }
                 }
-                UpdateListView();
+                else
+                {
+                    int size = lvCollection.SelectedItems.Count;
+                    for (int i = 0; i < size ; i++)
+                    {
+                        int id;
+                        id = ManageUserAction.GetCollectionId(lvCollection.SelectedItems[0].Text);
+                      
+                        if (id != 0)
+                        {
+                            lvCollection.Items.Remove(lvCollection.SelectedItems[0]);
+                         
+                            ManageUserAction.DeleteCollection(id);
+
+                            for (int j = id + 1; j <= ManageUserAction.CollectionCount() + 1; j++)
+                            {
+                                ManageUserAction.AfterDelete(j);
+                                ManageUserAction.InitAllCollections();
+                            }
+                        }
+                    }
+                }
+
             }
         }
 
