@@ -114,7 +114,7 @@ namespace VocabularyUp
             connection.Open();
 
             //Chuan bi cau lenh query viet bang SQL 
-            String sqlQuery = "select id_card, eng, vie, pronunciation, field from USER_FLASHCARD, flashcard where ID_USER = " + currentUser.IdUser.ToString() + " and id_collection = " + idCollection.ToString();
+            String sqlQuery = "select id_card, eng, vie, pronunciation, field from USER_FLASHCARD, flashcard where USER_FLASHCARD.ID_CARD = FLASHCARD.ID and ID_USER = " + currentUser.IdUser.ToString() + " and id_collection = " + idCollection.ToString();
             //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
             SqlCommand command = new SqlCommand(sqlQuery, connection);
 
