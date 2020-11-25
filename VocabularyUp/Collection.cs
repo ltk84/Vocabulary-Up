@@ -21,7 +21,7 @@ namespace VocabularyUp
         }
 
         public int IdCollection { get => idCollection; set => value = idCollection; }
-        public string NameCOllection { get => nameCollection; set => value = nameCollection; }
+        public string NameCollection { get => nameCollection; set => value = nameCollection; }
         public List<FlashCard> ListFL { get => listFL; set => value = listFL; }
     }
 }

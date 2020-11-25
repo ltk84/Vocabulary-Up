@@ -30,13 +30,28 @@ namespace VocabularyUp
             lvCollection.LargeImageList = imageList1;
             for (int i = 0; i < ManageUserAction.CollectionCount(); i++)
             {
-                lvCollection.Items.Add(ManageUserAction.GetItemOfAllCollection(i).NameCOllection);
+                lvCollection.Items.Add(ManageUserAction.GetItemOfAllCollection(i).NameCollection);
             }
 
             for (int i = 0; i < lvCollection.Items.Count; i++)
             {
                 lvCollection.Items[i].ImageIndex = 0;
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRename_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

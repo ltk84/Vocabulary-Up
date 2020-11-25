@@ -41,6 +41,7 @@ namespace VocabularyUp
             this.txtSearching = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlCollection = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnSearch = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnRename = new Guna.UI2.WinForms.Guna2Button();
             this.pnlCollection.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +82,7 @@ namespace VocabularyUp
             this.btnAdd.Size = new System.Drawing.Size(116, 76);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDel
             // 
@@ -92,12 +94,13 @@ namespace VocabularyUp
             this.btnDel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDel.ForeColor = System.Drawing.Color.Black;
             this.btnDel.HoverState.Parent = this.btnDel;
-            this.btnDel.Location = new System.Drawing.Point(846, 201);
+            this.btnDel.Location = new System.Drawing.Point(846, 287);
             this.btnDel.Name = "btnDel";
             this.btnDel.ShadowDecoration.Parent = this.btnDel;
             this.btnDel.Size = new System.Drawing.Size(116, 76);
             this.btnDel.TabIndex = 2;
             this.btnDel.Text = "Delete";
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // txtSearching
             // 
@@ -130,6 +133,7 @@ namespace VocabularyUp
             // 
             this.pnlCollection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlCollection.BorderRadius = 20;
+            this.pnlCollection.Controls.Add(this.btnRename);
             this.pnlCollection.Controls.Add(this.btnSearch);
             this.pnlCollection.Controls.Add(this.lvCollection);
             this.pnlCollection.Controls.Add(this.btnDel);
@@ -156,6 +160,24 @@ namespace VocabularyUp
             this.btnSearch.Size = new System.Drawing.Size(27, 31);
             this.btnSearch.TabIndex = 11;
             // 
+            // btnRename
+            // 
+            this.btnRename.BackColor = System.Drawing.Color.Transparent;
+            this.btnRename.BorderRadius = 15;
+            this.btnRename.CheckedState.Parent = this.btnRename;
+            this.btnRename.CustomImages.Parent = this.btnRename;
+            this.btnRename.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnRename.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRename.ForeColor = System.Drawing.Color.Black;
+            this.btnRename.HoverState.Parent = this.btnRename;
+            this.btnRename.Location = new System.Drawing.Point(846, 188);
+            this.btnRename.Name = "btnRename";
+            this.btnRename.ShadowDecoration.Parent = this.btnRename;
+            this.btnRename.Size = new System.Drawing.Size(116, 76);
+            this.btnRename.TabIndex = 12;
+            this.btnRename.Text = "Rename";
+            this.btnRename.Click += new System.EventHandler(this.btnRename_Click);
+            // 
             // CollectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -180,5 +202,6 @@ namespace VocabularyUp
         private Guna.UI2.WinForms.Guna2TextBox txtSearching;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlCollection;
         private Guna.UI2.WinForms.Guna2ImageButton btnSearch;
+        private Guna.UI2.WinForms.Guna2Button btnRename;
     }
 }

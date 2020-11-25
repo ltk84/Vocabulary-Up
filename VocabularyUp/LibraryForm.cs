@@ -64,8 +64,7 @@ namespace VocabularyUp
             cbCollection.Items.Clear();
             for (int i = 1; i < ManageUserAction.CollectionCount(); i++)
             {
-                cbCollection.Items.Add(ManageUserAction.GetItemOfAllCollection(i).NameCOllection);
-               
+                cbCollection.Items.Add(ManageUserAction.GetItemOfAllCollection(i).NameCollection);
             }
         }
 
