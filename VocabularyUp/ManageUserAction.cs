@@ -19,6 +19,7 @@ namespace VocabularyUp
         // Load All Connections
         public static void InitAllCollections()
         {
+            allCollections.Clear();
             SqlConnection connection = new SqlConnection(constr);
             connection.Open();
 
@@ -365,6 +366,34 @@ namespace VocabularyUp
             if (allCollections[idCollection].ListFL.FindIndex(f => f.IdCard == idFlashCard) == -1)
                 return false;
             return true;
+        }
+
+        public static void RenameCollection(string oldName, string newName)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "UPDATE USER_FLASHCARD SET COLLECTION_NAME = N'" + newName + "' " + " WHERE COLLECTION_NAME = N'" + oldName + "'";
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                
+
+                //Thuc hien cau truy van
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
         }
     }
 }

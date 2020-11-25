@@ -46,12 +46,29 @@ namespace VocabularyUp
 
         private void btnRename_Click(object sender, EventArgs e)
         {
+            if (lvCollection.Items[0].Text == lvCollection.SelectedItems[0].Text)
+                return;
 
+            if (lvCollection.SelectedItems.Count == 1)
+            {
+                lvCollection.LabelEdit = true;
+                lvCollection.SelectedItems[0].BeginEdit();
+            }
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lvCollection_AfterLabelEdit(object sender, LabelEditEventArgs e)
+        {
+            string newName = e.Label;
+            string oldName = lvCollection.SelectedItems[0].Text;
+
+            
+            ManageUserAction.RenameCollection(oldName, newName);
+            LoadListView();
         }
     }
 }

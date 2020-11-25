@@ -107,3 +107,11 @@ D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\Vocabula
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.CopyComplete
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.pdb
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CampaignForm.resources
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.Display_CampaignForm.resources
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CollectionForm.resources
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.FillBlankForm.resources
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.LibraryForm.resources
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.MultipleChoiceForm.resources
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.RevisionForm.resources
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticForm.resources
