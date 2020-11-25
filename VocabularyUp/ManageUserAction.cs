@@ -16,6 +16,44 @@ namespace VocabularyUp
         private static List<Collection> allCollections = new List<Collection>();
         private static string constr = @ConfigurationManager.AppSettings.Get("connectString");
 
+        // Add collection
+        public static void AddCollection(string name)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "insert into USER_FLASHCARD (ID_USER, ID_CARD, ID_COLLECTION, COLLECTION_NAME) values (@ID_USER, @ID_CARD, @ID_COLLECTION, @COLLECTION_NAME)";
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID_USER", currentUser.IdUser);
+                command.Parameters.AddWithValue("@ID_CARD", 0);
+                command.Parameters.AddWithValue("@ID_COLLECTION", allCollections.Count);
+                command.Parameters.AddWithValue("@COLLECTION_NAME", name);
+
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                int rs = command.ExecuteNonQuery();
+                //Su dung reader de doc tung dong du lieu
+                //va thuc hien thao tac xu ly mong muon voi du lieu doc len
+                if (rs != 1)
+                {
+                    throw new Exception("Failed Query");
+                }
+            }
+            catch (InvalidCastException)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
+        }
+
         // Delete collection
         public static void DeleteCollection(int id)
         {
@@ -411,8 +449,7 @@ namespace VocabularyUp
                 //Mo ket noi
                 connection.Open();
                 //Chuan bi cau lenh query viet bang SQL
-                String sqlQuery = "UPDATE USER_FLASHCARD SET COLLECTION_NAME = N'" + newName + "' " + " WHERE COLLECTION_NAME = N'" + oldName + "'";
-                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                String sqlQuery = "UPDATE USER_FLASHCARD SET COLLECTION_NAME = N'" + newName + "' " + " WHERE COLLECTION_NAME = N'" + oldName + "' AND ID_COLLECTION <> 0";
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 
 
@@ -422,7 +459,7 @@ namespace VocabularyUp
             catch (Exception ex)
             {
                 //xu ly khi ket noi co van de
-                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+                //MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
             }
             finally
             {

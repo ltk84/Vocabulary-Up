@@ -41,7 +41,23 @@ namespace VocabularyUp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            int diffNameCount = lvCollection.Items.Count;
+            string nameCol = "New collection " + diffNameCount.ToString();
+            while (ManageUserAction.GetCollectionId(nameCol) != -1)
+            {
+                diffNameCount++;
+                nameCol = "New collection " + diffNameCount.ToString();
+            }    
 
+            lvCollection.Items.Add(new ListViewItem(nameCol));
+            ManageUserAction.AddCollection(nameCol);
+            UpdateListView();
+
+            lvCollection.SelectedItems.Clear();
+            lvCollection.Items[lvCollection.Items.Count - 1].Selected = true;
+
+            lvCollection.LabelEdit = true;
+            lvCollection.Items[lvCollection.Items.Count - 1].BeginEdit();
         }
 
         private void btnRename_Click(object sender, EventArgs e)
@@ -68,8 +84,7 @@ namespace VocabularyUp
                         ManageUserAction.DeleteCollection(id);
                     }
                 }
-                ManageUserAction.InitAllCollections();
-                LoadListView();
+                UpdateListView();
             }
         }
 
@@ -77,9 +92,21 @@ namespace VocabularyUp
         {
             string newName = e.Label;
             string oldName = lvCollection.SelectedItems[0].Text;
-
+            if (newName != null && newName.Length != 0)
+            {
+                if (ManageUserAction.GetCollectionId(newName) != -1)
+                    newName = oldName;
+                ManageUserAction.RenameCollection(oldName, newName);
+            }    
+            /*lvCollection.BeginInvoke(new MethodInvoker(() => UpdateListView()))*/;
+            lvCollection.BeginInvoke(new MethodInvoker(() => UpdateListView()));
             
-            ManageUserAction.RenameCollection(oldName, newName);
+
+            //UpdateListView();
+        }
+        private void UpdateListView()
+        {
+            ManageUserAction.InitAllCollections();
             LoadListView();
         }
     }
