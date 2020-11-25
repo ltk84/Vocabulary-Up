@@ -75,11 +75,30 @@ namespace VocabularyUp
 
         private void lvCollection_AfterLabelEdit(object sender, LabelEditEventArgs e)
         {
-            string newName = e.Label;
-            string oldName = lvCollection.SelectedItems[0].Text;
+            try
+            {
+                string newName = e.Label;
+                if (newName == lvCollection.Items[0].Text)
+                {
+                    newName = "New Collection" + (lvCollection.Items.Count + 2).ToString();
+                }
+                string oldName = lvCollection.SelectedItems[0].Text;
 
+                ManageUserAction.RenameCollection(oldName, newName);
+                lvCollection.BeginInvoke(new MethodInvoker(() => UpdateListView()));
+            }
+            catch (Exception)
+            {
+
+                e.CancelEdit = true;
+            }
             
-            ManageUserAction.RenameCollection(oldName, newName);
+        }
+
+        private void UpdateListView()
+        {
+            ManageUserAction.InitAllCollections();
+           // lvCollection.Clear();
             LoadListView();
         }
     }

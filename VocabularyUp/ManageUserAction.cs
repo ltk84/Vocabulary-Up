@@ -411,7 +411,7 @@ namespace VocabularyUp
                 //Mo ket noi
                 connection.Open();
                 //Chuan bi cau lenh query viet bang SQL
-                String sqlQuery = "UPDATE USER_FLASHCARD SET COLLECTION_NAME = N'" + newName + "' " + " WHERE COLLECTION_NAME = N'" + oldName + "'";
+                String sqlQuery = "UPDATE USER_FLASHCARD SET COLLECTION_NAME = N'" + newName + "' " + " WHERE COLLECTION_NAME = N'" + oldName + "'" + " AND ID_COLLECTION <> 0";
                 //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 
