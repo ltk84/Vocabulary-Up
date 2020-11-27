@@ -28,25 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatisticForm));
             this.progressCircle = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.listBadge = new System.Windows.Forms.ListView();
             this.pnlUserInfo = new System.Windows.Forms.Panel();
             this.pnlProgressInfo = new System.Windows.Forms.Panel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnRank = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.progressCircle.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // progressCircle
             // 
             this.progressCircle.BackColor = System.Drawing.Color.Transparent;
-            this.progressCircle.FillThickness = 18;
+            this.progressCircle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.progressCircle.Controls.Add(this.btnRank);
+            this.progressCircle.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.progressCircle.FillThickness = 5;
             this.progressCircle.Location = new System.Drawing.Point(671, 27);
             this.progressCircle.Name = "progressCircle";
-            this.progressCircle.ProgressThickness = 18;
+            this.progressCircle.ProgressColor = System.Drawing.Color.Aqua;
+            this.progressCircle.ProgressColor2 = System.Drawing.Color.MediumSpringGreen;
+            this.progressCircle.ProgressThickness = 5;
             this.progressCircle.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.progressCircle.ShadowDecoration.Parent = this.progressCircle;
             this.progressCircle.Size = new System.Drawing.Size(182, 174);
             this.progressCircle.TabIndex = 0;
+            this.progressCircle.Value = 43;
             // 
             // listBadge
             // 
@@ -87,6 +96,24 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1000, 520);
             this.guna2CustomGradientPanel1.TabIndex = 4;
             // 
+            // btnRank
+            // 
+            this.btnRank.BackColor = System.Drawing.Color.Transparent;
+            this.btnRank.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnRank.CheckedState.ImageSize = new System.Drawing.Size(100, 100);
+            this.btnRank.CheckedState.Parent = this.btnRank;
+            this.btnRank.HoverState.ImageSize = new System.Drawing.Size(100, 100);
+            this.btnRank.HoverState.Parent = this.btnRank;
+            this.btnRank.Image = ((System.Drawing.Image)(resources.GetObject("btnRank.Image")));
+            this.btnRank.ImageSize = new System.Drawing.Size(100, 100);
+            this.btnRank.Location = new System.Drawing.Point(32, 22);
+            this.btnRank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRank.Name = "btnRank";
+            this.btnRank.PressedState.ImageSize = new System.Drawing.Size(100, 100);
+            this.btnRank.PressedState.Parent = this.btnRank;
+            this.btnRank.Size = new System.Drawing.Size(120, 120);
+            this.btnRank.TabIndex = 15;
+            // 
             // StatisticForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -97,6 +124,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StatisticForm";
             this.Text = "StatisticForm";
+            this.progressCircle.ResumeLayout(false);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -109,5 +137,6 @@
         private System.Windows.Forms.Panel pnlUserInfo;
         private System.Windows.Forms.Panel pnlProgressInfo;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2ImageButton btnRank;
     }
 }
