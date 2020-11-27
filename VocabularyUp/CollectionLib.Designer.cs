@@ -31,25 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectionLib));
             this.pnlMainNav = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlLib = new System.Windows.Forms.Panel();
+            this.btnRemoveFromCollection = new Guna.UI2.WinForms.Guna2Button();
+            this.lbCollectionName = new System.Windows.Forms.Label();
+            this.pbCollectionIcon = new System.Windows.Forms.PictureBox();
+            this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lbMain = new System.Windows.Forms.Label();
+            this.pbMain = new System.Windows.Forms.PictureBox();
+            this.pnlDash = new System.Windows.Forms.Panel();
             this.pnlSearching = new System.Windows.Forms.Panel();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearch = new Guna.UI2.WinForms.Guna2ImageButton();
             this.txtSearching = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLeft = new Guna.UI2.WinForms.Guna2Button();
             this.btnRight = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlDash = new System.Windows.Forms.Panel();
-            this.pbMain = new System.Windows.Forms.PictureBox();
-            this.lbMain = new System.Windows.Forms.Label();
-            this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pbCollectionIcon = new System.Windows.Forms.PictureBox();
-            this.lbCollectionName = new System.Windows.Forms.Label();
-            this.btnRemoveFromCollection = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.pnlMainNav.SuspendLayout();
             this.pnlLib.SuspendLayout();
-            this.pnlSearching.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
-            this.pnlTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCollectionIcon)).BeginInit();
+            this.pnlTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
+            this.pnlSearching.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMainNav
@@ -79,6 +79,93 @@
             this.pnlLib.Size = new System.Drawing.Size(394, 520);
             this.pnlLib.TabIndex = 9;
             // 
+            // btnRemoveFromCollection
+            // 
+            this.btnRemoveFromCollection.BackColor = System.Drawing.Color.Transparent;
+            this.btnRemoveFromCollection.BorderRadius = 15;
+            this.btnRemoveFromCollection.CheckedState.Parent = this.btnRemoveFromCollection;
+            this.btnRemoveFromCollection.CustomImages.Parent = this.btnRemoveFromCollection;
+            this.btnRemoveFromCollection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnRemoveFromCollection.Font = new System.Drawing.Font("Montserrat Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveFromCollection.ForeColor = System.Drawing.Color.Black;
+            this.btnRemoveFromCollection.HoverState.Parent = this.btnRemoveFromCollection;
+            this.btnRemoveFromCollection.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveFromCollection.Image")));
+            this.btnRemoveFromCollection.Location = new System.Drawing.Point(335, 470);
+            this.btnRemoveFromCollection.Name = "btnRemoveFromCollection";
+            this.btnRemoveFromCollection.ShadowDecoration.Parent = this.btnRemoveFromCollection;
+            this.btnRemoveFromCollection.Size = new System.Drawing.Size(45, 42);
+            this.btnRemoveFromCollection.TabIndex = 13;
+            this.btnRemoveFromCollection.Click += new System.EventHandler(this.btnRemoveFromCollection_Click);
+            // 
+            // lbCollectionName
+            // 
+            this.lbCollectionName.BackColor = System.Drawing.Color.Transparent;
+            this.lbCollectionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCollectionName.Location = new System.Drawing.Point(71, 470);
+            this.lbCollectionName.Name = "lbCollectionName";
+            this.lbCollectionName.Size = new System.Drawing.Size(257, 42);
+            this.lbCollectionName.TabIndex = 12;
+            this.lbCollectionName.Text = "Collection Name";
+            this.lbCollectionName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pbCollectionIcon
+            // 
+            this.pbCollectionIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbCollectionIcon.BackgroundImage")));
+            this.pbCollectionIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbCollectionIcon.InitialImage = null;
+            this.pbCollectionIcon.Location = new System.Drawing.Point(19, 470);
+            this.pbCollectionIcon.Name = "pbCollectionIcon";
+            this.pbCollectionIcon.Size = new System.Drawing.Size(46, 42);
+            this.pbCollectionIcon.TabIndex = 1;
+            this.pbCollectionIcon.TabStop = false;
+            // 
+            // pnlTab
+            // 
+            this.pnlTab.BorderRadius = 20;
+            this.pnlTab.Controls.Add(this.lbMain);
+            this.pnlTab.Controls.Add(this.pbMain);
+            this.pnlTab.Controls.Add(this.pnlDash);
+            this.pnlTab.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTab.FillColor2 = System.Drawing.Color.LightGreen;
+            this.pnlTab.FillColor3 = System.Drawing.Color.LightGreen;
+            this.pnlTab.Location = new System.Drawing.Point(0, 45);
+            this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlTab.Name = "pnlTab";
+            this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
+            this.pnlTab.Size = new System.Drawing.Size(394, 420);
+            this.pnlTab.TabIndex = 0;
+            // 
+            // lbMain
+            // 
+            this.lbMain.BackColor = System.Drawing.Color.Transparent;
+            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
+            this.lbMain.Location = new System.Drawing.Point(-3, 362);
+            this.lbMain.Name = "lbMain";
+            this.lbMain.Size = new System.Drawing.Size(394, 38);
+            this.lbMain.TabIndex = 7;
+            this.lbMain.Text = "Welcome";
+            this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbMain
+            // 
+            this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
+            this.pbMain.Location = new System.Drawing.Point(19, 21);
+            this.pbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbMain.Name = "pbMain";
+            this.pbMain.Size = new System.Drawing.Size(354, 320);
+            this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMain.TabIndex = 8;
+            this.pbMain.TabStop = false;
+            // 
+            // pnlDash
+            // 
+            this.pnlDash.BackColor = System.Drawing.Color.White;
+            this.pnlDash.Location = new System.Drawing.Point(19, 345);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlDash.Name = "pnlDash";
+            this.pnlDash.Size = new System.Drawing.Size(354, 5);
+            this.pnlDash.TabIndex = 11;
+            // 
             // pnlSearching
             // 
             this.pnlSearching.Controls.Add(this.btnBack);
@@ -89,6 +176,25 @@
             this.pnlSearching.Name = "pnlSearching";
             this.pnlSearching.Size = new System.Drawing.Size(394, 45);
             this.pnlSearching.TabIndex = 0;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderRadius = 15;
+            this.btnBack.CheckedState.Parent = this.btnBack;
+            this.btnBack.CustomImages.Parent = this.btnBack;
+            this.btnBack.FillColor = System.Drawing.Color.Transparent;
+            this.btnBack.Font = new System.Drawing.Font("Montserrat Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.HoverState.Parent = this.btnBack;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnBack.Location = new System.Drawing.Point(19, 6);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.ShadowDecoration.Parent = this.btnBack;
+            this.btnBack.Size = new System.Drawing.Size(46, 39);
+            this.btnBack.TabIndex = 14;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnSearch
             // 
@@ -172,111 +278,6 @@
             this.btnRight.TabIndex = 8;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
-            // pnlDash
-            // 
-            this.pnlDash.BackColor = System.Drawing.Color.White;
-            this.pnlDash.Location = new System.Drawing.Point(19, 345);
-            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlDash.Name = "pnlDash";
-            this.pnlDash.Size = new System.Drawing.Size(354, 5);
-            this.pnlDash.TabIndex = 11;
-            // 
-            // pbMain
-            // 
-            this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
-            this.pbMain.Location = new System.Drawing.Point(19, 21);
-            this.pbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbMain.Name = "pbMain";
-            this.pbMain.Size = new System.Drawing.Size(354, 320);
-            this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMain.TabIndex = 8;
-            this.pbMain.TabStop = false;
-            // 
-            // lbMain
-            // 
-            this.lbMain.BackColor = System.Drawing.Color.Transparent;
-            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
-            this.lbMain.Location = new System.Drawing.Point(-3, 362);
-            this.lbMain.Name = "lbMain";
-            this.lbMain.Size = new System.Drawing.Size(394, 38);
-            this.lbMain.TabIndex = 7;
-            this.lbMain.Text = "Welcome";
-            this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnlTab
-            // 
-            this.pnlTab.BorderRadius = 20;
-            this.pnlTab.Controls.Add(this.lbMain);
-            this.pnlTab.Controls.Add(this.pbMain);
-            this.pnlTab.Controls.Add(this.pnlDash);
-            this.pnlTab.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTab.FillColor2 = System.Drawing.Color.LightGreen;
-            this.pnlTab.FillColor3 = System.Drawing.Color.LightGreen;
-            this.pnlTab.Location = new System.Drawing.Point(0, 45);
-            this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlTab.Name = "pnlTab";
-            this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
-            this.pnlTab.Size = new System.Drawing.Size(394, 420);
-            this.pnlTab.TabIndex = 0;
-            // 
-            // pbCollectionIcon
-            // 
-            this.pbCollectionIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbCollectionIcon.BackgroundImage")));
-            this.pbCollectionIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbCollectionIcon.InitialImage = null;
-            this.pbCollectionIcon.Location = new System.Drawing.Point(19, 470);
-            this.pbCollectionIcon.Name = "pbCollectionIcon";
-            this.pbCollectionIcon.Size = new System.Drawing.Size(46, 42);
-            this.pbCollectionIcon.TabIndex = 1;
-            this.pbCollectionIcon.TabStop = false;
-            // 
-            // lbCollectionName
-            // 
-            this.lbCollectionName.BackColor = System.Drawing.Color.Transparent;
-            this.lbCollectionName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCollectionName.Location = new System.Drawing.Point(71, 470);
-            this.lbCollectionName.Name = "lbCollectionName";
-            this.lbCollectionName.Size = new System.Drawing.Size(257, 42);
-            this.lbCollectionName.TabIndex = 12;
-            this.lbCollectionName.Text = "Collection Name";
-            this.lbCollectionName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnRemoveFromCollection
-            // 
-            this.btnRemoveFromCollection.BackColor = System.Drawing.Color.Transparent;
-            this.btnRemoveFromCollection.BorderRadius = 15;
-            this.btnRemoveFromCollection.CheckedState.Parent = this.btnRemoveFromCollection;
-            this.btnRemoveFromCollection.CustomImages.Parent = this.btnRemoveFromCollection;
-            this.btnRemoveFromCollection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnRemoveFromCollection.Font = new System.Drawing.Font("Montserrat Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveFromCollection.ForeColor = System.Drawing.Color.Black;
-            this.btnRemoveFromCollection.HoverState.Parent = this.btnRemoveFromCollection;
-            this.btnRemoveFromCollection.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveFromCollection.Image")));
-            this.btnRemoveFromCollection.Location = new System.Drawing.Point(335, 470);
-            this.btnRemoveFromCollection.Name = "btnRemoveFromCollection";
-            this.btnRemoveFromCollection.ShadowDecoration.Parent = this.btnRemoveFromCollection;
-            this.btnRemoveFromCollection.Size = new System.Drawing.Size(45, 42);
-            this.btnRemoveFromCollection.TabIndex = 13;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BorderRadius = 15;
-            this.btnBack.CheckedState.Parent = this.btnBack;
-            this.btnBack.CustomImages.Parent = this.btnBack;
-            this.btnBack.FillColor = System.Drawing.Color.Transparent;
-            this.btnBack.Font = new System.Drawing.Font("Montserrat Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.Black;
-            this.btnBack.HoverState.Parent = this.btnBack;
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnBack.Location = new System.Drawing.Point(19, 6);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.ShadowDecoration.Parent = this.btnBack;
-            this.btnBack.Size = new System.Drawing.Size(46, 39);
-            this.btnBack.TabIndex = 14;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // CollectionLib
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -289,10 +290,10 @@
             this.Text = "CollectionLib";
             this.pnlMainNav.ResumeLayout(false);
             this.pnlLib.ResumeLayout(false);
-            this.pnlSearching.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
-            this.pnlTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCollectionIcon)).EndInit();
+            this.pnlTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
+            this.pnlSearching.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

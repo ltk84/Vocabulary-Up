@@ -848,7 +848,7 @@ select * from USER_FLASHCARD
 insert into USER_FLASHCARD
 (ID_USER, ID_CARD, ID_COLLECTION, COLLECTION_NAME)
 values
-	--(1,0,0,'HOCED'),
+	(1,0,0,'HOCED'),
 	(1,0,1, N'Đầu buồi'),
 	(1,1,1, N'Đầu buồi'),
 	(1,2,1, N'Đầu buồi'),

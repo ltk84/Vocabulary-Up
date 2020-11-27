@@ -35,7 +35,17 @@ namespace VocabularyUp
             pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
         }
 
-        private void btnLeft_Click(object sender, EventArgs e)
+        private void ToTheRight()
+        {
+            if (index < curCollection.ListFL.Count - 1)
+                index++;
+            else
+                index = 0;
+            curFlashCard = curCollection.ListFL[index];
+            ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
+        }
+
+        private void ToTheLeft()
         {
             if (index > 0)
                 index--;
@@ -45,14 +55,14 @@ namespace VocabularyUp
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
         }
 
+        private void btnLeft_Click(object sender, EventArgs e)
+        {
+            ToTheLeft();
+        }
+
         private void btnRight_Click(object sender, EventArgs e)
         {
-            if (index < curCollection.ListFL.Count - 1)
-                index++;
-            else
-                index = 0;
-            curFlashCard = curCollection.ListFL[index];
-            ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
+            ToTheRight();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -72,6 +82,20 @@ namespace VocabularyUp
         {
             collectionTab.ProShow();
             this.Close();
+        }
+
+        private void btnRemoveFromCollection_Click(object sender, EventArgs e)
+        {
+            RemoveFlashCard();
+        }
+        public void RemoveFlashCard()
+        {
+            if (ManageUserAction.IsFlashCardExist(curCollection.IdCollection, curFlashCard.IdCard) && curFlashCard.IdCard != 0)
+            {
+                ManageUserAction.RemoveFlashCardFromCollection(curCollection.IdCollection, curFlashCard);
+                ManageUserAction.DeleteFlashCardFromDatabase(curCollection.IdCollection, curFlashCard);
+                ToTheRight();
+            } 
         }
     }
 }
