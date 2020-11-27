@@ -42,6 +42,7 @@ namespace VocabularyUp
             this.btnDel = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearching = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.reloadBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlCollection.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +63,7 @@ namespace VocabularyUp
             this.pnlCollection.Controls.Add(this.btnDel);
             this.pnlCollection.Controls.Add(this.txtSearching);
             this.pnlCollection.Controls.Add(this.btnAdd);
+            this.pnlCollection.Controls.Add(this.reloadBtn);
             this.pnlCollection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCollection.Location = new System.Drawing.Point(0, 0);
             this.pnlCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -92,17 +94,17 @@ namespace VocabularyUp
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnSearch.CheckedState.Parent = this.btnSearch;
             this.btnSearch.HoverState.Parent = this.btnSearch;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.ImageOffset = new System.Drawing.Point(0, -2);
-            this.btnSearch.ImageSize = new System.Drawing.Size(23, 23);
-            this.btnSearch.Location = new System.Drawing.Point(671, 26);
+            this.btnSearch.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnSearch.Location = new System.Drawing.Point(682, 26);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.PressedState.Parent = this.btnSearch;
-            this.btnSearch.Size = new System.Drawing.Size(27, 31);
-            this.btnSearch.TabIndex = 17;
+            this.btnSearch.Size = new System.Drawing.Size(32, 31);
+            this.btnSearch.TabIndex = 11;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lvCollection
@@ -188,6 +190,23 @@ namespace VocabularyUp
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // reloadBtn
+            // 
+            this.reloadBtn.BackColor = System.Drawing.Color.Transparent;
+            this.reloadBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reloadBtn.BackgroundImage")));
+            this.reloadBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.reloadBtn.CheckedState.Parent = this.reloadBtn;
+            this.reloadBtn.HoverState.Parent = this.reloadBtn;
+            this.reloadBtn.ImageOffset = new System.Drawing.Point(0, -2);
+            this.reloadBtn.ImageSize = new System.Drawing.Size(10, 10);
+            this.reloadBtn.Location = new System.Drawing.Point(719, 26);
+            this.reloadBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.reloadBtn.Name = "reloadBtn";
+            this.reloadBtn.PressedState.Parent = this.reloadBtn;
+            this.reloadBtn.Size = new System.Drawing.Size(33, 31);
+            this.reloadBtn.TabIndex = 13;
+            this.reloadBtn.Click += new System.EventHandler(this.reloadBtn_Click);
+            // 
             // pnlTab
             // 
             this.pnlTab.BorderRadius = 20;
@@ -204,12 +223,14 @@ namespace VocabularyUp
             // 
             // CollectionForm
             // 
+            this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 519);
             this.Controls.Add(this.pnlCollection);
             this.Controls.Add(this.pnlTab);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CollectionForm";
@@ -229,5 +250,6 @@ namespace VocabularyUp
         private Guna.UI2.WinForms.Guna2TextBox txtSearching;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlTab;
+        private Guna.UI2.WinForms.Guna2ImageButton reloadBtn;
     }
 }
