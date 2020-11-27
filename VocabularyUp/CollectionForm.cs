@@ -49,9 +49,9 @@ namespace VocabularyUp
                 nameCol = "New collection " + diffNameCount.ToString();
             }    
 
-            lvCollection.Items.Add(new ListViewItem(nameCol));
+            lvCollection.Items.Add(nameCol, 0);
             ManageUserAction.AddCollection(nameCol);
-            UpdateListView();
+            ManageUserAction.InitAllCollections();
 
             lvCollection.SelectedItems.Clear();
             lvCollection.Items[lvCollection.Items.Count - 1].Selected = true;
@@ -62,7 +62,7 @@ namespace VocabularyUp
 
         private void btnRename_Click(object sender, EventArgs e)
         {
-            if (lvCollection.SelectedItems.Count != 0)
+            if (lvCollection.SelectedItems.Count == 1)
             {
                 int id = ManageUserAction.GetCollectionId(lvCollection.SelectedItems[0].Text);
                 if (id != 0)
@@ -71,7 +71,6 @@ namespace VocabularyUp
                     lvCollection.SelectedItems[0].BeginEdit();
                 }
             }
-
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -130,13 +129,26 @@ namespace VocabularyUp
         {
             string newName = e.Label;
             string oldName = lvCollection.SelectedItems[0].Text;
+
+            int index = ManageUserAction.GetCollectionId(newName);
+
+            if (newName == ManageUserAction.GetItemOfAllCollection(0).NameCollection)
+            {
+                e.CancelEdit = true;
+                return;
+            }
+
             if (newName != null && newName.Length != 0)
             {
-                if (ManageUserAction.GetCollectionId(newName) != -1)
+                if (index != -1)
+                {
                     newName = oldName;
+                    e.CancelEdit = true;
+                }
                 ManageUserAction.RenameCollection(oldName, newName);
-            }    
-            lvCollection.BeginInvoke(new MethodInvoker(() => UpdateListView()));
+            }
+            ManageUserAction.InitAllCollections();
+            //lvCollection.BeginInvoke(new MethodInvoker(() => UpdateListView()));
             
 
         }
@@ -161,6 +173,11 @@ namespace VocabularyUp
                 lvCollection.Items[i].ImageIndex = 0;
             }
 
+        }
+
+        private void reloadBtn_Click(object sender, EventArgs e)
+        {
+            UpdateListView();
         }
     }
 }
