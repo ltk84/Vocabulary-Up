@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace VocabularyUp
         public void ChangeFlashCard(string content, int id)
         {
             lbMain.Text = content;
-            //pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
+            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
         }
 
         private void btnLeft_Click(object sender, EventArgs e)
