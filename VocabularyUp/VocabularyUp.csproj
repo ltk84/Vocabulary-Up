@@ -61,6 +61,12 @@
       <DependentUpon>CampaignForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Collection.cs" />
+    <Compile Include="CollectionLib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CollectionLib.Designer.cs">
+      <DependentUpon>CollectionLib.cs</DependentUpon>
+    </Compile>
     <Compile Include="Display_CampaignForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="CampaignForm.resx">
       <DependentUpon>CampaignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CollectionLib.resx">
+      <DependentUpon>CollectionLib.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Display_CampaignForm.resx">
       <DependentUpon>Display_CampaignForm.cs</DependentUpon>

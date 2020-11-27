@@ -143,7 +143,7 @@ namespace VocabularyUp
             connection.Open();
 
             //Chuan bi cau lenh query viet bang SQL 
-            String sqlQuery = "select id_card, eng, vie, pronunciation, field from USER_FLASHCARD, flashcard where ID_USER = " + currentUser.IdUser.ToString() + " and id_collection = " + idCollection.ToString();
+            String sqlQuery = "select id_card, eng, vie, pronunciation, field from USER_FLASHCARD, flashcard where USER_FLASHCARD.ID_CARD = FLASHCARD.ID and ID_USER = " + currentUser.IdUser.ToString() + " and id_collection = " + idCollection.ToString();
             //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
             SqlCommand command = new SqlCommand(sqlQuery, connection);
 
@@ -424,6 +424,11 @@ namespace VocabularyUp
         {
             allCollections[idCollection].ListFL.Add(fl);
         }
+        
+        public static void RemoveFlashCardFromCollection(int idCollection, FlashCard fl)
+        {
+            allCollections[idCollection].ListFL.Remove(fl);
+        }
 
         public static void AddFlashCardToDatabase(int idCollection, string collectionName, FlashCard fl)
         {
@@ -441,6 +446,41 @@ namespace VocabularyUp
                 command.Parameters.AddWithValue("@ID_COLLECTION", idCollection);
                 command.Parameters.AddWithValue("@COLLECTION_NAME", collectionName);
 
+
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                int rs = command.ExecuteNonQuery();
+                //Su dung reader de doc tung dong du lieu
+                //va thuc hien thao tac xu ly mong muon voi du lieu doc len
+                if (rs != 1)
+                {
+                    throw new Exception("Failed Query");
+                }
+            }
+            catch (InvalidCastException)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
+        }
+        public static void DeleteFlashCardFromDatabase(int idCollection, FlashCard fl)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "delete from USER_FLASHCARD where ID_CARD = @ID_CARD and ID_USER = @ID_USER and ID_COLLECTION = @ID_COLLECTION";
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID_CARD", fl.IdCard);
+                command.Parameters.AddWithValue("@ID_USER", currentUser.IdUser);
+                command.Parameters.AddWithValue("@ID_COLLECTION", idCollection);
 
                 //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
                 int rs = command.ExecuteNonQuery();

@@ -158,6 +158,33 @@ namespace VocabularyUp
             LoadListView();
         }
 
+        private void lvCollection_DoubleClick(object sender, EventArgs e)
+        {
+            if (lvCollection.SelectedItems.Count == 1)
+            {
+                ToCollectionLib(ManageUserAction.GetCollectionId(lvCollection.SelectedItems[0].Text));
+            }    
+        }
+        private void ToCollectionLib(int idCollection)
+        {
+            CollectionLib library = new CollectionLib(this, idCollection);
+            library.TopLevel = false;
+            pnlCollection.Hide();
+            //pnlCollection.Controls.Clear();
+            pnlTab.Controls.Clear();
+            pnlTab.Controls.Add(library);
+            library.FormBorderStyle = FormBorderStyle.None;
+            pnlTab.Visible = true;
+            pnlTab.Show();
+            library.Show();
+        }
+        public void ProShow()
+        {
+            this.Show();
+            pnlCollection.Show();
+            pnlTab.Visible = false;
+            pnlTab.Hide();
+        }
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchingText = txtSearching.Text;
