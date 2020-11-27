@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CollectionLib));
             this.pnlMainNav = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlLib = new System.Windows.Forms.Panel();
@@ -44,6 +45,8 @@
             this.txtSearching = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLeft = new Guna.UI2.WinForms.Guna2Button();
             this.btnRight = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPronun = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlMainNav.SuspendLayout();
             this.pnlLib.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCollectionIcon)).BeginInit();
@@ -122,6 +125,7 @@
             // pnlTab
             // 
             this.pnlTab.BorderRadius = 20;
+            this.pnlTab.Controls.Add(this.btnPronun);
             this.pnlTab.Controls.Add(this.lbMain);
             this.pnlTab.Controls.Add(this.pbMain);
             this.pnlTab.Controls.Add(this.pnlDash);
@@ -278,6 +282,29 @@
             this.btnRight.TabIndex = 8;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
+            // btnPronun
+            // 
+            this.btnPronun.BackColor = System.Drawing.Color.Transparent;
+            this.btnPronun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPronun.CheckedState.Parent = this.btnPronun;
+            this.btnPronun.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.HoverState.Image")));
+            this.btnPronun.HoverState.Parent = this.btnPronun;
+            this.btnPronun.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.Image")));
+            this.btnPronun.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnPronun.Location = new System.Drawing.Point(341, 362);
+            this.btnPronun.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPronun.Name = "btnPronun";
+            this.btnPronun.PressedState.Parent = this.btnPronun;
+            this.btnPronun.Size = new System.Drawing.Size(32, 38);
+            this.btnPronun.TabIndex = 14;
+            this.btnPronun.Click += new System.EventHandler(this.btnPronun_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // CollectionLib
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -315,5 +342,7 @@
         private System.Windows.Forms.Panel pnlDash;
         private Guna.UI2.WinForms.Guna2Button btnRemoveFromCollection;
         private Guna.UI2.WinForms.Guna2Button btnBack;
+        private Guna.UI2.WinForms.Guna2ImageButton btnPronun;
+        private System.Windows.Forms.Timer timer1;
     }
 }

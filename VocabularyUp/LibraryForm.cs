@@ -9,11 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
+using System.Speech.Synthesis;
 
 namespace VocabularyUp
 {
     public partial class LibraryForm : Form
     {
+        SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         private static int index = 0;
         FlashCard curFlashCard;
         public LibraryForm()
@@ -78,6 +80,22 @@ namespace VocabularyUp
         {
             if (!ManageUserAction.IsFlashCardExist(cbCollection.SelectedIndex + 1, curFlashCard.IdCard) && cbCollection.SelectedIndex >= 0)
                 AddFlashCard();
+        }
+
+        private void btnPronun_Click(object sender, EventArgs e)
+        {
+            string pronun = " " + curFlashCard.Eng;
+            synthesizer.Rate = 1;
+            synthesizer.Volume = 100;
+            timer1.Start();
+            btnPronun.Enabled = false;
+            synthesizer.Speak(pronun);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            btnPronun.Enabled = true;
         }
     }
 }

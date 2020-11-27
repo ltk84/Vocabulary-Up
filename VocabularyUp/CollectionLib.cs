@@ -8,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Synthesis;
 
 namespace VocabularyUp
 {
     public partial class CollectionLib : Form
     {
+        SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         private static int index = 0;
         FlashCard curFlashCard;
         Collection curCollection;
@@ -96,6 +98,22 @@ namespace VocabularyUp
                 ManageUserAction.DeleteFlashCardFromDatabase(curCollection.IdCollection, curFlashCard);
                 ToTheRight();
             } 
+        }
+
+        private void btnPronun_Click(object sender, EventArgs e)
+        {
+            string pronun = " " + curFlashCard.Eng;
+            synthesizer.Rate = 1;
+            synthesizer.Volume = 100;
+            timer1.Start();
+            btnPronun.Enabled = false;
+            synthesizer.Speak(pronun);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            btnPronun.Enabled = true;
         }
     }
 }
