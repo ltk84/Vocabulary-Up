@@ -193,12 +193,12 @@ namespace VocabularyUp
             // reloadBtn
             // 
             this.reloadBtn.BackColor = System.Drawing.Color.Transparent;
-            this.reloadBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("reloadBtn.BackgroundImage")));
             this.reloadBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.reloadBtn.CheckedState.Parent = this.reloadBtn;
+            this.reloadBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("reloadBtn.HoverState.Image")));
             this.reloadBtn.HoverState.Parent = this.reloadBtn;
-            this.reloadBtn.ImageOffset = new System.Drawing.Point(0, -2);
-            this.reloadBtn.ImageSize = new System.Drawing.Size(10, 10);
+            this.reloadBtn.Image = ((System.Drawing.Image)(resources.GetObject("reloadBtn.Image")));
+            this.reloadBtn.ImageSize = new System.Drawing.Size(30, 30);
             this.reloadBtn.Location = new System.Drawing.Point(719, 26);
             this.reloadBtn.Margin = new System.Windows.Forms.Padding(2);
             this.reloadBtn.Name = "reloadBtn";
