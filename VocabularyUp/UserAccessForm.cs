@@ -103,7 +103,7 @@ namespace VocabularyUp
             pnlUserLogin.Visible = true;
             pnlSignup.Visible = false;
             transitionPanel.HideSync(pnlSignup);
-            this.AcceptButton = this.btnCreateAccount_Login;
+            this.AcceptButton = this.btnLogin;
             NavForm navTab = new NavForm(this, currentID);
             navTab.Show();
             this.Hide();
