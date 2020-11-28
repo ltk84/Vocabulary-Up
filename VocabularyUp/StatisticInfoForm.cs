@@ -17,6 +17,7 @@ namespace VocabularyUp
             InitializeComponent();
         }
 
+
         private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -31,8 +32,8 @@ namespace VocabularyUp
             txtDate.Text = "";
             txtGioiTinh.Text = "";
             txtHoTen.Text = "";
+            txtOldPass.Text = "";
             txtNewPass.Text = "";
-            txtRePass.Text = "";
         }
         private void btEditProfile_Click(object sender, EventArgs e)
         {
@@ -49,6 +50,7 @@ namespace VocabularyUp
 
         private void btnSaveEdit_Click(object sender, EventArgs e)
         {
+            
             pnlEdit.Visible = false;
             pnlEdit.Enabled = false;
             pnlPersonalDetails.Visible = true;
@@ -75,15 +77,35 @@ namespace VocabularyUp
 
         private void btSavePassword_Click(object sender, EventArgs e)
         {
-            pnlEdit.Visible = false;
-            pnlEdit.Enabled = false;
-            pnlPersonalDetails.Visible = true;
-            pnlPersonalDetails.Enabled = true;
-            pnlSavePass.Visible = false;
-            pnlSavePass.Enabled = false;
+            
+            if (txtOldPass.Text == "") MessageBox.Show("Password can not be empty");
+            else if (ManageSystem.Pass(txtOldPass.Text)) { MessageBox.Show("Old password is not correct", "Thông báo"); }
+            else if (txtNewPass.Text == "") MessageBox.Show("Password can not be empty");
+            else if (txtNewPass.Text != txtReNewPass.Text) MessageBox.Show("Re-Password is not correct");
+            else
+            {
+                string TK = ManageSystem.TK();
+                ManageSystem.UpdateNewPassword(ManageSystem.GetUserID(TK), txtNewPass.Text);
+                ManageSystem.UpdateNewPasswordToDatabase(ManageSystem.GetUserID(TK), txtNewPass.Text);
+                ManageSystem.UpdatePass(txtNewPass.Text);
+                MessageBox.Show("Save success!");
+                pnlEdit.Visible = false;
+                pnlEdit.Enabled = false;
+                pnlPersonalDetails.Visible = true;
+                pnlPersonalDetails.Enabled = true;
+                pnlSavePass.Visible = false;
+                pnlSavePass.Enabled = false;
 
-            this.AcceptButton = this.btEditProfile;
-            ClearTextbox();
+                this.AcceptButton = this.btEditProfile;
+                ClearTextbox();
+
+            }                
+
+        }
+
+        private void pnlSavePass_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

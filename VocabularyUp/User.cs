@@ -13,13 +13,15 @@ namespace VocabularyUp
         string username;
         string password;
         string email;
+        string NGSINH;
+        string name;
         List<FlashCard> reFlashCard;
         DateTime beginDate;
         int totalWord;
         int highestWordsCount;
         int recentWordsCount;
 
-        public User(int idUser, string username, string password, string email, DateTime beginDate, int totalWord, int highestWordsCount, int recentWordsCount)
+        public User(int idUser, string username, string password, string email,string NGSINH, DateTime beginDate,string name, int totalWord, int highestWordsCount, int recentWordsCount)
         {
             this.idUser = idUser;
             this.username = username;
@@ -30,12 +32,16 @@ namespace VocabularyUp
             this.highestWordsCount = highestWordsCount;
             this.recentWordsCount = recentWordsCount;
             this.reFlashCard = new List<FlashCard>();
+            this.NGSINH = NGSINH;
+            this.name = name;
         }
 
         public int IdUser { get => idUser; set => idUser = value; }
         public string Username { get => username; set => username = value; }
         public string Email { get => email; set => email = value; }
         public string Password { get => password; set => password = value; }
+        public string Ngsinh { get => NGSINH; set => NGSINH = value; }
+        public string Name { get => name; set => name = value; }
         public DateTime BeginDate { get => beginDate; set => beginDate = value; }
         public int TotalWord { get => totalWord; set => totalWord = value; }
         public int HighestWordsCount { get => highestWordsCount; set => highestWordsCount = value; }

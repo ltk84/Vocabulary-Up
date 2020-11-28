@@ -17,6 +17,8 @@ namespace VocabularyUp
         private static MD5 md5Hash = MD5.Create();
         private static String connString = @ConfigurationManager.AppSettings.Get("connectString");
         private static List<FlashCard> allFlashCards = new List<FlashCard>();
+        private static string OldPass;
+        private static string TaiKhoan;
 
         //KẾT NỐI VỚI DATABASE
         public static void ConnectDatabase()
@@ -37,7 +39,7 @@ namespace VocabularyUp
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                User u = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetDateTime(5), reader.GetInt32(6), reader.GetInt32(7), reader.GetInt32(8));
+                User u = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3),reader.GetString(4),reader.GetDateTime(5), reader.GetString(6),reader.GetInt32(7), reader.GetInt32(8), reader.GetInt32(9));
                 users.Add(u);
             }
             numOfUser = users.Count();
@@ -103,7 +105,7 @@ namespace VocabularyUp
         }
 
         // THÊM NHỮNG THÔNG TIN PHỤ CỦA USER VÀO TRONG DATABASE
-        public static void AddUserInfoToDatabase(string email, DateTime beginDate, int totalWord, int hiWCount, int reWCount)
+        public static void AddUserInfoToDatabase(string email, string NGSINH, DateTime beginDate, string name,int totalWord, int hiWCount, int reWCount)
         {
             SqlConnection connection = new SqlConnection(connString);
             try
@@ -111,12 +113,14 @@ namespace VocabularyUp
                 //Mo ket noi
                 connection.Open();
                 //Chuan bi cau lenh query viet bang SQL
-                String sqlQuery = "insert into USER_INFO(ID_USER, EMAIL, BEGINDATE, TOTALWORD, HIGHEST_WORDS_COUNT, RECENT_WORDS_COUNT) values(@ID_USER, @EMAIL, @BEGINDATE, @TOTALWORD, @HIGHEST_WORDS_COUNT, @RECENT_WORDS_COUNT)";
+                String sqlQuery = "insert into USER_INFO(ID_USER, EMAIL,NGSINH, BEGINDATE,NAME, TOTALWORD, HIGHEST_WORDS_COUNT, RECENT_WORDS_COUNT) values(@ID_USER, @EMAIL, @NGSINH, @BEGINDATE,@NAME, @TOTALWORD, @HIGHEST_WORDS_COUNT, @RECENT_WORDS_COUNT)";
                 //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 command.Parameters.AddWithValue("@ID_USER", numOfUser);
                 command.Parameters.AddWithValue("@EMAIL", email);
+                command.Parameters.AddWithValue("@NGSINH", NGSINH);
                 command.Parameters.AddWithValue("@BEGINDATE", beginDate.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+                command.Parameters.AddWithValue("@NAME", name);
                 command.Parameters.AddWithValue("@TOTALWORD", totalWord);
                 command.Parameters.AddWithValue("@HIGHEST_WORDS_COUNT", hiWCount);
                 command.Parameters.AddWithValue("@RECENT_WORDS_COUNT", reWCount);
@@ -150,6 +154,8 @@ namespace VocabularyUp
                 // Đúng username và password thì cho đăng nhập
                 if (u.Username == username && u.Password == password)
                 {
+                    TaiKhoan = username;
+                    OldPass = password;                   
                     return true;
                 }
             }
@@ -157,7 +163,20 @@ namespace VocabularyUp
             // Ngược lại thì không
             return false;
         }
-
+        public static string TK()
+        {
+            return TaiKhoan;
+        }
+        public static bool Pass(string pass)
+        {
+            if (pass == OldPass) return true;
+            else return false;
+            
+        }
+        public static void UpdatePass(string pass)
+        {
+            OldPass = pass;
+        }
         // LẤY SỐ USER TRONG MẢNG
         public static int GetNumberOfUser()
         {
@@ -248,9 +267,9 @@ namespace VocabularyUp
         {
             numOfUser = GetNumberOfUser();
             numOfUser++;
-            users.Add(new User(numOfUser, username, password, email, DateTime.Now, 0, 0, 0));
+            users.Add(new User(numOfUser, username, password, email,"", DateTime.Now,"", 0, 0, 0));
             AddSingleUserToDatabase(username, password);
-            AddUserInfoToDatabase(email, DateTime.Now, 0, 0, 0);
+            AddUserInfoToDatabase(email, "",DateTime.Now,"", 0, 0, 0);
         }
 
         

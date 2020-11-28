@@ -72,14 +72,16 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.pnlSavePass = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.txtRePass = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNewPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtOldPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.btSavePassword = new Guna.UI2.WinForms.Guna2Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.txtReNewPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlPersonalDetails.SuspendLayout();
@@ -454,7 +456,7 @@
             this.pnlEdit.Controls.Add(this.panel11);
             this.pnlEdit.Controls.Add(this.panel12);
             this.pnlEdit.Controls.Add(this.label22);
-            this.pnlEdit.Location = new System.Drawing.Point(8, 121);
+            this.pnlEdit.Location = new System.Drawing.Point(277, 118);
             this.pnlEdit.Name = "pnlEdit";
             this.pnlEdit.ShadowDecoration.Parent = this.pnlEdit;
             this.pnlEdit.Size = new System.Drawing.Size(446, 392);
@@ -502,7 +504,7 @@
             this.txtDate.Location = new System.Drawing.Point(15, 142);
             this.txtDate.Name = "txtDate";
             this.txtDate.PasswordChar = '\0';
-            this.txtDate.PlaceholderText = "Ngày sinh";
+            this.txtDate.PlaceholderText = "Ngày bắt đầu";
             this.txtDate.SelectedText = "";
             this.txtDate.ShadowDecoration.Parent = this.txtDate;
             this.txtDate.Size = new System.Drawing.Size(200, 30);
@@ -602,8 +604,10 @@
             // 
             // pnlSavePass
             // 
-            this.pnlSavePass.Controls.Add(this.txtRePass);
+            this.pnlSavePass.Controls.Add(this.txtReNewPass);
+            this.pnlSavePass.Controls.Add(this.panel14);
             this.pnlSavePass.Controls.Add(this.txtNewPass);
+            this.pnlSavePass.Controls.Add(this.txtOldPass);
             this.pnlSavePass.Controls.Add(this.btSavePassword);
             this.pnlSavePass.Controls.Add(this.panel8);
             this.pnlSavePass.Controls.Add(this.panel13);
@@ -615,30 +619,7 @@
             this.pnlSavePass.Size = new System.Drawing.Size(446, 392);
             this.pnlSavePass.TabIndex = 15;
             this.pnlSavePass.Visible = false;
-            // 
-            // txtRePass
-            // 
-            this.txtRePass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRePass.DefaultText = "";
-            this.txtRePass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtRePass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtRePass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRePass.DisabledState.Parent = this.txtRePass;
-            this.txtRePass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRePass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRePass.FocusedState.Parent = this.txtRePass;
-            this.txtRePass.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtRePass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRePass.HoverState.Parent = this.txtRePass;
-            this.txtRePass.Location = new System.Drawing.Point(14, 178);
-            this.txtRePass.Name = "txtRePass";
-            this.txtRePass.PasswordChar = '\0';
-            this.txtRePass.PlaceholderText = "Re-NewPass";
-            this.txtRePass.SelectedText = "";
-            this.txtRePass.ShadowDecoration.Parent = this.txtRePass;
-            this.txtRePass.Size = new System.Drawing.Size(200, 30);
-            this.txtRePass.TabIndex = 14;
-            this.txtRePass.UseSystemPasswordChar = true;
+            this.pnlSavePass.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSavePass_Paint);
             // 
             // txtNewPass
             // 
@@ -654,15 +635,39 @@
             this.txtNewPass.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNewPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNewPass.HoverState.Parent = this.txtNewPass;
-            this.txtNewPass.Location = new System.Drawing.Point(14, 95);
+            this.txtNewPass.Location = new System.Drawing.Point(14, 147);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.PasswordChar = '\0';
             this.txtNewPass.PlaceholderText = "New Password";
             this.txtNewPass.SelectedText = "";
             this.txtNewPass.ShadowDecoration.Parent = this.txtNewPass;
             this.txtNewPass.Size = new System.Drawing.Size(200, 30);
-            this.txtNewPass.TabIndex = 13;
+            this.txtNewPass.TabIndex = 14;
             this.txtNewPass.UseSystemPasswordChar = true;
+            // 
+            // txtOldPass
+            // 
+            this.txtOldPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtOldPass.DefaultText = "";
+            this.txtOldPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtOldPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtOldPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtOldPass.DisabledState.Parent = this.txtOldPass;
+            this.txtOldPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtOldPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtOldPass.FocusedState.Parent = this.txtOldPass;
+            this.txtOldPass.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtOldPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtOldPass.HoverState.Parent = this.txtOldPass;
+            this.txtOldPass.Location = new System.Drawing.Point(14, 72);
+            this.txtOldPass.Name = "txtOldPass";
+            this.txtOldPass.PasswordChar = '\0';
+            this.txtOldPass.PlaceholderText = "Old Password";
+            this.txtOldPass.SelectedText = "";
+            this.txtOldPass.ShadowDecoration.Parent = this.txtOldPass;
+            this.txtOldPass.Size = new System.Drawing.Size(200, 30);
+            this.txtOldPass.TabIndex = 13;
+            this.txtOldPass.UseSystemPasswordChar = true;
             // 
             // btSavePassword
             // 
@@ -683,7 +688,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel8.Location = new System.Drawing.Point(14, 229);
+            this.panel8.Location = new System.Drawing.Point(14, 196);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(200, 2);
             this.panel8.TabIndex = 7;
@@ -691,7 +696,7 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel13.Location = new System.Drawing.Point(14, 144);
+            this.panel13.Location = new System.Drawing.Point(14, 120);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(200, 2);
             this.panel13.TabIndex = 5;
@@ -724,6 +729,38 @@
             this.label14.Size = new System.Drawing.Size(235, 25);
             this.label14.TabIndex = 0;
             this.label14.Text = "CHANGE PASSWORD";
+            // 
+            // txtReNewPass
+            // 
+            this.txtReNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtReNewPass.DefaultText = "";
+            this.txtReNewPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtReNewPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtReNewPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtReNewPass.DisabledState.Parent = this.txtReNewPass;
+            this.txtReNewPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtReNewPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtReNewPass.FocusedState.Parent = this.txtReNewPass;
+            this.txtReNewPass.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtReNewPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtReNewPass.HoverState.Parent = this.txtReNewPass;
+            this.txtReNewPass.Location = new System.Drawing.Point(14, 224);
+            this.txtReNewPass.Name = "txtReNewPass";
+            this.txtReNewPass.PasswordChar = '\0';
+            this.txtReNewPass.PlaceholderText = "Re-NewPass";
+            this.txtReNewPass.SelectedText = "";
+            this.txtReNewPass.ShadowDecoration.Parent = this.txtReNewPass;
+            this.txtReNewPass.Size = new System.Drawing.Size(200, 30);
+            this.txtReNewPass.TabIndex = 16;
+            this.txtReNewPass.UseSystemPasswordChar = true;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel14.Location = new System.Drawing.Point(14, 270);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(200, 2);
+            this.panel14.TabIndex = 15;
             // 
             // StatisticInfoForm
             // 
@@ -816,13 +853,15 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlSavePass;
-        private Guna.UI2.WinForms.Guna2TextBox txtNewPass;
+        private Guna.UI2.WinForms.Guna2TextBox txtOldPass;
         private Guna.UI2.WinForms.Guna2Button btSavePassword;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private Guna.UI2.WinForms.Guna2TextBox txtRePass;
+        private Guna.UI2.WinForms.Guna2TextBox txtNewPass;
+        private Guna.UI2.WinForms.Guna2TextBox txtReNewPass;
+        private System.Windows.Forms.Panel panel14;
     }
 }

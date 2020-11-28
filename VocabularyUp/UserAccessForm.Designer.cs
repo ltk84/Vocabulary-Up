@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation3 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAccessForm));
             this.elipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.shadowForm = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
@@ -100,7 +100,7 @@
             this.transitionPanel.SetDecoration(this.pnlUserLogin, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlUserLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
             this.pnlUserLogin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
-            this.pnlUserLogin.Location = new System.Drawing.Point(248, 98);
+            this.pnlUserLogin.Location = new System.Drawing.Point(91, 87);
             this.pnlUserLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlUserLogin.Name = "pnlUserLogin";
             this.pnlUserLogin.ShadowDecoration.Parent = this.pnlUserLogin;
@@ -288,7 +288,7 @@
             this.transitionPanel.SetDecoration(this.pnlSignup, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlSignup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
             this.pnlSignup.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
-            this.pnlSignup.Location = new System.Drawing.Point(248, 98);
+            this.pnlSignup.Location = new System.Drawing.Point(323, 53);
             this.pnlSignup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlSignup.Name = "pnlSignup";
             this.pnlSignup.ShadowDecoration.Parent = this.pnlSignup;
@@ -522,22 +522,22 @@
             // transitionPanel
             // 
             this.transitionPanel.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.transitionPanel.DefaultAnimation = animation1;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.transitionPanel.DefaultAnimation = animation3;
             // 
             // pnlForgetPass
             // 
@@ -557,7 +557,7 @@
             this.transitionPanel.SetDecoration(this.pnlForgetPass, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlForgetPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
             this.pnlForgetPass.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
-            this.pnlForgetPass.Location = new System.Drawing.Point(248, 98);
+            this.pnlForgetPass.Location = new System.Drawing.Point(496, 39);
             this.pnlForgetPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlForgetPass.Name = "pnlForgetPass";
             this.pnlForgetPass.ShadowDecoration.Parent = this.pnlForgetPass;
@@ -655,7 +655,7 @@
             this.txtCheckEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCheckEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCheckEmail.HoverState.Parent = this.txtCheckEmail;
-            this.txtCheckEmail.Location = new System.Drawing.Point(75, 161);
+            this.txtCheckEmail.Location = new System.Drawing.Point(77, 161);
             this.txtCheckEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCheckEmail.Name = "txtCheckEmail";
             this.txtCheckEmail.PasswordChar = '\0';
