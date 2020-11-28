@@ -63,9 +63,29 @@ namespace VocabularyUp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nicolas_solerieu_4gRNmhGzYZE_unsplash {
             get {
                 object obj = ResourceManager.GetObject("nicolas-solerieu-4gRNmhGzYZE-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tanngau {
+            get {
+                object obj = ResourceManager.GetObject("tanngau", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -457,6 +457,7 @@
             // 
             // dragControl
             // 
+            this.dragControl.ContainerControl = this;
             this.dragControl.TargetControl = this.pnlTitleBar;
             // 
             // pnlTitleBar
@@ -482,7 +483,7 @@
             this.transitionPanel.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(56, 39);
             this.pictureBox1.TabIndex = 53;

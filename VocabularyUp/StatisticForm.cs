@@ -15,6 +15,36 @@ namespace VocabularyUp
         public StatisticForm()
         {
             InitializeComponent();
+
+            ToStatisticInfo();
+        }
+        StatisticInfoForm statisticInfo = new StatisticInfoForm();
+        StatisticResultForm statisticResult = new StatisticResultForm();
+        private void ToStatisticInfo()
+        {
+            
+            statisticInfo.TopLevel = false;
+            pnlShowStatistic.Controls.Clear();
+            pnlShowStatistic.Controls.Add(statisticInfo);
+            statisticInfo.Show();
+        }
+
+        private void ToStatisticResult()
+        {
+            statisticResult.TopLevel = false;
+            pnlShowStatistic.Controls.Clear();
+            pnlShowStatistic.Controls.Add(statisticResult);
+            statisticResult.Show();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ToStatisticInfo();
+        }
+
+        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ToStatisticResult();
         }
     }
 }

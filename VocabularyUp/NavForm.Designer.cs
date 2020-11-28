@@ -168,6 +168,7 @@
             // 
             // dragControl
             // 
+            this.dragControl.ContainerControl = this;
             this.dragControl.TargetControl = this.barTop;
             // 
             // elipseForm
@@ -425,6 +426,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NavForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.NavForm_Load);
             this.barTop.ResumeLayout(false);
             this.barTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconNav)).EndInit();

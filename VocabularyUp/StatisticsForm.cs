@@ -25,6 +25,11 @@ namespace VocabularyUp
             lbTotal.Text = total.ToString();
         }
 
+        private void lbName_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //public void 
     }
 }

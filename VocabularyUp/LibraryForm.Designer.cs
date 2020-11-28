@@ -36,6 +36,7 @@
             this.cbCollection = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnToCollection = new Guna.UI2.WinForms.Guna2Button();
             this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnPronun = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lbMain = new System.Windows.Forms.Label();
             this.pbMain = new System.Windows.Forms.PictureBox();
             this.pnlDash = new System.Windows.Forms.Panel();
@@ -44,7 +45,6 @@
             this.txtSearching = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLeft = new Guna.UI2.WinForms.Guna2Button();
             this.btnRight = new Guna.UI2.WinForms.Guna2Button();
-            this.btnPronun = new Guna.UI2.WinForms.Guna2ImageButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlMainNav.SuspendLayout();
             this.pnlLib.SuspendLayout();
@@ -118,7 +118,7 @@
             this.btnToCollection.CustomImages.Parent = this.btnToCollection;
             this.btnToCollection.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnToCollection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnToCollection.Font = new System.Drawing.Font("Montserrat Light", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToCollection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToCollection.ForeColor = System.Drawing.Color.Black;
             this.btnToCollection.HoverState.Parent = this.btnToCollection;
             this.btnToCollection.Image = ((System.Drawing.Image)(resources.GetObject("btnToCollection.Image")));
@@ -145,6 +145,24 @@
             this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
             this.pnlTab.Size = new System.Drawing.Size(394, 420);
             this.pnlTab.TabIndex = 0;
+            // 
+            // btnPronun
+            // 
+            this.btnPronun.BackColor = System.Drawing.Color.Transparent;
+            this.btnPronun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPronun.CheckedState.Parent = this.btnPronun;
+            this.btnPronun.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.HoverState.Image")));
+            this.btnPronun.HoverState.Parent = this.btnPronun;
+            this.btnPronun.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.Image")));
+            this.btnPronun.ImageRotate = 0F;
+            this.btnPronun.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnPronun.Location = new System.Drawing.Point(341, 362);
+            this.btnPronun.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPronun.Name = "btnPronun";
+            this.btnPronun.PressedState.Parent = this.btnPronun;
+            this.btnPronun.Size = new System.Drawing.Size(32, 38);
+            this.btnPronun.TabIndex = 13;
+            this.btnPronun.Click += new System.EventHandler(this.btnPronun_Click);
             // 
             // lbMain
             // 
@@ -194,6 +212,7 @@
             this.btnSearch.HoverState.Parent = this.btnSearch;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageOffset = new System.Drawing.Point(0, -2);
+            this.btnSearch.ImageRotate = 0F;
             this.btnSearch.ImageSize = new System.Drawing.Size(23, 23);
             this.btnSearch.Location = new System.Drawing.Point(324, 8);
             this.btnSearch.Name = "btnSearch";
@@ -215,11 +234,12 @@
             this.txtSearching.FillColor = System.Drawing.Color.MintCream;
             this.txtSearching.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearching.FocusedState.Parent = this.txtSearching;
+            this.txtSearching.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearching.ForeColor = System.Drawing.Color.Black;
             this.txtSearching.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearching.HoverState.Parent = this.txtSearching;
             this.txtSearching.Location = new System.Drawing.Point(39, 10);
-            this.txtSearching.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearching.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearching.Name = "txtSearching";
             this.txtSearching.PasswordChar = '\0';
             this.txtSearching.PlaceholderText = "Search flashcard";
@@ -268,23 +288,6 @@
             this.btnRight.Size = new System.Drawing.Size(303, 520);
             this.btnRight.TabIndex = 8;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
-            // 
-            // btnPronun
-            // 
-            this.btnPronun.BackColor = System.Drawing.Color.Transparent;
-            this.btnPronun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnPronun.CheckedState.Parent = this.btnPronun;
-            this.btnPronun.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("guna2ImageButton1.HoverState.Image")));
-            this.btnPronun.HoverState.Parent = this.btnPronun;
-            this.btnPronun.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.Image")));
-            this.btnPronun.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnPronun.Location = new System.Drawing.Point(341, 362);
-            this.btnPronun.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPronun.Name = "btnPronun";
-            this.btnPronun.PressedState.Parent = this.btnPronun;
-            this.btnPronun.Size = new System.Drawing.Size(32, 38);
-            this.btnPronun.TabIndex = 13;
-            this.btnPronun.Click += new System.EventHandler(this.btnPronun_Click);
             // 
             // timer1
             // 
