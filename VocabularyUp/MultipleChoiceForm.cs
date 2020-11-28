@@ -16,7 +16,7 @@ namespace VocabularyUp
         List<Quiz> questions = new List<Quiz>();
         int currentTopic = 0;
         int currentQuiz = 0;
-        int isConfirmed = 0;
+        int isPress = 0;
         List<UserChoice> userChoices = new List<UserChoice>();
         public MultipleChoiceForm(int currentTopic)
         {
@@ -35,6 +35,7 @@ namespace VocabularyUp
                 btnNext.Enabled = true;
             else
                 btnNext.Enabled = false;
+            isPress = 0;
         }
         private void InitAnswer()
         {
@@ -100,7 +101,7 @@ namespace VocabularyUp
                 btnB.FillColor = Color.FromArgb(192, 255, 192);
                 btnC.FillColor = Color.FromArgb(192, 255, 192);
                 btnD.FillColor = Color.FromArgb(192, 255, 192);
-                //isConfirmed = 1;
+                isPress = 1;
             }
         }
 
@@ -113,7 +114,7 @@ namespace VocabularyUp
                 btnA.FillColor = Color.FromArgb(192, 255, 192);
                 btnC.FillColor = Color.FromArgb(192, 255, 192);
                 btnD.FillColor = Color.FromArgb(192, 255, 192);
-            //    isConfirmed = 1;
+                isPress = 1;
             }
         }
 
@@ -126,7 +127,7 @@ namespace VocabularyUp
                 btnA.FillColor = Color.FromArgb(192, 255, 192);
                 btnB.FillColor = Color.FromArgb(192, 255, 192);
                 btnD.FillColor = Color.FromArgb(192, 255, 192);
-            //    isConfirmed = 1;
+                isPress = 1;
             }
         }
 
@@ -139,7 +140,7 @@ namespace VocabularyUp
                 btnA.FillColor = Color.FromArgb(192, 255, 192);
                 btnB.FillColor = Color.FromArgb(192, 255, 192);
                 btnC.FillColor = Color.FromArgb(192, 255, 192);
-            //    isConfirmed = 1;
+                isPress = 1;
             }
         }
 
@@ -147,7 +148,7 @@ namespace VocabularyUp
         {
             //if (isConfirmed == 1)
             //{
-            if (userChoices[currentQuiz].IsDone == false)
+            if (userChoices[currentQuiz].IsDone == false && isPress == 1)
             {
                 ReloadButton();
                 btnNext.Enabled = true;
@@ -193,8 +194,11 @@ namespace VocabularyUp
                 ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
             }
                 
-            else
+            else 
+            {
                 btnNext.Enabled = false;
+            }
+                
 
             if (userChoices[currentQuiz].IsDone)
                 ReloadButton();
@@ -209,15 +213,14 @@ namespace VocabularyUp
             {
                 btnPrevious.Enabled = false;
                 currentQuiz--;
-                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
             }
-
             else
             {
                 currentQuiz--;
-                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
             }
-            
+
+            ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+
 
             if (userChoices[currentQuiz].IsDone)
                 ReloadButton();
@@ -234,12 +237,17 @@ namespace VocabularyUp
         }
         private void ReloadButton()
         {
+            btnA.FillColor = Color.FromArgb(192, 255, 192);
+            btnB.FillColor = Color.FromArgb(192, 255, 192);
+            btnC.FillColor = Color.FromArgb(192, 255, 192);
+            btnD.FillColor = Color.FromArgb(192, 255, 192);
             if (userChoices[currentQuiz].Selected != userChoices[currentQuiz].Correct)
             {
                 switch (userChoices[currentQuiz].Selected)
                 {
                     case 1:
                         btnA.FillColor = Color.FromArgb(224, 92, 92);
+                        
                         break;
                     case 2:
                         btnB.FillColor = Color.FromArgb(224, 92, 92);
