@@ -17,6 +17,7 @@ namespace VocabularyUp
         int currentTopic = 0;
         int currentQuiz = 0;
         int isConfirmed = 0;
+        List<UserChoice> userChoices = new List<UserChoice>();
         public MultipleChoiceForm(int currentTopic)
         {
             InitializeComponent();
@@ -30,12 +31,17 @@ namespace VocabularyUp
             lbMain.Text = content;
             pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
             InitAnswer();
+            if (userChoices[currentQuiz].IsDone == true)
+                btnNext.Enabled = true;
+            else
+                btnNext.Enabled = false;
         }
         private void InitAnswer()
         {
             Random rd = new Random();
-            questions[currentQuiz].Correct = rd.Next(1, 5);
-            switch (questions[currentQuiz].Correct)
+            UserChoice u = new UserChoice(-1, rd.Next(1, 5));
+            userChoices.Add(u);
+            switch (userChoices[currentQuiz].Correct)
             {
                 case 1: 
                     btnA.Text = questions[currentQuiz].CorrectAnswer;
@@ -87,102 +93,137 @@ namespace VocabularyUp
 
         private void btnA_Click(object sender, EventArgs e)
         {
-            if (isConfirmed == 0)
+            if (userChoices[currentQuiz].IsDone == false)
             {
-                questions[currentQuiz].Selected = 1;
+                userChoices[currentQuiz].Selected = 1;
                 btnA.FillColor = Color.FromArgb(107, 216, 255);
                 btnB.FillColor = Color.FromArgb(192, 255, 192);
                 btnC.FillColor = Color.FromArgb(192, 255, 192);
                 btnD.FillColor = Color.FromArgb(192, 255, 192);
-                isConfirmed = 1;
+                //isConfirmed = 1;
             }
         }
 
         private void btnB_Click(object sender, EventArgs e)
         {
-            if (isConfirmed == 0)
+            if (userChoices[currentQuiz].IsDone == false)
             {
-                questions[currentQuiz].Selected = 2;
+                userChoices[currentQuiz].Selected = 2;
                 btnB.FillColor = Color.FromArgb(107, 216, 255);
                 btnA.FillColor = Color.FromArgb(192, 255, 192);
                 btnC.FillColor = Color.FromArgb(192, 255, 192);
                 btnD.FillColor = Color.FromArgb(192, 255, 192);
-                isConfirmed = 1;
+            //    isConfirmed = 1;
             }
         }
 
         private void btnC_Click(object sender, EventArgs e)
         {
-            if (isConfirmed == 0)
+            if (userChoices[currentQuiz].IsDone == false)
             {
-                questions[currentQuiz].Selected = 3;
+                userChoices[currentQuiz].Selected = 3;
                 btnC.FillColor = Color.FromArgb(107, 216, 255);
                 btnA.FillColor = Color.FromArgb(192, 255, 192);
                 btnB.FillColor = Color.FromArgb(192, 255, 192);
                 btnD.FillColor = Color.FromArgb(192, 255, 192);
-                isConfirmed = 1;
+            //    isConfirmed = 1;
             }
         }
 
         private void btnD_Click(object sender, EventArgs e)
         {
-            if (isConfirmed == 0)
+            if (userChoices[currentQuiz].IsDone == false)
             {
-                questions[currentQuiz].Selected = 4;
+                userChoices[currentQuiz].Selected = 4;
                 btnD.FillColor = Color.FromArgb(107, 216, 255);
                 btnA.FillColor = Color.FromArgb(192, 255, 192);
                 btnB.FillColor = Color.FromArgb(192, 255, 192);
                 btnC.FillColor = Color.FromArgb(192, 255, 192);
-                isConfirmed = 1;
+            //    isConfirmed = 1;
             }
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (isConfirmed == 1)
+            //if (isConfirmed == 1)
+            //{
+            if (userChoices[currentQuiz].IsDone == false)
             {
                 ReloadButton();
                 btnNext.Enabled = true;
+                userChoices[currentQuiz].IsDone = true;
             }
+            //}
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            
+
+            //if (currentQuiz != questions.Count - 1)
+            //{
+            //    if (questions[currentQuiz].Selected == -1)
+            //    {
+            //        currentQuiz++;
+            //        ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+            //        btnNext.Enabled = false;
+            //        isConfirmed = 0;
+            //        ResetButton();
+            //    }
+            //    else
+            //    {
+            //        ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+            //        ReloadButton();
+            //    }
+            //}
+            //else
+            //{
+            //    btnNext.Enabled = false;
+            //}
             if (currentQuiz == 0)
             {
                 btnPrevious.Enabled = true;
+                currentQuiz++; 
+                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
             }
 
-            if (currentQuiz != questions.Count - 1)
+            else if (currentQuiz != questions.Count - 1)
             {
-                if (questions[currentQuiz].Selected == -1)
-                {
-                    currentQuiz++;
-                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-                    btnNext.Enabled = false;
-                    isConfirmed = 0;
-                    ResetButton();
-                }
-                else
-                {
-                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-                    ReloadButton();
-                }
+                currentQuiz++;
+                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
             }
+                
+            else
+                btnNext.Enabled = false;
+
+            if (userChoices[currentQuiz].IsDone)
+                ReloadButton();
+            else
+                ResetButton();
+
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if (currentQuiz != 0)
+            if (currentQuiz == 1)
+            {
+                btnPrevious.Enabled = false;
+                currentQuiz--;
+                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+            }
+
+            else
             {
                 currentQuiz--;
                 ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+            }
+            
+
+            if (userChoices[currentQuiz].IsDone)
                 ReloadButton();
-            }
-            if (currentQuiz == 0)
-            {
-                btnPrevious.Enabled = false;
-            }
+            else
+                ResetButton();
+
         }
         private void ResetButton()
         {
@@ -193,9 +234,9 @@ namespace VocabularyUp
         }
         private void ReloadButton()
         {
-            if (questions[currentQuiz].Selected != questions[currentQuiz].Correct)
+            if (userChoices[currentQuiz].Selected != userChoices[currentQuiz].Correct)
             {
-                switch (questions[currentQuiz].Selected)
+                switch (userChoices[currentQuiz].Selected)
                 {
                     case 1:
                         btnA.FillColor = Color.FromArgb(224, 92, 92);
@@ -211,7 +252,7 @@ namespace VocabularyUp
                         break;
                 }
             }
-            switch (questions[currentQuiz].Correct)
+            switch (userChoices[currentQuiz].Correct)
             {
                 case 1:
                     btnA.FillColor = Color.FromArgb(108, 255, 125);

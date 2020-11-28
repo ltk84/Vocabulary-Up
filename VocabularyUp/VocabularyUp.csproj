@@ -150,6 +150,7 @@
     <Compile Include="UserAccessForm.Designer.cs">
       <DependentUpon>UserAccessForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserChoice.cs" />
     <EmbeddedResource Include="CampaignForm.resx">
       <DependentUpon>CampaignForm.cs</DependentUpon>
     </EmbeddedResource>
