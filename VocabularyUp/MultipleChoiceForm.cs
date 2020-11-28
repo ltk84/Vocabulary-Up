@@ -146,20 +146,17 @@ namespace VocabularyUp
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            //if (isConfirmed == 1)
-            //{
             if (userChoices[currentQuiz].IsDone == false && isPress == 1)
             {
                 ReloadButton();
                 btnNext.Enabled = true;
                 userChoices[currentQuiz].IsDone = true;
             }
-            //}
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            
+
 
             //if (currentQuiz != questions.Count - 1)
             //{
@@ -198,7 +195,8 @@ namespace VocabularyUp
             {
                 btnNext.Enabled = false;
             }
-                
+            MovePointer(currentQuiz);
+
 
             if (userChoices[currentQuiz].IsDone)
                 ReloadButton();
@@ -220,7 +218,7 @@ namespace VocabularyUp
             }
 
             ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-
+            MovePointer(currentQuiz);
 
             if (userChoices[currentQuiz].IsDone)
                 ReloadButton();
@@ -228,6 +226,54 @@ namespace VocabularyUp
                 ResetButton();
 
         }
+
+        private void MovePointer(int currentQuiz)
+        {
+            btnPointer1.Visible = false;
+            btnPointer2.Visible = false;
+            btnPointer3.Visible = false;
+            btnPointer4.Visible = false;
+            btnPointer5.Visible = false;
+            btnPointer6.Visible = false;
+            btnPointer7.Visible = false;
+            btnPointer8.Visible = false;
+            btnPointer9.Visible = false;
+            btnPointer10.Visible = false;
+            switch (currentQuiz)
+            {
+                case 0:
+                    btnPointer1.Visible = true;
+                    break;
+                case 1:
+                    btnPointer2.Visible = true;
+                    break;
+                case 2:
+                    btnPointer3.Visible = true;
+                    break;
+                case 3:
+                    btnPointer4.Visible = true;
+                    break;
+                case 4:
+                    btnPointer5.Visible = true;
+                    break;
+                case 5:
+                    btnPointer6.Visible = true;
+                    break;
+                case 6:
+                    btnPointer7.Visible = true;
+                    break;
+                case 7:
+                    btnPointer8.Visible = true;
+                    break;
+                case 8:
+                    btnPointer9.Visible = true;
+                    break;
+                case 9:
+                    btnPointer10.Visible = true;
+                    break;
+            }
+        }
+
         private void ResetButton()
         {
             btnD.FillColor = Color.FromArgb(192, 255, 192);

@@ -30,14 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FillBlankForm));
             this.pnlQuizFB = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.btnOK = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSearching = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
+            this.txtAnswer = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlFlashCard_FB = new System.Windows.Forms.Panel();
             this.pnlTab_FB = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lbMain_FB = new System.Windows.Forms.Label();
             this.pbMain_FB = new System.Windows.Forms.PictureBox();
             this.pnlDash_FB = new System.Windows.Forms.Panel();
+            this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
+            this.btnNext = new Guna.UI2.WinForms.Guna2Button();
+            this.lbCorrectAnswer = new System.Windows.Forms.Label();
             this.pnlQuizFB.SuspendLayout();
             this.pnlFlashCard_FB.SuspendLayout();
             this.pnlTab_FB.SuspendLayout();
@@ -48,8 +51,11 @@
             // pnlQuizFB
             // 
             this.pnlQuizFB.BorderRadius = 20;
-            this.pnlQuizFB.Controls.Add(this.btnOK);
-            this.pnlQuizFB.Controls.Add(this.txtSearching);
+            this.pnlQuizFB.Controls.Add(this.lbCorrectAnswer);
+            this.pnlQuizFB.Controls.Add(this.btnPrevious);
+            this.pnlQuizFB.Controls.Add(this.btnNext);
+            this.pnlQuizFB.Controls.Add(this.btnConfirm);
+            this.pnlQuizFB.Controls.Add(this.txtAnswer);
             this.pnlQuizFB.Controls.Add(this.pnlFlashCard_FB);
             this.pnlQuizFB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlQuizFB.Location = new System.Drawing.Point(0, 0);
@@ -59,60 +65,60 @@
             this.pnlQuizFB.TabIndex = 11;
             this.pnlQuizFB.Visible = false;
             // 
-            // btnOK
+            // btnConfirm
             // 
-            this.btnOK.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnOK.BackColor = System.Drawing.Color.Transparent;
-            this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnOK.BorderRadius = 15;
-            this.btnOK.CheckedState.Parent = this.btnOK;
-            this.btnOK.CustomImages.Parent = this.btnOK;
-            this.btnOK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.HoverState.Parent = this.btnOK;
-            this.btnOK.Image = ((System.Drawing.Image)(resources.GetObject("btnOK.Image")));
-            this.btnOK.ImageSize = new System.Drawing.Size(70, 45);
-            this.btnOK.Location = new System.Drawing.Point(587, 296);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.ShadowDecoration.Parent = this.btnOK;
-            this.btnOK.Size = new System.Drawing.Size(268, 70);
-            this.btnOK.TabIndex = 11;
+            this.btnConfirm.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnConfirm.BorderRadius = 15;
+            this.btnConfirm.CheckedState.Parent = this.btnConfirm;
+            this.btnConfirm.CustomImages.Parent = this.btnConfirm;
+            this.btnConfirm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.HoverState.Parent = this.btnConfirm;
+            this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
+            this.btnConfirm.ImageSize = new System.Drawing.Size(70, 45);
+            this.btnConfirm.Location = new System.Drawing.Point(587, 296);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
+            this.btnConfirm.Size = new System.Drawing.Size(268, 70);
+            this.btnConfirm.TabIndex = 11;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // txtSearching
+            // txtAnswer
             // 
-            this.txtSearching.BackColor = System.Drawing.Color.Transparent;
-            this.txtSearching.BorderRadius = 10;
-            this.txtSearching.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearching.DefaultText = "";
-            this.txtSearching.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearching.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearching.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearching.DisabledState.Parent = this.txtSearching;
-            this.txtSearching.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearching.FillColor = System.Drawing.Color.MintCream;
-            this.txtSearching.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearching.FocusedState.Parent = this.txtSearching;
-            this.txtSearching.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.txtSearching.ForeColor = System.Drawing.Color.Black;
-            this.txtSearching.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearching.HoverState.Parent = this.txtSearching;
-            this.txtSearching.Location = new System.Drawing.Point(587, 208);
-            this.txtSearching.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txtSearching.Name = "txtSearching";
-            this.txtSearching.PasswordChar = '\0';
-            this.txtSearching.PlaceholderText = "Enter your answer";
-            this.txtSearching.SelectedText = "";
-            this.txtSearching.ShadowDecoration.Parent = this.txtSearching;
-            this.txtSearching.Size = new System.Drawing.Size(268, 70);
-            this.txtSearching.TabIndex = 10;
+            this.txtAnswer.BackColor = System.Drawing.Color.Transparent;
+            this.txtAnswer.BorderRadius = 10;
+            this.txtAnswer.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAnswer.DefaultText = "";
+            this.txtAnswer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAnswer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAnswer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAnswer.DisabledState.Parent = this.txtAnswer;
+            this.txtAnswer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAnswer.FillColor = System.Drawing.Color.MintCream;
+            this.txtAnswer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAnswer.FocusedState.Parent = this.txtAnswer;
+            this.txtAnswer.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.txtAnswer.ForeColor = System.Drawing.Color.Black;
+            this.txtAnswer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAnswer.HoverState.Parent = this.txtAnswer;
+            this.txtAnswer.Location = new System.Drawing.Point(587, 208);
+            this.txtAnswer.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtAnswer.Name = "txtAnswer";
+            this.txtAnswer.PasswordChar = '\0';
+            this.txtAnswer.PlaceholderText = "Enter your answer";
+            this.txtAnswer.SelectedText = "";
+            this.txtAnswer.ShadowDecoration.Parent = this.txtAnswer;
+            this.txtAnswer.Size = new System.Drawing.Size(268, 70);
+            this.txtAnswer.TabIndex = 10;
             // 
             // pnlFlashCard_FB
             // 
             this.pnlFlashCard_FB.BackColor = System.Drawing.Color.Transparent;
             this.pnlFlashCard_FB.Controls.Add(this.pnlTab_FB);
-            this.pnlFlashCard_FB.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlFlashCard_FB.Location = new System.Drawing.Point(0, 0);
+            this.pnlFlashCard_FB.Location = new System.Drawing.Point(60, 3);
             this.pnlFlashCard_FB.Name = "pnlFlashCard_FB";
             this.pnlFlashCard_FB.Size = new System.Drawing.Size(394, 520);
             this.pnlFlashCard_FB.TabIndex = 9;
@@ -177,6 +183,57 @@
             this.pnlDash_FB.Size = new System.Drawing.Size(354, 5);
             this.pnlDash_FB.TabIndex = 11;
             // 
+            // btnPrevious
+            // 
+            this.btnPrevious.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnPrevious.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrevious.BorderRadius = 15;
+            this.btnPrevious.CheckedState.Parent = this.btnPrevious;
+            this.btnPrevious.CustomImages.Parent = this.btnPrevious;
+            this.btnPrevious.Enabled = false;
+            this.btnPrevious.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPrevious.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.ForeColor = System.Drawing.Color.Black;
+            this.btnPrevious.HoverState.Parent = this.btnPrevious;
+            this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
+            this.btnPrevious.ImageSize = new System.Drawing.Size(30, 45);
+            this.btnPrevious.Location = new System.Drawing.Point(501, 296);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.ShadowDecoration.Parent = this.btnPrevious;
+            this.btnPrevious.Size = new System.Drawing.Size(67, 72);
+            this.btnPrevious.TabIndex = 18;
+            // 
+            // btnNext
+            // 
+            this.btnNext.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnNext.BackColor = System.Drawing.Color.Transparent;
+            this.btnNext.BorderRadius = 15;
+            this.btnNext.CheckedState.Parent = this.btnNext;
+            this.btnNext.CustomImages.Parent = this.btnNext;
+            this.btnNext.Enabled = false;
+            this.btnNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnNext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.Black;
+            this.btnNext.HoverState.Parent = this.btnNext;
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.ImageSize = new System.Drawing.Size(30, 45);
+            this.btnNext.Location = new System.Drawing.Point(875, 296);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.ShadowDecoration.Parent = this.btnNext;
+            this.btnNext.Size = new System.Drawing.Size(67, 72);
+            this.btnNext.TabIndex = 17;
+            // 
+            // lbCorrectAnswer
+            // 
+            this.lbCorrectAnswer.BackColor = System.Drawing.Color.Transparent;
+            this.lbCorrectAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
+            this.lbCorrectAnswer.Location = new System.Drawing.Point(524, 116);
+            this.lbCorrectAnswer.Name = "lbCorrectAnswer";
+            this.lbCorrectAnswer.Size = new System.Drawing.Size(391, 38);
+            this.lbCorrectAnswer.TabIndex = 12;
+            this.lbCorrectAnswer.Text = "Welcome";
+            this.lbCorrectAnswer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FillBlankForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -198,13 +255,16 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlQuizFB;
-        private Guna.UI2.WinForms.Guna2Button btnOK;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearching;
+        private Guna.UI2.WinForms.Guna2Button btnConfirm;
+        private Guna.UI2.WinForms.Guna2TextBox txtAnswer;
         private System.Windows.Forms.Panel pnlFlashCard_FB;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlTab_FB;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel4;
         private System.Windows.Forms.Label lbMain_FB;
         private System.Windows.Forms.PictureBox pbMain_FB;
         private System.Windows.Forms.Panel pnlDash_FB;
+        private Guna.UI2.WinForms.Guna2Button btnPrevious;
+        private Guna.UI2.WinForms.Guna2Button btnNext;
+        private System.Windows.Forms.Label lbCorrectAnswer;
     }
 }
