@@ -9,18 +9,15 @@ namespace VocabularyUp
     class Quiz
     {
         FlashCard fl;
-        string correctAnswer;
         string[] fakeAnswers = new string[3];
         public Quiz(FlashCard fl)
         {
             this.fl = fl;
-            this.correctAnswer = this.fl.Viet;
         }
         public FlashCard GetFlashCard()
         {
             return fl;
         }
-        public string CorrectAnswer { get => correctAnswer; set => correctAnswer = value; }
         public string[] FakeAnswers { get => fakeAnswers; set => fakeAnswers = value; }
 
         public void SetFakeAnswers(string a1, string a2, string a3)

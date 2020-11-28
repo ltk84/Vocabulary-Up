@@ -45,25 +45,25 @@ namespace VocabularyUp
             switch (userChoices[currentQuiz].Correct)
             {
                 case 1: 
-                    btnA.Text = questions[currentQuiz].CorrectAnswer;
+                    btnA.Text = questions[currentQuiz].GetFlashCard().Viet;
                     btnB.Text = questions[currentQuiz].FakeAnswers[0];
                     btnC.Text = questions[currentQuiz].FakeAnswers[1];
                     btnD.Text = questions[currentQuiz].FakeAnswers[2];
                     break;
                 case 2:
-                    btnB.Text = questions[currentQuiz].CorrectAnswer;
+                    btnB.Text = questions[currentQuiz].GetFlashCard().Viet;
                     btnA.Text = questions[currentQuiz].FakeAnswers[0];
                     btnC.Text = questions[currentQuiz].FakeAnswers[1];
                     btnD.Text = questions[currentQuiz].FakeAnswers[2];
                     break;
                 case 3:
-                    btnC.Text = questions[currentQuiz].CorrectAnswer;
+                    btnC.Text = questions[currentQuiz].GetFlashCard().Viet;
                     btnB.Text = questions[currentQuiz].FakeAnswers[0];
                     btnA.Text = questions[currentQuiz].FakeAnswers[1];
                     btnD.Text = questions[currentQuiz].FakeAnswers[2];
                     break;
                 case 4:
-                    btnD.Text = questions[currentQuiz].CorrectAnswer;
+                    btnD.Text = questions[currentQuiz].GetFlashCard().Viet;
                     btnB.Text = questions[currentQuiz].FakeAnswers[0];
                     btnC.Text = questions[currentQuiz].FakeAnswers[1];
                     btnA.Text = questions[currentQuiz].FakeAnswers[2];

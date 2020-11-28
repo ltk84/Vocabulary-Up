@@ -16,18 +16,25 @@ namespace VocabularyUp
         List<Quiz> questions = new List<Quiz>();
         int currentTopic = 0;
         int currentQuiz = 0;
+        List<UserChoice> userChoices = new List<UserChoice>();
         public FillBlankForm(int currentTopic)
         {
             InitializeComponent();
             this.currentTopic = currentTopic;
             ManageUserAction.UpdateMainFlashCard(currentTopic);
             InitQuiz();
+            InitAnswer();
             ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
         }
         public void ChangeFlashCard(string content, int id)
         {
             lbMain_FB.Text = content;
             pbMain_FB.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
+            lbCorrectAnswer.Text = userChoices[currentQuiz].CorrectAns;
+            if (userChoices[currentQuiz].IsDone == true)
+                btnNext.Enabled = true;
+            else
+                btnNext.Enabled = false;
         }
         private void InitQuiz()
         {
@@ -38,22 +45,102 @@ namespace VocabularyUp
             }
         }
 
+        private void InitAnswer()
+        {
+            foreach (var item in questions)
+            {
+                UserChoice u = new UserChoice(item.GetFlashCard().Eng, "");
+                userChoices.Add(u);
+            }
+        }
+
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (txtAnswer.Text == questions[currentQuiz].GetFlashCard().Eng)
+            txtAnswer.Text = txtAnswer.Text.ToLower();
+            if (txtAnswer.Text != null && txtAnswer.Text.Length != 0)
             {
+                if (txtAnswer.Text != questions[currentQuiz].GetFlashCard().Eng)
+                {
+                    lbWrong.Visible = true;
+                }
 
+                lbCorrectAnswer.Text = questions[currentQuiz].GetFlashCard().Eng;
+                lbCorrectAnswer.Visible = true;
+                userChoices[currentQuiz].IsDone = true;
+                btnNext.Enabled = true;
+                userChoices[currentQuiz].Answer = txtAnswer.Text;
+                userChoices[currentQuiz].IsDone = true;
+                txtAnswer.Enabled = false;
             }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            if (currentQuiz == 0)
+            {
+                btnPrevious.Enabled = true;
+                currentQuiz++;
+                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
+            }
 
+            else if (currentQuiz != questions.Count - 1)
+            {
+                currentQuiz++;
+                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
+            }
+
+            else
+            {
+                btnNext.Enabled = false;
+            }
+
+            MovePointer(currentQuiz);
+
+            if (userChoices[currentQuiz].IsDone)
+                Reload();
+            else
+                Reset();
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
+            if (currentQuiz == 1)
+            {
+                btnPrevious.Enabled = false;
+                currentQuiz--;
+            }
+            else
+            {
+                currentQuiz--;
+            }
 
+            ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
+            MovePointer(currentQuiz);
+
+            Reload();
+        }
+
+        private void Reset()
+        {
+            txtAnswer.Text = "";
+            txtAnswer.Enabled = true;
+            lbWrong.Visible = false;
+            lbCorrectAnswer.Visible = false;
+            txtAnswer.Enabled = true;
+        }
+
+        private void Reload()
+        {
+            if (userChoices[currentQuiz].CorrectAns != userChoices[currentQuiz].Answer)
+            {
+                lbWrong.Visible = true;
+                txtAnswer.Enabled = false;
+            }
+            else
+                lbWrong.Visible = false;
+
+            txtAnswer.Text = userChoices[currentQuiz].Answer;
+            lbCorrectAnswer.Visible = true;
         }
 
         private void MovePointer(int currentQuiz)
@@ -101,6 +188,6 @@ namespace VocabularyUp
                     btnPointer10.Visible = true;
                     break;
             }
-        }
+}
     }
 }
