@@ -857,3 +857,10 @@ values
 	(1,2,3, N'Đầu moi')
 delete from USER_FLASHCARD where ID_COLLECTION <> 0
 select id_card, eng, vie, pronunciation, field from USER_FLASHCARD, flashcard where ID_USER = 1 and id_collection = 0 and USER_FLASHCARD.ID_CARD = FLASHCARD.ID
+update FLASHCARD
+set FIELD = 'Fruits'
+where id = 477
+select distinct field from FLASHCARD
+select * from USER_FLASHCARD
+select top 10 * from FLASHCARD fl_m where not exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = 1 and u_fl.ID_COLLECTION = 0) and fl_m.FIELD = 'Food and Drinks' order by NEWID()
+select top 10 * from FLASHCARD fl_m where not exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = 1 and u_fl.ID_COLLECTION = 0) and fl_m.FIELD = 'Animals' order by NEWID()

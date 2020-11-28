@@ -17,6 +17,7 @@ namespace VocabularyUp
         int currentTopic = 0;
         int currentQuiz = 0;
         int isConfirmed = 0;
+        int pivotCurrent = 0;
         public MultipleChoiceForm(int currentTopic)
         {
             InitializeComponent();
@@ -152,12 +153,12 @@ namespace VocabularyUp
             {
                 btnPrevious.Enabled = true;
             }
-
             if (currentQuiz != questions.Count - 1)
             {
-                if (questions[currentQuiz].Selected == -1)
+                if (currentQuiz == pivotCurrent)
                 {
                     currentQuiz++;
+                    pivotCurrent++;
                     ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
                     btnNext.Enabled = false;
                     isConfirmed = 0;
@@ -166,6 +167,7 @@ namespace VocabularyUp
                 else
                 {
                     ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                    currentQuiz++;
                     ReloadButton();
                 }
             }
