@@ -207,6 +207,7 @@ namespace VocabularyUp
         // CONNECT ĐẾN DATABASE ĐỂ LOAD MAIN FLASHCARD
         public static void UpdateMainFlashCard(int currentTopic)
         {
+            mainFlashCard.Clear();
             string nameTopic = null;
             switch (currentTopic)
             {
@@ -220,10 +221,10 @@ namespace VocabularyUp
                     nameTopic = "Fruits";
                     break;
                 case 4:
-                    nameTopic = "Hobbies";
+                    nameTopic = "Job";
                     break;
                 case 5:
-                    nameTopic = "Character"; // khac
+                    nameTopic = "Food and Drinks"; // khac
                     break;
                 case 6:
                     nameTopic = "Sport"; // khac
@@ -234,9 +235,6 @@ namespace VocabularyUp
                 case 8:
                     nameTopic = "Technology"; //
                     break;
-                default:
-                    nameTopic = "";
-                    break;
             }
             SqlConnection connection = new SqlConnection(constr);
             try
@@ -244,7 +242,7 @@ namespace VocabularyUp
                 //Mo ket noi
                 connection.Open();
                 //Chuan bi cau lenh query viet bang SQL
-                String sqlQuery = "	select top 10 * from FLASHCARD fl_m where not exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = " + currentUser.IdUser.ToString() + " and u_fl.ID_COLLECTION = 0) and fl_m.FIELD = " + nameTopic + " order by NEWID()";
+                String sqlQuery = "select top 10 * from FLASHCARD fl_m where not exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = " + currentUser.IdUser.ToString() + " and u_fl.ID_COLLECTION = 0) and fl_m.FIELD = '" + nameTopic + "' order by NEWID()";
                 //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
 
@@ -552,7 +550,11 @@ namespace VocabularyUp
             }
             return findedList;
         }
-
+        //
+        public static List<FlashCard> GetMainFlashCards()
+        {
+            return mainFlashCard;
+        }
         
     }
 }

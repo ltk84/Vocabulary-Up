@@ -13,57 +13,70 @@ namespace VocabularyUp
 {
     public partial class CampaignForm : Form
     {
+        int type = 0;
         int currentTopic = 0;
-        MultipleChoiceForm quizMP = new MultipleChoiceForm();
-        FillBlankForm quizFB = new FillBlankForm();
         public CampaignForm()
         {
             InitializeComponent();
         }
 
-        private void Start(int currentTopic)
+        private void Start()
         {
-            ManageUserAction.UpdateMainFlashCard(currentTopic);
+            MultipleChoiceForm quizMP = new MultipleChoiceForm(currentTopic);
+            quizMP.TopLevel = false;
+            //pnlCampaignCate.Controls.Clear();
+            pnlTopicSelection.Hide();
+            pnlCampaignCate.Controls.Add(quizMP);
+            quizMP.FormBorderStyle = FormBorderStyle.None;
+            quizMP.Show();
         }
 
         private void btnAnimals_Click(object sender, EventArgs e)
         {
             currentTopic = 1;
+            Start();
         }
 
         private void btnPlants_Click(object sender, EventArgs e)
         {
             currentTopic = 2;
+            Start();
         }
 
         private void btnFruits_Click(object sender, EventArgs e)
         {
             currentTopic = 3;
+            Start();
         }
 
-        private void btnHobbies_Click(object sender, EventArgs e)
+        private void btnJob_Click(object sender, EventArgs e)
         {
             currentTopic = 4;
+            Start();
         }
 
-        private void btnPersonality_Click(object sender, EventArgs e)
+        private void btnFoodaDrinks_Click(object sender, EventArgs e)
         {
             currentTopic = 5;
+            Start();
         }
 
-        private void btnSports_Click(object sender, EventArgs e)
+        private void btnSport_Click(object sender, EventArgs e)
         {
             currentTopic = 6;
+            Start();
         }
 
         private void btnClothing_Click(object sender, EventArgs e)
         {
             currentTopic = 7;
+            Start();
         }
 
         private void btnTechnology_Click(object sender, EventArgs e)
         {
             currentTopic = 8;
+            Start();
         }
     }
 }

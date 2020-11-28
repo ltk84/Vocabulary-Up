@@ -28,108 +28,183 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlMainNav = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pnlLib = new System.Windows.Forms.Panel();
-            this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pnlSearching = new System.Windows.Forms.Panel();
-            this.txtAnswer = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pnlMainNav.SuspendLayout();
-            this.pnlLib.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FillBlankForm));
+            this.pnlQuizFB = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnOK = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSearching = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pnlFlashCard_FB = new System.Windows.Forms.Panel();
+            this.pnlTab_FB = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lbMain_FB = new System.Windows.Forms.Label();
+            this.pbMain_FB = new System.Windows.Forms.PictureBox();
+            this.pnlDash_FB = new System.Windows.Forms.Panel();
+            this.pnlQuizFB.SuspendLayout();
+            this.pnlFlashCard_FB.SuspendLayout();
+            this.pnlTab_FB.SuspendLayout();
+            this.guna2CustomGradientPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain_FB)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlMainNav
+            // pnlQuizFB
             // 
-            this.pnlMainNav.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.pnlMainNav.BorderRadius = 20;
-            this.pnlMainNav.Controls.Add(this.txtAnswer);
-            this.pnlMainNav.Controls.Add(this.pnlLib);
-            this.pnlMainNav.Controls.Add(this.pnlSearching);
-            this.pnlMainNav.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMainNav.Location = new System.Drawing.Point(0, 0);
-            this.pnlMainNav.Name = "pnlMainNav";
-            this.pnlMainNav.ShadowDecoration.Parent = this.pnlMainNav;
-            this.pnlMainNav.Size = new System.Drawing.Size(1000, 520);
-            this.pnlMainNav.TabIndex = 16;
+            this.pnlQuizFB.BorderRadius = 20;
+            this.pnlQuizFB.Controls.Add(this.btnOK);
+            this.pnlQuizFB.Controls.Add(this.txtSearching);
+            this.pnlQuizFB.Controls.Add(this.pnlFlashCard_FB);
+            this.pnlQuizFB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlQuizFB.Location = new System.Drawing.Point(0, 0);
+            this.pnlQuizFB.Name = "pnlQuizFB";
+            this.pnlQuizFB.ShadowDecoration.Parent = this.pnlQuizFB;
+            this.pnlQuizFB.Size = new System.Drawing.Size(1000, 520);
+            this.pnlQuizFB.TabIndex = 11;
+            this.pnlQuizFB.Visible = false;
             // 
-            // pnlLib
+            // btnOK
             // 
-            this.pnlLib.BackColor = System.Drawing.Color.Transparent;
-            this.pnlLib.Controls.Add(this.pnlTab);
-            this.pnlLib.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLib.Location = new System.Drawing.Point(54, 0);
-            this.pnlLib.Name = "pnlLib";
-            this.pnlLib.Size = new System.Drawing.Size(394, 520);
-            this.pnlLib.TabIndex = 9;
+            this.btnOK.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnOK.BackColor = System.Drawing.Color.Transparent;
+            this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnOK.BorderRadius = 15;
+            this.btnOK.CheckedState.Parent = this.btnOK;
+            this.btnOK.CustomImages.Parent = this.btnOK;
+            this.btnOK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnOK.ForeColor = System.Drawing.Color.White;
+            this.btnOK.HoverState.Parent = this.btnOK;
+            this.btnOK.Image = ((System.Drawing.Image)(resources.GetObject("btnOK.Image")));
+            this.btnOK.ImageSize = new System.Drawing.Size(70, 45);
+            this.btnOK.Location = new System.Drawing.Point(587, 296);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.ShadowDecoration.Parent = this.btnOK;
+            this.btnOK.Size = new System.Drawing.Size(268, 70);
+            this.btnOK.TabIndex = 11;
             // 
-            // pnlTab
+            // txtSearching
             // 
-            this.pnlTab.BorderRadius = 20;
-            this.pnlTab.FillColor3 = System.Drawing.Color.Snow;
-            this.pnlTab.FillColor4 = System.Drawing.Color.Snow;
-            this.pnlTab.Location = new System.Drawing.Point(0, 45);
-            this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlTab.Name = "pnlTab";
-            this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
-            this.pnlTab.Size = new System.Drawing.Size(394, 430);
-            this.pnlTab.TabIndex = 0;
+            this.txtSearching.BackColor = System.Drawing.Color.Transparent;
+            this.txtSearching.BorderRadius = 10;
+            this.txtSearching.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearching.DefaultText = "";
+            this.txtSearching.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearching.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearching.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearching.DisabledState.Parent = this.txtSearching;
+            this.txtSearching.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearching.FillColor = System.Drawing.Color.MintCream;
+            this.txtSearching.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearching.FocusedState.Parent = this.txtSearching;
+            this.txtSearching.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.txtSearching.ForeColor = System.Drawing.Color.Black;
+            this.txtSearching.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearching.HoverState.Parent = this.txtSearching;
+            this.txtSearching.Location = new System.Drawing.Point(587, 208);
+            this.txtSearching.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtSearching.Name = "txtSearching";
+            this.txtSearching.PasswordChar = '\0';
+            this.txtSearching.PlaceholderText = "Enter your answer";
+            this.txtSearching.SelectedText = "";
+            this.txtSearching.ShadowDecoration.Parent = this.txtSearching;
+            this.txtSearching.Size = new System.Drawing.Size(268, 70);
+            this.txtSearching.TabIndex = 10;
             // 
-            // pnlSearching
+            // pnlFlashCard_FB
             // 
-            this.pnlSearching.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlSearching.Location = new System.Drawing.Point(0, 0);
-            this.pnlSearching.Name = "pnlSearching";
-            this.pnlSearching.Size = new System.Drawing.Size(54, 520);
-            this.pnlSearching.TabIndex = 0;
+            this.pnlFlashCard_FB.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFlashCard_FB.Controls.Add(this.pnlTab_FB);
+            this.pnlFlashCard_FB.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlFlashCard_FB.Location = new System.Drawing.Point(0, 0);
+            this.pnlFlashCard_FB.Name = "pnlFlashCard_FB";
+            this.pnlFlashCard_FB.Size = new System.Drawing.Size(394, 520);
+            this.pnlFlashCard_FB.TabIndex = 9;
             // 
-            // txtAnswer
+            // pnlTab_FB
             // 
-            this.txtAnswer.BackColor = System.Drawing.Color.Transparent;
-            this.txtAnswer.BorderColor = System.Drawing.Color.Transparent;
-            this.txtAnswer.BorderRadius = 20;
-            this.txtAnswer.BorderThickness = 0;
-            this.txtAnswer.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAnswer.DefaultText = "";
-            this.txtAnswer.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAnswer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAnswer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAnswer.DisabledState.Parent = this.txtAnswer;
-            this.txtAnswer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAnswer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.txtAnswer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAnswer.FocusedState.Parent = this.txtAnswer;
-            this.txtAnswer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAnswer.HoverState.Parent = this.txtAnswer;
-            this.txtAnswer.Location = new System.Drawing.Point(599, 211);
-            this.txtAnswer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtAnswer.Name = "txtAnswer";
-            this.txtAnswer.PasswordChar = '\0';
-            this.txtAnswer.PlaceholderText = "";
-            this.txtAnswer.SelectedText = "";
-            this.txtAnswer.ShadowDecoration.Parent = this.txtAnswer;
-            this.txtAnswer.Size = new System.Drawing.Size(267, 84);
-            this.txtAnswer.TabIndex = 10;
+            this.pnlTab_FB.BorderRadius = 20;
+            this.pnlTab_FB.Controls.Add(this.guna2CustomGradientPanel4);
+            this.pnlTab_FB.FillColor3 = System.Drawing.Color.Snow;
+            this.pnlTab_FB.FillColor4 = System.Drawing.Color.Snow;
+            this.pnlTab_FB.Location = new System.Drawing.Point(0, 45);
+            this.pnlTab_FB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlTab_FB.Name = "pnlTab_FB";
+            this.pnlTab_FB.ShadowDecoration.Parent = this.pnlTab_FB;
+            this.pnlTab_FB.Size = new System.Drawing.Size(394, 430);
+            this.pnlTab_FB.TabIndex = 0;
+            // 
+            // guna2CustomGradientPanel4
+            // 
+            this.guna2CustomGradientPanel4.BorderRadius = 20;
+            this.guna2CustomGradientPanel4.Controls.Add(this.lbMain_FB);
+            this.guna2CustomGradientPanel4.Controls.Add(this.pbMain_FB);
+            this.guna2CustomGradientPanel4.Controls.Add(this.pnlDash_FB);
+            this.guna2CustomGradientPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.LightGreen;
+            this.guna2CustomGradientPanel4.FillColor3 = System.Drawing.Color.LightGreen;
+            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(0, 0);
+            this.guna2CustomGradientPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
+            this.guna2CustomGradientPanel4.ShadowDecoration.Parent = this.guna2CustomGradientPanel4;
+            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(394, 420);
+            this.guna2CustomGradientPanel4.TabIndex = 1;
+            // 
+            // lbMain_FB
+            // 
+            this.lbMain_FB.BackColor = System.Drawing.Color.Transparent;
+            this.lbMain_FB.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
+            this.lbMain_FB.Location = new System.Drawing.Point(0, 362);
+            this.lbMain_FB.Name = "lbMain_FB";
+            this.lbMain_FB.Size = new System.Drawing.Size(391, 38);
+            this.lbMain_FB.TabIndex = 7;
+            this.lbMain_FB.Text = "Welcome";
+            this.lbMain_FB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbMain_FB
+            // 
+            this.pbMain_FB.Image = ((System.Drawing.Image)(resources.GetObject("pbMain_FB.Image")));
+            this.pbMain_FB.Location = new System.Drawing.Point(19, 21);
+            this.pbMain_FB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbMain_FB.Name = "pbMain_FB";
+            this.pbMain_FB.Size = new System.Drawing.Size(354, 320);
+            this.pbMain_FB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMain_FB.TabIndex = 8;
+            this.pbMain_FB.TabStop = false;
+            // 
+            // pnlDash_FB
+            // 
+            this.pnlDash_FB.BackColor = System.Drawing.Color.White;
+            this.pnlDash_FB.Location = new System.Drawing.Point(19, 345);
+            this.pnlDash_FB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlDash_FB.Name = "pnlDash_FB";
+            this.pnlDash_FB.Size = new System.Drawing.Size(354, 5);
+            this.pnlDash_FB.TabIndex = 11;
             // 
             // FillBlankForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 520);
-            this.Controls.Add(this.pnlMainNav);
+            this.Controls.Add(this.pnlQuizFB);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FillBlankForm";
             this.Text = "FillBlankForm";
-            this.pnlMainNav.ResumeLayout(false);
-            this.pnlLib.ResumeLayout(false);
+            this.pnlQuizFB.ResumeLayout(false);
+            this.pnlFlashCard_FB.ResumeLayout(false);
+            this.pnlTab_FB.ResumeLayout(false);
+            this.guna2CustomGradientPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain_FB)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlMainNav;
-        private System.Windows.Forms.Panel pnlLib;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlTab;
-        private System.Windows.Forms.Panel pnlSearching;
-        private Guna.UI2.WinForms.Guna2TextBox txtAnswer;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlQuizFB;
+        private Guna.UI2.WinForms.Guna2Button btnOK;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearching;
+        private System.Windows.Forms.Panel pnlFlashCard_FB;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlTab_FB;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel4;
+        private System.Windows.Forms.Label lbMain_FB;
+        private System.Windows.Forms.PictureBox pbMain_FB;
+        private System.Windows.Forms.Panel pnlDash_FB;
     }
 }
