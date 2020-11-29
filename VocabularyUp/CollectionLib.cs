@@ -128,5 +128,28 @@ namespace VocabularyUp
             else if (e.KeyCode == Keys.Left)
                 btnLeft_Click(sender, e);
         }
+
+        private void ChangeLabel()
+        {
+            if (lbMain.Text == curFlashCard.Eng)
+                lbMain.Text = curFlashCard.Viet;
+            else
+                lbMain.Text = curFlashCard.Eng;
+        }
+
+        private void pbMain_Click(object sender, EventArgs e)
+        {
+            ChangeLabel();
+        }
+
+        private void pnlTab_Click(object sender, EventArgs e)
+        {
+            ChangeLabel();
+        }
+
+        private void lbMain_Click(object sender, EventArgs e)
+        {
+            ChangeLabel();
+        }
     }
 }

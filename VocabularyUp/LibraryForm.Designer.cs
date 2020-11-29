@@ -150,6 +150,7 @@
             this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
             this.pnlTab.Size = new System.Drawing.Size(296, 341);
             this.pnlTab.TabIndex = 0;
+            this.pnlTab.Click += new System.EventHandler(this.pnlTab_Click);
             // 
             // btnPronun
             // 
@@ -179,6 +180,7 @@
             this.lbMain.TabIndex = 7;
             this.lbMain.Text = "Welcome";
             this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbMain.Click += new System.EventHandler(this.lbMain_Click);
             // 
             // pbMain
             // 
@@ -190,6 +192,7 @@
             this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMain.TabIndex = 8;
             this.pbMain.TabStop = false;
+            this.pbMain.Click += new System.EventHandler(this.pbMain_Click);
             // 
             // pnlDash
             // 
