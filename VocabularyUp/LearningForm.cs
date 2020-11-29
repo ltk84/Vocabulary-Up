@@ -19,15 +19,18 @@ namespace VocabularyUp
         List<FlashCard> flList = new List<FlashCard>();
         int currentTopic = 0;
         CampaignForm campaignForm;
-        FillBlankForm quiz;
+        FillBlankForm fillBQuiz;
+        MultipleChoiceForm multiQuiz;
 
-        public LearningForm(int currentTopic, CampaignForm campaignForm, FillBlankForm quiz)
+        public LearningForm(int currentTopic, CampaignForm campaignForm, FillBlankForm fillBquiz, MultipleChoiceForm multiQuiz)
         {
             InitializeComponent();
+            this.KeyPreview = true;
             this.campaignForm = campaignForm;
-            this.quiz = quiz;
+            this.fillBQuiz = fillBquiz;
+            this.multiQuiz = multiQuiz;
             this.currentTopic = currentTopic;
-            ManageUserAction.UpdateMainFlashCard(currentTopic);
+            //ManageUserAction.UpdateMainFlashCard(currentTopic);
             flList = ManageUserAction.GetMainFlashCards();
             LoadComboBox();
         }
@@ -74,7 +77,8 @@ namespace VocabularyUp
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.campaignForm.Return();
-            this.quiz.Close();
+            this.multiQuiz.Close();
+            this.fillBQuiz.Close();
             this.Close();
         }
 
@@ -100,6 +104,15 @@ namespace VocabularyUp
         {
             ManageUserAction.AddFlashCardToCollection(cbCollection.SelectedIndex + 1, flList[index]);
             ManageUserAction.AddFlashCardToDatabase(cbCollection.SelectedIndex + 1, cbCollection.SelectedItem.ToString(), flList[index]);
+        }
+        
+
+        private void LearningForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+                btnRight_Click(sender, e);
+            else if (e.KeyCode == Keys.Left)
+                btnLeft_Click(sender, e);
         }
     }
 }

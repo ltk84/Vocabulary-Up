@@ -24,9 +24,14 @@ namespace VocabularyUp
             InitializeComponent();
             //
             this.collectionTab = collectionTab;
+            this.KeyPreview = true;
             //
             index = 0;
             this.curCollection = ManageUserAction.GetItemOfAllCollection(idCollection);
+            if (idCollection == 0)
+                btnRemoveFromCollection.Visible = false;
+            else
+                btnRemoveFromCollection.Visible = true;
             lbCollectionName.Text = curCollection.NameCollection;
             curFlashCard = curCollection.ListFL[index];
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
@@ -114,6 +119,14 @@ namespace VocabularyUp
         {
             timer1.Stop();
             btnPronun.Enabled = true;
+        }
+
+        private void CollectionLib_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+                btnRight_Click(sender, e);
+            else if (e.KeyCode == Keys.Left)
+                btnLeft_Click(sender, e);
         }
     }
 }

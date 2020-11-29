@@ -18,11 +18,13 @@ namespace VocabularyUp
         int currentQuiz = 0;
         int isPress = 0;
         List<UserChoice> userChoices = new List<UserChoice>();
-        public MultipleChoiceForm(int currentTopic)
+        CampaignForm campaign = new CampaignForm();
+        public MultipleChoiceForm(int currentTopic, CampaignForm campaign)
         {
             InitializeComponent();
             this.currentTopic = currentTopic;
-            ManageUserAction.UpdateMainFlashCard(currentTopic);
+            this.campaign = campaign;
+            //ManageUserAction.UpdateMainFlashCard(currentTopic);
             InitQuiz();
             ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
         }
@@ -194,6 +196,8 @@ namespace VocabularyUp
             else 
             {
                 btnNext.Enabled = false;
+                campaign.Return();
+                this.Close();
             }
             MovePointer(currentQuiz);
 
@@ -287,8 +291,10 @@ namespace VocabularyUp
             btnB.FillColor = Color.FromArgb(192, 255, 192);
             btnC.FillColor = Color.FromArgb(192, 255, 192);
             btnD.FillColor = Color.FromArgb(192, 255, 192);
+            bool isCorrect = true;
             if (userChoices[currentQuiz].Selected != userChoices[currentQuiz].Correct)
             {
+                isCorrect = false;
                 switch (userChoices[currentQuiz].Selected)
                 {
                     case 1:
@@ -321,6 +327,19 @@ namespace VocabularyUp
                     btnD.FillColor = Color.FromArgb(108, 255, 125);
                     break;
             }
+
+            if (isCorrect == true)
+            {
+                FlashCard fl = questions[currentQuiz].GetFlashCard();
+                if (!ManageUserAction.IsFlashCardExist(0, fl.IdCard))
+                AddFlashCard(fl);
+            }
+        }
+
+        private void AddFlashCard(FlashCard fl)
+        {
+            ManageUserAction.AddFlashCardToCollection(0, fl);
+            ManageUserAction.AddFlashCardToDatabase(0, ManageUserAction.GetItemOfAllCollection(0).NameCollection, fl);
         }
     }
 }

@@ -61,19 +61,34 @@ namespace VocabularyUp
             txtAnswer.Text = txtAnswer.Text.ToLower();
             if (txtAnswer.Text != null && txtAnswer.Text.Length != 0)
             {
+                bool isCorrect = true;
                 if (txtAnswer.Text != questions[currentQuiz].GetFlashCard().Eng)
                 {
                     lbWrong.Visible = true;
+                    isCorrect = false;
                 }
 
-                lbCorrectAnswer.Text = questions[currentQuiz].GetFlashCard().Eng;
+                lbCorrectAnswer.Text = questions[currentQuiz].GetFlashCard().Eng;   
                 lbCorrectAnswer.Visible = true;
                 userChoices[currentQuiz].IsDone = true;
                 btnNext.Enabled = true;
                 userChoices[currentQuiz].Answer = txtAnswer.Text;
                 userChoices[currentQuiz].IsDone = true;
                 txtAnswer.Enabled = false;
+
+                if (isCorrect == true)
+                {
+                    FlashCard fl = questions[currentQuiz].GetFlashCard();
+                    if (!ManageUserAction.IsFlashCardExist(0, fl.IdCard))
+                        AddFlashCard(fl);
+                }
             }
+        }
+
+        private void AddFlashCard(FlashCard fl)
+        {
+            ManageUserAction.AddFlashCardToCollection(0, fl);
+            ManageUserAction.AddFlashCardToDatabase(0, ManageUserAction.GetItemOfAllCollection(0).NameCollection, fl);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -131,6 +146,7 @@ namespace VocabularyUp
             lbWrong.Visible = false;
             lbCorrectAnswer.Visible = false;
             txtAnswer.Enabled = true;
+            txtAnswer.Focus();
         }
 
         private void Reload()
@@ -192,6 +208,18 @@ namespace VocabularyUp
                     btnPointer10.Visible = true;
                     break;
             }
-}
+        }
+
+        private void btnPrevious_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left)
+                btnPrevious_Click(sender, e);
+        }
+
+        private void btnNext_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+                btnNext_Click(sender, e);
+        }
     }
 }
