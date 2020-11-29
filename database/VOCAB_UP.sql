@@ -45,15 +45,19 @@ CREATE TABLE USER_FLASHCARD
 	CONSTRAINT FK_UF_CARD FOREIGN KEY (ID_CARD) REFERENCES FLASHCARD (ID)
 )
 
-alter table USER_FLASHCARD
-	alter column COLLECTION_NAME nvarchar(100)
+delete from USERs_INFO
+delete from USER_FLASHCARD
+
+insert into user_flashcard (id_user, id_card, id_collection, collection_name) values (1, 0, 0, 'HOCED')
 
 select ID_COLLECTION, COLLECTION_NAME from USER_FLASHCARD where  ID_USER = 
 delete from USER_FLASHCARD
 select * from USER_FLASHCARD
+select * from USER_INFO
+select * from FLASHCARD
 insert into USER_FLASHCARD
 values
-(1,1,0,'HOCED'), -- bat buoc co nha dau buoi
+(1,0,0,'HOCED'), -- bat buoc co nha dau buoi
 (1,1,1,N'Đầu buồi'),
 (1,1,2,N'Rẻ rách')
 

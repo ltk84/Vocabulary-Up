@@ -76,11 +76,50 @@ namespace VocabularyUp
                 connection.Open();
                 //Chuan bi cau lenh query viet bang SQL
                 String sqlQuery = "insert into users(id, username, pass) values(@id, @username, @pass)";
+                //SqlCommand commandExt = new SqlCommand(sqlQueryExt, connection);
                 //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 command.Parameters.AddWithValue("@id", numOfUser);
                 command.Parameters.AddWithValue("@username", username);
                 command.Parameters.AddWithValue("@pass", password);
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                int rs = command.ExecuteNonQuery();
+                //command.ExecuteNonQuery();
+                //Su dung reader de doc tung dong du lieu
+                //va thuc hien thao tac xu ly mong muon voi du lieu doc len
+                if (rs != 1)
+                {
+                    throw new Exception("Failed Query");
+                }
+
+                AddCollectionToUser(numOfUser);
+            }
+            catch (Exception)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
+        }
+
+        public static void AddCollectionToUser(int currentID)
+        {
+            SqlConnection connection = new SqlConnection(connString);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "insert into user_flashcard (id_user, id_card, id_collection, collection_name) values ( @id, 0, 0, 'HOCED')";
+                //String sqlQueryExt = "insert into user_flashcard (id_user, id_card, id_collection, collection_name) values (" + numOfUser + ", 0, 0, 'HOCED')";
+                //SqlCommand commandExt = new SqlCommand(sqlQueryExt, connection);
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@id", currentID);
                 //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
                 int rs = command.ExecuteNonQuery();
                 //Su dung reader de doc tung dong du lieu

@@ -133,6 +133,13 @@ namespace VocabularyUp
 
                 allCollections.Add(c);
             }
+
+            //if (allCollections.Count == 0)
+            //{
+            //    allCollections.Add(new Collection(0, "HOCED", UpdateFlashCardOfCollection(0)));
+            //    AddCollection("HOCED");
+            //    allCollections[0].ListFL.Add(new FlashCard(0, "Cover", "", "", ""));
+            //}
         }
 
         public static List<FlashCard> UpdateFlashCardOfCollection(int idCollection)

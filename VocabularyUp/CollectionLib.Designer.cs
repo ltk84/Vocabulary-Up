@@ -63,7 +63,7 @@
             this.pnlMainNav.Controls.Add(this.btnRight);
             this.pnlMainNav.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMainNav.Location = new System.Drawing.Point(0, 0);
-            this.pnlMainNav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlMainNav.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMainNav.Name = "pnlMainNav";
             this.pnlMainNav.ShadowDecoration.Parent = this.pnlMainNav;
             this.pnlMainNav.Size = new System.Drawing.Size(750, 422);
@@ -79,7 +79,7 @@
             this.pnlLib.Controls.Add(this.pnlSearching);
             this.pnlLib.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLib.Location = new System.Drawing.Point(227, 0);
-            this.pnlLib.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlLib.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLib.Name = "pnlLib";
             this.pnlLib.Size = new System.Drawing.Size(296, 422);
             this.pnlLib.TabIndex = 9;
@@ -96,7 +96,7 @@
             this.btnRemoveFromCollection.HoverState.Parent = this.btnRemoveFromCollection;
             this.btnRemoveFromCollection.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveFromCollection.Image")));
             this.btnRemoveFromCollection.Location = new System.Drawing.Point(251, 382);
-            this.btnRemoveFromCollection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveFromCollection.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveFromCollection.Name = "btnRemoveFromCollection";
             this.btnRemoveFromCollection.ShadowDecoration.Parent = this.btnRemoveFromCollection;
             this.btnRemoveFromCollection.Size = new System.Drawing.Size(34, 34);
@@ -121,7 +121,7 @@
             this.pbCollectionIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbCollectionIcon.InitialImage = null;
             this.pbCollectionIcon.Location = new System.Drawing.Point(14, 382);
-            this.pbCollectionIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbCollectionIcon.Margin = new System.Windows.Forms.Padding(2);
             this.pbCollectionIcon.Name = "pbCollectionIcon";
             this.pbCollectionIcon.Size = new System.Drawing.Size(34, 34);
             this.pbCollectionIcon.TabIndex = 1;
@@ -138,7 +138,7 @@
             this.pnlTab.FillColor2 = System.Drawing.Color.LightGreen;
             this.pnlTab.FillColor3 = System.Drawing.Color.LightGreen;
             this.pnlTab.Location = new System.Drawing.Point(0, 37);
-            this.pnlTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTab.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
             this.pnlTab.Size = new System.Drawing.Size(296, 341);
@@ -154,7 +154,7 @@
             this.btnPronun.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.Image")));
             this.btnPronun.ImageSize = new System.Drawing.Size(30, 30);
             this.btnPronun.Location = new System.Drawing.Point(256, 294);
-            this.btnPronun.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPronun.Margin = new System.Windows.Forms.Padding(2);
             this.btnPronun.Name = "btnPronun";
             this.btnPronun.PressedState.Parent = this.btnPronun;
             this.btnPronun.Size = new System.Drawing.Size(24, 31);
@@ -177,7 +177,7 @@
             // 
             this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
             this.pbMain.Location = new System.Drawing.Point(14, 17);
-            this.pbMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbMain.Margin = new System.Windows.Forms.Padding(2);
             this.pbMain.Name = "pbMain";
             this.pbMain.Size = new System.Drawing.Size(266, 260);
             this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -188,7 +188,7 @@
             // 
             this.pnlDash.BackColor = System.Drawing.Color.White;
             this.pnlDash.Location = new System.Drawing.Point(14, 280);
-            this.pnlDash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDash.Name = "pnlDash";
             this.pnlDash.Size = new System.Drawing.Size(266, 4);
             this.pnlDash.TabIndex = 11;
@@ -200,7 +200,7 @@
             this.pnlSearching.Controls.Add(this.txtSearching);
             this.pnlSearching.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSearching.Location = new System.Drawing.Point(0, 0);
-            this.pnlSearching.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSearching.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSearching.Name = "pnlSearching";
             this.pnlSearching.Size = new System.Drawing.Size(296, 37);
             this.pnlSearching.TabIndex = 0;
@@ -218,7 +218,7 @@
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.ImageSize = new System.Drawing.Size(25, 25);
             this.btnBack.Location = new System.Drawing.Point(14, 5);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.ShadowDecoration.Parent = this.btnBack;
             this.btnBack.Size = new System.Drawing.Size(34, 32);
@@ -234,7 +234,7 @@
             this.btnSearch.ImageOffset = new System.Drawing.Point(0, -2);
             this.btnSearch.ImageSize = new System.Drawing.Size(23, 23);
             this.btnSearch.Location = new System.Drawing.Point(265, 9);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.PressedState.Parent = this.btnSearch;
             this.btnSearch.Size = new System.Drawing.Size(20, 25);
@@ -285,7 +285,6 @@
             this.btnLeft.Size = new System.Drawing.Size(227, 422);
             this.btnLeft.TabIndex = 7;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
-            this.btnLeft.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnLeft_KeyUp);
             // 
             // btnRight
             // 
@@ -305,7 +304,6 @@
             this.btnRight.Size = new System.Drawing.Size(227, 422);
             this.btnRight.TabIndex = 8;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
-            this.btnRight.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnRight_KeyUp);
             // 
             // timer1
             // 
@@ -322,9 +320,10 @@
             this.ClientSize = new System.Drawing.Size(750, 422);
             this.Controls.Add(this.pnlMainNav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CollectionLib";
             this.Text = "CollectionLib";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CollectionLib_KeyUp);
             this.pnlMainNav.ResumeLayout(false);
             this.pnlLib.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbCollectionIcon)).EndInit();

@@ -264,6 +264,7 @@ namespace VocabularyUp
             pnlTab.Controls.Clear();
             pnlTab.Controls.Add(campaignTab);
             campaignTab.FormBorderStyle = FormBorderStyle.None;
+            campaignTab.Reset();
             campaignTab.Show();
         }
 

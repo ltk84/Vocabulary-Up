@@ -21,6 +21,7 @@ namespace VocabularyUp
         public LibraryForm()
         {
             InitializeComponent();
+            this.KeyPreview = true;
             ManageSystem.InitLibrary();
             curFlashCard = ManageSystem.GetFlashCard(index);
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
@@ -98,16 +99,14 @@ namespace VocabularyUp
             btnPronun.Enabled = true;
         }
 
-        private void btnLeft_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Left)
-                btnLeft_Click(sender, e);
-        }
-
-        private void btnRight_KeyUp(object sender, KeyEventArgs e)
+        private void LibraryForm_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Right)
+            {
                 btnRight_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.Left)
+                btnLeft_Click(sender, e);
         }
     }
 }

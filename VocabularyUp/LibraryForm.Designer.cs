@@ -271,7 +271,6 @@
             this.btnLeft.Size = new System.Drawing.Size(227, 422);
             this.btnLeft.TabIndex = 7;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
-            this.btnLeft.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnLeft_KeyUp);
             // 
             // btnRight
             // 
@@ -291,7 +290,6 @@
             this.btnRight.Size = new System.Drawing.Size(227, 422);
             this.btnRight.TabIndex = 8;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
-            this.btnRight.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnRight_KeyUp);
             // 
             // timer1
             // 
@@ -311,6 +309,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LibraryForm";
             this.Text = "LibraryForm";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LibraryForm_KeyUp);
             this.pnlMainNav.ResumeLayout(false);
             this.pnlLib.ResumeLayout(false);
             this.pnlToCollection.ResumeLayout(false);

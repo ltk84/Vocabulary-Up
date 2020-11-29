@@ -31,9 +31,10 @@ namespace VocabularyUp
             //quiz.FormBorderStyle = FormBorderStyle.None;
             //quiz.Show();
             //
-            FillBlankForm quiz = new FillBlankForm(currentTopic, this);
-            MultipleChoiceForm multiple = new MultipleChoiceForm(currentTopic, this);
-            LearningForm learning = new LearningForm(currentTopic, this, quiz);
+
+            FillBlankForm fillBQuiz = new FillBlankForm(currentTopic, this);
+            MultipleChoiceForm multiQuiz = new MultipleChoiceForm(currentTopic, this);
+            LearningForm learning = new LearningForm(currentTopic, this, fillBQuiz, multiQuiz);
 
             learning.TopLevel = false;
             pnlTopicSelection.Hide();
@@ -45,31 +46,38 @@ namespace VocabularyUp
             {
                 //MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
                 //FillBlankForm quiz = new FillBlankForm(currentTopic, this);
-                quiz.TopLevel = false;
+                fillBQuiz.TopLevel = false;
                 //pnlCampaignCate.Controls.Clear();
                 pnlTopicSelection.Hide();
-                pnlCampaignCate.Controls.Add(quiz);
-                quiz.FormBorderStyle = FormBorderStyle.None;
-                quiz.Show();
+                pnlCampaignCate.Controls.Add(fillBQuiz);
+                fillBQuiz.FormBorderStyle = FormBorderStyle.None;
+                fillBQuiz.Show();
             }
             else
             {
                 //MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
                 //FillBlankForm quiz = new FillBlankForm(currentTopic, this);
-                multiple.TopLevel = false;
+                multiQuiz.TopLevel = false;
                 //pnlCampaignCate.Controls.Clear();
                 pnlTopicSelection.Hide();
-                pnlCampaignCate.Controls.Add(multiple);
-                multiple.FormBorderStyle = FormBorderStyle.None;
-                multiple.Show();
+                pnlCampaignCate.Controls.Add(multiQuiz);
+                multiQuiz.FormBorderStyle = FormBorderStyle.None;
+                multiQuiz.Show();
             }
+
+
+        }
+
+        public void Reset()
+        {
+            ResetColorButton();
+            btnMultipleChoice.FillColor = Color.FromArgb(192, 255, 192);
+            btnFilBlank.FillColor = Color.FromArgb(192, 255, 192);
         }
         public void Return()
         {
             pnlTopicSelection.Show();
-            ResetColorButton();
-            btnMultipleChoice.FillColor = Color.FromArgb(192, 255, 192);
-            btnFilBlank.FillColor = Color.FromArgb(192, 255, 192);
+            Reset();
         }
 
         private void ResetColorButton()

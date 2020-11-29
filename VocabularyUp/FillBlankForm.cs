@@ -79,7 +79,8 @@ namespace VocabularyUp
                 if (isCorrect == true)
                 {
                     FlashCard fl = questions[currentQuiz].GetFlashCard();
-                    AddFlashCard(fl);
+                    if (!ManageUserAction.IsFlashCardExist(0, fl.IdCard))
+                        AddFlashCard(fl);
                 }
             }
         }
