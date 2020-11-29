@@ -17,10 +17,12 @@ namespace VocabularyUp
         int currentTopic = 0;
         int currentQuiz = 0;
         List<UserChoice> userChoices = new List<UserChoice>();
-        public FillBlankForm(int currentTopic)
+        CampaignForm campaignForm;
+        public FillBlankForm(int currentTopic, CampaignForm campaignForm)
         {
             InitializeComponent();
             this.currentTopic = currentTopic;
+            this.campaignForm = campaignForm;
             ManageUserAction.UpdateMainFlashCard(currentTopic);
             InitQuiz();
             InitAnswer();
@@ -92,6 +94,8 @@ namespace VocabularyUp
             else
             {
                 btnNext.Enabled = false;
+                this.campaignForm.Return();
+                this.Close();
             }
 
             MovePointer(currentQuiz);

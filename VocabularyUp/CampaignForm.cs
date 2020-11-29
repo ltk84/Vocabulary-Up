@@ -31,7 +31,9 @@ namespace VocabularyUp
             //quiz.FormBorderStyle = FormBorderStyle.None;
             //quiz.Show();
             //
-            LearningForm learning = new LearningForm(currentTopic, this);
+            FillBlankForm quiz = new FillBlankForm(currentTopic, this);
+            LearningForm learning = new LearningForm(currentTopic, this, quiz);
+
             learning.TopLevel = false;
             pnlTopicSelection.Hide();
             pnlCampaignCate.Controls.Add(learning);
@@ -39,7 +41,7 @@ namespace VocabularyUp
             learning.Show();
 
             //MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
-            FillBlankForm quiz = new FillBlankForm(currentTopic);
+            //FillBlankForm quiz = new FillBlankForm(currentTopic, this);
             quiz.TopLevel = false;
             //pnlCampaignCate.Controls.Clear();
             pnlTopicSelection.Hide();
