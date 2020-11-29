@@ -456,7 +456,7 @@
             this.pnlEdit.Controls.Add(this.panel11);
             this.pnlEdit.Controls.Add(this.panel12);
             this.pnlEdit.Controls.Add(this.label22);
-            this.pnlEdit.Location = new System.Drawing.Point(277, 118);
+            this.pnlEdit.Location = new System.Drawing.Point(397, 121);
             this.pnlEdit.Name = "pnlEdit";
             this.pnlEdit.ShadowDecoration.Parent = this.pnlEdit;
             this.pnlEdit.Size = new System.Drawing.Size(446, 392);
@@ -504,7 +504,7 @@
             this.txtDate.Location = new System.Drawing.Point(15, 142);
             this.txtDate.Name = "txtDate";
             this.txtDate.PasswordChar = '\0';
-            this.txtDate.PlaceholderText = "Ngày bắt đầu";
+            this.txtDate.PlaceholderText = "Ngày sinh";
             this.txtDate.SelectedText = "";
             this.txtDate.ShadowDecoration.Parent = this.txtDate;
             this.txtDate.Size = new System.Drawing.Size(200, 30);
@@ -613,7 +613,7 @@
             this.pnlSavePass.Controls.Add(this.panel13);
             this.pnlSavePass.Controls.Add(this.panel15);
             this.pnlSavePass.Controls.Add(this.label14);
-            this.pnlSavePass.Location = new System.Drawing.Point(12, 121);
+            this.pnlSavePass.Location = new System.Drawing.Point(173, 121);
             this.pnlSavePass.Name = "pnlSavePass";
             this.pnlSavePass.ShadowDecoration.Parent = this.pnlSavePass;
             this.pnlSavePass.Size = new System.Drawing.Size(446, 392);

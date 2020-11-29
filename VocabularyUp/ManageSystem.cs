@@ -39,7 +39,7 @@ namespace VocabularyUp
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                User u = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3),reader.GetString(4),reader.GetDateTime(5), reader.GetString(6),reader.GetInt32(7), reader.GetInt32(8), reader.GetInt32(9));
+                User u = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3),reader.GetString(4), reader.GetDateTime(5),reader.GetString(6), reader.GetInt32(7), reader.GetInt32(8), reader.GetInt64(9),reader.GetString(10));
                 users.Add(u);
             }
             numOfUser = users.Count();
@@ -105,7 +105,7 @@ namespace VocabularyUp
         }
 
         // THÊM NHỮNG THÔNG TIN PHỤ CỦA USER VÀO TRONG DATABASE
-        public static void AddUserInfoToDatabase(string email, string NGSINH, DateTime beginDate, string name,int totalWord, int hiWCount, int reWCount)
+        public static void AddUserInfoToDatabase(string email, string NGSINH, DateTime beginDate, string name,int totalWord, int hiWCount, int reWCount,string GIOITINH)
         {
             SqlConnection connection = new SqlConnection(connString);
             try
@@ -113,7 +113,7 @@ namespace VocabularyUp
                 //Mo ket noi
                 connection.Open();
                 //Chuan bi cau lenh query viet bang SQL
-                String sqlQuery = "insert into USER_INFO(ID_USER, EMAIL,NGSINH, BEGINDATE,NAME, TOTALWORD, HIGHEST_WORDS_COUNT, RECENT_WORDS_COUNT) values(@ID_USER, @EMAIL, @NGSINH, @BEGINDATE,@NAME, @TOTALWORD, @HIGHEST_WORDS_COUNT, @RECENT_WORDS_COUNT)";
+                String sqlQuery = "insert into USER_INFO(ID_USER, EMAIL,NGSINH, BEGINDATE,NAME, TOTALWORD, HIGHEST_WORDS_COUNT, RECENT_WORDS_COUNT,GIOITINH) values(@ID_USER, @EMAIL, @NGSINH, @BEGINDATE,@NAME, @TOTALWORD, @HIGHEST_WORDS_COUNT, @RECENT_WORDS_COUNT,@GIOITINH)";
                 //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 command.Parameters.AddWithValue("@ID_USER", numOfUser);
@@ -124,6 +124,7 @@ namespace VocabularyUp
                 command.Parameters.AddWithValue("@TOTALWORD", totalWord);
                 command.Parameters.AddWithValue("@HIGHEST_WORDS_COUNT", hiWCount);
                 command.Parameters.AddWithValue("@RECENT_WORDS_COUNT", reWCount);
+                command.Parameters.AddWithValue("@GIOITINH", GIOITINH);
 
                 //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
                 int rs = command.ExecuteNonQuery();
@@ -267,9 +268,40 @@ namespace VocabularyUp
         {
             numOfUser = GetNumberOfUser();
             numOfUser++;
-            users.Add(new User(numOfUser, username, password, email,"", DateTime.Now,"", 0, 0, 0));
+            users.Add(new User(numOfUser, username, password, email,"", DateTime.Now,"", 0, 0, 0,""));
             AddSingleUserToDatabase(username, password);
-            AddUserInfoToDatabase(email, "",DateTime.Now,"", 0, 0, 0);
+            AddUserInfoToDatabase(email, "",DateTime.Now,"", 0, 0, 0,"");
+        }
+
+        // Chỉnh sữa thuộc tính của personal info
+        public static void AddInfoPersonal(int id,string NGSINH,string NAME,string GIOITINH)
+        {
+            SqlConnection connection = new SqlConnection(connString);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                string sqlQuery = "update USER_INFO set NGSINH = @NGSINH,NAME = @NAME,GIOITINH = @GIOITINH where id = " + id.ToString();
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@NGSINH", NGSINH);
+                command.Parameters.AddWithValue("@NAME", NAME);
+                command.Parameters.AddWithValue("@GIOITINH", GIOITINH);
+                //THUC HIỆN CÂU TRUY VẤN
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //dong ket noi sao khi ket thuc
+                connection.Close();
+            }
+
         }
 
         

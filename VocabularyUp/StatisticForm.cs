@@ -46,5 +46,11 @@ namespace VocabularyUp
         {
             ToStatisticResult();
         }
+
+        private void UpdateStatistic(string name, DateTime beginDate)
+        {
+            lblBeginDate.Text = beginDate.ToString();
+            lblTen.Text = name;
+        }
     }
 }

@@ -35,6 +35,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblTen = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.lblBeginDate = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -65,6 +67,8 @@
             this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel2.BorderColor = System.Drawing.Color.Lime;
             this.guna2CustomGradientPanel2.BorderRadius = 20;
+            this.guna2CustomGradientPanel2.Controls.Add(this.label2);
+            this.guna2CustomGradientPanel2.Controls.Add(this.lblBeginDate);
             this.guna2CustomGradientPanel2.Controls.Add(this.button2);
             this.guna2CustomGradientPanel2.Controls.Add(this.button1);
             this.guna2CustomGradientPanel2.Controls.Add(this.lblTen);
@@ -84,7 +88,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(-28, 307);
+            this.button2.Location = new System.Drawing.Point(-36, 341);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(239, 147);
             this.button2.TabIndex = 6;
@@ -97,7 +101,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(-18, 152);
+            this.button1.Location = new System.Drawing.Point(-18, 174);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(221, 149);
             this.button1.TabIndex = 5;
@@ -110,11 +114,11 @@
             this.lblTen.AutoSize = true;
             this.lblTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTen.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.lblTen.Location = new System.Drawing.Point(18, 113);
+            this.lblTen.Location = new System.Drawing.Point(9, 116);
             this.lblTen.Name = "lblTen";
-            this.lblTen.Size = new System.Drawing.Size(36, 18);
+            this.lblTen.Size = new System.Drawing.Size(153, 18);
             this.lblTen.TabIndex = 2;
-            this.lblTen.Text = "Tên";
+            this.lblTen.Text = "Lương Thiện Phước";
             // 
             // guna2CirclePictureBox1
             // 
@@ -128,6 +132,28 @@
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
+            // 
+            // lblBeginDate
+            // 
+            this.lblBeginDate.AutoSize = true;
+            this.lblBeginDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBeginDate.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.lblBeginDate.Location = new System.Drawing.Point(70, 141);
+            this.lblBeginDate.Name = "lblBeginDate";
+            this.lblBeginDate.Size = new System.Drawing.Size(72, 18);
+            this.lblBeginDate.TabIndex = 7;
+            this.lblBeginDate.Text = "0/0/2000";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.label2.Location = new System.Drawing.Point(9, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 18);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Begin:";
             // 
             // StatisticForm
             // 
@@ -155,5 +181,7 @@
         private System.Windows.Forms.Button button1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlShowStatistic;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblBeginDate;
     }
 }
