@@ -87,6 +87,12 @@
       <DependentUpon>FillBlankForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FlashCard.cs" />
+    <Compile Include="LearningForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LearningForm.Designer.cs">
+      <DependentUpon>LearningForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LibraryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FillBlankForm.resx">
       <DependentUpon>FillBlankForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LearningForm.resx">
+      <DependentUpon>LearningForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LibraryForm.resx">
       <DependentUpon>LibraryForm.cs</DependentUpon>

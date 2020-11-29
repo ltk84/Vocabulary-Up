@@ -22,14 +22,36 @@ namespace VocabularyUp
 
         private void Start()
         {
+            ////MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
+            //FillBlankForm quiz = new FillBlankForm(currentTopic);
+            //quiz.TopLevel = false;
+            ////pnlCampaignCate.Controls.Clear();
+            //pnlTopicSelection.Hide();
+            //pnlCampaignCate.Controls.Add(quiz);
+            //quiz.FormBorderStyle = FormBorderStyle.None;
+            //quiz.Show();
+            //
+            FillBlankForm quiz = new FillBlankForm(currentTopic, this);
+            LearningForm learning = new LearningForm(currentTopic, this, quiz);
+
+            learning.TopLevel = false;
+            pnlTopicSelection.Hide();
+            pnlCampaignCate.Controls.Add(learning);
+            learning.FormBorderStyle = FormBorderStyle.None;
+            learning.Show();
+
             //MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
-            FillBlankForm quiz = new FillBlankForm(currentTopic);
+            //FillBlankForm quiz = new FillBlankForm(currentTopic, this);
             quiz.TopLevel = false;
             //pnlCampaignCate.Controls.Clear();
             pnlTopicSelection.Hide();
             pnlCampaignCate.Controls.Add(quiz);
             quiz.FormBorderStyle = FormBorderStyle.None;
             quiz.Show();
+        }
+        public void Return()
+        {
+            pnlTopicSelection.Show();
         }
 
         private void btnAnimals_Click(object sender, EventArgs e)
