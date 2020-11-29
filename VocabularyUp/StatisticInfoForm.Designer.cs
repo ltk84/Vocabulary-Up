@@ -51,10 +51,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.pbLevel = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.lblLevel = new System.Windows.Forms.Label();
+            this.lbLevel = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -72,6 +72,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.pnlSavePass = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.txtReNewPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.txtNewPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtOldPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.btSavePassword = new Guna.UI2.WinForms.Guna2Button();
@@ -80,8 +82,6 @@
             this.panel15 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtReNewPass = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panel14 = new System.Windows.Forms.Panel();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlPersonalDetails.SuspendLayout();
@@ -154,6 +154,7 @@
             // 
             // pnlPersonalDetails
             // 
+            this.pnlPersonalDetails.Controls.Add(this.pnlSavePass);
             this.pnlPersonalDetails.Controls.Add(this.btChangePass);
             this.pnlPersonalDetails.Controls.Add(this.btEditProfile);
             this.pnlPersonalDetails.Controls.Add(this.panel5);
@@ -346,18 +347,18 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "PERSONAL DETAILS";
             // 
-            // guna2CircleProgressBar1
+            // pbLevel
             // 
-            this.guna2CircleProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(146, 33);
-            this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
-            this.guna2CircleProgressBar1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleProgressBar1.ShadowDecoration.Parent = this.guna2CircleProgressBar1;
-            this.guna2CircleProgressBar1.ShowPercentage = true;
-            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(169, 144);
-            this.guna2CircleProgressBar1.TabIndex = 2;
-            this.guna2CircleProgressBar1.Value = 25;
+            this.pbLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pbLevel.Location = new System.Drawing.Point(146, 33);
+            this.pbLevel.Name = "pbLevel";
+            this.pbLevel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.pbLevel.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbLevel.ShadowDecoration.Parent = this.pbLevel;
+            this.pbLevel.ShowPercentage = true;
+            this.pbLevel.Size = new System.Drawing.Size(169, 144);
+            this.pbLevel.TabIndex = 2;
+            this.pbLevel.Value = 25;
             // 
             // label5
             // 
@@ -372,23 +373,23 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.lblLevel);
-            this.panel6.Controls.Add(this.guna2CircleProgressBar1);
+            this.panel6.Controls.Add(this.lbLevel);
+            this.panel6.Controls.Add(this.pbLevel);
             this.panel6.Controls.Add(this.label5);
             this.panel6.Location = new System.Drawing.Point(464, 121);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(318, 192);
             this.panel6.TabIndex = 4;
             // 
-            // lblLevel
+            // lbLevel
             // 
-            this.lblLevel.AutoSize = true;
-            this.lblLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLevel.Location = new System.Drawing.Point(101, 33);
-            this.lblLevel.Name = "lblLevel";
-            this.lblLevel.Size = new System.Drawing.Size(27, 29);
-            this.lblLevel.TabIndex = 4;
-            this.lblLevel.Text = "1";
+            this.lbLevel.AutoSize = true;
+            this.lbLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLevel.Location = new System.Drawing.Point(101, 33);
+            this.lbLevel.Name = "lbLevel";
+            this.lbLevel.Size = new System.Drawing.Size(27, 29);
+            this.lbLevel.TabIndex = 4;
+            this.lbLevel.Text = "1";
             // 
             // panel7
             // 
@@ -416,7 +417,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(161, 118);
+            this.label10.Location = new System.Drawing.Point(157, 107);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(98, 29);
             this.label10.TabIndex = 6;
@@ -456,7 +457,7 @@
             this.pnlEdit.Controls.Add(this.panel11);
             this.pnlEdit.Controls.Add(this.panel12);
             this.pnlEdit.Controls.Add(this.label22);
-            this.pnlEdit.Location = new System.Drawing.Point(397, 121);
+            this.pnlEdit.Location = new System.Drawing.Point(77, 37);
             this.pnlEdit.Name = "pnlEdit";
             this.pnlEdit.ShadowDecoration.Parent = this.pnlEdit;
             this.pnlEdit.Size = new System.Drawing.Size(446, 392);
@@ -604,6 +605,7 @@
             // 
             // pnlSavePass
             // 
+            this.pnlSavePass.Controls.Add(this.pnlEdit);
             this.pnlSavePass.Controls.Add(this.txtReNewPass);
             this.pnlSavePass.Controls.Add(this.panel14);
             this.pnlSavePass.Controls.Add(this.txtNewPass);
@@ -613,13 +615,45 @@
             this.pnlSavePass.Controls.Add(this.panel13);
             this.pnlSavePass.Controls.Add(this.panel15);
             this.pnlSavePass.Controls.Add(this.label14);
-            this.pnlSavePass.Location = new System.Drawing.Point(173, 121);
+            this.pnlSavePass.Location = new System.Drawing.Point(59, 16);
             this.pnlSavePass.Name = "pnlSavePass";
             this.pnlSavePass.ShadowDecoration.Parent = this.pnlSavePass;
             this.pnlSavePass.Size = new System.Drawing.Size(446, 392);
             this.pnlSavePass.TabIndex = 15;
             this.pnlSavePass.Visible = false;
             this.pnlSavePass.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSavePass_Paint);
+            // 
+            // txtReNewPass
+            // 
+            this.txtReNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtReNewPass.DefaultText = "";
+            this.txtReNewPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtReNewPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtReNewPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtReNewPass.DisabledState.Parent = this.txtReNewPass;
+            this.txtReNewPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtReNewPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtReNewPass.FocusedState.Parent = this.txtReNewPass;
+            this.txtReNewPass.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtReNewPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtReNewPass.HoverState.Parent = this.txtReNewPass;
+            this.txtReNewPass.Location = new System.Drawing.Point(14, 224);
+            this.txtReNewPass.Name = "txtReNewPass";
+            this.txtReNewPass.PasswordChar = '\0';
+            this.txtReNewPass.PlaceholderText = "Re-NewPass";
+            this.txtReNewPass.SelectedText = "";
+            this.txtReNewPass.ShadowDecoration.Parent = this.txtReNewPass;
+            this.txtReNewPass.Size = new System.Drawing.Size(200, 30);
+            this.txtReNewPass.TabIndex = 16;
+            this.txtReNewPass.UseSystemPasswordChar = true;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel14.Location = new System.Drawing.Point(14, 270);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(200, 2);
+            this.panel14.TabIndex = 15;
             // 
             // txtNewPass
             // 
@@ -730,45 +764,11 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "CHANGE PASSWORD";
             // 
-            // txtReNewPass
-            // 
-            this.txtReNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtReNewPass.DefaultText = "";
-            this.txtReNewPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtReNewPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtReNewPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtReNewPass.DisabledState.Parent = this.txtReNewPass;
-            this.txtReNewPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtReNewPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtReNewPass.FocusedState.Parent = this.txtReNewPass;
-            this.txtReNewPass.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtReNewPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtReNewPass.HoverState.Parent = this.txtReNewPass;
-            this.txtReNewPass.Location = new System.Drawing.Point(14, 224);
-            this.txtReNewPass.Name = "txtReNewPass";
-            this.txtReNewPass.PasswordChar = '\0';
-            this.txtReNewPass.PlaceholderText = "Re-NewPass";
-            this.txtReNewPass.SelectedText = "";
-            this.txtReNewPass.ShadowDecoration.Parent = this.txtReNewPass;
-            this.txtReNewPass.Size = new System.Drawing.Size(200, 30);
-            this.txtReNewPass.TabIndex = 16;
-            this.txtReNewPass.UseSystemPasswordChar = true;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel14.Location = new System.Drawing.Point(14, 270);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(200, 2);
-            this.panel14.TabIndex = 15;
-            // 
             // StatisticInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 514);
-            this.Controls.Add(this.pnlEdit);
-            this.Controls.Add(this.pnlSavePass);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.pnlPersonalDetails);
@@ -832,10 +832,10 @@
         private System.Windows.Forms.Label lblGmail;
         private Guna.UI2.WinForms.Guna2Button btChangePass;
         private Guna.UI2.WinForms.Guna2Button btEditProfile;
-        private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar pbLevel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label lblLevel;
+        private System.Windows.Forms.Label lbLevel;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;

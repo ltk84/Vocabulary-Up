@@ -39,7 +39,7 @@ namespace VocabularyUp
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                User u = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3),reader.GetString(4), reader.GetDateTime(5),reader.GetString(6), reader.GetInt32(7), reader.GetInt32(8), reader.GetInt64(9),reader.GetString(10));
+                User u = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3),reader.GetString(4), reader.GetDateTime(5),reader.GetString(6), reader.GetInt32(7), reader.GetInt32(8), reader.GetInt32(9),reader.GetString(10));
                 users.Add(u);
             }
             numOfUser = users.Count();
@@ -105,7 +105,7 @@ namespace VocabularyUp
         }
 
         // THÊM NHỮNG THÔNG TIN PHỤ CỦA USER VÀO TRONG DATABASE
-        public static void AddUserInfoToDatabase(string email, string NGSINH, DateTime beginDate, string name,int totalWord, int hiWCount, int reWCount,string GIOITINH)
+        public static void AddUserInfoToDatabase(string email, string ngSinh, DateTime beginDate, string name,int totalWord, int hiWCount, int reWCount,string gioiTinh)
         {
             SqlConnection connection = new SqlConnection(connString);
             try
@@ -118,13 +118,13 @@ namespace VocabularyUp
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 command.Parameters.AddWithValue("@ID_USER", numOfUser);
                 command.Parameters.AddWithValue("@EMAIL", email);
-                command.Parameters.AddWithValue("@NGSINH", NGSINH);
+                command.Parameters.AddWithValue("@NGSINH", ngSinh);
                 command.Parameters.AddWithValue("@BEGINDATE", beginDate.ToString("yyyy-MM-dd HH:mm:ss.fff"));
                 command.Parameters.AddWithValue("@NAME", name);
                 command.Parameters.AddWithValue("@TOTALWORD", totalWord);
                 command.Parameters.AddWithValue("@HIGHEST_WORDS_COUNT", hiWCount);
                 command.Parameters.AddWithValue("@RECENT_WORDS_COUNT", reWCount);
-                command.Parameters.AddWithValue("@GIOITINH", GIOITINH);
+                command.Parameters.AddWithValue("@GIOITINH", gioiTinh);
 
                 //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
                 int rs = command.ExecuteNonQuery();
@@ -304,7 +304,11 @@ namespace VocabularyUp
 
         }
 
-        
+        public static int GetName(string email)
+        {
+            return 0;
+        }
+
         // LẤY ID CỦA USER THÔNG QUA USERNAME
         public static int GetUserID(string username)
         {

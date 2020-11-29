@@ -50,16 +50,21 @@ namespace VocabularyUp
 
         private void btnSaveEdit_Click(object sender, EventArgs e)
         {
-            
-            pnlEdit.Visible = false;
-            pnlEdit.Enabled = false;
-            pnlPersonalDetails.Visible = true;
-            pnlPersonalDetails.Enabled = true;
-            pnlSavePass.Visible = false;
-            pnlSavePass.Enabled = false;
+            if (txtHoTen.Text == "" || txtDate.Text == "" || txtGioiTinh.Text == "")
+                MessageBox.Show("bạn vui lòng điền đẩy đủ thông tin");
+            else
+            {
 
-            this.AcceptButton = this.btEditProfile;
-            ClearTextbox();
+                pnlEdit.Visible = false;
+                pnlEdit.Enabled = false;
+                pnlPersonalDetails.Visible = true;
+                pnlPersonalDetails.Enabled = true;
+                pnlSavePass.Visible = false;
+                pnlSavePass.Enabled = false;
+
+                this.AcceptButton = this.btEditProfile;
+                ClearTextbox();
+            }
         }
 
         private void btChangePass_Click(object sender, EventArgs e)
