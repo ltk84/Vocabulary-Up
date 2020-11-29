@@ -120,7 +120,7 @@ namespace VocabularyUp
 
             while (reader.HasRows)
             {
-         
+                if (reader.Read() == false) break;
                     ls.Add(reader[0].ToString());
                     ls.Add(reader[1].ToString());
                     ls.Add(reader[2].ToString());
@@ -129,9 +129,10 @@ namespace VocabularyUp
                     ls.Add(reader[5].ToString());
                     ls.Add(reader[6].ToString());
                     ls.Add(reader[7].ToString());
-                
-            }  
-            
+                   return ls;
+            }
+            reader.Close();
+            conection.Close();
             return ls;
 
         }
@@ -267,8 +268,9 @@ namespace VocabularyUp
                     MessageBox.Show("Password is not match Repassword", "Notification");
                     return false;
                 }
-            }
 
+            }
+            TaiKhoan = username;
             // Không trùng thì cho đăng ký
             return true;
         }

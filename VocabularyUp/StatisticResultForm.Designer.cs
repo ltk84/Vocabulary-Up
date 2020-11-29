@@ -250,7 +250,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(474, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Vocabulary Up hlep you develop your English comprehensively\r\n";
+            this.label2.Text = "Vocabulary Up help you develop your English comprehensively\r\n";
             // 
             // label1
             // 

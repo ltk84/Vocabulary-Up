@@ -87,6 +87,7 @@ namespace VocabularyUp
             {
                 if (ManageSystem.CheckSignUp(txtUsername_SignUp.Text, txtEmail_SignUp.Text, txtPassword_SignUp.Text, txtRePassword_SignUp.Text))
                 {
+                    
                     string encodedPassword = ManageSystem.EncryptPassword(txtPassword_SignUp.Text);
                     ManageSystem.AddUser(txtUsername_SignUp.Text, txtEmail_SignUp.Text, encodedPassword);
                     ToNavTab(ManageSystem.GetUserID(txtUsername_SignUp.Text));

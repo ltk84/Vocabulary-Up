@@ -17,7 +17,7 @@ namespace VocabularyUp
         public StatisticInfoForm()
         {
             InitializeComponent();
-           Update();
+            Update();
             Level();
         }
 
@@ -50,6 +50,7 @@ namespace VocabularyUp
             txtHoTen.Text = "";
             txtOldPass.Text = "";
             txtNewPass.Text = "";
+            txtReNewPass.Text = "";
         }
         private void btEditProfile_Click(object sender, EventArgs e)
         {
@@ -67,6 +68,7 @@ namespace VocabularyUp
         private void Level()
         {
             int  a =340;
+           
             int Level, Percent;
             
             
@@ -78,6 +80,7 @@ namespace VocabularyUp
             if (Level == 1)
             {
                 lbCapBac.Text = "Beginner";
+                imageLevel.Image = Image.FromFile("../../Level/Beginner.PNG");
             }
             else if (Level == 2)
                 lbCapBac.Text = "High Beginner";
@@ -89,8 +92,8 @@ namespace VocabularyUp
                 lbCapBac.Text = "High Intermediate";
             else if (Level == 6)
             {
-
                 lbCapBac.Text = "Low Advanced";
+                imageLevel.Image = Image.FromFile("../../Level/LowAdvanced.PNG");
             }
             else if (Level == 7)
                 lbCapBac.Text = "Advanced";
@@ -139,30 +142,37 @@ namespace VocabularyUp
 
         private void btSavePassword_Click(object sender, EventArgs e)
         {
-            
+
             if (txtOldPass.Text == "") MessageBox.Show("Password can not be empty");
-            else if (ManageSystem.Pass(txtOldPass.Text)) { MessageBox.Show("Old password is not correct", "Thông báo"); }
-            else if (txtNewPass.Text == "") MessageBox.Show("Password can not be empty");
-            else if (txtNewPass.Text != txtReNewPass.Text) MessageBox.Show("Re-Password is not correct");
             else
             {
-                string TK = ManageSystem.TK();
-                ManageSystem.UpdateNewPassword(ManageSystem.GetUserID(TK), txtNewPass.Text);
-                ManageSystem.UpdateNewPasswordToDatabase(ManageSystem.GetUserID(TK), txtNewPass.Text);
-                ManageSystem.UpdatePass(txtNewPass.Text);
-                MessageBox.Show("Save success!");
-                pnlEdit.Visible = false;
-                pnlEdit.Enabled = false;
-                pnlPersonalDetails.Visible = true;
-                pnlPersonalDetails.Enabled = true;
-                pnlSavePass.Visible = false;
-                pnlSavePass.Enabled = false;
+                string ePassword = ManageSystem.EncryptPassword(txtOldPass.Text);
+                if (!ManageSystem.Pass(ePassword)) { MessageBox.Show("Old password is not correct", "Thông báo"); }
+                else if (txtNewPass.Text == "") MessageBox.Show("Password can not be empty");
+                else if (txtNewPass.Text != txtReNewPass.Text) MessageBox.Show("Re-Password is not correct");
+                else if (txtNewPass.Text == txtOldPass.Text) MessageBox.Show("Không được dùng mật khẩu củ");
+                else
+                {
+                    string TK = ManageSystem.TK();
+
+                    ManageSystem.UpdateNewPassword(ManageSystem.GetUserID(TK), txtNewPass.Text);
+                    ManageSystem.UpdateNewPasswordToDatabase(ManageSystem.GetUserID(TK), txtNewPass.Text);
+
+                    string ePassword1 = ManageSystem.EncryptPassword(txtNewPass.Text);
+                    ManageSystem.UpdatePass(ePassword1);
+                    MessageBox.Show("Save success!");
+                    pnlEdit.Visible = false;
+                    pnlEdit.Enabled = false;
+                    pnlPersonalDetails.Visible = true;
+                    pnlPersonalDetails.Enabled = true;
+                    pnlSavePass.Visible = false;
+                    pnlSavePass.Enabled = false;
 
 
-                ClearTextbox();
+                    ClearTextbox();
 
-            }                
-
+                }
+            }
         }
 
         private void pnlSavePass_Paint(object sender, PaintEventArgs e)
