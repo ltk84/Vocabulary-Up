@@ -236,6 +236,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Guna.UI2.dll" />
+    <None Include="Resources\Level\Master.PNG" />
+    <None Include="Resources\Level\LowIntermediate.PNG" />
+    <None Include="Resources\Level\LowAdvanced.PNG" />
+    <None Include="Resources\Level\Intermediate.PNG" />
+    <None Include="Resources\Level\HighIntermediate.PNG" />
+    <None Include="Resources\Level\HighBeginner.PNG" />
+    <None Include="Resources\Level\Challenge.PNG" />
+    <None Include="Resources\Level\Beginner.PNG" />
+    <None Include="Resources\Level\Advanced.PNG" />
     <None Include="Resources\tanngau.jpg" />
     <None Include="Resources\images.jpg" />
   </ItemGroup>

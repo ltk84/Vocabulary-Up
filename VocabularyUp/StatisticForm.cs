@@ -15,11 +15,21 @@ namespace VocabularyUp
         public StatisticForm()
         {
             InitializeComponent();
-
             ToStatisticInfo();
+            update();
         }
         StatisticInfoForm statisticInfo = new StatisticInfoForm();
         StatisticResultForm statisticResult = new StatisticResultForm();
+        
+        
+        private void update()
+        {
+            string TK = ManageSystem.TK();
+            int ID = ManageSystem.GetUserID(TK);
+            List<string> a = ManageSystem.UserInfoPersonal(ID);
+            lblTen.Text = a[1];
+            lblBeginDate.Text = a[4];
+        }
         private void ToStatisticInfo()
         {
             
@@ -39,18 +49,16 @@ namespace VocabularyUp
         private void button1_Click(object sender, EventArgs e)
         {
             ToStatisticInfo();
+            update();
         }
-
+        
         
         private void button2_Click(object sender, EventArgs e)
         {
             ToStatisticResult();
+            update();
         }
 
-        private void UpdateStatistic(string name, DateTime beginDate)
-        {
-            lblBeginDate.Text = beginDate.ToString();
-            lblTen.Text = name;
-        }
+       
     }
 }

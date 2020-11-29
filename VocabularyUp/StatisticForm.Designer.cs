@@ -31,12 +31,12 @@
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlShowStatistic = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblBeginDate = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblTen = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.lblBeginDate = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -83,6 +83,28 @@
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(181, 514);
             this.guna2CustomGradientPanel2.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.label2.Location = new System.Drawing.Point(9, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 18);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "BeginDate:";
+            // 
+            // lblBeginDate
+            // 
+            this.lblBeginDate.AutoSize = true;
+            this.lblBeginDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBeginDate.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.lblBeginDate.Location = new System.Drawing.Point(96, 141);
+            this.lblBeginDate.Name = "lblBeginDate";
+            this.lblBeginDate.Size = new System.Drawing.Size(72, 18);
+            this.lblBeginDate.TabIndex = 7;
+            this.lblBeginDate.Text = "0/0/2000";
+            // 
             // button2
             // 
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -111,6 +133,7 @@
             // 
             // lblTen
             // 
+            this.lblTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTen.AutoSize = true;
             this.lblTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTen.ForeColor = System.Drawing.Color.LightSeaGreen;
@@ -133,28 +156,6 @@
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // lblBeginDate
-            // 
-            this.lblBeginDate.AutoSize = true;
-            this.lblBeginDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBeginDate.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.lblBeginDate.Location = new System.Drawing.Point(70, 141);
-            this.lblBeginDate.Name = "lblBeginDate";
-            this.lblBeginDate.Size = new System.Drawing.Size(72, 18);
-            this.lblBeginDate.TabIndex = 7;
-            this.lblBeginDate.Text = "0/0/2000";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.label2.Location = new System.Drawing.Point(9, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 18);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Begin:";
-            // 
             // StatisticForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -176,12 +177,12 @@
         #endregion
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
-        private System.Windows.Forms.Label lblTen;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Button button1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlShowStatistic;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblBeginDate;
+        private System.Windows.Forms.Label lblTen;
     }
 }

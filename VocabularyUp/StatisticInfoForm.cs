@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Specialized;
+using System.Configuration;
 
 namespace VocabularyUp
 {
@@ -15,8 +17,11 @@ namespace VocabularyUp
         public StatisticInfoForm()
         {
             InitializeComponent();
-            Update();
+           Update();
+            Level();
         }
+
+
         private void Update()
         {
             string TK = ManageSystem.TK();
@@ -26,6 +31,7 @@ namespace VocabularyUp
             lblHoTen.Text = a[1];
             lblGioiTinh.Text = a[2];
             lblGmail.Text = a[3];
+
         }
 
         private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
@@ -58,6 +64,43 @@ namespace VocabularyUp
             ClearTextbox();
         }
 
+        private void Level()
+        {
+            int  a =340;
+            int Level, Percent;
+            
+            
+            Level = a / 50;
+            Percent = a % 50;
+           
+            lbLevel.Text = Level.ToString();
+            pbLevel.Value = Percent * 2;
+            if (Level == 1)
+            {
+                lbCapBac.Text = "Beginner";
+            }
+            else if (Level == 2)
+                lbCapBac.Text = "High Beginner";
+            else if (Level == 3)
+                lbCapBac.Text = "Low Intermediate";
+            else if (Level == 4)
+                lbCapBac.Text = "Intermediate";
+            else if (Level == 5)
+                lbCapBac.Text = "High Intermediate";
+            else if (Level == 6)
+            {
+
+                lbCapBac.Text = "Low Advanced";
+            }
+            else if (Level == 7)
+                lbCapBac.Text = "Advanced";
+            else if (Level == 8)
+                lbCapBac.Text = "Master";
+            else if (Level > 8)
+                lbCapBac.Text = "Challenge";
+                
+        }
+       
         private void btnSaveEdit_Click(object sender, EventArgs e)
         {
 
@@ -76,7 +119,7 @@ namespace VocabularyUp
                 pnlSavePass.Visible = false;
                 pnlSavePass.Enabled = false;
                 Update();
-                this.AcceptButton = this.btEditProfile;
+
                 ClearTextbox();
             }
         }
@@ -115,7 +158,7 @@ namespace VocabularyUp
                 pnlSavePass.Visible = false;
                 pnlSavePass.Enabled = false;
 
-                this.AcceptButton = this.btEditProfile;
+
                 ClearTextbox();
 
             }                

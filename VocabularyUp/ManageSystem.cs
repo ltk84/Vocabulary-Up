@@ -104,13 +104,15 @@ namespace VocabularyUp
                 connection.Close();
             }
         }
+
+        //Lấy thông tin user
         public static List<string> UserInfoPersonal(int ID)
         {
             List<string> ls = new List<string>();
             SqlConnection conection = new SqlConnection(connString);
             conection.Open();
 
-            string sqlQuery = " select NGSINH,NAME,GIOITINH,EMAIL from USER_INFO where ID_USER = " + ID.ToString();
+            string sqlQuery = "select NGSINH,NAME,GIOITINH,EMAIL,BEGINDATE,TOTALWORD,HIGHEST_WORDS_COUNT,RECENT_WORDS_COUNT from USER_INFO where ID_USER = " + ID.ToString();
 
             SqlCommand command = new SqlCommand(sqlQuery, conection);
 
@@ -118,18 +120,24 @@ namespace VocabularyUp
 
             while (reader.HasRows)
             {
-                if (reader.Read() == false) break;
-                {
+         
                     ls.Add(reader[0].ToString());
                     ls.Add(reader[1].ToString());
                     ls.Add(reader[2].ToString());
                     ls.Add(reader[3].ToString());
-                }
+                    ls.Add(reader[4].ToString());
+                    ls.Add(reader[5].ToString());
+                    ls.Add(reader[6].ToString());
+                    ls.Add(reader[7].ToString());
+                
             }  
             
             return ls;
 
         }
+
+
+
         // THÊM NHỮNG THÔNG TIN PHỤ CỦA USER VÀO TRONG DATABASE
         public static void AddUserInfoToDatabase(string email, string ngSinh, DateTime beginDate, string name,int totalWord, int hiWCount, int reWCount,string gioiTinh)
         {
@@ -294,9 +302,9 @@ namespace VocabularyUp
         {
             numOfUser = GetNumberOfUser();
             numOfUser++;
-            users.Add(new User(numOfUser, username, password, email,"", DateTime.Now,"", 0, 0, 0,""));
+            users.Add(new User(numOfUser, username, password, email,"None", DateTime.Now,"None", 0, 0, 0,"None"));
             AddSingleUserToDatabase(username, password);
-            AddUserInfoToDatabase(email, "",DateTime.Now,"", 0, 0, 0,"");
+            AddUserInfoToDatabase(email, "None",DateTime.Now,"None", 0, 0, 0,"None");
         }
 
         // Chỉnh sữa thuộc tính của personal info
