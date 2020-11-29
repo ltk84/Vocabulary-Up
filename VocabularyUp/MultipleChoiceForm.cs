@@ -18,10 +18,12 @@ namespace VocabularyUp
         int currentQuiz = 0;
         int isPress = 0;
         List<UserChoice> userChoices = new List<UserChoice>();
-        public MultipleChoiceForm(int currentTopic)
+        CampaignForm campaign = new CampaignForm();
+        public MultipleChoiceForm(int currentTopic, CampaignForm campaign)
         {
             InitializeComponent();
             this.currentTopic = currentTopic;
+            this.campaign = campaign;
             ManageUserAction.UpdateMainFlashCard(currentTopic);
             InitQuiz();
             ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
@@ -194,6 +196,8 @@ namespace VocabularyUp
             else 
             {
                 btnNext.Enabled = false;
+                campaign.Return();
+                this.Close();
             }
             MovePointer(currentQuiz);
 

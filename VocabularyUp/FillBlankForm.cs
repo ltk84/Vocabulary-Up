@@ -145,6 +145,7 @@ namespace VocabularyUp
             lbWrong.Visible = false;
             lbCorrectAnswer.Visible = false;
             txtAnswer.Enabled = true;
+            txtAnswer.Focus();
         }
 
         private void Reload()
@@ -206,6 +207,18 @@ namespace VocabularyUp
                     btnPointer10.Visible = true;
                     break;
             }
-}
+        }
+
+        private void btnPrevious_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left)
+                btnPrevious_Click(sender, e);
+        }
+
+        private void btnNext_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+                btnNext_Click(sender, e);
+        }
     }
 }
