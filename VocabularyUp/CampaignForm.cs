@@ -198,7 +198,7 @@ namespace VocabularyUp
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (type > 0 && currentTopic > 0)
+            if (type >= 0 && currentTopic > 0)
                 Start();
         }
     }

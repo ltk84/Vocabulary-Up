@@ -271,6 +271,7 @@
             this.btnLeft.Size = new System.Drawing.Size(227, 422);
             this.btnLeft.TabIndex = 7;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
+            this.btnLeft.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnLeft_KeyUp);
             // 
             // btnRight
             // 
@@ -290,6 +291,7 @@
             this.btnRight.Size = new System.Drawing.Size(227, 422);
             this.btnRight.TabIndex = 8;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
+            this.btnRight.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnRight_KeyUp);
             // 
             // timer1
             // 
@@ -299,6 +301,7 @@
             // 
             // LibraryForm
             // 
+            this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));

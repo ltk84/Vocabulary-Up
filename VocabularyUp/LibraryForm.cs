@@ -97,5 +97,17 @@ namespace VocabularyUp
             timer1.Stop();
             btnPronun.Enabled = true;
         }
+
+        private void btnLeft_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left)
+                btnLeft_Click(sender, e);
+        }
+
+        private void btnRight_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+                btnRight_Click(sender, e);
+        }
     }
 }
