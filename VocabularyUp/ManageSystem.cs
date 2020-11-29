@@ -28,7 +28,7 @@ namespace VocabularyUp
             connection.Open();
 
             //Chuan bi cau lenh query viet bang SQL 
-            String sqlQuery = "select * from USERS, USER_INFO where USERS.ID = USER_INFO.ID_USER";
+            String sqlQuery = "select ID,USERNAME,PASS,EMAIL,NGSINH,BEGINDATE,NAME,TOTALWORD,HIGHEST_WORDS_COUNT,RECENT_WORDS_COUNT,GIOITINH from USERS, USER_INFO where USERS.ID = USER_INFO.ID_USER";
             //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
             SqlCommand command = new SqlCommand(sqlQuery, connection);
 
@@ -42,7 +42,7 @@ namespace VocabularyUp
                 User u = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3),reader.GetString(4), reader.GetDateTime(5),reader.GetString(6), reader.GetInt32(7), reader.GetInt32(8), reader.GetInt32(9),reader.GetString(10));
                 users.Add(u);
             }
-            numOfUser = users.Count();
+            numOfUser = users.Count()+1;
         }
 
         // KHỞI TẠO THƯ VIỆN CÁC FLASHCARDS
@@ -92,8 +92,9 @@ namespace VocabularyUp
                     throw new Exception("Failed Query");
                 }
             }
-            catch (Exception)
+            catch (Exception ep)
             {
+                MessageBox.Show(ep.Message);
                 //xu ly khi ket noi co van de
                 MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
             }
@@ -103,7 +104,32 @@ namespace VocabularyUp
                 connection.Close();
             }
         }
+        public static List<string> UserInfoPersonal(int ID)
+        {
+            List<string> ls = new List<string>();
+            SqlConnection conection = new SqlConnection(connString);
+            conection.Open();
 
+            string sqlQuery = " select NGSINH,NAME,GIOITINH,EMAIL from USER_INFO where ID_USER = " + ID.ToString();
+
+            SqlCommand command = new SqlCommand(sqlQuery, conection);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.HasRows)
+            {
+                if (reader.Read() == false) break;
+                {
+                    ls.Add(reader[0].ToString());
+                    ls.Add(reader[1].ToString());
+                    ls.Add(reader[2].ToString());
+                    ls.Add(reader[3].ToString());
+                }
+            }  
+            
+            return ls;
+
+        }
         // THÊM NHỮNG THÔNG TIN PHỤ CỦA USER VÀO TRONG DATABASE
         public static void AddUserInfoToDatabase(string email, string ngSinh, DateTime beginDate, string name,int totalWord, int hiWCount, int reWCount,string gioiTinh)
         {
@@ -282,7 +308,7 @@ namespace VocabularyUp
                 //Mo ket noi
                 connection.Open();
                 //Chuan bi cau lenh query viet bang SQL
-                string sqlQuery = "update USER_INFO set NGSINH = @NGSINH,NAME = @NAME,GIOITINH = @GIOITINH where id = " + id.ToString();
+                string sqlQuery = "update USER_INFO set NGSINH = @NGSINH,NAME = @NAME,GIOITINH = @GIOITINH where ID_USER = " + id.ToString();
                 //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 command.Parameters.AddWithValue("@NGSINH", NGSINH);
@@ -304,10 +330,7 @@ namespace VocabularyUp
 
         }
 
-        public static int GetName(string email)
-        {
-            return 0;
-        }
+    
 
         // LẤY ID CỦA USER THÔNG QUA USERNAME
         public static int GetUserID(string username)
@@ -405,6 +428,7 @@ namespace VocabularyUp
             }
             catch (Exception ex)
             {
+  
                 //xu ly khi ket noi co van de
                 MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
             }

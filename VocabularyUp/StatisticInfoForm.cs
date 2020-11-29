@@ -15,8 +15,18 @@ namespace VocabularyUp
         public StatisticInfoForm()
         {
             InitializeComponent();
+            Update();
         }
-
+        private void Update()
+        {
+            string TK = ManageSystem.TK();
+            int ID = ManageSystem.GetUserID(TK);
+            List<string> a = ManageSystem.UserInfoPersonal(ID);
+            lblDate.Text = a[0];
+            lblHoTen.Text = a[1];
+            lblGioiTinh.Text = a[2];
+            lblGmail.Text = a[3];
+        }
 
         private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
         {
@@ -50,18 +60,22 @@ namespace VocabularyUp
 
         private void btnSaveEdit_Click(object sender, EventArgs e)
         {
+
             if (txtHoTen.Text == "" || txtDate.Text == "" || txtGioiTinh.Text == "")
                 MessageBox.Show("bạn vui lòng điền đẩy đủ thông tin");
             else
             {
-
+                string TK = ManageSystem.TK();
+                int ID = ManageSystem.GetUserID(TK);
+                ManageSystem.AddInfoPersonal(ID,txtDate.Text,txtHoTen.Text,txtGioiTinh.Text);
+                MessageBox.Show("Save Succes!");
                 pnlEdit.Visible = false;
                 pnlEdit.Enabled = false;
                 pnlPersonalDetails.Visible = true;
                 pnlPersonalDetails.Enabled = true;
                 pnlSavePass.Visible = false;
                 pnlSavePass.Enabled = false;
-
+                Update();
                 this.AcceptButton = this.btEditProfile;
                 ClearTextbox();
             }
@@ -111,6 +125,37 @@ namespace VocabularyUp
         private void pnlSavePass_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void lblGmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            pnlEdit.Visible = false;
+            pnlEdit.Enabled = false;
+            pnlPersonalDetails.Visible = true;
+            pnlPersonalDetails.Enabled = true;
+            pnlSavePass.Visible = false;
+            pnlSavePass.Enabled = false;
+
+            this.AcceptButton = this.btEditProfile;
+            ClearTextbox();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            pnlEdit.Visible = false;
+            pnlEdit.Enabled = false;
+            pnlPersonalDetails.Visible = true;
+            pnlPersonalDetails.Enabled = true;
+            pnlSavePass.Visible = false;
+            pnlSavePass.Enabled = false;
+
+            this.AcceptButton = this.btEditProfile;
+            ClearTextbox();
         }
     }
 }
