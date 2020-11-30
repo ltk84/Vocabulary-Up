@@ -119,3 +119,32 @@ C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\Vo
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CollectionLib.resources
 C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.LearningForm.resources
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.LearningForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\bin\Debug\Guna.UI2.dll
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csprojAssemblyReference.cache
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CampaignForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CollectionLib.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.Display_CampaignForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CollectionForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.FillBlankForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.LibraryForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.MainForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.MultipleChoiceForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.NavForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.Properties.Resources.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ReviseForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.RevisionForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticsForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.UserAccessForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.GenerateResource.cache
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.CoreCompileInputs.cache
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.pdb
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.exe.config
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.exe
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.pdb
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.CopyComplete
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticInfoForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticResultForm.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticInfoForm.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticResultForm.resources

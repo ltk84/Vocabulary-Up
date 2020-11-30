@@ -4,7 +4,7 @@ DROP DATABASE VOCAB_UP
 
 CREATE TABLE USERS
 (
-	ID INT PRIMARY KEY NOT NULL,
+	ID INT  PRIMARY KEY NOT NULL,
 	USERNAME VARCHAR(50),
 	PASS VARCHAR(100)
 )
@@ -13,13 +13,20 @@ CREATE TABLE USER_INFO
 (
 	ID_USER INT PRIMARY KEY NOT NULL,
 	EMAIL VARCHAR(30),
+	NGSINH VARCHAR(30),
 	BEGINDATE SMALLDATETIME,
+	NAME NVARCHAR(30),
 	TOTALWORD INT,
 	HIGHEST_WORDS_COUNT INT,
 	RECENT_WORDS_COUNT INT,
+	GIOITINH NVARCHAR(10),
 	CONSTRAINT FK_ID_USER FOREIGN KEY (ID_USER) REFERENCES USERS (ID)
 )
-
+update USER_INFO set NGSINH = '111',NAME = 'thienphuoc',GIOITINH = 'nam' where ID_USER = 1
+select * from USERS
+select NGSINH,NAME,GIOITINH,EMAIL from USER_INFO where ID_USER = 1
+select  from USERS, USER_INFO where USERS.ID = USER_INFO.ID_USER
+update USER_INFO set GIOITINH = 'nam' where ID_USER = 1;
 CREATE TABLE FLASHCARD 
 (
 	ID INT PRIMARY KEY NOT NULL,
@@ -866,5 +873,6 @@ set FIELD = 'Fruits'
 where id = 477
 select distinct field from FLASHCARD
 select * from USER_FLASHCARD
+select * from USERS
 select top 10 * from FLASHCARD fl_m where not exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = 1 and u_fl.ID_COLLECTION = 0) and fl_m.FIELD = 'Food and Drinks' order by NEWID()
 select top 10 * from FLASHCARD fl_m where not exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = 1 and u_fl.ID_COLLECTION = 0) and fl_m.FIELD = 'Animals' order by NEWID()

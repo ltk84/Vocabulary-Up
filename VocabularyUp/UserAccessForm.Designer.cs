@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserAccessForm));
             this.elipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.shadowForm = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
@@ -53,7 +53,6 @@
             this.txtUsername_SignUp = new Guna.UI2.WinForms.Guna2TextBox();
             this.dragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.pnlTitleBar = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnHide = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnExit = new Guna.UI2.WinForms.Guna2ControlBox();
             this.animateWindow = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
@@ -72,11 +71,12 @@
             this.txtValidateCode = new Guna.UI2.WinForms.Guna2TextBox();
             this.countDown = new System.Windows.Forms.Timer(this.components);
             this.countDownText = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlUserLogin.SuspendLayout();
             this.pnlSignup.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlForgetPass.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // elipseForm
@@ -100,7 +100,7 @@
             this.transitionPanel.SetDecoration(this.pnlUserLogin, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlUserLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
             this.pnlUserLogin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
-            this.pnlUserLogin.Location = new System.Drawing.Point(248, 98);
+            this.pnlUserLogin.Location = new System.Drawing.Point(251, 109);
             this.pnlUserLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlUserLogin.Name = "pnlUserLogin";
             this.pnlUserLogin.ShadowDecoration.Parent = this.pnlUserLogin;
@@ -288,7 +288,7 @@
             this.transitionPanel.SetDecoration(this.pnlSignup, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlSignup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
             this.pnlSignup.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
-            this.pnlSignup.Location = new System.Drawing.Point(248, 98);
+            this.pnlSignup.Location = new System.Drawing.Point(248, 107);
             this.pnlSignup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlSignup.Name = "pnlSignup";
             this.pnlSignup.ShadowDecoration.Parent = this.pnlSignup;
@@ -457,6 +457,7 @@
             // 
             // dragControl
             // 
+            this.dragControl.ContainerControl = this;
             this.dragControl.TargetControl = this.pnlTitleBar;
             // 
             // pnlTitleBar
@@ -474,19 +475,6 @@
             this.pnlTitleBar.ShadowDecoration.Parent = this.pnlTitleBar;
             this.pnlTitleBar.Size = new System.Drawing.Size(864, 39);
             this.pnlTitleBar.TabIndex = 50;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.transitionPanel.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 39);
-            this.pictureBox1.TabIndex = 53;
-            this.pictureBox1.TabStop = false;
             // 
             // btnHide
             // 
@@ -521,22 +509,22 @@
             // transitionPanel
             // 
             this.transitionPanel.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.transitionPanel.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.transitionPanel.DefaultAnimation = animation2;
             // 
             // pnlForgetPass
             // 
@@ -556,7 +544,7 @@
             this.transitionPanel.SetDecoration(this.pnlForgetPass, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlForgetPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
             this.pnlForgetPass.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
-            this.pnlForgetPass.Location = new System.Drawing.Point(248, 98);
+            this.pnlForgetPass.Location = new System.Drawing.Point(251, 71);
             this.pnlForgetPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlForgetPass.Name = "pnlForgetPass";
             this.pnlForgetPass.ShadowDecoration.Parent = this.pnlForgetPass;
@@ -654,7 +642,7 @@
             this.txtCheckEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCheckEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCheckEmail.HoverState.Parent = this.txtCheckEmail;
-            this.txtCheckEmail.Location = new System.Drawing.Point(75, 161);
+            this.txtCheckEmail.Location = new System.Drawing.Point(77, 161);
             this.txtCheckEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCheckEmail.Name = "txtCheckEmail";
             this.txtCheckEmail.PasswordChar = '\0';
@@ -798,6 +786,19 @@
             this.countDownText.Interval = 1000;
             this.countDownText.Tick += new System.EventHandler(this.countDownText_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.transitionPanel.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(56, 39);
+            this.pictureBox1.TabIndex = 53;
+            this.pictureBox1.TabStop = false;
+            // 
             // UserAccessForm
             // 
             this.AcceptButton = this.btnLogin;
@@ -822,9 +823,9 @@
             this.pnlSignup.ResumeLayout(false);
             this.pnlSignup.PerformLayout();
             this.pnlTitleBar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlForgetPass.ResumeLayout(false);
             this.pnlForgetPass.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

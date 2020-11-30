@@ -33,14 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>frameworks\GUNA\GunaUIFrameWork\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
-    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.1.1, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Net" />
     <Reference Include="System.Speech" />
@@ -93,6 +91,12 @@
     <Compile Include="LearningForm.Designer.cs">
       <DependentUpon>LearningForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StatisticInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticInfoForm.Designer.cs">
+      <DependentUpon>StatisticInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LibraryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +120,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quiz.cs" />
+    <Compile Include="StatisticResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticResultForm.Designer.cs">
+      <DependentUpon>StatisticResultForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StoreFlashcardFrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,8 +184,14 @@
     <EmbeddedResource Include="LearningForm.resx">
       <DependentUpon>LearningForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StatisticInfoForm.resx">
+      <DependentUpon>StatisticInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LibraryForm.resx">
       <DependentUpon>LibraryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticResultForm.resx">
+      <DependentUpon>StatisticResultForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StoreFlashcardFrom.resx">
       <DependentUpon>StoreFlashcardFrom.cs</DependentUpon>
@@ -226,6 +242,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nicolas-solerieu-4gRNmhGzYZE-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Guna.UI2.dll" />
+    <None Include="Resources\Level\Master.PNG" />
+    <None Include="Resources\Level\LowIntermediate.PNG" />
+    <None Include="Resources\Level\LowAdvanced.PNG" />
+    <None Include="Resources\Level\Intermediate.PNG" />
+    <None Include="Resources\Level\HighIntermediate.PNG" />
+    <None Include="Resources\Level\HighBeginner.PNG" />
+    <None Include="Resources\Level\Challenge.PNG" />
+    <None Include="Resources\Level\Beginner.PNG" />
+    <None Include="Resources\Level\Advanced.PNG" />
+    <None Include="Resources\tanngau.jpg" />
+    <None Include="Resources\images.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

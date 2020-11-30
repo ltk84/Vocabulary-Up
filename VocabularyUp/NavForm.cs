@@ -354,5 +354,10 @@ namespace VocabularyUp
         {
             ToStatisticTab();
         }
+
+        private void NavForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -218,6 +218,7 @@
             this.btnSearch.HoverState.Parent = this.btnSearch;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageOffset = new System.Drawing.Point(0, -2);
+            this.btnSearch.ImageRotate = 0F;
             this.btnSearch.ImageSize = new System.Drawing.Size(23, 23);
             this.btnSearch.Location = new System.Drawing.Point(243, 6);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
@@ -240,6 +241,7 @@
             this.txtSearching.FillColor = System.Drawing.Color.MintCream;
             this.txtSearching.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearching.FocusedState.Parent = this.txtSearching;
+            this.txtSearching.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearching.ForeColor = System.Drawing.Color.Black;
             this.txtSearching.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearching.HoverState.Parent = this.txtSearching;
