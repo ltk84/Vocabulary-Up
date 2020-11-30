@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -32,7 +32,8 @@ namespace VocabularyUp
             this.currentTopic = currentTopic;
             //ManageUserAction.UpdateMainFlashCard(currentTopic);
             flList = ManageUserAction.GetMainFlashCards();
-            LoadComboBox();
+            LoadComboBox(); 
+            ChangeFlashCard(flList[index].Eng, flList[index].IdCard);
         }
         public void ChangeFlashCard(string content, int id)
         {
@@ -113,6 +114,29 @@ namespace VocabularyUp
                 btnRight_Click(sender, e);
             else if (e.KeyCode == Keys.Left)
                 btnLeft_Click(sender, e);
+        }
+
+        private void pnlTab_Click(object sender, EventArgs e)
+        {
+            ChangeLabel();
+        }
+
+        private void ChangeLabel()
+        {
+            if (lbMain.Text == flList[index].Eng)
+                lbMain.Text = flList[index].Viet;
+            else
+                lbMain.Text = flList[index].Eng;
+        }
+
+        private void pbMain_Click(object sender, EventArgs e)
+        {
+            ChangeLabel();
+        }
+
+        private void lbMain_Click(object sender, EventArgs e)
+        {
+            ChangeLabel();
         }
     }
 }
