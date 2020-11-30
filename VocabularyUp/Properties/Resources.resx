@@ -118,7 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="nicolas-solerieu-4gRNmhGzYZE-unsplash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nicolas-solerieu-4gRNmhGzYZE-unsplash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tanngau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tanngau.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Advanced" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Level\Advanced.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Beginner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Level\Beginner.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Challenge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Level\Challenge.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HighBeginner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Level\HighBeginner.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HighIntermediate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Level\HighIntermediate.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Intermediate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Level\Intermediate.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LowAdvanced" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Level\LowAdvanced.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LowIntermediate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Level\LowIntermediate.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Master" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Level\Master.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -33,15 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Guna.UI2, Version=2.0.0.1, Culture=neutral, PublicKeyToken=ad275b4be6718d4b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>frameworks\GUNA\GunaUIFrameWork\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
-    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Guna.UI2, Version=2.0.1.1, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,9 +61,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CampaignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CampaignForm.Designer.cs">
+      <DependentUpon>CampaignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Collection.cs" />
+    <Compile Include="CollectionLib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CollectionLib.Designer.cs">
+      <DependentUpon>CollectionLib.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Display_CampaignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Display_CampaignForm.Designer.cs">
+      <DependentUpon>Display_CampaignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CollectionForm.Designer.cs">
+      <DependentUpon>CollectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FillBlankForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FillBlankForm.Designer.cs">
+      <DependentUpon>FillBlankForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FlashCard.cs" />
+    <Compile Include="LearningForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LearningForm.Designer.cs">
+      <DependentUpon>LearningForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticInfoForm.Designer.cs">
+      <DependentUpon>StatisticInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibraryForm.Designer.cs">
+      <DependentUpon>LibraryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageSystem.cs" />
     <Compile Include="ManageUserAction.cs" />
+    <Compile Include="MultipleChoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MultipleChoiceForm.Designer.cs">
+      <DependentUpon>MultipleChoiceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,13 +127,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="Quiz.cs" />
+    <Compile Include="StatisticResultForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="StatisticResultForm.Designer.cs">
+      <DependentUpon>StatisticResultForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="StoreFlashcardFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>StoreFlashcardFrom.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReviseForm.cs">
       <SubType>Form</SubType>
@@ -78,11 +148,26 @@
     <Compile Include="ReviseForm.Designer.cs">
       <DependentUpon>ReviseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RevisionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RevisionForm.Designer.cs">
+      <DependentUpon>RevisionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticForm.Designer.cs">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StatisticsForm.Designer.cs">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuperLabel.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserAccessForm.cs">
@@ -91,8 +176,39 @@
     <Compile Include="UserAccessForm.Designer.cs">
       <DependentUpon>UserAccessForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="UserChoice.cs" />
+    <EmbeddedResource Include="CampaignForm.resx">
+      <DependentUpon>CampaignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CollectionLib.resx">
+      <DependentUpon>CollectionLib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display_CampaignForm.resx">
+      <DependentUpon>Display_CampaignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CollectionForm.resx">
+      <DependentUpon>CollectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FillBlankForm.resx">
+      <DependentUpon>FillBlankForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LearningForm.resx">
+      <DependentUpon>LearningForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticInfoForm.resx">
+      <DependentUpon>StatisticInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibraryForm.resx">
+      <DependentUpon>LibraryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticResultForm.resx">
+      <DependentUpon>StatisticResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreFlashcardFrom.resx">
+      <DependentUpon>StoreFlashcardFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MultipleChoiceForm.resx">
+      <DependentUpon>MultipleChoiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavForm.resx">
       <DependentUpon>NavForm.cs</DependentUpon>
@@ -109,6 +225,12 @@
     </Compile>
     <EmbeddedResource Include="ReviseForm.resx">
       <DependentUpon>ReviseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RevisionForm.resx">
+      <DependentUpon>RevisionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatisticForm.resx">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
@@ -131,6 +253,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nicolas-solerieu-4gRNmhGzYZE-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Guna.UI2.dll" />
+    <None Include="Resources\Level\Master.PNG" />
+    <None Include="Resources\Level\LowIntermediate.PNG" />
+    <None Include="Resources\Level\LowAdvanced.PNG" />
+    <None Include="Resources\Level\Intermediate.PNG" />
+    <None Include="Resources\Level\HighIntermediate.PNG" />
+    <None Include="Resources\Level\HighBeginner.PNG" />
+    <None Include="Resources\Level\Challenge.PNG" />
+    <None Include="Resources\Level\Beginner.PNG" />
+    <None Include="Resources\Level\Advanced.PNG" />
+    <None Include="Resources\tanngau.jpg" />
+    <None Include="Resources\images.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
