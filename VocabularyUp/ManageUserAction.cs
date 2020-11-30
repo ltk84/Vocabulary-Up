@@ -276,6 +276,136 @@ namespace VocabularyUp
                 connection.Close();
             }
         }
+        public static int CalculateProgress(int currentTopic, int id)
+        {
+            string nameTopic = null;
+            int countL = 0;
+            int countA = 0;
+            switch (currentTopic)
+            {
+                case 1:
+                    nameTopic = "Animals"; //
+                    break;
+                case 2:
+                    nameTopic = "Plants";
+                    break;
+                case 3:
+                    nameTopic = "Fruits";
+                    break;
+                case 4:
+                    nameTopic = "Job";
+                    break;
+                case 5:
+                    nameTopic = "Food and Drinks"; // khac
+                    break;
+                case 6:
+                    nameTopic = "Sport"; // khac
+                    break;
+                case 7:
+                    nameTopic = "Clothing"; //
+                    break;
+                case 8:
+                    nameTopic = "Technology"; //
+                    break;
+            }
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "select count(*) as CL from FLASHCARD fl_m where exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = " + id.ToString() + " and u_fl.ID_COLLECTION = 0) and fl_m.FIELD = '" + nameTopic + "'";
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                SqlDataReader reader = command.ExecuteReader();
+
+                //Su dung reader de doc tung dong du lieu //va thuc hien thao tac xu ly mong muon voi du lieu doc len 
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    countL = reader.GetInt32(0);
+                }
+            }
+            catch (InvalidCastException)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
+            countA = CalculateAllByField(currentTopic);
+            return (countL*100) / countA;
+        }
+        public static int CalculateAllByField(int currentTopic)
+        {
+            string nameTopic = null;
+            int countA = 0;
+            switch (currentTopic)
+            {
+                case 1:
+                    nameTopic = "Animals"; //
+                    break;
+                case 2:
+                    nameTopic = "Plants";
+                    break;
+                case 3:
+                    nameTopic = "Fruits";
+                    break;
+                case 4:
+                    nameTopic = "Job";
+                    break;
+                case 5:
+                    nameTopic = "Food and Drinks"; // khac
+                    break;
+                case 6:
+                    nameTopic = "Sport"; // khac
+                    break;
+                case 7:
+                    nameTopic = "Clothing"; //
+                    break;
+                case 8:
+                    nameTopic = "Technology"; //
+                    break;
+            }
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQueryExt = "select count(*) as CA from FLASHCARD fl_m where fl_m.FIELD = '" + nameTopic + "'";
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand commandExt = new SqlCommand(sqlQueryExt, connection);
+
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                SqlDataReader readerExt = commandExt.ExecuteReader();
+
+                //Su dung reader de doc tung dong du lieu //va thuc hien thao tac xu ly mong muon voi du lieu doc len         
+                while (readerExt.HasRows)
+                {
+                    if (readerExt.Read() == false) break;
+                    countA = readerExt.GetInt32(0);
+                }
+            }
+            catch (InvalidCastException)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
+            return countA;
+        }
+
+
 
         // TẠO 1 RANDOM FLASHCARD TRONG MAINFLASHCARD
         public static FlashCard RandomMainFlashCard()

@@ -12,27 +12,27 @@ namespace VocabularyUp
 {
     public partial class StatisticForm : Form
     {
+        StatisticInfoForm statisticInfo = new StatisticInfoForm();
+        StatisticResultForm statisticResult = new StatisticResultForm();
         public StatisticForm()
         {
             InitializeComponent();
             ToStatisticInfo();
             update();
         }
-        StatisticInfoForm statisticInfo = new StatisticInfoForm();
-        StatisticResultForm statisticResult = new StatisticResultForm();
         
         
-        private void update()
+        public void update()
         {
             string TK = ManageSystem.TK();
             int ID = ManageSystem.GetUserID(TK);
             List<string> a = ManageSystem.UserInfoPersonal(ID);
             lblTen.Text = a[1];
             lblBeginDate.Text = a[4];
+            statisticResult.UpdateInfoResult();
         }
         private void ToStatisticInfo()
         {
-            
             statisticInfo.TopLevel = false;
             pnlShowStatistic.Controls.Clear();
             pnlShowStatistic.Controls.Add(statisticInfo);

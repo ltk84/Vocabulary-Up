@@ -204,11 +204,11 @@ namespace VocabularyUp
         int currentID;
 
         // Tabs
-        CampaignForm campaignTab = new CampaignForm();
-        LibraryForm libraryTab = new LibraryForm();
-        CollectionForm collectionTab = new CollectionForm();
-        RevisionForm revisionTab = new RevisionForm();
-        StatisticForm statisticTab = new StatisticForm();
+        CampaignForm campaignTab;
+        LibraryForm libraryTab;
+        CollectionForm collectionTab;
+        RevisionForm revisionTab;
+        StatisticForm statisticTab;
         //int flag = 0;
 
         public NavForm(UserAccessForm userAccess, int currentID)
@@ -222,7 +222,11 @@ namespace VocabularyUp
 
             //
             ManageUserAction.InitAllCollections();
-
+            campaignTab = new CampaignForm();
+            libraryTab = new LibraryForm();
+            collectionTab = new CollectionForm();
+            revisionTab = new RevisionForm();
+            statisticTab = new StatisticForm();
             // Connect đến database để load MainFlashCard
             //ManageUserAction.UpdateMainFlashCard();
 
@@ -328,6 +332,8 @@ namespace VocabularyUp
             pnlTab.Controls.Add(statisticTab);
             statisticTab.FormBorderStyle = FormBorderStyle.None;
             statisticTab.Show();
+
+            statisticTab.update();
         }
 
         private void btnLib_Click(object sender, EventArgs e)
