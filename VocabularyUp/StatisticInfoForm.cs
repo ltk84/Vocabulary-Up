@@ -67,8 +67,9 @@ namespace VocabularyUp
 
         private void Level()
         {
-            int  a =340;
-           
+            int a = ManageUserAction.GetItemOfAllCollection(0).ListFL.Count();
+
+
             int Level, Percent;
             
             
@@ -80,7 +81,7 @@ namespace VocabularyUp
             if (Level == 1)
             {
                 lbCapBac.Text = "Beginner";
-                imageLevel.Image = Image.FromFile("../../Level/Beginner.PNG");
+                imageLevel.Image = Image.FromFile("../../db/Rankings/Iron 3.png");
             }
             else if (Level == 2)
                 lbCapBac.Text = "High Beginner";
@@ -93,7 +94,7 @@ namespace VocabularyUp
             else if (Level == 6)
             {
                 lbCapBac.Text = "Low Advanced";
-                imageLevel.Image = Image.FromFile("../../Level/LowAdvanced.PNG");
+                imageLevel.Image = Image.FromFile("../../db/Rankings/Gold 3.png");
             }
             else if (Level == 7)
                 lbCapBac.Text = "Advanced";
@@ -107,25 +108,70 @@ namespace VocabularyUp
         private void btnSaveEdit_Click(object sender, EventArgs e)
         {
 
-            if (txtHoTen.Text == "" || txtDate.Text == "" || txtGioiTinh.Text == "")
-                MessageBox.Show("bạn vui lòng điền đẩy đủ thông tin");
+            if (txtHoTen.Text == "")
+                MessageBox.Show("Bạn vui lòng điền đẩy đủ thông tin");
             else
             {
-                string TK = ManageSystem.TK();
-                int ID = ManageSystem.GetUserID(TK);
-                ManageSystem.AddInfoPersonal(ID,txtDate.Text,txtHoTen.Text,txtGioiTinh.Text);
-                MessageBox.Show("Save Succes!");
-                pnlEdit.Visible = false;
-                pnlEdit.Enabled = false;
-                pnlPersonalDetails.Visible = true;
-                pnlPersonalDetails.Enabled = true;
-                pnlSavePass.Visible = false;
-                pnlSavePass.Enabled = false;
-                Update();
-
+                if (CheckValidName(txtHoTen.Text))
+                {
+                    string gender = "";
+                    if (rbNam.Checked == true && rbNu.Checked == false)
+                        gender = "Nam";
+                    else if (rbNam.Checked == false && rbNu.Checked == true)
+                        gender = "Nữ";
+                    else
+                        gender = "Bê đê";
+                        string TK = ManageSystem.TK();
+                    int ID = ManageSystem.GetUserID(TK);
+                    ManageSystem.AddInfoPersonal(ID, dtpNgaySinh.Value.ToString("dd/MM/yyyy"), txtHoTen.Text, gender);
+                    MessageBox.Show("Save Succes!");
+                    pnlEdit.Visible = false;
+                    pnlEdit.Enabled = false;
+                    pnlPersonalDetails.Visible = true;
+                    pnlPersonalDetails.Enabled = true;
+                    pnlSavePass.Visible = false;
+                    pnlSavePass.Enabled = false;
+                    Update();
+                }    
+                else
+                {
+                    MessageBox.Show("Họ tên không được chứ ký tự đặc biệt hoặc số.");
+                }
                 ClearTextbox();
             }
         }
+
+        private bool CheckValidName(string str)
+        {
+            string invalid = ".,:;`'/+-(){}[]<>*&^%$#@!?~/\\=\t\n1234567890";
+            for (int i = 0; i < invalid.Length; i++)
+            {
+                if (str.Contains(invalid[i]))
+                    return false;
+            }
+            return true;
+        }
+        
+        //private bool CheckValidDate(string str)
+        //{
+        //    DateTime temp;
+        //    if (DateTime.TryParse(str, out temp))
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
+
+        //private bool CheckGender(string str)
+        //{
+        //    string male = "nam";
+        //    string female = "nữ";
+        //    if (str.ToLower() != male || str.ToLower() != female) return false;
+        //    else return true;
+        //}    
 
         private void btChangePass_Click(object sender, EventArgs e)
         {

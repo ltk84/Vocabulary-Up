@@ -70,6 +70,8 @@ namespace VocabularyUp
 
         public void Reset()
         {
+            type = -1;
+            currentTopic = -1;
             ResetColorButton();
             btnMultipleChoice.FillColor = Color.FromArgb(192, 255, 192);
             btnFilBlank.FillColor = Color.FromArgb(192, 255, 192);

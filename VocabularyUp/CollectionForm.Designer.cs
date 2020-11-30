@@ -66,10 +66,10 @@ namespace VocabularyUp
             this.pnlCollection.Controls.Add(this.reloadBtn);
             this.pnlCollection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCollection.Location = new System.Drawing.Point(0, 0);
-            this.pnlCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlCollection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlCollection.Name = "pnlCollection";
             this.pnlCollection.ShadowDecoration.Parent = this.pnlCollection;
-            this.pnlCollection.Size = new System.Drawing.Size(1000, 519);
+            this.pnlCollection.Size = new System.Drawing.Size(750, 422);
             this.pnlCollection.TabIndex = 4;
             // 
             // btnRename
@@ -82,11 +82,11 @@ namespace VocabularyUp
             this.btnRename.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRename.ForeColor = System.Drawing.Color.Black;
             this.btnRename.HoverState.Parent = this.btnRename;
-            this.btnRename.Location = new System.Drawing.Point(847, 187);
-            this.btnRename.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRename.Location = new System.Drawing.Point(635, 152);
+            this.btnRename.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRename.Name = "btnRename";
             this.btnRename.ShadowDecoration.Parent = this.btnRename;
-            this.btnRename.Size = new System.Drawing.Size(116, 76);
+            this.btnRename.Size = new System.Drawing.Size(87, 62);
             this.btnRename.TabIndex = 18;
             this.btnRename.Text = "Rename";
             this.btnRename.Click += new System.EventHandler(this.btnRename_Click);
@@ -98,12 +98,13 @@ namespace VocabularyUp
             this.btnSearch.CheckedState.Parent = this.btnSearch;
             this.btnSearch.HoverState.Parent = this.btnSearch;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.ImageRotate = 0F;
             this.btnSearch.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSearch.Location = new System.Drawing.Point(682, 26);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch.Location = new System.Drawing.Point(512, 21);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.PressedState.Parent = this.btnSearch;
-            this.btnSearch.Size = new System.Drawing.Size(32, 31);
+            this.btnSearch.Size = new System.Drawing.Size(24, 25);
             this.btnSearch.TabIndex = 11;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -115,10 +116,10 @@ namespace VocabularyUp
             this.lvCollection.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem2});
             this.lvCollection.LargeImageList = this.imageList1;
-            this.lvCollection.Location = new System.Drawing.Point(38, 75);
-            this.lvCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lvCollection.Location = new System.Drawing.Point(28, 61);
+            this.lvCollection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvCollection.Name = "lvCollection";
-            this.lvCollection.Size = new System.Drawing.Size(804, 418);
+            this.lvCollection.Size = new System.Drawing.Size(603, 340);
             this.lvCollection.SmallImageList = this.imageList1;
             this.lvCollection.TabIndex = 13;
             this.lvCollection.UseCompatibleStateImageBehavior = false;
@@ -135,11 +136,11 @@ namespace VocabularyUp
             this.btnDel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDel.ForeColor = System.Drawing.Color.Black;
             this.btnDel.HoverState.Parent = this.btnDel;
-            this.btnDel.Location = new System.Drawing.Point(847, 286);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDel.Location = new System.Drawing.Point(635, 232);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDel.Name = "btnDel";
             this.btnDel.ShadowDecoration.Parent = this.btnDel;
-            this.btnDel.Size = new System.Drawing.Size(116, 76);
+            this.btnDel.Size = new System.Drawing.Size(87, 62);
             this.btnDel.TabIndex = 15;
             this.btnDel.Text = "Delete";
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
@@ -158,17 +159,18 @@ namespace VocabularyUp
             this.txtSearching.FillColor = System.Drawing.Color.MintCream;
             this.txtSearching.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearching.FocusedState.Parent = this.txtSearching;
+            this.txtSearching.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearching.ForeColor = System.Drawing.Color.Black;
             this.txtSearching.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearching.HoverState.Parent = this.txtSearching;
-            this.txtSearching.Location = new System.Drawing.Point(53, 26);
-            this.txtSearching.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSearching.Location = new System.Drawing.Point(40, 21);
+            this.txtSearching.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearching.Name = "txtSearching";
             this.txtSearching.PasswordChar = '\0';
             this.txtSearching.PlaceholderText = "Search collection";
             this.txtSearching.SelectedText = "";
             this.txtSearching.ShadowDecoration.Parent = this.txtSearching;
-            this.txtSearching.Size = new System.Drawing.Size(612, 31);
+            this.txtSearching.Size = new System.Drawing.Size(459, 25);
             this.txtSearching.TabIndex = 16;
             // 
             // btnAdd
@@ -181,11 +183,11 @@ namespace VocabularyUp
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(847, 89);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Location = new System.Drawing.Point(635, 72);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(116, 76);
+            this.btnAdd.Size = new System.Drawing.Size(87, 62);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Add";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -198,12 +200,13 @@ namespace VocabularyUp
             this.reloadBtn.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("reloadBtn.HoverState.Image")));
             this.reloadBtn.HoverState.Parent = this.reloadBtn;
             this.reloadBtn.Image = ((System.Drawing.Image)(resources.GetObject("reloadBtn.Image")));
+            this.reloadBtn.ImageRotate = 0F;
             this.reloadBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.reloadBtn.Location = new System.Drawing.Point(719, 26);
+            this.reloadBtn.Location = new System.Drawing.Point(539, 21);
             this.reloadBtn.Margin = new System.Windows.Forms.Padding(2);
             this.reloadBtn.Name = "reloadBtn";
             this.reloadBtn.PressedState.Parent = this.reloadBtn;
-            this.reloadBtn.Size = new System.Drawing.Size(33, 31);
+            this.reloadBtn.Size = new System.Drawing.Size(25, 25);
             this.reloadBtn.TabIndex = 13;
             this.reloadBtn.Click += new System.EventHandler(this.reloadBtn_Click);
             // 
@@ -214,25 +217,25 @@ namespace VocabularyUp
             this.pnlTab.FillColor3 = System.Drawing.Color.Snow;
             this.pnlTab.FillColor4 = System.Drawing.Color.Snow;
             this.pnlTab.Location = new System.Drawing.Point(0, 0);
-            this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
-            this.pnlTab.Size = new System.Drawing.Size(1000, 519);
+            this.pnlTab.Size = new System.Drawing.Size(750, 422);
             this.pnlTab.TabIndex = 19;
             this.pnlTab.Visible = false;
             // 
             // CollectionForm
             // 
             this.AcceptButton = this.btnSearch;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1000, 519);
+            this.ClientSize = new System.Drawing.Size(750, 422);
             this.Controls.Add(this.pnlCollection);
             this.Controls.Add(this.pnlTab);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CollectionForm";
             this.Text = "CollectionForm";
             this.pnlCollection.ResumeLayout(false);
