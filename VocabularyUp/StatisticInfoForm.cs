@@ -78,7 +78,7 @@ namespace VocabularyUp
            
             lbLevel.Text = Level.ToString();
             pbLevel.Value = Percent * 2;
-            if (Level == 1)
+            if (Level <= 1)
             {
                 lbCapBac.Text = "Beginner";
                 imageLevel.Image = Image.FromFile("../../db/Rankings/Iron 3.png");
