@@ -45,6 +45,9 @@
             this.btnDone = new Guna.UI2.WinForms.Guna2Button();
             this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.btnRight = new Guna.UI2.WinForms.Guna2Button();
+            this.lbTimer = new System.Windows.Forms.Label();
+            this.timerLearning = new System.Windows.Forms.Timer(this.components);
+            this.lbTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
             this.pnlLib.SuspendLayout();
             this.pnlToCollection.SuspendLayout();
@@ -214,6 +217,8 @@
             // 
             this.pnlMainNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlMainNav.BorderRadius = 20;
+            this.pnlMainNav.Controls.Add(this.lbTime);
+            this.pnlMainNav.Controls.Add(this.lbTimer);
             this.pnlMainNav.Controls.Add(this.btnDone);
             this.pnlMainNav.Controls.Add(this.btnBack);
             this.pnlMainNav.Controls.Add(this.pnlLib);
@@ -285,6 +290,29 @@
             this.btnRight.TabIndex = 8;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
+            // lbTimer
+            // 
+            this.lbTimer.BackColor = System.Drawing.Color.Transparent;
+            this.lbTimer.Location = new System.Drawing.Point(598, 11);
+            this.lbTimer.Name = "lbTimer";
+            this.lbTimer.Size = new System.Drawing.Size(48, 23);
+            this.lbTimer.TabIndex = 60;
+            // 
+            // timerLearning
+            // 
+            this.timerLearning.Interval = 1000;
+            this.timerLearning.Tick += new System.EventHandler(this.timerLearning_Tick);
+            // 
+            // lbTime
+            // 
+            this.lbTime.AutoSize = true;
+            this.lbTime.BackColor = System.Drawing.Color.Transparent;
+            this.lbTime.Location = new System.Drawing.Point(567, 11);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(25, 13);
+            this.lbTime.TabIndex = 61;
+            this.lbTime.Text = "600";
+            // 
             // LearningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,6 +329,7 @@
             this.pnlToCollection.ResumeLayout(false);
             this.pnlTab.ResumeLayout(false);
             this.pnlMainNav.ResumeLayout(false);
+            this.pnlMainNav.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -331,5 +360,8 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlToCollection;
         private Guna.UI2.WinForms.Guna2ComboBox cbCollection;
         private Guna.UI2.WinForms.Guna2Button btnToCollection;
+        private System.Windows.Forms.Label lbTimer;
+        private System.Windows.Forms.Timer timerLearning;
+        private System.Windows.Forms.Label lbTime;
     }
 }

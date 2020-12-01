@@ -19,6 +19,7 @@ namespace VocabularyUp
         int isPress = 0;
         List<UserChoice> userChoices = new List<UserChoice>();
         CampaignForm campaign = new CampaignForm();
+        int time;
         public MultipleChoiceForm(int currentTopic, CampaignForm campaign)
         {
             InitializeComponent();
@@ -197,6 +198,7 @@ namespace VocabularyUp
             {
                 btnNext.Enabled = false;
                 campaign.Return();
+                timerMultiple.Stop();
                 this.Close();
             }
             MovePointer(currentQuiz);
@@ -340,6 +342,30 @@ namespace VocabularyUp
         {
             ManageUserAction.AddFlashCardToCollection(0, fl);
             ManageUserAction.AddFlashCardToDatabase(0, ManageUserAction.GetItemOfAllCollection(0).NameCollection, fl);
+        }
+
+        private void timerMultiple_Tick(object sender, EventArgs e)
+        {
+            time++;
+            lbTimer.Text = (60 - time).ToString();
+            if (time < 50)
+            {
+                lbTimer.ForeColor = Color.Black;
+            }
+            else
+            {
+                lbTimer.ForeColor = Color.Red;
+            }
+            if (time == 60)
+            {
+                timerMultiple.Stop();
+                campaign.Return();
+            }
+        }
+
+        public void StartTimer()
+        {
+            timerMultiple.Start();
         }
     }
 }

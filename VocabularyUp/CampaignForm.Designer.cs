@@ -30,6 +30,7 @@
         {
             this.pnlCampaignCate = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlTopicSelection = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
             this.btnMultipleChoice = new Guna.UI2.WinForms.Guna2Button();
             this.btnFilBlank = new Guna.UI2.WinForms.Guna2Button();
@@ -42,7 +43,6 @@
             this.btnPlants = new Guna.UI2.WinForms.Guna2Button();
             this.btnClothing = new Guna.UI2.WinForms.Guna2Button();
             this.btnFruits = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlCampaignCate.SuspendLayout();
             this.pnlTopicSelection.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,18 @@
             this.pnlTopicSelection.ShadowDecoration.Parent = this.pnlTopicSelection;
             this.pnlTopicSelection.Size = new System.Drawing.Size(750, 422);
             this.pnlTopicSelection.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(359, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(347, 93);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Choose category";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnConfirm
             // 
@@ -305,18 +317,6 @@
             this.btnFruits.TabIndex = 2;
             this.btnFruits.Text = "Fruits";
             this.btnFruits.Click += new System.EventHandler(this.btnFruits_Click);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(359, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(347, 93);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Choose category";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CampaignForm
             // 

@@ -18,6 +18,7 @@ namespace VocabularyUp
         int currentQuiz = 0;
         List<UserChoice> userChoices = new List<UserChoice>();
         CampaignForm campaignForm;
+        int time = 0;
         public FillBlankForm(int currentTopic, CampaignForm campaignForm)
         {
             InitializeComponent();
@@ -110,6 +111,7 @@ namespace VocabularyUp
             {
                 btnNext.Enabled = false;
                 this.campaignForm.Return();
+                timerFillBlank.Stop();
                 this.Close();
             }
 
@@ -220,6 +222,25 @@ namespace VocabularyUp
         {
             if (e.KeyCode == Keys.Right)
                 btnNext_Click(sender, e);
+        }
+
+        private void timerFillBlank_Tick(object sender, EventArgs e)
+        {
+            time++;
+            lbTimer.Text = (60 - time).ToString();
+            if (time < 50)
+            {
+                lbTimer.ForeColor = Color.Black;
+            }
+            else
+            {
+                lbTimer.ForeColor = Color.Red;
+            }
+            if (time == 60)
+            {
+                timerFillBlank.Stop();
+                campaignForm.Return();
+            }
         }
     }
 }

@@ -64,6 +64,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.pnlEdit = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.rbNu = new System.Windows.Forms.RadioButton();
+            this.rbNam = new System.Windows.Forms.RadioButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtGioiTinh = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDate = new Guna.UI2.WinForms.Guna2TextBox();
@@ -80,13 +84,9 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.lbLevel = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.imageLevel = new System.Windows.Forms.PictureBox();
             this.lbCapBac = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.imageLevel = new System.Windows.Forms.PictureBox();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.rbNu = new System.Windows.Forms.RadioButton();
-            this.rbNam = new System.Windows.Forms.RadioButton();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlPersonalDetails.SuspendLayout();
@@ -116,7 +116,7 @@
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(592, 93);
@@ -128,7 +128,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(520, 20);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(47, 56);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -176,7 +176,7 @@
             this.pnlPersonalDetails.Controls.Add(this.panel1);
             this.pnlPersonalDetails.Controls.Add(this.label3);
             this.pnlPersonalDetails.Location = new System.Drawing.Point(4, 98);
-            this.pnlPersonalDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlPersonalDetails.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPersonalDetails.Name = "pnlPersonalDetails";
             this.pnlPersonalDetails.ShadowDecoration.Parent = this.pnlPersonalDetails;
             this.pnlPersonalDetails.Size = new System.Drawing.Size(338, 315);
@@ -192,7 +192,7 @@
             this.btChangePass.ForeColor = System.Drawing.Color.Black;
             this.btChangePass.HoverState.Parent = this.btChangePass;
             this.btChangePass.Location = new System.Drawing.Point(13, 273);
-            this.btChangePass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btChangePass.Margin = new System.Windows.Forms.Padding(2);
             this.btChangePass.Name = "btChangePass";
             this.btChangePass.ShadowDecoration.Parent = this.btChangePass;
             this.btChangePass.Size = new System.Drawing.Size(302, 37);
@@ -209,7 +209,7 @@
             this.btEditProfile.ForeColor = System.Drawing.Color.Black;
             this.btEditProfile.HoverState.Parent = this.btEditProfile;
             this.btEditProfile.Location = new System.Drawing.Point(13, 223);
-            this.btEditProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btEditProfile.Margin = new System.Windows.Forms.Padding(2);
             this.btEditProfile.Name = "btEditProfile";
             this.btEditProfile.ShadowDecoration.Parent = this.btEditProfile;
             this.btEditProfile.Size = new System.Drawing.Size(302, 37);
@@ -222,7 +222,7 @@
             this.panel5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel5.Controls.Add(this.label11);
             this.panel5.Location = new System.Drawing.Point(15, 207);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(150, 2);
             this.panel5.TabIndex = 9;
@@ -253,7 +253,7 @@
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel4.Controls.Add(this.label9);
             this.panel4.Location = new System.Drawing.Point(15, 166);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(150, 2);
             this.panel4.TabIndex = 7;
@@ -284,7 +284,7 @@
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel3.Controls.Add(this.label7);
             this.panel3.Location = new System.Drawing.Point(15, 126);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(150, 2);
             this.panel3.TabIndex = 5;
@@ -316,7 +316,7 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel2.Controls.Add(this.label6);
             this.panel2.Location = new System.Drawing.Point(15, 85);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(150, 2);
             this.panel2.TabIndex = 3;
@@ -347,7 +347,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(13, 36);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(302, 2);
             this.panel1.TabIndex = 1;
@@ -387,7 +387,7 @@
             this.pnlSavePass.Controls.Add(this.panel15);
             this.pnlSavePass.Controls.Add(this.label14);
             this.pnlSavePass.Location = new System.Drawing.Point(4, 98);
-            this.pnlSavePass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSavePass.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSavePass.Name = "pnlSavePass";
             this.pnlSavePass.ShadowDecoration.Parent = this.pnlSavePass;
             this.pnlSavePass.Size = new System.Drawing.Size(338, 315);
@@ -404,7 +404,7 @@
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.Location = new System.Drawing.Point(10, 267);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(302, 37);
@@ -427,7 +427,7 @@
             this.txtReNewPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtReNewPass.HoverState.Parent = this.txtReNewPass;
             this.txtReNewPass.Location = new System.Drawing.Point(10, 182);
-            this.txtReNewPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtReNewPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtReNewPass.Name = "txtReNewPass";
             this.txtReNewPass.PasswordChar = '\0';
             this.txtReNewPass.PlaceholderText = "Re-NewPass";
@@ -441,7 +441,7 @@
             // 
             this.panel14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel14.Location = new System.Drawing.Point(10, 219);
-            this.panel14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(150, 2);
             this.panel14.TabIndex = 15;
@@ -461,7 +461,7 @@
             this.txtNewPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNewPass.HoverState.Parent = this.txtNewPass;
             this.txtNewPass.Location = new System.Drawing.Point(10, 119);
-            this.txtNewPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNewPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.PasswordChar = '\0';
             this.txtNewPass.PlaceholderText = "New Password";
@@ -486,7 +486,7 @@
             this.txtOldPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOldPass.HoverState.Parent = this.txtOldPass;
             this.txtOldPass.Location = new System.Drawing.Point(10, 58);
-            this.txtOldPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtOldPass.Margin = new System.Windows.Forms.Padding(2);
             this.txtOldPass.Name = "txtOldPass";
             this.txtOldPass.PasswordChar = '\0';
             this.txtOldPass.PlaceholderText = "Old Password";
@@ -505,7 +505,7 @@
             this.btSavePassword.ForeColor = System.Drawing.Color.Black;
             this.btSavePassword.HoverState.Parent = this.btSavePassword;
             this.btSavePassword.Location = new System.Drawing.Point(10, 226);
-            this.btSavePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btSavePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btSavePassword.Name = "btSavePassword";
             this.btSavePassword.ShadowDecoration.Parent = this.btSavePassword;
             this.btSavePassword.Size = new System.Drawing.Size(302, 37);
@@ -517,7 +517,7 @@
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel8.Location = new System.Drawing.Point(10, 159);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(150, 2);
             this.panel8.TabIndex = 7;
@@ -526,7 +526,7 @@
             // 
             this.panel13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel13.Location = new System.Drawing.Point(10, 98);
-            this.panel13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(150, 2);
             this.panel13.TabIndex = 5;
@@ -536,7 +536,7 @@
             this.panel15.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel15.Controls.Add(this.label13);
             this.panel15.Location = new System.Drawing.Point(13, 36);
-            this.panel15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(302, 2);
             this.panel15.TabIndex = 1;
@@ -580,13 +580,51 @@
             this.pnlEdit.Controls.Add(this.panel12);
             this.pnlEdit.Controls.Add(this.label22);
             this.pnlEdit.Location = new System.Drawing.Point(4, 98);
-            this.pnlEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlEdit.Margin = new System.Windows.Forms.Padding(2);
             this.pnlEdit.Name = "pnlEdit";
             this.pnlEdit.ShadowDecoration.Parent = this.pnlEdit;
             this.pnlEdit.Size = new System.Drawing.Size(338, 315);
             this.pnlEdit.TabIndex = 6;
             this.pnlEdit.Visible = false;
             this.pnlEdit.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel2_Paint_1);
+            // 
+            // rbNu
+            // 
+            this.rbNu.AutoSize = true;
+            this.rbNu.Location = new System.Drawing.Point(91, 176);
+            this.rbNu.Name = "rbNu";
+            this.rbNu.Size = new System.Drawing.Size(59, 17);
+            this.rbNu.TabIndex = 19;
+            this.rbNu.TabStop = true;
+            this.rbNu.Text = "Female";
+            this.rbNu.UseVisualStyleBackColor = true;
+            // 
+            // rbNam
+            // 
+            this.rbNam.AutoSize = true;
+            this.rbNam.Location = new System.Drawing.Point(28, 176);
+            this.rbNam.Name = "rbNam";
+            this.rbNam.Size = new System.Drawing.Size(48, 17);
+            this.rbNam.TabIndex = 18;
+            this.rbNam.TabStop = true;
+            this.rbNam.Text = "Male";
+            this.rbNam.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 102);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(45, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Birthday";
+            // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.Location = new System.Drawing.Point(13, 118);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(200, 20);
+            this.dtpNgaySinh.TabIndex = 16;
             // 
             // guna2Button1
             // 
@@ -597,7 +635,7 @@
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Location = new System.Drawing.Point(11, 273);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(302, 37);
@@ -620,7 +658,7 @@
             this.txtGioiTinh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtGioiTinh.HoverState.Parent = this.txtGioiTinh;
             this.txtGioiTinh.Location = new System.Drawing.Point(14, 176);
-            this.txtGioiTinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGioiTinh.Margin = new System.Windows.Forms.Padding(2);
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.PasswordChar = '\0';
             this.txtGioiTinh.PlaceholderText = "Giới tính";
@@ -645,7 +683,7 @@
             this.txtDate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDate.HoverState.Parent = this.txtDate;
             this.txtDate.Location = new System.Drawing.Point(11, 115);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtDate.Name = "txtDate";
             this.txtDate.PasswordChar = '\0';
             this.txtDate.PlaceholderText = "Ngày sinh";
@@ -670,10 +708,10 @@
             this.txtHoTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtHoTen.HoverState.Parent = this.txtHoTen;
             this.txtHoTen.Location = new System.Drawing.Point(13, 56);
-            this.txtHoTen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(2);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.PasswordChar = '\0';
-            this.txtHoTen.PlaceholderText = "Họ và tên";
+            this.txtHoTen.PlaceholderText = "Name";
             this.txtHoTen.SelectedText = "";
             this.txtHoTen.ShadowDecoration.Parent = this.txtHoTen;
             this.txtHoTen.Size = new System.Drawing.Size(150, 24);
@@ -688,7 +726,7 @@
             this.btnSaveEdit.ForeColor = System.Drawing.Color.Black;
             this.btnSaveEdit.HoverState.Parent = this.btnSaveEdit;
             this.btnSaveEdit.Location = new System.Drawing.Point(11, 223);
-            this.btnSaveEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSaveEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSaveEdit.Name = "btnSaveEdit";
             this.btnSaveEdit.ShadowDecoration.Parent = this.btnSaveEdit;
             this.btnSaveEdit.Size = new System.Drawing.Size(302, 37);
@@ -700,7 +738,7 @@
             // 
             this.panel9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel9.Location = new System.Drawing.Point(13, 210);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(150, 2);
             this.panel9.TabIndex = 7;
@@ -709,7 +747,7 @@
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel10.Location = new System.Drawing.Point(13, 154);
-            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(150, 2);
             this.panel10.TabIndex = 5;
@@ -718,7 +756,7 @@
             // 
             this.panel11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel11.Location = new System.Drawing.Point(13, 92);
-            this.panel11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(150, 2);
             this.panel11.TabIndex = 3;
@@ -728,7 +766,7 @@
             this.panel12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel12.Controls.Add(this.label21);
             this.panel12.Location = new System.Drawing.Point(13, 36);
-            this.panel12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(302, 2);
             this.panel12.TabIndex = 1;
@@ -759,7 +797,7 @@
             // 
             this.pbLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pbLevel.Location = new System.Drawing.Point(100, 23);
-            this.pbLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbLevel.Margin = new System.Windows.Forms.Padding(2);
             this.pbLevel.Name = "pbLevel";
             this.pbLevel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.pbLevel.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -787,7 +825,7 @@
             this.panel6.Controls.Add(this.pbLevel);
             this.panel6.Controls.Add(this.label5);
             this.panel6.Location = new System.Drawing.Point(348, 98);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(238, 156);
             this.panel6.TabIndex = 4;
@@ -810,10 +848,21 @@
             this.panel7.Controls.Add(this.lbCapBac);
             this.panel7.Controls.Add(this.label8);
             this.panel7.Location = new System.Drawing.Point(348, 257);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(238, 156);
             this.panel7.TabIndex = 5;
+            // 
+            // imageLevel
+            // 
+            this.imageLevel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imageLevel.Location = new System.Drawing.Point(80, 35);
+            this.imageLevel.Margin = new System.Windows.Forms.Padding(2);
+            this.imageLevel.Name = "imageLevel";
+            this.imageLevel.Size = new System.Drawing.Size(88, 97);
+            this.imageLevel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageLevel.TabIndex = 8;
+            this.imageLevel.TabStop = false;
             // 
             // lbCapBac
             // 
@@ -839,55 +888,6 @@
             this.label8.TabIndex = 4;
             this.label8.Text = "  Achievement:";
             // 
-            // imageLevel
-            // 
-            this.imageLevel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imageLevel.Location = new System.Drawing.Point(80, 35);
-            this.imageLevel.Margin = new System.Windows.Forms.Padding(2);
-            this.imageLevel.Name = "imageLevel";
-            this.imageLevel.Size = new System.Drawing.Size(88, 97);
-            this.imageLevel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imageLevel.TabIndex = 8;
-            this.imageLevel.TabStop = false;
-            // 
-            // dtpNgaySinh
-            // 
-            this.dtpNgaySinh.Location = new System.Drawing.Point(13, 118);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(200, 20);
-            this.dtpNgaySinh.TabIndex = 16;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 102);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Ngày sinh";
-            // 
-            // rbNu
-            // 
-            this.rbNu.AutoSize = true;
-            this.rbNu.Location = new System.Drawing.Point(91, 176);
-            this.rbNu.Name = "rbNu";
-            this.rbNu.Size = new System.Drawing.Size(39, 17);
-            this.rbNu.TabIndex = 19;
-            this.rbNu.TabStop = true;
-            this.rbNu.Text = "Nữ";
-            this.rbNu.UseVisualStyleBackColor = true;
-            // 
-            // rbNam
-            // 
-            this.rbNam.AutoSize = true;
-            this.rbNam.Location = new System.Drawing.Point(28, 176);
-            this.rbNam.Name = "rbNam";
-            this.rbNam.Size = new System.Drawing.Size(47, 17);
-            this.rbNam.TabIndex = 18;
-            this.rbNam.TabStop = true;
-            this.rbNam.Text = "Nam";
-            this.rbNam.UseVisualStyleBackColor = true;
-            // 
             // StatisticInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -901,7 +901,7 @@
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.pnlSavePass);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StatisticInfoForm";
             this.Text = "InfoStatistic";
             this.guna2CustomGradientPanel1.ResumeLayout(false);

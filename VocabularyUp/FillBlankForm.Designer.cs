@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FillBlankForm));
             this.pnlQuizFB = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.btnPointer10 = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -63,6 +64,8 @@
             this.lbMain_FB = new System.Windows.Forms.Label();
             this.pbMain_FB = new System.Windows.Forms.PictureBox();
             this.pnlDash_FB = new System.Windows.Forms.Panel();
+            this.lbTimer = new System.Windows.Forms.Label();
+            this.timerFillBlank = new System.Windows.Forms.Timer(this.components);
             this.pnlQuizFB.SuspendLayout();
             this.pnlFlashCard_FB.SuspendLayout();
             this.pnlTab_FB.SuspendLayout();
@@ -74,6 +77,7 @@
             // 
             this.pnlQuizFB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlQuizFB.BorderRadius = 20;
+            this.pnlQuizFB.Controls.Add(this.lbTimer);
             this.pnlQuizFB.Controls.Add(this.btnPointer10);
             this.pnlQuizFB.Controls.Add(this.btnPointer9);
             this.pnlQuizFB.Controls.Add(this.btnPointer8);
@@ -664,6 +668,22 @@
             this.pnlDash_FB.Size = new System.Drawing.Size(266, 4);
             this.pnlDash_FB.TabIndex = 11;
             // 
+            // lbTimer
+            // 
+            this.lbTimer.BackColor = System.Drawing.Color.Transparent;
+            this.lbTimer.Location = new System.Drawing.Point(487, 65);
+            this.lbTimer.Name = "lbTimer";
+            this.lbTimer.Size = new System.Drawing.Size(100, 25);
+            this.lbTimer.TabIndex = 59;
+            this.lbTimer.Text = "60";
+            this.lbTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timerFillBlank
+            // 
+            this.timerFillBlank.Enabled = true;
+            this.timerFillBlank.Interval = 1000;
+            this.timerFillBlank.Tick += new System.EventHandler(this.timerFillBlank_Tick);
+            // 
             // FillBlankForm
             // 
             this.AcceptButton = this.btnConfirm;
@@ -720,5 +740,7 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbTimer;
+        private System.Windows.Forms.Timer timerFillBlank;
     }
 }
