@@ -160,6 +160,7 @@
             this.btnPronun.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.HoverState.Image")));
             this.btnPronun.HoverState.Parent = this.btnPronun;
             this.btnPronun.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.Image")));
+            this.btnPronun.ImageRotate = 0F;
             this.btnPronun.ImageSize = new System.Drawing.Size(30, 30);
             this.btnPronun.Location = new System.Drawing.Point(256, 294);
             this.btnPronun.Margin = new System.Windows.Forms.Padding(2);

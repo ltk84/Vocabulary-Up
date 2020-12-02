@@ -24,6 +24,7 @@ namespace VocabularyUp
             InitializeComponent();
             this.currentTopic = currentTopic;
             this.campaignForm = campaignForm;
+            this.KeyPreview = true;
             ManageUserAction.UpdateMainFlashCard(currentTopic);
             InitQuiz();
             InitAnswer();
@@ -214,14 +215,12 @@ namespace VocabularyUp
 
         private void btnPrevious_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Left)
-                btnPrevious_Click(sender, e);
+
         }
 
         private void btnNext_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Right)
-                btnNext_Click(sender, e);
+
         }
 
         private void timerFillBlank_Tick(object sender, EventArgs e)
@@ -240,7 +239,22 @@ namespace VocabularyUp
             {
                 timerFillBlank.Stop();
                 campaignForm.Return();
+                this.Close();
             }
+        }
+
+        public void StartTimer()
+        {
+            timerFillBlank.Enabled = true;
+            timerFillBlank.Start();
+        }
+
+        private void FillBlankForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right && btnNext.Enabled == true)
+                btnNext_Click(sender, e);
+            else if (e.KeyCode == Keys.Left && btnPrevious.Enabled == true)
+                btnPrevious_Click(sender, e);
         }
     }
 }

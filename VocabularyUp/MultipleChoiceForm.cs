@@ -360,11 +360,13 @@ namespace VocabularyUp
             {
                 timerMultiple.Stop();
                 campaign.Return();
+                this.Close();
             }
         }
 
         public void StartTimer()
         {
+            timerMultiple.Enabled = true;
             timerMultiple.Start();
         }
     }

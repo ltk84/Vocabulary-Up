@@ -32,7 +32,6 @@ namespace VocabularyUp
             this.fillBQuiz = fillBquiz;
             this.multiQuiz = multiQuiz;
             this.currentTopic = currentTopic;
-            //ManageUserAction.UpdateMainFlashCard(currentTopic);
             flList = ManageUserAction.GetMainFlashCards();
             LoadComboBox(); 
             ChangeFlashCard(flList[index].Eng, flList[index].IdCard);
@@ -80,6 +79,7 @@ namespace VocabularyUp
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.campaignForm.Return();
+            this.timerLearning.Stop();
             this.multiQuiz.Close();
             this.fillBQuiz.Close();
             this.Close();
@@ -88,6 +88,8 @@ namespace VocabularyUp
         private void btnDone_Click(object sender, EventArgs e)
         {
             timerLearning.Stop();
+            this.multiQuiz.StartTimer();
+            this.fillBQuiz.StartTimer();
             this.Close();
         }
 
@@ -157,6 +159,8 @@ namespace VocabularyUp
             if (time == 600)
             {
                 timerLearning.Stop();
+                multiQuiz.StartTimer();
+                fillBQuiz.StartTimer();
                 this.Close();
             }
         }

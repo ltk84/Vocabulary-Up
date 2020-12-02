@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FillBlankForm));
             this.pnlQuizFB = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lbTimer = new System.Windows.Forms.Label();
             this.btnPointer10 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnPointer9 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnPointer8 = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -64,7 +65,6 @@
             this.lbMain_FB = new System.Windows.Forms.Label();
             this.pbMain_FB = new System.Windows.Forms.PictureBox();
             this.pnlDash_FB = new System.Windows.Forms.Panel();
-            this.lbTimer = new System.Windows.Forms.Label();
             this.timerFillBlank = new System.Windows.Forms.Timer(this.components);
             this.pnlQuizFB.SuspendLayout();
             this.pnlFlashCard_FB.SuspendLayout();
@@ -113,6 +113,16 @@
             this.pnlQuizFB.ShadowDecoration.Parent = this.pnlQuizFB;
             this.pnlQuizFB.Size = new System.Drawing.Size(750, 422);
             this.pnlQuizFB.TabIndex = 11;
+            // 
+            // lbTimer
+            // 
+            this.lbTimer.BackColor = System.Drawing.Color.Transparent;
+            this.lbTimer.Location = new System.Drawing.Point(487, 65);
+            this.lbTimer.Name = "lbTimer";
+            this.lbTimer.Size = new System.Drawing.Size(100, 25);
+            this.lbTimer.TabIndex = 59;
+            this.lbTimer.Text = "60";
+            this.lbTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnPointer10
             // 
@@ -522,7 +532,6 @@
             this.btnPrevious.Size = new System.Drawing.Size(50, 58);
             this.btnPrevious.TabIndex = 18;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
-            this.btnPrevious.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnPrevious_KeyUp);
             // 
             // btnNext
             // 
@@ -545,7 +554,6 @@
             this.btnNext.Size = new System.Drawing.Size(50, 58);
             this.btnNext.TabIndex = 17;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            this.btnNext.KeyUp += new System.Windows.Forms.KeyEventHandler(this.btnNext_KeyUp);
             // 
             // btnConfirm
             // 
@@ -668,19 +676,8 @@
             this.pnlDash_FB.Size = new System.Drawing.Size(266, 4);
             this.pnlDash_FB.TabIndex = 11;
             // 
-            // lbTimer
-            // 
-            this.lbTimer.BackColor = System.Drawing.Color.Transparent;
-            this.lbTimer.Location = new System.Drawing.Point(487, 65);
-            this.lbTimer.Name = "lbTimer";
-            this.lbTimer.Size = new System.Drawing.Size(100, 25);
-            this.lbTimer.TabIndex = 59;
-            this.lbTimer.Text = "60";
-            this.lbTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // timerFillBlank
             // 
-            this.timerFillBlank.Enabled = true;
             this.timerFillBlank.Interval = 1000;
             this.timerFillBlank.Tick += new System.EventHandler(this.timerFillBlank_Tick);
             // 
@@ -695,6 +692,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FillBlankForm";
             this.Text = "FillBlankForm";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FillBlankForm_KeyUp);
             this.pnlQuizFB.ResumeLayout(false);
             this.pnlFlashCard_FB.ResumeLayout(false);
             this.pnlTab_FB.ResumeLayout(false);

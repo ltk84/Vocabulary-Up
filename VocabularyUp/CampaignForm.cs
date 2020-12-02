@@ -18,6 +18,7 @@ namespace VocabularyUp
         public CampaignForm()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
 
         private void Start()
@@ -44,14 +45,11 @@ namespace VocabularyUp
             learning.FormBorderStyle = FormBorderStyle.None;
             learning.Show();
             learning.StartTimerLearning();
-            
 
+            
             if (type == 0)
             {
-                //MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
-                //FillBlankForm quiz = new FillBlankForm(currentTopic, this);
                 fillBQuiz.TopLevel = false;
-                //pnlCampaignCate.Controls.Clear();
                 pnlTopicSelection.Hide();
                 pnlCampaignCate.Controls.Add(fillBQuiz);
                 fillBQuiz.FormBorderStyle = FormBorderStyle.None;
@@ -59,15 +57,11 @@ namespace VocabularyUp
             }
             else
             {
-                //MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
-                //FillBlankForm quiz = new FillBlankForm(currentTopic, this);
                 multiQuiz.TopLevel = false;
-                //pnlCampaignCate.Controls.Clear();
                 pnlTopicSelection.Hide();
                 pnlCampaignCate.Controls.Add(multiQuiz);
                 multiQuiz.FormBorderStyle = FormBorderStyle.None;
                 multiQuiz.Show();
-                multiQuiz.StartTimer();
             }
 
 
