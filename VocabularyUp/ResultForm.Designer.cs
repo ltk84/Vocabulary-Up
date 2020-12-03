@@ -51,7 +51,7 @@
             this.pnlResultForm.Margin = new System.Windows.Forms.Padding(2);
             this.pnlResultForm.Name = "pnlResultForm";
             this.pnlResultForm.ShadowDecoration.Parent = this.pnlResultForm;
-            this.pnlResultForm.Size = new System.Drawing.Size(700, 400);
+            this.pnlResultForm.Size = new System.Drawing.Size(750, 422);
             this.pnlResultForm.TabIndex = 13;
             // 
             // lbWrong
@@ -110,7 +110,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 400);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(750, 422);
             this.Controls.Add(this.pnlResultForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ResultForm";

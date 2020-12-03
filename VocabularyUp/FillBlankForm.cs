@@ -16,7 +16,7 @@ namespace VocabularyUp
         List<Quiz> questions = new List<Quiz>();
         int currentTopic = 0;
         int currentQuiz = 0;
-        int  wrongAns = 0;
+        int  wrongAns = 10;
         List<UserChoice> userChoices = new List<UserChoice>();
         CampaignForm campaignForm;
         int time = 0;
@@ -69,7 +69,6 @@ namespace VocabularyUp
                 {
                     lbWrong.Visible = true;
                     isCorrect = false;
-                    wrongAns++;
                 }
 
                 lbCorrectAnswer.Text = questions[currentQuiz].GetFlashCard().Eng;   
@@ -85,6 +84,7 @@ namespace VocabularyUp
                     FlashCard fl = questions[currentQuiz].GetFlashCard();
                     if (!ManageUserAction.IsFlashCardExist(0, fl.IdCard))
                         AddFlashCard(fl);
+                    wrongAns--;
                 }
             }
         }
@@ -113,9 +113,10 @@ namespace VocabularyUp
             else
             {
                 btnNext.Enabled = false;
-                this.campaignForm.Return();
+                campaignForm.Reset();
+                campaignForm.InitResult(wrongAns);
                 timerFillBlank.Stop();
-                InitResult(10 - wrongAns, wrongAns);
+               // InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
 
@@ -221,6 +222,8 @@ namespace VocabularyUp
 
         private void timerFillBlank_Tick(object sender, EventArgs e)
         {
+            if (timerFillBlank.Enabled == false)
+                return;
             time++;
             lbTimer.Text = (60 - time).ToString();
             if (time < 50)
@@ -234,20 +237,14 @@ namespace VocabularyUp
             if (time == 60)
             {
                 timerFillBlank.Stop();
-                campaignForm.Return();
-                InitResult(10 - wrongAns, wrongAns);
+                campaignForm.Reset();
+                campaignForm.InitResult(wrongAns);
+                //InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
         }
 
-        public void InitResult(int correct, int wrong)
-        {
-            ResultForm res = new ResultForm(correct, wrong);
-            res.ChangeLabel();
-            res.StartPosition = FormStartPosition.CenterScreen;
-            res.TopMost = true;
-            res.Show();
-        }
+
 
         public void StartTimer()
         {
@@ -261,6 +258,11 @@ namespace VocabularyUp
                 btnNext_Click(sender, e);
             else if (e.KeyCode == Keys.Left && btnPrevious.Enabled == true)
                 btnPrevious_Click(sender, e);
+        }
+
+        public int GetWrongAns()
+        {
+            return wrongAns;
         }
     }
 }

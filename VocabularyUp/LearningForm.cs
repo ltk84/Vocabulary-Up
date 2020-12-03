@@ -88,8 +88,10 @@ namespace VocabularyUp
         private void btnDone_Click(object sender, EventArgs e)
         {
             timerLearning.Stop();
-            this.multiQuiz.StartTimer();
-            this.fillBQuiz.StartTimer();
+            if (campaignForm.GetType() == 0)
+                this.fillBQuiz.StartTimer();
+            else
+                this.multiQuiz.StartTimer();
             this.Close();
         }
 

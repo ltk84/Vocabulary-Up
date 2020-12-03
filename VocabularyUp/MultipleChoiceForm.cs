@@ -17,7 +17,7 @@ namespace VocabularyUp
         int currentTopic = 0;
         int currentQuiz = 0;
         int isPress = 0;
-        int wrongAns = 0;
+        int wrongAns = 10;
         List<UserChoice> userChoices = new List<UserChoice>();
         CampaignForm campaign = new CampaignForm();
         int time;
@@ -26,7 +26,6 @@ namespace VocabularyUp
             InitializeComponent();
             this.currentTopic = currentTopic;
             this.campaign = campaign;
-            //ManageUserAction.UpdateMainFlashCard(currentTopic);
             InitQuiz();
             ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
         }
@@ -160,28 +159,6 @@ namespace VocabularyUp
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-
-
-            //if (currentQuiz != questions.Count - 1)
-            //{
-            //    if (questions[currentQuiz].Selected == -1)
-            //    {
-            //        currentQuiz++;
-            //        ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-            //        btnNext.Enabled = false;
-            //        isConfirmed = 0;
-            //        ResetButton();
-            //    }
-            //    else
-            //    {
-            //        ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-            //        ReloadButton();
-            //    }
-            //}
-            //else
-            //{
-            //    btnNext.Enabled = false;
-            //}
             if (currentQuiz == 0)
             {
                 btnPrevious.Enabled = true;
@@ -198,9 +175,10 @@ namespace VocabularyUp
             else 
             {
                 btnNext.Enabled = false;
-                campaign.Return();
+                campaign.Reset();
+                campaign.InitResult(wrongAns);
                 timerMultiple.Stop();
-                InitResult(10 - wrongAns, wrongAns);
+                //InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
             MovePointer(currentQuiz);
@@ -299,7 +277,6 @@ namespace VocabularyUp
             if (userChoices[currentQuiz].Selected != userChoices[currentQuiz].Correct)
             {
                 isCorrect = false;
-                wrongAns++;
                 switch (userChoices[currentQuiz].Selected)
                 {
                     case 1:
@@ -338,6 +315,7 @@ namespace VocabularyUp
                 FlashCard fl = questions[currentQuiz].GetFlashCard();
                 if (!ManageUserAction.IsFlashCardExist(0, fl.IdCard))
                 AddFlashCard(fl);
+                wrongAns--;
             }
         }
 
@@ -349,6 +327,9 @@ namespace VocabularyUp
 
         private void timerMultiple_Tick(object sender, EventArgs e)
         {
+            if (timerMultiple.Enabled == false)
+                return;
+
             time++;
             lbTimer.Text = (60 - time).ToString();
             if (time < 50)
@@ -362,18 +343,11 @@ namespace VocabularyUp
             if (time == 60)
             {
                 timerMultiple.Stop();
-                campaign.Return();
-                InitResult(10 - wrongAns, wrongAns);
+                campaign.Reset();
+                campaign.InitResult(wrongAns);
+               // InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
-        }
-        public void InitResult(int correct, int wrong)
-        {
-            ResultForm res = new ResultForm(correct, wrong);
-            res.ChangeLabel();
-            res.StartPosition = FormStartPosition.CenterScreen;
-            res.TopMost = true;
-            res.Show();
         }
 
         public void StartTimer()

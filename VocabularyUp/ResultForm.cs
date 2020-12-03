@@ -14,11 +14,13 @@ namespace VocabularyUp
     {
         int correctAns;
         int wrongAns;
-        public ResultForm(int correct, int wrong)
+        Panel panel;
+        public ResultForm(int correct, int wrong, Panel panel)
         {
             InitializeComponent();
             this.correctAns = correct;
             this.wrongAns = wrong;
+            this.panel = panel;
         }
 
         public void ChangeLabel()
@@ -30,6 +32,7 @@ namespace VocabularyUp
         private void btnOK_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.panel.Show();
         }
     }
 }

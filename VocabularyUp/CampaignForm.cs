@@ -21,6 +21,11 @@ namespace VocabularyUp
             this.KeyPreview = true;
         }
 
+        public int GetType()
+        {
+            return type;
+        }
+
         private void Start()
         {
             ////MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
@@ -38,7 +43,6 @@ namespace VocabularyUp
             MultipleChoiceForm multiQuiz = new MultipleChoiceForm(currentTopic, this);
             LearningForm learning = new LearningForm(currentTopic, this, fillBQuiz, multiQuiz);
 
-            
             learning.TopLevel = false;
             pnlTopicSelection.Hide();
             pnlCampaignCate.Controls.Add(learning);
@@ -46,7 +50,6 @@ namespace VocabularyUp
             learning.Show();
             learning.StartTimerLearning();
 
-            
             if (type == 0)
             {
                 fillBQuiz.TopLevel = false;
@@ -63,8 +66,19 @@ namespace VocabularyUp
                 multiQuiz.FormBorderStyle = FormBorderStyle.None;
                 multiQuiz.Show();
             }
+            
+        }
 
-
+        public void InitResult(int wrongAns)
+        {
+            ResultForm result = new ResultForm(10 - wrongAns, wrongAns, pnlTopicSelection);
+            result.TopLevel = false;
+            result.ChangeLabel();
+            pnlCampaignCate.Controls.Add(result);
+            result.FormBorderStyle = FormBorderStyle.None;
+            result.TopMost = true;
+            result.Show();
+            pnlTopicSelection.Hide();
         }
 
         public void Reset()
