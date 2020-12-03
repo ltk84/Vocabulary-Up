@@ -16,6 +16,7 @@ namespace VocabularyUp
         List<Quiz> questions = new List<Quiz>();
         int currentTopic = 0;
         int currentQuiz = 0;
+        int  wrongAns = 0;
         List<UserChoice> userChoices = new List<UserChoice>();
         CampaignForm campaignForm;
         int time = 0;
@@ -68,6 +69,7 @@ namespace VocabularyUp
                 {
                     lbWrong.Visible = true;
                     isCorrect = false;
+                    wrongAns++;
                 }
 
                 lbCorrectAnswer.Text = questions[currentQuiz].GetFlashCard().Eng;   
@@ -113,6 +115,7 @@ namespace VocabularyUp
                 btnNext.Enabled = false;
                 this.campaignForm.Return();
                 timerFillBlank.Stop();
+                InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
 
@@ -213,15 +216,8 @@ namespace VocabularyUp
             }
         }
 
-        private void btnPrevious_KeyUp(object sender, KeyEventArgs e)
-        {
+       
 
-        }
-
-        private void btnNext_KeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
 
         private void timerFillBlank_Tick(object sender, EventArgs e)
         {
@@ -239,8 +235,18 @@ namespace VocabularyUp
             {
                 timerFillBlank.Stop();
                 campaignForm.Return();
+                InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
+        }
+
+        public void InitResult(int correct, int wrong)
+        {
+            ResultForm res = new ResultForm(correct, wrong);
+            res.ChangeLabel();
+            res.StartPosition = FormStartPosition.CenterScreen;
+            res.TopMost = true;
+            res.Show();
         }
 
         public void StartTimer()

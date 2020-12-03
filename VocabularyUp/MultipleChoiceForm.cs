@@ -17,6 +17,7 @@ namespace VocabularyUp
         int currentTopic = 0;
         int currentQuiz = 0;
         int isPress = 0;
+        int wrongAns = 0;
         List<UserChoice> userChoices = new List<UserChoice>();
         CampaignForm campaign = new CampaignForm();
         int time;
@@ -199,6 +200,7 @@ namespace VocabularyUp
                 btnNext.Enabled = false;
                 campaign.Return();
                 timerMultiple.Stop();
+                InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
             MovePointer(currentQuiz);
@@ -297,6 +299,7 @@ namespace VocabularyUp
             if (userChoices[currentQuiz].Selected != userChoices[currentQuiz].Correct)
             {
                 isCorrect = false;
+                wrongAns++;
                 switch (userChoices[currentQuiz].Selected)
                 {
                     case 1:
@@ -360,8 +363,17 @@ namespace VocabularyUp
             {
                 timerMultiple.Stop();
                 campaign.Return();
+                InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
+        }
+        public void InitResult(int correct, int wrong)
+        {
+            ResultForm res = new ResultForm(correct, wrong);
+            res.ChangeLabel();
+            res.StartPosition = FormStartPosition.CenterScreen;
+            res.TopMost = true;
+            res.Show();
         }
 
         public void StartTimer()
