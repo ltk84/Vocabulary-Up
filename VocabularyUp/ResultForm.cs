@@ -34,5 +34,15 @@ namespace VocabularyUp
             this.Close();
             this.panel.Show();
         }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            //DetailsForm details = new DetailsForm();
+            //details.TopLevel = false;
+            //this.Controls.Add(details);
+            //details.FormBorderStyle = FormBorderStyle.None;
+            //details.Show();
+            ////this.Hide();
+        }
     }
 }

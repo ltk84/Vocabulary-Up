@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.pnlResultForm = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnOK = new System.Windows.Forms.Button();
             this.lbWrong = new System.Windows.Forms.Label();
             this.lbCorrect = new System.Windows.Forms.Label();
             this.lbWrongWord = new System.Windows.Forms.Label();
             this.lbCorrectWord = new System.Windows.Forms.Label();
-            this.btnOK = new System.Windows.Forms.Button();
+            this.btnDetails = new System.Windows.Forms.Button();
             this.pnlResultForm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +42,7 @@
             // 
             this.pnlResultForm.BackColor = System.Drawing.SystemColors.Control;
             this.pnlResultForm.BorderRadius = 20;
+            this.pnlResultForm.Controls.Add(this.btnDetails);
             this.pnlResultForm.Controls.Add(this.btnOK);
             this.pnlResultForm.Controls.Add(this.lbWrong);
             this.pnlResultForm.Controls.Add(this.lbCorrect);
@@ -54,11 +56,23 @@
             this.pnlResultForm.Size = new System.Drawing.Size(750, 422);
             this.pnlResultForm.TabIndex = 13;
             // 
+            // btnOK
+            // 
+            this.btnOK.AutoSize = true;
+            this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
+            this.btnOK.Location = new System.Drawing.Point(318, 275);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(99, 52);
+            this.btnOK.TabIndex = 4;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
             // lbWrong
             // 
             this.lbWrong.AutoSize = true;
             this.lbWrong.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
-            this.lbWrong.Location = new System.Drawing.Point(461, 166);
+            this.lbWrong.Location = new System.Drawing.Point(544, 166);
             this.lbWrong.Name = "lbWrong";
             this.lbWrong.Size = new System.Drawing.Size(30, 31);
             this.lbWrong.TabIndex = 3;
@@ -68,7 +82,7 @@
             // 
             this.lbCorrect.AutoSize = true;
             this.lbCorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
-            this.lbCorrect.Location = new System.Drawing.Point(461, 84);
+            this.lbCorrect.Location = new System.Drawing.Point(544, 84);
             this.lbCorrect.Name = "lbCorrect";
             this.lbCorrect.Size = new System.Drawing.Size(30, 31);
             this.lbCorrect.TabIndex = 2;
@@ -78,7 +92,7 @@
             // 
             this.lbWrongWord.AutoSize = true;
             this.lbWrongWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
-            this.lbWrongWord.Location = new System.Drawing.Point(93, 166);
+            this.lbWrongWord.Location = new System.Drawing.Point(176, 166);
             this.lbWrongWord.Name = "lbWrongWord";
             this.lbWrongWord.Size = new System.Drawing.Size(250, 31);
             this.lbWrongWord.TabIndex = 1;
@@ -88,23 +102,24 @@
             // 
             this.lbCorrectWord.AutoSize = true;
             this.lbCorrectWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
-            this.lbCorrectWord.Location = new System.Drawing.Point(93, 84);
+            this.lbCorrectWord.Location = new System.Drawing.Point(176, 84);
             this.lbCorrectWord.Name = "lbCorrectWord";
             this.lbCorrectWord.Size = new System.Drawing.Size(263, 31);
             this.lbCorrectWord.TabIndex = 0;
             this.lbCorrectWord.Text = "Number of Correct:";
             // 
-            // btnOK
+            // btnDetails
             // 
-            this.btnOK.AutoSize = true;
-            this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
-            this.btnOK.Location = new System.Drawing.Point(295, 271);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(99, 52);
-            this.btnOK.TabIndex = 4;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.btnDetails.AutoSize = true;
+            this.btnDetails.Enabled = false;
+            this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
+            this.btnDetails.Location = new System.Drawing.Point(311, 344);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(115, 52);
+            this.btnDetails.TabIndex = 5;
+            this.btnDetails.Text = "Details";
+            this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // ResultForm
             // 
@@ -130,5 +145,6 @@
         private System.Windows.Forms.Label lbWrongWord;
         private System.Windows.Forms.Label lbCorrectWord;
         private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnDetails;
     }
 }

@@ -25,6 +25,7 @@ namespace VocabularyUp
             ManageSystem.InitLibrary();
             curFlashCard = ManageSystem.GetFlashCard(index);
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
+            InitAutoCompleteTextBox();
         }
 
         public void ChangeFlashCard(string content, int id)
@@ -62,9 +63,15 @@ namespace VocabularyUp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            int iTemp = ManageSystem.SearchFlashCard(txtSearching.Text);
+            int iTemp = ManageSystem.SearchFlashCardEng(txtSearching.Text);
             if (iTemp >= 0)
                 index = iTemp;
+            else
+            {
+                iTemp = ManageSystem.SearchFlashCardVie(txtSearching.Text);
+                if (iTemp >= 0)
+                    index = iTemp;
+            }
             curFlashCard = ManageSystem.GetFlashCard(index);
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
         }
@@ -95,14 +102,14 @@ namespace VocabularyUp
             string pronun = " " + curFlashCard.Eng;
             synthesizer.Rate = 1;
             synthesizer.Volume = 100;
-            timer1.Start();
+            timerSpeaker.Start();
             btnPronun.Enabled = false;
             synthesizer.Speak(pronun);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Stop();
+            timerSpeaker.Stop();
             btnPronun.Enabled = true;
         }
 
@@ -136,6 +143,19 @@ namespace VocabularyUp
         private void lbMain_Click(object sender, EventArgs e)
         {
             ChangeLabel();
+        }
+
+        private void InitAutoCompleteTextBox()
+        {
+            AutoCompleteStringCollection data = new AutoCompleteStringCollection();
+            for (int i = 0; i < ManageSystem.CountAllFlashCards(); i++)
+            {
+                data.Add(ManageSystem.GetFlashCard(i).Eng);
+                data.Add(ManageSystem.GetFlashCard(i).Viet);
+            }
+            txtSearching.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtSearching.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtSearching.AutoCompleteCustomSource = data;
         }
     }
 }
