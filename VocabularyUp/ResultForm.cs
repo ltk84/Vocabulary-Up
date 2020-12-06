@@ -12,21 +12,36 @@ namespace VocabularyUp
 {
     public partial class ResultForm : Form
     {
-        int correctAns;
-        int wrongAns;
+        List<UserChoice> userChoices;
+        List<string> correctAns = new List<string>();
+        List<string> wrongAns = new List<string>();
         Panel panel;
-        public ResultForm(int correct, int wrong, Panel panel)
+        public ResultForm(List<UserChoice> userChoices,  Panel panel)
         {
             InitializeComponent();
-            this.correctAns = correct;
-            this.wrongAns = wrong;
             this.panel = panel;
+            this.userChoices = userChoices;
         }
 
         public void ChangeLabel()
         {
-            lbCorrect.Text = correctAns.ToString();
-            lbWrong.Text = wrongAns.ToString();
+            int correct = 0, wrong = 0;
+            foreach (var choice in userChoices)
+            {
+                if (choice.Selected == choice.Correct)
+                {
+                    correct++;
+                    correctAns.Add(choice.CorrectAns);
+                }
+                else
+                {
+                    wrong++;
+                    wrongAns.Add(choice.CorrectAns);
+                }
+            }
+
+            lbCorrect.Text = correct.ToString();
+            lbWrong.Text = wrong.ToString();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -37,12 +52,28 @@ namespace VocabularyUp
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            //DetailsForm details = new DetailsForm();
-            //details.TopLevel = false;
-            //this.Controls.Add(details);
-            //details.FormBorderStyle = FormBorderStyle.None;
-            //details.Show();
-            ////this.Hide();
+            DetailsForm details = new DetailsForm(this);
+            details.TopLevel = false;
+            this.pnlResultForm.Hide();
+            this.Controls.Add(details);
+           // details.TopMost = true;
+            details.FormBorderStyle = FormBorderStyle.None;
+            details.Show();
+        }
+
+        public void ProShow()
+        {
+            this.pnlResultForm.Show();
+        }
+
+        public List<string> GetCorrectAnsList()
+        {
+            return correctAns;
+        }
+
+        public List<string> GetWrongAnsList()
+        {
+            return wrongAns;
         }
     }
 }

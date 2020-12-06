@@ -63,14 +63,14 @@ namespace VocabularyUp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            int iTemp = ManageSystem.SearchFlashCardEng(txtSearching.Text);
-            if (iTemp >= 0)
-                index = iTemp;
+            FlashCard fl = ManageSystem.SearchFlashCardEng(txtSearching.Text);
+            if (fl.IdCard >= 0)
+                index = fl.IdCard;
             else
             {
-                iTemp = ManageSystem.SearchFlashCardVie(txtSearching.Text);
-                if (iTemp >= 0)
-                    index = iTemp;
+                fl = ManageSystem.SearchFlashCardVie(txtSearching.Text);
+                if (fl.IdCard >= 0)
+                    index = fl.IdCard;
             }
             curFlashCard = ManageSystem.GetFlashCard(index);
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);

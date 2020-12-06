@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailsForm));
             this.pnlTopicSelection = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.lvCorrectWord = new System.Windows.Forms.ListView();
             this.columnIndexCorrect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnNameCorrect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,6 +49,7 @@
             this.lbMain = new System.Windows.Forms.Label();
             this.pbMain = new System.Windows.Forms.PictureBox();
             this.pnlDash = new System.Windows.Forms.Panel();
+            this.timerSpeaker = new System.Windows.Forms.Timer(this.components);
             this.pnlTopicSelection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -91,7 +94,7 @@
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.pnlDetails);
             this.splitContainer1.Size = new System.Drawing.Size(734, 383);
-            this.splitContainer1.SplitterDistance = 436;
+            this.splitContainer1.SplitterDistance = 430;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -103,55 +106,90 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.btnBack);
             this.splitContainer2.Panel1.Controls.Add(this.lvCorrectWord);
             this.splitContainer2.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel1_Paint);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.lvWrongWord);
-            this.splitContainer2.Size = new System.Drawing.Size(436, 383);
+            this.splitContainer2.Size = new System.Drawing.Size(430, 383);
             this.splitContainer2.SplitterDistance = 192;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderRadius = 15;
+            this.btnBack.CheckedState.Parent = this.btnBack;
+            this.btnBack.CustomImages.Parent = this.btnBack;
+            this.btnBack.FillColor = System.Drawing.Color.Transparent;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.HoverState.Parent = this.btnBack;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnBack.Location = new System.Drawing.Point(380, 39);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.ShadowDecoration.Parent = this.btnBack;
+            this.btnBack.Size = new System.Drawing.Size(34, 32);
+            this.btnBack.TabIndex = 15;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lvCorrectWord
             // 
             this.lvCorrectWord.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnIndexCorrect,
             this.columnNameCorrect});
+            this.lvCorrectWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvCorrectWord.ForeColor = System.Drawing.Color.LawnGreen;
+            this.lvCorrectWord.FullRowSelect = true;
             this.lvCorrectWord.HideSelection = false;
             this.lvCorrectWord.Location = new System.Drawing.Point(12, 12);
             this.lvCorrectWord.Name = "lvCorrectWord";
             this.lvCorrectWord.Size = new System.Drawing.Size(411, 163);
             this.lvCorrectWord.TabIndex = 0;
             this.lvCorrectWord.UseCompatibleStateImageBehavior = false;
+            this.lvCorrectWord.View = System.Windows.Forms.View.Details;
+            this.lvCorrectWord.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvWrongWord_ItemSelectionChanged);
             // 
             // columnIndexCorrect
             // 
             this.columnIndexCorrect.Text = "Index";
+            this.columnIndexCorrect.Width = 90;
             // 
             // columnNameCorrect
             // 
             this.columnNameCorrect.Text = "Name";
+            this.columnNameCorrect.Width = 318;
             // 
             // lvWrongWord
             // 
             this.lvWrongWord.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnIndexWrong,
             this.columnNameWrong});
+            this.lvWrongWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvWrongWord.ForeColor = System.Drawing.Color.Red;
+            this.lvWrongWord.FullRowSelect = true;
             this.lvWrongWord.HideSelection = false;
             this.lvWrongWord.Location = new System.Drawing.Point(12, 12);
             this.lvWrongWord.Name = "lvWrongWord";
             this.lvWrongWord.Size = new System.Drawing.Size(411, 163);
             this.lvWrongWord.TabIndex = 1;
             this.lvWrongWord.UseCompatibleStateImageBehavior = false;
+            this.lvWrongWord.View = System.Windows.Forms.View.Details;
+            this.lvWrongWord.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvWrongWord_ItemSelectionChanged);
             // 
             // columnIndexWrong
             // 
             this.columnIndexWrong.Text = "Index";
+            this.columnIndexWrong.Width = 92;
             // 
             // columnNameWrong
             // 
             this.columnNameWrong.Text = "Name";
+            this.columnNameWrong.Width = 316;
             // 
             // pnlDetails
             // 
@@ -215,6 +253,7 @@
             this.btnToCollection.ShadowDecoration.Parent = this.btnToCollection;
             this.btnToCollection.Size = new System.Drawing.Size(34, 41);
             this.btnToCollection.TabIndex = 0;
+            this.btnToCollection.Click += new System.EventHandler(this.btnToCollection_Click);
             // 
             // pnlTab
             // 
@@ -231,6 +270,7 @@
             this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
             this.pnlTab.Size = new System.Drawing.Size(296, 341);
             this.pnlTab.TabIndex = 0;
+            this.pnlTab.Click += new System.EventHandler(this.pnlTab_Click);
             // 
             // btnPronun
             // 
@@ -248,6 +288,7 @@
             this.btnPronun.PressedState.Parent = this.btnPronun;
             this.btnPronun.Size = new System.Drawing.Size(24, 31);
             this.btnPronun.TabIndex = 14;
+            this.btnPronun.Click += new System.EventHandler(this.btnPronun_Click);
             // 
             // lbMain
             // 
@@ -260,6 +301,7 @@
             this.lbMain.TabIndex = 7;
             this.lbMain.Text = "Welcome";
             this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbMain.Click += new System.EventHandler(this.lbMain_Click);
             // 
             // pbMain
             // 
@@ -271,6 +313,7 @@
             this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMain.TabIndex = 8;
             this.pbMain.TabStop = false;
+            this.pbMain.Click += new System.EventHandler(this.pbMain_Click);
             // 
             // pnlDash
             // 
@@ -280,6 +323,10 @@
             this.pnlDash.Name = "pnlDash";
             this.pnlDash.Size = new System.Drawing.Size(266, 4);
             this.pnlDash.TabIndex = 11;
+            // 
+            // timerSpeaker
+            // 
+            this.timerSpeaker.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // DetailsForm
             // 
@@ -328,5 +375,7 @@
         private System.Windows.Forms.Label lbMain;
         private System.Windows.Forms.PictureBox pbMain;
         private System.Windows.Forms.Panel pnlDash;
+        private Guna.UI2.WinForms.Guna2Button btnBack;
+        private System.Windows.Forms.Timer timerSpeaker;
     }
 }

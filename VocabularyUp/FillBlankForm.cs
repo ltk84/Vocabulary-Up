@@ -62,6 +62,8 @@ namespace VocabularyUp
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             txtAnswer.Text = txtAnswer.Text.ToLower();
+            userChoices[currentQuiz].CorrectAns = questions[currentQuiz].GetFlashCard().Eng;
+            userChoices[currentQuiz].Correct = 0;
             if (txtAnswer.Text != null && txtAnswer.Text.Length != 0)
             {
                 bool isCorrect = true;
@@ -69,6 +71,7 @@ namespace VocabularyUp
                 {
                     lbWrong.Visible = true;
                     isCorrect = false;
+                    userChoices[currentQuiz].Selected = -1;
                 }
 
                 lbCorrectAnswer.Text = questions[currentQuiz].GetFlashCard().Eng;   
@@ -85,6 +88,7 @@ namespace VocabularyUp
                     if (!ManageUserAction.IsFlashCardExist(0, fl.IdCard))
                         AddFlashCard(fl);
                     wrongAns--;
+                    userChoices[currentQuiz].Selected = 0;
                 }
             }
         }
@@ -114,9 +118,8 @@ namespace VocabularyUp
             {
                 btnNext.Enabled = false;
                 campaignForm.Reset();
-                campaignForm.InitResult(wrongAns);
+                campaignForm.InitResult(userChoices);
                 timerFillBlank.Stop();
-               // InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
 
@@ -238,7 +241,7 @@ namespace VocabularyUp
             {
                 timerFillBlank.Stop();
                 campaignForm.Reset();
-                campaignForm.InitResult(wrongAns);
+                campaignForm.InitResult(userChoices);
                 //InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
@@ -258,11 +261,6 @@ namespace VocabularyUp
                 btnNext_Click(sender, e);
             else if (e.KeyCode == Keys.Left && btnPrevious.Enabled == true)
                 btnPrevious_Click(sender, e);
-        }
-
-        public int GetWrongAns()
-        {
-            return wrongAns;
         }
     }
 }

@@ -28,17 +28,6 @@ namespace VocabularyUp
 
         private void Start()
         {
-            ////MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
-            //FillBlankForm quiz = new FillBlankForm(currentTopic);
-            //quiz.TopLevel = false;
-            ////pnlCampaignCate.Controls.Clear();
-            //pnlTopicSelection.Hide();
-            //pnlCampaignCate.Controls.Add(quiz);
-            //quiz.FormBorderStyle = FormBorderStyle.None;
-            //quiz.Show();
-            //
-
-            
             FillBlankForm fillBQuiz = new FillBlankForm(currentTopic, this);
             MultipleChoiceForm multiQuiz = new MultipleChoiceForm(currentTopic, this);
             LearningForm learning = new LearningForm(currentTopic, this, fillBQuiz, multiQuiz);
@@ -69,9 +58,9 @@ namespace VocabularyUp
             
         }
 
-        public void InitResult(int wrongAns)
+        public void InitResult(List<UserChoice> userChoices)
         {
-            ResultForm result = new ResultForm(10 - wrongAns, wrongAns, pnlTopicSelection);
+            ResultForm result = new ResultForm(userChoices, pnlTopicSelection);
             result.TopLevel = false;
             result.ChangeLabel();
             pnlCampaignCate.Controls.Add(result);

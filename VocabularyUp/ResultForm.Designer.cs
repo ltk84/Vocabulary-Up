@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.pnlResultForm = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnDetails = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.lbWrong = new System.Windows.Forms.Label();
             this.lbCorrect = new System.Windows.Forms.Label();
             this.lbWrongWord = new System.Windows.Forms.Label();
             this.lbCorrectWord = new System.Windows.Forms.Label();
-            this.btnDetails = new System.Windows.Forms.Button();
             this.pnlResultForm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,18 @@
             this.pnlResultForm.ShadowDecoration.Parent = this.pnlResultForm;
             this.pnlResultForm.Size = new System.Drawing.Size(750, 422);
             this.pnlResultForm.TabIndex = 13;
+            // 
+            // btnDetails
+            // 
+            this.btnDetails.AutoSize = true;
+            this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
+            this.btnDetails.Location = new System.Drawing.Point(311, 344);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(115, 52);
+            this.btnDetails.TabIndex = 5;
+            this.btnDetails.Text = "Details";
+            this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // btnOK
             // 
@@ -107,19 +119,6 @@
             this.lbCorrectWord.Size = new System.Drawing.Size(263, 31);
             this.lbCorrectWord.TabIndex = 0;
             this.lbCorrectWord.Text = "Number of Correct:";
-            // 
-            // btnDetails
-            // 
-            this.btnDetails.AutoSize = true;
-            this.btnDetails.Enabled = false;
-            this.btnDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
-            this.btnDetails.Location = new System.Drawing.Point(311, 344);
-            this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(115, 52);
-            this.btnDetails.TabIndex = 5;
-            this.btnDetails.Text = "Details";
-            this.btnDetails.UseVisualStyleBackColor = true;
-            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // ResultForm
             // 

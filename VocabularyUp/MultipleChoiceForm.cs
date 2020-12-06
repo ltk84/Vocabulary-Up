@@ -149,6 +149,7 @@ namespace VocabularyUp
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            userChoices[currentQuiz].CorrectAns = questions[currentQuiz].GetFlashCard().Eng;
             if (userChoices[currentQuiz].IsDone == false && isPress == 1)
             {
                 ReloadButton();
@@ -176,7 +177,7 @@ namespace VocabularyUp
             {
                 btnNext.Enabled = false;
                 campaign.Reset();
-                campaign.InitResult(wrongAns);
+                campaign.InitResult(userChoices);
                 timerMultiple.Stop();
                 //InitResult(10 - wrongAns, wrongAns);
                 this.Close();
@@ -344,7 +345,7 @@ namespace VocabularyUp
             {
                 timerMultiple.Stop();
                 campaign.Reset();
-                campaign.InitResult(wrongAns);
+                campaign.InitResult(userChoices);
                // InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
