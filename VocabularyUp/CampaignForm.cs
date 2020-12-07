@@ -86,21 +86,21 @@ namespace VocabularyUp
 
         private void ResetColorButton()
         {
-            btnAnimals.FillColor = Color.FromArgb(192, 255, 192);
-            btnPlants.FillColor = Color.FromArgb(192, 255, 192);
-            btnSport.FillColor = Color.FromArgb(192, 255, 192);
-            btnTechnology.FillColor = Color.FromArgb(192, 255, 192);
-            btnJob.FillColor = Color.FromArgb(192, 255, 192);
-            btnFoodaDrinks.FillColor = Color.FromArgb(192, 255, 192);
-            btnFruits.FillColor = Color.FromArgb(192, 255, 192);
-            btnClothing.FillColor = Color.FromArgb(192, 255, 192);
+            btnAnimals.FillColor = Color.FromArgb(17, 223, 158);
+            btnPlants.FillColor = Color.FromArgb(17, 223, 158);
+            btnSport.FillColor = Color.FromArgb(17, 223, 158);
+            btnTechnology.FillColor = Color.FromArgb(17, 223, 158);
+            btnJob.FillColor = Color.FromArgb(17, 223, 158);
+            btnFoodaDrinks.FillColor = Color.FromArgb(17, 223, 158);
+            btnFruits.FillColor = Color.FromArgb(17, 223, 158);
+            btnClothing.FillColor = Color.FromArgb(17, 223, 158);
         }
 
         private void btnAnimals_Click(object sender, EventArgs e)
         {
             ResetColorButton();
             currentTopic = 1; 
-            if (btnAnimals.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnAnimals.FillColor == Color.FromArgb(17, 223, 158))
             {
                 btnAnimals.FillColor = Color.FromArgb(10, 182, 194);
             }
@@ -111,7 +111,7 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnPlants.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnPlants.FillColor == Color.FromArgb(17, 223, 158))
             {
                 btnPlants.FillColor = Color.FromArgb(10, 182, 194);
             }
@@ -123,7 +123,7 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnFruits.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnFruits.FillColor == Color.FromArgb(17, 223, 158))
             {
                 btnFruits.FillColor = Color.FromArgb(10, 182, 194);
             }
@@ -135,7 +135,7 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnJob.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnJob.FillColor == Color.FromArgb(17, 223, 158))
             {
                 btnJob.FillColor = Color.FromArgb(10, 182, 194);
             }
@@ -147,7 +147,7 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnFoodaDrinks.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnFoodaDrinks.FillColor == Color.FromArgb(17, 223, 158))
             {
                 btnFoodaDrinks.FillColor = Color.FromArgb(10, 182, 194);
             }
@@ -159,7 +159,7 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnSport.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnSport.FillColor == Color.FromArgb(17, 223, 158))
             {
                 btnSport.FillColor = Color.FromArgb(10, 182, 194);
             }
@@ -171,7 +171,7 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnClothing.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnClothing.FillColor == Color.FromArgb(17, 223, 158))
             {
                 btnClothing.FillColor = Color.FromArgb(10, 182, 194);
             }
@@ -183,7 +183,7 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnTechnology.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnTechnology.FillColor == Color.FromArgb(17, 223, 158))
             {
                 btnTechnology.FillColor = Color.FromArgb(10, 182, 194);
             }
@@ -194,8 +194,8 @@ namespace VocabularyUp
         private void btnMultipleChoice_Click(object sender, EventArgs e)
         {
             type = 1;
-            btnMultipleChoice.FillColor = Color.FromArgb(192, 255, 192);
-            btnFilBlank.FillColor = Color.FromArgb(192, 255, 192);
+            btnMultipleChoice.FillColor = Color.FromArgb(17, 223, 158);
+            btnFilBlank.FillColor = Color.FromArgb(17, 223, 158);
             btnMultipleChoice.FillColor = Color.FromArgb(10, 182, 194);
             
         }
@@ -203,8 +203,8 @@ namespace VocabularyUp
         private void btnFilBlank_Click(object sender, EventArgs e)
         {
             type = 0;
-            btnMultipleChoice.FillColor = Color.FromArgb(192, 255, 192);
-            btnFilBlank.FillColor = Color.FromArgb(192, 255, 192);
+            btnMultipleChoice.FillColor = Color.FromArgb(17, 223, 158);
+            btnFilBlank.FillColor = Color.FromArgb(17, 223, 158);
             btnFilBlank.FillColor = Color.FromArgb(10, 182, 194);
         }
 
