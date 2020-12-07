@@ -17,14 +17,15 @@ namespace VocabularyUp
         int currentTopic = 0;
         int currentQuiz = 0;
         int isPress = 0;
+        int wrongAns = 10;
         List<UserChoice> userChoices = new List<UserChoice>();
         CampaignForm campaign = new CampaignForm();
+        int time;
         public MultipleChoiceForm(int currentTopic, CampaignForm campaign)
         {
             InitializeComponent();
             this.currentTopic = currentTopic;
             this.campaign = campaign;
-            //ManageUserAction.UpdateMainFlashCard(currentTopic);
             InitQuiz();
             ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
         }
@@ -148,6 +149,7 @@ namespace VocabularyUp
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            userChoices[currentQuiz].CorrectAns = questions[currentQuiz].GetFlashCard().Eng;
             if (userChoices[currentQuiz].IsDone == false && isPress == 1)
             {
                 ReloadButton();
@@ -158,28 +160,6 @@ namespace VocabularyUp
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-
-
-            //if (currentQuiz != questions.Count - 1)
-            //{
-            //    if (questions[currentQuiz].Selected == -1)
-            //    {
-            //        currentQuiz++;
-            //        ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-            //        btnNext.Enabled = false;
-            //        isConfirmed = 0;
-            //        ResetButton();
-            //    }
-            //    else
-            //    {
-            //        ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-            //        ReloadButton();
-            //    }
-            //}
-            //else
-            //{
-            //    btnNext.Enabled = false;
-            //}
             if (currentQuiz == 0)
             {
                 btnPrevious.Enabled = true;
@@ -196,7 +176,10 @@ namespace VocabularyUp
             else 
             {
                 btnNext.Enabled = false;
-                campaign.Return();
+                campaign.Reset();
+                campaign.InitResult(userChoices);
+                timerMultiple.Stop();
+                //InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
             MovePointer(currentQuiz);
@@ -333,6 +316,7 @@ namespace VocabularyUp
                 FlashCard fl = questions[currentQuiz].GetFlashCard();
                 if (!ManageUserAction.IsFlashCardExist(0, fl.IdCard))
                 AddFlashCard(fl);
+                wrongAns--;
             }
         }
 
@@ -340,6 +324,37 @@ namespace VocabularyUp
         {
             ManageUserAction.AddFlashCardToCollection(0, fl);
             ManageUserAction.AddFlashCardToDatabase(0, ManageUserAction.GetItemOfAllCollection(0).NameCollection, fl);
+        }
+
+        private void timerMultiple_Tick(object sender, EventArgs e)
+        {
+            if (timerMultiple.Enabled == false)
+                return;
+
+            time++;
+            lbTimer.Text = (60 - time).ToString();
+            if (time < 50)
+            {
+                lbTimer.ForeColor = Color.Black;
+            }
+            else
+            {
+                lbTimer.ForeColor = Color.Red;
+            }
+            if (time == 60)
+            {
+                timerMultiple.Stop();
+                campaign.Reset();
+                campaign.InitResult(userChoices);
+               // InitResult(10 - wrongAns, wrongAns);
+                this.Close();
+            }
+        }
+
+        public void StartTimer()
+        {
+            timerMultiple.Enabled = true;
+            timerMultiple.Start();
         }
     }
 }

@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatisticResultForm));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.superLabel8 = new VocabularyUp.SuperLabel();
+            this.superLabel7 = new VocabularyUp.SuperLabel();
+            this.superLabel6 = new VocabularyUp.SuperLabel();
+            this.superLabel5 = new VocabularyUp.SuperLabel();
+            this.superLabel4 = new VocabularyUp.SuperLabel();
+            this.superLabel3 = new VocabularyUp.SuperLabel();
+            this.superLabel2 = new VocabularyUp.SuperLabel();
+            this.superLabel1 = new VocabularyUp.SuperLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pbJob = new Guna.UI2.WinForms.Guna2VProgressBar();
@@ -56,14 +64,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.superLabel1 = new VocabularyUp.SuperLabel();
-            this.superLabel2 = new VocabularyUp.SuperLabel();
-            this.superLabel3 = new VocabularyUp.SuperLabel();
-            this.superLabel4 = new VocabularyUp.SuperLabel();
-            this.superLabel5 = new VocabularyUp.SuperLabel();
-            this.superLabel6 = new VocabularyUp.SuperLabel();
-            this.superLabel7 = new VocabularyUp.SuperLabel();
-            this.superLabel8 = new VocabularyUp.SuperLabel();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,11 +94,91 @@
             this.guna2GradientPanel1.Controls.Add(this.pbTechnology);
             this.guna2GradientPanel1.Controls.Add(this.pbAnimals);
             this.guna2GradientPanel1.Location = new System.Drawing.Point(220, 98);
-            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
             this.guna2GradientPanel1.Size = new System.Drawing.Size(366, 310);
             this.guna2GradientPanel1.TabIndex = 0;
+            // 
+            // superLabel8
+            // 
+            this.superLabel8.Flip180 = false;
+            this.superLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.superLabel8.Location = new System.Drawing.Point(344, 113);
+            this.superLabel8.Name = "superLabel8";
+            this.superLabel8.Size = new System.Drawing.Size(16, 129);
+            this.superLabel8.TabIndex = 17;
+            this.superLabel8.Text = "Job";
+            // 
+            // superLabel7
+            // 
+            this.superLabel7.Flip180 = false;
+            this.superLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.superLabel7.Location = new System.Drawing.Point(302, 113);
+            this.superLabel7.Name = "superLabel7";
+            this.superLabel7.Size = new System.Drawing.Size(28, 129);
+            this.superLabel7.TabIndex = 16;
+            this.superLabel7.Text = "Plants";
+            // 
+            // superLabel6
+            // 
+            this.superLabel6.Flip180 = false;
+            this.superLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.superLabel6.Location = new System.Drawing.Point(257, 113);
+            this.superLabel6.Name = "superLabel6";
+            this.superLabel6.Size = new System.Drawing.Size(28, 129);
+            this.superLabel6.TabIndex = 15;
+            this.superLabel6.Text = "Fruits";
+            // 
+            // superLabel5
+            // 
+            this.superLabel5.Flip180 = false;
+            this.superLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.superLabel5.Location = new System.Drawing.Point(216, 113);
+            this.superLabel5.Name = "superLabel5";
+            this.superLabel5.Size = new System.Drawing.Size(28, 129);
+            this.superLabel5.TabIndex = 14;
+            this.superLabel5.Text = "Sport";
+            // 
+            // superLabel4
+            // 
+            this.superLabel4.Flip180 = false;
+            this.superLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.superLabel4.Location = new System.Drawing.Point(167, 113);
+            this.superLabel4.Name = "superLabel4";
+            this.superLabel4.Size = new System.Drawing.Size(28, 129);
+            this.superLabel4.TabIndex = 13;
+            this.superLabel4.Text = "Food and Drinks";
+            // 
+            // superLabel3
+            // 
+            this.superLabel3.Flip180 = false;
+            this.superLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.superLabel3.Location = new System.Drawing.Point(124, 113);
+            this.superLabel3.Name = "superLabel3";
+            this.superLabel3.Size = new System.Drawing.Size(28, 129);
+            this.superLabel3.TabIndex = 12;
+            this.superLabel3.Text = "Clothing";
+            // 
+            // superLabel2
+            // 
+            this.superLabel2.Flip180 = false;
+            this.superLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.superLabel2.Location = new System.Drawing.Point(78, 113);
+            this.superLabel2.Name = "superLabel2";
+            this.superLabel2.Size = new System.Drawing.Size(28, 129);
+            this.superLabel2.TabIndex = 11;
+            this.superLabel2.Text = "Technology";
+            // 
+            // superLabel1
+            // 
+            this.superLabel1.Flip180 = false;
+            this.superLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.superLabel1.Location = new System.Drawing.Point(33, 113);
+            this.superLabel1.Name = "superLabel1";
+            this.superLabel1.Size = new System.Drawing.Size(28, 129);
+            this.superLabel1.TabIndex = 10;
+            this.superLabel1.Text = "Animals";
             // 
             // label3
             // 
@@ -116,7 +196,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Location = new System.Drawing.Point(20, 293);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(340, 2);
             this.panel2.TabIndex = 8;
@@ -126,8 +206,10 @@
             this.pbJob.BorderRadius = 2;
             this.pbJob.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.pbJob.Location = new System.Drawing.Point(331, 80);
-            this.pbJob.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbJob.Margin = new System.Windows.Forms.Padding(2);
             this.pbJob.Name = "pbJob";
+            this.pbJob.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
+            this.pbJob.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
             this.pbJob.ShadowDecoration.Parent = this.pbJob;
             this.pbJob.Size = new System.Drawing.Size(8, 203);
             this.pbJob.TabIndex = 7;
@@ -138,7 +220,7 @@
             this.pbFoodaDrinks.BorderRadius = 2;
             this.pbFoodaDrinks.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.pbFoodaDrinks.Location = new System.Drawing.Point(154, 80);
-            this.pbFoodaDrinks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbFoodaDrinks.Margin = new System.Windows.Forms.Padding(2);
             this.pbFoodaDrinks.Name = "pbFoodaDrinks";
             this.pbFoodaDrinks.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
             this.pbFoodaDrinks.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
@@ -152,7 +234,7 @@
             this.pbClothing.BorderRadius = 2;
             this.pbClothing.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.pbClothing.Location = new System.Drawing.Point(111, 80);
-            this.pbClothing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbClothing.Margin = new System.Windows.Forms.Padding(2);
             this.pbClothing.Name = "pbClothing";
             this.pbClothing.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
             this.pbClothing.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
@@ -166,7 +248,7 @@
             this.pbSport.BorderRadius = 2;
             this.pbSport.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.pbSport.Location = new System.Drawing.Point(203, 80);
-            this.pbSport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbSport.Margin = new System.Windows.Forms.Padding(2);
             this.pbSport.Name = "pbSport";
             this.pbSport.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
             this.pbSport.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
@@ -180,7 +262,7 @@
             this.pbPlants.BorderRadius = 2;
             this.pbPlants.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.pbPlants.Location = new System.Drawing.Point(289, 80);
-            this.pbPlants.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbPlants.Margin = new System.Windows.Forms.Padding(2);
             this.pbPlants.Name = "pbPlants";
             this.pbPlants.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
             this.pbPlants.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
@@ -194,7 +276,7 @@
             this.pbFruits.BorderRadius = 2;
             this.pbFruits.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.pbFruits.Location = new System.Drawing.Point(244, 80);
-            this.pbFruits.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbFruits.Margin = new System.Windows.Forms.Padding(2);
             this.pbFruits.Name = "pbFruits";
             this.pbFruits.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
             this.pbFruits.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
@@ -208,7 +290,7 @@
             this.pbTechnology.BorderRadius = 2;
             this.pbTechnology.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.pbTechnology.Location = new System.Drawing.Point(66, 80);
-            this.pbTechnology.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbTechnology.Margin = new System.Windows.Forms.Padding(2);
             this.pbTechnology.Name = "pbTechnology";
             this.pbTechnology.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
             this.pbTechnology.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
@@ -222,7 +304,7 @@
             this.pbAnimals.BorderRadius = 2;
             this.pbAnimals.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
             this.pbAnimals.Location = new System.Drawing.Point(20, 80);
-            this.pbAnimals.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbAnimals.Margin = new System.Windows.Forms.Padding(2);
             this.pbAnimals.Name = "pbAnimals";
             this.pbAnimals.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
             this.pbAnimals.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
@@ -247,7 +329,7 @@
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(1)))));
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(592, 93);
@@ -259,7 +341,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(520, 20);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(47, 56);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -303,7 +385,7 @@
             this.panel1.Controls.Add(this.lbTotal);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Location = new System.Drawing.Point(9, 98);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(206, 310);
             this.panel1.TabIndex = 2;
@@ -318,7 +400,7 @@
             this.guna2CustomGradientPanel4.FillColor3 = System.Drawing.Color.Red;
             this.guna2CustomGradientPanel4.FillColor4 = System.Drawing.Color.Red;
             this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(31, 201);
-            this.guna2CustomGradientPanel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2CustomGradientPanel4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
             this.guna2CustomGradientPanel4.ShadowDecoration.Parent = this.guna2CustomGradientPanel4;
             this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(150, 63);
@@ -360,7 +442,7 @@
             this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.Lime;
             this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.Lime;
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(31, 113);
-            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             this.guna2CustomGradientPanel2.ShadowDecoration.Parent = this.guna2CustomGradientPanel2;
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(150, 63);
@@ -397,7 +479,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel4.Location = new System.Drawing.Point(31, 105);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(150, 2);
             this.panel4.TabIndex = 24;
@@ -406,7 +488,7 @@
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel3.Location = new System.Drawing.Point(30, 38);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(150, 2);
             this.panel3.TabIndex = 23;
@@ -447,86 +529,6 @@
             this.label10.TabIndex = 17;
             this.label10.Text = "Total words:";
             // 
-            // superLabel1
-            // 
-            this.superLabel1.Flip180 = false;
-            this.superLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.superLabel1.Location = new System.Drawing.Point(33, 113);
-            this.superLabel1.Name = "superLabel1";
-            this.superLabel1.Size = new System.Drawing.Size(28, 129);
-            this.superLabel1.TabIndex = 10;
-            this.superLabel1.Text = "Animals";
-            // 
-            // superLabel2
-            // 
-            this.superLabel2.Flip180 = false;
-            this.superLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.superLabel2.Location = new System.Drawing.Point(78, 113);
-            this.superLabel2.Name = "superLabel2";
-            this.superLabel2.Size = new System.Drawing.Size(28, 129);
-            this.superLabel2.TabIndex = 11;
-            this.superLabel2.Text = "Technology";
-            // 
-            // superLabel3
-            // 
-            this.superLabel3.Flip180 = false;
-            this.superLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.superLabel3.Location = new System.Drawing.Point(124, 113);
-            this.superLabel3.Name = "superLabel3";
-            this.superLabel3.Size = new System.Drawing.Size(28, 129);
-            this.superLabel3.TabIndex = 12;
-            this.superLabel3.Text = "Clothing";
-            // 
-            // superLabel4
-            // 
-            this.superLabel4.Flip180 = false;
-            this.superLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.superLabel4.Location = new System.Drawing.Point(167, 113);
-            this.superLabel4.Name = "superLabel4";
-            this.superLabel4.Size = new System.Drawing.Size(28, 129);
-            this.superLabel4.TabIndex = 13;
-            this.superLabel4.Text = "Food and Drinks";
-            // 
-            // superLabel5
-            // 
-            this.superLabel5.Flip180 = false;
-            this.superLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.superLabel5.Location = new System.Drawing.Point(216, 113);
-            this.superLabel5.Name = "superLabel5";
-            this.superLabel5.Size = new System.Drawing.Size(28, 129);
-            this.superLabel5.TabIndex = 14;
-            this.superLabel5.Text = "Sport";
-            // 
-            // superLabel6
-            // 
-            this.superLabel6.Flip180 = false;
-            this.superLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.superLabel6.Location = new System.Drawing.Point(257, 113);
-            this.superLabel6.Name = "superLabel6";
-            this.superLabel6.Size = new System.Drawing.Size(28, 129);
-            this.superLabel6.TabIndex = 15;
-            this.superLabel6.Text = "Fruits";
-            // 
-            // superLabel7
-            // 
-            this.superLabel7.Flip180 = false;
-            this.superLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.superLabel7.Location = new System.Drawing.Point(302, 113);
-            this.superLabel7.Name = "superLabel7";
-            this.superLabel7.Size = new System.Drawing.Size(28, 129);
-            this.superLabel7.TabIndex = 16;
-            this.superLabel7.Text = "Plants";
-            // 
-            // superLabel8
-            // 
-            this.superLabel8.Flip180 = false;
-            this.superLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.superLabel8.Location = new System.Drawing.Point(344, 113);
-            this.superLabel8.Name = "superLabel8";
-            this.superLabel8.Size = new System.Drawing.Size(16, 129);
-            this.superLabel8.TabIndex = 17;
-            this.superLabel8.Text = "Job";
-            // 
             // StatisticResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -537,7 +539,7 @@
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StatisticResultForm";
             this.Text = "StatisticResult";
             this.guna2GradientPanel1.ResumeLayout(false);

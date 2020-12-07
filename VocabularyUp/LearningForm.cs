@@ -21,6 +21,8 @@ namespace VocabularyUp
         CampaignForm campaignForm;
         FillBlankForm fillBQuiz;
         MultipleChoiceForm multiQuiz;
+        int time = 0;
+        
 
         public LearningForm(int currentTopic, CampaignForm campaignForm, FillBlankForm fillBquiz, MultipleChoiceForm multiQuiz)
         {
@@ -30,7 +32,6 @@ namespace VocabularyUp
             this.fillBQuiz = fillBquiz;
             this.multiQuiz = multiQuiz;
             this.currentTopic = currentTopic;
-            //ManageUserAction.UpdateMainFlashCard(currentTopic);
             flList = ManageUserAction.GetMainFlashCards();
             LoadComboBox(); 
             ChangeFlashCard(flList[index].Eng, flList[index].IdCard);
@@ -78,6 +79,7 @@ namespace VocabularyUp
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.campaignForm.Return();
+            this.timerLearning.Stop();
             this.multiQuiz.Close();
             this.fillBQuiz.Close();
             this.Close();
@@ -85,6 +87,11 @@ namespace VocabularyUp
 
         private void btnDone_Click(object sender, EventArgs e)
         {
+            timerLearning.Stop();
+            if (campaignForm.GetType() == 0)
+                this.fillBQuiz.StartTimer();
+            else
+                this.multiQuiz.StartTimer();
             this.Close();
         }
 
@@ -137,6 +144,32 @@ namespace VocabularyUp
         private void lbMain_Click(object sender, EventArgs e)
         {
             ChangeLabel();
+        }
+
+        private void timerLearning_Tick(object sender, EventArgs e)
+        {
+            time++;
+            lbTime.Text = (600 - time).ToString();
+            if (time < 590)
+            {
+                lbTime.ForeColor = Color.Black;
+            }
+            else
+            {
+                lbTime.ForeColor = Color.Red;
+            }
+            if (time == 600)
+            {
+                timerLearning.Stop();
+                multiQuiz.StartTimer();
+                fillBQuiz.StartTimer();
+                this.Close();
+            }
+        }
+
+        public void StartTimerLearning()
+        {
+            timerLearning.Start();
         }
     }
 }

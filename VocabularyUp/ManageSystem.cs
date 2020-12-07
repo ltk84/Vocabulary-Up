@@ -443,10 +443,22 @@ namespace VocabularyUp
             return allFlashCards.Count();
         }
 
-        public static int SearchFlashCard(string content)
+        public static FlashCard SearchFlashCardEng(string content)
         {
-            return allFlashCards.FindIndex(f => f.Eng == content);
+            int index = allFlashCards.FindIndex(f => f.Eng == content);
+            if (index >= 0)
+                return allFlashCards[index];
+            return null;
         }
+
+        public static FlashCard SearchFlashCardVie(string content)
+        {
+            int index = allFlashCards.FindIndex(f => f.Viet == content); 
+            if (index >= 0)
+                return allFlashCards[index];
+            return null;
+        }
+
         public static int SearchEmail(string content)
         {
             return users.FindIndex(u => u.Email == content);

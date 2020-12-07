@@ -45,7 +45,7 @@
             this.txtSearching = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLeft = new Guna.UI2.WinForms.Guna2Button();
             this.btnRight = new Guna.UI2.WinForms.Guna2Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerSpeaker = new System.Windows.Forms.Timer(this.components);
             this.pnlMainNav.SuspendLayout();
             this.pnlLib.SuspendLayout();
             this.pnlToCollection.SuspendLayout();
@@ -160,6 +160,7 @@
             this.btnPronun.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.HoverState.Image")));
             this.btnPronun.HoverState.Parent = this.btnPronun;
             this.btnPronun.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.Image")));
+            this.btnPronun.ImageRotate = 0F;
             this.btnPronun.ImageSize = new System.Drawing.Size(30, 30);
             this.btnPronun.Location = new System.Drawing.Point(256, 294);
             this.btnPronun.Margin = new System.Windows.Forms.Padding(2);
@@ -296,11 +297,11 @@
             this.btnRight.TabIndex = 8;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
-            // timer1
+            // timerSpeaker
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 2000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timerSpeaker.Enabled = true;
+            this.timerSpeaker.Interval = 2000;
+            this.timerSpeaker.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // LibraryForm
             // 
@@ -342,6 +343,6 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlToCollection;
         private Guna.UI2.WinForms.Guna2ComboBox cbCollection;
         private Guna.UI2.WinForms.Guna2ImageButton btnPronun;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerSpeaker;
     }
 }

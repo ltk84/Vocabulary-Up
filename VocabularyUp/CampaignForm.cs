@@ -18,20 +18,16 @@ namespace VocabularyUp
         public CampaignForm()
         {
             InitializeComponent();
+            this.KeyPreview = true;
+        }
+
+        public int GetType()
+        {
+            return type;
         }
 
         private void Start()
         {
-            ////MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
-            //FillBlankForm quiz = new FillBlankForm(currentTopic);
-            //quiz.TopLevel = false;
-            ////pnlCampaignCate.Controls.Clear();
-            //pnlTopicSelection.Hide();
-            //pnlCampaignCate.Controls.Add(quiz);
-            //quiz.FormBorderStyle = FormBorderStyle.None;
-            //quiz.Show();
-            //
-
             FillBlankForm fillBQuiz = new FillBlankForm(currentTopic, this);
             MultipleChoiceForm multiQuiz = new MultipleChoiceForm(currentTopic, this);
             LearningForm learning = new LearningForm(currentTopic, this, fillBQuiz, multiQuiz);
@@ -41,13 +37,11 @@ namespace VocabularyUp
             pnlCampaignCate.Controls.Add(learning);
             learning.FormBorderStyle = FormBorderStyle.None;
             learning.Show();
+            learning.StartTimerLearning();
 
             if (type == 0)
             {
-                //MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
-                //FillBlankForm quiz = new FillBlankForm(currentTopic, this);
                 fillBQuiz.TopLevel = false;
-                //pnlCampaignCate.Controls.Clear();
                 pnlTopicSelection.Hide();
                 pnlCampaignCate.Controls.Add(fillBQuiz);
                 fillBQuiz.FormBorderStyle = FormBorderStyle.None;
@@ -55,17 +49,25 @@ namespace VocabularyUp
             }
             else
             {
-                //MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
-                //FillBlankForm quiz = new FillBlankForm(currentTopic, this);
                 multiQuiz.TopLevel = false;
-                //pnlCampaignCate.Controls.Clear();
                 pnlTopicSelection.Hide();
                 pnlCampaignCate.Controls.Add(multiQuiz);
                 multiQuiz.FormBorderStyle = FormBorderStyle.None;
                 multiQuiz.Show();
             }
+            
+        }
 
-
+        public void InitResult(List<UserChoice> userChoices)
+        {
+            ResultForm result = new ResultForm(userChoices, pnlTopicSelection);
+            result.TopLevel = false;
+            result.ChangeLabel();
+            pnlCampaignCate.Controls.Add(result);
+            result.FormBorderStyle = FormBorderStyle.None;
+            result.TopMost = true;
+            result.Show();
+            pnlTopicSelection.Hide();
         }
 
         public void Reset()
@@ -209,7 +211,9 @@ namespace VocabularyUp
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             if (type >= 0 && currentTopic > 0)
+            {
                 Start();
+            }
         }
     }
 }

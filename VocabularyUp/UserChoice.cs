@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VocabularyUp
 {
-    class UserChoice
+    public class UserChoice
     {
         private int selected;
         private int correct;

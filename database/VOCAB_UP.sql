@@ -22,11 +22,7 @@ CREATE TABLE USER_INFO
 	GIOITINH NVARCHAR(10),
 	CONSTRAINT FK_ID_USER FOREIGN KEY (ID_USER) REFERENCES USERS (ID)
 )
-update USER_INFO set NGSINH = '111',NAME = 'thienphuoc',GIOITINH = 'nam' where ID_USER = 1
-select * from USERS
-select NGSINH,NAME,GIOITINH,EMAIL from USER_INFO where ID_USER = 1
-select  from USERS, USER_INFO where USERS.ID = USER_INFO.ID_USER
-update USER_INFO set GIOITINH = 'nam' where ID_USER = 1;
+
 CREATE TABLE FLASHCARD 
 (
 	ID INT PRIMARY KEY NOT NULL,
@@ -36,10 +32,6 @@ CREATE TABLE FLASHCARD
 	FIELD VARCHAR(20)
 )
 
-select * from FLASHCARD
-select top 10 * from FLASHCARD fl_m where not exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = 1 and u_fl.ID_COLLECTION = 0)
-							and fl_m.FIELD = 'Animals'
-order by NEWID()
 
 CREATE TABLE USER_FLASHCARD
 (
@@ -52,25 +44,12 @@ CREATE TABLE USER_FLASHCARD
 	CONSTRAINT FK_UF_CARD FOREIGN KEY (ID_CARD) REFERENCES FLASHCARD (ID)
 )
 
-delete from USERs_INFO
-delete from USER_FLASHCARD
-
-insert into user_flashcard (id_user, id_card, id_collection, collection_name) values (1, 0, 0, 'HOCED')
-
-select ID_COLLECTION, COLLECTION_NAME from USER_FLASHCARD where  ID_USER = 
-delete from USER_FLASHCARD
-select * from USER_FLASHCARD
-select * from USER_INFO
-select * from FLASHCARD
 insert into USER_FLASHCARD
 values
 (1,0,0,'HOCED'), -- bat buoc co nha dau buoi
 (1,1,1,N'Đầu buồi'),
 (1,1,2,N'Rẻ rách')
 
-select  ID_COLLECTION, COLLECTION_NAME from USER_FLASHCARD where ID_USER = 1
-select * from FLASHCARD
-delete from FLASHCARD
 INSERT INTO FLASHCARD
 	(ID, ENG, VIE, PRONUNCIATION, FIELD)
 VALUES
@@ -866,15 +845,13 @@ values
 	(1,0,2, N'Đầu đinh'),
 	(1,1,2, N'Đầu đinh'),
 	(1,2,3, N'Đầu moi')
-delete from USER_FLASHCARD where ID_COLLECTION <> 0
-select id_card, eng, vie, pronunciation, field from USER_FLASHCARD, flashcard where ID_USER = 1 and id_collection = 0 and USER_FLASHCARD.ID_CARD = FLASHCARD.ID
-update FLASHCARD
-set FIELD = 'Fruits'
-where id = 477
-select distinct field from FLASHCARD
-select * from USER_FLASHCARD
-select * from USER_INFO
-select top 10 * from FLASHCARD fl_m where not exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = 1 and u_fl.ID_COLLECTION = 0) and fl_m.FIELD = 'Food and Drinks' order by NEWID()
-select top 10 * from FLASHCARD fl_m where not exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = 1 and u_fl.ID_COLLECTION = 0) and fl_m.FIELD = 'Animals' order by NEWID()
-select count(*) from FLASHCARD fl_M where exists (select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = 1 and u_fl.ID_COLLECTION = 0) and fl_m.FIELD = 'Animals'
-select * from USER_FLASHCARD
+
+	select * from FLASHCARD 
+	where  vie = 'con cá voi'
+
+	select * from FLASHCARD
+	where eng = 'software developer'
+
+	update FLASHCARD 
+	set eng = 'cheetah', vie = N'báo đốm', PRONUNCIATION = N'/ˈtʃiː.tə/' 
+	where id = 8

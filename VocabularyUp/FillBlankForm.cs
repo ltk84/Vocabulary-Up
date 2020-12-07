@@ -16,13 +16,16 @@ namespace VocabularyUp
         List<Quiz> questions = new List<Quiz>();
         int currentTopic = 0;
         int currentQuiz = 0;
+        int  wrongAns = 10;
         List<UserChoice> userChoices = new List<UserChoice>();
         CampaignForm campaignForm;
+        int time = 0;
         public FillBlankForm(int currentTopic, CampaignForm campaignForm)
         {
             InitializeComponent();
             this.currentTopic = currentTopic;
             this.campaignForm = campaignForm;
+            this.KeyPreview = true;
             ManageUserAction.UpdateMainFlashCard(currentTopic);
             InitQuiz();
             InitAnswer();
@@ -59,6 +62,8 @@ namespace VocabularyUp
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             txtAnswer.Text = txtAnswer.Text.ToLower();
+            userChoices[currentQuiz].CorrectAns = questions[currentQuiz].GetFlashCard().Eng;
+            userChoices[currentQuiz].Correct = 0;
             if (txtAnswer.Text != null && txtAnswer.Text.Length != 0)
             {
                 bool isCorrect = true;
@@ -66,6 +71,7 @@ namespace VocabularyUp
                 {
                     lbWrong.Visible = true;
                     isCorrect = false;
+                    userChoices[currentQuiz].Selected = -1;
                 }
 
                 lbCorrectAnswer.Text = questions[currentQuiz].GetFlashCard().Eng;   
@@ -81,6 +87,8 @@ namespace VocabularyUp
                     FlashCard fl = questions[currentQuiz].GetFlashCard();
                     if (!ManageUserAction.IsFlashCardExist(0, fl.IdCard))
                         AddFlashCard(fl);
+                    wrongAns--;
+                    userChoices[currentQuiz].Selected = 0;
                 }
             }
         }
@@ -109,7 +117,9 @@ namespace VocabularyUp
             else
             {
                 btnNext.Enabled = false;
-                this.campaignForm.Return();
+                campaignForm.Reset();
+                campaignForm.InitResult(userChoices);
+                timerFillBlank.Stop();
                 this.Close();
             }
 
@@ -210,16 +220,47 @@ namespace VocabularyUp
             }
         }
 
-        private void btnPrevious_KeyUp(object sender, KeyEventArgs e)
+       
+
+
+        private void timerFillBlank_Tick(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Left)
-                btnPrevious_Click(sender, e);
+            if (timerFillBlank.Enabled == false)
+                return;
+            time++;
+            lbTimer.Text = (60 - time).ToString();
+            if (time < 50)
+            {
+                lbTimer.ForeColor = Color.Black;
+            }
+            else
+            {
+                lbTimer.ForeColor = Color.Red;
+            }
+            if (time == 60)
+            {
+                timerFillBlank.Stop();
+                campaignForm.Reset();
+                campaignForm.InitResult(userChoices);
+                //InitResult(10 - wrongAns, wrongAns);
+                this.Close();
+            }
         }
 
-        private void btnNext_KeyUp(object sender, KeyEventArgs e)
+
+
+        public void StartTimer()
         {
-            if (e.KeyCode == Keys.Right)
+            timerFillBlank.Enabled = true;
+            timerFillBlank.Start();
+        }
+
+        private void FillBlankForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right && btnNext.Enabled == true)
                 btnNext_Click(sender, e);
+            else if (e.KeyCode == Keys.Left && btnPrevious.Enabled == true)
+                btnPrevious_Click(sender, e);
         }
     }
 }
