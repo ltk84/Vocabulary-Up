@@ -446,13 +446,17 @@ namespace VocabularyUp
         public static FlashCard SearchFlashCardEng(string content)
         {
             int index = allFlashCards.FindIndex(f => f.Eng == content);
-            return allFlashCards[index];
+            if (index >= 0)
+                return allFlashCards[index];
+            return null;
         }
 
         public static FlashCard SearchFlashCardVie(string content)
         {
-            int index = allFlashCards.FindIndex(f => f.Viet == content);
-            return allFlashCards[index];
+            int index = allFlashCards.FindIndex(f => f.Viet == content); 
+            if (index >= 0)
+                return allFlashCards[index];
+            return null;
         }
 
         public static int SearchEmail(string content)
