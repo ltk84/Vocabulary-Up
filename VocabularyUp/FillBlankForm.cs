@@ -105,13 +105,15 @@ namespace VocabularyUp
             {
                 btnPrevious.Enabled = true;
                 currentQuiz++;
-                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
+                if (ManageUserAction.GetMainFlashCards().Count > 1)
+                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
             }
 
             else if (currentQuiz != questions.Count - 1)
             {
                 currentQuiz++;
-                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
+                if (ManageUserAction.GetMainFlashCards().Count > 1)
+                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
             }
 
             else
@@ -125,10 +127,21 @@ namespace VocabularyUp
 
             MovePointer(currentQuiz);
 
-            if (userChoices[currentQuiz].IsDone)
-                Reload();
+            if (currentQuiz < ManageUserAction.GetMainFlashCards().Count)
+            {
+                if (userChoices[currentQuiz].IsDone)
+                    Reload();
+                else
+                    Reset();
+            }
             else
-                Reset();
+            {
+                btnNext.Enabled = false;
+                campaignForm.Reset();
+                campaignForm.InitResult(userChoices);
+                timerFillBlank.Stop();
+                this.Close();
+            }
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)

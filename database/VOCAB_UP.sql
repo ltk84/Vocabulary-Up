@@ -855,3 +855,8 @@ values
 	update FLASHCARD 
 	set eng = 'cheetah', vie = N'báo đốm', PRONUNCIATION = N'/ˈtʃiː.tə/' 
 	where id = 8
+	select top 7 * from FLASHCARD
+	select top 10 * from FLASHCARD fl_m where not exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = 1 and u_fl.ID_COLLECTION = 0) and fl_m.FIELD = 'animals' order by NEWID()
+	select * from USER_FLASHCARD
+	delete from USER_FLASHCARD 
+	where ID_CARD = 3

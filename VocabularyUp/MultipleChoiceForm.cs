@@ -79,11 +79,23 @@ namespace VocabularyUp
             for (int i = 0; i < ManageUserAction.GetMainFlashCards().Count; i++)
             {
                 List<string> fakeAnswers = new List<string>();
+                List<string> backupAnswers = new List<string>() { "Trúcc Trúc", "Cẩm Nhi", "Ngọc Hà", "Minh Trâm", "Thái Mỹ", "Thanh Thúy", "Trúc Mai", "Thanh Trúc", "Khánh An", "Kim Nga", "Anh Thư"};
                 Random rd = new Random();
                 while (fakeAnswers.Count != 3)
                 {
-                    int index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
-                    string vie = ManageUserAction.GetMainFlashCards()[index].Viet;
+                    int index;
+                    string vie;
+                    if (ManageUserAction.GetMainFlashCards().Count > 3)
+                    {
+                        index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
+                        vie = ManageUserAction.GetMainFlashCards()[index].Viet;
+                    }
+                    else
+                    {
+                        index = rd.Next(0, backupAnswers.Count);
+                        vie = backupAnswers[index];
+                    }
+                    
                     if (fakeAnswers.IndexOf(vie) < 0 && vie != ManageUserAction.GetMainFlashCards()[i].Viet)
                     {
                         fakeAnswers.Add(vie);
@@ -164,13 +176,15 @@ namespace VocabularyUp
             {
                 btnPrevious.Enabled = true;
                 currentQuiz++; 
-                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                if (ManageUserAction.GetMainFlashCards().Count > 1)
+                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
             }
 
             else if (currentQuiz != questions.Count - 1)
             {
                 currentQuiz++;
-                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                if (ManageUserAction.GetMainFlashCards().Count > 1)
+                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
             }
                 
             else 
@@ -184,11 +198,22 @@ namespace VocabularyUp
             }
             MovePointer(currentQuiz);
 
-
-            if (userChoices[currentQuiz].IsDone)
-                ReloadButton();
+            if (currentQuiz < ManageUserAction.GetMainFlashCards().Count)
+            {
+                if (userChoices[currentQuiz].IsDone)
+                    ReloadButton();
+                else
+                    ResetButton();
+            }
             else
-                ResetButton();
+            {
+                btnNext.Enabled = false;
+                campaign.Reset();
+                campaign.InitResult(userChoices);
+                timerMultiple.Stop();
+                //InitResult(10 - wrongAns, wrongAns);
+                this.Close();
+            }    
 
         }
 
