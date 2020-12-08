@@ -24,6 +24,7 @@ namespace VocabularyUp
         public UserAccessForm()
         {
             InitializeComponent();
+            DoubleBuffered = true;
             ManageSystem.ConnectDatabase();
         }
 
