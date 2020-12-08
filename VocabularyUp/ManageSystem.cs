@@ -17,6 +17,7 @@ namespace VocabularyUp
         private static MD5 md5Hash = MD5.Create();
         private static String connString = @ConfigurationManager.AppSettings.Get("connectString");
         private static List<FlashCard> allFlashCards = new List<FlashCard>();
+        private static List<Equipment> allEquipment = new List<Equipment>();
         private static string OldPass;
         private static string TaiKhoan;
 
@@ -497,6 +498,26 @@ namespace VocabularyUp
             {
                 //Dong ket noi sau khi thao tac ket thuc
                 connection.Close();
+            }
+        }
+
+        // Load list allEquipment
+        public static void LoadEquipment()
+        {
+            SqlConnection connection = new SqlConnection(connString);
+            connection.Open();
+
+            String sqlQuery = "SELECT ID_TYPE, ID_EQUIP, NAME FROM EQUIPMENT";
+            
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.HasRows)
+            {
+                if (reader.Read() == false) break;
+                Equipment e = new Equipment(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2));
+                allEquipment.Add(e);
             }
         }
     }

@@ -194,7 +194,7 @@ namespace VocabularyUp
         private void btnMultipleChoice_Click(object sender, EventArgs e)
         {
             type = 1;
-            btnMultipleChoice.FillColor = Color.FromArgb(192, 255, 192);
+            //btnMultipleChoice.FillColor = Color.FromArgb(192, 255, 192);
             btnFilBlank.FillColor = Color.FromArgb(192, 255, 192);
             btnMultipleChoice.FillColor = Color.FromArgb(10, 182, 194);
             
@@ -204,7 +204,7 @@ namespace VocabularyUp
         {
             type = 0;
             btnMultipleChoice.FillColor = Color.FromArgb(192, 255, 192);
-            btnFilBlank.FillColor = Color.FromArgb(192, 255, 192);
+            //btnFilBlank.FillColor = Color.FromArgb(192, 255, 192);
             btnFilBlank.FillColor = Color.FromArgb(10, 182, 194);
         }
 

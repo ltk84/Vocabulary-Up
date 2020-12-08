@@ -92,6 +92,7 @@
     <Compile Include="CollectionForm.Designer.cs">
       <DependentUpon>CollectionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Equipment.cs" />
     <Compile Include="FillBlankForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +111,12 @@
     </Compile>
     <Compile Include="ResultForm.Designer.cs">
       <DependentUpon>ResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopForm.Designer.cs">
+      <DependentUpon>ShopForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StatisticInfoForm.cs">
       <SubType>Form</SubType>
@@ -212,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ResultForm.resx">
       <DependentUpon>ResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopForm.resx">
+      <DependentUpon>ShopForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatisticInfoForm.resx">
       <DependentUpon>StatisticInfoForm.cs</DependentUpon>
