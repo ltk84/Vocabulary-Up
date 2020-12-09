@@ -65,8 +65,8 @@
             this.barTop.Controls.Add(this.btnFullScr);
             this.barTop.Controls.Add(this.btnExit);
             this.barTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
-            this.barTop.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
+            this.barTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.barTop.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.barTop.Location = new System.Drawing.Point(0, 0);
             this.barTop.Margin = new System.Windows.Forms.Padding(4);
             this.barTop.Name = "barTop";

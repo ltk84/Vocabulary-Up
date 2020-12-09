@@ -24,6 +24,7 @@ namespace VocabularyUp
         public UserAccessForm()
         {
             InitializeComponent();
+            DoubleBuffered = true;
             ManageSystem.ConnectDatabase();
         }
 
@@ -250,7 +251,7 @@ namespace VocabularyUp
             {
                 ManageSystem.UpdateNewPassword(ManageSystem.GetUserID_Email(txtCheckEmail.Text), txtPassForget.Text);
                 ManageSystem.UpdateNewPasswordToDatabase(ManageSystem.GetUserID_Email(txtCheckEmail.Text), txtPassForget.Text);
-                MessageBox.Show("du ma m xong r do !");
+                MessageBox.Show("Done");
                 pnlForgetPass.Visible = false;
                 pnlUserLogin.Visible = true;
                 pnlSignup.Visible = false;
