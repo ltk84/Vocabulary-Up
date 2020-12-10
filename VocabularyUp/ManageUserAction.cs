@@ -206,7 +206,7 @@ namespace VocabularyUp
         }
 
         // CONNECT ĐẾN DATABASE ĐỂ LOAD MAIN FLASHCARD
-        public static void UpdateMainFlashCard(int currentTopic)
+        public static int UpdateMainFlashCard(int currentTopic)
         {
             mainFlashCard.Clear();
             string nameTopic = null;
@@ -269,6 +269,12 @@ namespace VocabularyUp
                 //Dong ket noi sau khi thao tac ket thuc
                 connection.Close();
             }
+
+            if (mainFlashCard.Count == 0)
+            {
+                return 0;
+            }
+            return 1;
         }
         public static int CalculateProgress(int currentTopic, int id)
         {

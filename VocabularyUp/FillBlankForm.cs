@@ -20,13 +20,19 @@ namespace VocabularyUp
         List<UserChoice> userChoices = new List<UserChoice>();
         CampaignForm campaignForm;
         int time = 0;
+        public int result = 1;
         public FillBlankForm(int currentTopic, CampaignForm campaignForm)
         {
             InitializeComponent();
             this.currentTopic = currentTopic;
             this.campaignForm = campaignForm;
             this.KeyPreview = true;
-            ManageUserAction.UpdateMainFlashCard(currentTopic);
+            int res = ManageUserAction.UpdateMainFlashCard(currentTopic);
+            if (res == 0)
+            {
+                result = 0;
+                return;
+            }
             InitQuiz();
             InitAnswer();
             ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);

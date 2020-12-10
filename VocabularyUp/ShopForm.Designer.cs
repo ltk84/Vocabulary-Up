@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.pbCurrency = new System.Windows.Forms.PictureBox();
+            this.lbDiamond = new System.Windows.Forms.Label();
             this.btnWeapon = new Guna.UI2.WinForms.Guna2Button();
             this.btnBody = new Guna.UI2.WinForms.Guna2Button();
             this.btnCate_Head = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             this.flpShop = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbDiamond = new System.Windows.Forms.Label();
-            this.pbCurrency = new System.Windows.Forms.PictureBox();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -65,6 +65,25 @@
             this.splitContainer1.Size = new System.Drawing.Size(750, 422);
             this.splitContainer1.SplitterDistance = 205;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // pbCurrency
+            // 
+            this.pbCurrency.Image = ((System.Drawing.Image)(resources.GetObject("pbCurrency.Image")));
+            this.pbCurrency.Location = new System.Drawing.Point(55, 12);
+            this.pbCurrency.Name = "pbCurrency";
+            this.pbCurrency.Size = new System.Drawing.Size(30, 25);
+            this.pbCurrency.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCurrency.TabIndex = 5;
+            this.pbCurrency.TabStop = false;
+            // 
+            // lbDiamond
+            // 
+            this.lbDiamond.AutoSize = true;
+            this.lbDiamond.Location = new System.Drawing.Point(24, 12);
+            this.lbDiamond.Name = "lbDiamond";
+            this.lbDiamond.Size = new System.Drawing.Size(25, 13);
+            this.lbDiamond.TabIndex = 4;
+            this.lbDiamond.Text = "100";
             // 
             // btnWeapon
             // 
@@ -108,6 +127,15 @@
             this.btnCate_Head.TabIndex = 0;
             this.btnCate_Head.Text = "Head";
             // 
+            // flpShop
+            // 
+            this.flpShop.AutoScroll = true;
+            this.flpShop.BackColor = System.Drawing.Color.White;
+            this.flpShop.Location = new System.Drawing.Point(18, 12);
+            this.flpShop.Name = "flpShop";
+            this.flpShop.Size = new System.Drawing.Size(493, 347);
+            this.flpShop.TabIndex = 4;
+            // 
             // btnExit
             // 
             this.btnExit.CheckedState.Parent = this.btnExit;
@@ -121,34 +149,6 @@
             this.btnExit.Size = new System.Drawing.Size(95, 35);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
-            // 
-            // flpShop
-            // 
-            this.flpShop.AutoScroll = true;
-            this.flpShop.BackColor = System.Drawing.Color.White;
-            this.flpShop.Location = new System.Drawing.Point(18, 12);
-            this.flpShop.Name = "flpShop";
-            this.flpShop.Size = new System.Drawing.Size(481, 347);
-            this.flpShop.TabIndex = 4;
-            // 
-            // lbDiamond
-            // 
-            this.lbDiamond.AutoSize = true;
-            this.lbDiamond.Location = new System.Drawing.Point(24, 12);
-            this.lbDiamond.Name = "lbDiamond";
-            this.lbDiamond.Size = new System.Drawing.Size(25, 13);
-            this.lbDiamond.TabIndex = 4;
-            this.lbDiamond.Text = "100";
-            // 
-            // pbCurrency
-            // 
-            this.pbCurrency.Image = ((System.Drawing.Image)(resources.GetObject("pbCurrency.Image")));
-            this.pbCurrency.Location = new System.Drawing.Point(55, 12);
-            this.pbCurrency.Name = "pbCurrency";
-            this.pbCurrency.Size = new System.Drawing.Size(30, 25);
-            this.pbCurrency.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCurrency.TabIndex = 5;
-            this.pbCurrency.TabStop = false;
             // 
             // ShopForm
             // 
