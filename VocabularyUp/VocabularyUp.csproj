@@ -69,6 +69,7 @@
     <Compile Include="CampaignForm.Designer.cs">
       <DependentUpon>CampaignForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Character.cs" />
     <Compile Include="Collection.cs" />
     <Compile Include="CollectionLib.cs">
       <SubType>Form</SubType>
@@ -94,7 +95,6 @@
     <Compile Include="CollectionForm.Designer.cs">
       <DependentUpon>CollectionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Equipment.cs" />
     <Compile Include="FillBlankForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +102,12 @@
       <DependentUpon>FillBlankForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FlashCard.cs" />
+    <Compile Include="ItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemForm.Designer.cs">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LearningForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FillBlankForm.resx">
       <DependentUpon>FillBlankForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemForm.resx">
+      <DependentUpon>ItemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LearningForm.resx">
       <DependentUpon>LearningForm.cs</DependentUpon>

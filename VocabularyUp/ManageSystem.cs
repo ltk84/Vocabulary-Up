@@ -17,7 +17,7 @@ namespace VocabularyUp
         private static MD5 md5Hash = MD5.Create();
         private static String connString = @ConfigurationManager.AppSettings.Get("connectString");
         private static List<FlashCard> allFlashCards = new List<FlashCard>();
-        private static List<Equipment> allEquipment = new List<Equipment>();
+        private static List<Character> allCharacters = new List<Character>();
         private static string OldPass;
         private static string TaiKhoan;
 
@@ -96,6 +96,7 @@ namespace VocabularyUp
                 }
 
                 AddCollectionToUser(numOfUser);
+                InitCharacter(numOfUser);
             }
             catch (Exception)
             {
@@ -470,6 +471,7 @@ namespace VocabularyUp
             string encrytedPass = GetMd5HashWithMySecurityAlgo(md5Hash, newPass);
             users[id-1].Password = encrytedPass;
         }
+
         public static void UpdateNewPasswordToDatabase(int id, string newPass)
         {
             string encrytedPass = GetMd5HashWithMySecurityAlgo(md5Hash, newPass);
@@ -502,12 +504,12 @@ namespace VocabularyUp
         }
 
         // Load list allEquipment
-        public static void LoadEquipment()
+        public static void LoadCharacter()
         {
             SqlConnection connection = new SqlConnection(connString);
             connection.Open();
 
-            String sqlQuery = "SELECT ID_TYPE, ID_EQUIP, NAME FROM EQUIPMENT";
+            String sqlQuery = "SELECT ID, NAME, HEALTH, DAMAGE, PRICE FROM CHARACTER";
             
             SqlCommand command = new SqlCommand(sqlQuery, connection);
 
@@ -516,8 +518,49 @@ namespace VocabularyUp
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                Equipment e = new Equipment(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2));
-                allEquipment.Add(e);
+                Character e = new Character(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetInt32(4));
+                allCharacters.Add(e);
+            }
+        }
+
+        public static List<Character> GetAllCharacter()
+        {
+            return allCharacters;
+        }
+
+        public static void InitCharacter(int currentId)
+        {
+            SqlConnection connection = new SqlConnection(connString);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "insert into user_character (id_user, id_char) values ( @id, 0)";
+                //String sqlQueryExt = "insert into user_flashcard (id_user, id_card, id_collection, collection_name) values (" + numOfUser + ", 0, 0, 'HOCED')";
+                //SqlCommand commandExt = new SqlCommand(sqlQueryExt, connection);
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@id", currentId);
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                int rs = command.ExecuteNonQuery();
+                //Su dung reader de doc tung dong du lieu
+                //va thuc hien thao tac xu ly mong muon voi du lieu doc len
+                if (rs != 1)
+                {
+                    throw new Exception("Failed Query");
+                }
+            }
+            catch (Exception ep)
+            {
+                MessageBox.Show(ep.Message);
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
             }
         }
     }

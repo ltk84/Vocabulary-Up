@@ -12,9 +12,20 @@ namespace VocabularyUp
 {
     public partial class RevisionForm : Form
     {
+        ShopForm shop = new ShopForm();
         public RevisionForm()
         {
             InitializeComponent();
+            ManageUserAction.UpdateOwnCharacter();
+            LoadA();
+        }
+
+        public void LoadA()
+        {
+            shop.TopLevel = false;
+            shop.FormBorderStyle = FormBorderStyle.None;
+            pnlRevision.Controls.Add(shop);
+            shop.Show();
         }
     }
 }
