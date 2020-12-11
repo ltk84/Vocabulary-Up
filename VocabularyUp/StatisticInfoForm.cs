@@ -71,38 +71,59 @@ namespace VocabularyUp
 
 
             int Level, Percent;
-            
-            
+
+
             Level = a / 50;
             Percent = a % 50;
-           
+
             lbLevel.Text = Level.ToString();
             pbLevel.Value = Percent * 2;
             if (Level <= 1)
             {
                 lbCapBac.Text = "Beginner";
-                imageLevel.Image = Image.FromFile("../../db/Rankings/Iron 3.png");
+                imageLevel.Image = Image.FromFile("../../db/Rankings/Iron 1.png");
             }
             else if (Level == 2)
+            {
                 lbCapBac.Text = "High Beginner";
+                imageLevel.Image = Image.FromFile("../../db/Rankings/Iron 3.png");
+            }
             else if (Level == 3)
+            {
                 lbCapBac.Text = "Low Intermediate";
+                imageLevel.Image = Image.FromFile("../../db/Rankings/Bronze 3.png");
+            }
             else if (Level == 4)
+            {
                 lbCapBac.Text = "Intermediate";
+                imageLevel.Image = Image.FromFile("../../db/Rankings/Silver 3.png");
+            }
             else if (Level == 5)
+            {
                 lbCapBac.Text = "High Intermediate";
+                imageLevel.Image = Image.FromFile("../../db/Rankings/Gold 3.png");
+            }
             else if (Level == 6)
             {
                 lbCapBac.Text = "Low Advanced";
-                imageLevel.Image = Image.FromFile("../../db/Rankings/Gold 3.png");
+                imageLevel.Image = Image.FromFile("../../db/Rankings/Platinum 3.png");
             }
             else if (Level == 7)
+            {
                 lbCapBac.Text = "Advanced";
+                imageLevel.Image = Image.FromFile("../../db/Rankings/Diamond 3.png");
+            }
             else if (Level == 8)
+            {
                 lbCapBac.Text = "Master";
+                imageLevel.Image = Image.FromFile("../../db/Rankings/Immortal 3.png");
+            }
             else if (Level > 8)
-                lbCapBac.Text = "Challenge";
-                
+            { 
+            lbCapBac.Text = "Challenge";
+            imageLevel.Image = Image.FromFile("../../db/Rankings/Master Vocab.png");
+            }
+
         }
        
         private void btnSaveEdit_Click(object sender, EventArgs e)

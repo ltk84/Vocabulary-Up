@@ -33,6 +33,8 @@ namespace VocabularyUp
         }
         private void ToStatisticInfo()
         {
+            dashInfo.Show();
+            dashResult.Hide();
             statisticInfo.TopLevel = false;
             pnlShowStatistic.Controls.Clear();
             pnlShowStatistic.Controls.Add(statisticInfo);
@@ -41,6 +43,8 @@ namespace VocabularyUp
 
         private void ToStatisticResult()
         {
+            dashResult.Show();
+            dashInfo.Hide();
             statisticResult.TopLevel = false;
             pnlShowStatistic.Controls.Clear();
             pnlShowStatistic.Controls.Add(statisticResult);
