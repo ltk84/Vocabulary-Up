@@ -12,11 +12,13 @@ namespace VocabularyUp
 {
     public partial class ShopForm : Form
     {
-        public ShopForm()
+        Panel panel;
+        public ShopForm(Panel p)
         {
             InitializeComponent();
             ManageSystem.LoadCharacter();
             LoadShop();
+            this.panel = p;
         }
 
         public void LoadShop()
@@ -35,8 +37,10 @@ namespace VocabularyUp
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Parent.Show();
+            this.Hide();
+            panel.Show();
+            //this.Parent.Show();
+            
         }
     }
 }

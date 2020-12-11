@@ -30,42 +30,48 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RevisionForm));
             this.pnlRevision = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pbCharacter = new System.Windows.Forms.PictureBox();
+            this.btnShop = new System.Windows.Forms.Button();
+            this.lbName = new System.Windows.Forms.Label();
             this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
-            this.lbName = new System.Windows.Forms.Label();
-            this.btnShop = new System.Windows.Forms.Button();
+            this.pbCharacter = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlRevision.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCharacter)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlRevision
             // 
             this.pnlRevision.BorderRadius = 20;
-            this.pnlRevision.Controls.Add(this.btnShop);
-            this.pnlRevision.Controls.Add(this.lbName);
-            this.pnlRevision.Controls.Add(this.btnPrevious);
-            this.pnlRevision.Controls.Add(this.btnNext);
-            this.pnlRevision.Controls.Add(this.pbCharacter);
             this.pnlRevision.Controls.Add(this.panel1);
             this.pnlRevision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRevision.Location = new System.Drawing.Point(0, 0);
-            this.pnlRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlRevision.Margin = new System.Windows.Forms.Padding(2);
             this.pnlRevision.Name = "pnlRevision";
             this.pnlRevision.ShadowDecoration.Parent = this.pnlRevision;
             this.pnlRevision.Size = new System.Drawing.Size(750, 422);
             this.pnlRevision.TabIndex = 0;
             // 
-            // pbCharacter
+            // btnShop
             // 
-            this.pbCharacter.BackColor = System.Drawing.Color.Transparent;
-            this.pbCharacter.Location = new System.Drawing.Point(258, 143);
-            this.pbCharacter.Name = "pbCharacter";
-            this.pbCharacter.Size = new System.Drawing.Size(229, 142);
-            this.pbCharacter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbCharacter.TabIndex = 0;
-            this.pbCharacter.TabStop = false;
+            this.btnShop.Location = new System.Drawing.Point(596, 70);
+            this.btnShop.Name = "btnShop";
+            this.btnShop.Size = new System.Drawing.Size(75, 23);
+            this.btnShop.TabIndex = 22;
+            this.btnShop.Text = "Shop";
+            this.btnShop.UseVisualStyleBackColor = true;
+            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
+            // 
+            // lbName
+            // 
+            this.lbName.AutoSize = true;
+            this.lbName.BackColor = System.Drawing.Color.Transparent;
+            this.lbName.Location = new System.Drawing.Point(355, 328);
+            this.lbName.Name = "lbName";
+            this.lbName.Size = new System.Drawing.Size(35, 13);
+            this.lbName.TabIndex = 21;
+            this.lbName.Text = "Name";
             // 
             // btnPrevious
             // 
@@ -109,28 +115,24 @@
             this.btnNext.Size = new System.Drawing.Size(50, 58);
             this.btnNext.TabIndex = 19;
             // 
-            // lbName
+            // pbCharacter
             // 
-            this.lbName.AutoSize = true;
-            this.lbName.BackColor = System.Drawing.Color.Transparent;
-            this.lbName.Location = new System.Drawing.Point(355, 328);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(35, 13);
-            this.lbName.TabIndex = 21;
-            this.lbName.Text = "Name";
-            // 
-            // btnShop
-            // 
-            this.btnShop.Location = new System.Drawing.Point(596, 70);
-            this.btnShop.Name = "btnShop";
-            this.btnShop.Size = new System.Drawing.Size(75, 23);
-            this.btnShop.TabIndex = 22;
-            this.btnShop.Text = "Shop";
-            this.btnShop.UseVisualStyleBackColor = true;
-            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
+            this.pbCharacter.BackColor = System.Drawing.Color.Transparent;
+            this.pbCharacter.Location = new System.Drawing.Point(258, 143);
+            this.pbCharacter.Name = "pbCharacter";
+            this.pbCharacter.Size = new System.Drawing.Size(229, 142);
+            this.pbCharacter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCharacter.TabIndex = 0;
+            this.pbCharacter.TabStop = false;
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btnShop);
+            this.panel1.Controls.Add(this.lbName);
+            this.panel1.Controls.Add(this.btnPrevious);
+            this.panel1.Controls.Add(this.btnNext);
+            this.panel1.Controls.Add(this.pbCharacter);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -145,12 +147,13 @@
             this.ClientSize = new System.Drawing.Size(750, 422);
             this.Controls.Add(this.pnlRevision);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RevisionForm";
             this.Text = "RevisionForm";
             this.pnlRevision.ResumeLayout(false);
-            this.pnlRevision.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCharacter)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

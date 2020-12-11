@@ -285,6 +285,7 @@ namespace VocabularyUp
             pnlTab.Controls.Add(revisionTab);
             revisionTab.FormBorderStyle = FormBorderStyle.None;
             revisionTab.Show();
+            revisionTab.Parent = this.pnlTab;
         }
 
         private void ToLibraryTab()

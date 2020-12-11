@@ -12,23 +12,24 @@ namespace VocabularyUp
 {
     public partial class RevisionForm : Form
     {
-        ShopForm shop = new ShopForm();
+        ShopForm shop;
         public RevisionForm()
         {
             InitializeComponent();
             ManageUserAction.UpdateOwnCharacter();
-            //LoadShop();
             LoadPictureBoxCharacter();
+            shop = new ShopForm(this.panel1);
         }
 
         public void LoadShop()
         {
+            this.panel1.Hide();
             shop.TopLevel = false;
             shop.FormBorderStyle = FormBorderStyle.None;
-            pnlRevision.Controls.Add(shop);
+            this.pnlRevision.Controls.Add(shop);
             shop.Show();
-            shop.Parent = panel1;
-            panel1.Visible = false;
+            //this.Parent.Show();
+           
             //HideMenu();
         }
 
