@@ -29,8 +29,23 @@ namespace VocabularyUp
         private void Start()
         {
             FillBlankForm fillBQuiz = new FillBlankForm(currentTopic, this);
+
+            if (fillBQuiz.result == 0)
+            {
+                FinalForm f = new FinalForm(pnlTopicSelection);
+                f.TopLevel = false;
+                pnlTopicSelection.Hide();
+                pnlCampaignCate.Controls.Add(f);
+                f.FormBorderStyle = FormBorderStyle.None;
+                f.Show();
+                this.Reset();
+                return;
+            }
+
             MultipleChoiceForm multiQuiz = new MultipleChoiceForm(currentTopic, this);
             LearningForm learning = new LearningForm(currentTopic, this, fillBQuiz, multiQuiz);
+
+            
 
             learning.TopLevel = false;
             pnlTopicSelection.Hide();

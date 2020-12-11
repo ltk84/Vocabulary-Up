@@ -20,13 +20,19 @@ namespace VocabularyUp
         List<UserChoice> userChoices = new List<UserChoice>();
         CampaignForm campaignForm;
         int time = 0;
+        public int result = 1;
         public FillBlankForm(int currentTopic, CampaignForm campaignForm)
         {
             InitializeComponent();
             this.currentTopic = currentTopic;
             this.campaignForm = campaignForm;
             this.KeyPreview = true;
-            ManageUserAction.UpdateMainFlashCard(currentTopic);
+            int res = ManageUserAction.UpdateMainFlashCard(currentTopic);
+            if (res == 0)
+            {
+                result = 0;
+                return;
+            }
             InitQuiz();
             InitAnswer();
             ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
@@ -105,13 +111,15 @@ namespace VocabularyUp
             {
                 btnPrevious.Enabled = true;
                 currentQuiz++;
-                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
+                if (ManageUserAction.GetMainFlashCards().Count > 1)
+                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
             }
 
             else if (currentQuiz != questions.Count - 1)
             {
                 currentQuiz++;
-                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
+                if (ManageUserAction.GetMainFlashCards().Count > 1)
+                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
             }
 
             else
@@ -125,10 +133,21 @@ namespace VocabularyUp
 
             MovePointer(currentQuiz);
 
-            if (userChoices[currentQuiz].IsDone)
-                Reload();
+            if (currentQuiz < ManageUserAction.GetMainFlashCards().Count)
+            {
+                if (userChoices[currentQuiz].IsDone)
+                    Reload();
+                else
+                    Reset();
+            }
             else
-                Reset();
+            {
+                btnNext.Enabled = false;
+                campaignForm.Reset();
+                campaignForm.InitResult(userChoices);
+                timerFillBlank.Stop();
+                this.Close();
+            }
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)

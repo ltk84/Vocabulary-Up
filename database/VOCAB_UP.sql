@@ -44,6 +44,41 @@ CREATE TABLE USER_FLASHCARD
 	CONSTRAINT FK_UF_CARD FOREIGN KEY (ID_CARD) REFERENCES FLASHCARD (ID)
 )
 
+CREATE TABLE CHARACTER
+(
+	ID INT NOT NULL,
+	NAME NVARCHAR(100),
+	HEALTH INT, 
+	DAMAGE INT,
+	PRICE INT,
+	CONSTRAINT PK_EQUIP PRIMARY KEY (ID)
+)
+select c.ID, c.NAME, c.HEALTH, c.DAMAGE, c.PRICE from USER_character u_c, CHARACTER c where ID_USER = 1 and u_c.id_char = c.id
+
+CREATE TABLE USER_CHARACTER
+(
+	ID_USER INT NOT NULL,
+	ID_CHAR INT NOT NULL,
+	CURRENT_USE BIT ,
+	CONSTRAINT PK_UC PRIMARY KEY (ID_USER, ID_CHAR),
+	CONSTRAINT FK_UC_USER FOREIGN KEY (ID_USER) REFERENCES USERS (ID),
+	CONSTRAINT FK_UC_CHAR FOREIGN KEY (ID_CHAR) REFERENCES CHARACTER (ID)
+)
+
+
+
+INSERT INTO CHARACTER
+VALUES 
+	(0, 'KNIGHT', 100, 100, 100),
+	(1, 'PALADIN', 500, 80, 100),
+	(2, 'ROUGE', 50, 120, 100),
+	(3, 'ASSASSIN', 70, 150, 100),
+	(4, 'VAMPIRE', 120, 120, 100)
+
+	delete from CHARACTER
+
+
+
 insert into USER_FLASHCARD
 values
 (1,0,0,'HOCED'), -- bat buoc co nha dau buoi
@@ -855,3 +890,19 @@ values
 	update FLASHCARD 
 	set eng = 'cheetah', vie = N'báo đốm', PRONUNCIATION = N'/ˈtʃiː.tə/' 
 	where id = 8
+	select top 7 * from FLASHCARD
+	select top 10 * from FLASHCARD fl_m where not exists(select fl.ID from FLASHCARD fl, USER_FLASHCARD u_fl where u_fl.ID_CARD = fl.ID and fl.ID = fl_m.ID and u_fl.ID_USER = 1 and u_fl.ID_COLLECTION = 0) and fl_m.FIELD = 'animals' order by NEWID()
+	select * from USER_FLASHCARD
+	delete from USER_FLASHCARD 
+	where ID_CARD = 3
+
+	INSERT INTO EQUIPMENT
+	VALUES 
+		(1, 1, N'Mũ cối'),
+		(1, 1, N'Mũ Sparta'),
+		(1, 2, N'trang phục '),
+		(1, 2, N'trang phục 2'),
+		(1, 3, N'vũ khí 1'),
+		(1, 3, N'vũ khí 2'),
+
+

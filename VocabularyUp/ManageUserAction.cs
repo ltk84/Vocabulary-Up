@@ -14,6 +14,7 @@ namespace VocabularyUp
         private static User currentUser;
         private static List<FlashCard> mainFlashCard = new List<FlashCard>();
         private static List<Collection> allCollections = new List<Collection>();
+        private static List<Character> ownCharacter = new List<Character>();
         private static string constr = @ConfigurationManager.AppSettings.Get("connectString");
 
         // Add collection
@@ -133,13 +134,6 @@ namespace VocabularyUp
 
                 allCollections.Add(c);
             }
-
-            //if (allCollections.Count == 0)
-            //{
-            //    allCollections.Add(new Collection(0, "HOCED", UpdateFlashCardOfCollection(0)));
-            //    AddCollection("HOCED");
-            //    allCollections[0].ListFL.Add(new FlashCard(0, "Cover", "", "", ""));
-            //}
         }
 
         public static List<FlashCard> UpdateFlashCardOfCollection(int idCollection)
@@ -212,7 +206,7 @@ namespace VocabularyUp
         }
 
         // CONNECT ĐẾN DATABASE ĐỂ LOAD MAIN FLASHCARD
-        public static void UpdateMainFlashCard(int currentTopic)
+        public static int UpdateMainFlashCard(int currentTopic)
         {
             mainFlashCard.Clear();
             string nameTopic = null;
@@ -275,6 +269,12 @@ namespace VocabularyUp
                 //Dong ket noi sau khi thao tac ket thuc
                 connection.Close();
             }
+
+            if (mainFlashCard.Count == 0)
+            {
+                return 0;
+            }
+            return 1;
         }
         public static int CalculateProgress(int currentTopic, int id)
         {
@@ -693,5 +693,35 @@ namespace VocabularyUp
             return mainFlashCard;
         }
         
+        public static void UpdateOwnCharacter()
+        {
+            ownCharacter.Clear();
+            SqlConnection connection = new SqlConnection(constr);
+            connection.Open();
+
+            //Chuan bi cau lenh query viet bang SQL 
+            String sqlQuery = "select c.ID, c.NAME, c.HEALTH, c.DAMAGE, c.PRICE from USER_character u_c, CHARACTER c where u_c.id_char = c.id and ID_USER = " + currentUser.IdUser.ToString();
+            
+            //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+            //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+            SqlDataReader reader = command.ExecuteReader();
+
+            //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
+            while (reader.HasRows)
+            {
+                if (reader.Read() == false) break;
+
+                Character c = new Character(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetInt32(4));
+
+                ownCharacter.Add(c);
+            }
+        }
+
+        public static List<Character> GetOwnCharacterList()
+        {
+            return ownCharacter;
+        }
     }
 }
