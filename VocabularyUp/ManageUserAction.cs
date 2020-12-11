@@ -723,5 +723,55 @@ namespace VocabularyUp
         {
             return ownCharacter;
         }
+
+        public static bool CheckExistCharacter(Character ch)
+        {
+            foreach (var cha in ownCharacter)
+            {
+                if (cha.ID == ch.ID)
+                    return true;
+            }
+            return false;
+        }
+
+        public static void AddToOwnCharacterList(string name)
+        {
+            foreach (var c in ManageSystem.GetAllCharacter())
+            {
+                if (c.Name == name)
+                {
+                    ownCharacter.Add(c);
+                    InsertIntoOwnCharacter(c);
+                    return;
+                }
+            }
+        }
+
+        public static void InsertIntoOwnCharacter(Character ch)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                connection.Open();
+                String sqlQuery = "insert into USER_CHARACTER (ID_USER, ID_CHAR) values(@ID_USER, @ID_CHARACTER)";
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID_USER", currentUser.IdUser);
+                command.Parameters.AddWithValue("@ID_CHARACTER", ch.ID);
+
+                int rs = command.ExecuteNonQuery();
+                if (rs != 1)
+                {
+                    throw new Exception("Failed Query");
+                }
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }
