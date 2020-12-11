@@ -195,3 +195,8 @@ D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\Vocab
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ShopForm.resources
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ItemForm.resources
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.FinalForm.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.DetailsForm.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.FinalForm.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ItemForm.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ResultForm.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ShopForm.resources
