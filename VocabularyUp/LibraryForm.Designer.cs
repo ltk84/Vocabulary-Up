@@ -62,10 +62,10 @@
             this.pnlMainNav.Controls.Add(this.btnRight);
             this.pnlMainNav.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMainNav.Location = new System.Drawing.Point(0, 0);
-            this.pnlMainNav.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlMainNav.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMainNav.Name = "pnlMainNav";
             this.pnlMainNav.ShadowDecoration.Parent = this.pnlMainNav;
-            this.pnlMainNav.Size = new System.Drawing.Size(750, 422);
+            this.pnlMainNav.Size = new System.Drawing.Size(1000, 519);
             this.pnlMainNav.TabIndex = 12;
             // 
             // pnlLib
@@ -75,10 +75,10 @@
             this.pnlLib.Controls.Add(this.pnlTab);
             this.pnlLib.Controls.Add(this.pnlSearching);
             this.pnlLib.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlLib.Location = new System.Drawing.Point(227, 0);
-            this.pnlLib.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlLib.Location = new System.Drawing.Point(303, 0);
+            this.pnlLib.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlLib.Name = "pnlLib";
-            this.pnlLib.Size = new System.Drawing.Size(296, 422);
+            this.pnlLib.Size = new System.Drawing.Size(394, 519);
             this.pnlLib.TabIndex = 9;
             // 
             // pnlToCollection
@@ -86,11 +86,11 @@
             this.pnlToCollection.Controls.Add(this.cbCollection);
             this.pnlToCollection.Controls.Add(this.btnToCollection);
             this.pnlToCollection.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlToCollection.Location = new System.Drawing.Point(0, 381);
-            this.pnlToCollection.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlToCollection.Location = new System.Drawing.Point(0, 469);
+            this.pnlToCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlToCollection.Name = "pnlToCollection";
             this.pnlToCollection.ShadowDecoration.Parent = this.pnlToCollection;
-            this.pnlToCollection.Size = new System.Drawing.Size(296, 41);
+            this.pnlToCollection.Size = new System.Drawing.Size(394, 50);
             this.pnlToCollection.TabIndex = 10;
             // 
             // cbCollection
@@ -108,10 +108,10 @@
             this.cbCollection.ItemHeight = 30;
             this.cbCollection.ItemsAppearance.Parent = this.cbCollection;
             this.cbCollection.Location = new System.Drawing.Point(0, 0);
-            this.cbCollection.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCollection.Name = "cbCollection";
             this.cbCollection.ShadowDecoration.Parent = this.cbCollection;
-            this.cbCollection.Size = new System.Drawing.Size(258, 36);
+            this.cbCollection.Size = new System.Drawing.Size(343, 36);
             this.cbCollection.TabIndex = 13;
             // 
             // btnToCollection
@@ -121,16 +121,16 @@
             this.btnToCollection.CheckedState.Parent = this.btnToCollection;
             this.btnToCollection.CustomImages.Parent = this.btnToCollection;
             this.btnToCollection.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnToCollection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnToCollection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnToCollection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToCollection.ForeColor = System.Drawing.Color.Black;
             this.btnToCollection.HoverState.Parent = this.btnToCollection;
             this.btnToCollection.Image = ((System.Drawing.Image)(resources.GetObject("btnToCollection.Image")));
-            this.btnToCollection.Location = new System.Drawing.Point(262, 0);
-            this.btnToCollection.Margin = new System.Windows.Forms.Padding(2);
+            this.btnToCollection.Location = new System.Drawing.Point(349, 0);
+            this.btnToCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnToCollection.Name = "btnToCollection";
             this.btnToCollection.ShadowDecoration.Parent = this.btnToCollection;
-            this.btnToCollection.Size = new System.Drawing.Size(34, 41);
+            this.btnToCollection.Size = new System.Drawing.Size(45, 50);
             this.btnToCollection.TabIndex = 0;
             this.btnToCollection.Click += new System.EventHandler(this.btnToCollection_Click);
             // 
@@ -142,13 +142,15 @@
             this.pnlTab.Controls.Add(this.pbMain);
             this.pnlTab.Controls.Add(this.pnlDash);
             this.pnlTab.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTab.FillColor2 = System.Drawing.Color.LightGreen;
-            this.pnlTab.FillColor3 = System.Drawing.Color.LightGreen;
-            this.pnlTab.Location = new System.Drawing.Point(0, 37);
-            this.pnlTab.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlTab.Location = new System.Drawing.Point(0, 46);
+            this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
-            this.pnlTab.Size = new System.Drawing.Size(296, 341);
+            this.pnlTab.Size = new System.Drawing.Size(394, 420);
             this.pnlTab.TabIndex = 0;
             this.pnlTab.Click += new System.EventHandler(this.pnlTab_Click);
             // 
@@ -162,22 +164,22 @@
             this.btnPronun.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.Image")));
             this.btnPronun.ImageRotate = 0F;
             this.btnPronun.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnPronun.Location = new System.Drawing.Point(256, 294);
-            this.btnPronun.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPronun.Location = new System.Drawing.Point(341, 362);
+            this.btnPronun.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPronun.Name = "btnPronun";
             this.btnPronun.PressedState.Parent = this.btnPronun;
-            this.btnPronun.Size = new System.Drawing.Size(24, 31);
+            this.btnPronun.Size = new System.Drawing.Size(32, 38);
             this.btnPronun.TabIndex = 13;
             this.btnPronun.Click += new System.EventHandler(this.btnPronun_Click);
             // 
             // lbMain
             // 
             this.lbMain.BackColor = System.Drawing.Color.Transparent;
-            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
-            this.lbMain.Location = new System.Drawing.Point(-2, 294);
-            this.lbMain.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMain.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lbMain.ForeColor = System.Drawing.Color.White;
+            this.lbMain.Location = new System.Drawing.Point(0, 343);
             this.lbMain.Name = "lbMain";
-            this.lbMain.Size = new System.Drawing.Size(296, 31);
+            this.lbMain.Size = new System.Drawing.Size(394, 72);
             this.lbMain.TabIndex = 7;
             this.lbMain.Text = "Welcome";
             this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -186,10 +188,10 @@
             // pbMain
             // 
             this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
-            this.pbMain.Location = new System.Drawing.Point(14, 17);
-            this.pbMain.Margin = new System.Windows.Forms.Padding(2);
+            this.pbMain.Location = new System.Drawing.Point(19, 21);
+            this.pbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbMain.Name = "pbMain";
-            this.pbMain.Size = new System.Drawing.Size(266, 260);
+            this.pbMain.Size = new System.Drawing.Size(355, 320);
             this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMain.TabIndex = 8;
             this.pbMain.TabStop = false;
@@ -198,10 +200,10 @@
             // pnlDash
             // 
             this.pnlDash.BackColor = System.Drawing.Color.White;
-            this.pnlDash.Location = new System.Drawing.Point(14, 280);
-            this.pnlDash.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlDash.Location = new System.Drawing.Point(19, 345);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDash.Name = "pnlDash";
-            this.pnlDash.Size = new System.Drawing.Size(266, 4);
+            this.pnlDash.Size = new System.Drawing.Size(355, 5);
             this.pnlDash.TabIndex = 11;
             // 
             // pnlSearching
@@ -210,9 +212,9 @@
             this.pnlSearching.Controls.Add(this.txtSearching);
             this.pnlSearching.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSearching.Location = new System.Drawing.Point(0, 0);
-            this.pnlSearching.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlSearching.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlSearching.Name = "pnlSearching";
-            this.pnlSearching.Size = new System.Drawing.Size(296, 37);
+            this.pnlSearching.Size = new System.Drawing.Size(394, 46);
             this.pnlSearching.TabIndex = 0;
             // 
             // btnSearch
@@ -224,11 +226,11 @@
             this.btnSearch.ImageOffset = new System.Drawing.Point(0, -2);
             this.btnSearch.ImageRotate = 0F;
             this.btnSearch.ImageSize = new System.Drawing.Size(23, 23);
-            this.btnSearch.Location = new System.Drawing.Point(243, 6);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Location = new System.Drawing.Point(324, 7);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.PressedState.Parent = this.btnSearch;
-            this.btnSearch.Size = new System.Drawing.Size(20, 25);
+            this.btnSearch.Size = new System.Drawing.Size(27, 31);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -249,13 +251,14 @@
             this.txtSearching.ForeColor = System.Drawing.Color.Black;
             this.txtSearching.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearching.HoverState.Parent = this.txtSearching;
-            this.txtSearching.Location = new System.Drawing.Point(29, 8);
+            this.txtSearching.Location = new System.Drawing.Point(39, 10);
+            this.txtSearching.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearching.Name = "txtSearching";
             this.txtSearching.PasswordChar = '\0';
             this.txtSearching.PlaceholderText = "Search flashcard";
             this.txtSearching.SelectedText = "";
             this.txtSearching.ShadowDecoration.Parent = this.txtSearching;
-            this.txtSearching.Size = new System.Drawing.Size(208, 21);
+            this.txtSearching.Size = new System.Drawing.Size(277, 26);
             this.txtSearching.TabIndex = 0;
             // 
             // btnLeft
@@ -272,9 +275,10 @@
             this.btnLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft.Image")));
             this.btnLeft.ImageSize = new System.Drawing.Size(115, 130);
             this.btnLeft.Location = new System.Drawing.Point(0, 0);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.ShadowDecoration.Parent = this.btnLeft;
-            this.btnLeft.Size = new System.Drawing.Size(227, 422);
+            this.btnLeft.Size = new System.Drawing.Size(303, 519);
             this.btnLeft.TabIndex = 7;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
@@ -290,10 +294,11 @@
             this.btnRight.HoverState.Parent = this.btnRight;
             this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
             this.btnRight.ImageSize = new System.Drawing.Size(115, 130);
-            this.btnRight.Location = new System.Drawing.Point(523, 0);
+            this.btnRight.Location = new System.Drawing.Point(697, 0);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRight.Name = "btnRight";
             this.btnRight.ShadowDecoration.Parent = this.btnRight;
-            this.btnRight.Size = new System.Drawing.Size(227, 422);
+            this.btnRight.Size = new System.Drawing.Size(303, 519);
             this.btnRight.TabIndex = 8;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
@@ -306,13 +311,13 @@
             // LibraryForm
             // 
             this.AcceptButton = this.btnSearch;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.ClientSize = new System.Drawing.Size(750, 422);
+            this.ClientSize = new System.Drawing.Size(1000, 519);
             this.Controls.Add(this.pnlMainNav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LibraryForm";
             this.Text = "LibraryForm";
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LibraryForm_KeyUp);

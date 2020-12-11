@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultForm));
             this.pnlResultForm = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.btnOK = new Guna.UI2.WinForms.Guna2Button();
             this.lbWrong = new System.Windows.Forms.Label();
             this.lbCorrect = new System.Windows.Forms.Label();
             this.lbWrongWord = new System.Windows.Forms.Label();
             this.lbCorrectWord = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlResultForm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +61,30 @@
             this.pnlResultForm.ShadowDecoration.Parent = this.pnlResultForm;
             this.pnlResultForm.Size = new System.Drawing.Size(1000, 519);
             this.pnlResultForm.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Montserrat Alternates", 16F);
+            this.label1.Location = new System.Drawing.Point(622, 447);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(328, 37);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Let\'s see what you got.";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(238, 107);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(398, 59);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Congratulations!";
             // 
             // btnDetails
             // 
@@ -149,30 +173,6 @@
             this.lbCorrectWord.Size = new System.Drawing.Size(337, 46);
             this.lbCorrectWord.TabIndex = 0;
             this.lbCorrectWord.Text = "Number of Correct:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(238, 107);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(412, 61);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Congratulations!";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat Alternates", 16F);
-            this.label1.Location = new System.Drawing.Point(633, 438);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(328, 37);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Let\'s see what you got.";
             // 
             // ResultForm
             // 

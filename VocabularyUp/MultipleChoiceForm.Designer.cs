@@ -120,6 +120,7 @@
             // lbTimer
             // 
             this.lbTimer.BackColor = System.Drawing.Color.Transparent;
+            this.lbTimer.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTimer.Location = new System.Drawing.Point(515, 71);
             this.lbTimer.Name = "lbTimer";
             this.lbTimer.Size = new System.Drawing.Size(70, 23);
@@ -129,10 +130,10 @@
             // 
             // btnPointer10
             // 
-            this.btnPointer10.BackColor = System.Drawing.Color.LightGreen;
+            this.btnPointer10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnPointer10.CheckedState.Parent = this.btnPointer10;
             this.btnPointer10.CustomImages.Parent = this.btnPointer10;
-            this.btnPointer10.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnPointer10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(96)))), ((int)(((byte)(68)))));
             this.btnPointer10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer10.ForeColor = System.Drawing.Color.White;
             this.btnPointer10.HoverState.Parent = this.btnPointer10;
@@ -147,10 +148,10 @@
             // 
             // btnPointer9
             // 
-            this.btnPointer9.BackColor = System.Drawing.Color.LightGreen;
+            this.btnPointer9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnPointer9.CheckedState.Parent = this.btnPointer9;
             this.btnPointer9.CustomImages.Parent = this.btnPointer9;
-            this.btnPointer9.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnPointer9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(96)))), ((int)(((byte)(68)))));
             this.btnPointer9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer9.ForeColor = System.Drawing.Color.White;
             this.btnPointer9.HoverState.Parent = this.btnPointer9;
@@ -165,10 +166,10 @@
             // 
             // btnPointer8
             // 
-            this.btnPointer8.BackColor = System.Drawing.Color.LightGreen;
+            this.btnPointer8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnPointer8.CheckedState.Parent = this.btnPointer8;
             this.btnPointer8.CustomImages.Parent = this.btnPointer8;
-            this.btnPointer8.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnPointer8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(96)))), ((int)(((byte)(68)))));
             this.btnPointer8.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer8.ForeColor = System.Drawing.Color.White;
             this.btnPointer8.HoverState.Parent = this.btnPointer8;
@@ -186,7 +187,7 @@
             this.btnPointer7.BackColor = System.Drawing.Color.LightGreen;
             this.btnPointer7.CheckedState.Parent = this.btnPointer7;
             this.btnPointer7.CustomImages.Parent = this.btnPointer7;
-            this.btnPointer7.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnPointer7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(96)))), ((int)(((byte)(68)))));
             this.btnPointer7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer7.ForeColor = System.Drawing.Color.White;
             this.btnPointer7.HoverState.Parent = this.btnPointer7;
@@ -201,10 +202,10 @@
             // 
             // btnPointer6
             // 
-            this.btnPointer6.BackColor = System.Drawing.Color.LightGreen;
+            this.btnPointer6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnPointer6.CheckedState.Parent = this.btnPointer6;
             this.btnPointer6.CustomImages.Parent = this.btnPointer6;
-            this.btnPointer6.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnPointer6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(96)))), ((int)(((byte)(68)))));
             this.btnPointer6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer6.ForeColor = System.Drawing.Color.White;
             this.btnPointer6.HoverState.Parent = this.btnPointer6;
@@ -219,10 +220,10 @@
             // 
             // btnPointer5
             // 
-            this.btnPointer5.BackColor = System.Drawing.Color.LightGreen;
+            this.btnPointer5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnPointer5.CheckedState.Parent = this.btnPointer5;
             this.btnPointer5.CustomImages.Parent = this.btnPointer5;
-            this.btnPointer5.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnPointer5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(96)))), ((int)(((byte)(68)))));
             this.btnPointer5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer5.ForeColor = System.Drawing.Color.White;
             this.btnPointer5.HoverState.Parent = this.btnPointer5;
@@ -237,10 +238,10 @@
             // 
             // btnPointer4
             // 
-            this.btnPointer4.BackColor = System.Drawing.Color.LightGreen;
+            this.btnPointer4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnPointer4.CheckedState.Parent = this.btnPointer4;
             this.btnPointer4.CustomImages.Parent = this.btnPointer4;
-            this.btnPointer4.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnPointer4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(96)))), ((int)(((byte)(68)))));
             this.btnPointer4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer4.ForeColor = System.Drawing.Color.White;
             this.btnPointer4.HoverState.Parent = this.btnPointer4;
@@ -255,10 +256,10 @@
             // 
             // btnPointer3
             // 
-            this.btnPointer3.BackColor = System.Drawing.Color.LightGreen;
+            this.btnPointer3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnPointer3.CheckedState.Parent = this.btnPointer3;
             this.btnPointer3.CustomImages.Parent = this.btnPointer3;
-            this.btnPointer3.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnPointer3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(96)))), ((int)(((byte)(68)))));
             this.btnPointer3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer3.ForeColor = System.Drawing.Color.White;
             this.btnPointer3.HoverState.Parent = this.btnPointer3;
@@ -273,10 +274,10 @@
             // 
             // btnPointer2
             // 
-            this.btnPointer2.BackColor = System.Drawing.Color.LightGreen;
+            this.btnPointer2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnPointer2.CheckedState.Parent = this.btnPointer2;
             this.btnPointer2.CustomImages.Parent = this.btnPointer2;
-            this.btnPointer2.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnPointer2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(96)))), ((int)(((byte)(68)))));
             this.btnPointer2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer2.ForeColor = System.Drawing.Color.White;
             this.btnPointer2.HoverState.Parent = this.btnPointer2;
@@ -291,10 +292,10 @@
             // 
             // btnPointer1
             // 
-            this.btnPointer1.BackColor = System.Drawing.Color.LightGreen;
+            this.btnPointer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnPointer1.CheckedState.Parent = this.btnPointer1;
             this.btnPointer1.CustomImages.Parent = this.btnPointer1;
-            this.btnPointer1.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnPointer1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(96)))), ((int)(((byte)(68)))));
             this.btnPointer1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer1.ForeColor = System.Drawing.Color.White;
             this.btnPointer1.HoverState.Parent = this.btnPointer1;
@@ -311,7 +312,7 @@
             this.guna2CircleButton9.BackColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton9.CheckedState.Parent = this.guna2CircleButton9;
             this.guna2CircleButton9.CustomImages.Parent = this.guna2CircleButton9;
-            this.guna2CircleButton9.FillColor = System.Drawing.Color.LightGreen;
+            this.guna2CircleButton9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CircleButton9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton9.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton9.HoverState.Parent = this.guna2CircleButton9;
@@ -328,7 +329,7 @@
             this.guna2CircleButton10.BackColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton10.CheckedState.Parent = this.guna2CircleButton10;
             this.guna2CircleButton10.CustomImages.Parent = this.guna2CircleButton10;
-            this.guna2CircleButton10.FillColor = System.Drawing.Color.LightGreen;
+            this.guna2CircleButton10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CircleButton10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton10.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton10.HoverState.Parent = this.guna2CircleButton10;
@@ -345,7 +346,7 @@
             this.guna2CircleButton7.BackColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton7.CheckedState.Parent = this.guna2CircleButton7;
             this.guna2CircleButton7.CustomImages.Parent = this.guna2CircleButton7;
-            this.guna2CircleButton7.FillColor = System.Drawing.Color.LightGreen;
+            this.guna2CircleButton7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CircleButton7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton7.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton7.HoverState.Parent = this.guna2CircleButton7;
@@ -362,7 +363,7 @@
             this.guna2CircleButton8.BackColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton8.CheckedState.Parent = this.guna2CircleButton8;
             this.guna2CircleButton8.CustomImages.Parent = this.guna2CircleButton8;
-            this.guna2CircleButton8.FillColor = System.Drawing.Color.LightGreen;
+            this.guna2CircleButton8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CircleButton8.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton8.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton8.HoverState.Parent = this.guna2CircleButton8;
@@ -379,7 +380,7 @@
             this.guna2CircleButton5.BackColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton5.CheckedState.Parent = this.guna2CircleButton5;
             this.guna2CircleButton5.CustomImages.Parent = this.guna2CircleButton5;
-            this.guna2CircleButton5.FillColor = System.Drawing.Color.LightGreen;
+            this.guna2CircleButton5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CircleButton5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton5.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton5.HoverState.Parent = this.guna2CircleButton5;
@@ -396,7 +397,7 @@
             this.guna2CircleButton6.BackColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton6.CheckedState.Parent = this.guna2CircleButton6;
             this.guna2CircleButton6.CustomImages.Parent = this.guna2CircleButton6;
-            this.guna2CircleButton6.FillColor = System.Drawing.Color.LightGreen;
+            this.guna2CircleButton6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CircleButton6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton6.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton6.HoverState.Parent = this.guna2CircleButton6;
@@ -413,7 +414,7 @@
             this.guna2CircleButton3.BackColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton3.CheckedState.Parent = this.guna2CircleButton3;
             this.guna2CircleButton3.CustomImages.Parent = this.guna2CircleButton3;
-            this.guna2CircleButton3.FillColor = System.Drawing.Color.LightGreen;
+            this.guna2CircleButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton3.HoverState.Parent = this.guna2CircleButton3;
@@ -430,7 +431,7 @@
             this.guna2CircleButton4.BackColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton4.CheckedState.Parent = this.guna2CircleButton4;
             this.guna2CircleButton4.CustomImages.Parent = this.guna2CircleButton4;
-            this.guna2CircleButton4.FillColor = System.Drawing.Color.LightGreen;
+            this.guna2CircleButton4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton4.HoverState.Parent = this.guna2CircleButton4;
@@ -447,7 +448,7 @@
             this.guna2CircleButton2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton2.CheckedState.Parent = this.guna2CircleButton2;
             this.guna2CircleButton2.CustomImages.Parent = this.guna2CircleButton2;
-            this.guna2CircleButton2.FillColor = System.Drawing.Color.LightGreen;
+            this.guna2CircleButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton2.HoverState.Parent = this.guna2CircleButton2;
@@ -464,7 +465,7 @@
             this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
             this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.LightGreen;
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
@@ -484,7 +485,7 @@
             this.btnPrevious.CheckedState.Parent = this.btnPrevious;
             this.btnPrevious.CustomImages.Parent = this.btnPrevious;
             this.btnPrevious.Enabled = false;
-            this.btnPrevious.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPrevious.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnPrevious.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.Black;
             this.btnPrevious.HoverState.Parent = this.btnPrevious;
@@ -506,7 +507,7 @@
             this.btnNext.CheckedState.Parent = this.btnNext;
             this.btnNext.CustomImages.Parent = this.btnNext;
             this.btnNext.Enabled = false;
-            this.btnNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.Black;
             this.btnNext.HoverState.Parent = this.btnNext;
@@ -527,7 +528,7 @@
             this.btnConfirm.BorderRadius = 15;
             this.btnConfirm.CheckedState.Parent = this.btnConfirm;
             this.btnConfirm.CustomImages.Parent = this.btnConfirm;
-            this.btnConfirm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnConfirm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.Black;
             this.btnConfirm.HoverState.Parent = this.btnConfirm;
@@ -548,9 +549,9 @@
             this.btnB.BorderRadius = 15;
             this.btnB.CheckedState.Parent = this.btnB;
             this.btnB.CustomImages.Parent = this.btnB;
-            this.btnB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnB.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnB.ForeColor = System.Drawing.Color.Black;
+            this.btnB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.btnB.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.btnB.ForeColor = System.Drawing.Color.White;
             this.btnB.HoverState.Parent = this.btnB;
             this.btnB.Location = new System.Drawing.Point(562, 124);
             this.btnB.Margin = new System.Windows.Forms.Padding(2);
@@ -567,9 +568,9 @@
             this.btnA.BorderRadius = 15;
             this.btnA.CheckedState.Parent = this.btnA;
             this.btnA.CustomImages.Parent = this.btnA;
-            this.btnA.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnA.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnA.ForeColor = System.Drawing.Color.Black;
+            this.btnA.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.btnA.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.btnA.ForeColor = System.Drawing.Color.White;
             this.btnA.HoverState.Parent = this.btnA;
             this.btnA.Location = new System.Drawing.Point(413, 124);
             this.btnA.Margin = new System.Windows.Forms.Padding(2);
@@ -586,9 +587,9 @@
             this.btnD.BorderRadius = 15;
             this.btnD.CheckedState.Parent = this.btnD;
             this.btnD.CustomImages.Parent = this.btnD;
-            this.btnD.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnD.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnD.ForeColor = System.Drawing.Color.Black;
+            this.btnD.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.btnD.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.btnD.ForeColor = System.Drawing.Color.White;
             this.btnD.HoverState.Parent = this.btnD;
             this.btnD.Location = new System.Drawing.Point(562, 203);
             this.btnD.Margin = new System.Windows.Forms.Padding(2);
@@ -605,9 +606,9 @@
             this.btnC.BorderRadius = 15;
             this.btnC.CheckedState.Parent = this.btnC;
             this.btnC.CustomImages.Parent = this.btnC;
-            this.btnC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnC.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnC.ForeColor = System.Drawing.Color.Black;
+            this.btnC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.btnC.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.btnC.ForeColor = System.Drawing.Color.White;
             this.btnC.HoverState.Parent = this.btnC;
             this.btnC.Location = new System.Drawing.Point(413, 203);
             this.btnC.Margin = new System.Windows.Forms.Padding(2);
@@ -647,8 +648,10 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.pbMain);
             this.guna2CustomGradientPanel1.Controls.Add(this.pnlDash);
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.LightGreen;
-            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.LightGreen;
+            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
@@ -659,11 +662,12 @@
             // lbMain
             // 
             this.lbMain.BackColor = System.Drawing.Color.Transparent;
-            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
-            this.lbMain.Location = new System.Drawing.Point(0, 294);
+            this.lbMain.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lbMain.ForeColor = System.Drawing.Color.White;
+            this.lbMain.Location = new System.Drawing.Point(1, 280);
             this.lbMain.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMain.Name = "lbMain";
-            this.lbMain.Size = new System.Drawing.Size(293, 31);
+            this.lbMain.Size = new System.Drawing.Size(293, 47);
             this.lbMain.TabIndex = 7;
             this.lbMain.Text = "Welcome";
             this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -690,7 +694,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.PaleGreen;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.panel1.Location = new System.Drawing.Point(380, 28);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
