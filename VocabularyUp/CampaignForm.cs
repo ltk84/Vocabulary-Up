@@ -38,6 +38,7 @@ namespace VocabularyUp
                 pnlCampaignCate.Controls.Add(f);
                 f.FormBorderStyle = FormBorderStyle.None;
                 f.Show();
+                this.Reset();
                 return;
             }
 

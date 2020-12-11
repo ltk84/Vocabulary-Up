@@ -142,8 +142,10 @@
             this.pnlTab.Controls.Add(this.pbMain);
             this.pnlTab.Controls.Add(this.pnlDash);
             this.pnlTab.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTab.FillColor2 = System.Drawing.Color.LightGreen;
-            this.pnlTab.FillColor3 = System.Drawing.Color.LightGreen;
+            this.pnlTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlTab.Location = new System.Drawing.Point(0, 37);
             this.pnlTab.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTab.Name = "pnlTab";

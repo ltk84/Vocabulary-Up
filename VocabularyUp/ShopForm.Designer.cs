@@ -149,6 +149,7 @@
             this.btnExit.Size = new System.Drawing.Size(95, 35);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // ShopForm
             // 

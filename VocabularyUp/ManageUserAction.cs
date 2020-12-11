@@ -718,5 +718,10 @@ namespace VocabularyUp
                 ownCharacter.Add(c);
             }
         }
+
+        public static List<Character> GetOwnCharacterList()
+        {
+            return ownCharacter;
+        }
     }
 }

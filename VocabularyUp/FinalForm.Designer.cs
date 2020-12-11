@@ -60,7 +60,7 @@
             // 
             this.lbFinal.AutoSize = true;
             this.lbFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFinal.Location = new System.Drawing.Point(258, 309);
+            this.lbFinal.Location = new System.Drawing.Point(259, 313);
             this.lbFinal.Name = "lbFinal";
             this.lbFinal.Size = new System.Drawing.Size(216, 31);
             this.lbFinal.TabIndex = 2;
