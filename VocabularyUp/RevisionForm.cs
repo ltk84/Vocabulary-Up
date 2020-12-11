@@ -18,6 +18,11 @@ namespace VocabularyUp
         {
             InitializeComponent();
             ManageUserAction.UpdateOwnCharacter();
+            if (ManageUserAction.GetOwnCharacterList().Count == 1)
+            {
+                btnNext.Enabled = false;
+            }
+           
             LoadPictureBoxCharacter(currentChar);
             shop = new ShopForm(this.pnlChoosePlay);
         }
@@ -52,14 +57,7 @@ namespace VocabularyUp
             LoadShop();
         }
 
-        private void HideMenu()
-        {
-            btnShop.Hide();
-            pbCharacter.Hide();
-            btnNext.Hide();
-            btnPrevious.Hide();
-            lbName.Hide();
-        }
+       
 
         private void btnNext_Click(object sender, EventArgs e)
         {
@@ -99,6 +97,11 @@ namespace VocabularyUp
                 btnNext.Enabled = true;
                 btnToggle.Text = "0";
             }
+
+            if (ManageUserAction.GetOwnCharacterList().Count > 1 && currentChar != ManageUserAction.GetOwnCharacterList().Count - 1)
+            {
+                btnNext.Enabled = true;
+            }    
         }
     }
 }

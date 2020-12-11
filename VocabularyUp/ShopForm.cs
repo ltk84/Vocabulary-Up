@@ -41,10 +41,8 @@ namespace VocabularyUp
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            panel.Show();
             panel.Controls[0].Text = "1";
-            //this.Parent.Show();
-            
+            panel.Show();
         }
     }
 }
