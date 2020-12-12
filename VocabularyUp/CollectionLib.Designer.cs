@@ -265,7 +265,7 @@
             this.txtSearching.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearching.HoverState.Parent = this.txtSearching;
             this.txtSearching.Location = new System.Drawing.Point(68, 14);
-            this.txtSearching.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearching.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearching.Name = "txtSearching";
             this.txtSearching.PasswordChar = '\0';
             this.txtSearching.PlaceholderText = "Search flashcard";
@@ -288,7 +288,7 @@
             this.btnLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft.Image")));
             this.btnLeft.ImageSize = new System.Drawing.Size(115, 130);
             this.btnLeft.Location = new System.Drawing.Point(0, 0);
-            this.btnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.ShadowDecoration.Parent = this.btnLeft;
             this.btnLeft.Size = new System.Drawing.Size(303, 519);
@@ -308,7 +308,7 @@
             this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
             this.btnRight.ImageSize = new System.Drawing.Size(115, 130);
             this.btnRight.Location = new System.Drawing.Point(697, 0);
-            this.btnRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(4);
             this.btnRight.Name = "btnRight";
             this.btnRight.ShadowDecoration.Parent = this.btnRight;
             this.btnRight.Size = new System.Drawing.Size(303, 519);

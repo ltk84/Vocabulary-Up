@@ -12,10 +12,30 @@ namespace VocabularyUp
 {
     public partial class StatisticResultForm : Form
     {
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
         public StatisticResultForm()
         {
             InitializeComponent();
+            UpdateTheme();
             UpdateInfoResult();
+        }
+
+        private void UpdateTheme()
+        {
+            this.guna2CustomGradientPanel1.BackColor = primary;
+            this.guna2CustomGradientPanel1.FillColor = secondary;
+            this.guna2CustomGradientPanel1.FillColor2 = secondary;
+            this.guna2CustomGradientPanel1.FillColor3 = secondary;
+            this.guna2CustomGradientPanel1.FillColor4 = secondary;
+            this.guna2CustomGradientPanel2.BackColor = primary;
+            this.guna2CustomGradientPanel5.FillColor = secondary;
+            this.guna2CustomGradientPanel5.FillColor2 = secondary;
+            this.guna2CustomGradientPanel5.FillColor3 = secondary;
+            this.guna2CustomGradientPanel5.FillColor4 = secondary;
+            this.guna2GradientPanel2.BackColor = secondary;
+            this.guna2GradientPanel3.BackColor = secondary;
+            this.guna2GradientPanel4.BackColor = secondary;
         }
 
         public void UpdateInfoResult()

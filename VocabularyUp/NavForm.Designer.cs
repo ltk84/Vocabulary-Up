@@ -68,7 +68,7 @@
             this.barTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.barTop.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.barTop.Location = new System.Drawing.Point(0, 0);
-            this.barTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barTop.Margin = new System.Windows.Forms.Padding(4);
             this.barTop.Name = "barTop";
             this.barTop.ShadowDecoration.Parent = this.barTop;
             this.barTop.Size = new System.Drawing.Size(1063, 34);
@@ -93,8 +93,9 @@
             this.pbIconNav.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbIconNav.BackgroundImage")));
             this.pbIconNav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pbIconNav.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbIconNav.Enabled = false;
             this.pbIconNav.Location = new System.Drawing.Point(0, 0);
-            this.pbIconNav.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbIconNav.Margin = new System.Windows.Forms.Padding(4);
             this.pbIconNav.Name = "pbIconNav";
             this.pbIconNav.Size = new System.Drawing.Size(52, 34);
             this.pbIconNav.TabIndex = 3;
@@ -115,7 +116,7 @@
             this.btnHide.ImageOffset = new System.Drawing.Point(1, -1);
             this.btnHide.ImageSize = new System.Drawing.Size(15, 20);
             this.btnHide.Location = new System.Drawing.Point(930, 0);
-            this.btnHide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHide.Margin = new System.Windows.Forms.Padding(4);
             this.btnHide.Name = "btnHide";
             this.btnHide.ShadowDecoration.Parent = this.btnHide;
             this.btnHide.Size = new System.Drawing.Size(44, 34);
@@ -136,7 +137,7 @@
             this.btnFullScr.Image = ((System.Drawing.Image)(resources.GetObject("btnFullScr.Image")));
             this.btnFullScr.ImageSize = new System.Drawing.Size(19, 19);
             this.btnFullScr.Location = new System.Drawing.Point(974, 0);
-            this.btnFullScr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFullScr.Margin = new System.Windows.Forms.Padding(4);
             this.btnFullScr.Name = "btnFullScr";
             this.btnFullScr.ShadowDecoration.Parent = this.btnFullScr;
             this.btnFullScr.Size = new System.Drawing.Size(44, 34);
@@ -159,7 +160,7 @@
             this.btnExit.ImageOffset = new System.Drawing.Point(-3, -1);
             this.btnExit.ImageSize = new System.Drawing.Size(15, 15);
             this.btnExit.Location = new System.Drawing.Point(1018, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
             this.btnExit.Size = new System.Drawing.Size(45, 34);
@@ -189,7 +190,7 @@
             this.pnlNavigation.Controls.Add(this.btnLib);
             this.pnlNavigation.Controls.Add(this.btnStatistic);
             this.pnlNavigation.Location = new System.Drawing.Point(181, 50);
-            this.pnlNavigation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlNavigation.Margin = new System.Windows.Forms.Padding(4);
             this.pnlNavigation.Name = "pnlNavigation";
             this.pnlNavigation.Size = new System.Drawing.Size(731, 34);
             this.pnlNavigation.TabIndex = 12;
@@ -280,7 +281,7 @@
             this.btnRevision.ForeColor = System.Drawing.Color.Black;
             this.btnRevision.HoverState.Parent = this.btnRevision;
             this.btnRevision.Location = new System.Drawing.Point(435, 0);
-            this.btnRevision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRevision.Margin = new System.Windows.Forms.Padding(4);
             this.btnRevision.Name = "btnRevision";
             this.btnRevision.ShadowDecoration.Parent = this.btnRevision;
             this.btnRevision.Size = new System.Drawing.Size(140, 34);
@@ -300,7 +301,7 @@
             this.btnCampaign.ForeColor = System.Drawing.Color.Black;
             this.btnCampaign.HoverState.Parent = this.btnCampaign;
             this.btnCampaign.Location = new System.Drawing.Point(295, 0);
-            this.btnCampaign.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCampaign.Margin = new System.Windows.Forms.Padding(4);
             this.btnCampaign.Name = "btnCampaign";
             this.btnCampaign.ShadowDecoration.Parent = this.btnCampaign;
             this.btnCampaign.Size = new System.Drawing.Size(140, 34);
@@ -320,7 +321,7 @@
             this.btnCollection.ForeColor = System.Drawing.Color.Black;
             this.btnCollection.HoverState.Parent = this.btnCollection;
             this.btnCollection.Location = new System.Drawing.Point(155, 0);
-            this.btnCollection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCollection.Margin = new System.Windows.Forms.Padding(4);
             this.btnCollection.Name = "btnCollection";
             this.btnCollection.ShadowDecoration.Parent = this.btnCollection;
             this.btnCollection.Size = new System.Drawing.Size(140, 34);
@@ -343,7 +344,7 @@
             this.btnLib.HoverState.Parent = this.btnLib;
             this.btnLib.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnLib.Location = new System.Drawing.Point(1, 0);
-            this.btnLib.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLib.Margin = new System.Windows.Forms.Padding(4);
             this.btnLib.Name = "btnLib";
             this.btnLib.ShadowDecoration.Parent = this.btnLib;
             this.btnLib.Size = new System.Drawing.Size(180, 34);
@@ -365,7 +366,7 @@
             this.btnStatistic.ForeColor = System.Drawing.Color.Black;
             this.btnStatistic.HoverState.Parent = this.btnStatistic;
             this.btnStatistic.Location = new System.Drawing.Point(548, 0);
-            this.btnStatistic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatistic.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatistic.Name = "btnStatistic";
             this.btnStatistic.ShadowDecoration.Parent = this.btnStatistic;
             this.btnStatistic.Size = new System.Drawing.Size(180, 34);
@@ -430,7 +431,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NavForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.NavForm_Load);

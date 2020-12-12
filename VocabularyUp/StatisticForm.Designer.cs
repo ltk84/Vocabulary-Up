@@ -31,14 +31,14 @@
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlShowStatistic = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.dashResult = new System.Windows.Forms.Panel();
+            this.dashInfo = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblBeginDate = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblTen = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.dashInfo = new System.Windows.Forms.Panel();
-            this.dashResult = new System.Windows.Forms.Panel();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -96,6 +96,24 @@
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(221, 514);
             this.guna2CustomGradientPanel2.TabIndex = 0;
             // 
+            // dashResult
+            // 
+            this.dashResult.BackColor = System.Drawing.Color.White;
+            this.dashResult.Location = new System.Drawing.Point(187, 250);
+            this.dashResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dashResult.Name = "dashResult";
+            this.dashResult.Size = new System.Drawing.Size(5, 52);
+            this.dashResult.TabIndex = 14;
+            // 
+            // dashInfo
+            // 
+            this.dashInfo.BackColor = System.Drawing.Color.White;
+            this.dashInfo.Location = new System.Drawing.Point(187, 188);
+            this.dashInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dashInfo.Name = "dashInfo";
+            this.dashInfo.Size = new System.Drawing.Size(5, 52);
+            this.dashInfo.TabIndex = 13;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -112,7 +130,7 @@
             this.lblBeginDate.AutoSize = true;
             this.lblBeginDate.Font = new System.Drawing.Font("Montserrat Alternates", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBeginDate.ForeColor = System.Drawing.Color.White;
-            this.lblBeginDate.Location = new System.Drawing.Point(104, 151);
+            this.lblBeginDate.Location = new System.Drawing.Point(110, 151);
             this.lblBeginDate.Name = "lblBeginDate";
             this.lblBeginDate.Size = new System.Drawing.Size(79, 21);
             this.lblBeginDate.TabIndex = 7;
@@ -173,24 +191,6 @@
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // dashInfo
-            // 
-            this.dashInfo.BackColor = System.Drawing.Color.White;
-            this.dashInfo.Location = new System.Drawing.Point(187, 188);
-            this.dashInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dashInfo.Name = "dashInfo";
-            this.dashInfo.Size = new System.Drawing.Size(5, 52);
-            this.dashInfo.TabIndex = 13;
-            // 
-            // dashResult
-            // 
-            this.dashResult.BackColor = System.Drawing.Color.White;
-            this.dashResult.Location = new System.Drawing.Point(187, 250);
-            this.dashResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dashResult.Name = "dashResult";
-            this.dashResult.Size = new System.Drawing.Size(5, 52);
-            this.dashResult.TabIndex = 14;
             // 
             // StatisticForm
             // 

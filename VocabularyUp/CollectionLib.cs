@@ -19,9 +19,13 @@ namespace VocabularyUp
         FlashCard curFlashCard;
         Collection curCollection;
         CollectionForm collectionTab;
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
         public CollectionLib(CollectionForm collectionTab, int idCollection)
         {
             InitializeComponent();
+            //
+            UpdateTheme();
             //
             this.collectionTab = collectionTab;
             this.KeyPreview = true;
@@ -36,6 +40,16 @@ namespace VocabularyUp
             curFlashCard = curCollection.ListFL[index];
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
             InitAutoCompleteTextBox();
+        }
+        private void UpdateTheme()
+        {
+            this.pnlMainNav.BackColor = primary;
+            this.pnlTab.FillColor = primary;
+            this.pnlTab.FillColor2 = primary;
+            this.pnlTab.FillColor3 = primary;
+            this.pnlTab.FillColor4 = primary;
+            this.btnRemoveFromCollection.FillColor = primary;
+            this.btnBack.Image = Image.FromFile("../../icons/back_arrow_dark.png");
         }
         public void ChangeFlashCard(string content, int id)
         {

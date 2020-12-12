@@ -12,20 +12,31 @@ namespace VocabularyUp
 {
     public partial class CollectionForm : Form
     {
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
         public CollectionForm()
         {
             InitializeComponent();
+            UpdateTheme();
+        }
+
+        private void UpdateTheme()
+        {
+            this.pnlCollection.BackColor = primary;
+            this.btnAdd.FillColor = primary;
+            this.btnRename.FillColor = primary;
+            this.btnDel.FillColor = primary;
         }
 
         public void LoadImageListView()
         {
-            imageList1.Images.Add("Collection", Image.FromFile("../../icons/book-icon.png"));
+            imageList1.Images.Add("Collection", Image.FromFile("../../icons/book_80px.png"));
         }
 
         public void LoadListView()
         {
             lvCollection.Items.Clear();
-            imageList1.Images.Add("Collection", Image.FromFile("../../icons/book-icon.png"));
+            imageList1.Images.Add("Collection", Image.FromFile("../../icons/book_80px.png"));
             lvCollection.SmallImageList = imageList1;
             lvCollection.LargeImageList = imageList1;
             for (int i = 0; i < ManageUserAction.CollectionCount(); i++)

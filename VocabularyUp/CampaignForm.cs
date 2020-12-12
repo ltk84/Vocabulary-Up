@@ -18,7 +18,34 @@ namespace VocabularyUp
         public CampaignForm()
         {
             InitializeComponent();
+            //UpdateTheme();
             this.KeyPreview = true;
+        }
+
+        private void UpdateTheme()
+        {
+            this.pnlTopicSelection.BackColor = Color.FromArgb(27, 58, 75);
+            this.label3.ForeColor = Color.FromArgb(27, 58, 75);
+            this.guna2CustomGradientPanel2.FillColor = Color.FromArgb(27, 58, 75);
+            this.guna2CustomGradientPanel2.FillColor2 = Color.FromArgb(27, 58, 75);
+            this.guna2CustomGradientPanel2.FillColor3 = Color.FromArgb(27, 58, 75);
+            this.guna2CustomGradientPanel2.FillColor4 = Color.FromArgb(27, 58, 75);
+            this.guna2CustomGradientPanel3.FillColor = Color.FromArgb(27, 58, 75);
+            this.guna2CustomGradientPanel3.FillColor2 = Color.FromArgb(27, 58, 75);
+            this.guna2CustomGradientPanel3.FillColor3 = Color.FromArgb(27, 58, 75);
+            this.guna2CustomGradientPanel3.FillColor4 = Color.FromArgb(27, 58, 75);
+
+            this.btnFilBlank.FillColor = Color.FromArgb(27, 58, 75);
+            this.btnMultipleChoice.FillColor = Color.FromArgb(27, 58, 75);
+            this.btnAnimals.FillColor = Color.FromArgb(27, 58, 75);
+            this.btnFruits.FillColor = Color.FromArgb(27, 58, 75);
+            this.btnPlants.FillColor = Color.FromArgb(27, 58, 75);
+            this.btnJob.FillColor = Color.FromArgb(27, 58, 75);
+            this.btnFoodaDrinks.FillColor = Color.FromArgb(27, 58, 75);
+            this.btnSport.FillColor = Color.FromArgb(27, 58, 75);
+            this.btnClothing.FillColor = Color.FromArgb(27, 58, 75);
+            this.btnTechnology.FillColor = Color.FromArgb(27, 58, 75);
+            this.btnConfirm.FillColor = Color.FromArgb(27, 58, 75);
         }
 
         public int GetType()

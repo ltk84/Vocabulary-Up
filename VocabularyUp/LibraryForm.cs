@@ -18,14 +18,27 @@ namespace VocabularyUp
         SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         private static int index = 0;
         FlashCard curFlashCard;
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
         public LibraryForm()
         {
             InitializeComponent();
+            UpdateTheme();
             this.KeyPreview = true;
             ManageSystem.InitLibrary();
             curFlashCard = ManageSystem.GetFlashCard(index);
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
             InitAutoCompleteTextBox();
+        }
+
+        private void UpdateTheme()
+        {
+            this.pnlMainNav.BackColor = primary;
+            this.btnToCollection.FillColor = primary;
+            this.pnlTab.FillColor = primary;
+            this.pnlTab.FillColor2 = primary;
+            this.pnlTab.FillColor3 = primary;
+            this.pnlTab.FillColor4 = primary;
         }
 
         public void ChangeFlashCard(string content, int id)
