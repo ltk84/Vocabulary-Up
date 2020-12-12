@@ -64,17 +64,17 @@
             this.lblBack = new System.Windows.Forms.Label();
             this.btnCheckEmail = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCheckEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtRePassForget = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtPassForget = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtValidateCode = new Guna.UI2.WinForms.Guna2TextBox();
-            this.countDown = new System.Windows.Forms.Timer(this.components);
-            this.countDownText = new System.Windows.Forms.Timer(this.components);
+            this.txtCheckEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtRePassForget = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pbInfo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.countDown = new System.Windows.Forms.Timer(this.components);
+            this.countDownText = new System.Windows.Forms.Timer(this.components);
             this.pnlUserLogin.SuspendLayout();
             this.pnlSignup.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
@@ -116,11 +116,11 @@
             // 
             this.lbForget.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbForget, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbForget.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F, System.Drawing.FontStyle.Bold);
+            this.lbForget.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.lbForget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(96)))), ((int)(((byte)(68)))));
             this.lbForget.Location = new System.Drawing.Point(81, 283);
             this.lbForget.Name = "lbForget";
-            this.lbForget.Size = new System.Drawing.Size(143, 19);
+            this.lbForget.Size = new System.Drawing.Size(137, 17);
             this.lbForget.TabIndex = 33;
             this.lbForget.Text = "Forget password?";
             this.lbForget.Click += new System.EventHandler(this.lbForget_Click);
@@ -129,11 +129,11 @@
             // 
             this.lbUserLogin.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbUserLogin, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbUserLogin.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold);
+            this.lbUserLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.lbUserLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbUserLogin.Location = new System.Drawing.Point(140, 34);
             this.lbUserLogin.Name = "lbUserLogin";
-            this.lbUserLogin.Size = new System.Drawing.Size(97, 37);
+            this.lbUserLogin.Size = new System.Drawing.Size(91, 32);
             this.lbUserLogin.TabIndex = 32;
             this.lbUserLogin.Text = "Login";
             // 
@@ -141,11 +141,11 @@
             // 
             this.lbRemember_Login.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbRemember_Login, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbRemember_Login.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F, System.Drawing.FontStyle.Bold);
+            this.lbRemember_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.lbRemember_Login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbRemember_Login.Location = new System.Drawing.Point(120, 209);
             this.lbRemember_Login.Name = "lbRemember_Login";
-            this.lbRemember_Login.Size = new System.Drawing.Size(120, 19);
+            this.lbRemember_Login.Size = new System.Drawing.Size(111, 17);
             this.lbRemember_Login.TabIndex = 23;
             this.lbRemember_Login.Text = "Remember me";
             // 
@@ -173,11 +173,11 @@
             // 
             this.lbNoAccount_Login.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbNoAccount_Login, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbNoAccount_Login.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
+            this.lbNoAccount_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.lbNoAccount_Login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbNoAccount_Login.Location = new System.Drawing.Point(107, 330);
             this.lbNoAccount_Login.Name = "lbNoAccount_Login";
-            this.lbNoAccount_Login.Size = new System.Drawing.Size(176, 19);
+            this.lbNoAccount_Login.Size = new System.Drawing.Size(158, 17);
             this.lbNoAccount_Login.TabIndex = 27;
             this.lbNoAccount_Login.Text = "Don\'t have an account?";
             this.lbNoAccount_Login.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -293,7 +293,7 @@
             this.transitionPanel.SetDecoration(this.pnlSignup, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlSignup.FillColor = System.Drawing.Color.Transparent;
             this.pnlSignup.FillColor2 = System.Drawing.Color.Transparent;
-            this.pnlSignup.Location = new System.Drawing.Point(514, 162);
+            this.pnlSignup.Location = new System.Drawing.Point(514, 160);
             this.pnlSignup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlSignup.Name = "pnlSignup";
             this.pnlSignup.ShadowDecoration.Parent = this.pnlSignup;
@@ -305,11 +305,11 @@
             // 
             this.lbSignup.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbSignup, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbSignup.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold);
+            this.lbSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.lbSignup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbSignup.Location = new System.Drawing.Point(129, 33);
             this.lbSignup.Name = "lbSignup";
-            this.lbSignup.Size = new System.Drawing.Size(128, 37);
+            this.lbSignup.Size = new System.Drawing.Size(123, 32);
             this.lbSignup.TabIndex = 12;
             this.lbSignup.Text = "Sign Up";
             // 
@@ -344,11 +344,11 @@
             // 
             this.lbLoginAccess_SignUp.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbLoginAccess_SignUp, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbLoginAccess_SignUp.Font = new System.Drawing.Font("Montserrat Alternates", 10.2F, System.Drawing.FontStyle.Bold);
+            this.lbLoginAccess_SignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.lbLoginAccess_SignUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbLoginAccess_SignUp.Location = new System.Drawing.Point(259, 380);
             this.lbLoginAccess_SignUp.Name = "lbLoginAccess_SignUp";
-            this.lbLoginAccess_SignUp.Size = new System.Drawing.Size(65, 23);
+            this.lbLoginAccess_SignUp.Size = new System.Drawing.Size(61, 20);
             this.lbLoginAccess_SignUp.TabIndex = 5;
             this.lbLoginAccess_SignUp.Text = "Log in";
             this.lbLoginAccess_SignUp.Click += new System.EventHandler(this.lbLoginAccess_SignUp_Click);
@@ -523,23 +523,23 @@
             // 
             // transitionPanel
             // 
-            //this.transitionPanel.Cursor = null;
-            //animation2.AnimateOnlyDifferences = true;
-            //animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            //animation2.LeafCoeff = 0F;
-            //animation2.MaxTime = 1F;
-            //animation2.MinTime = 0F;
-            //animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            //animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            //animation2.MosaicSize = 0;
-            //animation2.Padding = new System.Windows.Forms.Padding(0);
-            //animation2.RotateCoeff = 0F;
-            //animation2.RotateLimit = 0F;
-            //animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            //animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            //animation2.TimeCoeff = 0F;
-            //animation2.TransparencyCoeff = 0F;
-            //this.transitionPanel.DefaultAnimation = animation2;
+            this.transitionPanel.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.transitionPanel.DefaultAnimation = animation2;
             // 
             // pnlForgetPass
             // 
@@ -559,7 +559,7 @@
             this.transitionPanel.SetDecoration(this.pnlForgetPass, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlForgetPass.FillColor = System.Drawing.Color.Transparent;
             this.pnlForgetPass.FillColor2 = System.Drawing.Color.Transparent;
-            this.pnlForgetPass.Location = new System.Drawing.Point(514, 162);
+            this.pnlForgetPass.Location = new System.Drawing.Point(514, 160);
             this.pnlForgetPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlForgetPass.Name = "pnlForgetPass";
             this.pnlForgetPass.ShadowDecoration.Parent = this.pnlForgetPass;
@@ -571,11 +571,11 @@
             // 
             this.lbCountDown.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbCountDown, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbCountDown.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
+            this.lbCountDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.lbCountDown.ForeColor = System.Drawing.Color.White;
             this.lbCountDown.Location = new System.Drawing.Point(146, 72);
             this.lbCountDown.Name = "lbCountDown";
-            this.lbCountDown.Size = new System.Drawing.Size(91, 19);
+            this.lbCountDown.Size = new System.Drawing.Size(79, 17);
             this.lbCountDown.TabIndex = 16;
             this.lbCountDown.Text = "Please wait";
             this.lbCountDown.Visible = false;
@@ -599,11 +599,11 @@
             // 
             this.lblBack.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lblBack, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblBack.Font = new System.Drawing.Font("Montserrat Alternates", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lblBack.Location = new System.Drawing.Point(37, 334);
             this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(56, 23);
+            this.lblBack.Size = new System.Drawing.Size(51, 20);
             this.lblBack.TabIndex = 14;
             this.lblBack.Text = "Back";
             this.lblBack.Visible = false;
@@ -621,7 +621,7 @@
             this.btnCheckEmail.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckEmail.ForeColor = System.Drawing.Color.White;
             this.btnCheckEmail.HoverState.Parent = this.btnCheckEmail;
-            this.btnCheckEmail.Location = new System.Drawing.Point(77, 256);
+            this.btnCheckEmail.Location = new System.Drawing.Point(77, 236);
             this.btnCheckEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCheckEmail.Name = "btnCheckEmail";
             this.btnCheckEmail.ShadowDecoration.Parent = this.btnCheckEmail;
@@ -634,82 +634,26 @@
             // 
             this.label1.AutoSize = true;
             this.transitionPanel.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.label1.Location = new System.Drawing.Point(68, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 37);
+            this.label1.Size = new System.Drawing.Size(243, 32);
             this.label1.TabIndex = 12;
             this.label1.Text = "Forget Password";
-            // 
-            // txtCheckEmail
-            // 
-            this.txtCheckEmail.Animated = true;
-            this.txtCheckEmail.BorderRadius = 8;
-            this.txtCheckEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.transitionPanel.SetDecoration(this.txtCheckEmail, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.txtCheckEmail.DefaultText = "";
-            this.txtCheckEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCheckEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCheckEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCheckEmail.DisabledState.Parent = this.txtCheckEmail;
-            this.txtCheckEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCheckEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCheckEmail.FocusedState.Parent = this.txtCheckEmail;
-            this.txtCheckEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCheckEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCheckEmail.HoverState.Parent = this.txtCheckEmail;
-            this.txtCheckEmail.Location = new System.Drawing.Point(77, 161);
-            this.txtCheckEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCheckEmail.Name = "txtCheckEmail";
-            this.txtCheckEmail.PasswordChar = '\0';
-            this.txtCheckEmail.PlaceholderText = "Email";
-            this.txtCheckEmail.SelectedText = "";
-            this.txtCheckEmail.ShadowDecoration.Parent = this.txtCheckEmail;
-            this.txtCheckEmail.Size = new System.Drawing.Size(240, 44);
-            this.txtCheckEmail.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.transitionPanel.SetDecoration(this.label2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label2.Font = new System.Drawing.Font("Montserrat Alternates", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.label2.Location = new System.Drawing.Point(289, 334);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 23);
+            this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Log in";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // txtRePassForget
-            // 
-            this.txtRePassForget.Animated = true;
-            this.txtRePassForget.BorderRadius = 8;
-            this.txtRePassForget.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.transitionPanel.SetDecoration(this.txtRePassForget, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.txtRePassForget.DefaultText = "";
-            this.txtRePassForget.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtRePassForget.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtRePassForget.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRePassForget.DisabledState.Parent = this.txtRePassForget;
-            this.txtRePassForget.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRePassForget.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRePassForget.FocusedState.Parent = this.txtRePassForget;
-            this.txtRePassForget.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtRePassForget.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRePassForget.HoverState.Parent = this.txtRePassForget;
-            this.txtRePassForget.Location = new System.Drawing.Point(77, 161);
-            this.txtRePassForget.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtRePassForget.Name = "txtRePassForget";
-            this.txtRePassForget.PasswordChar = '\0';
-            this.txtRePassForget.PlaceholderText = "Re-password";
-            this.txtRePassForget.SelectedText = "";
-            this.txtRePassForget.ShadowDecoration.Parent = this.txtRePassForget;
-            this.txtRePassForget.Size = new System.Drawing.Size(240, 44);
-            this.txtRePassForget.TabIndex = 3;
-            this.txtRePassForget.UseSystemPasswordChar = true;
-            this.txtRePassForget.Visible = false;
             // 
             // btnConfirm
             // 
@@ -790,26 +734,72 @@
             this.txtValidateCode.TabIndex = 1;
             this.txtValidateCode.Visible = false;
             // 
-            // countDown
+            // txtCheckEmail
             // 
-            this.countDown.Interval = 5000;
-            this.countDown.Tick += new System.EventHandler(this.countDown_Tick);
+            this.txtCheckEmail.Animated = true;
+            this.txtCheckEmail.BorderRadius = 8;
+            this.txtCheckEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.transitionPanel.SetDecoration(this.txtCheckEmail, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.txtCheckEmail.DefaultText = "";
+            this.txtCheckEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCheckEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCheckEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCheckEmail.DisabledState.Parent = this.txtCheckEmail;
+            this.txtCheckEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCheckEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCheckEmail.FocusedState.Parent = this.txtCheckEmail;
+            this.txtCheckEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCheckEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCheckEmail.HoverState.Parent = this.txtCheckEmail;
+            this.txtCheckEmail.Location = new System.Drawing.Point(77, 157);
+            this.txtCheckEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCheckEmail.Name = "txtCheckEmail";
+            this.txtCheckEmail.PasswordChar = '\0';
+            this.txtCheckEmail.PlaceholderText = "Email";
+            this.txtCheckEmail.SelectedText = "";
+            this.txtCheckEmail.ShadowDecoration.Parent = this.txtCheckEmail;
+            this.txtCheckEmail.Size = new System.Drawing.Size(240, 44);
+            this.txtCheckEmail.TabIndex = 0;
             // 
-            // countDownText
+            // txtRePassForget
             // 
-            this.countDownText.Interval = 1000;
-            this.countDownText.Tick += new System.EventHandler(this.countDownText_Tick);
+            this.txtRePassForget.Animated = true;
+            this.txtRePassForget.BorderRadius = 8;
+            this.txtRePassForget.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.transitionPanel.SetDecoration(this.txtRePassForget, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.txtRePassForget.DefaultText = "";
+            this.txtRePassForget.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtRePassForget.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtRePassForget.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRePassForget.DisabledState.Parent = this.txtRePassForget;
+            this.txtRePassForget.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRePassForget.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRePassForget.FocusedState.Parent = this.txtRePassForget;
+            this.txtRePassForget.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtRePassForget.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRePassForget.HoverState.Parent = this.txtRePassForget;
+            this.txtRePassForget.Location = new System.Drawing.Point(77, 161);
+            this.txtRePassForget.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtRePassForget.Name = "txtRePassForget";
+            this.txtRePassForget.PasswordChar = '\0';
+            this.txtRePassForget.PlaceholderText = "Re-password";
+            this.txtRePassForget.SelectedText = "";
+            this.txtRePassForget.ShadowDecoration.Parent = this.txtRePassForget;
+            this.txtRePassForget.Size = new System.Drawing.Size(240, 44);
+            this.txtRePassForget.TabIndex = 3;
+            this.txtRePassForget.UseSystemPasswordChar = true;
+            this.txtRePassForget.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.transitionPanel.SetDecoration(this.label3, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label3.Font = new System.Drawing.Font("Montserrat Alternates ExtraBold", 22F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.label3.Location = new System.Drawing.Point(45, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(321, 51);
+            this.label3.Size = new System.Drawing.Size(277, 42);
             this.label3.TabIndex = 52;
             this.label3.Text = "Vocabulary Up";
             // 
@@ -830,13 +820,23 @@
             // 
             this.transitionPanel.SetDecoration(this.guna2PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.Location = new System.Drawing.Point(671, 95);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(649, 96);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
             this.guna2PictureBox1.Size = new System.Drawing.Size(100, 86);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 54;
             this.guna2PictureBox1.TabStop = false;
+            // 
+            // countDown
+            // 
+            this.countDown.Interval = 5000;
+            this.countDown.Tick += new System.EventHandler(this.countDown_Tick);
+            // 
+            // countDownText
+            // 
+            this.countDownText.Interval = 1000;
+            this.countDownText.Tick += new System.EventHandler(this.countDownText_Tick);
             // 
             // UserAccessForm
             // 
@@ -848,11 +848,11 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(930, 616);
             this.Controls.Add(this.guna2PictureBox1);
+            this.Controls.Add(this.pnlForgetPass);
+            this.Controls.Add(this.pnlSignup);
             this.Controls.Add(this.pbInfo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pnlTitleBar);
-            this.Controls.Add(this.pnlForgetPass);
-            this.Controls.Add(this.pnlSignup);
             this.Controls.Add(this.pnlUserLogin);
             this.transitionPanel.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

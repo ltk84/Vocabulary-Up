@@ -89,7 +89,6 @@ D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\bin\Debug\Guna.UI2
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csprojAssemblyReference.cache
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CampaignForm.resources
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.Display_CampaignForm.resources
-D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CampaignFormExt.resources
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CollectionForm.resources
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.FillBlankForm.resources
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.LibraryForm.resources
@@ -195,3 +194,14 @@ D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\Vocab
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ShopForm.resources
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ItemForm.resources
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.FinalForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CollectionLib.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.DetailsForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.FinalForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ItemForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.LearningForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ResultForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ShopForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticInfoForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticResultForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.LoadingForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.IntroductionForm.resources

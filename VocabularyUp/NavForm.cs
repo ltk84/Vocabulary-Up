@@ -209,6 +209,7 @@ namespace VocabularyUp
         CollectionForm collectionTab;
         RevisionForm revisionTab;
         StatisticForm statisticTab;
+        IntroductionForm introduction;
         //int flag = 0;
 
         public NavForm(UserAccessForm userAccess, int currentID)
@@ -227,6 +228,7 @@ namespace VocabularyUp
             collectionTab = new CollectionForm();
             revisionTab = new RevisionForm();
             statisticTab = new StatisticForm();
+            introduction = new IntroductionForm();
             // Connect đến database để load MainFlashCard
             //ManageUserAction.UpdateMainFlashCard();
 
@@ -364,6 +366,13 @@ namespace VocabularyUp
         private void NavForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            introduction.ShowDialog();
+            this.Show();
         }
     }
 }

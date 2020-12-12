@@ -52,9 +52,11 @@
             this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.dashFix2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.dashFix1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.barTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconNav)).BeginInit();
             this.pnlNavigation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // barTop
@@ -409,12 +411,25 @@
             this.dashFix1.Size = new System.Drawing.Size(780, 1);
             this.dashFix1.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(966, 51);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(52, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // NavForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(1063, 650);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dashFix1);
             this.Controls.Add(this.dashFix2);
             this.Controls.Add(this.pnlTab);
@@ -431,6 +446,7 @@
             this.barTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconNav)).EndInit();
             this.pnlNavigation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -459,6 +475,7 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel dashRevisionTab;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel dashCampaignTab;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel dashCollectionTab;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

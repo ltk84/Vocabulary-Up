@@ -59,7 +59,10 @@ namespace VocabularyUp
             if (ManageSystem.CheckLoginIfValid(txtUsename_Login.Text, txtPassword_Login.Text))
             {
                 if (ManageSystem.CheckSignIn(txtUsename_Login.Text, encodedPassword))
-                    ToNavTab(ManageSystem.GetUserID(txtUsename_Login.Text));
+                {
+                    ToLoading(ManageSystem.GetUserID(txtUsename_Login.Text));
+                    //ToNavTab(ManageSystem.GetUserID(txtUsename_Login.Text));
+                }
                 else
                     MessageBox.Show("Username or Password is not correct", "Notification");
             }
@@ -90,7 +93,8 @@ namespace VocabularyUp
                 {
                     string encodedPassword = ManageSystem.EncryptPassword(txtPassword_SignUp.Text);
                     ManageSystem.AddUser(txtUsername_SignUp.Text, txtEmail_SignUp.Text, encodedPassword);
-                    ToNavTab(ManageSystem.GetUserID(txtUsername_SignUp.Text));
+                    ToLoading(ManageSystem.GetUserID(txtUsername_SignUp.Text));
+                   // ToNavTab(ManageSystem.GetUserID(txtUsername_SignUp.Text));
                 }
                 else
                     return;
@@ -98,7 +102,17 @@ namespace VocabularyUp
             else
                 return;
         }
-        
+
+        private void ToLoading(int currentID)
+        {
+            pnlUserLogin.Visible = true;
+            pnlSignup.Visible = false;
+            transitionPanel.HideSync(pnlSignup);
+            LoadingForm loadingForm = new LoadingForm(this, currentID);
+            loadingForm.Show();
+            this.Hide();
+            ClearTextBox();
+        }
         private void ToNavTab(int currentID)
         {
             pnlUserLogin.Visible = true;
@@ -110,7 +124,7 @@ namespace VocabularyUp
             this.Hide();
             ClearTextBox();
         }
-               
+
         private void lbForget_Click(object sender, EventArgs e)
         {
             pnlUserLogin.Visible = false;
@@ -293,6 +307,10 @@ namespace VocabularyUp
             CountDownLabel();
 
         }
+
+       
+
+      
     }
 }
 
