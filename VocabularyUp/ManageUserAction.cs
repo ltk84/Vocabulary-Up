@@ -14,7 +14,7 @@ namespace VocabularyUp
         private static User currentUser;
         private static List<FlashCard> mainFlashCard = new List<FlashCard>();
         private static List<Collection> allCollections = new List<Collection>();
-        private static List<Character> ownCharacter = new List<Character>();
+        private static List<Skin> ownSkin = new List<Skin>();
         private static int diamond;
         private static string constr = @ConfigurationManager.AppSettings.Get("connectString");
 
@@ -696,12 +696,12 @@ namespace VocabularyUp
         
         public static void UpdateOwnCharacter()
         {
-            ownCharacter.Clear();
+            ownSkin.Clear();
             SqlConnection connection = new SqlConnection(constr);
             connection.Open();
 
             //Chuan bi cau lenh query viet bang SQL 
-            String sqlQuery = "select c.ID, c.NAME, c.HEALTH, c.DAMAGE, c.PRICE from USER_character u_c, CHARACTER c where u_c.id_char = c.id and ID_USER = " + currentUser.IdUser.ToString();
+            String sqlQuery = "select c.ID, c.NAME, c.PRICE from USER_character u_c, CHARACTER c where u_c.id_char = c.id and ID_USER = " + currentUser.IdUser.ToString();
             
             //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
             SqlCommand command = new SqlCommand(sqlQuery, connection);
@@ -714,20 +714,20 @@ namespace VocabularyUp
             {
                 if (reader.Read() == false) break;
 
-                Character c = new Character(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetInt32(4));
+                Skin c = new Skin(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2));
 
-                ownCharacter.Add(c);
+                ownSkin.Add(c);
             }
         }
 
-        public static List<Character> GetOwnCharacterList()
+        public static List<Skin> GetOwnCharacterList()
         {
-            return ownCharacter;
+            return ownSkin;
         }
 
-        public static bool CheckExistCharacter(Character ch)
+        public static bool CheckExistCharacter(Skin ch)
         {
-            foreach (var cha in ownCharacter)
+            foreach (var cha in ownSkin)
             {
                 if (cha.ID == ch.ID)
                     return true;
@@ -741,14 +741,14 @@ namespace VocabularyUp
             {
                 if (c.Name == name)
                 {
-                    ownCharacter.Add(c);
+                    ownSkin.Add(c);
                     InsertIntoOwnCharacter(c);
                     return;
                 }
             }
         }
 
-        public static void InsertIntoOwnCharacter(Character ch)
+        public static void InsertIntoOwnCharacter(Skin ch)
         {
             SqlConnection connection = new SqlConnection(constr);
             try
