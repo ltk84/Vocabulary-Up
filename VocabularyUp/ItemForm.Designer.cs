@@ -30,19 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbCurrency = new System.Windows.Forms.PictureBox();
             this.lbPrice = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.btnBuy = new System.Windows.Forms.Button();
             this.pbChar = new System.Windows.Forms.PictureBox();
-            this.pbCurrency = new System.Windows.Forms.PictureBox();
+            this.lbOwned = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbChar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrency)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.lbOwned);
             this.panel1.Controls.Add(this.pbCurrency);
             this.panel1.Controls.Add(this.lbPrice);
             this.panel1.Controls.Add(this.lbName);
@@ -53,6 +55,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(114, 224);
             this.panel1.TabIndex = 1;
+            // 
+            // pbCurrency
+            // 
+            this.pbCurrency.Image = ((System.Drawing.Image)(resources.GetObject("pbCurrency.Image")));
+            this.pbCurrency.Location = new System.Drawing.Point(81, 158);
+            this.pbCurrency.Name = "pbCurrency";
+            this.pbCurrency.Size = new System.Drawing.Size(30, 25);
+            this.pbCurrency.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCurrency.TabIndex = 4;
+            this.pbCurrency.TabStop = false;
             // 
             // lbPrice
             // 
@@ -94,15 +106,15 @@
             this.pbChar.TabIndex = 0;
             this.pbChar.TabStop = false;
             // 
-            // pbCurrency
+            // lbOwned
             // 
-            this.pbCurrency.Image = ((System.Drawing.Image)(resources.GetObject("pbCurrency.Image")));
-            this.pbCurrency.Location = new System.Drawing.Point(81, 158);
-            this.pbCurrency.Name = "pbCurrency";
-            this.pbCurrency.Size = new System.Drawing.Size(30, 25);
-            this.pbCurrency.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCurrency.TabIndex = 4;
-            this.pbCurrency.TabStop = false;
+            this.lbOwned.Location = new System.Drawing.Point(6, 198);
+            this.lbOwned.Name = "lbOwned";
+            this.lbOwned.Size = new System.Drawing.Size(100, 23);
+            this.lbOwned.TabIndex = 5;
+            this.lbOwned.Text = "Owned";
+            this.lbOwned.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbOwned.Visible = false;
             // 
             // ItemForm
             // 
@@ -115,8 +127,8 @@
             this.Text = "ItemForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbChar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrency)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbChar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -129,5 +141,6 @@
         private System.Windows.Forms.Button btnBuy;
         private System.Windows.Forms.PictureBox pbChar;
         private System.Windows.Forms.PictureBox pbCurrency;
+        private System.Windows.Forms.Label lbOwned;
     }
 }

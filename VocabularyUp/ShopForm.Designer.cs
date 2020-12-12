@@ -34,7 +34,7 @@
             this.lbDiamond = new System.Windows.Forms.Label();
             this.btnWeapon = new Guna.UI2.WinForms.Guna2Button();
             this.btnBody = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCate_Head = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCate_All = new Guna.UI2.WinForms.Guna2Button();
             this.flpShop = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -56,7 +56,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.lbDiamond);
             this.splitContainer1.Panel1.Controls.Add(this.btnWeapon);
             this.splitContainer1.Panel1.Controls.Add(this.btnBody);
-            this.splitContainer1.Panel1.Controls.Add(this.btnCate_Head);
+            this.splitContainer1.Panel1.Controls.Add(this.btnCate_All);
             // 
             // splitContainer1.Panel2
             // 
@@ -113,19 +113,20 @@
             this.btnBody.TabIndex = 1;
             this.btnBody.Text = "Body";
             // 
-            // btnCate_Head
+            // btnCate_All
             // 
-            this.btnCate_Head.CheckedState.Parent = this.btnCate_Head;
-            this.btnCate_Head.CustomImages.Parent = this.btnCate_Head;
-            this.btnCate_Head.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCate_Head.ForeColor = System.Drawing.Color.White;
-            this.btnCate_Head.HoverState.Parent = this.btnCate_Head;
-            this.btnCate_Head.Location = new System.Drawing.Point(3, 68);
-            this.btnCate_Head.Name = "btnCate_Head";
-            this.btnCate_Head.ShadowDecoration.Parent = this.btnCate_Head;
-            this.btnCate_Head.Size = new System.Drawing.Size(180, 45);
-            this.btnCate_Head.TabIndex = 0;
-            this.btnCate_Head.Text = "Head";
+            this.btnCate_All.CheckedState.Parent = this.btnCate_All;
+            this.btnCate_All.CustomImages.Parent = this.btnCate_All;
+            this.btnCate_All.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCate_All.ForeColor = System.Drawing.Color.White;
+            this.btnCate_All.HoverState.Parent = this.btnCate_All;
+            this.btnCate_All.Location = new System.Drawing.Point(3, 68);
+            this.btnCate_All.Name = "btnCate_All";
+            this.btnCate_All.ShadowDecoration.Parent = this.btnCate_All;
+            this.btnCate_All.Size = new System.Drawing.Size(180, 45);
+            this.btnCate_All.TabIndex = 0;
+            this.btnCate_All.Text = "All";
+            this.btnCate_All.Click += new System.EventHandler(this.btnCate_All_Click);
             // 
             // flpShop
             // 
@@ -175,7 +176,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private Guna.UI2.WinForms.Guna2Button btnWeapon;
         private Guna.UI2.WinForms.Guna2Button btnBody;
-        private Guna.UI2.WinForms.Guna2Button btnCate_Head;
+        private Guna.UI2.WinForms.Guna2Button btnCate_All;
         private Guna.UI2.WinForms.Guna2Button btnExit;
         private System.Windows.Forms.FlowLayoutPanel flpShop;
         private System.Windows.Forms.Label lbDiamond;

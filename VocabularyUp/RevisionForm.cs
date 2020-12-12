@@ -25,6 +25,7 @@ namespace VocabularyUp
            
             LoadPictureBoxCharacter(currentChar);
             shop = new ShopForm(this.pnlChoosePlay);
+            LoadDiamondLabel();
         }
 
         public void LoadShop()
@@ -101,7 +102,15 @@ namespace VocabularyUp
             if (ManageUserAction.GetOwnCharacterList().Count > 1 && currentChar != ManageUserAction.GetOwnCharacterList().Count - 1)
             {
                 btnNext.Enabled = true;
-            }    
+            }
+
+            lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
+        }
+
+        private void LoadDiamondLabel()
+        {
+            ManageUserAction.LoadCurrency();
+            lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
         }
     }
 }

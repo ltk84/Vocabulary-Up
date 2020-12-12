@@ -31,15 +31,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RevisionForm));
             this.pnlRevision = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlChoosePlay = new System.Windows.Forms.Panel();
+            this.btnToggle = new System.Windows.Forms.Button();
             this.btnShop = new System.Windows.Forms.Button();
             this.lbName = new System.Windows.Forms.Label();
             this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
             this.pbCharacter = new System.Windows.Forms.PictureBox();
-            this.btnToggle = new System.Windows.Forms.Button();
+            this.pbCurrency = new System.Windows.Forms.PictureBox();
+            this.lbDiamond = new System.Windows.Forms.Label();
             this.pnlRevision.SuspendLayout();
             this.pnlChoosePlay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCharacter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCurrency)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlRevision
@@ -57,6 +60,8 @@
             // pnlChoosePlay
             // 
             this.pnlChoosePlay.BackColor = System.Drawing.Color.Transparent;
+            this.pnlChoosePlay.Controls.Add(this.pbCurrency);
+            this.pnlChoosePlay.Controls.Add(this.lbDiamond);
             this.pnlChoosePlay.Controls.Add(this.btnToggle);
             this.pnlChoosePlay.Controls.Add(this.btnShop);
             this.pnlChoosePlay.Controls.Add(this.lbName);
@@ -69,6 +74,16 @@
             this.pnlChoosePlay.Size = new System.Drawing.Size(750, 422);
             this.pnlChoosePlay.TabIndex = 23;
             this.pnlChoosePlay.VisibleChanged += new System.EventHandler(this.pnlChoosePlay_VisibleChanged);
+            // 
+            // btnToggle
+            // 
+            this.btnToggle.Location = new System.Drawing.Point(13, 53);
+            this.btnToggle.Name = "btnToggle";
+            this.btnToggle.Size = new System.Drawing.Size(10, 10);
+            this.btnToggle.TabIndex = 23;
+            this.btnToggle.Text = "0";
+            this.btnToggle.UseVisualStyleBackColor = true;
+            this.btnToggle.Visible = false;
             // 
             // btnShop
             // 
@@ -143,15 +158,24 @@
             this.pbCharacter.TabIndex = 0;
             this.pbCharacter.TabStop = false;
             // 
-            // btnToggle
+            // pbCurrency
             // 
-            this.btnToggle.Location = new System.Drawing.Point(13, 53);
-            this.btnToggle.Name = "btnToggle";
-            this.btnToggle.Size = new System.Drawing.Size(10, 10);
-            this.btnToggle.TabIndex = 23;
-            this.btnToggle.Text = "0";
-            this.btnToggle.UseVisualStyleBackColor = true;
-            this.btnToggle.Visible = false;
+            this.pbCurrency.Image = ((System.Drawing.Image)(resources.GetObject("pbCurrency.Image")));
+            this.pbCurrency.Location = new System.Drawing.Point(629, 39);
+            this.pbCurrency.Name = "pbCurrency";
+            this.pbCurrency.Size = new System.Drawing.Size(30, 25);
+            this.pbCurrency.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCurrency.TabIndex = 25;
+            this.pbCurrency.TabStop = false;
+            // 
+            // lbDiamond
+            // 
+            this.lbDiamond.AutoSize = true;
+            this.lbDiamond.Location = new System.Drawing.Point(598, 39);
+            this.lbDiamond.Name = "lbDiamond";
+            this.lbDiamond.Size = new System.Drawing.Size(25, 13);
+            this.lbDiamond.TabIndex = 24;
+            this.lbDiamond.Text = "100";
             // 
             // RevisionForm
             // 
@@ -168,6 +192,7 @@
             this.pnlChoosePlay.ResumeLayout(false);
             this.pnlChoosePlay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCharacter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCurrency)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -182,5 +207,7 @@
         private Guna.UI2.WinForms.Guna2Button btnNext;
         private System.Windows.Forms.Panel pnlChoosePlay;
         public System.Windows.Forms.Button btnToggle;
+        private System.Windows.Forms.PictureBox pbCurrency;
+        private System.Windows.Forms.Label lbDiamond;
     }
 }
