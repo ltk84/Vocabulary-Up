@@ -74,7 +74,7 @@
             this.btnLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft.Image")));
             this.btnLeft.ImageSize = new System.Drawing.Size(115, 130);
             this.btnLeft.Location = new System.Drawing.Point(0, 46);
-            this.btnLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.ShadowDecoration.Parent = this.btnLeft;
             this.btnLeft.Size = new System.Drawing.Size(303, 475);
@@ -239,10 +239,11 @@
             // 
             this.lbTime.AutoSize = true;
             this.lbTime.BackColor = System.Drawing.Color.Transparent;
+            this.lbTime.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Bold);
             this.lbTime.Location = new System.Drawing.Point(756, 14);
             this.lbTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(32, 17);
+            this.lbTime.Size = new System.Drawing.Size(53, 28);
             this.lbTime.TabIndex = 61;
             this.lbTime.Text = "600";
             // 
@@ -307,7 +308,7 @@
             this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
             this.btnRight.ImageSize = new System.Drawing.Size(115, 130);
             this.btnRight.Location = new System.Drawing.Point(697, 46);
-            this.btnRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(4);
             this.btnRight.Name = "btnRight";
             this.btnRight.ShadowDecoration.Parent = this.btnRight;
             this.btnRight.Size = new System.Drawing.Size(303, 475);

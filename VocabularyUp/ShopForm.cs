@@ -23,24 +23,26 @@ namespace VocabularyUp
 
         public void LoadShop()
         {
+            this.flpShop.Controls.Clear();
             foreach (var character in ManageSystem.GetAllCharacter())
             {
-                ItemForm item = new ItemForm();
-                item.ChangeInfo(character.ID, character.Name, character.Price);
-                item.TopLevel = false;
-                item.FormBorderStyle = FormBorderStyle.None;
-                item.Show();
-                flpShop.Controls.Add(item);
+                if (!ManageUserAction.CheckExistCharacter(character))
+                {
+                    ItemForm item = new ItemForm(this);
+                    item.ChangeInfo(character.ID, character.Name, character.Price);
+                    item.TopLevel = false;
+                    item.FormBorderStyle = FormBorderStyle.None;
+                    item.Show();
+                    flpShop.Controls.Add(item);
+                }
             }
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
+            panel.Controls[0].Text = "1";
             panel.Show();
-            //this.Parent.Show();
-            
         }
     }
 }

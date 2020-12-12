@@ -506,6 +506,7 @@ namespace VocabularyUp
         // Load list allEquipment
         public static void LoadCharacter()
         {
+            allCharacters.Clear();
             SqlConnection connection = new SqlConnection(connString);
             connection.Open();
 

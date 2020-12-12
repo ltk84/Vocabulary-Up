@@ -30,21 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RevisionForm));
             this.pnlRevision = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlChoosePlay = new System.Windows.Forms.Panel();
             this.btnShop = new System.Windows.Forms.Button();
             this.lbName = new System.Windows.Forms.Label();
             this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
             this.pbCharacter = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnToggle = new System.Windows.Forms.Button();
             this.pnlRevision.SuspendLayout();
+            this.pnlChoosePlay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCharacter)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlRevision
             // 
             this.pnlRevision.BorderRadius = 20;
-            this.pnlRevision.Controls.Add(this.panel1);
+            this.pnlRevision.Controls.Add(this.pnlChoosePlay);
             this.pnlRevision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRevision.Location = new System.Drawing.Point(0, 0);
             this.pnlRevision.Margin = new System.Windows.Forms.Padding(2);
@@ -52,6 +53,22 @@
             this.pnlRevision.ShadowDecoration.Parent = this.pnlRevision;
             this.pnlRevision.Size = new System.Drawing.Size(750, 422);
             this.pnlRevision.TabIndex = 0;
+            // 
+            // pnlChoosePlay
+            // 
+            this.pnlChoosePlay.BackColor = System.Drawing.Color.Transparent;
+            this.pnlChoosePlay.Controls.Add(this.btnToggle);
+            this.pnlChoosePlay.Controls.Add(this.btnShop);
+            this.pnlChoosePlay.Controls.Add(this.lbName);
+            this.pnlChoosePlay.Controls.Add(this.btnPrevious);
+            this.pnlChoosePlay.Controls.Add(this.btnNext);
+            this.pnlChoosePlay.Controls.Add(this.pbCharacter);
+            this.pnlChoosePlay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlChoosePlay.Location = new System.Drawing.Point(0, 0);
+            this.pnlChoosePlay.Name = "pnlChoosePlay";
+            this.pnlChoosePlay.Size = new System.Drawing.Size(750, 422);
+            this.pnlChoosePlay.TabIndex = 23;
+            this.pnlChoosePlay.VisibleChanged += new System.EventHandler(this.pnlChoosePlay_VisibleChanged);
             // 
             // btnShop
             // 
@@ -93,6 +110,7 @@
             this.btnPrevious.ShadowDecoration.Parent = this.btnPrevious;
             this.btnPrevious.Size = new System.Drawing.Size(50, 58);
             this.btnPrevious.TabIndex = 20;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 
@@ -101,7 +119,6 @@
             this.btnNext.BorderRadius = 15;
             this.btnNext.CheckedState.Parent = this.btnNext;
             this.btnNext.CustomImages.Parent = this.btnNext;
-            this.btnNext.Enabled = false;
             this.btnNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.Black;
@@ -114,6 +131,7 @@
             this.btnNext.ShadowDecoration.Parent = this.btnNext;
             this.btnNext.Size = new System.Drawing.Size(50, 58);
             this.btnNext.TabIndex = 19;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // pbCharacter
             // 
@@ -125,19 +143,15 @@
             this.pbCharacter.TabIndex = 0;
             this.pbCharacter.TabStop = false;
             // 
-            // panel1
+            // btnToggle
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.btnShop);
-            this.panel1.Controls.Add(this.lbName);
-            this.panel1.Controls.Add(this.btnPrevious);
-            this.panel1.Controls.Add(this.btnNext);
-            this.panel1.Controls.Add(this.pbCharacter);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(750, 422);
-            this.panel1.TabIndex = 23;
+            this.btnToggle.Location = new System.Drawing.Point(13, 53);
+            this.btnToggle.Name = "btnToggle";
+            this.btnToggle.Size = new System.Drawing.Size(10, 10);
+            this.btnToggle.TabIndex = 23;
+            this.btnToggle.Text = "0";
+            this.btnToggle.UseVisualStyleBackColor = true;
+            this.btnToggle.Visible = false;
             // 
             // RevisionForm
             // 
@@ -151,9 +165,9 @@
             this.Name = "RevisionForm";
             this.Text = "RevisionForm";
             this.pnlRevision.ResumeLayout(false);
+            this.pnlChoosePlay.ResumeLayout(false);
+            this.pnlChoosePlay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCharacter)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -166,6 +180,7 @@
         private System.Windows.Forms.Label lbName;
         private Guna.UI2.WinForms.Guna2Button btnPrevious;
         private Guna.UI2.WinForms.Guna2Button btnNext;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlChoosePlay;
+        public System.Windows.Forms.Button btnToggle;
     }
 }

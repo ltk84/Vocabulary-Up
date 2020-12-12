@@ -12,14 +12,18 @@ namespace VocabularyUp
 {
     public partial class ItemForm : Form
     {
-        public ItemForm()
+        ShopForm shop;
+        public ItemForm(ShopForm shop)
         {
             InitializeComponent();
+            this.shop = shop;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("DM thang Lam");
+            MessageBox.Show(this.lbName.Text);
+            ManageUserAction.AddToOwnCharacterList(lbName.Text);
+            shop.LoadShop();
         }
 
         public void ChangeInfo(int id, string name, int price)
