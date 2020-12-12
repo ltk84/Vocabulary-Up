@@ -25,6 +25,7 @@ namespace VocabularyUp
            
             LoadPictureBoxCharacter(currentChar);
             shop = new ShopForm(this.pnlChoosePlay);
+            LoadDiamondLabel();
         }
 
         public void LoadShop()
@@ -101,7 +102,47 @@ namespace VocabularyUp
             if (ManageUserAction.GetOwnCharacterList().Count > 1 && currentChar != ManageUserAction.GetOwnCharacterList().Count - 1)
             {
                 btnNext.Enabled = true;
-            }    
+            }
+
+            lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
+
+            pnlType.Hide();
+            btnChooseType.Show();
+            btnStart.Hide();
+        }
+
+        private void LoadDiamondLabel()
+        {
+            ManageUserAction.LoadCurrency();
+            lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
+        }
+
+        private void pnlType_3_Click(object sender, EventArgs e)
+        {
+            pnlType_1.BorderThickness = 0;
+            pnlType_2.BorderThickness = 0;
+            pnlType_3.BorderThickness = 3;
+        }
+
+        private void pnlType_2_Click(object sender, EventArgs e)
+        {
+            pnlType_1.BorderThickness = 0;
+            pnlType_2.BorderThickness = 3;
+            pnlType_3.BorderThickness = 0;
+        }
+
+        private void pnlType_1_Click(object sender, EventArgs e)
+        {
+            pnlType_1.BorderThickness = 3;
+            pnlType_2.BorderThickness = 0;
+            pnlType_3.BorderThickness = 0;
+        }
+
+        private void btnChooseType_Click(object sender, EventArgs e)
+        {
+            pnlType.Show();
+            btnChooseType.Hide();
+            btnStart.Show();
         }
     }
 }

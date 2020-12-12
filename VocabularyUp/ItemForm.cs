@@ -21,9 +21,19 @@ namespace VocabularyUp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this.lbName.Text);
-            ManageUserAction.AddToOwnCharacterList(lbName.Text);
-            shop.LoadShop();
+            int price = Int32.Parse(lbPrice.Text);
+            if (shop.GetCurrentDiamond() >= price)
+            {
+                MessageBox.Show(this.lbName.Text);
+                ManageUserAction.AddToOwnCharacterList(lbName.Text);
+                //shop.LoadShop();
+                shop.LoadAllCharacter();
+                shop.UpdateDiamond(price);
+            }
+            else
+            {
+                MessageBox.Show("Khong du tien kia thang loz !");
+            }
         }
 
         public void ChangeInfo(int id, string name, int price)
@@ -33,6 +43,12 @@ namespace VocabularyUp
             pbChar.Image = image;
             lbName.Text = name;
             lbPrice.Text = price.ToString();
+        }
+
+        public void ChangeStatus()
+        {
+            btnBuy.Enabled = false;
+            lbOwned.Visible = true;
         }
     }
 }

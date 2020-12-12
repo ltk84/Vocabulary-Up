@@ -17,7 +17,7 @@ namespace VocabularyUp
         private static MD5 md5Hash = MD5.Create();
         private static String connString = @ConfigurationManager.AppSettings.Get("connectString");
         private static List<FlashCard> allFlashCards = new List<FlashCard>();
-        private static List<Character> allCharacters = new List<Character>();
+        private static List<Skin> allSkins = new List<Skin>();
         private static string OldPass;
         private static string TaiKhoan;
 
@@ -506,11 +506,11 @@ namespace VocabularyUp
         // Load list allEquipment
         public static void LoadCharacter()
         {
-            allCharacters.Clear();
+            allSkins.Clear();
             SqlConnection connection = new SqlConnection(connString);
             connection.Open();
 
-            String sqlQuery = "SELECT ID, NAME, HEALTH, DAMAGE, PRICE FROM CHARACTER";
+            String sqlQuery = "SELECT ID, NAME, PRICE FROM CHARACTER";
             
             SqlCommand command = new SqlCommand(sqlQuery, connection);
 
@@ -519,14 +519,14 @@ namespace VocabularyUp
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                Character e = new Character(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetInt32(4));
-                allCharacters.Add(e);
+                Skin e = new Skin(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2));
+                allSkins.Add(e);
             }
         }
 
-        public static List<Character> GetAllCharacter()
+        public static List<Skin> GetAllCharacter()
         {
-            return allCharacters;
+            return allSkins;
         }
 
         public static void InitCharacter(int currentId)
