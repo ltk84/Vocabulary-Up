@@ -15,10 +15,42 @@ namespace VocabularyUp
     {
         int type = -1;
         int currentTopic = -1;
+        int darkMode = 1;
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
+        Color foreColor = Color.White;
         public CampaignForm()
         {
             InitializeComponent();
+            UpdateTheme();
             this.KeyPreview = true;
+        }
+
+        private void UpdateTheme()
+        {
+            if (darkMode == 1)
+            {
+                primary = Color.FromArgb(50, 74, 95);
+                secondary = Color.FromArgb(27, 42, 65);
+                foreColor = Color.White;
+            }
+            else
+            {
+                primary = Color.FromArgb(17, 223, 158);
+                secondary = Color.FromArgb(7, 96, 68);
+                foreColor = Color.Black;
+            }    
+            this.pnlTopicSelection.BackColor = primary;
+            this.label3.ForeColor = primary;
+            this.guna2CustomGradientPanel2.FillColor = primary;
+            this.guna2CustomGradientPanel2.FillColor2 = primary;
+            this.guna2CustomGradientPanel2.FillColor3 = primary;
+            this.guna2CustomGradientPanel2.FillColor4 = primary;
+            this.guna2CustomGradientPanel3.FillColor = primary;
+            this.guna2CustomGradientPanel3.FillColor2 = primary;
+            this.guna2CustomGradientPanel3.FillColor3 = primary;
+            this.guna2CustomGradientPanel3.FillColor4 = primary;
+            this.btnConfirm.FillColor = primary;
         }
 
         public int GetType()
@@ -90,12 +122,12 @@ namespace VocabularyUp
             type = -1;
             currentTopic = -1;
             ResetColorButton();
-            btnMultipleChoice.FillColor = Color.FromArgb(17, 223, 158);
-            lbMultipleChoice.BackColor = Color.FromArgb(17, 223, 158);
-            lbMultipleChoice.ForeColor = Color.Black;
-            btnFilBlank.FillColor = Color.FromArgb(17, 223, 158);
-            lbFillBlank.BackColor = Color.FromArgb(17, 223, 158);
-            lbFillBlank.ForeColor = Color.Black;
+            btnMultipleChoice.FillColor = primary;
+            lbMultipleChoice.BackColor = primary;
+            lbMultipleChoice.ForeColor = foreColor;
+            btnFilBlank.FillColor = primary;
+            lbFillBlank.BackColor = primary;
+            lbFillBlank.ForeColor = foreColor;
         }
         public void Return()
         {
@@ -105,48 +137,57 @@ namespace VocabularyUp
 
         private void ResetColorButton()
         {
-            btnAnimals.FillColor = Color.FromArgb(17, 223, 158);
-            lbAnimals.BackColor = Color.FromArgb(17, 223, 158);
-            lbAnimals.ForeColor = Color.Black;
+            btnAnimals.FillColor = primary;
+            btnAnimals.ForeColor = foreColor;
+            lbAnimals.BackColor = primary;
+            lbAnimals.ForeColor = foreColor;
 
-            btnPlants.FillColor = Color.FromArgb(17, 223, 158);
-            lbPlants.BackColor = Color.FromArgb(17, 223, 158);
-            lbPlants.ForeColor = Color.Black;
+            btnPlants.FillColor = primary;
+            btnPlants.ForeColor = foreColor;
+            lbPlants.BackColor = primary;
+            lbPlants.ForeColor = foreColor;
 
-            btnSport.FillColor = Color.FromArgb(17, 223, 158);
-            lbSport.BackColor = Color.FromArgb(17, 223, 158);
-            lbSport.ForeColor = Color.Black;
+            btnSport.FillColor = primary;
+            btnSport.ForeColor = foreColor;
+            lbSport.BackColor = primary;
+            lbSport.ForeColor = foreColor;
 
-            btnTechnology.FillColor = Color.FromArgb(17, 223, 158);
-            lbTechnology.BackColor = Color.FromArgb(17, 223, 158);
-            lbTechnology.ForeColor = Color.Black;
+            btnTechnology.FillColor = primary;
+            btnTechnology.ForeColor = foreColor;
+            lbTechnology.BackColor = primary;
+            lbTechnology.ForeColor = foreColor;
 
-            btnJob.FillColor = Color.FromArgb(17, 223, 158);
-            lbJob.BackColor = Color.FromArgb(17, 223, 158);
-            lbJob.ForeColor = Color.Black;
+            btnJob.FillColor = primary;
+            btnJob.ForeColor = foreColor;
+            lbJob.BackColor = primary;
+            lbJob.ForeColor = foreColor;
 
-            btnFoodaDrinks.FillColor = Color.FromArgb(17, 223, 158);
-            lbFoodaDrinks.BackColor = Color.FromArgb(17, 223, 158);
-            lbFoodaDrinks.ForeColor = Color.Black;
+            btnFoodaDrinks.FillColor = primary;
+            btnFoodaDrinks.ForeColor = foreColor;
+            lbFoodaDrinks.BackColor = primary;
+            lbFoodaDrinks.ForeColor = foreColor;
 
-            btnFruits.FillColor = Color.FromArgb(17, 223, 158);
-            lbFruits.BackColor = Color.FromArgb(17, 223, 158);
-            lbFruits.ForeColor = Color.Black;
+            btnFruits.FillColor = primary;
+            btnFruits.ForeColor = foreColor;
+            lbFruits.BackColor = primary;
+            lbFruits.ForeColor = foreColor;
 
-            btnClothing.FillColor = Color.FromArgb(17, 223, 158);
-            lbClothing.BackColor = Color.FromArgb(17, 223, 158);
-            lbClothing.ForeColor = Color.Black;
+            btnClothing.FillColor = primary;
+            btnClothing.ForeColor = foreColor;
+            lbClothing.BackColor = primary;
+            lbClothing.ForeColor = foreColor;
         }
 
         private void btnAnimals_Click(object sender, EventArgs e)
         {
             ResetColorButton();
             currentTopic = 1; 
-            if (btnAnimals.FillColor == Color.FromArgb(17, 223, 158))
+            if (btnAnimals.FillColor == primary)
             {
-                btnAnimals.FillColor = Color.FromArgb(7, 96, 68);
-                lbAnimals.BackColor = Color.FromArgb(7, 96, 68);
+                btnAnimals.FillColor = secondary;
+                lbAnimals.BackColor = secondary;
                 lbAnimals.ForeColor = Color.White;
+                btnAnimals.ForeColor = Color.White;
             }
             
         }
@@ -155,11 +196,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnPlants.FillColor == Color.FromArgb(17, 223, 158))
+            if (btnPlants.FillColor == primary)
             {
-                btnPlants.FillColor = Color.FromArgb(7, 96, 68);
-                lbPlants.BackColor = Color.FromArgb(7, 96, 68);
+                btnPlants.FillColor = secondary;
+                lbPlants.BackColor = secondary;
                 lbPlants.ForeColor = Color.White;
+                btnPlants.ForeColor = Color.White;
             }
             
             currentTopic = 2;
@@ -169,11 +211,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnFruits.FillColor == Color.FromArgb(17, 223, 158))
+            if (btnFruits.FillColor == primary)
             {
-                btnFruits.FillColor = Color.FromArgb(7, 96, 68);
-                lbFruits.BackColor = Color.FromArgb(7, 96, 68);
+                btnFruits.FillColor = secondary;
+                lbFruits.BackColor = secondary;
                 lbFruits.ForeColor = Color.White;
+                btnFruits.ForeColor = Color.White;
             }
             
             currentTopic = 3;
@@ -183,11 +226,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnJob.FillColor == Color.FromArgb(17, 223, 158))
+            if (btnJob.FillColor == primary)
             {
-                btnJob.FillColor = Color.FromArgb(7, 96, 68);
-                lbJob.BackColor = Color.FromArgb(7, 96, 68);
+                btnJob.FillColor = secondary;
+                lbJob.BackColor = secondary;
                 lbJob.ForeColor = Color.White;
+                btnJob.ForeColor = Color.White;
             }
            
             currentTopic = 4;
@@ -197,11 +241,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnFoodaDrinks.FillColor == Color.FromArgb(17, 223, 158))
+            if (btnFoodaDrinks.FillColor == primary)
             {
-                btnFoodaDrinks.FillColor = Color.FromArgb(7, 96, 68);
-                lbFoodaDrinks.BackColor = Color.FromArgb(7, 96, 68);
+                btnFoodaDrinks.FillColor = secondary;
+                lbFoodaDrinks.BackColor = secondary;
                 lbFoodaDrinks.ForeColor = Color.White;
+                btnFoodaDrinks.ForeColor = Color.White;
             }
             
             currentTopic = 5;
@@ -211,11 +256,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnSport.FillColor == Color.FromArgb(17, 223, 158))
+            if (btnSport.FillColor == primary)
             {
-                btnSport.FillColor = Color.FromArgb(7, 96, 68);
-                lbSport.BackColor = Color.FromArgb(7, 96, 68);
+                btnSport.FillColor = secondary;
+                lbSport.BackColor = secondary;
                 lbSport.ForeColor = Color.White;
+                btnSport.ForeColor = Color.White;
             }
             
             currentTopic = 6;
@@ -225,11 +271,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnClothing.FillColor == Color.FromArgb(17, 223, 158))
+            if (btnClothing.FillColor == primary)
             {
-                btnClothing.FillColor = Color.FromArgb(7, 96, 68);
-                lbClothing.BackColor = Color.FromArgb(7, 96, 68);
+                btnClothing.FillColor = secondary;
+                lbClothing.BackColor = secondary;
                 lbClothing.ForeColor = Color.White;
+                btnClothing.ForeColor = Color.White;
             }
             
             currentTopic = 7;
@@ -239,11 +286,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnTechnology.FillColor == Color.FromArgb(17, 223, 158))
+            if (btnTechnology.FillColor == primary)
             {
-                btnTechnology.FillColor = Color.FromArgb(7, 96, 68);
-                lbTechnology.BackColor = Color.FromArgb(7, 96, 68);
+                btnTechnology.FillColor = secondary;
+                lbTechnology.BackColor = secondary;
                 lbTechnology.ForeColor = Color.White;
+                btnTechnology.ForeColor = Color.White;
             }
             
             currentTopic = 8;
@@ -252,12 +300,13 @@ namespace VocabularyUp
         private void btnMultipleChoice_Click(object sender, EventArgs e)
         {
             type = 1;
-            //btnMultipleChoice.FillColor = Color.FromArgb(17, 223, 158);
-            btnFilBlank.FillColor = Color.FromArgb(17, 223, 158);
-            lbFillBlank.BackColor = Color.FromArgb(17, 223, 158);
-            lbFillBlank.ForeColor = Color.Black;
-            btnMultipleChoice.FillColor = Color.FromArgb(7, 96, 68);
-            lbMultipleChoice.BackColor = Color.FromArgb(7, 96, 68);
+            //btnMultipleChoice.FillColor = primary;
+            btnFilBlank.FillColor = primary;
+            btnFilBlank.ForeColor = foreColor;
+            lbFillBlank.BackColor = primary;
+            lbFillBlank.ForeColor = foreColor;
+            btnMultipleChoice.FillColor = secondary;
+            lbMultipleChoice.BackColor = secondary;
             lbMultipleChoice.ForeColor = Color.White;
 
         }
@@ -265,12 +314,13 @@ namespace VocabularyUp
         private void btnFilBlank_Click(object sender, EventArgs e)
         {
             type = 0;
-            btnMultipleChoice.FillColor = Color.FromArgb(17, 223, 158);
-            lbMultipleChoice.BackColor = Color.FromArgb(17, 223, 158);
-            lbMultipleChoice.ForeColor = Color.Black;
-            //btnFilBlank.FillColor = Color.FromArgb(17, 223, 158);
-            btnFilBlank.FillColor = Color.FromArgb(7, 96, 68);
-            lbFillBlank.BackColor = Color.FromArgb(7, 96, 68);
+            btnMultipleChoice.FillColor = primary;
+            btnMultipleChoice.ForeColor = foreColor;
+            lbMultipleChoice.BackColor = primary;
+            lbMultipleChoice.ForeColor = foreColor;
+            //btnFilBlank.FillColor = primary;
+            btnFilBlank.FillColor = secondary;
+            lbFillBlank.BackColor = secondary;
             lbFillBlank.ForeColor = Color.White;
         }
 

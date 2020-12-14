@@ -14,6 +14,8 @@ namespace VocabularyUp
 {
     public partial class LearningForm : Form
     {
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
         SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         private static int index = 0;
         List<FlashCard> flList = new List<FlashCard>();
@@ -27,6 +29,7 @@ namespace VocabularyUp
         public LearningForm(int currentTopic, CampaignForm campaignForm, FillBlankForm fillBquiz, MultipleChoiceForm multiQuiz)
         {
             InitializeComponent();
+            UpdateTheme();
             this.KeyPreview = true;
             this.campaignForm = campaignForm;
             this.fillBQuiz = fillBquiz;
@@ -35,6 +38,18 @@ namespace VocabularyUp
             flList = ManageUserAction.GetMainFlashCards();
             LoadComboBox(); 
             ChangeFlashCard(flList[index].Eng, flList[index].IdCard);
+        }
+
+        private void UpdateTheme()
+        {
+            this.pnlMainNav.BackColor = primary;
+            this.btnBack.Image = Image.FromFile("../../icons/back_arrow_dark.png");
+            this.btnDone.Image = Image.FromFile("../../icons/done_dark.png");
+            this.btnToCollection.FillColor = primary;
+            this.pnlTab.FillColor = primary;
+            this.pnlTab.FillColor2 = primary;
+            this.pnlTab.FillColor3 = primary;
+            this.pnlTab.FillColor4 = primary;
         }
         public void ChangeFlashCard(string content, int id)
         {
