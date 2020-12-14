@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace VocabularyUp
 {
@@ -25,6 +26,8 @@ namespace VocabularyUp
 
         public Image Image { get => image; set => image = value; }
         public Point Location { get => location; set => location = value; }
+        public int X { get => location.X; set => location.X = value; }
+        public int Y { get => location.Y; set => location.Y = value; }
         public Size Size { get => size; set => size = value; }
         public int V { get => v; set => v = value; }
 
@@ -38,10 +41,10 @@ namespace VocabularyUp
             switch (dir)
             {
                 case Direction.Up:
-                    location.Y += v;
+                    location.Y -= v;
                     break;
                 case Direction.Down:
-                    location.Y -= v;
+                    location.Y += v;
                     break;
                 case Direction.Left:
                     location.X -= v;
@@ -52,6 +55,29 @@ namespace VocabularyUp
                 default:
                     break;
             }
+        }
+
+        public void HandleOutsideClient(Form f)
+        {
+
+            int x = location.X;
+            int y = location.Y;
+            Size size = this.Size;
+
+            if (x + size.Width > f.Width)
+                x = f.Width - (size.Width);
+
+            if (y < f.Height / 3)
+                y = f.Height / 3;
+
+            if (x < 0)
+                x = 0;
+
+            if (y + size.Height > f.Height)
+                y = f.Height - size.Height;
+
+            location.X = x;
+            location.Y = y;
         }
 
         virtual public bool isCollision(ImgRendingObject obj)
