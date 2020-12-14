@@ -13,6 +13,9 @@ namespace VocabularyUp
 {
     public partial class MultipleChoiceForm : Form
     {
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
+        int darkMode = 1;
         List<Quiz> questions = new List<Quiz>();
         int currentTopic = 0;
         int currentQuiz = 0;
@@ -24,10 +27,68 @@ namespace VocabularyUp
         public MultipleChoiceForm(int currentTopic, CampaignForm campaign)
         {
             InitializeComponent();
+            UpdateTheme();
             this.currentTopic = currentTopic;
             this.campaign = campaign;
             InitQuiz();
             ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+        }
+
+        private void UpdateTheme()
+        {
+            if (darkMode == 1)
+            {
+                primary = Color.FromArgb(50, 74, 95);
+                secondary = Color.White;
+            }
+            else
+            {
+                primary = Color.FromArgb(17, 223, 158);
+                secondary = Color.FromArgb(7, 96, 68);
+            }
+            this.pnlQuiz.BackColor = primary;
+            this.guna2CircleButton1.FillColor = primary;
+            this.guna2CircleButton2.FillColor = primary;
+            this.guna2CircleButton3.FillColor = primary;
+            this.guna2CircleButton4.FillColor = primary;
+            this.guna2CircleButton5.FillColor = primary;
+            this.guna2CircleButton6.FillColor = primary;
+            this.guna2CircleButton7.FillColor = primary;
+            this.guna2CircleButton8.FillColor = primary;
+            this.guna2CircleButton9.FillColor = primary;
+            this.guna2CircleButton10.FillColor = primary;
+            this.btnPointer1.FillColor = secondary;
+            this.btnPointer1.BackColor = primary;
+            this.btnPointer2.FillColor = secondary;
+            this.btnPointer2.BackColor = primary;
+            this.btnPointer3.FillColor = secondary;
+            this.btnPointer3.BackColor = primary;
+            this.btnPointer4.FillColor = secondary;
+            this.btnPointer4.BackColor = primary;
+            this.btnPointer5.FillColor = secondary;
+            this.btnPointer5.BackColor = primary;
+            this.btnPointer6.FillColor = secondary;
+            this.btnPointer6.BackColor = primary;
+            this.btnPointer7.FillColor = secondary;
+            this.btnPointer7.BackColor = primary;
+            this.btnPointer8.FillColor = secondary;
+            this.btnPointer8.BackColor = primary;
+            this.btnPointer9.FillColor = secondary;
+            this.btnPointer9.BackColor = primary;
+            this.btnPointer10.FillColor = secondary;
+            this.btnPointer10.BackColor = primary;
+            this.guna2CustomGradientPanel1.FillColor = primary;
+            this.guna2CustomGradientPanel1.FillColor2 = primary;
+            this.guna2CustomGradientPanel1.FillColor3 = primary;
+            this.guna2CustomGradientPanel1.FillColor4 = primary;
+            this.btnA.FillColor = primary;
+            this.btnB.FillColor = primary;
+            this.btnC.FillColor = primary;
+            this.btnD.FillColor = primary;
+            this.btnPrevious.FillColor = primary;
+            this.btnNext.FillColor = primary;
+            this.btnConfirm.FillColor = primary;
+            this.panel1.BackColor = primary;
         }
         public void ChangeFlashCard(string content, int id)
         {
@@ -113,9 +174,9 @@ namespace VocabularyUp
             {
                 userChoices[currentQuiz].Selected = 1;
                 btnA.FillColor = Color.FromArgb(107, 216, 255);
-                btnB.FillColor = Color.FromArgb(17, 223, 158);
-                btnC.FillColor = Color.FromArgb(17, 223, 158);
-                btnD.FillColor = Color.FromArgb(17, 223, 158);
+                btnB.FillColor = primary;
+                btnC.FillColor = primary;
+                btnD.FillColor = primary;
                 isPress = 1;
             }
         }
@@ -126,9 +187,9 @@ namespace VocabularyUp
             {
                 userChoices[currentQuiz].Selected = 2;
                 btnB.FillColor = Color.FromArgb(107, 216, 255);
-                btnA.FillColor = Color.FromArgb(17, 223, 158);
-                btnC.FillColor = Color.FromArgb(17, 223, 158);
-                btnD.FillColor = Color.FromArgb(17, 223, 158);
+                btnA.FillColor = primary;
+                btnC.FillColor = primary;
+                btnD.FillColor = primary;
                 isPress = 1;
             }
         }
@@ -139,9 +200,9 @@ namespace VocabularyUp
             {
                 userChoices[currentQuiz].Selected = 3;
                 btnC.FillColor = Color.FromArgb(107, 216, 255);
-                btnA.FillColor = Color.FromArgb(17, 223, 158);
-                btnB.FillColor = Color.FromArgb(17, 223, 158);
-                btnD.FillColor = Color.FromArgb(17, 223, 158);
+                btnA.FillColor = primary;
+                btnB.FillColor = primary;
+                btnD.FillColor = primary;
                 isPress = 1;
             }
         }
@@ -152,9 +213,9 @@ namespace VocabularyUp
             {
                 userChoices[currentQuiz].Selected = 4;
                 btnD.FillColor = Color.FromArgb(107, 216, 255);
-                btnA.FillColor = Color.FromArgb(17, 223, 158);
-                btnB.FillColor = Color.FromArgb(17, 223, 158);
-                btnC.FillColor = Color.FromArgb(17, 223, 158);
+                btnA.FillColor = primary;
+                btnB.FillColor = primary;
+                btnC.FillColor = primary;
                 isPress = 1;
             }
         }
@@ -288,17 +349,17 @@ namespace VocabularyUp
 
         private void ResetButton()
         {
-            btnD.FillColor = Color.FromArgb(17, 223, 158);
-            btnA.FillColor = Color.FromArgb(17, 223, 158);
-            btnB.FillColor = Color.FromArgb(17, 223, 158);
-            btnC.FillColor = Color.FromArgb(17, 223, 158);
+            btnD.FillColor = primary;
+            btnA.FillColor = primary;
+            btnB.FillColor = primary;
+            btnC.FillColor = primary;
         }
         private void ReloadButton()
         {
-            btnA.FillColor = Color.FromArgb(17, 223, 158);
-            btnB.FillColor = Color.FromArgb(17, 223, 158);
-            btnC.FillColor = Color.FromArgb(17, 223, 158);
-            btnD.FillColor = Color.FromArgb(17, 223, 158);
+            btnA.FillColor = primary;
+            btnB.FillColor = primary;
+            btnC.FillColor = primary;
+            btnD.FillColor = primary;
             bool isCorrect = true;
             if (userChoices[currentQuiz].Selected != userChoices[currentQuiz].Correct)
             {

@@ -14,15 +14,39 @@ namespace VocabularyUp
 {
     public partial class DetailsForm : Form
     {
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
+        int darkMode = 1;
         SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         ResultForm resForm;
         FlashCard curFlashCard;
         public DetailsForm(ResultForm resForm)
         {
             InitializeComponent();
+            UpdateTheme();
             this.resForm = resForm;
             LoadListView();
             LoadComboBox();
+        }
+        private void UpdateTheme()
+        {
+            if (darkMode == 1)
+            {
+                primary = Color.FromArgb(50, 74, 95);
+                secondary = Color.White;
+            }
+            else
+            {
+                primary = Color.FromArgb(17, 223, 158);
+                secondary = Color.FromArgb(7, 96, 68);
+            }
+            this.pnlTopicSelection.BackColor = primary;
+            this.btnBack.Image = Image.FromFile("../../icons/back_arrow_dark.png");
+            this.btnToCollection.FillColor = primary;
+            this.pnlTab.FillColor = primary;
+            this.pnlTab.FillColor2 = primary;
+            this.pnlTab.FillColor3 = primary;
+            this.pnlTab.FillColor4 = primary;
         }
 
         private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
