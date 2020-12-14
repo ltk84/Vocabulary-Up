@@ -830,5 +830,26 @@ namespace VocabularyUp
 
             diamond = diamond - num;
         }
+
+        public static void LoadPlayerStat(int id, Player player)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            connection.Open();
+
+            String sqlQuery = "SELECT NAME, HEALTH, DAMAGE FROM CHARACTER WHERE ID = @ID";
+
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+            command.Parameters.AddWithValue("@ID", id);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.HasRows)
+            {
+                if (reader.Read() == false) break;
+                player.Name = reader.GetString(0);
+                player.Health = reader.GetInt32(1);
+                player.Damage = reader.GetInt32(2);
+            }
+        }
     }
 }
