@@ -119,9 +119,8 @@
             // lbFillBlank
             // 
             this.lbFillBlank.AutoSize = true;
-            this.lbFillBlank.Enabled = false;
             this.lbFillBlank.Font = new System.Drawing.Font("Montserrat Alternates", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFillBlank.ForeColor = System.Drawing.Color.Black;
+            this.lbFillBlank.ForeColor = System.Drawing.Color.White;
             this.lbFillBlank.Location = new System.Drawing.Point(130, 454);
             this.lbFillBlank.Name = "lbFillBlank";
             this.lbFillBlank.Size = new System.Drawing.Size(91, 23);
@@ -131,9 +130,8 @@
             // lbMultipleChoice
             // 
             this.lbMultipleChoice.AutoSize = true;
-            this.lbMultipleChoice.Enabled = false;
             this.lbMultipleChoice.Font = new System.Drawing.Font("Montserrat Alternates", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMultipleChoice.ForeColor = System.Drawing.Color.Black;
+            this.lbMultipleChoice.ForeColor = System.Drawing.Color.White;
             this.lbMultipleChoice.Location = new System.Drawing.Point(105, 294);
             this.lbMultipleChoice.Name = "lbMultipleChoice";
             this.lbMultipleChoice.Size = new System.Drawing.Size(150, 23);
@@ -187,8 +185,8 @@
             // 
             this.lbTechnology.AutoSize = true;
             this.lbTechnology.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.lbTechnology.Enabled = false;
             this.lbTechnology.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
+            this.lbTechnology.ForeColor = System.Drawing.Color.White;
             this.lbTechnology.Location = new System.Drawing.Point(822, 345);
             this.lbTechnology.Name = "lbTechnology";
             this.lbTechnology.Size = new System.Drawing.Size(91, 19);
@@ -199,8 +197,8 @@
             // 
             this.lbClothing.AutoSize = true;
             this.lbClothing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.lbClothing.Enabled = false;
             this.lbClothing.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
+            this.lbClothing.ForeColor = System.Drawing.Color.White;
             this.lbClothing.Location = new System.Drawing.Point(835, 257);
             this.lbClothing.Name = "lbClothing";
             this.lbClothing.Size = new System.Drawing.Size(69, 19);
@@ -211,8 +209,8 @@
             // 
             this.lbSport.AutoSize = true;
             this.lbSport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.lbSport.Enabled = false;
             this.lbSport.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
+            this.lbSport.ForeColor = System.Drawing.Color.White;
             this.lbSport.Location = new System.Drawing.Point(703, 345);
             this.lbSport.Name = "lbSport";
             this.lbSport.Size = new System.Drawing.Size(47, 19);
@@ -223,8 +221,8 @@
             // 
             this.lbFoodaDrinks.AutoSize = true;
             this.lbFoodaDrinks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.lbFoodaDrinks.Enabled = false;
             this.lbFoodaDrinks.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
+            this.lbFoodaDrinks.ForeColor = System.Drawing.Color.White;
             this.lbFoodaDrinks.Location = new System.Drawing.Point(674, 257);
             this.lbFoodaDrinks.Name = "lbFoodaDrinks";
             this.lbFoodaDrinks.Size = new System.Drawing.Size(100, 19);
@@ -235,8 +233,8 @@
             // 
             this.lbJob.AutoSize = true;
             this.lbJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.lbJob.Enabled = false;
             this.lbJob.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
+            this.lbJob.ForeColor = System.Drawing.Color.White;
             this.lbJob.Location = new System.Drawing.Point(570, 345);
             this.lbJob.Name = "lbJob";
             this.lbJob.Size = new System.Drawing.Size(34, 19);
@@ -247,8 +245,8 @@
             // 
             this.lbFruits.AutoSize = true;
             this.lbFruits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.lbFruits.Enabled = false;
             this.lbFruits.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
+            this.lbFruits.ForeColor = System.Drawing.Color.White;
             this.lbFruits.Location = new System.Drawing.Point(566, 257);
             this.lbFruits.Name = "lbFruits";
             this.lbFruits.Size = new System.Drawing.Size(48, 19);
@@ -259,8 +257,8 @@
             // 
             this.lbPlants.AutoSize = true;
             this.lbPlants.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.lbPlants.Enabled = false;
             this.lbPlants.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
+            this.lbPlants.ForeColor = System.Drawing.Color.White;
             this.lbPlants.Location = new System.Drawing.Point(422, 345);
             this.lbPlants.Name = "lbPlants";
             this.lbPlants.Size = new System.Drawing.Size(53, 19);
@@ -271,8 +269,8 @@
             // 
             this.lbAnimals.AutoSize = true;
             this.lbAnimals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.lbAnimals.Enabled = false;
             this.lbAnimals.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
+            this.lbAnimals.ForeColor = System.Drawing.Color.White;
             this.lbAnimals.Location = new System.Drawing.Point(411, 257);
             this.lbAnimals.Name = "lbAnimals";
             this.lbAnimals.Size = new System.Drawing.Size(68, 19);
@@ -315,7 +313,7 @@
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(186, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(640, 32);
+            this.label4.Size = new System.Drawing.Size(658, 33);
             this.label4.TabIndex = 15;
             this.label4.Text = "Welcome! Please choose type and category to study.";
             // 

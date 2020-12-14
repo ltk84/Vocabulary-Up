@@ -12,11 +12,14 @@ namespace VocabularyUp
 {
     public partial class RevisionForm : Form
     {
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
         ShopForm shop;
         int currentChar = 0;
         public RevisionForm()
         {
             InitializeComponent();
+            UpdateTheme();
             ManageUserAction.UpdateOwnCharacter();
             if (ManageUserAction.GetOwnCharacterList().Count == 1)
             {
@@ -26,6 +29,12 @@ namespace VocabularyUp
             LoadPictureBoxCharacter(currentChar);
             shop = new ShopForm(this.pnlChoosePlay);
             LoadDiamondLabel();
+        }
+
+        private void UpdateTheme()
+        {
+            this.BackColor = primary;
+            this.pnlRevision.BackColor = primary;
         }
 
         public void LoadShop()
@@ -109,6 +118,7 @@ namespace VocabularyUp
             pnlType.Hide();
             btnChooseType.Show();
             btnStart.Hide();
+            btnBack.Hide();
         }
 
         private void LoadDiamondLabel()
@@ -121,19 +131,19 @@ namespace VocabularyUp
         {
             pnlType_1.BorderThickness = 0;
             pnlType_2.BorderThickness = 0;
-            pnlType_3.BorderThickness = 3;
+            pnlType_3.BorderThickness = 5;
         }
 
         private void pnlType_2_Click(object sender, EventArgs e)
         {
             pnlType_1.BorderThickness = 0;
-            pnlType_2.BorderThickness = 3;
+            pnlType_2.BorderThickness = 5;
             pnlType_3.BorderThickness = 0;
         }
 
         private void pnlType_1_Click(object sender, EventArgs e)
         {
-            pnlType_1.BorderThickness = 3;
+            pnlType_1.BorderThickness = 5;
             pnlType_2.BorderThickness = 0;
             pnlType_3.BorderThickness = 0;
         }
@@ -143,6 +153,35 @@ namespace VocabularyUp
             pnlType.Show();
             btnChooseType.Hide();
             btnStart.Show();
+            btnBack.Show();
+        }
+
+        private void lbMaze_Click(object sender, EventArgs e)
+        {
+            pnlType_1_Click(sender, e);
+        }
+
+        private void lbWalkthrough_Click(object sender, EventArgs e)
+        {
+            pnlType_2_Click(sender, e);
+        }
+
+        private void lbChallenge_Click(object sender, EventArgs e)
+        {
+            pnlType_3_Click(sender, e);
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            pnlType.Hide();
+            btnChooseType.Show();
+            btnStart.Hide();
+            btnBack.Hide();
         }
     }
 }
