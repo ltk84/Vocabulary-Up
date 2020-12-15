@@ -49,6 +49,7 @@ namespace VocabularyUp
             shop.TopLevel = false;
             shop.FormBorderStyle = FormBorderStyle.None;
             this.pnlRevision.Controls.Add(shop);
+            shop.Dock = DockStyle.Fill;
             shop.Show();
             //this.Parent.Show();
            
