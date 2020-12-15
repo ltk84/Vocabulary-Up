@@ -18,6 +18,7 @@ namespace VocabularyUp
         List<Quiz> questions = new List<Quiz>();
         int time;
         int currentQuiz = 0;
+        bool isCorrect = false;
         public GameMCForm()
         {
             InitializeComponent();
@@ -159,10 +160,16 @@ namespace VocabularyUp
             {
                 //ReloadButton();
                 userChoices[currentQuiz].IsDone = true;
+                if (userChoices[currentQuiz].Selected == userChoices[currentQuiz].Correct)
+                    isCorrect = true;
             }
 
             this.Close();
 
         }
+
+        public bool IsCorrect { get => isCorrect; }
+
+        
     }
 }

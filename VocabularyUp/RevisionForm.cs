@@ -183,7 +183,7 @@ namespace VocabularyUp
             if (type == 1)
             {
                 WalkthroughForm wtf = new WalkthroughForm(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
-                wtf.TopMost = true;
+                //wtf.TopMost = true;
                 wtf.Show();
             }
             else if (type == 2)
