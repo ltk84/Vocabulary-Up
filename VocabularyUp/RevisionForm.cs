@@ -199,7 +199,9 @@ namespace VocabularyUp
             }
             else
             {
-
+                FightingGameForm fgf = new FightingGameForm(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
+                fgf.TopMost = true;
+                fgf.Show();
             }
         }
 
