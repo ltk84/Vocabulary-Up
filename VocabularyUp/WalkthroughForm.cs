@@ -14,7 +14,6 @@ namespace VocabularyUp
     {
         private Collection choosedCol;
         private Player player;
-        private Monster monster;
         private List<Monster> monsters;
         private bool isGameOver;
         private Random rd = new Random();
@@ -80,6 +79,10 @@ namespace VocabularyUp
             }
         }
 
+        
+
+       
+
         public void LoadBackGround()
         {
             this.BackgroundImage = Image.FromFile("../../db/Backgrounds/maps/map_1.jpg");
@@ -97,6 +100,15 @@ namespace VocabularyUp
             {
                 mon.Draw(g);
             }
+
+            string text = "Health: " + player.Health.ToString();
+            g.DrawString(text, new Font("Arial", 16), new SolidBrush(Color.Red), new PointF(0, 0));
+
+            if (isGameOver)
+            {
+                SizeF Size = e.Graphics.MeasureString("Game Over", new Font("Arial", 20));
+                e.Graphics.DrawString("Game Over", new Font("Arial", 20), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, this.Height / 2 - Size.Height / 2));
+            }
         }
 
         private void timerUpdate_Tick(object sender, EventArgs e)
@@ -108,7 +120,17 @@ namespace VocabularyUp
                 foreach (var mon in monsters)
                 {
                     if (player.isCollision(mon))
-                        isGameOver = true;
+                    {
+                        timerUpdate.Stop();
+                        PopUpFadeBackground();
+
+                        if (player.Health == 0)
+                        {
+                            isGameOver = true;
+                        }
+                            
+                    }
+
                     else
                     {
                         mon.Move(mon.Cur);
@@ -119,9 +141,44 @@ namespace VocabularyUp
                             mon.Cur = Direction.Down;
                     }
                 }
+                this.Invalidate();
             }
+            
+        }
 
-            this.Invalidate();
+        private void PopUpFadeBackground()
+        {
+            Form backgroundForm = new Form();
+            try
+            {
+                using (GameMCForm f = new GameMCForm())
+                {
+                    backgroundForm.StartPosition = FormStartPosition.Manual;
+                    backgroundForm.FormBorderStyle = FormBorderStyle.None;
+                    backgroundForm.Opacity = .70d;
+                    backgroundForm.BackColor = Color.Black;
+                    backgroundForm.Size = this.Size;
+                    backgroundForm.TopMost = true;
+                    backgroundForm.Location = this.Location;
+                    backgroundForm.ShowInTaskbar = false;
+                    backgroundForm.Show();
+
+                    f.Owner = backgroundForm;
+                    f.ShowDialog();
+
+                    backgroundForm.Dispose();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                backgroundForm.Dispose();
+            }
+            
+               
         }
 
         private void WalkthroughForm_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -145,27 +202,6 @@ namespace VocabularyUp
             }
         }
 
-        private void HandlePlayerOutsideClient()
-        {
-
-            int x = player.X;
-            int y = player.Y;
-            Size size = player.Size;
-
-            if (x + size.Width > this.Width)
-                x = this.Width - (size.Width);
-
-            if (y  < this.Height / 3)
-                y = this.Height / 3;
-
-            if (x  < 0)
-                x = 0;
-
-            if (y + size.Height > this.Height)
-                y = this.Height - size.Height;
-
-            player.X = x;
-            player.Y = y;
-        }
+        
     }
 }

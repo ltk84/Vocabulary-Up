@@ -277,6 +277,17 @@ namespace VocabularyUp
             }
             return 1;
         }
+
+        public static void UpdateGameMainFlashCards()
+        {
+            mainFlashCard.Clear();
+            Random rd = new Random();
+            while (mainFlashCard.Count < 15)
+            {
+                int index = rd.Next(0, ManageUserAction.GetItemOfAllCollection(0).ListFL.Count);
+                mainFlashCard.Add(ManageUserAction.GetItemOfAllCollection(0).ListFL[index]);
+            }
+        }
         public static int CalculateProgress(int currentTopic, int id)
         {
             string nameTopic = null;
