@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopForm));
+            this.pnlShop = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pbCurrency = new System.Windows.Forms.PictureBox();
             this.lbDiamond = new System.Windows.Forms.Label();
-            this.btnWeapon = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBody = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCate_All = new Guna.UI2.WinForms.Guna2Button();
             this.flpShop = new System.Windows.Forms.FlowLayoutPanel();
             this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlShop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -44,34 +43,46 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrency)).BeginInit();
             this.SuspendLayout();
             // 
+            // pnlShop
+            // 
+            this.pnlShop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlShop.BorderRadius = 20;
+            this.pnlShop.Controls.Add(this.splitContainer1);
+            this.pnlShop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlShop.Location = new System.Drawing.Point(0, 0);
+            this.pnlShop.Name = "pnlShop";
+            this.pnlShop.ShadowDecoration.Parent = this.pnlShop;
+            this.pnlShop.Size = new System.Drawing.Size(1000, 519);
+            this.pnlShop.TabIndex = 0;
+            // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.BackColor = System.Drawing.Color.White;
+            this.splitContainer1.Location = new System.Drawing.Point(14, 13);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.pbCurrency);
             this.splitContainer1.Panel1.Controls.Add(this.lbDiamond);
-            this.splitContainer1.Panel1.Controls.Add(this.btnWeapon);
-            this.splitContainer1.Panel1.Controls.Add(this.btnBody);
-            this.splitContainer1.Panel1.Controls.Add(this.btnCate_All);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.flpShop);
             this.splitContainer1.Panel2.Controls.Add(this.btnExit);
-            this.splitContainer1.Size = new System.Drawing.Size(750, 422);
-            this.splitContainer1.SplitterDistance = 205;
-            this.splitContainer1.TabIndex = 0;
+            this.splitContainer1.Size = new System.Drawing.Size(973, 493);
+            this.splitContainer1.SplitterDistance = 173;
+            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.TabIndex = 1;
             // 
             // pbCurrency
             // 
             this.pbCurrency.Image = ((System.Drawing.Image)(resources.GetObject("pbCurrency.Image")));
-            this.pbCurrency.Location = new System.Drawing.Point(55, 12);
+            this.pbCurrency.Location = new System.Drawing.Point(104, 31);
+            this.pbCurrency.Margin = new System.Windows.Forms.Padding(4);
             this.pbCurrency.Name = "pbCurrency";
-            this.pbCurrency.Size = new System.Drawing.Size(30, 25);
+            this.pbCurrency.Size = new System.Drawing.Size(28, 23);
             this.pbCurrency.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCurrency.TabIndex = 5;
             this.pbCurrency.TabStop = false;
@@ -79,88 +90,54 @@
             // lbDiamond
             // 
             this.lbDiamond.AutoSize = true;
-            this.lbDiamond.Location = new System.Drawing.Point(24, 12);
+            this.lbDiamond.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.lbDiamond.Location = new System.Drawing.Point(59, 31);
+            this.lbDiamond.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDiamond.Name = "lbDiamond";
-            this.lbDiamond.Size = new System.Drawing.Size(25, 13);
+            this.lbDiamond.Size = new System.Drawing.Size(37, 23);
             this.lbDiamond.TabIndex = 4;
             this.lbDiamond.Text = "100";
-            // 
-            // btnWeapon
-            // 
-            this.btnWeapon.CheckedState.Parent = this.btnWeapon;
-            this.btnWeapon.CustomImages.Parent = this.btnWeapon;
-            this.btnWeapon.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnWeapon.ForeColor = System.Drawing.Color.White;
-            this.btnWeapon.HoverState.Parent = this.btnWeapon;
-            this.btnWeapon.Location = new System.Drawing.Point(3, 193);
-            this.btnWeapon.Name = "btnWeapon";
-            this.btnWeapon.ShadowDecoration.Parent = this.btnWeapon;
-            this.btnWeapon.Size = new System.Drawing.Size(180, 45);
-            this.btnWeapon.TabIndex = 2;
-            this.btnWeapon.Text = "Weapon";
-            // 
-            // btnBody
-            // 
-            this.btnBody.CheckedState.Parent = this.btnBody;
-            this.btnBody.CustomImages.Parent = this.btnBody;
-            this.btnBody.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnBody.ForeColor = System.Drawing.Color.White;
-            this.btnBody.HoverState.Parent = this.btnBody;
-            this.btnBody.Location = new System.Drawing.Point(3, 130);
-            this.btnBody.Name = "btnBody";
-            this.btnBody.ShadowDecoration.Parent = this.btnBody;
-            this.btnBody.Size = new System.Drawing.Size(180, 45);
-            this.btnBody.TabIndex = 1;
-            this.btnBody.Text = "Body";
-            // 
-            // btnCate_All
-            // 
-            this.btnCate_All.CheckedState.Parent = this.btnCate_All;
-            this.btnCate_All.CustomImages.Parent = this.btnCate_All;
-            this.btnCate_All.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCate_All.ForeColor = System.Drawing.Color.White;
-            this.btnCate_All.HoverState.Parent = this.btnCate_All;
-            this.btnCate_All.Location = new System.Drawing.Point(3, 68);
-            this.btnCate_All.Name = "btnCate_All";
-            this.btnCate_All.ShadowDecoration.Parent = this.btnCate_All;
-            this.btnCate_All.Size = new System.Drawing.Size(180, 45);
-            this.btnCate_All.TabIndex = 0;
-            this.btnCate_All.Text = "All";
-            this.btnCate_All.Click += new System.EventHandler(this.btnCate_All_Click);
             // 
             // flpShop
             // 
             this.flpShop.AutoScroll = true;
             this.flpShop.BackColor = System.Drawing.Color.White;
-            this.flpShop.Location = new System.Drawing.Point(18, 12);
+            this.flpShop.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flpShop.Location = new System.Drawing.Point(24, 15);
+            this.flpShop.Margin = new System.Windows.Forms.Padding(4);
             this.flpShop.Name = "flpShop";
-            this.flpShop.Size = new System.Drawing.Size(493, 347);
+            this.flpShop.Size = new System.Drawing.Size(657, 427);
             this.flpShop.TabIndex = 4;
             // 
             // btnExit
             // 
+            this.btnExit.BorderRadius = 20;
             this.btnExit.CheckedState.Parent = this.btnExit;
             this.btnExit.CustomImages.Parent = this.btnExit;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.HoverState.Parent = this.btnExit;
-            this.btnExit.Location = new System.Drawing.Point(404, 375);
+            this.btnExit.Location = new System.Drawing.Point(554, 446);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(95, 35);
+            this.btnExit.Size = new System.Drawing.Size(127, 43);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // ShopForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 422);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(1000, 519);
+            this.Controls.Add(this.pnlShop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ShopForm";
             this.Text = "ShopForm";
+            this.pnlShop.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -173,13 +150,11 @@
 
         #endregion
 
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlShop;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private Guna.UI2.WinForms.Guna2Button btnWeapon;
-        private Guna.UI2.WinForms.Guna2Button btnBody;
-        private Guna.UI2.WinForms.Guna2Button btnCate_All;
-        private Guna.UI2.WinForms.Guna2Button btnExit;
-        private System.Windows.Forms.FlowLayoutPanel flpShop;
-        private System.Windows.Forms.Label lbDiamond;
         private System.Windows.Forms.PictureBox pbCurrency;
+        private System.Windows.Forms.Label lbDiamond;
+        private System.Windows.Forms.FlowLayoutPanel flpShop;
+        private Guna.UI2.WinForms.Guna2Button btnExit;
     }
 }

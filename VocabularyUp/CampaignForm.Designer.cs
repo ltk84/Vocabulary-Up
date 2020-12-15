@@ -126,6 +126,7 @@
             this.lbFillBlank.Size = new System.Drawing.Size(91, 23);
             this.lbFillBlank.TabIndex = 27;
             this.lbFillBlank.Text = "Fill Blank";
+            this.lbFillBlank.Click += new System.EventHandler(this.lbFillBlank_Click);
             // 
             // lbMultipleChoice
             // 
@@ -137,6 +138,7 @@
             this.lbMultipleChoice.Size = new System.Drawing.Size(150, 23);
             this.lbMultipleChoice.TabIndex = 26;
             this.lbMultipleChoice.Text = "Multiple Choice";
+            this.lbMultipleChoice.Click += new System.EventHandler(this.lbMultipleChoice_Click);
             // 
             // btnMultipleChoice
             // 
@@ -192,6 +194,7 @@
             this.lbTechnology.Size = new System.Drawing.Size(91, 19);
             this.lbTechnology.TabIndex = 25;
             this.lbTechnology.Text = "Technology";
+            this.lbTechnology.Click += new System.EventHandler(this.lbTechnology_Click);
             // 
             // lbClothing
             // 
@@ -204,6 +207,7 @@
             this.lbClothing.Size = new System.Drawing.Size(69, 19);
             this.lbClothing.TabIndex = 24;
             this.lbClothing.Text = "Clothing";
+            this.lbClothing.Click += new System.EventHandler(this.lbClothing_Click);
             // 
             // lbSport
             // 
@@ -216,6 +220,7 @@
             this.lbSport.Size = new System.Drawing.Size(47, 19);
             this.lbSport.TabIndex = 23;
             this.lbSport.Text = "Sport";
+            this.lbSport.Click += new System.EventHandler(this.lbSport_Click);
             // 
             // lbFoodaDrinks
             // 
@@ -228,6 +233,7 @@
             this.lbFoodaDrinks.Size = new System.Drawing.Size(100, 19);
             this.lbFoodaDrinks.TabIndex = 22;
             this.lbFoodaDrinks.Text = "Food - drinks";
+            this.lbFoodaDrinks.Click += new System.EventHandler(this.lbFoodaDrinks_Click);
             // 
             // lbJob
             // 
@@ -240,6 +246,7 @@
             this.lbJob.Size = new System.Drawing.Size(34, 19);
             this.lbJob.TabIndex = 21;
             this.lbJob.Text = "Job";
+            this.lbJob.Click += new System.EventHandler(this.lbJob_Click);
             // 
             // lbFruits
             // 
@@ -252,6 +259,7 @@
             this.lbFruits.Size = new System.Drawing.Size(48, 19);
             this.lbFruits.TabIndex = 20;
             this.lbFruits.Text = "Fruits";
+            this.lbFruits.Click += new System.EventHandler(this.lbFruits_Click);
             // 
             // lbPlants
             // 
@@ -264,6 +272,7 @@
             this.lbPlants.Size = new System.Drawing.Size(53, 19);
             this.lbPlants.TabIndex = 19;
             this.lbPlants.Text = "Plants";
+            this.lbPlants.Click += new System.EventHandler(this.lbPlants_Click);
             // 
             // lbAnimals
             // 
@@ -276,6 +285,7 @@
             this.lbAnimals.Size = new System.Drawing.Size(68, 19);
             this.lbAnimals.TabIndex = 18;
             this.lbAnimals.Text = "Animals";
+            this.lbAnimals.Click += new System.EventHandler(this.lbAnimals_Click);
             // 
             // guna2CustomGradientPanel3
             // 

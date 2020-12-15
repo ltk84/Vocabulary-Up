@@ -44,11 +44,11 @@
             this.pbCurrency = new System.Windows.Forms.PictureBox();
             this.lbDiamond = new System.Windows.Forms.Label();
             this.btnToggle = new System.Windows.Forms.Button();
-            this.btnShop = new System.Windows.Forms.Button();
             this.lbName = new System.Windows.Forms.Label();
             this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
             this.pbCharacter = new System.Windows.Forms.PictureBox();
+            this.btnShop = new Guna.UI2.WinForms.Guna2Button();
             this.pnlRevision.SuspendLayout();
             this.pnlChoosePlay.SuspendLayout();
             this.pnlType.SuspendLayout();
@@ -74,18 +74,18 @@
             // pnlChoosePlay
             // 
             this.pnlChoosePlay.BackColor = System.Drawing.Color.Transparent;
+            this.pnlChoosePlay.Controls.Add(this.pnlType);
             this.pnlChoosePlay.Controls.Add(this.btnBack);
             this.pnlChoosePlay.Controls.Add(this.btnStart);
             this.pnlChoosePlay.Controls.Add(this.btnChooseType);
-            this.pnlChoosePlay.Controls.Add(this.pnlType);
             this.pnlChoosePlay.Controls.Add(this.pbCurrency);
             this.pnlChoosePlay.Controls.Add(this.lbDiamond);
             this.pnlChoosePlay.Controls.Add(this.btnToggle);
-            this.pnlChoosePlay.Controls.Add(this.btnShop);
             this.pnlChoosePlay.Controls.Add(this.lbName);
             this.pnlChoosePlay.Controls.Add(this.btnPrevious);
             this.pnlChoosePlay.Controls.Add(this.btnNext);
             this.pnlChoosePlay.Controls.Add(this.pbCharacter);
+            this.pnlChoosePlay.Controls.Add(this.btnShop);
             this.pnlChoosePlay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChoosePlay.Location = new System.Drawing.Point(0, 0);
             this.pnlChoosePlay.Margin = new System.Windows.Forms.Padding(4);
@@ -96,9 +96,11 @@
             // 
             // btnBack
             // 
+            this.btnBack.BorderRadius = 20;
             this.btnBack.CheckedState.Parent = this.btnBack;
             this.btnBack.CustomImages.Parent = this.btnBack;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnBack.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.HoverState.Parent = this.btnBack;
             this.btnBack.Location = new System.Drawing.Point(285, 449);
@@ -111,9 +113,11 @@
             // 
             // btnStart
             // 
+            this.btnStart.BorderRadius = 20;
             this.btnStart.CheckedState.Parent = this.btnStart;
             this.btnStart.CustomImages.Parent = this.btnStart;
-            this.btnStart.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnStart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.btnStart.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnStart.ForeColor = System.Drawing.Color.White;
             this.btnStart.HoverState.Parent = this.btnStart;
             this.btnStart.Location = new System.Drawing.Point(540, 449);
@@ -126,9 +130,11 @@
             // 
             // btnChooseType
             // 
+            this.btnChooseType.BorderRadius = 20;
             this.btnChooseType.CheckedState.Parent = this.btnChooseType;
             this.btnChooseType.CustomImages.Parent = this.btnChooseType;
-            this.btnChooseType.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChooseType.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.btnChooseType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseType.ForeColor = System.Drawing.Color.White;
             this.btnChooseType.HoverState.Parent = this.btnChooseType;
             this.btnChooseType.Location = new System.Drawing.Point(409, 449);
@@ -226,7 +232,7 @@
             this.lbMaze.ForeColor = System.Drawing.Color.White;
             this.lbMaze.Location = new System.Drawing.Point(27, 63);
             this.lbMaze.Name = "lbMaze";
-            this.lbMaze.Size = new System.Drawing.Size(226, 265);
+            this.lbMaze.Size = new System.Drawing.Size(245, 265);
             this.lbMaze.TabIndex = 0;
             this.lbMaze.Text = "The Mysterious Maze";
             this.lbMaze.Click += new System.EventHandler(this.lbMaze_Click);
@@ -237,7 +243,7 @@
             this.pbCurrency.Location = new System.Drawing.Point(839, 48);
             this.pbCurrency.Margin = new System.Windows.Forms.Padding(4);
             this.pbCurrency.Name = "pbCurrency";
-            this.pbCurrency.Size = new System.Drawing.Size(40, 31);
+            this.pbCurrency.Size = new System.Drawing.Size(28, 23);
             this.pbCurrency.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCurrency.TabIndex = 25;
             this.pbCurrency.TabStop = false;
@@ -245,10 +251,11 @@
             // lbDiamond
             // 
             this.lbDiamond.AutoSize = true;
+            this.lbDiamond.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiamond.Location = new System.Drawing.Point(797, 48);
             this.lbDiamond.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDiamond.Name = "lbDiamond";
-            this.lbDiamond.Size = new System.Drawing.Size(32, 17);
+            this.lbDiamond.Size = new System.Drawing.Size(37, 23);
             this.lbDiamond.TabIndex = 24;
             this.lbDiamond.Text = "100";
             // 
@@ -263,25 +270,15 @@
             this.btnToggle.UseVisualStyleBackColor = true;
             this.btnToggle.Visible = false;
             // 
-            // btnShop
-            // 
-            this.btnShop.Location = new System.Drawing.Point(795, 86);
-            this.btnShop.Margin = new System.Windows.Forms.Padding(4);
-            this.btnShop.Name = "btnShop";
-            this.btnShop.Size = new System.Drawing.Size(100, 28);
-            this.btnShop.TabIndex = 22;
-            this.btnShop.Text = "Shop";
-            this.btnShop.UseVisualStyleBackColor = true;
-            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
-            // 
             // lbName
             // 
             this.lbName.AutoSize = true;
             this.lbName.BackColor = System.Drawing.Color.Transparent;
-            this.lbName.Location = new System.Drawing.Point(473, 404);
+            this.lbName.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Location = new System.Drawing.Point(420, 120);
             this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(45, 17);
+            this.lbName.Size = new System.Drawing.Size(102, 37);
             this.lbName.TabIndex = 21;
             this.lbName.Text = "Name";
             // 
@@ -293,7 +290,7 @@
             this.btnPrevious.CheckedState.Parent = this.btnPrevious;
             this.btnPrevious.CustomImages.Parent = this.btnPrevious;
             this.btnPrevious.Enabled = false;
-            this.btnPrevious.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnPrevious.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnPrevious.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.Black;
             this.btnPrevious.HoverState.Parent = this.btnPrevious;
@@ -314,7 +311,7 @@
             this.btnNext.BorderRadius = 15;
             this.btnNext.CheckedState.Parent = this.btnNext;
             this.btnNext.CustomImages.Parent = this.btnNext;
-            this.btnNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.Black;
             this.btnNext.HoverState.Parent = this.btnNext;
@@ -338,6 +335,23 @@
             this.pbCharacter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCharacter.TabIndex = 0;
             this.pbCharacter.TabStop = false;
+            // 
+            // btnShop
+            // 
+            this.btnShop.BorderRadius = 15;
+            this.btnShop.CheckedState.Parent = this.btnShop;
+            this.btnShop.CustomImages.Parent = this.btnShop;
+            this.btnShop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.btnShop.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnShop.ForeColor = System.Drawing.Color.White;
+            this.btnShop.HoverState.Parent = this.btnShop;
+            this.btnShop.Image = ((System.Drawing.Image)(resources.GetObject("btnShop.Image")));
+            this.btnShop.Location = new System.Drawing.Point(794, 78);
+            this.btnShop.Name = "btnShop";
+            this.btnShop.ShadowDecoration.Parent = this.btnShop;
+            this.btnShop.Size = new System.Drawing.Size(89, 45);
+            this.btnShop.TabIndex = 3;
+            this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
             // 
             // RevisionForm
             // 
@@ -367,7 +381,6 @@
 
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlRevision;
         private System.Windows.Forms.PictureBox pbCharacter;
-        private System.Windows.Forms.Button btnShop;
         private System.Windows.Forms.Label lbName;
         private Guna.UI2.WinForms.Guna2Button btnPrevious;
         private Guna.UI2.WinForms.Guna2Button btnNext;
@@ -385,5 +398,6 @@
         private System.Windows.Forms.Label lbWalkthrough;
         private System.Windows.Forms.Label lbMaze;
         private Guna.UI2.WinForms.Guna2Button btnBack;
+        private Guna.UI2.WinForms.Guna2Button btnShop;
     }
 }
