@@ -10,9 +10,11 @@ namespace VocabularyUp
     class Monster:ImgRendingObject
     {
         List<Quiz> quizzes;
-        public Monster(Image image, Point loc, Size size, List<Quiz> q): base(image, loc, size, 0)
+        Direction cur = Direction.Down;
+        public Monster(Image image, Point loc, Size size, int v, List<Quiz> q): base(image, loc, size, v)
         {
             this.quizzes = q;
         }
+        public Direction Cur { get => cur; set => cur = value; }
     }
 }

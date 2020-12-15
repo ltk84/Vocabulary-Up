@@ -277,6 +277,17 @@ namespace VocabularyUp
             }
             return 1;
         }
+
+        public static void UpdateGameMainFlashCards()
+        {
+            mainFlashCard.Clear();
+            Random rd = new Random();
+            while (mainFlashCard.Count < 15)
+            {
+                int index = rd.Next(0, ManageUserAction.GetItemOfAllCollection(0).ListFL.Count);
+                mainFlashCard.Add(ManageUserAction.GetItemOfAllCollection(0).ListFL[index]);
+            }
+        }
         public static int CalculateProgress(int currentTopic, int id)
         {
             string nameTopic = null;
@@ -829,6 +840,27 @@ namespace VocabularyUp
             }
 
             diamond = diamond - num;
+        }
+
+        public static void LoadPlayerStat(int id, Player player)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            connection.Open();
+
+            String sqlQuery = "SELECT NAME, HEALTH, DAMAGE FROM CHARACTER WHERE ID = @ID";
+
+            SqlCommand command = new SqlCommand(sqlQuery, connection);
+            command.Parameters.AddWithValue("@ID", id);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.HasRows)
+            {
+                if (reader.Read() == false) break;
+                player.Name = reader.GetString(0);
+                player.Health = reader.GetInt32(1);
+                player.Damage = reader.GetInt32(2);
+            }
         }
     }
 }

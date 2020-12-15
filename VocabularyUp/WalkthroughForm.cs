@@ -1,0 +1,207 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace VocabularyUp
+{
+    public partial class WalkthroughForm : Form
+    {
+        private Collection choosedCol;
+        private Player player;
+        private List<Monster> monsters;
+        private bool isGameOver;
+        private Random rd = new Random();
+        public WalkthroughForm(int idCol, int idSkin)
+        {
+            InitializeComponent();
+            LoadBackGround();
+            InitCollecion(idCol);
+            InitPlayer(idSkin);
+            InitMonster();
+            timerUpdate.Start();
+            isGameOver = false;
+        }
+
+        public void InitPlayer(int idSkin)
+        {
+            Image image = Image.FromFile("../../db/Characters/" + idSkin.ToString() + ".png");
+            Point location = new Point(0, this.ClientSize.Height / 2);
+            Size size = new Size(30, 30);
+
+            player = new Player(image, location, size, 10);
+
+            ManageUserAction.LoadPlayerStat(idSkin, player);
+        }
+
+        public  void InitCollecion(int idCol)
+        {
+            choosedCol = ManageUserAction.GetItemOfAllCollection(idCol);
+        }
+
+        public void InitMonster()
+        {
+            //Image image = Image.FromFile("../../db/Monsters/3.png");
+            //image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            //Point location = new Point(this.ClientSize.Width/ 2 , this.ClientSize.Height / 2);
+            //Size size = new Size(150, 150);
+
+            //monster = new Monster(image, location, size, null);
+
+            monsters = new List<Monster>();
+            for (int i = 0; i < 3; i++)
+            {
+                
+                Image image = Image.FromFile("../../db/Monsters/" + (i+1).ToString() + ".png");
+                image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                Size size = new Size(60, 60);
+                int y = rd.Next(this.Height * 2 / 3, this.Height - size.Height);
+                Point location = new Point(((i + 1) * this.ClientSize.Width / 4), y);
+
+
+                Monster mon;
+                int v = rd.Next(10, 20);
+                mon = new Monster(image, location, size, v, null);
+
+                if (i == 2)
+                {
+                   location = new Point(((i + 1) * this.ClientSize.Width / 4),  this.Height * 2 / 3);
+                  
+                    mon = new Monster(image, location, size, 0, null);
+                }    
+
+                monsters.Add(mon);
+            }
+        }
+
+        
+
+       
+
+        public void LoadBackGround()
+        {
+            this.BackgroundImage = Image.FromFile("../../db/Backgrounds/maps/map_1.jpg");
+            
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            Graphics g = e.Graphics;
+
+            player.Draw(g);
+
+            foreach (var mon in monsters)
+            {
+                mon.Draw(g);
+            }
+
+            string text = "Health: " + player.Health.ToString();
+            g.DrawString(text, new Font("Arial", 16), new SolidBrush(Color.Red), new PointF(0, 0));
+
+            if (isGameOver)
+            {
+                SizeF Size = e.Graphics.MeasureString("Game Over", new Font("Arial", 20));
+                e.Graphics.DrawString("Game Over", new Font("Arial", 20), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, this.Height / 2 - Size.Height / 2));
+            }
+        }
+
+        private void timerUpdate_Tick(object sender, EventArgs e)
+        {
+            player.HandleOutsideClient(this);
+
+            if (!isGameOver)
+            {
+                foreach (var mon in monsters)
+                {
+                    if (player.isCollision(mon))
+                    {
+                        timerUpdate.Stop();
+                        PopUpFadeBackground();
+
+                        if (player.Health == 0)
+                        {
+                            isGameOver = true;
+                        }
+                            
+                    }
+
+                    else
+                    {
+                        mon.Move(mon.Cur);
+
+                        if (mon.Y + mon.Size.Height > this.Height)
+                            mon.Cur = Direction.Up;
+                        else if (mon.Y < this.Height / 3)
+                            mon.Cur = Direction.Down;
+                    }
+                }
+                this.Invalidate();
+            }
+            
+        }
+
+        private void PopUpFadeBackground()
+        {
+            Form backgroundForm = new Form();
+            try
+            {
+                using (GameMCForm f = new GameMCForm())
+                {
+                    backgroundForm.StartPosition = FormStartPosition.Manual;
+                    backgroundForm.FormBorderStyle = FormBorderStyle.None;
+                    backgroundForm.Opacity = .70d;
+                    backgroundForm.BackColor = Color.Black;
+                    backgroundForm.Size = this.Size;
+                    backgroundForm.TopMost = true;
+                    backgroundForm.Location = this.Location;
+                    backgroundForm.ShowInTaskbar = false;
+                    backgroundForm.Show();
+
+                    f.Owner = backgroundForm;
+                    f.ShowDialog();
+
+                    backgroundForm.Dispose();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                backgroundForm.Dispose();
+            }
+            
+               
+        }
+
+        private void WalkthroughForm_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    player.Move(Direction.Left);
+                    break;
+                case Keys.Right:
+                    player.Move(Direction.Right);
+                    break;
+                case Keys.Up:
+                    player.Move(Direction.Up);
+                    break;
+                case Keys.Down:
+                    player.Move(Direction.Down);
+                    break;
+                case Keys.Space:
+                    break;
+            }
+        }
+
+        
+    }
+}

@@ -16,6 +16,7 @@ namespace VocabularyUp
         Color secondary = Color.FromArgb(27, 42, 65);
         ShopForm shop;
         int currentChar = 0;
+        int type = 0;
         public RevisionForm()
         {
             InitializeComponent();
@@ -139,6 +140,7 @@ namespace VocabularyUp
             pnlType_1.BorderThickness = 0;
             pnlType_2.BorderThickness = 0;
             pnlType_3.BorderThickness = 5;
+            type = 3;
         }
 
         private void pnlType_2_Click(object sender, EventArgs e)
@@ -146,6 +148,7 @@ namespace VocabularyUp
             pnlType_1.BorderThickness = 0;
             pnlType_2.BorderThickness = 5;
             pnlType_3.BorderThickness = 0;
+            type = 2;
         }
 
         private void pnlType_1_Click(object sender, EventArgs e)
@@ -153,6 +156,7 @@ namespace VocabularyUp
             pnlType_1.BorderThickness = 5;
             pnlType_2.BorderThickness = 0;
             pnlType_3.BorderThickness = 0;
+            type = 1;
         }
 
         private void btnChooseType_Click(object sender, EventArgs e)
@@ -180,7 +184,23 @@ namespace VocabularyUp
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            if (type == 0)
+                return;
 
+            if (type == 1)
+            {
+                WalkthroughForm wtf = new WalkthroughForm(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
+                wtf.TopMost = true;
+                wtf.Show();
+            }
+            else if (type == 2)
+            {
+
+            }
+            else
+            {
+
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
