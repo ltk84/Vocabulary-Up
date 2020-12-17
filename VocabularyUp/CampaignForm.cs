@@ -331,5 +331,55 @@ namespace VocabularyUp
                 Start();
             }
         }
+
+        private void lbMultipleChoice_Click(object sender, EventArgs e)
+        {
+            btnMultipleChoice_Click(sender, e);
+        }
+
+        private void lbFillBlank_Click(object sender, EventArgs e)
+        {
+            btnFilBlank_Click(sender, e);
+        }
+
+        private void lbAnimals_Click(object sender, EventArgs e)
+        {
+            btnAnimals_Click(sender, e);
+        }
+
+        private void lbPlants_Click(object sender, EventArgs e)
+        {
+            btnPlants_Click(sender, e);
+        }
+
+        private void lbFruits_Click(object sender, EventArgs e)
+        {
+            btnFruits_Click(sender, e);
+        }
+
+        private void lbJob_Click(object sender, EventArgs e)
+        {
+            btnJob_Click(sender, e);
+        }
+
+        private void lbFoodaDrinks_Click(object sender, EventArgs e)
+        {
+            btnFoodaDrinks_Click(sender, e);
+        }
+
+        private void lbSport_Click(object sender, EventArgs e)
+        {
+            btnSport_Click(sender, e);
+        }
+
+        private void lbClothing_Click(object sender, EventArgs e)
+        {
+            btnClothing_Click(sender, e);
+        }
+
+        private void lbTechnology_Click(object sender, EventArgs e)
+        {
+            btnTechnology_Click(sender, e);
+        }
     }
 }

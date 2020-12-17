@@ -36,6 +36,12 @@ namespace VocabularyUp
         {
             this.BackColor = primary;
             this.pnlRevision.BackColor = primary;
+            this.btnBack.FillColor = primary;
+            this.btnStart.FillColor = primary;
+            this.btnChooseType.FillColor = primary;
+            this.btnShop.FillColor = primary;
+            this.btnPrevious.FillColor = primary;
+            this.btnNext.FillColor = primary;
         }
 
         public void LoadShop()
@@ -44,6 +50,7 @@ namespace VocabularyUp
             shop.TopLevel = false;
             shop.FormBorderStyle = FormBorderStyle.None;
             this.pnlRevision.Controls.Add(shop);
+            shop.Dock = DockStyle.Fill;
             shop.Show();
             //this.Parent.Show();
            
@@ -103,10 +110,10 @@ namespace VocabularyUp
 
         private void pnlChoosePlay_VisibleChanged(object sender, EventArgs e)
         {
-            if (currentChar == ManageUserAction.GetOwnCharacterList().Count - 1 && btnToggle.Text == "1")
+            if (currentChar == ManageUserAction.GetOwnCharacterList().Count - 1)// && btnToggle.Text == "1")
             {
                 btnNext.Enabled = true;
-                btnToggle.Text = "0";
+                //btnToggle.Text = "0";
             }
 
             if (ManageUserAction.GetOwnCharacterList().Count > 1 && currentChar != ManageUserAction.GetOwnCharacterList().Count - 1)
@@ -192,7 +199,9 @@ namespace VocabularyUp
             }
             else
             {
-
+                FightingGameForm fgf = new FightingGameForm(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
+                fgf.TopMost = true;
+                fgf.Show();
             }
         }
 

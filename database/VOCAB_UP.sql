@@ -915,4 +915,4 @@ values
 		(1, 3, N'vũ khí 1'),
 		(1, 3, N'vũ khí 2'),
 
-
+		select * from CHARACTER

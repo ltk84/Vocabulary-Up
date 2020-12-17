@@ -12,6 +12,9 @@ namespace VocabularyUp
 {
     public partial class ResultForm : Form
     {
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
+        int darkMode = 1;
         List<UserChoice> userChoices;
         List<string> correctAns = new List<string>();
         List<string> wrongAns = new List<string>();
@@ -19,8 +22,25 @@ namespace VocabularyUp
         public ResultForm(List<UserChoice> userChoices,  Panel panel)
         {
             InitializeComponent();
+            UpdateTheme();
             this.panel = panel;
             this.userChoices = userChoices;
+        }
+        private void UpdateTheme()
+        {
+            if (darkMode == 1)
+            {
+                primary = Color.FromArgb(50, 74, 95);
+                secondary = Color.White;
+            }
+            else
+            {
+                primary = Color.FromArgb(17, 223, 158);
+                secondary = Color.FromArgb(7, 96, 68);
+            }
+            this.pnlResultForm.BackColor = primary;
+            this.btnDetails.FillColor = primary;
+            this.btnOK.FillColor = primary;
         }
 
         public void ChangeLabel()
