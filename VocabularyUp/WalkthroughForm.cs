@@ -18,6 +18,7 @@ namespace VocabularyUp
         private bool isGameOver;
         private Random rd = new Random();
         private int currentHealth = 0;
+
         private GameMCForm gameForm;
         private TrashTalkingForm trashTalkForm;
         public WalkthroughForm(int idCol, int idSkin)
@@ -36,7 +37,7 @@ namespace VocabularyUp
         {
             Image image = Image.FromFile("../../db/Characters/" + idSkin.ToString() + ".png");
             Point location = new Point(0, Screen.PrimaryScreen.Bounds.Height / 2);
-            Size size = new Size(30, 30);
+            Size size = new Size(100, 100);
 
             player = new Player(image, location, size, 10);
 
@@ -63,30 +64,28 @@ namespace VocabularyUp
                 
                 Image image = Image.FromFile("../../db/Monsters/" + (i+1).ToString() + ".png");
                 image.RotateFlip(RotateFlipType.RotateNoneFlipX);
-                Size size = new Size(60, 60);
+                Size size = new Size(80, 80);
                 int y = rd.Next(Screen.PrimaryScreen.Bounds.Height * 2 / 3, Screen.PrimaryScreen.Bounds.Height - size.Height);
                 Point location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 4), y);
 
 
                 Monster mon;
                 int v = rd.Next(10, 20);
-                mon = new Monster(image, location, size, v, null);
+                
 
                 if (i == 2)
                 {
-                   location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 4), Screen.PrimaryScreen.Bounds.Height * 2 / 3);
-                  
-                    mon = new Monster(image, location, size, 0, null);
+                     //location = new Point(((1) * Screen.PrimaryScreen.Bounds.Width / 4), y);
+                    location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 4), Screen.PrimaryScreen.Bounds.Height * 2 / 3);
+                    size = new Size(160, 160);
+                    mon = new Monster(image, location, size, 0, null, true);
                 }    
+                else
+                    mon = new Monster(image, location, size, v, null, false);
 
                 monsters.Add(mon);
             }
         }
-
-        
-
-       
-
         public void LoadBackGround()
         {
             this.BackgroundImage = Image.FromFile("../../db/Backgrounds/maps/map_1.jpg");
@@ -97,7 +96,6 @@ namespace VocabularyUp
         {
             base.OnPaint(e);
             Graphics g = e.Graphics;
-
             player.Draw(g);
 
             foreach (var mon in monsters)
@@ -115,44 +113,52 @@ namespace VocabularyUp
             }
         }
 
+        int a = 1;
+
         private void timerUpdate_Tick(object sender, EventArgs e)
         {
             player.HandleOutsideClient(this);
+            int j = -1;
 
             if (!isGameOver)
             {
                 for (int i = monsters.Count - 1; i >= 0; i--)
                 {
-                    
+
                     if (player.isCollision(monsters[i]))
                     {
-                        timerUpdate.Stop(); 
-                        if (i == 2)
+                        timerUpdate.Stop();
+                        if (monsters[i].IsBoss == true)
                         {
                             //timerUpdate.Stop();
-                            OpenTrashTalk(2, "Mày đây rồi, thằng khốn! Chạy đâu cho thoát!", "Bố đã làm gì mày đâu?");
-                        }
-
-                        OpenGameForm();
-
-                        if (gameForm.IsCorrect == true)
-                        {
-                            monsters[i].IsDeath = true;
-                            monsters.Remove(monsters[i]);
+                            OpenTrashTalk(i, "Mày đây rồi, thằng khốn! Chạy đâu cho thoát!", "Bố đã làm gì mày đâu?");
+                            j = i;
+                            break;
                         }
                         else
                         {
-                            currentHealth -= 10;
-                            player.Location = new Point(0, this.ClientSize.Height / 2);
+                            OpenGameForm();
+
+                            if (gameForm.IsCorrect == true)
+                            {
+                                //if (monsters[i].IsBoss)
+                                //    isGameOver = true;
+                                monsters[i].IsDeath = true;
+                                monsters.Remove(monsters[i]);
+                            }
+                            else
+                            {
+                                currentHealth -= 10;
+                                player.Location = new Point(0, this.ClientSize.Height / 2);
+                            }
+
+                            if (player.Health == 0)
+                            {
+                                isGameOver = true;
+                            }
+
+                            timerUpdate.Start();
                         }
-
-                        if (player.Health == 0)
-                        {
-                            isGameOver = true;
-                        }
-
-                        timerUpdate.Start();
-
                     }
 
                     else if (monsters[i].IsDeath == false)
@@ -167,13 +173,18 @@ namespace VocabularyUp
 
                 }
 
+                if (j >= 0 && monsters[j].IsBoss == true)
+                {
+                    InitFinalRound();
+                }
+
                 Graphics g = this.CreateGraphics();
                 string text = "Health: " + currentHealth.ToString();
                 g.DrawString(text, new Font("Arial", 16), new SolidBrush(Color.Red), new PointF(0, 0));
 
                 this.Invalidate();
             }
-            
+
         }
 
         private void OpenGameForm()
@@ -243,8 +254,24 @@ namespace VocabularyUp
             {
                 backgroundForm.Dispose();
             }
+        }
 
-
+        private void InitFinalRound()
+        {
+            MessageBox.Show(monsters.Count.ToString());
+            for (int i = 0; i < 2; i++)
+            {
+                monsters.Remove(monsters[0]);
+                MessageBox.Show(i.ToString());
+            }
+            player.X = Screen.PrimaryScreen.Bounds.Width / 3;
+            player.Y = Screen.PrimaryScreen.Bounds.Height / 3;
+            player.Size = new Size(150, 150);
+            MessageBox.Show(monsters[0].IsBoss.ToString());
+            monsters[0].X = Screen.PrimaryScreen.Bounds.Width * 2/ 3;
+            monsters[0].Y = Screen.PrimaryScreen.Bounds.Height / 3;
+            monsters[0].Size = new Size(200, 200);
+            this.Invalidate();
         }
 
         private void WalkthroughForm_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)

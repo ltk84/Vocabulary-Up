@@ -81,12 +81,12 @@ namespace VocabularyUp
                     string vie;
                     if (ManageUserAction.GetMainFlashCards().Count > 3)
                     {
-                        index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
+                        index = rd.Next(1, ManageUserAction.GetMainFlashCards().Count);
                         vie = ManageUserAction.GetMainFlashCards()[index].Viet;
                     }
                     else
                     {
-                        index = rd.Next(0, backupAnswers.Count);
+                        index = rd.Next(1, backupAnswers.Count);
                         vie = backupAnswers[index];
                     }
 

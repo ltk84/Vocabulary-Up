@@ -12,11 +12,14 @@ namespace VocabularyUp
         List<Quiz> quizzes;
         Direction cur = Direction.Down;
         bool isDeath = false;
-        public Monster(Image image, Point loc, Size size, int v, List<Quiz> q): base(image, loc, size, v)
+        bool isBoss;
+        public Monster(Image image, Point loc, Size size, int v, List<Quiz> q, bool isBoss): base(image, loc, size, v)
         {
             this.quizzes = q;
+            this.isBoss = isBoss;
         }
         public Direction Cur { get => cur; set => cur = value; }
         public bool IsDeath { get => isDeath; set => isDeath = value; }
+        public bool IsBoss { get => isBoss; set => isBoss = value; }
     }
 }

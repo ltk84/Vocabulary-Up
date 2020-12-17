@@ -245,11 +245,10 @@ namespace VocabularyUp
             this.Controls.Add(this.btnC);
             this.Controls.Add(this.pnlFlashCard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GameMCForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GameMCForm";
-            this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Turquoise;
             this.pnlFlashCard.ResumeLayout(false);
             this.pnlTab.ResumeLayout(false);
