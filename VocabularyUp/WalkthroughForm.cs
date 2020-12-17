@@ -34,7 +34,7 @@ namespace VocabularyUp
         public void InitPlayer(int idSkin)
         {
             Image image = Image.FromFile("../../db/Characters/" + idSkin.ToString() + ".png");
-            Point location = new Point(0, this.ClientSize.Height / 2);
+            Point location = new Point(0, Screen.PrimaryScreen.Bounds.Height / 2);
             Size size = new Size(30, 30);
 
             player = new Player(image, location, size, 10);
@@ -63,8 +63,8 @@ namespace VocabularyUp
                 Image image = Image.FromFile("../../db/Monsters/" + (i+1).ToString() + ".png");
                 image.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 Size size = new Size(60, 60);
-                int y = rd.Next(this.ClientSize.Height * 2 / 3, this.ClientSize.Height - size.Height);
-                Point location = new Point(((i + 1) * this.ClientSize.Width / 4), y);
+                int y = rd.Next(Screen.PrimaryScreen.Bounds.Height * 2 / 3, Screen.PrimaryScreen.Bounds.Height - size.Height);
+                Point location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 3), y);
 
 
                 Monster mon;
@@ -73,7 +73,7 @@ namespace VocabularyUp
 
                 if (i == 2)
                 {
-                   location = new Point(((i + 1) * this.ClientSize.Width / 4),  this.Height * 2 / 3);
+                   location = new Point(((i+ 1) * Screen.PrimaryScreen.Bounds.Width / 3 - size.Width),  Screen.PrimaryScreen.Bounds.Height * 2 / 3);
                   
                     mon = new Monster(image, location, size, 0, null);
                 }    
