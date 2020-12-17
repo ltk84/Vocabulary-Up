@@ -15,7 +15,7 @@ namespace VocabularyUp
     {
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
-        int darkMode = 1;
+        bool darkMode = false;
         List<Quiz> questions = new List<Quiz>();
         int currentTopic = 0;
         int currentQuiz = 0;
@@ -27,6 +27,7 @@ namespace VocabularyUp
         public MultipleChoiceForm(int currentTopic, CampaignForm campaign)
         {
             InitializeComponent();
+            darkMode = ManageUserAction.GetDarkMode();
             UpdateTheme();
             this.currentTopic = currentTopic;
             this.campaign = campaign;
@@ -36,7 +37,7 @@ namespace VocabularyUp
 
         private void UpdateTheme()
         {
-            if (darkMode == 1)
+            if (darkMode)
             {
                 primary = Color.FromArgb(50, 74, 95);
                 secondary = Color.White;

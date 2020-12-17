@@ -16,6 +16,7 @@ namespace VocabularyUp
     {
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
+        bool darkMode = false;
         SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         private static int index = 0;
         List<FlashCard> flList = new List<FlashCard>();
@@ -29,7 +30,9 @@ namespace VocabularyUp
         public LearningForm(int currentTopic, CampaignForm campaignForm, FillBlankForm fillBquiz, MultipleChoiceForm multiQuiz)
         {
             InitializeComponent();
-            UpdateTheme();
+            darkMode = ManageUserAction.GetDarkMode();
+            if (darkMode)
+                UpdateTheme();
             this.KeyPreview = true;
             this.campaignForm = campaignForm;
             this.fillBQuiz = fillBquiz;

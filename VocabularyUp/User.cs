@@ -21,8 +21,10 @@ namespace VocabularyUp
         int highestWordsCount;
         int recentWordsCount;
         string GIOITINH;
+        int diamond;
+        bool darkMode;
 
-        public User(int idUser, string username, string password, string email,string NGSINH, DateTime beginDate,string hoTen, int totalWord, int highestWordsCount, int recentWordsCount,string GIOITINH)
+        public User(int idUser, string username, string password, string email,string NGSINH, DateTime beginDate,string hoTen, int totalWord, int highestWordsCount, int recentWordsCount,string GIOITINH, int diamond, bool darkMode)
         {
             this.idUser = idUser;
             this.username = username;
@@ -36,8 +38,12 @@ namespace VocabularyUp
             this.NGSINH = NGSINH;
             this.hoTen = hoTen;
             this.GIOITINH = GIOITINH;
+            this.diamond = diamond;
+            this.darkMode = darkMode;
         }
 
+        public bool DarkMode { get => darkMode; set => darkMode = value; }
+        public int Diamond { get => diamond; set => diamond = value; }
         public int IdUser { get => idUser; set => idUser = value; }
         public string Username { get => username; set => username = value; }
         public string Email { get => email; set => email = value; }

@@ -15,7 +15,6 @@ namespace VocabularyUp
         private static List<FlashCard> mainFlashCard = new List<FlashCard>();
         private static List<Collection> allCollections = new List<Collection>();
         private static List<Skin> ownSkin = new List<Skin>();
-        private static int diamond;
         private static string constr = @ConfigurationManager.AppSettings.Get("connectString");
 
         // Add collection
@@ -802,13 +801,13 @@ namespace VocabularyUp
             {
                 if (reader.Read() == false) break;
 
-                diamond = reader.GetInt32(0);
+                currentUser.Diamond = reader.GetInt32(0);
             }
         }
 
         public static int GetDiamond()
         {
-            return diamond;
+            return currentUser.Diamond;
         }
 
         public static void UpdateDiamondAfterBuy(int num)
@@ -822,7 +821,7 @@ namespace VocabularyUp
                 String sqlQuery = "UPDATE USER_INFO SET DIAMOND = @D WHERE ID_USER = @ID";
                 //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
-                command.Parameters.AddWithValue("@D", diamond - num);
+                command.Parameters.AddWithValue("@D", currentUser.Diamond - num);
                 command.Parameters.AddWithValue("@ID", currentUser.IdUser);
 
                 //Thuc hien cau truy van
@@ -839,7 +838,7 @@ namespace VocabularyUp
                 connection.Close();
             }
 
-            diamond = diamond - num;
+            currentUser.Diamond = currentUser.Diamond - num;
         }
 
         public static void LoadPlayerStat(int id, Player player)
@@ -861,6 +860,39 @@ namespace VocabularyUp
                 player.Health = reader.GetInt32(1);
                 player.Damage = reader.GetInt32(2);
             }
+        }
+        public static bool GetDarkMode()
+        {
+            return currentUser.DarkMode;
+        }
+        public static void ChangeDarkMode(bool check)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "UPDATE USER_INFO SET DARKMODE = @DARKMODE WHERE ID_USER = @ID";
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@DARKMODE", check);
+                command.Parameters.AddWithValue("@ID", currentUser.IdUser);
+
+                //Thuc hien cau truy van
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
+            currentUser.DarkMode = check;
         }
     }
 }

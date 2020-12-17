@@ -15,20 +15,21 @@ namespace VocabularyUp
     {
         int type = -1;
         int currentTopic = -1;
-        int darkMode = 1;
+        bool darkMode = false;
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
         Color foreColor = Color.White;
         public CampaignForm()
         {
             InitializeComponent();
+            darkMode = ManageUserAction.GetDarkMode();
             UpdateTheme();
             this.KeyPreview = true;
         }
 
         private void UpdateTheme()
         {
-            if (darkMode == 1)
+            if (darkMode)
             {
                 primary = Color.FromArgb(50, 74, 95);
                 secondary = Color.FromArgb(27, 42, 65);

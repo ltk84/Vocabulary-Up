@@ -20,10 +20,13 @@ namespace VocabularyUp
         FlashCard curFlashCard;
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
+        bool darkMode = false;
         public LibraryForm()
         {
             InitializeComponent();
-            UpdateTheme();
+            darkMode = ManageUserAction.GetDarkMode();
+            if (darkMode)
+                UpdateTheme();
             this.KeyPreview = true;
             ManageSystem.InitLibrary();
             curFlashCard = ManageSystem.GetFlashCard(index);

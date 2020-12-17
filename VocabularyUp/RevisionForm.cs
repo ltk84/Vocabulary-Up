@@ -14,13 +14,16 @@ namespace VocabularyUp
     {
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
+        bool darkMode = false;
         ShopForm shop;
         int currentChar = 0;
         int type = 0;
         public RevisionForm()
         {
             InitializeComponent();
-            UpdateTheme();
+            darkMode = ManageUserAction.GetDarkMode();
+            if (darkMode)
+                UpdateTheme();
             ManageUserAction.UpdateOwnCharacter();
             if (ManageUserAction.GetOwnCharacterList().Count == 1)
             {
@@ -190,10 +193,9 @@ namespace VocabularyUp
             if (type == 1)
             {
                 WalkthroughForm wtf = new WalkthroughForm(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
-                //wtf.TopMost = true;
-                wtf.StartPosition = FormStartPosition.CenterScreen;
-                //wtf.WindowState = FormWindowState.Maximized;
+                wtf.TopMost = true;
                 wtf.Show();
+                wtf.OpenTrashTalk(0, "Thằng rác rưởi, tránh ra!", "Bước qua xác tao này, thằng nhóc!");
             }
             else if (type == 2)
             {
@@ -201,9 +203,6 @@ namespace VocabularyUp
             }
             else
             {
-                //FightingGameForm fgf = new FightingGameForm(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
-                //fgf.TopMost = true;
-                //fgf.Show();
             }
         }
 

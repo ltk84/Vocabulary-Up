@@ -64,25 +64,62 @@ CREATE TABLE USER_CHARACTER
 (
 	ID_USER INT NOT NULL,
 	ID_CHAR INT NOT NULL,
-	CURRENT_USE BIT ,
 	CONSTRAINT PK_UC PRIMARY KEY (ID_USER, ID_CHAR),
 	CONSTRAINT FK_UC_USER FOREIGN KEY (ID_USER) REFERENCES USERS (ID),
 	CONSTRAINT FK_UC_CHAR FOREIGN KEY (ID_CHAR) REFERENCES CHARACTER (ID)
 )
 
-
-
+delete from user_character
+delete from character
 INSERT INTO CHARACTER
 VALUES 
 	(0, 'KNIGHT', 100, 100, 100),
 	(1, 'ASSASSIN', 500, 80, 100),
 	(2, 'PALADIN', 50, 120, 100),
 	(3, 'ROUGE', 70, 150, 100),
-	(4, 'VAMPIRE', 120, 120, 100)
+	(4, 'VAMPIRE', 120, 120, 100),
+	(5, 'ALCHEMIST', 120, 120, 100),
+	(6, 'BERSERKER', 120, 120, 100),
+	(7, 'DRUID', 120, 120, 100),
+	(8, 'ELF', 120, 120, 100),
+	(9, 'ENGINEER', 120, 120, 100),
+	(10, 'NECROMANCER', 120, 120, 100),
+	(11, 'OFFICER', 120, 120, 100),
+	(12, 'PRIEST', 120, 120, 100),
+	(13, 'ROBOT', 120, 120, 100),
+	(14, 'WIZARD', 120, 120, 100),
+	(15, 'TAOIST', 120, 120, 100),
+	(16, 'WEREWOLF', 120, 120, 100)
+select * from user_info
 
-	INSERT INTO USER_CHARACTER 
-	VALUES (1, 0),
-			(2, 0)
+
+alter table USER_INFO
+add DARKMODE bit
+
+select * from CHARACTER
+select * from users
+select * from user_info
+select * from USER_CHARACTER
+alter table user_character
+drop column current_use
+delete from USER_CHARACTER
+delete from USER_FLASHCARD
+delete from USER_INFO
+delete from USERs
+
+update user_info
+set darkmode = 0
+update user_info
+set darkmode = 0
+
+INSERT INTO USER_CHARACTER 
+VALUES 
+	(1, 0),
+	(2, 0),
+	(3, 0),
+	(4, 0),
+	(5, 0),
+	(6, 0)
 
 		delete from USER_CHARACTER
 		insert into USER_CHARACTER

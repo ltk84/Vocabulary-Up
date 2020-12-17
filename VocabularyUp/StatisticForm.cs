@@ -16,10 +16,13 @@ namespace VocabularyUp
         StatisticResultForm statisticResult = new StatisticResultForm();
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
+        bool darkMode = false;
         public StatisticForm()
         {
             InitializeComponent();
-            UpdateTheme();
+            darkMode = ManageUserAction.GetDarkMode();
+            if (darkMode)
+                UpdateTheme();
             ToStatisticInfo();
             update();
         }

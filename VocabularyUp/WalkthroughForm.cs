@@ -19,6 +19,7 @@ namespace VocabularyUp
         private Random rd = new Random();
         private int currentHealth = 0;
         private GameMCForm gameForm;
+        private TrashTalkingForm trashTalkForm;
         public WalkthroughForm(int idCol, int idSkin)
         {
             InitializeComponent();
@@ -64,7 +65,7 @@ namespace VocabularyUp
                 image.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 Size size = new Size(60, 60);
                 int y = rd.Next(Screen.PrimaryScreen.Bounds.Height * 2 / 3, Screen.PrimaryScreen.Bounds.Height - size.Height);
-                Point location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 3), y);
+                Point location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 4), y);
 
 
                 Monster mon;
@@ -73,7 +74,7 @@ namespace VocabularyUp
 
                 if (i == 2)
                 {
-                   location = new Point(((i+ 1) * Screen.PrimaryScreen.Bounds.Width / 3 - size.Width),  Screen.PrimaryScreen.Bounds.Height * 2 / 3);
+                   location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 4), Screen.PrimaryScreen.Bounds.Height * 2 / 3);
                   
                     mon = new Monster(image, location, size, 0, null);
                 }    
@@ -122,9 +123,15 @@ namespace VocabularyUp
             {
                 for (int i = monsters.Count - 1; i >= 0; i--)
                 {
+                    
                     if (player.isCollision(monsters[i]))
                     {
-                        timerUpdate.Stop();
+                        timerUpdate.Stop(); 
+                        if (i == 2)
+                        {
+                            //timerUpdate.Stop();
+                            OpenTrashTalk(2, "Mày đây rồi, thằng khốn! Chạy đâu cho thoát!", "Bố đã làm gì mày đâu?");
+                        }
 
                         OpenGameForm();
 
@@ -157,6 +164,7 @@ namespace VocabularyUp
                         else if (monsters[i].Y < this.Height / 3)
                             monsters[i].Cur = Direction.Down;
                     }
+
                 }
 
                 Graphics g = this.CreateGraphics();
@@ -190,6 +198,7 @@ namespace VocabularyUp
 
                     backgroundForm.Dispose();
                 }
+                this.Focus();
             }
             catch (Exception)
             {
@@ -201,6 +210,41 @@ namespace VocabularyUp
             }
             
                
+        }
+        public void OpenTrashTalk(int idMonster, string charTrashTalk, string monTrashTalk)
+        {
+            Form backgroundForm = new Form();
+            try
+            {
+                using (trashTalkForm = new TrashTalkingForm(player.Image, monsters[idMonster].Image, charTrashTalk, monTrashTalk))
+                {
+                    backgroundForm.StartPosition = FormStartPosition.Manual;
+                    backgroundForm.FormBorderStyle = FormBorderStyle.None;
+                    backgroundForm.Opacity = .70d;
+                    backgroundForm.BackColor = Color.Black;
+                    backgroundForm.Size = this.Size;
+                    backgroundForm.TopMost = true;
+                    backgroundForm.Location = this.Location;
+                    backgroundForm.ShowInTaskbar = false;
+                    backgroundForm.Show();
+
+                    trashTalkForm.Owner = backgroundForm;
+                    trashTalkForm.ShowDialog();
+
+                    backgroundForm.Dispose();
+                }
+                this.Focus();
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                backgroundForm.Dispose();
+            }
+
+
         }
 
         private void WalkthroughForm_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
