@@ -15,7 +15,7 @@ namespace VocabularyUp
     {
         int type = -1;
         int currentTopic = -1;
-        int darkMode = 1;
+        int darkMode = 0;
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
         Color foreColor = Color.White;

@@ -16,7 +16,7 @@ namespace VocabularyUp
     {
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
-        int darkMode = 1;
+        int darkMode = 0;
         SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         ResultForm resForm;
         FlashCard curFlashCard;
