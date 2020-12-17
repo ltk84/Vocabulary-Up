@@ -45,6 +45,7 @@ namespace VocabularyUp
         CollectionForm collectionTab;
         RevisionForm revisionTab;
         StatisticForm statisticTab;
+        int currentTab = 0;
         //int flag = 0;
 
         public NavForm(UserAccessForm userAccess, int currentID)
@@ -59,7 +60,9 @@ namespace VocabularyUp
             darkMode = ManageUserAction.GetDarkMode();
             //
             if (darkMode)
-                UpdateTheme();
+                swDarkMode.Checked = true;
+            else
+                swDarkMode.Checked = false;
             //
             ManageUserAction.InitAllCollections();
             campaignTab = new CampaignForm();
@@ -76,6 +79,7 @@ namespace VocabularyUp
 
         private void ToCampaignTab()
         {
+            currentTab = 3;
             dashLibraryTab.Hide();
             dashCollectionTab.Hide();
             dashCampaignTab.Show();
@@ -92,6 +96,7 @@ namespace VocabularyUp
 
         private void ToRevisionTab()
         {
+            currentTab = 4;
             dashLibraryTab.Hide();
             dashCollectionTab.Hide();
             dashCampaignTab.Hide();
@@ -108,6 +113,7 @@ namespace VocabularyUp
 
         private void ToLibraryTab()
         {
+            currentTab = 1;
             dashLibraryTab.Show();
             dashCollectionTab.Hide();
             dashCampaignTab.Hide();
@@ -124,6 +130,7 @@ namespace VocabularyUp
 
         private void ToCollectionTab()
         {
+            currentTab = 2;
             dashLibraryTab.Hide();
             dashCollectionTab.Show();
             dashCampaignTab.Hide();
@@ -140,6 +147,7 @@ namespace VocabularyUp
 
         private void ToStatisticTab()
         {
+            currentTab =5;
             dashLibraryTab.Hide();
             dashCollectionTab.Hide();
             dashCampaignTab.Hide();
@@ -186,6 +194,16 @@ namespace VocabularyUp
         }
         private void UpdateTheme()
         {
+            if (darkMode)
+            {
+                primary = Color.FromArgb(50, 74, 95);
+                secondary = Color.FromArgb(27, 42, 65);
+            }
+            else
+            {
+                primary = Color.FromArgb(17, 223, 158);
+                secondary = Color.FromArgb(7, 96, 68);
+            }
             this.BackColor = primary;
             this.barTop.BackColor = primary;
             this.barTop.FillColor = primary;
@@ -219,6 +237,68 @@ namespace VocabularyUp
             this.dashStatisticTab.FillColor2 = primary;
             this.dashStatisticTab.FillColor3 = primary;
             this.dashStatisticTab.FillColor4 = primary;
+        }
+
+        private void swDarkMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (swDarkMode.Checked)
+            {
+                ManageUserAction.ChangeDarkMode(true);
+            }
+            else
+            {
+                ManageUserAction.ChangeDarkMode(false);
+            }
+            darkMode = ManageUserAction.GetDarkMode();
+            UpdateTheme();
+            RefreshTab();
+        }
+
+        private void RefreshTab()
+        {
+            switch (currentTab)
+            {
+                case 1:
+                    campaignTab = new CampaignForm();
+                    libraryTab = new LibraryForm();
+                    collectionTab = new CollectionForm();
+                    revisionTab = new RevisionForm();
+                    statisticTab = new StatisticForm();
+                    ToLibraryTab();
+                    break;
+                case 2:
+                    campaignTab = new CampaignForm();
+                    libraryTab = new LibraryForm();
+                    collectionTab = new CollectionForm();
+                    revisionTab = new RevisionForm();
+                    statisticTab = new StatisticForm();
+                    ToCollectionTab();
+                    break;
+                case 3:
+                    campaignTab = new CampaignForm();
+                    libraryTab = new LibraryForm();
+                    collectionTab = new CollectionForm();
+                    revisionTab = new RevisionForm();
+                    statisticTab = new StatisticForm();
+                    ToCampaignTab();
+                    break;
+                case 4:
+                    campaignTab = new CampaignForm();
+                    libraryTab = new LibraryForm();
+                    collectionTab = new CollectionForm();
+                    revisionTab = new RevisionForm();
+                    statisticTab = new StatisticForm();
+                    ToRevisionTab();
+                    break;
+                case 5:
+                    campaignTab = new CampaignForm();
+                    libraryTab = new LibraryForm();
+                    collectionTab = new CollectionForm();
+                    revisionTab = new RevisionForm();
+                    statisticTab = new StatisticForm();
+                    ToStatisticTab();
+                    break;
+            }
         }
     }
 }

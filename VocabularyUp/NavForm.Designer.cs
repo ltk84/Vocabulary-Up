@@ -52,6 +52,8 @@
             this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.dashFix2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.dashFix1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.swDarkMode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.lbDarkMode = new System.Windows.Forms.Label();
             this.barTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconNav)).BeginInit();
             this.pnlNavigation.SuspendLayout();
@@ -417,17 +419,52 @@
             this.dashFix1.Size = new System.Drawing.Size(780, 1);
             this.dashFix1.TabIndex = 1;
             // 
+            // swDarkMode
+            // 
+            this.swDarkMode.CheckedState.BorderColor = System.Drawing.Color.Black;
+            this.swDarkMode.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.swDarkMode.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.swDarkMode.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.swDarkMode.CheckedState.Parent = this.swDarkMode;
+            this.swDarkMode.Location = new System.Drawing.Point(970, 68);
+            this.swDarkMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.swDarkMode.Name = "swDarkMode";
+            this.swDarkMode.ShadowDecoration.Parent = this.swDarkMode;
+            this.swDarkMode.Size = new System.Drawing.Size(35, 20);
+            this.swDarkMode.TabIndex = 23;
+            this.swDarkMode.UncheckedState.BorderColor = System.Drawing.Color.White;
+            this.swDarkMode.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.swDarkMode.UncheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(74)))), ((int)(((byte)(95)))));
+            this.swDarkMode.UncheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(74)))), ((int)(((byte)(95)))));
+            this.swDarkMode.UncheckedState.Parent = this.swDarkMode;
+            this.swDarkMode.CheckedChanged += new System.EventHandler(this.swDarkMode_CheckedChanged);
+            // 
+            // lbDarkMode
+            // 
+            this.lbDarkMode.AutoSize = true;
+            this.lbDarkMode.BackColor = System.Drawing.Color.Transparent;
+            this.lbDarkMode.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDarkMode.ForeColor = System.Drawing.Color.White;
+            this.lbDarkMode.Location = new System.Drawing.Point(945, 48);
+            this.lbDarkMode.Name = "lbDarkMode";
+            this.lbDarkMode.Size = new System.Drawing.Size(87, 18);
+            this.lbDarkMode.TabIndex = 24;
+            this.lbDarkMode.Text = "Dark mode";
+            // 
             // NavForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(1063, 650);
+            this.Controls.Add(this.lbDarkMode);
+            this.Controls.Add(this.swDarkMode);
             this.Controls.Add(this.dashFix1);
             this.Controls.Add(this.dashFix2);
             this.Controls.Add(this.pnlTab);
             this.Controls.Add(this.pnlNavigation);
             this.Controls.Add(this.barTop);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -440,6 +477,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbIconNav)).EndInit();
             this.pnlNavigation.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -467,6 +505,8 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel dashRevisionTab;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel dashCampaignTab;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel dashCollectionTab;
+        private System.Windows.Forms.Label lbDarkMode;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch swDarkMode;
     }
 }
 
