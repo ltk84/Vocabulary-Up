@@ -21,12 +21,13 @@ namespace VocabularyUp
         CollectionForm collectionTab;
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
-        int darkMode = 0;
+        bool darkMode = false;
         public CollectionLib(CollectionForm collectionTab, int idCollection)
         {
             InitializeComponent();
+            darkMode = ManageUserAction.GetDarkMode();
             //
-            if (darkMode == 1)
+            if (darkMode)
                 UpdateTheme();
             //
             this.collectionTab = collectionTab;

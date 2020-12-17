@@ -16,13 +16,14 @@ namespace VocabularyUp
     {
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
-        int darkMode = 0;
+        bool darkMode = false;
         SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         ResultForm resForm;
         FlashCard curFlashCard;
         public DetailsForm(ResultForm resForm)
         {
             InitializeComponent();
+            darkMode = ManageUserAction.GetDarkMode();
             UpdateTheme();
             this.resForm = resForm;
             LoadListView();
@@ -30,7 +31,7 @@ namespace VocabularyUp
         }
         private void UpdateTheme()
         {
-            if (darkMode == 1)
+            if (darkMode)
             {
                 primary = Color.FromArgb(50, 74, 95);
                 secondary = Color.White;

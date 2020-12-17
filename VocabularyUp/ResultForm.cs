@@ -14,7 +14,7 @@ namespace VocabularyUp
     {
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
-        int darkMode = 0;
+        bool darkMode = false;
         List<UserChoice> userChoices;
         List<string> correctAns = new List<string>();
         List<string> wrongAns = new List<string>();
@@ -22,13 +22,14 @@ namespace VocabularyUp
         public ResultForm(List<UserChoice> userChoices,  Panel panel)
         {
             InitializeComponent();
+            darkMode = ManageUserAction.GetDarkMode();
             UpdateTheme();
             this.panel = panel;
             this.userChoices = userChoices;
         }
         private void UpdateTheme()
         {
-            if (darkMode == 1)
+            if (darkMode)
             {
                 primary = Color.FromArgb(50, 74, 95);
                 secondary = Color.White;

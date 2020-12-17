@@ -36,7 +36,7 @@ namespace VocabularyUp
         UserAccessForm userAccess;
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
-        int darkMode = 0;
+        bool darkMode = false;
         int currentID;
 
         // Tabs
@@ -56,8 +56,9 @@ namespace VocabularyUp
 
             // Update UserID và Connect đến database để load ReFlashCard của User 
             ManageUserAction.UpdateUserInfo(currentID);
+            darkMode = ManageUserAction.GetDarkMode();
             //
-            if (darkMode == 1)
+            if (darkMode)
                 UpdateTheme();
             //
             ManageUserAction.InitAllCollections();

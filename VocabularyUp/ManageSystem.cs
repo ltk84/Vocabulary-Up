@@ -29,7 +29,7 @@ namespace VocabularyUp
             connection.Open();
 
             //Chuan bi cau lenh query viet bang SQL 
-            String sqlQuery = "select ID,USERNAME,PASS,EMAIL,NGSINH,BEGINDATE,NAME,TOTALWORD,HIGHEST_WORDS_COUNT,RECENT_WORDS_COUNT,GIOITINH from USERS, USER_INFO where USERS.ID = USER_INFO.ID_USER";
+            String sqlQuery = "select ID,USERNAME,PASS,EMAIL,NGSINH,BEGINDATE,NAME,TOTALWORD,HIGHEST_WORDS_COUNT,RECENT_WORDS_COUNT,GIOITINH, DIAMOND, DARKMODE from USERS, USER_INFO where USERS.ID = USER_INFO.ID_USER";
             //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
             SqlCommand command = new SqlCommand(sqlQuery, connection);
 
@@ -40,7 +40,7 @@ namespace VocabularyUp
             while (reader.HasRows)
             {
                 if (reader.Read() == false) break;
-                User u = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3),reader.GetString(4), reader.GetDateTime(5),reader.GetString(6), reader.GetInt32(7), reader.GetInt32(8), reader.GetInt32(9),reader.GetString(10));
+                User u = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3),reader.GetString(4), reader.GetDateTime(5),reader.GetString(6), reader.GetInt32(7), reader.GetInt32(8), reader.GetInt32(9),reader.GetString(10), reader.GetInt32(11), reader.GetBoolean(12));
                 users.Add(u);
             }
             numOfUser = users.Count()+1;
@@ -189,7 +189,7 @@ namespace VocabularyUp
                 //Mo ket noi
                 connection.Open();
                 //Chuan bi cau lenh query viet bang SQL
-                String sqlQuery = "insert into USER_INFO(ID_USER, EMAIL,NGSINH, BEGINDATE,NAME, TOTALWORD, HIGHEST_WORDS_COUNT, RECENT_WORDS_COUNT,GIOITINH) values(@ID_USER, @EMAIL, @NGSINH, @BEGINDATE,@NAME, @TOTALWORD, @HIGHEST_WORDS_COUNT, @RECENT_WORDS_COUNT,@GIOITINH)";
+                String sqlQuery = "insert into USER_INFO(ID_USER, EMAIL,NGSINH, BEGINDATE,NAME, TOTALWORD, HIGHEST_WORDS_COUNT, RECENT_WORDS_COUNT,GIOITINH, DIAMOND, DARKMODE) values(@ID_USER, @EMAIL, @NGSINH, @BEGINDATE,@NAME, @TOTALWORD, @HIGHEST_WORDS_COUNT, @RECENT_WORDS_COUNT,@GIOITINH, @DIAMOND, @DARKMODE)";
                 //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
                 SqlCommand command = new SqlCommand(sqlQuery, connection);
                 command.Parameters.AddWithValue("@ID_USER", numOfUser);
@@ -201,6 +201,8 @@ namespace VocabularyUp
                 command.Parameters.AddWithValue("@HIGHEST_WORDS_COUNT", hiWCount);
                 command.Parameters.AddWithValue("@RECENT_WORDS_COUNT", reWCount);
                 command.Parameters.AddWithValue("@GIOITINH", gioiTinh);
+                command.Parameters.AddWithValue("@DIAMOND", 100);
+                command.Parameters.AddWithValue("@DARKMODE", 0);
 
                 //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
                 int rs = command.ExecuteNonQuery();
@@ -345,7 +347,7 @@ namespace VocabularyUp
         {
             numOfUser = GetNumberOfUser();
             numOfUser++;
-            users.Add(new User(numOfUser, username, password, email,"None", DateTime.Now,"None", 0, 0, 0,"None"));
+            users.Add(new User(numOfUser, username, password, email,"None", DateTime.Now,"None", 0, 0, 0,"None", 100, false));
             AddSingleUserToDatabase(username, password);
             AddUserInfoToDatabase(email, "None",DateTime.Now,"None", 0, 0, 0,"None");
         }
@@ -368,7 +370,7 @@ namespace VocabularyUp
                 //THUC HIỆN CÂU TRUY VẤN
                 command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //xu ly khi ket noi co van de
                 MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
@@ -490,7 +492,7 @@ namespace VocabularyUp
                 //Thuc hien cau truy van
                 command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
   
                 //xu ly khi ket noi co van de

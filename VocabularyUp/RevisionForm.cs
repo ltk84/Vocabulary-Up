@@ -14,14 +14,15 @@ namespace VocabularyUp
     {
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
-        int darkMode = 0;
+        bool darkMode = false;
         ShopForm shop;
         int currentChar = 0;
         int type = 0;
         public RevisionForm()
         {
             InitializeComponent();
-            if (darkMode == 1)
+            darkMode = ManageUserAction.GetDarkMode();
+            if (darkMode)
                 UpdateTheme();
             ManageUserAction.UpdateOwnCharacter();
             if (ManageUserAction.GetOwnCharacterList().Count == 1)

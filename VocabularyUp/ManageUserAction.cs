@@ -862,5 +862,9 @@ namespace VocabularyUp
                 player.Damage = reader.GetInt32(2);
             }
         }
+        public static bool GetDarkMode()
+        {
+            return currentUser.DarkMode;
+        }
     }
 }

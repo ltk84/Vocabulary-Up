@@ -16,11 +16,12 @@ namespace VocabularyUp
     {
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
-        int darkMode = 0;
+        bool darkMode = false;
         public StatisticInfoForm()
         {
             InitializeComponent();
-            if (darkMode == 1)
+            darkMode = ManageUserAction.GetDarkMode();
+            if (darkMode)
                 UpdateTheme();
             Update();
             Level();
