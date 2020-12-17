@@ -195,6 +195,7 @@ namespace VocabularyUp
                 WalkthroughForm wtf = new WalkthroughForm(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
                 wtf.TopMost = true;
                 wtf.Show();
+                wtf.OpenTrashTalk(0, "Thằng rác rưởi, tránh ra!", "Bước qua xác tao này, thằng nhóc!");
             }
             else if (type == 2)
             {

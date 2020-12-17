@@ -39,14 +39,16 @@ namespace VocabularyUp
             // 
             // WalkthroughForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(750, 422);
+            this.ClientSize = new System.Drawing.Size(1000, 519);
             this.DoubleBuffered = true;
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "WalkthroughForm";
             this.Text = "WalkthroughForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.WalkthroughForm_PreviewKeyDown);
             this.ResumeLayout(false);
 
