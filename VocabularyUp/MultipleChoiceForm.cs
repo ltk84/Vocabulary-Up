@@ -369,7 +369,6 @@ namespace VocabularyUp
                 {
                     case 1:
                         btnA.FillColor = Color.FromArgb(224, 92, 92);
-                        
                         break;
                     case 2:
                         btnB.FillColor = Color.FromArgb(224, 92, 92);

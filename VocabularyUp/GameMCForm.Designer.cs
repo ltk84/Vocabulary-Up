@@ -33,9 +33,9 @@ namespace VocabularyUp
             this.pnlFlashCard = new System.Windows.Forms.Panel();
             this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlDash = new System.Windows.Forms.Panel();
             this.lbMain = new System.Windows.Forms.Label();
             this.pbMain = new System.Windows.Forms.PictureBox();
-            this.pnlDash = new System.Windows.Forms.Panel();
             this.lbTimer = new System.Windows.Forms.Label();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
             this.btnB = new Guna.UI2.WinForms.Guna2Button();
@@ -89,6 +89,15 @@ namespace VocabularyUp
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(272, 338);
             this.guna2CustomGradientPanel1.TabIndex = 1;
             // 
+            // pnlDash
+            // 
+            this.pnlDash.BackColor = System.Drawing.Color.White;
+            this.pnlDash.Location = new System.Drawing.Point(14, 274);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlDash.Name = "pnlDash";
+            this.pnlDash.Size = new System.Drawing.Size(240, 4);
+            this.pnlDash.TabIndex = 11;
+            // 
             // lbMain
             // 
             this.lbMain.BackColor = System.Drawing.Color.Transparent;
@@ -112,15 +121,6 @@ namespace VocabularyUp
             this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMain.TabIndex = 8;
             this.pbMain.TabStop = false;
-            // 
-            // pnlDash
-            // 
-            this.pnlDash.BackColor = System.Drawing.Color.White;
-            this.pnlDash.Location = new System.Drawing.Point(14, 274);
-            this.pnlDash.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlDash.Name = "pnlDash";
-            this.pnlDash.Size = new System.Drawing.Size(240, 4);
-            this.pnlDash.TabIndex = 11;
             // 
             // lbTimer
             // 
@@ -245,6 +245,7 @@ namespace VocabularyUp
             this.Controls.Add(this.btnC);
             this.Controls.Add(this.pnlFlashCard);
             this.Name = "GameMCForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GameMCForm";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Turquoise;

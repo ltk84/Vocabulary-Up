@@ -17,6 +17,8 @@ namespace VocabularyUp
         private List<Monster> monsters;
         private bool isGameOver;
         private Random rd = new Random();
+        private int currentHealth = 0;
+        private GameMCForm gameForm;
         public WalkthroughForm(int idCol, int idSkin)
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace VocabularyUp
             InitMonster();
             timerUpdate.Start();
             isGameOver = false;
+            currentHealth = player.Health;
         }
 
         public void InitPlayer(int idSkin)
@@ -60,7 +63,7 @@ namespace VocabularyUp
                 Image image = Image.FromFile("../../db/Monsters/" + (i+1).ToString() + ".png");
                 image.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 Size size = new Size(60, 60);
-                int y = rd.Next(this.Height * 2 / 3, this.Height - size.Height);
+                int y = rd.Next(this.ClientSize.Height * 2 / 3, this.ClientSize.Height - size.Height);
                 Point location = new Point(((i + 1) * this.ClientSize.Width / 4), y);
 
 
@@ -101,7 +104,7 @@ namespace VocabularyUp
                 mon.Draw(g);
             }
 
-            string text = "Health: " + player.Health.ToString();
+            string text = "Health: " + currentHealth.ToString();
             g.DrawString(text, new Font("Arial", 16), new SolidBrush(Color.Red), new PointF(0, 0));
 
             if (isGameOver)
@@ -117,41 +120,60 @@ namespace VocabularyUp
 
             if (!isGameOver)
             {
-                foreach (var mon in monsters)
+                for (int i = monsters.Count - 1; i >= 0; i--)
                 {
-                    if (player.isCollision(mon))
+                    if (player.isCollision(monsters[i]))
                     {
                         timerUpdate.Stop();
-                        PopUpFadeBackground();
+
+                        OpenGameForm();
+
+                        if (gameForm.IsCorrect == true)
+                        {
+                            monsters[i].IsDeath = true;
+                            monsters.Remove(monsters[i]);
+                        }
+                        else
+                        {
+                            currentHealth -= 10;
+                            player.Location = new Point(0, this.ClientSize.Height / 2);
+                        }
 
                         if (player.Health == 0)
                         {
                             isGameOver = true;
                         }
-                            
+
+                        timerUpdate.Start();
+
                     }
 
-                    else
+                    else if (monsters[i].IsDeath == false)
                     {
-                        mon.Move(mon.Cur);
+                        monsters[i].Move(monsters[i].Cur);
 
-                        if (mon.Y + mon.Size.Height > this.Height)
-                            mon.Cur = Direction.Up;
-                        else if (mon.Y < this.Height / 3)
-                            mon.Cur = Direction.Down;
+                        if (monsters[i].Y + monsters[i].Size.Height > this.Height)
+                            monsters[i].Cur = Direction.Up;
+                        else if (monsters[i].Y < this.Height / 3)
+                            monsters[i].Cur = Direction.Down;
                     }
                 }
+
+                Graphics g = this.CreateGraphics();
+                string text = "Health: " + currentHealth.ToString();
+                g.DrawString(text, new Font("Arial", 16), new SolidBrush(Color.Red), new PointF(0, 0));
+
                 this.Invalidate();
             }
             
         }
 
-        private void PopUpFadeBackground()
+        private void OpenGameForm()
         {
             Form backgroundForm = new Form();
             try
             {
-                using (GameMCForm f = new GameMCForm())
+                using (gameForm = new GameMCForm())
                 {
                     backgroundForm.StartPosition = FormStartPosition.Manual;
                     backgroundForm.FormBorderStyle = FormBorderStyle.None;
@@ -163,8 +185,8 @@ namespace VocabularyUp
                     backgroundForm.ShowInTaskbar = false;
                     backgroundForm.Show();
 
-                    f.Owner = backgroundForm;
-                    f.ShowDialog();
+                    gameForm.Owner = backgroundForm;
+                    gameForm.ShowDialog();
 
                     backgroundForm.Dispose();
                 }
