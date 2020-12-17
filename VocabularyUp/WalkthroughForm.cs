@@ -63,7 +63,7 @@ namespace VocabularyUp
                 Image image = Image.FromFile("../../db/Monsters/" + (i+1).ToString() + ".png");
                 image.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 Size size = new Size(60, 60);
-                int y = rd.Next(this.Height * 2 / 3, this.Height - size.Height);
+                int y = rd.Next(this.ClientSize.Height * 2 / 3, this.ClientSize.Height - size.Height);
                 Point location = new Point(((i + 1) * this.ClientSize.Width / 4), y);
 
 

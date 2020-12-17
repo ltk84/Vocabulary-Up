@@ -191,6 +191,8 @@ namespace VocabularyUp
             {
                 WalkthroughForm wtf = new WalkthroughForm(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
                 //wtf.TopMost = true;
+                wtf.StartPosition = FormStartPosition.CenterScreen;
+                //wtf.WindowState = FormWindowState.Maximized;
                 wtf.Show();
             }
             else if (type == 2)
@@ -199,9 +201,9 @@ namespace VocabularyUp
             }
             else
             {
-                FightingGameForm fgf = new FightingGameForm(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
-                fgf.TopMost = true;
-                fgf.Show();
+                //FightingGameForm fgf = new FightingGameForm(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
+                //fgf.TopMost = true;
+                //fgf.Show();
             }
         }
 

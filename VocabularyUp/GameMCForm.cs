@@ -162,9 +162,11 @@ namespace VocabularyUp
                 userChoices[currentQuiz].IsDone = true;
                 if (userChoices[currentQuiz].Selected == userChoices[currentQuiz].Correct)
                     isCorrect = true;
+              
             }
 
-            this.Close();
+            if (userChoices[currentQuiz].Selected != -1)
+                this.Close();
 
         }
 
