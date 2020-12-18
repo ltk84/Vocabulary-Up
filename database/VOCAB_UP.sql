@@ -73,23 +73,23 @@ delete from user_character
 delete from character
 INSERT INTO CHARACTER
 VALUES 
-	(0, 'KNIGHT', 100, 100, 100),
-	(1, 'ASSASSIN', 500, 80, 100),
-	(2, 'PALADIN', 50, 120, 100),
-	(3, 'ROUGE', 70, 150, 100),
-	(4, 'VAMPIRE', 120, 120, 100),
-	(5, 'ALCHEMIST', 120, 120, 100),
-	(6, 'BERSERKER', 120, 120, 100),
-	(7, 'DRUID', 120, 120, 100),
-	(8, 'ELF', 120, 120, 100),
-	(9, 'ENGINEER', 120, 120, 100),
-	(10, 'NECROMANCER', 120, 120, 100),
-	(11, 'OFFICER', 120, 120, 100),
-	(12, 'PRIEST', 120, 120, 100),
-	(13, 'ROBOT', 120, 120, 100),
-	(14, 'WIZARD', 120, 120, 100),
-	(15, 'TAOIST', 120, 120, 100),
-	(16, 'WEREWOLF', 120, 120, 100)
+	(0, 'KNIGHT', 5, 100, 100),
+	(1, 'PALADIN', 6, 80, 100),
+	(2, 'ROGUE', 6, 120, 100),
+	(3, 'ASSASSIN', 6, 150, 100),
+	(4, 'VAMPIRE', 7, 120, 100),
+	(5, 'ALCHEMIST', 6, 120, 100),
+	(6, 'BERSERKER', 8, 120, 100),
+	(7, 'DRUID', 7, 120, 100),
+	(8, 'ELF', 10, 120, 100),
+	(9, 'ENGINEER', 6, 120, 100),
+	(10, 'NECROMANCER', 9, 120, 100),
+	(11, 'OFFICER', 6, 120, 100),
+	(12, 'PRIEST', 8, 120, 100),
+	(13, 'ROBOT', 7, 120, 100),
+	(14, 'WIZARD', 6, 120, 100),
+	(15, 'TAOIST', 7, 120, 100),
+	(16, 'WEREWOLF', 10, 120, 100)
 select * from user_info
 
 
@@ -122,6 +122,7 @@ VALUES
 	(5, 0),
 	(6, 0)
 
+select * from USER_CHARACTER
 		delete from USER_CHARACTER
 		insert into USER_CHARACTER
 		values (2, 0)

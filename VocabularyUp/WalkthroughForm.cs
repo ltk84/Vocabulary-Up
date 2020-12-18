@@ -39,7 +39,7 @@ namespace VocabularyUp
             Point location = new Point(0, Screen.PrimaryScreen.Bounds.Height / 2);
             Size size = new Size(100, 100);
 
-            player = new Player(image, location, size, 10);
+            player = new Player(image, location, size, 50);
 
             ManageUserAction.LoadPlayerStat(idSkin, player);
         }
@@ -103,9 +103,6 @@ namespace VocabularyUp
                 mon.Draw(g);
             }
 
-            string text = "Health: " + currentHealth.ToString();
-            g.DrawString(text, new Font("Arial", 16), new SolidBrush(Color.Red), new PointF(0, 0));
-
             if (isGameOver)
             {
                 SizeF Size = e.Graphics.MeasureString("Game Over", new Font("Arial", 20));
@@ -145,10 +142,11 @@ namespace VocabularyUp
                                 //    isGameOver = true;
                                 monsters[i].IsDeath = true;
                                 monsters.Remove(monsters[i]);
+                                ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
                             }
                             else
                             {
-                                currentHealth -= 10;
+                                currentHealth -= 1;
                                 player.Location = new Point(0, this.ClientSize.Height / 2);
                             }
 
@@ -177,11 +175,9 @@ namespace VocabularyUp
                 {
                     InitFinalRound();
                 }
-
-                Graphics g = this.CreateGraphics();
-                string text = "Health: " + currentHealth.ToString();
-                g.DrawString(text, new Font("Arial", 16), new SolidBrush(Color.Red), new PointF(0, 0));
-
+                double percent = (((double) currentHealth) / player.Health) * 100;
+                pgbHealth.Value =   (int) percent;
+                lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
                 this.Invalidate();
             }
 
@@ -258,25 +254,55 @@ namespace VocabularyUp
 
         private void InitFinalRound()
         {
-            MessageBox.Show(monsters.Count.ToString());
+            // Boss selection.
             for (int i = 0; i < 2; i++)
             {
                 if (monsters[0].IsBoss == false)
-                    monsters.Remove(monsters[0]);
+                    monsters.RemoveAt(0);
             }
-            player.X = Screen.PrimaryScreen.Bounds.Width / 3;
-            player.Y = Screen.PrimaryScreen.Bounds.Height / 3;
+
+            // Relocate, resize.
+            player.X = Screen.PrimaryScreen.Bounds.Width / 4 - player.Size.Width;
+            player.Y = Screen.PrimaryScreen.Bounds.Height * 2 / 3;
             player.Size = new Size(150, 150);
-            monsters[0].X = Screen.PrimaryScreen.Bounds.Width * 2/ 3;
-            monsters[0].Y = Screen.PrimaryScreen.Bounds.Height / 3;
+            monsters[0].X = Screen.PrimaryScreen.Bounds.Width * 3 / 4;
+            monsters[0].Y = player.Y + player.Size.Height - monsters[0].Size.Height;
             monsters[0].Size = new Size(200, 200);
+
+            // Init boss's health.
+            pgbMonsterHealth.Show();
+            pgbMonsterHealth.Location = new Point(Screen.PrimaryScreen.Bounds.Width - pgbMonsterHealth.Size.Width - 50, pnlInfo.Location.X + pgbHealth.Location.X);
+            pgbMonsterHealth.Value = 100;
+            //pnlMonsterHealth.Show();
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    PictureBox pbHealth = new PictureBox();
+            //    pbHealth.Image = Image.FromFile("../../icons/health.png");
+            //    pbHealth.SizeMode = PictureBoxSizeMode.StretchImage;
+            //    pbHealth.Dock = DockStyle.Right;
+            //    pbHealth.Width -= 20;
+            //    pnlMonsterHealth.Controls.Add(pbHealth);
+            //}
+            //// Init player's health
+            //pnlPlayerHealth.Show();
+            //for (int i = 0; i < player.Health / 10; i++)
+            //{
+            //    PictureBox pbHealth = new PictureBox();
+            //    pbHealth.Image = Image.FromFile("../../icons/health.png");
+            //    pbHealth.SizeMode = PictureBoxSizeMode.StretchImage;
+            //    pbHealth.Dock = DockStyle.Left;
+            //    pbHealth.Width -= 20;
+            //    pnlPlayerHealth.Controls.Add(pbHealth);
+            //}
+
+
             this.Invalidate();
         }
 
         private void WalkthroughForm_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             switch (e.KeyCode)
-            {   
+            {
                 case Keys.Left:
                     player.Move(Direction.Left);
                     break;
@@ -293,7 +319,5 @@ namespace VocabularyUp
                     break;
             }
         }
-
-        
     }
 }
