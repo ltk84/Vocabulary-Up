@@ -81,11 +81,11 @@ namespace VocabularyUp
                     string vie = "a";
                     if (ManageUserAction.GetMainFlashCards().Count > 3)
                     {
-                        while (vie == "")
+                        do
                         {
                             index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
                             vie = ManageUserAction.GetMainFlashCards()[index].Viet;
-                        }
+                        } while (vie == "");
                         
                     }
                     else

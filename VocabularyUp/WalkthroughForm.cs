@@ -261,13 +261,12 @@ namespace VocabularyUp
             MessageBox.Show(monsters.Count.ToString());
             for (int i = 0; i < 2; i++)
             {
-                monsters.Remove(monsters[0]);
-                MessageBox.Show(i.ToString());
+                if (monsters[0].IsBoss == false)
+                    monsters.Remove(monsters[0]);
             }
             player.X = Screen.PrimaryScreen.Bounds.Width / 3;
             player.Y = Screen.PrimaryScreen.Bounds.Height / 3;
             player.Size = new Size(150, 150);
-            MessageBox.Show(monsters[0].IsBoss.ToString());
             monsters[0].X = Screen.PrimaryScreen.Bounds.Width * 2/ 3;
             monsters[0].Y = Screen.PrimaryScreen.Bounds.Height / 3;
             monsters[0].Size = new Size(200, 200);
@@ -277,7 +276,7 @@ namespace VocabularyUp
         private void WalkthroughForm_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             switch (e.KeyCode)
-            {
+            {   
                 case Keys.Left:
                     player.Move(Direction.Left);
                     break;

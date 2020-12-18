@@ -31,21 +31,30 @@ namespace VocabularyUp
         {
             this.components = new System.ComponentModel.Container();
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // timerUpdate
             // 
             this.timerUpdate.Tick += new System.EventHandler(this.timerUpdate_Tick);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(121, 13);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.TabIndex = 0;
+            this.progressBar1.Value = 50;
+            // 
             // WalkthroughForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1000, 519);
+            this.ClientSize = new System.Drawing.Size(750, 422);
+            this.Controls.Add(this.progressBar1);
             this.DoubleBuffered = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "WalkthroughForm";
             this.Text = "WalkthroughForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -57,5 +66,6 @@ namespace VocabularyUp
         #endregion
 
         private System.Windows.Forms.Timer timerUpdate;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
