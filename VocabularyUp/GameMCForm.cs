@@ -78,11 +78,15 @@ namespace VocabularyUp
                 while (fakeAnswers.Count != 3)
                 {
                     int index;
-                    string vie;
+                    string vie = "a";
                     if (ManageUserAction.GetMainFlashCards().Count > 3)
                     {
-                        index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
-                        vie = ManageUserAction.GetMainFlashCards()[index].Viet;
+                        while (vie == "")
+                        {
+                            index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
+                            vie = ManageUserAction.GetMainFlashCards()[index].Viet;
+                        }
+                        
                     }
                     else
                     {

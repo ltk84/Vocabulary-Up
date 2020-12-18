@@ -205,3 +205,4 @@ D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\Vocab
 C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.GameMCForm.resources
 C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.WalkthroughForm.resources
 C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.TrashTalkingForm.resources
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.TrashTalkingForm.resources

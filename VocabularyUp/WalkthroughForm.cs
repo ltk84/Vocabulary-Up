@@ -70,13 +70,13 @@ namespace VocabularyUp
 
                 Monster mon;
                 int v = rd.Next(10, 20);
-                mon = new Monster(image, location, size, v, null);
+                mon = new Monster(image, location, size, v, null, false);
 
                 if (i == 2)
                 {
                    location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 4), Screen.PrimaryScreen.Bounds.Height * 2 / 3);
                   
-                    mon = new Monster(image, location, size, 0, null);
+                    mon = new Monster(image, location, size, 0, null, true);
                 }    
 
                 monsters.Add(mon);
@@ -127,10 +127,10 @@ namespace VocabularyUp
                     if (player.isCollision(monsters[i]))
                     {
                         timerUpdate.Stop(); 
-                        if (i == 2)
+                        if (monsters[i].IsBoss == true)
                         {
                             //timerUpdate.Stop();
-                            OpenTrashTalk(2, "Mày đây rồi, thằng khốn! Chạy đâu cho thoát!", "Bố đã làm gì mày đâu?");
+                            OpenTrashTalk(i, "Mày đây rồi, thằng khốn! Chạy đâu cho thoát!", "Bố đã làm gì mày đâu?");
                         }
 
                         OpenGameForm();
