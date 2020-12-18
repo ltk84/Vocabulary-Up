@@ -249,6 +249,7 @@ namespace VocabularyUp
             this.Name = "GameMCForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GameMCForm";
+            this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Turquoise;
             this.pnlFlashCard.ResumeLayout(false);
             this.pnlTab.ResumeLayout(false);

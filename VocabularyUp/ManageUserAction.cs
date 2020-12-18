@@ -809,7 +809,35 @@ namespace VocabularyUp
         {
             return currentUser.Diamond;
         }
+        public static void UpdateDiamond(int d)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "UPDATE USER_INFO SET DIAMOND = @D WHERE ID_USER = @ID";
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@D", d);
+                command.Parameters.AddWithValue("@ID", currentUser.IdUser);
 
+                //Thuc hien cau truy van
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
+            currentUser.Diamond = d;
+        }
         public static void UpdateDiamondAfterBuy(int num)
         {
             SqlConnection connection = new SqlConnection(constr);
