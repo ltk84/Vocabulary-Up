@@ -164,7 +164,7 @@
             this.wall1.Location = new System.Drawing.Point(81, 124);
             this.wall1.Margin = new System.Windows.Forms.Padding(4);
             this.wall1.Name = "wall1";
-            this.wall1.Size = new System.Drawing.Size(50, 250);
+            this.wall1.Size = new System.Drawing.Size(50, 240);
             this.wall1.TabIndex = 17;
             // 
             // wall2

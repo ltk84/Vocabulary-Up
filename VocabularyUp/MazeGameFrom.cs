@@ -15,18 +15,38 @@ namespace VocabularyUp
         private PlayerMaze player;
         bool goLeft, goRight, goUp, goDown;
         private bool isGameOver;
+        private List<Treasure> treasures;
 
         public MazeGameFrom(int idCol, int idSkin)
         {
             InitializeComponent();
             LoadBackGround();
             InitPlayer(idSkin);
+            InitTreasure();
             timerUpdate.Start();
             isGameOver = false;
 
             this.DoubleBuffered = true;
         }
+        private void InitTreasure()
+        {
+            treasures = new List<Treasure>();
 
+            Image image = Image.FromFile("../../db/Treasure/kho bau.png");
+            Size size = new Size(50, 50);
+            Point location1 = new Point(25, 150);
+
+            Treasure trea1,trea2,trea3;
+            trea1 = new Treasure(image, location1, size, 0, false);
+            treasures.Add(trea1);
+
+            Point location2 = new Point(875, 175);
+            trea2 = new Treasure(image, location2, size, 0, false);
+            Point location3 = new Point(639, 595);
+            trea3 = new Treasure(image, location3, size, 0, true);
+            treasures.Add(trea2);
+            treasures.Add(trea3);
+        }
         private void PlayerMaze_PriviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             switch (e.KeyCode)
@@ -98,6 +118,46 @@ namespace VocabularyUp
             if (goDown == true && player.Y + player.Size.Height > wall2.Location.Y && player.X + player.Size.Width > wall2.Location.X && player.X < wall2.Location.X + wall2.Width
                 && player.Y < wall2.Location.Y)
                 player.Y = wall2.Location.Y - player.Size.Height;
+            //panel1
+            if (goRight == true && player.X + player.Size.Width > panel1.Location.X && player.Y + player.Size.Height > panel1.Location.Y && player.Y < panel1.Location.Y + panel1.Size.Height
+                && player.X < panel1.Location.X)
+                player.X = panel1.Location.X - player.Size.Width;
+            if (goLeft == true && player.X < panel1.Location.X + panel1.Size.Width && player.Y + player.Size.Height > panel1.Location.Y && player.Y < panel1.Location.Y + panel1.Size.Height
+                && player.X > panel1.Location.X)
+                player.X = panel1.Location.X + panel1.Width;
+            if (goUp == true && player.Y < panel1.Location.Y + panel1.Size.Height && player.X + player.Size.Width > panel1.Location.X && player.X < panel1.Location.X + panel1.Size.Width
+                && player.Y > panel1.Location.Y)
+                player.Y = panel1.Location.Y + panel1.Size.Height;
+            if (goDown == true && player.Y + player.Size.Height > panel1.Location.Y && player.X + player.Size.Width > panel1.Location.X && player.X < panel1.Location.X + panel1.Width
+                && player.Y < panel1.Location.Y)
+                player.Y = panel1.Location.Y - player.Size.Height;
+            //panel7
+            if (goRight == true && player.X + player.Size.Width > panel7.Location.X && player.Y + player.Size.Height > panel7.Location.Y && player.Y < panel7.Location.Y + panel7.Size.Height
+                && player.X < panel7.Location.X)
+                player.X = panel7.Location.X - player.Size.Width;
+            if (goLeft == true && player.X < panel7.Location.X + panel7.Size.Width && player.Y + player.Size.Height > panel7.Location.Y && player.Y < panel7.Location.Y + panel7.Size.Height
+                && player.X > panel7.Location.X)
+                player.X = panel7.Location.X + panel7.Width;
+            if (goUp == true && player.Y < panel7.Location.Y + panel7.Size.Height && player.X + player.Size.Width > panel7.Location.X && player.X < panel7.Location.X + panel7.Size.Width
+                && player.Y > panel7.Location.Y)
+                player.Y = panel7.Location.Y + panel7.Size.Height;
+            if (goDown == true && player.Y + player.Size.Height > panel7.Location.Y && player.X + player.Size.Width > panel7.Location.X && player.X < panel7.Location.X + panel7.Width
+                && player.Y < panel7.Location.Y)
+                player.Y = panel7.Location.Y - player.Size.Height;
+
+            //panel8
+            if (goRight == true && player.X + player.Size.Width > panel8.Location.X && player.Y + player.Size.Height > panel8.Location.Y && player.Y < panel8.Location.Y + panel8.Size.Height
+                && player.X < panel8.Location.X)
+                player.X = panel8.Location.X - player.Size.Width;
+            if (goLeft == true && player.X < panel8.Location.X + panel8.Size.Width && player.Y + player.Size.Height > panel8.Location.Y && player.Y < panel8.Location.Y + panel8.Size.Height
+                && player.X > panel8.Location.X)
+                player.X = panel8.Location.X + panel8.Width;
+            if (goUp == true && player.Y < panel8.Location.Y + panel8.Size.Height && player.X + player.Size.Width > panel8.Location.X && player.X < panel8.Location.X + panel8.Size.Width
+                && player.Y > panel8.Location.Y)
+                player.Y = panel8.Location.Y + panel8.Size.Height;
+            if (goDown == true && player.Y + player.Size.Height > panel8.Location.Y && player.X + player.Size.Width > panel8.Location.X && player.X < panel8.Location.X + panel8.Width
+                && player.Y < panel8.Location.Y)
+                player.Y = panel8.Location.Y - player.Size.Height;
         }
         public void InitPlayer(int idSkin)
         {
@@ -115,6 +175,11 @@ namespace VocabularyUp
             base.OnPaint(e);
             Graphics g = e.Graphics;
             player.Draw(g);
+
+            foreach (var trea in treasures)
+            {
+                trea.Draw(g);
+            }    
         }
     }
 }
