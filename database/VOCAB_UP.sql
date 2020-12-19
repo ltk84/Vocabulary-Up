@@ -68,7 +68,7 @@ CREATE TABLE USER_CHARACTER
 	CONSTRAINT FK_UC_USER FOREIGN KEY (ID_USER) REFERENCES USERS (ID),
 	CONSTRAINT FK_UC_CHAR FOREIGN KEY (ID_CHAR) REFERENCES CHARACTER (ID)
 )
-
+select* from CHARACTER
 delete from user_character
 delete from character
 INSERT INTO CHARACTER
@@ -95,8 +95,9 @@ select * from user_info
 
 alter table USER_INFO
 add DARKMODE bit
-
-select * from CHARACTER
+UPDATE USER_INFO
+SET DARKMODE = 0
+select * from USER_INFO
 select * from users
 select * from user_info
 select * from USER_CHARACTER
