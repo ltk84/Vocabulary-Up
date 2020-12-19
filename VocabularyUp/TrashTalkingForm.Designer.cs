@@ -42,7 +42,7 @@
             // pbCharacter
             // 
             this.pbCharacter.Location = new System.Drawing.Point(44, 136);
-            this.pbCharacter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbCharacter.Margin = new System.Windows.Forms.Padding(2);
             this.pbCharacter.Name = "pbCharacter";
             this.pbCharacter.Size = new System.Drawing.Size(299, 364);
             this.pbCharacter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -52,7 +52,7 @@
             // pbMonster
             // 
             this.pbMonster.Location = new System.Drawing.Point(778, 136);
-            this.pbMonster.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbMonster.Margin = new System.Windows.Forms.Padding(2);
             this.pbMonster.Name = "pbMonster";
             this.pbMonster.Size = new System.Drawing.Size(299, 364);
             this.pbMonster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -67,7 +67,7 @@
             this.pnlTrashTalk.FillColor = System.Drawing.Color.White;
             this.pnlTrashTalk.FillColor2 = System.Drawing.Color.White;
             this.pnlTrashTalk.Location = new System.Drawing.Point(44, 535);
-            this.pnlTrashTalk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTrashTalk.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTrashTalk.Name = "pnlTrashTalk";
             this.pnlTrashTalk.ShadowDecoration.Parent = this.pnlTrashTalk;
             this.pnlTrashTalk.Size = new System.Drawing.Size(1034, 172);
@@ -102,13 +102,12 @@
             this.Controls.Add(this.pbCharacter);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TrashTalkingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TrashTalkingForm";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Turquoise;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TrashTalkingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCharacter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMonster)).EndInit();

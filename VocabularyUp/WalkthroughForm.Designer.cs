@@ -36,9 +36,8 @@ namespace VocabularyUp
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.lbDiamond = new System.Windows.Forms.Label();
             this.pbDiamond = new System.Windows.Forms.PictureBox();
-            this.pnlQuestion = new System.Windows.Forms.Panel();
             this.pgbHealth = new VocabularyUp.SuperProgressBar();
-            this.pgbMonsterHealth = new VocabularyUp.SuperProgressBar();
+            this.pnlQuestion = new System.Windows.Forms.Panel();
             this.lbTimer = new System.Windows.Forms.Label();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
             this.btnB = new Guna.UI2.WinForms.Guna2Button();
@@ -49,6 +48,7 @@ namespace VocabularyUp
             this.pnlDash = new System.Windows.Forms.Panel();
             this.lbMain = new System.Windows.Forms.Label();
             this.pbMain = new System.Windows.Forms.PictureBox();
+            this.pgbMonsterHealth = new VocabularyUp.SuperProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
@@ -65,9 +65,10 @@ namespace VocabularyUp
             // 
             this.pbIconHealth.BackColor = System.Drawing.Color.Transparent;
             this.pbIconHealth.Image = ((System.Drawing.Image)(resources.GetObject("pbIconHealth.Image")));
-            this.pbIconHealth.Location = new System.Drawing.Point(18, 15);
+            this.pbIconHealth.Location = new System.Drawing.Point(14, 12);
+            this.pbIconHealth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbIconHealth.Name = "pbIconHealth";
-            this.pbIconHealth.Size = new System.Drawing.Size(30, 30);
+            this.pbIconHealth.Size = new System.Drawing.Size(22, 24);
             this.pbIconHealth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbIconHealth.TabIndex = 1;
             this.pbIconHealth.TabStop = false;
@@ -81,9 +82,10 @@ namespace VocabularyUp
             this.pnlInfo.Controls.Add(this.pbDiamond);
             this.pnlInfo.Controls.Add(this.pgbHealth);
             this.pnlInfo.Controls.Add(this.pbIconHealth);
-            this.pnlInfo.Location = new System.Drawing.Point(26, 27);
+            this.pnlInfo.Location = new System.Drawing.Point(20, 22);
+            this.pnlInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlInfo.Name = "pnlInfo";
-            this.pnlInfo.Size = new System.Drawing.Size(385, 109);
+            this.pnlInfo.Size = new System.Drawing.Size(289, 89);
             this.pnlInfo.TabIndex = 5;
             // 
             // lbDiamond
@@ -92,9 +94,10 @@ namespace VocabularyUp
             this.lbDiamond.BackColor = System.Drawing.Color.Transparent;
             this.lbDiamond.Font = new System.Drawing.Font("Montserrat Alternates", 12F);
             this.lbDiamond.ForeColor = System.Drawing.Color.White;
-            this.lbDiamond.Location = new System.Drawing.Point(60, 60);
+            this.lbDiamond.Location = new System.Drawing.Point(45, 49);
+            this.lbDiamond.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDiamond.Name = "lbDiamond";
-            this.lbDiamond.Size = new System.Drawing.Size(25, 28);
+            this.lbDiamond.Size = new System.Drawing.Size(21, 22);
             this.lbDiamond.TabIndex = 5;
             this.lbDiamond.Text = "0";
             // 
@@ -102,12 +105,22 @@ namespace VocabularyUp
             // 
             this.pbDiamond.BackColor = System.Drawing.Color.Transparent;
             this.pbDiamond.Image = ((System.Drawing.Image)(resources.GetObject("pbDiamond.Image")));
-            this.pbDiamond.Location = new System.Drawing.Point(18, 60);
+            this.pbDiamond.Location = new System.Drawing.Point(14, 49);
+            this.pbDiamond.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbDiamond.Name = "pbDiamond";
-            this.pbDiamond.Size = new System.Drawing.Size(30, 30);
+            this.pbDiamond.Size = new System.Drawing.Size(22, 24);
             this.pbDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDiamond.TabIndex = 4;
             this.pbDiamond.TabStop = false;
+            // 
+            // pgbHealth
+            // 
+            this.pgbHealth.BackColor = System.Drawing.Color.White;
+            this.pgbHealth.Location = new System.Drawing.Point(49, 16);
+            this.pgbHealth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pgbHealth.Name = "pgbHealth";
+            this.pgbHealth.Size = new System.Drawing.Size(213, 20);
+            this.pgbHealth.TabIndex = 3;
             // 
             // pnlQuestion
             // 
@@ -121,27 +134,12 @@ namespace VocabularyUp
             this.pnlQuestion.Controls.Add(this.btnD);
             this.pnlQuestion.Controls.Add(this.btnC);
             this.pnlQuestion.Controls.Add(this.pnlFlashCard);
-            this.pnlQuestion.Location = new System.Drawing.Point(68, 3);
+            this.pnlQuestion.Location = new System.Drawing.Point(51, 2);
+            this.pnlQuestion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlQuestion.Name = "pnlQuestion";
-            this.pnlQuestion.Size = new System.Drawing.Size(995, 448);
+            this.pnlQuestion.Size = new System.Drawing.Size(746, 364);
             this.pnlQuestion.TabIndex = 6;
             this.pnlQuestion.Visible = false;
-            // 
-            // pgbHealth
-            // 
-            this.pgbHealth.BackColor = System.Drawing.Color.White;
-            this.pgbHealth.Location = new System.Drawing.Point(65, 20);
-            this.pgbHealth.Name = "pgbHealth";
-            this.pgbHealth.Size = new System.Drawing.Size(284, 25);
-            this.pgbHealth.TabIndex = 3;
-            // 
-            // pgbMonsterHealth
-            // 
-            this.pgbMonsterHealth.Location = new System.Drawing.Point(417, 27);
-            this.pgbMonsterHealth.Name = "pgbMonsterHealth";
-            this.pgbMonsterHealth.Size = new System.Drawing.Size(618, 30);
-            this.pgbMonsterHealth.TabIndex = 4;
-            this.pgbMonsterHealth.Visible = false;
             // 
             // lbTimer
             // 
@@ -149,10 +147,9 @@ namespace VocabularyUp
             this.lbTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbTimer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTimer.ForeColor = System.Drawing.Color.White;
-            this.lbTimer.Location = new System.Drawing.Point(639, 57);
-            this.lbTimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTimer.Location = new System.Drawing.Point(479, 46);
             this.lbTimer.Name = "lbTimer";
-            this.lbTimer.Size = new System.Drawing.Size(93, 28);
+            this.lbTimer.Size = new System.Drawing.Size(70, 23);
             this.lbTimer.TabIndex = 51;
             this.lbTimer.Text = "60";
             this.lbTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,12 +168,13 @@ namespace VocabularyUp
             this.btnConfirm.HoverState.Parent = this.btnConfirm;
             this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
             this.btnConfirm.ImageSize = new System.Drawing.Size(60, 45);
-            this.btnConfirm.Location = new System.Drawing.Point(611, 303);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConfirm.Location = new System.Drawing.Point(458, 246);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
-            this.btnConfirm.Size = new System.Drawing.Size(144, 71);
+            this.btnConfirm.Size = new System.Drawing.Size(108, 58);
             this.btnConfirm.TabIndex = 50;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnB
             // 
@@ -191,12 +189,13 @@ namespace VocabularyUp
             this.btnB.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
             this.btnB.ForeColor = System.Drawing.Color.White;
             this.btnB.HoverState.Parent = this.btnB;
-            this.btnB.Location = new System.Drawing.Point(692, 108);
-            this.btnB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnB.Location = new System.Drawing.Point(519, 88);
+            this.btnB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnB.Name = "btnB";
             this.btnB.ShadowDecoration.Parent = this.btnB;
-            this.btnB.Size = new System.Drawing.Size(180, 71);
+            this.btnB.Size = new System.Drawing.Size(135, 58);
             this.btnB.TabIndex = 48;
+            this.btnB.Click += new System.EventHandler(this.btnB_Click);
             // 
             // btnA
             // 
@@ -211,12 +210,13 @@ namespace VocabularyUp
             this.btnA.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
             this.btnA.ForeColor = System.Drawing.Color.White;
             this.btnA.HoverState.Parent = this.btnA;
-            this.btnA.Location = new System.Drawing.Point(493, 108);
-            this.btnA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnA.Location = new System.Drawing.Point(370, 88);
+            this.btnA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnA.Name = "btnA";
             this.btnA.ShadowDecoration.Parent = this.btnA;
-            this.btnA.Size = new System.Drawing.Size(180, 71);
+            this.btnA.Size = new System.Drawing.Size(135, 58);
             this.btnA.TabIndex = 46;
+            this.btnA.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btnD
             // 
@@ -231,12 +231,13 @@ namespace VocabularyUp
             this.btnD.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
             this.btnD.ForeColor = System.Drawing.Color.White;
             this.btnD.HoverState.Parent = this.btnD;
-            this.btnD.Location = new System.Drawing.Point(692, 205);
-            this.btnD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnD.Location = new System.Drawing.Point(519, 167);
+            this.btnD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnD.Name = "btnD";
             this.btnD.ShadowDecoration.Parent = this.btnD;
-            this.btnD.Size = new System.Drawing.Size(180, 71);
+            this.btnD.Size = new System.Drawing.Size(135, 58);
             this.btnD.TabIndex = 49;
+            this.btnD.Click += new System.EventHandler(this.btnD_Click);
             // 
             // btnC
             // 
@@ -251,12 +252,13 @@ namespace VocabularyUp
             this.btnC.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
             this.btnC.ForeColor = System.Drawing.Color.White;
             this.btnC.HoverState.Parent = this.btnC;
-            this.btnC.Location = new System.Drawing.Point(493, 205);
-            this.btnC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnC.Location = new System.Drawing.Point(370, 167);
+            this.btnC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnC.Name = "btnC";
             this.btnC.ShadowDecoration.Parent = this.btnC;
-            this.btnC.Size = new System.Drawing.Size(180, 71);
+            this.btnC.Size = new System.Drawing.Size(135, 58);
             this.btnC.TabIndex = 47;
+            this.btnC.Click += new System.EventHandler(this.btnC_Click);
             // 
             // pnlFlashCard
             // 
@@ -266,19 +268,19 @@ namespace VocabularyUp
             this.pnlFlashCard.Controls.Add(this.pnlDash);
             this.pnlFlashCard.Controls.Add(this.lbMain);
             this.pnlFlashCard.Controls.Add(this.pbMain);
-            this.pnlFlashCard.Location = new System.Drawing.Point(35, 24);
-            this.pnlFlashCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlFlashCard.Location = new System.Drawing.Point(26, 20);
+            this.pnlFlashCard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlFlashCard.Name = "pnlFlashCard";
-            this.pnlFlashCard.Size = new System.Drawing.Size(352, 397);
+            this.pnlFlashCard.Size = new System.Drawing.Size(264, 323);
             this.pnlFlashCard.TabIndex = 45;
             // 
             // pnlDash
             // 
             this.pnlDash.BackColor = System.Drawing.Color.White;
-            this.pnlDash.Location = new System.Drawing.Point(30, 264);
-            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlDash.Location = new System.Drawing.Point(22, 214);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlDash.Name = "pnlDash";
-            this.pnlDash.Size = new System.Drawing.Size(289, 5);
+            this.pnlDash.Size = new System.Drawing.Size(217, 4);
             this.pnlDash.TabIndex = 14;
             // 
             // lbMain
@@ -286,9 +288,10 @@ namespace VocabularyUp
             this.lbMain.BackColor = System.Drawing.Color.Transparent;
             this.lbMain.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
             this.lbMain.ForeColor = System.Drawing.Color.White;
-            this.lbMain.Location = new System.Drawing.Point(3, 279);
+            this.lbMain.Location = new System.Drawing.Point(2, 227);
+            this.lbMain.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMain.Name = "lbMain";
-            this.lbMain.Size = new System.Drawing.Size(346, 95);
+            this.lbMain.Size = new System.Drawing.Size(260, 77);
             this.lbMain.TabIndex = 12;
             this.lbMain.Text = "Welcome";
             this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -296,26 +299,34 @@ namespace VocabularyUp
             // pbMain
             // 
             this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
-            this.pbMain.Location = new System.Drawing.Point(30, 23);
-            this.pbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbMain.Location = new System.Drawing.Point(22, 19);
+            this.pbMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbMain.Name = "pbMain";
-            this.pbMain.Size = new System.Drawing.Size(289, 227);
+            this.pbMain.Size = new System.Drawing.Size(217, 184);
             this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMain.TabIndex = 13;
             this.pbMain.TabStop = false;
             // 
+            // pgbMonsterHealth
+            // 
+            this.pgbMonsterHealth.Location = new System.Drawing.Point(313, 22);
+            this.pgbMonsterHealth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pgbMonsterHealth.Name = "pgbMonsterHealth";
+            this.pgbMonsterHealth.Size = new System.Drawing.Size(464, 24);
+            this.pgbMonsterHealth.TabIndex = 4;
+            this.pgbMonsterHealth.Visible = false;
+            // 
             // WalkthroughForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1158, 656);
+            this.ClientSize = new System.Drawing.Size(868, 533);
             this.Controls.Add(this.pnlQuestion);
             this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.pgbMonsterHealth);
             this.DoubleBuffered = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WalkthroughForm";
             this.Text = "WalkthroughForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
