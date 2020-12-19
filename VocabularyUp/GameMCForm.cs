@@ -106,10 +106,14 @@ namespace VocabularyUp
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 1;
-                btnA.FillColor = Color.FromArgb(107, 216, 255);
-                btnB.FillColor = Color.FromArgb(17, 223, 158);
-                btnC.FillColor = Color.FromArgb(17, 223, 158);
-                btnD.FillColor = Color.FromArgb(17, 223, 158);
+                //btnA.FillColor = Color.FromArgb(107, 216, 255);
+                //btnB.FillColor = Color.FromArgb(17, 223, 158);
+                //btnC.FillColor = Color.FromArgb(17, 223, 158);
+                //btnD.FillColor = Color.FromArgb(17, 223, 158);
+                btnA.BorderThickness = 5;
+                btnB.BorderThickness = 0;
+                btnC.BorderThickness = 0;
+                btnD.BorderThickness = 0;
                 isPress = 1;
             }
         }
@@ -119,10 +123,14 @@ namespace VocabularyUp
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 2;
-                btnB.FillColor = Color.FromArgb(107, 216, 255);
-                btnA.FillColor = Color.FromArgb(17, 223, 158);
-                btnC.FillColor = Color.FromArgb(17, 223, 158);
-                btnD.FillColor = Color.FromArgb(17, 223, 158);
+                //btnB.FillColor = Color.FromArgb(107, 216, 255);
+                //btnA.FillColor = Color.FromArgb(17, 223, 158);
+                //btnC.FillColor = Color.FromArgb(17, 223, 158);
+                //btnD.FillColor = Color.FromArgb(17, 223, 158);
+                btnA.BorderThickness = 0;
+                btnB.BorderThickness = 5;
+                btnC.BorderThickness = 0;
+                btnD.BorderThickness = 0;
                 isPress = 1;
             }
         }
@@ -132,10 +140,14 @@ namespace VocabularyUp
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 3;
-                btnC.FillColor = Color.FromArgb(107, 216, 255);
-                btnA.FillColor = Color.FromArgb(17, 223, 158);
-                btnB.FillColor = Color.FromArgb(17, 223, 158);
-                btnD.FillColor = Color.FromArgb(17, 223, 158);
+                //btnC.FillColor = Color.FromArgb(107, 216, 255);
+                //btnA.FillColor = Color.FromArgb(17, 223, 158);
+                //btnB.FillColor = Color.FromArgb(17, 223, 158);
+                //btnD.FillColor = Color.FromArgb(17, 223, 158);
+                btnA.BorderThickness = 0;
+                btnB.BorderThickness = 0;
+                btnC.BorderThickness = 5;
+                btnD.BorderThickness = 0;
                 isPress = 1;
             }
         }
@@ -145,10 +157,14 @@ namespace VocabularyUp
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 4;
-                btnD.FillColor = Color.FromArgb(107, 216, 255);
-                btnA.FillColor = Color.FromArgb(17, 223, 158);
-                btnB.FillColor = Color.FromArgb(17, 223, 158);
-                btnC.FillColor = Color.FromArgb(17, 223, 158);
+                //btnD.FillColor = Color.FromArgb(107, 216, 255);
+                //btnA.FillColor = Color.FromArgb(17, 223, 158);
+                //btnB.FillColor = Color.FromArgb(17, 223, 158);
+                //btnC.FillColor = Color.FromArgb(17, 223, 158);
+                btnA.BorderThickness = 0;
+                btnB.BorderThickness = 0;
+                btnC.BorderThickness = 0;
+                btnD.BorderThickness = 5;
                 isPress = 1;
             }
         }

@@ -262,39 +262,21 @@ namespace VocabularyUp
             }
 
             // Relocate, resize.
-            player.X = Screen.PrimaryScreen.Bounds.Width / 4 - player.Size.Width;
-            player.Y = Screen.PrimaryScreen.Bounds.Height * 2 / 3;
-            player.Size = new Size(150, 150);
+            player.X = Screen.PrimaryScreen.Bounds.Width / 4 - player.Size.Width - 50;
+            player.Y = Screen.PrimaryScreen.Bounds.Height * 2 / 3 + 50;
+            player.Size = new Size(100, 100);
             monsters[0].X = Screen.PrimaryScreen.Bounds.Width * 3 / 4;
-            monsters[0].Y = player.Y + player.Size.Height - monsters[0].Size.Height;
-            monsters[0].Size = new Size(200, 200);
+            monsters[0].Y = player.Y + player.Size.Height - monsters[0].Size.Height - 50;
+            monsters[0].Size = new Size(250, 250);
 
             // Init boss's health.
             pgbMonsterHealth.Show();
-            pgbMonsterHealth.Location = new Point(Screen.PrimaryScreen.Bounds.Width - pgbMonsterHealth.Size.Width - 50, pnlInfo.Location.X + pgbHealth.Location.X);
+            pgbMonsterHealth.Location = new Point(Screen.PrimaryScreen.Bounds.Width - pgbMonsterHealth.Size.Width - 50, pnlInfo.Location.Y + pgbHealth.Location.Y);
             pgbMonsterHealth.Value = 100;
-            //pnlMonsterHealth.Show();
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    PictureBox pbHealth = new PictureBox();
-            //    pbHealth.Image = Image.FromFile("../../icons/health.png");
-            //    pbHealth.SizeMode = PictureBoxSizeMode.StretchImage;
-            //    pbHealth.Dock = DockStyle.Right;
-            //    pbHealth.Width -= 20;
-            //    pnlMonsterHealth.Controls.Add(pbHealth);
-            //}
-            //// Init player's health
-            //pnlPlayerHealth.Show();
-            //for (int i = 0; i < player.Health / 10; i++)
-            //{
-            //    PictureBox pbHealth = new PictureBox();
-            //    pbHealth.Image = Image.FromFile("../../icons/health.png");
-            //    pbHealth.SizeMode = PictureBoxSizeMode.StretchImage;
-            //    pbHealth.Dock = DockStyle.Left;
-            //    pbHealth.Width -= 20;
-            //    pnlPlayerHealth.Controls.Add(pbHealth);
-            //}
 
+            // Init questions.
+            pnlQuestion.Show();
+            pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 150);
 
             this.Invalidate();
         }
