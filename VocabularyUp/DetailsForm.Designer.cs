@@ -146,7 +146,7 @@
             this.lvCorrectWord.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnIndexCorrect,
             this.columnNameCorrect});
-            this.lvCorrectWord.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvCorrectWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvCorrectWord.ForeColor = System.Drawing.Color.LawnGreen;
             this.lvCorrectWord.FullRowSelect = true;
             this.lvCorrectWord.HideSelection = false;
@@ -174,7 +174,7 @@
             this.lvWrongWord.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnIndexWrong,
             this.columnNameWrong});
-            this.lvWrongWord.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvWrongWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvWrongWord.ForeColor = System.Drawing.Color.Red;
             this.lvWrongWord.FullRowSelect = true;
             this.lvWrongWord.HideSelection = false;
@@ -301,7 +301,7 @@
             // lbMain
             // 
             this.lbMain.BackColor = System.Drawing.Color.Transparent;
-            this.lbMain.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.lbMain.ForeColor = System.Drawing.Color.White;
             this.lbMain.Location = new System.Drawing.Point(1, 354);
             this.lbMain.Name = "lbMain";
