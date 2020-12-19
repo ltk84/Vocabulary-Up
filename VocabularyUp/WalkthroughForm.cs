@@ -277,6 +277,7 @@ namespace VocabularyUp
             // Init questions.
             pnlQuestion.Show();
             pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 150);
+            
 
             this.Invalidate();
         }
