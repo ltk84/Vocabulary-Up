@@ -90,8 +90,11 @@ namespace VocabularyUp
                     }
                     else
                     {
-                        index = rd.Next(0, backupAnswers.Count);
-                        vie = backupAnswers[index];
+                        do
+                        {
+                            index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
+                            vie = ManageUserAction.GetMainFlashCards()[index].Viet;
+                        } while (vie == "");
                     }
 
                     if (fakeAnswers.IndexOf(vie) < 0 && vie != ManageUserAction.GetMainFlashCards()[i].Viet)

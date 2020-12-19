@@ -18,6 +18,8 @@ namespace VocabularyUp
         private bool isGameOver;
         private Random rd = new Random();
         private int currentHealth = 0;
+        private List<Bullet> bullet;
+        private bool isFinalRound;
 
         private GameMCForm gameForm;
         private TrashTalkingForm trashTalkForm;
@@ -31,6 +33,8 @@ namespace VocabularyUp
             timerUpdate.Start();
             isGameOver = false;
             currentHealth = player.Health;
+            bullet = new List<Bullet>();
+            isFinalRound = false;
         }
 
         public void InitPlayer(int idSkin)
@@ -51,13 +55,6 @@ namespace VocabularyUp
 
         public void InitMonster()
         {
-            //Image image = Image.FromFile("../../db/Monsters/3.png");
-            //image.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            //Point location = new Point(this.ClientSize.Width/ 2 , this.ClientSize.Height / 2);
-            //Size size = new Size(150, 150);
-
-            //monster = new Monster(image, location, size, null);
-
             monsters = new List<Monster>();
             for (int i = 0; i < 3; i++)
             {
@@ -89,7 +86,6 @@ namespace VocabularyUp
         public void LoadBackGround()
         {
             this.BackgroundImage = Image.FromFile("../../db/Backgrounds/maps/map_1.jpg");
-            
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -101,6 +97,11 @@ namespace VocabularyUp
             foreach (var mon in monsters)
             {
                 mon.Draw(g);
+            }
+
+            foreach (var b in bullet)
+            {
+                b.Draw(g);
             }
 
             if (isGameOver)
@@ -127,7 +128,6 @@ namespace VocabularyUp
                         timerUpdate.Stop();
                         if (monsters[i].IsBoss == true)
                         {
-                            //timerUpdate.Stop();
                             OpenTrashTalk(i, "Mày đây rồi, thằng khốn! Chạy đâu cho thoát!", "Bố đã làm gì mày đâu?");
                             j = i;
                             break;
@@ -174,10 +174,22 @@ namespace VocabularyUp
                 if (j >= 0 && monsters[j].IsBoss == true)
                 {
                     InitFinalRound();
+                    timerUpdate.Start();
                 }
+
+                // Handle Fighting screen in final round.
+                if (isFinalRound == true)
+                {
+
+                }
+
+                // Display player's health bar.
                 double percent = (((double) currentHealth) / player.Health) * 100;
                 pgbHealth.Value =   (int) percent;
+
+                // Display diamond.
                 lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
+
                 this.Invalidate();
             }
 
@@ -218,6 +230,7 @@ namespace VocabularyUp
             
                
         }
+
         public void OpenTrashTalk(int idMonster, string charTrashTalk, string monTrashTalk)
         {
             Form backgroundForm = new Form();
@@ -294,7 +307,7 @@ namespace VocabularyUp
             //    pbHealth.Width -= 20;
             //    pnlPlayerHealth.Controls.Add(pbHealth);
             //}
-
+            isFinalRound = true;
 
             this.Invalidate();
         }
@@ -316,6 +329,7 @@ namespace VocabularyUp
                     player.Move(Direction.Down);
                     break;
                 case Keys.Space:
+                    bullet.Add(player.Attack());
                     break;
             }
         }

@@ -314,6 +314,9 @@
     <EmbeddedResource Include="StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SuperLabel.resx">
+      <DependentUpon>SuperLabel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TrashTalkingForm.resx">
       <DependentUpon>TrashTalkingForm.cs</DependentUpon>
     </EmbeddedResource>

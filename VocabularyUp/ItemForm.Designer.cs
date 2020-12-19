@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbOwned = new System.Windows.Forms.Label();
             this.pbCurrency = new System.Windows.Forms.PictureBox();
             this.lbPrice = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
             this.btnBuy = new System.Windows.Forms.Button();
             this.pbChar = new System.Windows.Forms.PictureBox();
-            this.lbOwned = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrency)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbChar)).BeginInit();
@@ -55,6 +55,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(114, 224);
             this.panel1.TabIndex = 1;
+            // 
+            // lbOwned
+            // 
+            this.lbOwned.Location = new System.Drawing.Point(6, 198);
+            this.lbOwned.Name = "lbOwned";
+            this.lbOwned.Size = new System.Drawing.Size(100, 23);
+            this.lbOwned.TabIndex = 5;
+            this.lbOwned.Text = "Owned";
+            this.lbOwned.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbOwned.Visible = false;
             // 
             // pbCurrency
             // 
@@ -78,12 +88,12 @@
             // 
             // lbName
             // 
-            this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(39, 136);
+            this.lbName.Location = new System.Drawing.Point(0, 136);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(35, 13);
+            this.lbName.Size = new System.Drawing.Size(111, 13);
             this.lbName.TabIndex = 2;
             this.lbName.Text = "Name";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnBuy
             // 
@@ -106,16 +116,6 @@
             this.pbChar.TabIndex = 0;
             this.pbChar.TabStop = false;
             // 
-            // lbOwned
-            // 
-            this.lbOwned.Location = new System.Drawing.Point(6, 198);
-            this.lbOwned.Name = "lbOwned";
-            this.lbOwned.Size = new System.Drawing.Size(100, 23);
-            this.lbOwned.TabIndex = 5;
-            this.lbOwned.Text = "Owned";
-            this.lbOwned.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbOwned.Visible = false;
-            // 
             // ItemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,7 +126,6 @@
             this.Name = "ItemForm";
             this.Text = "ItemForm";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrency)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbChar)).EndInit();
             this.ResumeLayout(false);
