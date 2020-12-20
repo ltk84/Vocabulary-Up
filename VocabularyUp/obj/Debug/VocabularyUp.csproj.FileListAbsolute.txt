@@ -217,3 +217,41 @@ D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Deb
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.WalkthroughForm.resources
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe.licenses
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.MazeGameFrom.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.exe.config
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.exe
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.pdb
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\bin\Debug\Guna.UI2.dll
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csprojAssemblyReference.cache
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CampaignForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CollectionLib.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.DetailsForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.Display_CampaignForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.CollectionForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.FillBlankForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.FinalForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.GameMCForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ItemForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.LearningForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.MazeGameFrom.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ResultForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ShopForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticInfoForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.LibraryForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticResultForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.MainForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.MultipleChoiceForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.NavForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.Properties.Resources.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ReviseForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.RevisionForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticsForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.TrashTalkingForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.UserAccessForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.WalkthroughForm.resources
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.GenerateResource.cache
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe.licenses
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.CoreCompileInputs.cache
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.CopyComplete
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\doan\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.pdb

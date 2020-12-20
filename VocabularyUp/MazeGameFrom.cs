@@ -34,19 +34,35 @@ namespace VocabularyUp
 
             Image image = Image.FromFile("../../db/Treasure/kho bau.png");
             Size size = new Size(50, 50);
-            Point location1 = new Point(25, 250);
+            Point location1 = new Point(523, 626);
 
-            Treasure trea1,trea2,trea3;
+            Treasure trea1,trea2,trea3, trea4,trea5,trea6,treaLast;
             trea1 = new Treasure(image, location1, size, 0, false);
-            treasures.Add(trea1);
 
-            Point location2 = new Point(875, 175);
+            Point location2 = new Point(901, 217);
             trea2 = new Treasure(image, location2, size, 0, false);
-            Point location3 = new Point(639, 595);
+
+            Point location3 = new Point(489, 521);
+            trea3 = new Treasure(image, location3, size, 0, false);
+
+            Point location4 = new Point(249, 407);
+            trea4 = new Treasure(image, location4, size, 0, false);
+
+            Point location5 = new Point(554, 405);
+            trea5 = new Treasure(image, location5, size, 0, false);
+
+            Point location6 = new Point(921, 350);
+            trea6 = new Treasure(image, location6, size, 0, false);
+            Point locationLast = new Point(639, 595);
             Image imageLast = Image.FromFile("../../db/Treasure/lasttreasure.jpg");
-            trea3 = new Treasure(imageLast, location3, size, 0, true);
+            treaLast = new Treasure(imageLast, locationLast, size, 0, true);
+            treasures.Add(trea1);
             treasures.Add(trea2);
             treasures.Add(trea3);
+            treasures.Add(trea4);
+            treasures.Add(trea5);
+            treasures.Add(trea6);
+            treasures.Add(treaLast);
         }
         private void PlayerMaze_PriviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
