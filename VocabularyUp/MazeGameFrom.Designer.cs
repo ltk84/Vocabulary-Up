@@ -49,6 +49,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.pnlInfo = new System.Windows.Forms.Panel();
+            this.lbDiamond = new System.Windows.Forms.Label();
+            this.pbDiamond = new System.Windows.Forms.PictureBox();
+            this.pgbHealth = new VocabularyUp.SuperProgressBar();
+            this.pbIconHealth = new System.Windows.Forms.PictureBox();
+            this.panel16.SuspendLayout();
+            this.pnlInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
             this.SuspendLayout();
             // 
             // timerUpdate
@@ -234,11 +243,68 @@
             this.panel16.BackColor = System.Drawing.SystemColors.Control;
             this.panel16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel16.BackgroundImage")));
             this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel16.Controls.Add(this.pnlInfo);
             this.panel16.Location = new System.Drawing.Point(0, 0);
             this.panel16.Margin = new System.Windows.Forms.Padding(4);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(1000, 100);
             this.panel16.TabIndex = 34;
+            // 
+            // pnlInfo
+            // 
+            this.pnlInfo.BackColor = System.Drawing.Color.Transparent;
+            this.pnlInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlInfo.BackgroundImage")));
+            this.pnlInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlInfo.Controls.Add(this.lbDiamond);
+            this.pnlInfo.Controls.Add(this.pbDiamond);
+            this.pnlInfo.Controls.Add(this.pgbHealth);
+            this.pnlInfo.Controls.Add(this.pbIconHealth);
+            this.pnlInfo.Location = new System.Drawing.Point(0, 3);
+            this.pnlInfo.Name = "pnlInfo";
+            this.pnlInfo.Size = new System.Drawing.Size(385, 94);
+            this.pnlInfo.TabIndex = 6;
+            // 
+            // lbDiamond
+            // 
+            this.lbDiamond.AutoSize = true;
+            this.lbDiamond.BackColor = System.Drawing.Color.Transparent;
+            this.lbDiamond.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbDiamond.ForeColor = System.Drawing.Color.White;
+            this.lbDiamond.Location = new System.Drawing.Point(60, 60);
+            this.lbDiamond.Name = "lbDiamond";
+            this.lbDiamond.Size = new System.Drawing.Size(23, 25);
+            this.lbDiamond.TabIndex = 5;
+            this.lbDiamond.Text = "0";
+            // 
+            // pbDiamond
+            // 
+            this.pbDiamond.BackColor = System.Drawing.Color.Transparent;
+            this.pbDiamond.Image = ((System.Drawing.Image)(resources.GetObject("pbDiamond.Image")));
+            this.pbDiamond.Location = new System.Drawing.Point(18, 60);
+            this.pbDiamond.Name = "pbDiamond";
+            this.pbDiamond.Size = new System.Drawing.Size(30, 30);
+            this.pbDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDiamond.TabIndex = 4;
+            this.pbDiamond.TabStop = false;
+            // 
+            // pgbHealth
+            // 
+            this.pgbHealth.BackColor = System.Drawing.Color.White;
+            this.pgbHealth.Location = new System.Drawing.Point(65, 20);
+            this.pgbHealth.Name = "pgbHealth";
+            this.pgbHealth.Size = new System.Drawing.Size(284, 25);
+            this.pgbHealth.TabIndex = 3;
+            // 
+            // pbIconHealth
+            // 
+            this.pbIconHealth.BackColor = System.Drawing.Color.Transparent;
+            this.pbIconHealth.Image = ((System.Drawing.Image)(resources.GetObject("pbIconHealth.Image")));
+            this.pbIconHealth.Location = new System.Drawing.Point(18, 15);
+            this.pbIconHealth.Name = "pbIconHealth";
+            this.pbIconHealth.Size = new System.Drawing.Size(30, 30);
+            this.pbIconHealth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbIconHealth.TabIndex = 1;
+            this.pbIconHealth.TabStop = false;
             // 
             // MazeGameFrom
             // 
@@ -268,6 +334,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MazeGameFrom";
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.PlayerMaze_PriviewKeyDown);
+            this.panel16.ResumeLayout(false);
+            this.pnlInfo.ResumeLayout(false);
+            this.pnlInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,5 +363,10 @@
         private System.Windows.Forms.Timer timerUpdate;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel pnlInfo;
+        private System.Windows.Forms.Label lbDiamond;
+        private System.Windows.Forms.PictureBox pbDiamond;
+        private SuperProgressBar pgbHealth;
+        private System.Windows.Forms.PictureBox pbIconHealth;
     }
 }

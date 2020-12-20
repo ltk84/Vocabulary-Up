@@ -17,7 +17,7 @@ namespace VocabularyUp
         private bool isGameOver;
         private List<Treasure> treasures;
         private List<Monster> monsters;
-
+        private int currentHealth = 0;
         public MazeGameFrom(int idCol, int idSkin)
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace VocabularyUp
             InitMonster();
             timerUpdate.Start();
             isGameOver = false;
-
+            currentHealth = player.Health;
             this.DoubleBuffered = true;
         }
 
@@ -47,17 +47,17 @@ namespace VocabularyUp
             Point location1 = new Point(26, 470);
             Point location2 = new Point(139, 364);
             Point location3 = new Point(871, 133);
-            Point location4 = new Point(250, 243);
+            Point location4 = new Point(260, 243);
             Point location5 = new Point(307, 355);
             Point location6 = new Point(693, 451);
             Point locationLast = new Point(742, 584);
 
-            mon1 = new Monster(image1, location1, size, 0, null, false);
-            mon2 = new Monster(image2, location2, size, 0, null, false);
-            mon3 = new Monster(image3, location3, size, 0, null, false);
-            mon4 = new Monster(image4, location4, size, 0, null, false);
-            mon5 = new Monster(image1, location5, size, 0, null, false);
-            mon6 = new Monster(image2, location6, size, 0, null, false);
+            mon1 = new Monster(image1, location1, size, 1, null, false);
+            mon2 = new Monster(image2, location2, size, 1, null, false);
+            mon3 = new Monster(image3, location3, size, 1, null, false);
+            mon4 = new Monster(image4, location4, size, 1, null, false);
+            mon5 = new Monster(image1, location5, size, 1, null, false);
+            mon6 = new Monster(image2, location6, size, 1, null, false);
             monLast = new Monster(imageLast, locationLast, sizeLast, 0, null, false);
 
             monsters.Add(mon1);
@@ -140,6 +140,45 @@ namespace VocabularyUp
             player.HandleOutsideClient(this);
             HandleNotThroughtWall();
 
+
+
+
+
+            //di chuyen cua monster 0
+            if (monsters[0].IsDeath == false)
+            {
+                monsters[0].Move(monsters[0].Cur);
+                if (monsters[0].Y < 427)
+                    monsters[0].Cur = Direction.Down;
+                else if (monsters[0].Y > 611)
+                    monsters[0].Cur = Direction.Up;
+                        
+            }    
+
+            //di chuyen cua monster 1
+            if (monsters[1].IsDeath == false)
+            {
+                monsters[1].Move(monsters[1].Cur);
+                if (monsters[1].Y < 185)
+                    monsters[1].Cur = Direction.Down;
+                else if (monsters[1].Y > 470)
+                    monsters[1].Cur = Direction.Up;
+            }
+            //di chuyen cua monster 2
+            if (monsters[2].IsDeath == false)
+            {
+                monsters[2].Move(monsters[2].Cur);
+                if (monsters[2].X < 192)
+                    monsters[2].Cur = Direction.Right;
+                else if (monsters[2].X > 850)
+                    monsters[2].Cur = Direction.Left;
+            }
+
+            
+
+            double percent = (((double)currentHealth) / player.Health) * 100;
+            pgbHealth.Value = (int)percent;
+            lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
             this.Invalidate();
         }
 
@@ -147,6 +186,8 @@ namespace VocabularyUp
         {
             this.BackgroundImage = Image.FromFile("../../db/Backgrounds/mazeReal.jpg");
         }
+
+        
 
         public void HandleNotThroughtWall()
         {
