@@ -140,10 +140,40 @@ namespace VocabularyUp
             player.HandleOutsideClient(this);
             HandleNotThroughtWall();
 
+            if (!isGameOver)
+            {
+
+            }    
 
 
+            if (!isGameOver)
+            {
+                for (int i = 0; i < treasures.Count; i++)
+                {
+                    if (player.isCollision(treasures[i]))
+                    {
+                        
+                            if (treasures[i].IsLastTreasure == true)
+                            {
+                                treasures.Remove(treasures[i]);
+                                MessageBox.Show("Chục mừng bạn đã tìm ra đc khó báu cuối cùng và được 10 KiemCuong");
+                                this.Close();
+                                ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 10);
+                             
+                            }
+                            else
+                            {
+                                treasures.Remove(treasures[i]);
+                                MessageBox.Show("Khó báu cỏ, bạn được 1 kim cương!");
+                                ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
 
+                            }
+                        
+                    }
+                }
+            }    
 
+            
             //di chuyen cua monster 0
             if (monsters[0].IsDeath == false)
             {
