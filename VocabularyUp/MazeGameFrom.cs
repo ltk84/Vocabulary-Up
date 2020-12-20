@@ -16,6 +16,7 @@ namespace VocabularyUp
         bool goLeft, goRight, goUp, goDown;
         private bool isGameOver;
         private List<Treasure> treasures;
+        private List<Monster> monsters;
 
         public MazeGameFrom(int idCol, int idSkin)
         {
@@ -23,10 +24,51 @@ namespace VocabularyUp
             LoadBackGround();
             InitPlayer(idSkin);
             InitTreasure();
+            InitMonster();
             timerUpdate.Start();
             isGameOver = false;
 
             this.DoubleBuffered = true;
+        }
+
+        private void InitMonster()
+        {
+            monsters = new List<Monster>();
+            Monster mon1, mon2, mon3, mon4, mon5, mon6, monLast;
+            Image image1 = Image.FromFile("../../db/Monsters/a_1.png");
+            Image image2 = Image.FromFile("../../db/Monsters/a_2.png");
+            Image image3 = Image.FromFile("../../db/Monsters/a_4.png");
+            Image image4 = Image.FromFile("../../db/Monsters/a_5.png");
+            Image imageLast = Image.FromFile("../../db/Monsters/5.png");
+
+            Size size = new Size(50, 50);
+            Size sizeLast = new Size(100, 80);
+
+            Point location1 = new Point(26, 470);
+            Point location2 = new Point(139, 364);
+            Point location3 = new Point(871, 133);
+            Point location4 = new Point(250, 243);
+            Point location5 = new Point(307, 355);
+            Point location6 = new Point(693, 451);
+            Point locationLast = new Point(742, 584);
+
+            mon1 = new Monster(image1, location1, size, 0, null, false);
+            mon2 = new Monster(image2, location2, size, 0, null, false);
+            mon3 = new Monster(image3, location3, size, 0, null, false);
+            mon4 = new Monster(image4, location4, size, 0, null, false);
+            mon5 = new Monster(image1, location5, size, 0, null, false);
+            mon6 = new Monster(image2, location6, size, 0, null, false);
+            monLast = new Monster(imageLast, locationLast, sizeLast, 0, null, false);
+
+            monsters.Add(mon1);
+            monsters.Add(mon2);
+            monsters.Add(mon3);
+            monsters.Add(mon4);
+            monsters.Add(mon5);
+            monsters.Add(mon6);
+            monsters.Add(monLast);
+
+
         }
         private void InitTreasure()
         {
@@ -300,7 +342,12 @@ namespace VocabularyUp
             foreach (var trea in treasures)
             {
                 trea.Draw(g);
-            }    
+            }
+            
+            foreach (var mon in monsters)
+            {
+                mon.Draw(g);
+            }
         }
     }
 }
