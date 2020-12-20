@@ -48,13 +48,13 @@ namespace VocabularyUp
             Point location2 = new Point(139, 364);
             Point location3 = new Point(871, 133);
             Point location4 = new Point(260, 243);
-            Point location5 = new Point(307, 355);
+            Point location5 = new Point(390, 355);
             Point location6 = new Point(693, 451);
             Point locationLast = new Point(742, 584);
 
             mon1 = new Monster(image1, location1, size, 1, null, false);
             mon2 = new Monster(image2, location2, size, 1, null, false);
-            mon3 = new Monster(image3, location3, size, 1, null, false);
+            mon3 = new Monster(image3, location3, size, 3, null, false);
             mon4 = new Monster(image4, location4, size, 1, null, false);
             mon5 = new Monster(image1, location5, size, 1, null, false);
             mon6 = new Monster(image2, location6, size, 1, null, false);
@@ -173,8 +173,37 @@ namespace VocabularyUp
                 else if (monsters[2].X > 850)
                     monsters[2].Cur = Direction.Left;
             }
+            //di chuyen của monster 3
+            if (monsters[3].IsDeath == false)
+            {
+                monsters[3].Move(monsters[3].Cur);
+                if (monsters[3].Y < 243)
+                    monsters[3].Cur = Direction.Down;
+                else if (monsters[3].Y > 360)
+                    monsters[3].Cur = Direction.Up;
 
-            
+            }
+
+            //di chuyen cua monster 4
+            if (monsters[4].IsDeath == false)
+            {
+                monsters[4].Move(monsters[4].Cur);
+                if (monsters[4].Y < 351)
+                    monsters[4].Cur = Direction.Down;
+                else if (monsters[4].Y > 412)
+                    monsters[4].Cur = Direction.Up;
+            }
+
+            //di chuyen cua monster 5
+            if (monsters[5].IsDeath == false)
+            {
+                monsters[5].Move(monsters[5].Cur);
+                if (monsters[5].Y < 353)
+                    monsters[5].Cur = Direction.Down;
+                else if (monsters[5].Y > 458)
+                    monsters[5].Cur = Direction.Up;
+            }
+
 
             double percent = (((double)currentHealth) / player.Health) * 100;
             pgbHealth.Value = (int)percent;
