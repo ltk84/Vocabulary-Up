@@ -16,8 +16,9 @@ namespace VocabularyUp
         bool goLeft, goRight, goUp, goDown;
         private bool isGameOver;
         private List<Treasure> treasures;
-        private List<Monster> monsters;
+        private List<MonsterMaze> monsters;
         private int currentHealth = 0;
+        private GameMCForm gameForm;
         public MazeGameFrom(int idCol, int idSkin)
         {
             InitializeComponent();
@@ -33,8 +34,8 @@ namespace VocabularyUp
 
         private void InitMonster()
         {
-            monsters = new List<Monster>();
-            Monster mon1, mon2, mon3, mon4, mon5, mon6, monLast;
+            monsters = new List<MonsterMaze>();
+            MonsterMaze mon1, mon2, mon3, mon4, mon5, mon6, monLast;
             Image image1 = Image.FromFile("../../db/Monsters/a_1.png");
             Image image2 = Image.FromFile("../../db/Monsters/a_2.png");
             Image image3 = Image.FromFile("../../db/Monsters/a_4.png");
@@ -52,13 +53,13 @@ namespace VocabularyUp
             Point location6 = new Point(693, 451);
             Point locationLast = new Point(742, 584);
 
-            mon1 = new Monster(image1, location1, size, 1, null, false);
-            mon2 = new Monster(image2, location2, size, 1, null, false);
-            mon3 = new Monster(image3, location3, size, 3, null, false);
-            mon4 = new Monster(image4, location4, size, 1, null, false);
-            mon5 = new Monster(image1, location5, size, 1, null, false);
-            mon6 = new Monster(image2, location6, size, 1, null, false);
-            monLast = new Monster(imageLast, locationLast, sizeLast, 0, null, false);
+            mon1 = new MonsterMaze(image1, location1, size, 1, null, false);
+            mon2 = new MonsterMaze(image2, location2, size, 1, null, false);
+            mon3 = new MonsterMaze(image3, location3, size, 3, null, false);
+            mon4 = new MonsterMaze(image4, location4, size, 1, null, false);
+            mon5 = new MonsterMaze(image1, location5, size, 1, null, false);
+            mon6 = new MonsterMaze(image2, location6, size, 1, null, false);
+            monLast = new MonsterMaze(imageLast, locationLast, sizeLast, 0, null, false);
 
             monsters.Add(mon1);
             monsters.Add(mon2);
@@ -140,14 +141,16 @@ namespace VocabularyUp
             player.HandleOutsideClient(this);
             HandleNotThroughtWall();
 
-            if (!isGameOver)
-            {
-
-            }    
+             
 
 
             if (!isGameOver)
             {
+                for (int i = 0; i < monsters.Count;i++)
+                {
+                     
+                }    
+
                 for (int i = 0; i < treasures.Count; i++)
                 {
                     if (player.isCollision(treasures[i]))
@@ -179,9 +182,9 @@ namespace VocabularyUp
             {
                 monsters[0].Move(monsters[0].Cur);
                 if (monsters[0].Y < 427)
-                    monsters[0].Cur = Direction.Down;
+                    monsters[0].Cur = Direction1.Down;
                 else if (monsters[0].Y > 611)
-                    monsters[0].Cur = Direction.Up;
+                    monsters[0].Cur = Direction1.Up;
                         
             }    
 
@@ -190,27 +193,27 @@ namespace VocabularyUp
             {
                 monsters[1].Move(monsters[1].Cur);
                 if (monsters[1].Y < 185)
-                    monsters[1].Cur = Direction.Down;
+                    monsters[1].Cur = Direction1.Down;
                 else if (monsters[1].Y > 470)
-                    monsters[1].Cur = Direction.Up;
+                    monsters[1].Cur = Direction1.Up;
             }
             //di chuyen cua monster 2
             if (monsters[2].IsDeath == false)
             {
                 monsters[2].Move(monsters[2].Cur);
                 if (monsters[2].X < 192)
-                    monsters[2].Cur = Direction.Right;
+                    monsters[2].Cur = Direction1.Right;
                 else if (monsters[2].X > 850)
-                    monsters[2].Cur = Direction.Left;
+                    monsters[2].Cur = Direction1.Left;
             }
             //di chuyen của monster 3
             if (monsters[3].IsDeath == false)
             {
                 monsters[3].Move(monsters[3].Cur);
                 if (monsters[3].Y < 243)
-                    monsters[3].Cur = Direction.Down;
+                    monsters[3].Cur = Direction1.Down;
                 else if (monsters[3].Y > 360)
-                    monsters[3].Cur = Direction.Up;
+                    monsters[3].Cur = Direction1.Up;
 
             }
 
@@ -219,9 +222,9 @@ namespace VocabularyUp
             {
                 monsters[4].Move(monsters[4].Cur);
                 if (monsters[4].Y < 351)
-                    monsters[4].Cur = Direction.Down;
+                    monsters[4].Cur = Direction1.Down;
                 else if (monsters[4].Y > 412)
-                    monsters[4].Cur = Direction.Up;
+                    monsters[4].Cur = Direction1.Up;
             }
 
             //di chuyen cua monster 5
@@ -229,9 +232,9 @@ namespace VocabularyUp
             {
                 monsters[5].Move(monsters[5].Cur);
                 if (monsters[5].Y < 353)
-                    monsters[5].Cur = Direction.Down;
+                    monsters[5].Cur = Direction1.Down;
                 else if (monsters[5].Y > 458)
-                    monsters[5].Cur = Direction.Up;
+                    monsters[5].Cur = Direction1.Up;
             }
 
 
@@ -448,6 +451,42 @@ namespace VocabularyUp
             {
                 mon.Draw(g);
             }
+        }
+
+        private void OpenGameForm()
+        {
+            Form backgroundForm = new Form();
+            try
+            {
+                using (gameForm = new GameMCForm())
+                {
+                    backgroundForm.StartPosition = FormStartPosition.Manual;
+                    backgroundForm.FormBorderStyle = FormBorderStyle.None;
+                    backgroundForm.Opacity = .70d;
+                    backgroundForm.BackColor = Color.Black;
+                    backgroundForm.Size = this.Size;
+                    backgroundForm.TopMost = true;
+                    backgroundForm.Location = this.Location;
+                    backgroundForm.ShowInTaskbar = false;
+                    backgroundForm.Show();
+
+                    gameForm.Owner = backgroundForm;
+                    gameForm.ShowDialog();
+
+                    backgroundForm.Dispose();
+                }
+                this.Focus();
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                backgroundForm.Dispose();
+            }
+
+
         }
     }
 }
