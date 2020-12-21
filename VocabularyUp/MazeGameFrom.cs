@@ -90,31 +90,45 @@ namespace VocabularyUp
         private void InitTreasure()
         {
             treasures = new List<Treasure>();
-
+            Treasure trea1, trea2, trea3, trea4, trea5, trea6, treaLast;
             Image image = Image.FromFile("../../db/Treasure/treasure.png");
             Size size = new Size(50, 50);
-            Point location1 = new Point(523, 626);
 
-            Treasure trea1,trea2,trea3, trea4,trea5,trea6,treaLast;
-            trea1 = new Treasure(image, location1, size, 0, false);
+            int s1 = panel5.Location.Y - panel1.Location.Y - panel1.Height;
+            Size size1 = new Size(s1,s1);
+            Point location1 = new Point(panel7.Location.X - size1.Width, panel1.Location.Y + panel1.Height);
+            trea1 = new Treasure(image, location1, size1, 0, false);
 
-            Point location2 = new Point(901, 217);
-            trea2 = new Treasure(image, location2, size, 0, false);
+            int s2 = panel1.Location.Y - panel10.Location.Y - panel10.Height;
+            Size size2 = new Size(s2, s2);
+            Point location2 = new Point(panel11.Location.X - size2.Height, panel10.Location.Y + panel10.Height);
+            trea2 = new Treasure(image, location2, size2, 0, false);
 
-            Point location3 = new Point(489, 521);
-            trea3 = new Treasure(image, location3, size, 0, false);
+            int s3 = panel15.Location.X - panel8.Location.X - panel8.Width;
+            Size size3 = new Size(s3, s3);
+            Point location3 = new Point(panel8.Location.X + panel8.Width, panel10.Location.Y -size3.Height);
+            trea3 = new Treasure(image, location3, size3, 0, false);
 
-            Point location4 = new Point(249, 407);
-            trea4 = new Treasure(image, location4, size, 0, false);
+            int s4 = panel9.Location.Y - panel6.Location.Y - panel6.Height;
+            Size size4 = new Size(s4, s4);
+            Point location4 = new Point(panel12.Location.X,panel8.Location.Y);
+            trea4 = new Treasure(image, location4, size4, 0, false);
 
-            Point location5 = new Point(554, 405);
-            trea5 = new Treasure(image, location5, size, 0, false);
+            int s5 = panel13.Location.X - panel10.Location.X - panel10.Width;
+            Size size5 = new Size(s5, s5);
+            Point location5 = new Point(panel10.Location.X + panel10.Width, panel11.Location.Y - size5.Width);
+            trea5 = new Treasure(image, location5, size5, 0, false);
 
-            Point location6 = new Point(921, 350);
-            trea6 = new Treasure(image, location6, size, 0, false);
-            Point locationLast = new Point(639, 595);
+            int s6 = panel12.Location.Y - panel9.Location.Y - panel9.Height;
+            Size size6 = new Size(s6, s6);
+            Point location6 = new Point(panel3.Location.X-size6.Width,panel13.Location.Y);
+            trea6 = new Treasure(image, location6, size6, 0, false);
+            
+            int sLast = panel5.Location.Y - panel11.Location.Y - panel11.Height;
+            Size sizeLast = new Size(sLast - 10, sLast);
+            Point locationLast = new Point(panel1.Location.X + panel1.Width, panel11.Location.Y + panel11.Height);
             Image imageLast = Image.FromFile("../../db/Treasure/LastTreasure.png");
-            treaLast = new Treasure(imageLast, locationLast, size, 0, true);
+            treaLast = new Treasure(imageLast, locationLast, sizeLast, 0, true);
             treasures.Add(trea1);
             treasures.Add(trea2);
             treasures.Add(trea3);

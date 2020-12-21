@@ -100,20 +100,20 @@
             // 
             this.panel11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel11.BackgroundImage")));
             this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel11.Location = new System.Drawing.Point(547, 515);
+            this.panel11.Location = new System.Drawing.Point(547, 514);
             this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(285, 61);
+            this.panel11.Size = new System.Drawing.Size(285, 62);
             this.panel11.TabIndex = 29;
             // 
             // panel10
             // 
             this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
             this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel10.Location = new System.Drawing.Point(242, 470);
+            this.panel10.Location = new System.Drawing.Point(242, 461);
             this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(305, 50);
+            this.panel10.Size = new System.Drawing.Size(305, 55);
             this.panel10.TabIndex = 28;
             // 
             // panel9
@@ -129,11 +129,10 @@
             // panel8
             // 
             this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel8.Location = new System.Drawing.Point(192, 235);
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(50, 285);
+            this.panel8.Size = new System.Drawing.Size(50, 271);
             this.panel8.TabIndex = 26;
             // 
             // panel7
@@ -148,8 +147,8 @@
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel6.Location = new System.Drawing.Point(192, 185);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
@@ -235,7 +234,7 @@
             this.panel15.Location = new System.Drawing.Point(307, 419);
             this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(72, 59);
+            this.panel15.Size = new System.Drawing.Size(72, 43);
             this.panel15.TabIndex = 33;
             // 
             // panel16
