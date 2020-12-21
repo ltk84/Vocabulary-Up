@@ -72,6 +72,12 @@
     <Compile Include="CampaignForm.Designer.cs">
       <DependentUpon>CampaignForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetailsGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailsGameForm.Designer.cs">
+      <DependentUpon>DetailsGameForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameMCForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DetailsForm.resx">
       <DependentUpon>DetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailsGameForm.resx">
+      <DependentUpon>DetailsGameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Display_CampaignForm.resx">
       <DependentUpon>Display_CampaignForm.cs</DependentUpon>

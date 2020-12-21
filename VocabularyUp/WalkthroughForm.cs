@@ -18,14 +18,13 @@ namespace VocabularyUp
         private List<Monster> monsters;
         private bool isGameOver;
         private Random rd = new Random();
+        private bool isFinalRound;
         private int currentHealth = 0;
-        private GameMCForm gameForm;
         private TrashTalkingForm trashTalkForm;
 
         private int isPress = 0;
         private List<UserChoice> userChoices = new List<UserChoice>();
         private List<Quiz> questions = new List<Quiz>();
-        int time;
         private int currentQuiz = 0;
         private int isCorrect;
 
@@ -43,6 +42,7 @@ namespace VocabularyUp
             isGameOver = false;
             currentHealth = player.Health;
             isCorrect = -1;
+            isFinalRound = false;
         }
 
         public void InitPlayer(int idSkin)
@@ -177,10 +177,7 @@ namespace VocabularyUp
                                 pnlQuestion.Show();
                             }
 
-                            if (player.Health == 0)
-                            {
-                                isGameOver = true;
-                            }
+                            
 
                         }
                     }
@@ -200,12 +197,67 @@ namespace VocabularyUp
                 if (j >= 0 && monsters[j].IsBoss == true)
                 {
                     InitFinalRound();
+                    isFinalRound = true;
                 }
+
+                if (isFinalRound == true)
+                {
+
+                    
+
+                    if (isCorrect >= 0)
+                    {
+                        if (isCorrect == 1)
+                        {
+                            pgbMonsterHealth.Value -= 50;
+                            ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
+                        }
+                        else
+                        {
+                            currentHealth -= 10;
+                            //player.Location = new Point(0, this.ClientSize.Height / 2);
+                        }
+
+                        
+
+                        ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                        pnlQuestion.Show();
+
+                        if (currentHealth == 0 || pgbMonsterHealth.Value == 0)
+                        {
+                            isGameOver = true;
+                            pnlQuestion.Hide();
+                        }
+
+
+                        isCorrect = -1;
+                        timerUpdate.Start();
+                    }
+
+                    
+                    //else
+                    //{
+                    //    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                    //    //currentQuiz++;
+                    //    pnlQuestion.Show();
+                    //}
+                }
+                
+
+               
+
                 double percent = (((double) currentHealth) / player.Health) * 100;
                 pgbHealth.Value =   (int) percent;
                 lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
                 this.Invalidate();
                 this.Focus();
+
+
+            }
+            else
+            {
+                btnDetails.Visible = true;
+                btnClose.Visible = true;
             }
 
         }
@@ -512,6 +564,47 @@ namespace VocabularyUp
             btnB.BorderThickness = 0;
             btnC.BorderThickness = 0;
             btnD.BorderThickness = 0;
+        }
+
+       
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            Form backgroundForm = new Form();
+            try
+            {
+                using (DetailsGameForm detailForm = new DetailsGameForm(userChoices))
+                {
+                    backgroundForm.StartPosition = FormStartPosition.Manual;
+                    backgroundForm.FormBorderStyle = FormBorderStyle.None;
+                    backgroundForm.Opacity = .70d;
+                    backgroundForm.BackColor = Color.Black;
+                    backgroundForm.Size = this.Size;
+                    backgroundForm.TopMost = true;
+                    backgroundForm.Location = this.Location;
+                    backgroundForm.ShowInTaskbar = false;
+                    backgroundForm.Show();
+
+                    detailForm.Owner = backgroundForm;
+                    detailForm.ShowDialog();
+
+                    backgroundForm.Dispose();
+                }
+                this.Focus();
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                backgroundForm.Dispose();
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
