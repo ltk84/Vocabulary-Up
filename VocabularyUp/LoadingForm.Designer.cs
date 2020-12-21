@@ -49,7 +49,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 20;
+            this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // guna2WinProgressIndicator1
@@ -101,7 +101,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(395, 269);
+            this.label5.Location = new System.Drawing.Point(413, 269);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(259, 28);
             this.label5.TabIndex = 7;
@@ -153,6 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(856, 500);
             this.Controls.Add(this.pbInfo);
             this.Controls.Add(this.lbPercentLoading);
