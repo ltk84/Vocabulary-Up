@@ -48,7 +48,6 @@ namespace VocabularyUp
             this.panel9 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -71,6 +70,7 @@ namespace VocabularyUp
             this.lbMain = new System.Windows.Forms.Label();
             this.pbMain = new System.Windows.Forms.PictureBox();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.pgbHealth = new VocabularyUp.SuperProgressBar();
             this.pgbMonsterHealth = new VocabularyUp.SuperProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
@@ -344,29 +344,6 @@ namespace VocabularyUp
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
-            // 
-            // btnDetails
-            // 
-            this.btnDetails.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnDetails.BackColor = System.Drawing.Color.Transparent;
-            this.btnDetails.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDetails.BackgroundImage")));
-            this.btnDetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDetails.CheckedState.Parent = this.btnDetails;
-            this.btnDetails.CustomImages.Parent = this.btnDetails;
-            this.btnDetails.FillColor = System.Drawing.Color.Transparent;
-            this.btnDetails.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetails.ForeColor = System.Drawing.Color.Black;
-            this.btnDetails.HoverState.Parent = this.btnDetails;
-            this.btnDetails.Image = ((System.Drawing.Image)(resources.GetObject("btnDetails.Image")));
-            this.btnDetails.ImageSize = new System.Drawing.Size(60, 45);
-            this.btnDetails.Location = new System.Drawing.Point(309, 234);
-            this.btnDetails.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDetails.Name = "btnDetails";
-            this.btnDetails.ShadowDecoration.Parent = this.btnDetails;
-            this.btnDetails.Size = new System.Drawing.Size(108, 58);
-            this.btnDetails.TabIndex = 52;
-            this.btnDetails.Visible = false;
-            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // panel1
             // 
@@ -728,15 +705,35 @@ namespace VocabularyUp
             this.btnClose.HoverState.Parent = this.btnClose;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageSize = new System.Drawing.Size(60, 45);
-            this.btnClose.Location = new System.Drawing.Point(605, 230);
+            this.btnClose.Location = new System.Drawing.Point(210, 405);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.ShadowDecoration.Parent = this.btnClose;
             this.btnClose.Size = new System.Drawing.Size(108, 58);
             this.btnClose.TabIndex = 53;
-            this.btnClose.Text = "s";
             this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnDetails
+            // 
+            this.btnDetails.BackColor = System.Drawing.Color.Transparent;
+            this.btnDetails.BorderRadius = 16;
+            this.btnDetails.CheckedState.Parent = this.btnDetails;
+            this.btnDetails.CustomImages.Parent = this.btnDetails;
+            this.btnDetails.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.btnDetails.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDetails.ForeColor = System.Drawing.Color.Black;
+            this.btnDetails.HoverState.Parent = this.btnDetails;
+            this.btnDetails.Image = ((System.Drawing.Image)(resources.GetObject("btnDetails.Image")));
+            this.btnDetails.ImageSize = new System.Drawing.Size(40, 30);
+            this.btnDetails.Location = new System.Drawing.Point(453, 405);
+            this.btnDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.ShadowDecoration.Parent = this.btnDetails;
+            this.btnDetails.Size = new System.Drawing.Size(84, 51);
+            this.btnDetails.TabIndex = 54;
+            this.btnDetails.Visible = false;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // pgbHealth
             // 
@@ -832,7 +829,7 @@ namespace VocabularyUp
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private Guna.UI2.WinForms.Guna2Button btnDetails;
         private Guna.UI2.WinForms.Guna2Button btnClose;
+        private Guna.UI2.WinForms.Guna2Button btnDetails;
     }
 }

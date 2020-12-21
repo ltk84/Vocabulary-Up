@@ -43,6 +43,7 @@ namespace VocabularyUp
             currentHealth = player.Health;
             isCorrect = -1;
             isFinalRound = false;
+
         }
 
         public void InitPlayer(int idSkin)

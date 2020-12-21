@@ -34,9 +34,12 @@ namespace VocabularyUp
             this.timerSpeaker = new System.Windows.Forms.Timer(this.components);
             this.lbMain = new System.Windows.Forms.Label();
             this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnPronun = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.pbMain = new System.Windows.Forms.PictureBox();
             this.pnlDash = new System.Windows.Forms.Panel();
             this.cbCollection = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pnlToCollection = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnToCollection = new Guna.UI2.WinForms.Guna2Button();
             this.pnlDetails = new System.Windows.Forms.Panel();
             this.columnNameWrong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnIndexWrong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,13 +48,11 @@ namespace VocabularyUp
             this.columnIndexCorrect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvCorrectWord = new System.Windows.Forms.ListView();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlTopicSelection = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
-            this.btnToCollection = new Guna.UI2.WinForms.Guna2Button();
-            this.btnPronun = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.pbMain = new System.Windows.Forms.PictureBox();
             this.pnlTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
             this.pnlToCollection.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -63,7 +64,6 @@ namespace VocabularyUp
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.pnlTopicSelection.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
             this.SuspendLayout();
             // 
             // timerSpeaker
@@ -102,6 +102,36 @@ namespace VocabularyUp
             this.pnlTab.Size = new System.Drawing.Size(296, 341);
             this.pnlTab.TabIndex = 0;
             this.pnlTab.Click += new System.EventHandler(this.pnlTab_Click);
+            // 
+            // btnPronun
+            // 
+            this.btnPronun.BackColor = System.Drawing.Color.Transparent;
+            this.btnPronun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPronun.CheckedState.Parent = this.btnPronun;
+            this.btnPronun.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.HoverState.Image")));
+            this.btnPronun.HoverState.Parent = this.btnPronun;
+            this.btnPronun.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.Image")));
+            this.btnPronun.ImageRotate = 0F;
+            this.btnPronun.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnPronun.Location = new System.Drawing.Point(257, 297);
+            this.btnPronun.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPronun.Name = "btnPronun";
+            this.btnPronun.PressedState.Parent = this.btnPronun;
+            this.btnPronun.Size = new System.Drawing.Size(24, 31);
+            this.btnPronun.TabIndex = 14;
+            this.btnPronun.Click += new System.EventHandler(this.btnPronun_Click);
+            // 
+            // pbMain
+            // 
+            this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
+            this.pbMain.Location = new System.Drawing.Point(15, 19);
+            this.pbMain.Margin = new System.Windows.Forms.Padding(2);
+            this.pbMain.Name = "pbMain";
+            this.pbMain.Size = new System.Drawing.Size(266, 260);
+            this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMain.TabIndex = 8;
+            this.pbMain.TabStop = false;
+            this.pbMain.Click += new System.EventHandler(this.pbMain_Click);
             // 
             // pnlDash
             // 
@@ -144,6 +174,26 @@ namespace VocabularyUp
             this.pnlToCollection.ShadowDecoration.Parent = this.pnlToCollection;
             this.pnlToCollection.Size = new System.Drawing.Size(298, 31);
             this.pnlToCollection.TabIndex = 11;
+            // 
+            // btnToCollection
+            // 
+            this.btnToCollection.BackColor = System.Drawing.Color.Transparent;
+            this.btnToCollection.BorderRadius = 15;
+            this.btnToCollection.CheckedState.Parent = this.btnToCollection;
+            this.btnToCollection.CustomImages.Parent = this.btnToCollection;
+            this.btnToCollection.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnToCollection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.btnToCollection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnToCollection.ForeColor = System.Drawing.Color.Black;
+            this.btnToCollection.HoverState.Parent = this.btnToCollection;
+            this.btnToCollection.Image = ((System.Drawing.Image)(resources.GetObject("btnToCollection.Image")));
+            this.btnToCollection.Location = new System.Drawing.Point(268, 0);
+            this.btnToCollection.Margin = new System.Windows.Forms.Padding(2);
+            this.btnToCollection.Name = "btnToCollection";
+            this.btnToCollection.ShadowDecoration.Parent = this.btnToCollection;
+            this.btnToCollection.Size = new System.Drawing.Size(30, 31);
+            this.btnToCollection.TabIndex = 0;
+            this.btnToCollection.Click += new System.EventHandler(this.btnToCollection_Click);
             // 
             // pnlDetails
             // 
@@ -229,6 +279,26 @@ namespace VocabularyUp
             this.splitContainer2.SplitterDistance = 204;
             this.splitContainer2.TabIndex = 0;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderRadius = 15;
+            this.btnBack.CheckedState.Parent = this.btnBack;
+            this.btnBack.CustomImages.Parent = this.btnBack;
+            this.btnBack.FillColor = System.Drawing.Color.Transparent;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.HoverState.Parent = this.btnBack;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnBack.Location = new System.Drawing.Point(6, 12);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.ShadowDecoration.Parent = this.btnBack;
+            this.btnBack.Size = new System.Drawing.Size(28, 32);
+            this.btnBack.TabIndex = 15;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // splitContainer1
             // 
             this.splitContainer1.BackColor = System.Drawing.Color.White;
@@ -261,76 +331,6 @@ namespace VocabularyUp
             this.pnlTopicSelection.Size = new System.Drawing.Size(800, 450);
             this.pnlTopicSelection.TabIndex = 12;
             // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BorderRadius = 15;
-            this.btnBack.CheckedState.Parent = this.btnBack;
-            this.btnBack.CustomImages.Parent = this.btnBack;
-            this.btnBack.FillColor = System.Drawing.Color.Transparent;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.Black;
-            this.btnBack.HoverState.Parent = this.btnBack;
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnBack.Location = new System.Drawing.Point(6, 12);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.ShadowDecoration.Parent = this.btnBack;
-            this.btnBack.Size = new System.Drawing.Size(28, 32);
-            this.btnBack.TabIndex = 15;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnToCollection
-            // 
-            this.btnToCollection.BackColor = System.Drawing.Color.Transparent;
-            this.btnToCollection.BorderRadius = 15;
-            this.btnToCollection.CheckedState.Parent = this.btnToCollection;
-            this.btnToCollection.CustomImages.Parent = this.btnToCollection;
-            this.btnToCollection.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnToCollection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.btnToCollection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnToCollection.ForeColor = System.Drawing.Color.Black;
-            this.btnToCollection.HoverState.Parent = this.btnToCollection;
-            this.btnToCollection.Image = ((System.Drawing.Image)(resources.GetObject("btnToCollection.Image")));
-            this.btnToCollection.Location = new System.Drawing.Point(268, 0);
-            this.btnToCollection.Margin = new System.Windows.Forms.Padding(2);
-            this.btnToCollection.Name = "btnToCollection";
-            this.btnToCollection.ShadowDecoration.Parent = this.btnToCollection;
-            this.btnToCollection.Size = new System.Drawing.Size(30, 31);
-            this.btnToCollection.TabIndex = 0;
-            this.btnToCollection.Click += new System.EventHandler(this.btnToCollection_Click);
-            // 
-            // btnPronun
-            // 
-            this.btnPronun.BackColor = System.Drawing.Color.Transparent;
-            this.btnPronun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnPronun.CheckedState.Parent = this.btnPronun;
-            this.btnPronun.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.HoverState.Image")));
-            this.btnPronun.HoverState.Parent = this.btnPronun;
-            this.btnPronun.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.Image")));
-            this.btnPronun.ImageRotate = 0F;
-            this.btnPronun.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnPronun.Location = new System.Drawing.Point(257, 297);
-            this.btnPronun.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPronun.Name = "btnPronun";
-            this.btnPronun.PressedState.Parent = this.btnPronun;
-            this.btnPronun.Size = new System.Drawing.Size(24, 31);
-            this.btnPronun.TabIndex = 14;
-            this.btnPronun.Click += new System.EventHandler(this.btnPronun_Click);
-            // 
-            // pbMain
-            // 
-            this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
-            this.pbMain.Location = new System.Drawing.Point(15, 19);
-            this.pbMain.Margin = new System.Windows.Forms.Padding(2);
-            this.pbMain.Name = "pbMain";
-            this.pbMain.Size = new System.Drawing.Size(266, 260);
-            this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbMain.TabIndex = 8;
-            this.pbMain.TabStop = false;
-            this.pbMain.Click += new System.EventHandler(this.pbMain_Click);
-            // 
             // DetailsGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,6 +341,7 @@ namespace VocabularyUp
             this.Text = "DetailsGameForm";
             this.TopMost = true;
             this.pnlTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
             this.pnlToCollection.ResumeLayout(false);
             this.pnlDetails.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -352,7 +353,6 @@ namespace VocabularyUp
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.pnlTopicSelection.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
             this.ResumeLayout(false);
 
         }
