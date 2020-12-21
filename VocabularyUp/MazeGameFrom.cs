@@ -44,22 +44,30 @@ namespace VocabularyUp
             Image image3 = Image.FromFile("../../db/Monsters/a_4.png");
             Image image4 = Image.FromFile("../../db/Monsters/a_5.png");
             Image imageLast = Image.FromFile("../../db/Monsters/5.png");
-
-            Size size = new Size(50, 50);
+            Size size = new Size(50,50);
+           
+            int s1 = wall2.Location.X - panel2.Width;
+            Size size1 = new Size(s1, s1);
+            int s2 = panel8.Location.X - wall1.Location.X - wall1.Width;
+            Size size2 = new Size(s2, s2);
+            int s3 = panel6.Location.Y - panel4.Location.Y -panel4.Height;
+            Size size3 = new Size(s3, s3);
+            int s4 = panel9.Location.X - panel8.Location.X - panel8.Width;
+            Size size4 = new Size(s4, s4);
             Size sizeLast = new Size(100, 80);
 
-            Point location1 = new Point(26, 470);
-            Point location2 = new Point(139, 364);
-            Point location3 = new Point(871, 133);
-            Point location4 = new Point(260, 243);
+            Point location1 = new Point(panel2.Location.X + panel2.Width, wall2.Location.Y);
+            Point location2 = new Point(wall1.Location.X + wall1.Width, panel8.Location.Y);
+            Point location3 = new Point(panel6.Location.X + panel6.Width, panel4.Location.Y+panel4.Height);
+            Point location4 = new Point(panel9.Location.X - size4.Height, panel9.Location.Y);
             Point location5 = new Point(390, 355);
             Point location6 = new Point(693, 451);
             Point locationLast = new Point(742, 584);
 
-            mon1 = new MonsterMaze(image1, location1, size, 1, null, false);
-            mon2 = new MonsterMaze(image2, location2, size, 1, null, false);
-            mon3 = new MonsterMaze(image3, location3, size, 3, null, false);
-            mon4 = new MonsterMaze(image4, location4, size, 1, null, false);
+            mon1 = new MonsterMaze(image1, location1, size1, 1, null, false);
+            mon2 = new MonsterMaze(image2, location2, size2, 1, null, false);
+            mon3 = new MonsterMaze(image3, location3, size3, 1, null, false);
+            mon4 = new MonsterMaze(image4, location4, size4, 1, null, false);
             mon5 = new MonsterMaze(image1, location5, size, 1, null, false);
             mon6 = new MonsterMaze(image2, location6, size, 1, null, false);
             monLast = new MonsterMaze(imageLast, locationLast, sizeLast, 0, null, false);
@@ -227,10 +235,10 @@ namespace VocabularyUp
             if (monsters[2].IsDeath == false)
             {
                 monsters[2].Move(monsters[2].Cur);
-                if (monsters[2].X < 192)
-                    monsters[2].Cur = Direction1.Right;
-                else if (monsters[2].X > 850)
-                    monsters[2].Cur = Direction1.Left;
+                if (monsters[2].Y < panel4.Location.Y + panel4.Height)
+                    monsters[2].Cur = Direction1.Down;
+                else if (monsters[2].Y > panel9.Location.Y - monsters[2].Size.Height)
+                    monsters[2].Cur = Direction1.Up;
             }
             //di chuyen của monster 3
             if (monsters[3].IsDeath == false)
