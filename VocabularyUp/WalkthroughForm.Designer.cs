@@ -66,7 +66,7 @@ namespace VocabularyUp
             this.pbIconHealth.BackColor = System.Drawing.Color.Transparent;
             this.pbIconHealth.Image = ((System.Drawing.Image)(resources.GetObject("pbIconHealth.Image")));
             this.pbIconHealth.Location = new System.Drawing.Point(14, 12);
-            this.pbIconHealth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbIconHealth.Margin = new System.Windows.Forms.Padding(2);
             this.pbIconHealth.Name = "pbIconHealth";
             this.pbIconHealth.Size = new System.Drawing.Size(22, 24);
             this.pbIconHealth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -83,7 +83,7 @@ namespace VocabularyUp
             this.pnlInfo.Controls.Add(this.pgbHealth);
             this.pnlInfo.Controls.Add(this.pbIconHealth);
             this.pnlInfo.Location = new System.Drawing.Point(20, 22);
-            this.pnlInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlInfo.Margin = new System.Windows.Forms.Padding(2);
             this.pnlInfo.Name = "pnlInfo";
             this.pnlInfo.Size = new System.Drawing.Size(289, 89);
             this.pnlInfo.TabIndex = 5;
@@ -106,7 +106,7 @@ namespace VocabularyUp
             this.pbDiamond.BackColor = System.Drawing.Color.Transparent;
             this.pbDiamond.Image = ((System.Drawing.Image)(resources.GetObject("pbDiamond.Image")));
             this.pbDiamond.Location = new System.Drawing.Point(14, 49);
-            this.pbDiamond.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbDiamond.Margin = new System.Windows.Forms.Padding(2);
             this.pbDiamond.Name = "pbDiamond";
             this.pbDiamond.Size = new System.Drawing.Size(22, 24);
             this.pbDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,7 +117,7 @@ namespace VocabularyUp
             // 
             this.pgbHealth.BackColor = System.Drawing.Color.White;
             this.pgbHealth.Location = new System.Drawing.Point(49, 16);
-            this.pgbHealth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pgbHealth.Margin = new System.Windows.Forms.Padding(2);
             this.pgbHealth.Name = "pgbHealth";
             this.pgbHealth.Size = new System.Drawing.Size(213, 20);
             this.pgbHealth.TabIndex = 3;
@@ -135,11 +135,12 @@ namespace VocabularyUp
             this.pnlQuestion.Controls.Add(this.btnC);
             this.pnlQuestion.Controls.Add(this.pnlFlashCard);
             this.pnlQuestion.Location = new System.Drawing.Point(51, 2);
-            this.pnlQuestion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlQuestion.Margin = new System.Windows.Forms.Padding(2);
             this.pnlQuestion.Name = "pnlQuestion";
             this.pnlQuestion.Size = new System.Drawing.Size(746, 364);
             this.pnlQuestion.TabIndex = 6;
             this.pnlQuestion.Visible = false;
+            this.pnlQuestion.VisibleChanged += new System.EventHandler(this.pnlQuestion_VisibleChanged);
             // 
             // lbTimer
             // 
@@ -169,7 +170,7 @@ namespace VocabularyUp
             this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
             this.btnConfirm.ImageSize = new System.Drawing.Size(60, 45);
             this.btnConfirm.Location = new System.Drawing.Point(458, 246);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
             this.btnConfirm.Size = new System.Drawing.Size(108, 58);
@@ -190,7 +191,7 @@ namespace VocabularyUp
             this.btnB.ForeColor = System.Drawing.Color.White;
             this.btnB.HoverState.Parent = this.btnB;
             this.btnB.Location = new System.Drawing.Point(519, 88);
-            this.btnB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnB.Margin = new System.Windows.Forms.Padding(2);
             this.btnB.Name = "btnB";
             this.btnB.ShadowDecoration.Parent = this.btnB;
             this.btnB.Size = new System.Drawing.Size(135, 58);
@@ -211,7 +212,7 @@ namespace VocabularyUp
             this.btnA.ForeColor = System.Drawing.Color.White;
             this.btnA.HoverState.Parent = this.btnA;
             this.btnA.Location = new System.Drawing.Point(370, 88);
-            this.btnA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnA.Margin = new System.Windows.Forms.Padding(2);
             this.btnA.Name = "btnA";
             this.btnA.ShadowDecoration.Parent = this.btnA;
             this.btnA.Size = new System.Drawing.Size(135, 58);
@@ -232,7 +233,7 @@ namespace VocabularyUp
             this.btnD.ForeColor = System.Drawing.Color.White;
             this.btnD.HoverState.Parent = this.btnD;
             this.btnD.Location = new System.Drawing.Point(519, 167);
-            this.btnD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnD.Margin = new System.Windows.Forms.Padding(2);
             this.btnD.Name = "btnD";
             this.btnD.ShadowDecoration.Parent = this.btnD;
             this.btnD.Size = new System.Drawing.Size(135, 58);
@@ -253,7 +254,7 @@ namespace VocabularyUp
             this.btnC.ForeColor = System.Drawing.Color.White;
             this.btnC.HoverState.Parent = this.btnC;
             this.btnC.Location = new System.Drawing.Point(370, 167);
-            this.btnC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnC.Margin = new System.Windows.Forms.Padding(2);
             this.btnC.Name = "btnC";
             this.btnC.ShadowDecoration.Parent = this.btnC;
             this.btnC.Size = new System.Drawing.Size(135, 58);
@@ -269,7 +270,7 @@ namespace VocabularyUp
             this.pnlFlashCard.Controls.Add(this.lbMain);
             this.pnlFlashCard.Controls.Add(this.pbMain);
             this.pnlFlashCard.Location = new System.Drawing.Point(26, 20);
-            this.pnlFlashCard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlFlashCard.Margin = new System.Windows.Forms.Padding(2);
             this.pnlFlashCard.Name = "pnlFlashCard";
             this.pnlFlashCard.Size = new System.Drawing.Size(264, 323);
             this.pnlFlashCard.TabIndex = 45;
@@ -278,7 +279,7 @@ namespace VocabularyUp
             // 
             this.pnlDash.BackColor = System.Drawing.Color.White;
             this.pnlDash.Location = new System.Drawing.Point(22, 214);
-            this.pnlDash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDash.Name = "pnlDash";
             this.pnlDash.Size = new System.Drawing.Size(217, 4);
             this.pnlDash.TabIndex = 14;
@@ -300,7 +301,7 @@ namespace VocabularyUp
             // 
             this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
             this.pbMain.Location = new System.Drawing.Point(22, 19);
-            this.pbMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbMain.Margin = new System.Windows.Forms.Padding(2);
             this.pbMain.Name = "pbMain";
             this.pbMain.Size = new System.Drawing.Size(217, 184);
             this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -310,7 +311,7 @@ namespace VocabularyUp
             // pgbMonsterHealth
             // 
             this.pgbMonsterHealth.Location = new System.Drawing.Point(313, 22);
-            this.pgbMonsterHealth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pgbMonsterHealth.Margin = new System.Windows.Forms.Padding(2);
             this.pgbMonsterHealth.Name = "pgbMonsterHealth";
             this.pgbMonsterHealth.Size = new System.Drawing.Size(464, 24);
             this.pgbMonsterHealth.TabIndex = 4;

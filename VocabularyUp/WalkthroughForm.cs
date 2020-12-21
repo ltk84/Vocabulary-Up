@@ -38,7 +38,7 @@ namespace VocabularyUp
             InitMonster();
             ManageUserAction.UpdateGameMainFlashCards();
             InitQuiz();
-            ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+            //ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
             timerUpdate.Start();
             isGameOver = false;
             currentHealth = player.Health;
@@ -137,6 +137,8 @@ namespace VocabularyUp
                     if (player.isCollision(monsters[i]))
                     {
                         timerUpdate.Stop();
+                        
+
                         if (monsters[i].IsBoss == true)
                         {
                             //timerUpdate.Stop();
@@ -147,9 +149,9 @@ namespace VocabularyUp
                         else
                         {
                             //OpenGameForm();
-                            ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-                            currentQuiz++;
-                            pnlQuestion.Show();
+                            //ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                            //currentQuiz++;
+                            //pnlQuestion.Show();
 
                             if (isCorrect >= 0)
                             {
@@ -161,9 +163,18 @@ namespace VocabularyUp
                                 }
                                 else
                                 {
-                                    currentHealth -= 1;
+                                    currentHealth -= 10;
                                     player.Location = new Point(0, this.ClientSize.Height / 2);
                                 }
+
+                                isCorrect = -1;
+                                timerUpdate.Start();
+                            }
+                            else
+                            {
+                                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                                //currentQuiz++;
+                                pnlQuestion.Show();
                             }
 
                             if (player.Health == 0)
@@ -171,7 +182,6 @@ namespace VocabularyUp
                                 isGameOver = true;
                             }
 
-                            //timerUpdate.Start();
                         }
                     }
 
@@ -195,6 +205,7 @@ namespace VocabularyUp
                 pgbHealth.Value =   (int) percent;
                 lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
                 this.Invalidate();
+                this.Focus();
             }
 
         }
@@ -293,6 +304,8 @@ namespace VocabularyUp
             pgbMonsterHealth.Value = 100;
 
             // Init questions.
+            ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+
             pnlQuestion.Show();
             pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 150);
 
@@ -482,15 +495,23 @@ namespace VocabularyUp
                 }
                 else
                     isCorrect = 0;
-
             }
 
             if (userChoices[currentQuiz].Selected != -1)
             {
                 pnlQuestion.Hide();
                 timerUpdate.Start();
+                currentQuiz++;
             }
 
+        }
+
+        private void pnlQuestion_VisibleChanged(object sender, EventArgs e)
+        {
+            btnA.BorderThickness = 0;
+            btnB.BorderThickness = 0;
+            btnC.BorderThickness = 0;
+            btnD.BorderThickness = 0;
         }
     }
 }
