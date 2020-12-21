@@ -52,12 +52,14 @@
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.lbDiamond = new System.Windows.Forms.Label();
             this.pbDiamond = new System.Windows.Forms.PictureBox();
-            this.pgbHealth = new VocabularyUp.SuperProgressBar();
             this.pbIconHealth = new System.Windows.Forms.PictureBox();
+            this.pgbHealth = new VocabularyUp.SuperProgressBar();
+            this.btnReturn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel16.SuspendLayout();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
             this.SuspendLayout();
             // 
             // timerUpdate
@@ -69,7 +71,6 @@
             // panel14
             // 
             this.panel14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel14.BackgroundImage")));
-            this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel14.Location = new System.Drawing.Point(908, 609);
             this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
@@ -79,7 +80,6 @@
             // panel13
             // 
             this.panel13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel13.BackgroundImage")));
-            this.panel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel13.Location = new System.Drawing.Point(612, 349);
             this.panel13.Margin = new System.Windows.Forms.Padding(4);
             this.panel13.Name = "panel13";
@@ -89,7 +89,6 @@
             // panel12
             // 
             this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
-            this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel12.Location = new System.Drawing.Point(751, 405);
             this.panel12.Margin = new System.Windows.Forms.Padding(4);
             this.panel12.Name = "panel12";
@@ -99,7 +98,6 @@
             // panel11
             // 
             this.panel11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel11.BackgroundImage")));
-            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel11.Location = new System.Drawing.Point(547, 514);
             this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
@@ -109,17 +107,15 @@
             // panel10
             // 
             this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
-            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel10.Location = new System.Drawing.Point(242, 461);
             this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(305, 55);
+            this.panel10.Size = new System.Drawing.Size(305, 53);
             this.panel10.TabIndex = 28;
             // 
             // panel9
             // 
             this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel9.Location = new System.Drawing.Point(307, 294);
             this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
@@ -132,7 +128,7 @@
             this.panel8.Location = new System.Drawing.Point(192, 235);
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(50, 271);
+            this.panel8.Size = new System.Drawing.Size(50, 279);
             this.panel8.TabIndex = 26;
             // 
             // panel7
@@ -158,7 +154,6 @@
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(131, 575);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -168,7 +163,6 @@
             // wall1
             // 
             this.wall1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("wall1.BackgroundImage")));
-            this.wall1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.wall1.Location = new System.Drawing.Point(81, 124);
             this.wall1.Margin = new System.Windows.Forms.Padding(4);
             this.wall1.Name = "wall1";
@@ -178,7 +172,6 @@
             // wall2
             // 
             this.wall2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("wall2.BackgroundImage")));
-            this.wall2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.wall2.Location = new System.Drawing.Point(81, 427);
             this.wall2.Margin = new System.Windows.Forms.Padding(4);
             this.wall2.Name = "wall2";
@@ -189,7 +182,6 @@
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Control;
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Location = new System.Drawing.Point(25, 675);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
@@ -200,7 +192,6 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.Location = new System.Drawing.Point(25, 100);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
@@ -210,7 +201,6 @@
             // panel3
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Location = new System.Drawing.Point(975, 100);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
@@ -220,7 +210,6 @@
             // panel2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
@@ -241,7 +230,7 @@
             // 
             this.panel16.BackColor = System.Drawing.SystemColors.Control;
             this.panel16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel16.BackgroundImage")));
-            this.panel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel16.Controls.Add(this.btnReturn);
             this.panel16.Controls.Add(this.pnlInfo);
             this.panel16.Location = new System.Drawing.Point(0, 0);
             this.panel16.Margin = new System.Windows.Forms.Padding(4);
@@ -258,9 +247,9 @@
             this.pnlInfo.Controls.Add(this.pbDiamond);
             this.pnlInfo.Controls.Add(this.pgbHealth);
             this.pnlInfo.Controls.Add(this.pbIconHealth);
-            this.pnlInfo.Location = new System.Drawing.Point(0, 3);
+            this.pnlInfo.Location = new System.Drawing.Point(25, 12);
             this.pnlInfo.Name = "pnlInfo";
-            this.pnlInfo.Size = new System.Drawing.Size(385, 94);
+            this.pnlInfo.Size = new System.Drawing.Size(379, 60);
             this.pnlInfo.TabIndex = 6;
             // 
             // lbDiamond
@@ -269,7 +258,7 @@
             this.lbDiamond.BackColor = System.Drawing.Color.Transparent;
             this.lbDiamond.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbDiamond.ForeColor = System.Drawing.Color.White;
-            this.lbDiamond.Location = new System.Drawing.Point(60, 60);
+            this.lbDiamond.Location = new System.Drawing.Point(318, 14);
             this.lbDiamond.Name = "lbDiamond";
             this.lbDiamond.Size = new System.Drawing.Size(23, 25);
             this.lbDiamond.TabIndex = 5;
@@ -279,31 +268,44 @@
             // 
             this.pbDiamond.BackColor = System.Drawing.Color.Transparent;
             this.pbDiamond.Image = ((System.Drawing.Image)(resources.GetObject("pbDiamond.Image")));
-            this.pbDiamond.Location = new System.Drawing.Point(18, 60);
+            this.pbDiamond.Location = new System.Drawing.Point(282, 14);
             this.pbDiamond.Name = "pbDiamond";
             this.pbDiamond.Size = new System.Drawing.Size(30, 30);
             this.pbDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDiamond.TabIndex = 4;
             this.pbDiamond.TabStop = false;
             // 
-            // pgbHealth
-            // 
-            this.pgbHealth.BackColor = System.Drawing.Color.White;
-            this.pgbHealth.Location = new System.Drawing.Point(65, 20);
-            this.pgbHealth.Name = "pgbHealth";
-            this.pgbHealth.Size = new System.Drawing.Size(284, 25);
-            this.pgbHealth.TabIndex = 3;
-            // 
             // pbIconHealth
             // 
             this.pbIconHealth.BackColor = System.Drawing.Color.Transparent;
             this.pbIconHealth.Image = ((System.Drawing.Image)(resources.GetObject("pbIconHealth.Image")));
-            this.pbIconHealth.Location = new System.Drawing.Point(18, 15);
+            this.pbIconHealth.Location = new System.Drawing.Point(12, 14);
             this.pbIconHealth.Name = "pbIconHealth";
             this.pbIconHealth.Size = new System.Drawing.Size(30, 30);
             this.pbIconHealth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbIconHealth.TabIndex = 1;
             this.pbIconHealth.TabStop = false;
+            // 
+            // pgbHealth
+            // 
+            this.pgbHealth.BackColor = System.Drawing.Color.White;
+            this.pgbHealth.Location = new System.Drawing.Point(48, 14);
+            this.pgbHealth.Name = "pgbHealth";
+            this.pgbHealth.Size = new System.Drawing.Size(199, 25);
+            this.pgbHealth.TabIndex = 3;
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
+            this.btnReturn.FillColor = System.Drawing.Color.Transparent;
+            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
+            this.btnReturn.Location = new System.Drawing.Point(952, 3);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.ShadowDecoration.Parent = this.btnReturn;
+            this.btnReturn.Size = new System.Drawing.Size(48, 33);
+            this.btnReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnReturn.TabIndex = 19;
+            this.btnReturn.TabStop = false;
             // 
             // MazeGameFrom
             // 
@@ -337,6 +339,7 @@
             this.pnlInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -366,5 +369,6 @@
         private System.Windows.Forms.PictureBox pbDiamond;
         private SuperProgressBar pgbHealth;
         private System.Windows.Forms.PictureBox pbIconHealth;
+        private Guna.UI2.WinForms.Guna2PictureBox btnReturn;
     }
 }

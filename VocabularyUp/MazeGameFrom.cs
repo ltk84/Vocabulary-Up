@@ -220,7 +220,7 @@ namespace VocabularyUp
                             else
                             {
                                 treasures.Remove(treasures[i]);
-                                MessageBox.Show("Khó báu cỏ, bạn được 1 kim cương!");
+                                //MessageBox.Show("Khó báu cỏ, bạn được 1 kim cương!");
                                 ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
 
                             }
@@ -482,7 +482,7 @@ namespace VocabularyUp
         {
             Image image = Image.FromFile("../../db/Characters/" + idSkin.ToString() + ".png");
             int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
-            Size size = new Size(s,s);
+            Size size = new Size(s-5,s-5);
             Point location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
 
             player = new PlayerMaze(image, location, size, 15);
