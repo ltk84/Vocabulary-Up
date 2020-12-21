@@ -25,11 +25,12 @@ namespace VocabularyUp
         {
             InitializeComponent();
             LoadBackGround();
-            InitPlayer(idSkin);
             InitTreasure();
             InitMonster();
             timerUpdate.Start();
             isGameOver = false;
+          
+            InitPlayer(idSkin);
             currentHealth = player.Health;
             this.DoubleBuffered = true;
         }
@@ -153,7 +154,11 @@ namespace VocabularyUp
                     if (player.isCollision(monsters[i]))
                     {
                         monsters[i].IsDeath = true;
-
+                        if (monsters[i].IsDeath == true)
+                        {
+                            monsters[i].Image = Image.FromFile("../../db/Treasure/rip.png");
+                        }
+                    
                        // timerUpdate.Stop();
                         /* OpenGameForm();
                          if (gameForm.IsCorrect == true)
@@ -449,8 +454,9 @@ namespace VocabularyUp
         public void InitPlayer(int idSkin)
         {
             Image image = Image.FromFile("../../db/Characters/" + idSkin.ToString() + ".png");
-            Point location = new Point(25,125);
-            Size size = new Size(50,50);
+            int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
+            Size size = new Size(s,s);
+            Point location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
 
             player = new PlayerMaze(image, location, size, 15);
 

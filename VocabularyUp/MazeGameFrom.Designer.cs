@@ -83,7 +83,7 @@
             this.panel13.Location = new System.Drawing.Point(612, 349);
             this.panel13.Margin = new System.Windows.Forms.Padding(4);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(72, 114);
+            this.panel13.Size = new System.Drawing.Size(72, 97);
             this.panel13.TabIndex = 31;
             // 
             // panel12
@@ -93,7 +93,7 @@
             this.panel12.Location = new System.Drawing.Point(751, 405);
             this.panel12.Margin = new System.Windows.Forms.Padding(4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(224, 58);
+            this.panel12.Size = new System.Drawing.Size(224, 51);
             this.panel12.TabIndex = 30;
             // 
             // panel11
@@ -308,8 +308,7 @@
             // 
             // MazeGameFrom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1000, 700);
             this.Controls.Add(this.panel16);
             this.Controls.Add(this.panel15);
