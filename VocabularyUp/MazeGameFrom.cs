@@ -19,6 +19,8 @@ namespace VocabularyUp
         private List<MonsterMaze> monsters;
         private int currentHealth = 0;
         private GameMCForm gameForm;
+       
+
         public MazeGameFrom(int idCol, int idSkin)
         {
             InitializeComponent();
@@ -146,10 +148,29 @@ namespace VocabularyUp
 
             if (!isGameOver)
             {
-                for (int i = 0; i < monsters.Count;i++)
+                for (int i = 0; i < monsters.Count; i++)
                 {
-                     
-                }    
+                    if (player.isCollision(monsters[i]))
+                    {
+                        monsters[i].IsDeath = true;
+
+                       // timerUpdate.Stop();
+                        /* OpenGameForm();
+                         if (gameForm.IsCorrect == true)
+                         {
+                             monsters[i].IsDeath = false;
+                             monsters.Remove(monsters[i]);
+                         }
+                         else
+                         {
+                             currentHealth -= 5;
+                             player.Location = new Point(25, 125);
+                         }
+                         if (currentHealth == 0) isGameOver = true;*/
+                       // monsters.Remove(monsters[i]);
+                       // timerUpdate.Start();
+                    }
+                }
 
                 for (int i = 0; i < treasures.Count; i++)
                 {
@@ -453,40 +474,9 @@ namespace VocabularyUp
             }
         }
 
-        private void OpenGameForm()
-        {
-            Form backgroundForm = new Form();
-            try
-            {
-                using (gameForm = new GameMCForm())
-                {
-                    backgroundForm.StartPosition = FormStartPosition.Manual;
-                    backgroundForm.FormBorderStyle = FormBorderStyle.None;
-                    backgroundForm.Opacity = .70d;
-                    backgroundForm.BackColor = Color.Black;
-                    backgroundForm.Size = this.Size;
-                    backgroundForm.TopMost = true;
-                    backgroundForm.Location = this.Location;
-                    backgroundForm.ShowInTaskbar = false;
-                    backgroundForm.Show();
-
-                    gameForm.Owner = backgroundForm;
-                    gameForm.ShowDialog();
-
-                    backgroundForm.Dispose();
-                }
-                this.Focus();
-            }
-            catch (Exception)
-            {
-
-            }
-            finally
-            {
-                backgroundForm.Dispose();
-            }
+        
 
 
-        }
+        
     }
 }
