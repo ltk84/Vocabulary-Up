@@ -54,22 +54,27 @@ namespace VocabularyUp
             Size size3 = new Size(s3, s3);
             int s4 = panel9.Location.X - panel8.Location.X - panel8.Width;
             Size size4 = new Size(s4, s4);
-            Size sizeLast = new Size(100, 80);
+            int s5 = 75;
+            Size size5 = new Size(s5, s5);
+            int s6 = panel12.Location.X - panel13.Location.X - panel13.Width;
+            Size size6 = new Size(s6, s6);
+            int sLast = panel14.Width;
+            Size sizeLast = new Size(sLast, panel5.Location.Y - panel11.Location.Y - panel11.Height);
 
             Point location1 = new Point(panel2.Location.X + panel2.Width, wall2.Location.Y);
             Point location2 = new Point(wall1.Location.X + wall1.Width, panel8.Location.Y);
             Point location3 = new Point(panel6.Location.X + panel6.Width, panel4.Location.Y+panel4.Height);
             Point location4 = new Point(panel9.Location.X - size4.Height, panel9.Location.Y);
-            Point location5 = new Point(390, 355);
-            Point location6 = new Point(693, 451);
-            Point locationLast = new Point(742, 584);
+            Point location5 = new Point(panel15.Location.X + panel15.Width, panel9.Location.Y + panel9.Height);
+            Point location6 = new Point(panel13.Location.X + panel13.Width,panel12.Location.Y);
+            Point locationLast = new Point(panel12.Location.X, panel11.Location.Y+panel11.Height);
 
             mon1 = new MonsterMaze(image1, location1, size1, 1, null, false);
             mon2 = new MonsterMaze(image2, location2, size2, 1, null, false);
             mon3 = new MonsterMaze(image3, location3, size3, 1, null, false);
             mon4 = new MonsterMaze(image4, location4, size4, 1, null, false);
-            mon5 = new MonsterMaze(image1, location5, size, 1, null, false);
-            mon6 = new MonsterMaze(image2, location6, size, 1, null, false);
+            mon5 = new MonsterMaze(image1, location5, size5, 1, null, false);
+            mon6 = new MonsterMaze(image2, location6, size6, 1, null, false);
             monLast = new MonsterMaze(imageLast, locationLast, sizeLast, 0, null, false);
 
             monsters.Add(mon1);
@@ -86,7 +91,7 @@ namespace VocabularyUp
         {
             treasures = new List<Treasure>();
 
-            Image image = Image.FromFile("../../db/Treasure/kho bau.png");
+            Image image = Image.FromFile("../../db/Treasure/treasure.png");
             Size size = new Size(50, 50);
             Point location1 = new Point(523, 626);
 
@@ -108,7 +113,7 @@ namespace VocabularyUp
             Point location6 = new Point(921, 350);
             trea6 = new Treasure(image, location6, size, 0, false);
             Point locationLast = new Point(639, 595);
-            Image imageLast = Image.FromFile("../../db/Treasure/lasttreasure.jpg");
+            Image imageLast = Image.FromFile("../../db/Treasure/LastTreasure.png");
             treaLast = new Treasure(imageLast, locationLast, size, 0, true);
             treasures.Add(trea1);
             treasures.Add(trea2);
@@ -215,9 +220,9 @@ namespace VocabularyUp
             if (monsters[0].IsDeath == false)
             {
                 monsters[0].Move(monsters[0].Cur);
-                if (monsters[0].Y < 427)
+                if (monsters[0].Y < wall1.Location.Y + wall1.Height)
                     monsters[0].Cur = Direction1.Down;
-                else if (monsters[0].Y > 611)
+                else if (monsters[0].Y > panel5.Location.Y - monsters[0].Size.Width)
                     monsters[0].Cur = Direction1.Up;
                         
             }    
@@ -226,9 +231,9 @@ namespace VocabularyUp
             if (monsters[1].IsDeath == false)
             {
                 monsters[1].Move(monsters[1].Cur);
-                if (monsters[1].Y < 185)
+                if (monsters[1].Y < panel6.Location.Y)
                     monsters[1].Cur = Direction1.Down;
-                else if (monsters[1].Y > 470)
+                else if (monsters[1].Y > panel1.Location.Y - monsters[1].Size.Height)
                     monsters[1].Cur = Direction1.Up;
             }
             //di chuyen cua monster 2
@@ -244,9 +249,9 @@ namespace VocabularyUp
             if (monsters[3].IsDeath == false)
             {
                 monsters[3].Move(monsters[3].Cur);
-                if (monsters[3].Y < 243)
+                if (monsters[3].Y < panel8.Location.Y)
                     monsters[3].Cur = Direction1.Down;
-                else if (monsters[3].Y > 360)
+                else if (monsters[3].Y > panel12.Location.Y - monsters[3].Size.Height)
                     monsters[3].Cur = Direction1.Up;
 
             }
@@ -255,9 +260,9 @@ namespace VocabularyUp
             if (monsters[4].IsDeath == false)
             {
                 monsters[4].Move(monsters[4].Cur);
-                if (monsters[4].Y < 351)
+                if (monsters[4].Y < panel9.Location.Y + panel9.Height)
                     monsters[4].Cur = Direction1.Down;
-                else if (monsters[4].Y > 412)
+                else if (monsters[4].Y > panel10.Location.Y - monsters[3].Size.Height)
                     monsters[4].Cur = Direction1.Up;
             }
 
@@ -265,9 +270,9 @@ namespace VocabularyUp
             if (monsters[5].IsDeath == false)
             {
                 monsters[5].Move(monsters[5].Cur);
-                if (monsters[5].Y < 353)
+                if (monsters[5].Y < panel9.Location.Y + panel9.Height)
                     monsters[5].Cur = Direction1.Down;
-                else if (monsters[5].Y > 458)
+                else if (monsters[5].Y > panel11.Location.Y - monsters[4].Size.Height)
                     monsters[5].Cur = Direction1.Up;
             }
 

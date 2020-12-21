@@ -70,10 +70,10 @@
             // 
             this.panel14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel14.BackgroundImage")));
             this.panel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel14.Location = new System.Drawing.Point(901, 598);
+            this.panel14.Location = new System.Drawing.Point(908, 609);
             this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(74, 82);
+            this.panel14.Size = new System.Drawing.Size(67, 71);
             this.panel14.TabIndex = 32;
             // 
             // panel13
