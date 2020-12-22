@@ -121,6 +121,10 @@ namespace VocabularyUp
             {
                 SizeF Size = e.Graphics.MeasureString("Game Over", new Font("Arial", 20));
                 e.Graphics.DrawString("Game Over", new Font("Arial", 20), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, this.Height / 2 - Size.Height / 2));
+
+
+                btnClose.Location = new Point(this.Width / 2 - (int)Size.Width / 2 - btnClose.Size.Width / 2, this.Height / 2 - (int)Size.Height / 2 + btnClose.Size.Height / 2 + 15);
+                btnDetails.Location = new Point(this.Width / 2 - (int)Size.Width / 2 + btnDetails.Size.Width / 2 + 40, this.Height / 2 - (int)Size.Height / 2 + btnDetails.Size.Height / 2 + 15);
             }
         }
 
@@ -216,7 +220,7 @@ namespace VocabularyUp
                         }
                         else
                         {
-                            currentHealth -= 10;
+                            currentHealth -= 1;
                             //player.Location = new Point(0, this.ClientSize.Height / 2);
                         }
 

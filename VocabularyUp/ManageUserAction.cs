@@ -283,7 +283,7 @@ namespace VocabularyUp
             Random rd = new Random();
             while (mainFlashCard.Count < 15)
             {
-                int index = rd.Next(0, ManageUserAction.GetItemOfAllCollection(0).ListFL.Count);
+                int index = rd.Next(1, ManageUserAction.GetItemOfAllCollection(0).ListFL.Count);
                 mainFlashCard.Add(ManageUserAction.GetItemOfAllCollection(0).ListFL[index]);
             }
         }

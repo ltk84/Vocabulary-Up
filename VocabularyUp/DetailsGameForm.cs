@@ -14,9 +14,9 @@ namespace VocabularyUp
 {
     public partial class DetailsGameForm : Form
     {
-        Color primary = Color.FromArgb(50, 74, 95);
-        Color secondary = Color.FromArgb(27, 42, 65);
-        bool darkMode = false;
+        //Color primary = Color.FromArgb(50, 74, 95);
+        //Color secondary = Color.FromArgb(27, 42, 65);
+        //bool darkMode = false;
         SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         FlashCard curFlashCard;
         List<UserChoice> userChoices;
@@ -28,33 +28,33 @@ namespace VocabularyUp
         {
             InitializeComponent();
             this.userChoices = userChoices;
-            darkMode = ManageUserAction.GetDarkMode();
-            UpdateTheme();
+            //darkMode = ManageUserAction.GetDarkMode();
+            //UpdateTheme();
             InitStatList();
             LoadListView();
             LoadComboBox();
         }
 
-        private void UpdateTheme()
-        {
-            if (darkMode)
-            {
-                primary = Color.FromArgb(50, 74, 95);
-                secondary = Color.White;
-            }
-            else
-            {
-                primary = Color.FromArgb(17, 223, 158);
-                secondary = Color.FromArgb(7, 96, 68);
-            }
-            this.pnlTopicSelection.BackColor = primary;
-            this.btnBack.Image = Image.FromFile("../../icons/back_arrow_dark.png");
-            this.btnToCollection.FillColor = primary;
-            this.pnlTab.FillColor = primary;
-            this.pnlTab.FillColor2 = primary;
-            this.pnlTab.FillColor3 = primary;
-            this.pnlTab.FillColor4 = primary;
-        }
+        //private void UpdateTheme()
+        //{
+        //    if (darkMode)
+        //    {
+        //        primary = Color.FromArgb(50, 74, 95);
+        //        secondary = Color.White;
+        //    }
+        //    else
+        //    {
+        //        primary = Color.FromArgb(17, 223, 158);
+        //        secondary = Color.FromArgb(7, 96, 68);
+        //    }
+        //    this.pnlTopicSelection.BackColor = primary;
+        //    this.btnBack.Image = Image.FromFile("../../icons/back_arrow_dark.png");
+        //    this.btnToCollection.FillColor = primary;
+        //    this.pnlTab.FillColor = primary;
+        //    this.pnlTab.FillColor2 = primary;
+        //    this.pnlTab.FillColor3 = primary;
+        //    this.pnlTab.FillColor4 = primary;
+        //}
 
        
 
