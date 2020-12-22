@@ -165,7 +165,7 @@ namespace VocabularyUp
                                 }
                                 else
                                 {
-                                    currentHealth -= 10;
+                                    currentHealth -= 1;
                                     player.Location = new Point(0, this.ClientSize.Height / 2);
                                 }
 
