@@ -49,17 +49,31 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.btnReturn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.lbDiamond = new System.Windows.Forms.Label();
             this.pbDiamond = new System.Windows.Forms.PictureBox();
-            this.pbIconHealth = new System.Windows.Forms.PictureBox();
             this.pgbHealth = new VocabularyUp.SuperProgressBar();
-            this.btnReturn = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pbIconHealth = new System.Windows.Forms.PictureBox();
+            this.pnlQuestion = new System.Windows.Forms.Panel();
+            this.lbTimer = new System.Windows.Forms.Label();
+            this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
+            this.btnB = new Guna.UI2.WinForms.Guna2Button();
+            this.btnA = new Guna.UI2.WinForms.Guna2Button();
+            this.btnD = new Guna.UI2.WinForms.Guna2Button();
+            this.btnC = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlFlashCard = new System.Windows.Forms.Panel();
+            this.pnlDash = new System.Windows.Forms.Panel();
+            this.lbMain = new System.Windows.Forms.Label();
+            this.pbMain = new System.Windows.Forms.PictureBox();
             this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
+            this.pnlQuestion.SuspendLayout();
+            this.pnlFlashCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
             this.SuspendLayout();
             // 
             // timerUpdate
@@ -238,6 +252,20 @@
             this.panel16.Size = new System.Drawing.Size(1000, 100);
             this.panel16.TabIndex = 34;
             // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
+            this.btnReturn.FillColor = System.Drawing.Color.Transparent;
+            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
+            this.btnReturn.Location = new System.Drawing.Point(952, 3);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.ShadowDecoration.Parent = this.btnReturn;
+            this.btnReturn.Size = new System.Drawing.Size(48, 33);
+            this.btnReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnReturn.TabIndex = 19;
+            this.btnReturn.TabStop = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
             // pnlInfo
             // 
             this.pnlInfo.BackColor = System.Drawing.Color.Transparent;
@@ -275,6 +303,14 @@
             this.pbDiamond.TabIndex = 4;
             this.pbDiamond.TabStop = false;
             // 
+            // pgbHealth
+            // 
+            this.pgbHealth.BackColor = System.Drawing.Color.White;
+            this.pgbHealth.Location = new System.Drawing.Point(48, 14);
+            this.pgbHealth.Name = "pgbHealth";
+            this.pgbHealth.Size = new System.Drawing.Size(199, 25);
+            this.pgbHealth.TabIndex = 3;
+            // 
             // pbIconHealth
             // 
             this.pbIconHealth.BackColor = System.Drawing.Color.Transparent;
@@ -286,31 +322,196 @@
             this.pbIconHealth.TabIndex = 1;
             this.pbIconHealth.TabStop = false;
             // 
-            // pgbHealth
+            // pnlQuestion
             // 
-            this.pgbHealth.BackColor = System.Drawing.Color.White;
-            this.pgbHealth.Location = new System.Drawing.Point(48, 14);
-            this.pgbHealth.Name = "pgbHealth";
-            this.pgbHealth.Size = new System.Drawing.Size(199, 25);
-            this.pgbHealth.TabIndex = 3;
+            this.pnlQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.pnlQuestion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlQuestion.BackgroundImage")));
+            this.pnlQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlQuestion.Controls.Add(this.lbTimer);
+            this.pnlQuestion.Controls.Add(this.btnConfirm);
+            this.pnlQuestion.Controls.Add(this.btnB);
+            this.pnlQuestion.Controls.Add(this.btnA);
+            this.pnlQuestion.Controls.Add(this.btnD);
+            this.pnlQuestion.Controls.Add(this.btnC);
+            this.pnlQuestion.Controls.Add(this.pnlFlashCard);
+            this.pnlQuestion.Location = new System.Drawing.Point(37, 150);
+            this.pnlQuestion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlQuestion.Name = "pnlQuestion";
+            this.pnlQuestion.Size = new System.Drawing.Size(914, 437);
+            this.pnlQuestion.TabIndex = 35;
+            this.pnlQuestion.Visible = false;
             // 
-            // btnReturn
+            // lbTimer
             // 
-            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
-            this.btnReturn.FillColor = System.Drawing.Color.Transparent;
-            this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
-            this.btnReturn.Location = new System.Drawing.Point(952, 3);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.ShadowDecoration.Parent = this.btnReturn;
-            this.btnReturn.Size = new System.Drawing.Size(48, 33);
-            this.btnReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnReturn.TabIndex = 19;
-            this.btnReturn.TabStop = false;
+            this.lbTimer.BackColor = System.Drawing.Color.Transparent;
+            this.lbTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbTimer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimer.ForeColor = System.Drawing.Color.White;
+            this.lbTimer.Location = new System.Drawing.Point(639, 57);
+            this.lbTimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTimer.Name = "lbTimer";
+            this.lbTimer.Size = new System.Drawing.Size(93, 28);
+            this.lbTimer.TabIndex = 51;
+            this.lbTimer.Text = "60";
+            this.lbTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirm.BackgroundImage")));
+            this.btnConfirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirm.CheckedState.Parent = this.btnConfirm;
+            this.btnConfirm.CustomImages.Parent = this.btnConfirm;
+            this.btnConfirm.FillColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirm.HoverState.Parent = this.btnConfirm;
+            this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
+            this.btnConfirm.ImageSize = new System.Drawing.Size(60, 45);
+            this.btnConfirm.Location = new System.Drawing.Point(611, 303);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
+            this.btnConfirm.Size = new System.Drawing.Size(144, 71);
+            this.btnConfirm.TabIndex = 50;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnB
+            // 
+            this.btnB.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnB.BackColor = System.Drawing.Color.Transparent;
+            this.btnB.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnB.BackgroundImage")));
+            this.btnB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnB.BorderColor = System.Drawing.Color.White;
+            this.btnB.CheckedState.Parent = this.btnB;
+            this.btnB.CustomImages.Parent = this.btnB;
+            this.btnB.FillColor = System.Drawing.Color.Transparent;
+            this.btnB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnB.ForeColor = System.Drawing.Color.White;
+            this.btnB.HoverState.Parent = this.btnB;
+            this.btnB.Location = new System.Drawing.Point(692, 108);
+            this.btnB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnB.Name = "btnB";
+            this.btnB.ShadowDecoration.Parent = this.btnB;
+            this.btnB.Size = new System.Drawing.Size(180, 71);
+            this.btnB.TabIndex = 48;
+            this.btnB.Click += new System.EventHandler(this.btnB_Click);
+            // 
+            // btnA
+            // 
+            this.btnA.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnA.BackColor = System.Drawing.Color.Transparent;
+            this.btnA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnA.BackgroundImage")));
+            this.btnA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnA.BorderColor = System.Drawing.Color.White;
+            this.btnA.CheckedState.Parent = this.btnA;
+            this.btnA.CustomImages.Parent = this.btnA;
+            this.btnA.FillColor = System.Drawing.Color.Transparent;
+            this.btnA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnA.ForeColor = System.Drawing.Color.White;
+            this.btnA.HoverState.Parent = this.btnA;
+            this.btnA.Location = new System.Drawing.Point(493, 108);
+            this.btnA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnA.Name = "btnA";
+            this.btnA.ShadowDecoration.Parent = this.btnA;
+            this.btnA.Size = new System.Drawing.Size(180, 71);
+            this.btnA.TabIndex = 46;
+            this.btnA.Click += new System.EventHandler(this.btnA_Click);
+            // 
+            // btnD
+            // 
+            this.btnD.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnD.BackColor = System.Drawing.Color.Transparent;
+            this.btnD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnD.BackgroundImage")));
+            this.btnD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnD.BorderColor = System.Drawing.Color.White;
+            this.btnD.CheckedState.Parent = this.btnD;
+            this.btnD.CustomImages.Parent = this.btnD;
+            this.btnD.FillColor = System.Drawing.Color.Transparent;
+            this.btnD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnD.ForeColor = System.Drawing.Color.White;
+            this.btnD.HoverState.Parent = this.btnD;
+            this.btnD.Location = new System.Drawing.Point(692, 206);
+            this.btnD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnD.Name = "btnD";
+            this.btnD.ShadowDecoration.Parent = this.btnD;
+            this.btnD.Size = new System.Drawing.Size(180, 71);
+            this.btnD.TabIndex = 49;
+            this.btnD.Click += new System.EventHandler(this.btnD_Click);
+            // 
+            // btnC
+            // 
+            this.btnC.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnC.BackColor = System.Drawing.Color.Transparent;
+            this.btnC.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnC.BackgroundImage")));
+            this.btnC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnC.BorderColor = System.Drawing.Color.White;
+            this.btnC.CheckedState.Parent = this.btnC;
+            this.btnC.CustomImages.Parent = this.btnC;
+            this.btnC.FillColor = System.Drawing.Color.Transparent;
+            this.btnC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnC.ForeColor = System.Drawing.Color.White;
+            this.btnC.HoverState.Parent = this.btnC;
+            this.btnC.Location = new System.Drawing.Point(493, 206);
+            this.btnC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnC.Name = "btnC";
+            this.btnC.ShadowDecoration.Parent = this.btnC;
+            this.btnC.Size = new System.Drawing.Size(180, 71);
+            this.btnC.TabIndex = 47;
+            this.btnC.Click += new System.EventHandler(this.btnC_Click);
+            // 
+            // pnlFlashCard
+            // 
+            this.pnlFlashCard.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFlashCard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlFlashCard.BackgroundImage")));
+            this.pnlFlashCard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlFlashCard.Controls.Add(this.pnlDash);
+            this.pnlFlashCard.Controls.Add(this.lbMain);
+            this.pnlFlashCard.Controls.Add(this.pbMain);
+            this.pnlFlashCard.Location = new System.Drawing.Point(34, 31);
+            this.pnlFlashCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlFlashCard.Name = "pnlFlashCard";
+            this.pnlFlashCard.Size = new System.Drawing.Size(352, 398);
+            this.pnlFlashCard.TabIndex = 45;
+            // 
+            // pnlDash
+            // 
+            this.pnlDash.BackColor = System.Drawing.Color.White;
+            this.pnlDash.Location = new System.Drawing.Point(29, 263);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlDash.Name = "pnlDash";
+            this.pnlDash.Size = new System.Drawing.Size(289, 5);
+            this.pnlDash.TabIndex = 14;
+            // 
+            // lbMain
+            // 
+            this.lbMain.BackColor = System.Drawing.Color.Transparent;
+            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lbMain.ForeColor = System.Drawing.Color.White;
+            this.lbMain.Location = new System.Drawing.Point(3, 279);
+            this.lbMain.Name = "lbMain";
+            this.lbMain.Size = new System.Drawing.Size(347, 95);
+            this.lbMain.TabIndex = 12;
+            this.lbMain.Text = "Welcome";
+            this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbMain
+            // 
+            this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
+            this.pbMain.Location = new System.Drawing.Point(29, 23);
+            this.pbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbMain.Name = "pbMain";
+            this.pbMain.Size = new System.Drawing.Size(289, 226);
+            this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMain.TabIndex = 13;
+            this.pbMain.TabStop = false;
             // 
             // MazeGameFrom
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1000, 700);
+            this.Controls.Add(this.pnlQuestion);
             this.Controls.Add(this.panel16);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel13);
@@ -335,11 +536,14 @@
             this.Text = "MazeGameFrom";
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.PlayerMaze_PriviewKeyDown);
             this.panel16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).EndInit();
+            this.pnlQuestion.ResumeLayout(false);
+            this.pnlFlashCard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,5 +574,16 @@
         private SuperProgressBar pgbHealth;
         private System.Windows.Forms.PictureBox pbIconHealth;
         private Guna.UI2.WinForms.Guna2PictureBox btnReturn;
+        private System.Windows.Forms.Panel pnlQuestion;
+        private System.Windows.Forms.Label lbTimer;
+        private Guna.UI2.WinForms.Guna2Button btnConfirm;
+        private Guna.UI2.WinForms.Guna2Button btnB;
+        private Guna.UI2.WinForms.Guna2Button btnA;
+        private Guna.UI2.WinForms.Guna2Button btnD;
+        private Guna.UI2.WinForms.Guna2Button btnC;
+        private System.Windows.Forms.Panel pnlFlashCard;
+        private System.Windows.Forms.Panel pnlDash;
+        private System.Windows.Forms.Label lbMain;
+        private System.Windows.Forms.PictureBox pbMain;
     }
 }
