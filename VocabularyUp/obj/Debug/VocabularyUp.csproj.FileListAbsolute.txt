@@ -209,3 +209,4 @@ D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\Vocab
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe.licenses
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.SuperLabel.resources
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.DetailsGameForm.resources
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.LoadingForm.resources
