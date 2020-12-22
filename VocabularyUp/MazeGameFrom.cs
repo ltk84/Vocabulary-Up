@@ -27,6 +27,7 @@ namespace VocabularyUp
         private List<UserChoice> userChoices = new List<UserChoice>();
         private int currentQuiz = 0;
         private int isPress = 0;
+        private TrashTalkingForm trashTalking;
 
         public MazeGameFrom(int idCol, int idSkin)
         {
@@ -330,8 +331,9 @@ namespace VocabularyUp
                             {
                                 treasures.Remove(treasures[i]);
                                 MessageBox.Show("Chục mừng bạn đã tìm ra đc khó báu cuối cùng và được 10 KiemCuong");
-                                this.Close();
+                            this.Close();
                                 ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 10);
+                                isGameOver = true;
                              
                             }
                             else
@@ -344,7 +346,8 @@ namespace VocabularyUp
                         
                     }
                 }
-            }    
+            }
+            
 
             
             //di chuyen cua monster 0
@@ -694,6 +697,11 @@ namespace VocabularyUp
                 && player.Y < panel14.Location.Y)
                 player.Y = panel14.Location.Y - player.Size.Height;
         }
+
+        
+
+        
+
         public void InitPlayer(int idSkin)
         {
             Image image = Image.FromFile("../../db/Characters/" + idSkin.ToString() + ".png");
@@ -723,9 +731,41 @@ namespace VocabularyUp
             }
         }
 
-        
+        public void OpenTrashTalk(int idMonster, string charTrashTalk, string monTrashTalk)
+        {
+            Form backgroundForm = new Form();
+            try
+            {
+                using (trashTalking = new TrashTalkingForm(player.Image, monsters[idMonster].Image, charTrashTalk, monTrashTalk))
+                {
+                    backgroundForm.StartPosition = FormStartPosition.Manual;
+                    backgroundForm.FormBorderStyle = FormBorderStyle.None;
+                    backgroundForm.Opacity = .70d;
+                    backgroundForm.BackColor = Color.Black;
+                    backgroundForm.Size = this.Size;
+                    backgroundForm.TopMost = true;
+                    backgroundForm.Location = this.Location;
+                    backgroundForm.ShowInTaskbar = false;
+                    backgroundForm.Show();
+
+                    trashTalking.Owner = backgroundForm;
+                    trashTalking.ShowDialog();
+
+                    backgroundForm.Dispose();
+                }
+                this.Focus();
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                backgroundForm.Dispose();
+            }
+        }
 
 
-        
+
     }
 }

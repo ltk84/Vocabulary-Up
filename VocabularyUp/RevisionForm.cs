@@ -203,6 +203,7 @@ namespace VocabularyUp
                 mgf.TopMost = true;
 
                 mgf.Show();
+                mgf.OpenTrashTalk(5, "Hello", "Lo cc!");
 
             }
             else

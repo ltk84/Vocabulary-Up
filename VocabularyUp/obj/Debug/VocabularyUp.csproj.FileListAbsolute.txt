@@ -293,3 +293,4 @@ D:\UIT\LTTQ\Dự án\Vocabulary-Up\Đồ án\Vocabulary-Up\VocabularyUp\obj\Debu
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Đồ án\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.CopyComplete
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Đồ án\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Đồ án\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.pdb
+D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.IntroductionForm.resources
