@@ -92,6 +92,7 @@ VALUES
 	(16, 'WEREWOLF', 10, 120, 100)
 select * from user_info
 
+select * from FLASHCARD
 
 alter table USER_INFO
 add DARKMODE bit

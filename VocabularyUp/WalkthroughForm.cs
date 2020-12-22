@@ -65,13 +65,6 @@ namespace VocabularyUp
 
         public void InitMonster()
         {
-            //Image image = Image.FromFile("../../db/Monsters/3.png");
-            //image.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            //Point location = new Point(this.ClientSize.Width/ 2 , this.ClientSize.Height / 2);
-            //Size size = new Size(150, 150);
-
-            //monster = new Monster(image, location, size, null);
-
             monsters = new List<Monster>();
             for (int i = 0; i < 3; i++)
             {
@@ -165,7 +158,7 @@ namespace VocabularyUp
                                 }
                                 else
                                 {
-                                    currentHealth -= 10;
+                                    currentHealth -= 1;
                                     player.Location = new Point(0, this.ClientSize.Height / 2);
                                 }
 
@@ -439,23 +432,16 @@ namespace VocabularyUp
                 {
                     int index;
                     string vie = "a";
-                    if (ManageUserAction.GetMainFlashCards().Count > 3)
+                    
+                    do
                     {
-                        do
-                        {
-                            index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
-                            vie = ManageUserAction.GetMainFlashCards()[index].Viet;
-                        } while (vie == "");
+                        index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
+                        vie = ManageUserAction.GetMainFlashCards()[index].Viet;
+                        if (ManageUserAction.GetMainFlashCards()[index].Eng == "Cover")
+                            MessageBox.Show("a");
+                    } while (ManageUserAction.GetMainFlashCards()[index].Eng == "Cover");
 
-                    }
-                    else
-                    {
-                        do
-                        {
-                            index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
-                            vie = ManageUserAction.GetMainFlashCards()[index].Viet;
-                        } while (vie == "");
-                    }
+                    
 
                     if (fakeAnswers.IndexOf(vie) < 0 && vie != ManageUserAction.GetMainFlashCards()[i].Viet)
                     {

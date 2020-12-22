@@ -164,10 +164,18 @@ namespace VocabularyUp
 
         private void btnChooseType_Click(object sender, EventArgs e)
         {
-            pnlType.Show();
-            btnChooseType.Hide();
-            btnStart.Show();
-            btnBack.Show();
+            if (ManageUserAction.GetItemOfAllCollection(0).ListFL.Count >= 15)
+            {
+                pnlType.Show();
+                btnChooseType.Hide();
+                btnStart.Show();
+                lbNotification.Visible = false;
+                btnBack.Show();
+            }
+            else
+            {
+                lbNotification.Visible = true;
+            }
         }
 
         private void lbMaze_Click(object sender, EventArgs e)
