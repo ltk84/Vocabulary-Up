@@ -12,14 +12,26 @@ namespace VocabularyUp
 {
     public partial class ShopForm : Form
     {
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
+        bool darkMode = false;
         Panel panel;
         public ShopForm(Panel p)
         {
             InitializeComponent();
+            darkMode = ManageUserAction.GetDarkMode();
+            if (darkMode)
+                UpdateTheme();
             ManageSystem.LoadCharacter();
             LoadAllCharacter();
             this.panel = p;
             LoadDiamondLabel();
+        }
+        private void UpdateTheme()
+        {
+            this.BackColor = primary;
+            this.pnlShop.BackColor = primary;
+            this.btnExit.FillColor = primary;
         }
 
         public void LoadShop()

@@ -33,8 +33,9 @@ namespace VocabularyUp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailsGameForm));
             this.timerSpeaker = new System.Windows.Forms.Timer(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.pnlNav_Back = new System.Windows.Forms.Panel();
             this.btnBack = new Guna.UI2.WinForms.Guna2Button();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.lvCorrectWord = new System.Windows.Forms.ListView();
             this.columnIndexCorrect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnNameCorrect = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,6 +55,7 @@ namespace VocabularyUp
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.pnlNav_Back.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -78,6 +80,7 @@ namespace VocabularyUp
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.splitContainer1.Panel1.Controls.Add(this.pnlNav_Back);
             this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
             // 
             // splitContainer1.Panel2
@@ -89,28 +92,14 @@ namespace VocabularyUp
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
-            // splitContainer2
+            // pnlNav_Back
             // 
-            this.splitContainer2.BackColor = System.Drawing.Color.Transparent;
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.Transparent;
-            this.splitContainer2.Panel1.Controls.Add(this.btnBack);
-            this.splitContainer2.Panel1.Controls.Add(this.lvCorrectWord);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.lvWrongWord);
-            this.splitContainer2.Size = new System.Drawing.Size(496, 505);
-            this.splitContainer2.SplitterDistance = 251;
-            this.splitContainer2.SplitterWidth = 5;
-            this.splitContainer2.TabIndex = 0;
+            this.pnlNav_Back.Controls.Add(this.btnBack);
+            this.pnlNav_Back.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlNav_Back.Location = new System.Drawing.Point(0, 0);
+            this.pnlNav_Back.Name = "pnlNav_Back";
+            this.pnlNav_Back.Size = new System.Drawing.Size(496, 42);
+            this.pnlNav_Back.TabIndex = 16;
             // 
             // btnBack
             // 
@@ -119,19 +108,42 @@ namespace VocabularyUp
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBack.CheckedState.Parent = this.btnBack;
             this.btnBack.CustomImages.Parent = this.btnBack;
+            this.btnBack.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnBack.FillColor = System.Drawing.Color.Transparent;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic);
             this.btnBack.ForeColor = System.Drawing.Color.Black;
             this.btnBack.HoverState.Parent = this.btnBack;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnBack.Location = new System.Drawing.Point(3, 0);
+            this.btnBack.Location = new System.Drawing.Point(0, 0);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.ShadowDecoration.Parent = this.btnBack;
-            this.btnBack.Size = new System.Drawing.Size(43, 33);
+            this.btnBack.Size = new System.Drawing.Size(43, 42);
             this.btnBack.TabIndex = 15;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.BackColor = System.Drawing.Color.Transparent;
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 49);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.splitContainer2.Panel1.Controls.Add(this.lvCorrectWord);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.lvWrongWord);
+            this.splitContainer2.Size = new System.Drawing.Size(496, 456);
+            this.splitContainer2.SplitterDistance = 226;
+            this.splitContainer2.SplitterWidth = 5;
+            this.splitContainer2.TabIndex = 0;
             // 
             // lvCorrectWord
             // 
@@ -140,14 +152,15 @@ namespace VocabularyUp
             this.lvCorrectWord.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnIndexCorrect,
             this.columnNameCorrect});
+            this.lvCorrectWord.Dock = System.Windows.Forms.DockStyle.Top;
             this.lvCorrectWord.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvCorrectWord.ForeColor = System.Drawing.Color.LimeGreen;
             this.lvCorrectWord.FullRowSelect = true;
             this.lvCorrectWord.HideSelection = false;
-            this.lvCorrectWord.Location = new System.Drawing.Point(53, 26);
+            this.lvCorrectWord.Location = new System.Drawing.Point(0, 0);
             this.lvCorrectWord.Margin = new System.Windows.Forms.Padding(4);
             this.lvCorrectWord.Name = "lvCorrectWord";
-            this.lvCorrectWord.Size = new System.Drawing.Size(412, 200);
+            this.lvCorrectWord.Size = new System.Drawing.Size(496, 200);
             this.lvCorrectWord.TabIndex = 0;
             this.lvCorrectWord.UseCompatibleStateImageBehavior = false;
             this.lvCorrectWord.View = System.Windows.Forms.View.Details;
@@ -170,14 +183,15 @@ namespace VocabularyUp
             this.lvWrongWord.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnIndexWrong,
             this.columnNameWrong});
+            this.lvWrongWord.Dock = System.Windows.Forms.DockStyle.Top;
             this.lvWrongWord.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvWrongWord.ForeColor = System.Drawing.Color.Tomato;
             this.lvWrongWord.FullRowSelect = true;
             this.lvWrongWord.HideSelection = false;
-            this.lvWrongWord.Location = new System.Drawing.Point(53, 26);
+            this.lvWrongWord.Location = new System.Drawing.Point(0, 0);
             this.lvWrongWord.Margin = new System.Windows.Forms.Padding(4);
             this.lvWrongWord.Name = "lvWrongWord";
-            this.lvWrongWord.Size = new System.Drawing.Size(412, 200);
+            this.lvWrongWord.Size = new System.Drawing.Size(496, 200);
             this.lvWrongWord.TabIndex = 1;
             this.lvWrongWord.UseCompatibleStateImageBehavior = false;
             this.lvWrongWord.View = System.Windows.Forms.View.Details;
@@ -344,6 +358,7 @@ namespace VocabularyUp
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.pnlNav_Back.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
@@ -377,5 +392,6 @@ namespace VocabularyUp
         private System.Windows.Forms.Label lbMain;
         private System.Windows.Forms.PictureBox pbMain;
         private System.Windows.Forms.Panel pnlDash;
+        private System.Windows.Forms.Panel pnlNav_Back;
     }
 }

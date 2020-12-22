@@ -127,17 +127,17 @@
   </data>
   <data name="pbCollectionIcon.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAIsSURBVHhe7ZVNS1RRHIdnJe36AH2ZiDb3ai2yaV2bGK9NpYLQslX0EaSh5o5Y4CIoEWobLYLA
-        F6KV+AFaKIaSy9M9d84ZYjxwBn9XqNPzwLPT3/H/+NYCAIDJWW+3pwZzeacs8q+Vh5UmZd3ZzVB2Zq5U
-        o1vjj6SsO13n1d2rl6rBXTv6/skds/9yyez3Hpu9lQe15vuHoZ97Sdh4wH6RL4zi9R6NwhFwQqox+zev
-        /skbj0fACSiL6eM64IuHBDwPfjAUz0rACAQUIaAIAUUIKEJAEQKKEFBEDeg//28x9DX+qf84d76OHwzF
-        sxIwgh8MxbMSMIIfDMWzEjCCHwzFsxIwgh8MxbMSMIIfDMWzEjCCHwzFsxIwgh8MxbPGAv5rElCUgKIE
-        FCWgKAFFCShKQFECihJQlICiBBQloCgBRQkoSkBRAooSUJSAogQUJaAoAUUJKEpAUQKKElCUgKIEFCWg
-        KAFFCShKQFECihJQlICiBBQloCgBRQkoSkDRCwv45fk983b5llnrzoweSVl3vs5wMDvzQOq683XKueHg
-        avem+fZx3Zwc/DCpsrO55gJOb7rzdfx3xMZLnY1n3frWQSe75s7X8QF/HR24Z9LlzVK7vnXl/vXL7nyd
-        avCkDvjz0D2TLq8XbzcfsF/kn+wov8LnZFBkN+yo/ydyenzknkuP7Y3VOmA5n71z5zdDfz57Wg//R7rT
-        m6PfyWfdr/Pp+GMp6s4GAIAztFq/AWEKCw08t8ayAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAABGdBTUEAALGPC/xhBQAAAixJREFUeF7t
+        lU1LVFEch2cl7foAfZmINvdqLbJpXZsYr02lgtCyVfQRpKHmjljgIigRahstgsAXopX4AVoohpLL0z13
+        zhliPHAGf1eo0/PAs9Pf8f/41gIAgMlZb7enBnN5pyzyr5WHlSZl3dnNUHZmrlSjW+OPpKw7XefV3auX
+        qsFdO/r+yR2z/3LJ7Pcem72VB7Xm+4ehn3tJ2HjAfpEvjOL1Ho3CEXBCqjH7N6/+yRuPR8AJKIvp4zrg
+        i4cEPA9+MBTPSsAIBBQhoAgBRQgoQkARAooQUEQN6D//bzH0Nf6p/zh3vo4fDMWzEjCCHwzFsxIwgh8M
+        xbMSMIIfDMWzEjCCHwzFsxIwgh8MxbMSMIIfDMWzEjCCHwzFs8YC/msSUJSAogQUJaAoAUUJKEpAUQKK
+        ElCUgKIEFCWgKAFFCShKQFECihJQlICiBBQloCgBRQkoSkBRAooSUJSAogQUJaAoAUUJKEpAUQKKElCU
+        gKIEFCWgKAFFCShKQNELC/jl+T3zdvmWWevOjB5JWXe+znAwO/NA6rrzdcq54eBq96b59nHdnBz8MKmy
+        s7nmAk5vuvN1/HfExkudjWfd+tZBJ7vmztfxAX8dHbhn0uXNUru+deX+9cvufJ1q8KQO+PPQPZMurxdv
+        Nx+wX+Sf7Ci/wudkUGQ37Kj/J3J6fOSeS4/tjdU6YDmfvXPnN0N/PntaD/9HutObo9/JZ92v8+n4Yynq
+        zgYAgDO0Wr8BYQoLDTy3xrIAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnPronun.HoverState.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
