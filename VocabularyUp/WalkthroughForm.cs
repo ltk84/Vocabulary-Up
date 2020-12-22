@@ -43,6 +43,7 @@ namespace VocabularyUp
             currentHealth = player.Health;
             isCorrect = -1;
             isFinalRound = false;
+            pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 150);
 
         }
 
