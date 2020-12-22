@@ -312,7 +312,8 @@ namespace VocabularyUp
                             {
                                 ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
                                 //currentQuiz++;
-                                pnlQuestion.Show();
+                                guna2Transition.ShowSync(pnlQuestion);
+                                //pnlQuestion.Show();
                             }
                         }
                     

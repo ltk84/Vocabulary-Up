@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MazeGameFrom));
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.pnlQuestion = new System.Windows.Forms.Panel();
             this.lbTimer = new System.Windows.Forms.Label();
@@ -66,6 +67,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.guna2Transition = new Guna.UI2.WinForms.Guna2Transition();
             this.pnlQuestion.SuspendLayout();
             this.pnlFlashCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
@@ -84,7 +86,7 @@
             // 
             // pnlQuestion
             // 
-            this.pnlQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.pnlQuestion.BackColor = System.Drawing.Color.Tan;
             this.pnlQuestion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlQuestion.BackgroundImage")));
             this.pnlQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlQuestion.Controls.Add(this.lbTimer);
@@ -94,6 +96,7 @@
             this.pnlQuestion.Controls.Add(this.btnD);
             this.pnlQuestion.Controls.Add(this.btnC);
             this.pnlQuestion.Controls.Add(this.pnlFlashCard);
+            this.guna2Transition.SetDecoration(this.pnlQuestion, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlQuestion.Location = new System.Drawing.Point(54, 156);
             this.pnlQuestion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlQuestion.Name = "pnlQuestion";
@@ -104,6 +107,7 @@
             // lbTimer
             // 
             this.lbTimer.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition.SetDecoration(this.lbTimer, Guna.UI2.AnimatorNS.DecorationType.None);
             this.lbTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbTimer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTimer.ForeColor = System.Drawing.Color.White;
@@ -123,6 +127,7 @@
             this.btnConfirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfirm.CheckedState.Parent = this.btnConfirm;
             this.btnConfirm.CustomImages.Parent = this.btnConfirm;
+            this.guna2Transition.SetDecoration(this.btnConfirm, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnConfirm.FillColor = System.Drawing.Color.Transparent;
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.Black;
@@ -146,6 +151,7 @@
             this.btnB.BorderColor = System.Drawing.Color.White;
             this.btnB.CheckedState.Parent = this.btnB;
             this.btnB.CustomImages.Parent = this.btnB;
+            this.guna2Transition.SetDecoration(this.btnB, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnB.FillColor = System.Drawing.Color.Transparent;
             this.btnB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnB.ForeColor = System.Drawing.Color.White;
@@ -167,6 +173,7 @@
             this.btnA.BorderColor = System.Drawing.Color.White;
             this.btnA.CheckedState.Parent = this.btnA;
             this.btnA.CustomImages.Parent = this.btnA;
+            this.guna2Transition.SetDecoration(this.btnA, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnA.FillColor = System.Drawing.Color.Transparent;
             this.btnA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnA.ForeColor = System.Drawing.Color.White;
@@ -188,6 +195,7 @@
             this.btnD.BorderColor = System.Drawing.Color.White;
             this.btnD.CheckedState.Parent = this.btnD;
             this.btnD.CustomImages.Parent = this.btnD;
+            this.guna2Transition.SetDecoration(this.btnD, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnD.FillColor = System.Drawing.Color.Transparent;
             this.btnD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnD.ForeColor = System.Drawing.Color.White;
@@ -209,6 +217,7 @@
             this.btnC.BorderColor = System.Drawing.Color.White;
             this.btnC.CheckedState.Parent = this.btnC;
             this.btnC.CustomImages.Parent = this.btnC;
+            this.guna2Transition.SetDecoration(this.btnC, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnC.FillColor = System.Drawing.Color.Transparent;
             this.btnC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnC.ForeColor = System.Drawing.Color.White;
@@ -229,6 +238,7 @@
             this.pnlFlashCard.Controls.Add(this.pnlDash);
             this.pnlFlashCard.Controls.Add(this.lbMain);
             this.pnlFlashCard.Controls.Add(this.pbMain);
+            this.guna2Transition.SetDecoration(this.pnlFlashCard, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlFlashCard.Location = new System.Drawing.Point(34, 31);
             this.pnlFlashCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlFlashCard.Name = "pnlFlashCard";
@@ -238,6 +248,7 @@
             // pnlDash
             // 
             this.pnlDash.BackColor = System.Drawing.Color.White;
+            this.guna2Transition.SetDecoration(this.pnlDash, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlDash.Location = new System.Drawing.Point(29, 263);
             this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDash.Name = "pnlDash";
@@ -247,6 +258,7 @@
             // lbMain
             // 
             this.lbMain.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition.SetDecoration(this.lbMain, Guna.UI2.AnimatorNS.DecorationType.None);
             this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.lbMain.ForeColor = System.Drawing.Color.White;
             this.lbMain.Location = new System.Drawing.Point(3, 279);
@@ -258,6 +270,7 @@
             // 
             // pbMain
             // 
+            this.guna2Transition.SetDecoration(this.pbMain, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
             this.pbMain.Location = new System.Drawing.Point(29, 23);
             this.pbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -273,6 +286,7 @@
             this.panel16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel16.BackgroundImage")));
             this.panel16.Controls.Add(this.btnReturn);
             this.panel16.Controls.Add(this.pnlInfo);
+            this.guna2Transition.SetDecoration(this.panel16, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel16.Location = new System.Drawing.Point(0, 0);
             this.panel16.Margin = new System.Windows.Forms.Padding(4);
             this.panel16.Name = "panel16";
@@ -282,6 +296,7 @@
             // btnReturn
             // 
             this.btnReturn.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition.SetDecoration(this.btnReturn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnReturn.FillColor = System.Drawing.Color.Transparent;
             this.btnReturn.Image = ((System.Drawing.Image)(resources.GetObject("btnReturn.Image")));
             this.btnReturn.Location = new System.Drawing.Point(940, 3);
@@ -302,6 +317,7 @@
             this.pnlInfo.Controls.Add(this.pbDiamond);
             this.pnlInfo.Controls.Add(this.pgbHealth);
             this.pnlInfo.Controls.Add(this.pbIconHealth);
+            this.guna2Transition.SetDecoration(this.pnlInfo, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlInfo.Location = new System.Drawing.Point(25, 12);
             this.pnlInfo.Name = "pnlInfo";
             this.pnlInfo.Size = new System.Drawing.Size(379, 60);
@@ -311,6 +327,7 @@
             // 
             this.lbDiamond.AutoSize = true;
             this.lbDiamond.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition.SetDecoration(this.lbDiamond, Guna.UI2.AnimatorNS.DecorationType.None);
             this.lbDiamond.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbDiamond.ForeColor = System.Drawing.Color.White;
             this.lbDiamond.Location = new System.Drawing.Point(318, 14);
@@ -322,6 +339,7 @@
             // pbDiamond
             // 
             this.pbDiamond.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition.SetDecoration(this.pbDiamond, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pbDiamond.Image = ((System.Drawing.Image)(resources.GetObject("pbDiamond.Image")));
             this.pbDiamond.Location = new System.Drawing.Point(282, 14);
             this.pbDiamond.Name = "pbDiamond";
@@ -333,6 +351,7 @@
             // pgbHealth
             // 
             this.pgbHealth.BackColor = System.Drawing.Color.White;
+            this.guna2Transition.SetDecoration(this.pgbHealth, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pgbHealth.Location = new System.Drawing.Point(48, 14);
             this.pgbHealth.Name = "pgbHealth";
             this.pgbHealth.Size = new System.Drawing.Size(199, 25);
@@ -341,6 +360,7 @@
             // pbIconHealth
             // 
             this.pbIconHealth.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition.SetDecoration(this.pbIconHealth, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pbIconHealth.Image = ((System.Drawing.Image)(resources.GetObject("pbIconHealth.Image")));
             this.pbIconHealth.Location = new System.Drawing.Point(12, 14);
             this.pbIconHealth.Name = "pbIconHealth";
@@ -353,6 +373,7 @@
             // 
             this.panel15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel15.BackgroundImage")));
             this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Transition.SetDecoration(this.panel15, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel15.Location = new System.Drawing.Point(307, 419);
             this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
@@ -362,6 +383,7 @@
             // panel13
             // 
             this.panel13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel13.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.panel13, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel13.Location = new System.Drawing.Point(612, 349);
             this.panel13.Margin = new System.Windows.Forms.Padding(4);
             this.panel13.Name = "panel13";
@@ -371,6 +393,7 @@
             // panel10
             // 
             this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.panel10, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel10.Location = new System.Drawing.Point(242, 461);
             this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
@@ -380,6 +403,7 @@
             // panel8
             // 
             this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.panel8, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel8.Location = new System.Drawing.Point(192, 235);
             this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
@@ -390,6 +414,7 @@
             // 
             this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Transition.SetDecoration(this.panel7, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel7.Location = new System.Drawing.Point(581, 624);
             this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
@@ -399,6 +424,7 @@
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.panel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel1.Location = new System.Drawing.Point(131, 575);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -408,6 +434,7 @@
             // panel14
             // 
             this.panel14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel14.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.panel14, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel14.Location = new System.Drawing.Point(908, 609);
             this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
@@ -417,6 +444,7 @@
             // panel12
             // 
             this.panel12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel12.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.panel12, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel12.Location = new System.Drawing.Point(751, 405);
             this.panel12.Margin = new System.Windows.Forms.Padding(4);
             this.panel12.Name = "panel12";
@@ -426,6 +454,7 @@
             // panel11
             // 
             this.panel11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel11.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.panel11, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel11.Location = new System.Drawing.Point(547, 514);
             this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
@@ -435,6 +464,7 @@
             // panel9
             // 
             this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.panel9, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel9.Location = new System.Drawing.Point(307, 294);
             this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
@@ -445,6 +475,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.panel6, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel6.Location = new System.Drawing.Point(192, 185);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
@@ -454,6 +485,7 @@
             // wall1
             // 
             this.wall1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("wall1.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.wall1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.wall1.Location = new System.Drawing.Point(81, 124);
             this.wall1.Margin = new System.Windows.Forms.Padding(4);
             this.wall1.Name = "wall1";
@@ -463,6 +495,7 @@
             // wall2
             // 
             this.wall2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("wall2.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.wall2, Guna.UI2.AnimatorNS.DecorationType.None);
             this.wall2.Location = new System.Drawing.Point(81, 427);
             this.wall2.Margin = new System.Windows.Forms.Padding(4);
             this.wall2.Name = "wall2";
@@ -473,6 +506,7 @@
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Control;
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.panel5, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel5.Location = new System.Drawing.Point(25, 675);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
@@ -483,6 +517,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.panel4, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel4.Location = new System.Drawing.Point(25, 100);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
@@ -492,6 +527,7 @@
             // panel3
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.panel3, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel3.Location = new System.Drawing.Point(975, 100);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
@@ -501,11 +537,33 @@
             // panel2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.guna2Transition.SetDecoration(this.panel2, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(25, 600);
             this.panel2.TabIndex = 18;
+            // 
+            // guna2Transition
+            // 
+            this.guna2Transition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Leaf;
+            this.guna2Transition.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 1F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.guna2Transition.DefaultAnimation = animation1;
             // 
             // MazeGameFrom
             // 
@@ -530,6 +588,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.guna2Transition.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MazeGameFrom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -585,5 +644,6 @@
         private System.Windows.Forms.Panel pnlDash;
         private System.Windows.Forms.Label lbMain;
         private System.Windows.Forms.PictureBox pbMain;
+        private Guna.UI2.WinForms.Guna2Transition guna2Transition;
     }
 }
