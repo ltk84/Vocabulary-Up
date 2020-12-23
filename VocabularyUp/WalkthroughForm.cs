@@ -16,6 +16,8 @@ namespace VocabularyUp
         private Collection choosedCol;
         private Player player;
         private List<Monster> monsters;
+        private Size size_Normal = new Size(80, 80);
+        private Size size_Boss = new Size(160, 160);
         private bool isGameOver;
         private Random rd = new Random();
         private bool isFinalRound;
@@ -27,7 +29,6 @@ namespace VocabularyUp
         private List<Quiz> questions = new List<Quiz>();
         private int currentQuiz = 0;
         private int isCorrect;
-
         public WalkthroughForm(int idCol, int idSkin)
         {
             InitializeComponent();
@@ -71,8 +72,7 @@ namespace VocabularyUp
                 
                 Image image = Image.FromFile("../../db/Monsters/" + (i+1).ToString() + ".png");
                 image.RotateFlip(RotateFlipType.RotateNoneFlipX);
-                Size size = new Size(80, 80);
-                int y = rd.Next(Screen.PrimaryScreen.Bounds.Height * 2 / 3, Screen.PrimaryScreen.Bounds.Height - size.Height);
+                int y = rd.Next(Screen.PrimaryScreen.Bounds.Height * 2 / 3, Screen.PrimaryScreen.Bounds.Height - size_Normal.Height);
                 Point location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 4), y);
 
 
@@ -84,19 +84,18 @@ namespace VocabularyUp
                 {
                      //location = new Point(((1) * Screen.PrimaryScreen.Bounds.Width / 4), y);
                     location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 4), Screen.PrimaryScreen.Bounds.Height * 2 / 3);
-                    size = new Size(160, 160);
-                    mon = new Monster(image, location, size, 0, null, true);
+                    mon = new Monster(image, location, size_Boss, 0, null, true);
                 }    
                 else
-                    mon = new Monster(image, location, size, v, null, false);
+                    mon = new Monster(image, location, size_Normal, v, null, false);
 
                 monsters.Add(mon);
             }
         }
         public void LoadBackGround()
         {
-            this.BackgroundImage = Image.FromFile("../../db/Backgrounds/maps/map_1.jpg");
-            
+            Random rd = new Random();
+            this.BackgroundImage = Image.FromFile("../../db/Backgrounds/maps/map_" + rd.Next(1,6).ToString() +".jpg");
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -118,7 +117,7 @@ namespace VocabularyUp
 
                 btnClose.Location = new Point(this.Width / 2 - (int)Size.Width / 2 - btnClose.Size.Width / 2, this.Height / 2 - (int)Size.Height / 2 + btnClose.Size.Height / 2 + 15);
                 btnDetails.Location = new Point(this.Width / 2 - (int)Size.Width / 2 + btnDetails.Size.Width / 2 + 40, this.Height / 2 - (int)Size.Height / 2 + btnDetails.Size.Height / 2 + 15);
-            }
+            }   
         }
 
         int a = 1;
@@ -156,6 +155,16 @@ namespace VocabularyUp
                             {
                                 if (isCorrect == 1)
                                 {
+                                    // Init dead.
+                                    PictureBox pb = new PictureBox();
+                                    pb.BackColor = Color.Transparent;
+                                    pb.Image = Image.FromFile("../../db/Monsters/dead.png");
+                                    pb.Location = monsters[i].Location;
+                                    pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                                    pb.Size = size_Normal;
+                                    pb.Show();
+                                    this.Controls.Add(pb);
+                                    //
                                     monsters[i].IsDeath = true;
                                     monsters.Remove(monsters[i]);
                                     ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
@@ -359,7 +368,6 @@ namespace VocabularyUp
 
             pnlQuestion.Show();
             pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 150);
-
             this.Invalidate();
         }
 

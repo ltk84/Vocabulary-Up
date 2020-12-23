@@ -766,7 +766,7 @@ namespace VocabularyUp
             this.Controls.Add(this.pgbMonsterHealth);
             this.DoubleBuffered = true;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WalkthroughForm";
             this.Text = "WalkthroughForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
