@@ -71,8 +71,7 @@ namespace VocabularyUp
             // splitContainer1
             // 
             this.splitContainer1.BackColor = System.Drawing.Color.Transparent;
-            this.splitContainer1.Location = new System.Drawing.Point(42, 25);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer1.Location = new System.Drawing.Point(32, 20);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -84,9 +83,8 @@ namespace VocabularyUp
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.Transparent;
             this.splitContainer1.Panel2.Controls.Add(this.pnlDetails);
-            this.splitContainer1.Size = new System.Drawing.Size(983, 505);
-            this.splitContainer1.SplitterDistance = 496;
-            this.splitContainer1.SplitterWidth = 5;
+            this.splitContainer1.Size = new System.Drawing.Size(737, 410);
+            this.splitContainer1.SplitterDistance = 371;
             this.splitContainer1.TabIndex = 1;
             // 
             // splitContainer2
@@ -94,7 +92,6 @@ namespace VocabularyUp
             this.splitContainer2.BackColor = System.Drawing.Color.Transparent;
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -107,9 +104,8 @@ namespace VocabularyUp
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.lvWrongWord);
-            this.splitContainer2.Size = new System.Drawing.Size(496, 505);
-            this.splitContainer2.SplitterDistance = 251;
-            this.splitContainer2.SplitterWidth = 5;
+            this.splitContainer2.Size = new System.Drawing.Size(371, 410);
+            this.splitContainer2.SplitterDistance = 203;
             this.splitContainer2.TabIndex = 0;
             // 
             // btnBack
@@ -125,11 +121,11 @@ namespace VocabularyUp
             this.btnBack.HoverState.Parent = this.btnBack;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnBack.Location = new System.Drawing.Point(3, 0);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBack.Location = new System.Drawing.Point(2, 0);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.ShadowDecoration.Parent = this.btnBack;
-            this.btnBack.Size = new System.Drawing.Size(43, 33);
+            this.btnBack.Size = new System.Drawing.Size(32, 27);
             this.btnBack.TabIndex = 15;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -144,10 +140,9 @@ namespace VocabularyUp
             this.lvCorrectWord.ForeColor = System.Drawing.Color.LimeGreen;
             this.lvCorrectWord.FullRowSelect = true;
             this.lvCorrectWord.HideSelection = false;
-            this.lvCorrectWord.Location = new System.Drawing.Point(53, 26);
-            this.lvCorrectWord.Margin = new System.Windows.Forms.Padding(4);
+            this.lvCorrectWord.Location = new System.Drawing.Point(40, 21);
             this.lvCorrectWord.Name = "lvCorrectWord";
-            this.lvCorrectWord.Size = new System.Drawing.Size(412, 200);
+            this.lvCorrectWord.Size = new System.Drawing.Size(309, 162);
             this.lvCorrectWord.TabIndex = 0;
             this.lvCorrectWord.UseCompatibleStateImageBehavior = false;
             this.lvCorrectWord.View = System.Windows.Forms.View.Details;
@@ -174,10 +169,9 @@ namespace VocabularyUp
             this.lvWrongWord.ForeColor = System.Drawing.Color.Tomato;
             this.lvWrongWord.FullRowSelect = true;
             this.lvWrongWord.HideSelection = false;
-            this.lvWrongWord.Location = new System.Drawing.Point(53, 26);
-            this.lvWrongWord.Margin = new System.Windows.Forms.Padding(4);
+            this.lvWrongWord.Location = new System.Drawing.Point(40, 21);
             this.lvWrongWord.Name = "lvWrongWord";
-            this.lvWrongWord.Size = new System.Drawing.Size(412, 200);
+            this.lvWrongWord.Size = new System.Drawing.Size(309, 162);
             this.lvWrongWord.TabIndex = 1;
             this.lvWrongWord.UseCompatibleStateImageBehavior = false;
             this.lvWrongWord.View = System.Windows.Forms.View.Details;
@@ -198,10 +192,10 @@ namespace VocabularyUp
             this.pnlDetails.BackColor = System.Drawing.Color.Transparent;
             this.pnlDetails.Controls.Add(this.panel1);
             this.pnlDetails.Controls.Add(this.pnlTab);
-            this.pnlDetails.Location = new System.Drawing.Point(31, 15);
-            this.pnlDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlDetails.Location = new System.Drawing.Point(23, 12);
+            this.pnlDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlDetails.Name = "pnlDetails";
-            this.pnlDetails.Size = new System.Drawing.Size(397, 470);
+            this.pnlDetails.Size = new System.Drawing.Size(298, 382);
             this.pnlDetails.TabIndex = 10;
             // 
             // panel1
@@ -209,9 +203,10 @@ namespace VocabularyUp
             this.panel1.Controls.Add(this.cbCollection);
             this.panel1.Controls.Add(this.btnToCollection);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 433);
+            this.panel1.Location = new System.Drawing.Point(0, 352);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(397, 37);
+            this.panel1.Size = new System.Drawing.Size(298, 30);
             this.panel1.TabIndex = 13;
             // 
             // cbCollection
@@ -229,10 +224,10 @@ namespace VocabularyUp
             this.cbCollection.ItemHeight = 30;
             this.cbCollection.ItemsAppearance.Parent = this.cbCollection;
             this.cbCollection.Location = new System.Drawing.Point(0, 0);
-            this.cbCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbCollection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbCollection.Name = "cbCollection";
             this.cbCollection.ShadowDecoration.Parent = this.cbCollection;
-            this.cbCollection.Size = new System.Drawing.Size(351, 36);
+            this.cbCollection.Size = new System.Drawing.Size(264, 36);
             this.cbCollection.TabIndex = 15;
             // 
             // btnToCollection
@@ -248,11 +243,11 @@ namespace VocabularyUp
             this.btnToCollection.ForeColor = System.Drawing.Color.Black;
             this.btnToCollection.HoverState.Parent = this.btnToCollection;
             this.btnToCollection.Image = ((System.Drawing.Image)(resources.GetObject("btnToCollection.Image")));
-            this.btnToCollection.Location = new System.Drawing.Point(357, 0);
-            this.btnToCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnToCollection.Location = new System.Drawing.Point(268, 0);
+            this.btnToCollection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnToCollection.Name = "btnToCollection";
             this.btnToCollection.ShadowDecoration.Parent = this.btnToCollection;
-            this.btnToCollection.Size = new System.Drawing.Size(40, 37);
+            this.btnToCollection.Size = new System.Drawing.Size(30, 30);
             this.btnToCollection.TabIndex = 14;
             this.btnToCollection.Click += new System.EventHandler(this.btnToCollection_Click);
             // 
@@ -266,8 +261,9 @@ namespace VocabularyUp
             this.pnlTab.Controls.Add(this.pnlDash);
             this.pnlTab.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTab.Location = new System.Drawing.Point(0, 0);
+            this.pnlTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTab.Name = "pnlTab";
-            this.pnlTab.Size = new System.Drawing.Size(397, 398);
+            this.pnlTab.Size = new System.Drawing.Size(298, 323);
             this.pnlTab.TabIndex = 12;
             this.pnlTab.Click += new System.EventHandler(this.pnlTab_Click);
             // 
@@ -281,11 +277,11 @@ namespace VocabularyUp
             this.btnPronun.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.Image")));
             this.btnPronun.ImageRotate = 0F;
             this.btnPronun.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnPronun.Location = new System.Drawing.Point(319, 335);
-            this.btnPronun.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPronun.Location = new System.Drawing.Point(239, 272);
+            this.btnPronun.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPronun.Name = "btnPronun";
             this.btnPronun.PressedState.Parent = this.btnPronun;
-            this.btnPronun.Size = new System.Drawing.Size(32, 38);
+            this.btnPronun.Size = new System.Drawing.Size(24, 31);
             this.btnPronun.TabIndex = 18;
             this.btnPronun.Click += new System.EventHandler(this.btnPronun_Click);
             // 
@@ -294,9 +290,10 @@ namespace VocabularyUp
             this.lbMain.BackColor = System.Drawing.Color.Transparent;
             this.lbMain.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
             this.lbMain.ForeColor = System.Drawing.Color.White;
-            this.lbMain.Location = new System.Drawing.Point(3, 301);
+            this.lbMain.Location = new System.Drawing.Point(2, 245);
+            this.lbMain.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMain.Name = "lbMain";
-            this.lbMain.Size = new System.Drawing.Size(391, 49);
+            this.lbMain.Size = new System.Drawing.Size(293, 40);
             this.lbMain.TabIndex = 15;
             this.lbMain.Text = "Welcome";
             this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -305,10 +302,10 @@ namespace VocabularyUp
             // pbMain
             // 
             this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
-            this.pbMain.Location = new System.Drawing.Point(34, 23);
-            this.pbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pbMain.Location = new System.Drawing.Point(26, 19);
+            this.pbMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbMain.Name = "pbMain";
-            this.pbMain.Size = new System.Drawing.Size(325, 228);
+            this.pbMain.Size = new System.Drawing.Size(244, 185);
             this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMain.TabIndex = 16;
             this.pbMain.TabStop = false;
@@ -317,24 +314,23 @@ namespace VocabularyUp
             // pnlDash
             // 
             this.pnlDash.BackColor = System.Drawing.Color.White;
-            this.pnlDash.Location = new System.Drawing.Point(34, 267);
-            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlDash.Location = new System.Drawing.Point(26, 217);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlDash.Name = "pnlDash";
-            this.pnlDash.Size = new System.Drawing.Size(325, 5);
+            this.pnlDash.Size = new System.Drawing.Size(244, 4);
             this.pnlDash.TabIndex = 17;
             // 
             // DetailsGameForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Turquoise;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DetailsGameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DetailsGameForm";

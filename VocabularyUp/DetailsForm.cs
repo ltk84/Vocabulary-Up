@@ -136,22 +136,31 @@ namespace VocabularyUp
 
         private void btnToCollection_Click(object sender, EventArgs e)
         {
-            if (!ManageUserAction.IsFlashCardExist(cbCollection.SelectedIndex + 1, curFlashCard.IdCard) && cbCollection.SelectedIndex >= 0)
-                AddFlashCard();
+            if (curFlashCard != null)
+            {
+                if (!ManageUserAction.IsFlashCardExist(cbCollection.SelectedIndex + 1, curFlashCard.IdCard) && cbCollection.SelectedIndex >= 0)
+                    AddFlashCard();
+            }
         }
         public void AddFlashCard()
         {
+            if (curFlashCard == null)
+                return;
+
             ManageUserAction.AddFlashCardToCollection(cbCollection.SelectedIndex + 1, curFlashCard);
             ManageUserAction.AddFlashCardToDatabase(cbCollection.SelectedIndex + 1, cbCollection.SelectedItem.ToString(), curFlashCard);
         }
         private void btnPronun_Click(object sender, EventArgs e)
         {
-            string pronun = " " + curFlashCard.Eng;
-            synthesizer.Rate = 1;
-            synthesizer.Volume = 100;
-            timerSpeaker.Start();
-            btnPronun.Enabled = false;
-            synthesizer.Speak(pronun);
+            if (curFlashCard != null)
+            {
+                string pronun = " " + curFlashCard.Eng;
+                synthesizer.Rate = 1;
+                synthesizer.Volume = 100;
+                timerSpeaker.Start();
+                btnPronun.Enabled = false;
+                synthesizer.Speak(pronun);
+            }
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
