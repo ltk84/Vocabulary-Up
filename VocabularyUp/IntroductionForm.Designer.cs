@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation5 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation3 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IntroductionForm));
             this.label15 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -65,6 +65,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.tbMembers.SuspendLayout();
@@ -143,22 +148,22 @@
             // guna2Transition1
             // 
             this.guna2Transition1.Cursor = null;
-            animation5.AnimateOnlyDifferences = true;
-            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
-            animation5.LeafCoeff = 0F;
-            animation5.MaxTime = 1F;
-            animation5.MinTime = 0F;
-            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
-            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
-            animation5.MosaicSize = 0;
-            animation5.Padding = new System.Windows.Forms.Padding(0);
-            animation5.RotateCoeff = 0F;
-            animation5.RotateLimit = 0F;
-            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
-            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
-            animation5.TimeCoeff = 0F;
-            animation5.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation5;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation3;
             // 
             // btnReturn
             // 
@@ -194,6 +199,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label23);
+            this.tabPage1.Controls.Add(this.label22);
+            this.tabPage1.Controls.Add(this.label21);
+            this.tabPage1.Controls.Add(this.label20);
+            this.tabPage1.Controls.Add(this.label19);
             this.tabPage1.Controls.Add(this.label18);
             this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.label14);
@@ -406,61 +416,59 @@
             // label10
             // 
             this.guna2Transition1.SetDecoration(this.label10, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label10.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(39, 142);
+            this.label10.Font = new System.Drawing.Font("Montserrat Alternates", 10.5F);
+            this.label10.Location = new System.Drawing.Point(58, 147);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(746, 29);
+            this.label10.Size = new System.Drawing.Size(727, 31);
             this.label10.TabIndex = 0;
-            this.label10.Text = "Library: Find all existed flashcards here.";
+            this.label10.Text = "Find all existed flashcards here.";
             // 
             // label11
             // 
             this.guna2Transition1.SetDecoration(this.label11, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label11.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(39, 180);
+            this.label11.Font = new System.Drawing.Font("Montserrat Alternates", 10.5F);
+            this.label11.Location = new System.Drawing.Point(58, 198);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(746, 62);
+            this.label11.Size = new System.Drawing.Size(727, 33);
             this.label11.TabIndex = 1;
-            this.label11.Text = "Collection: Group any flashcard that you want and add them to your own collection" +
-    ".";
+            this.label11.Text = "Group any flashcard that you want and add them to your own collection.";
             // 
             // label12
             // 
             this.guna2Transition1.SetDecoration(this.label12, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label12.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(39, 242);
+            this.label12.Font = new System.Drawing.Font("Montserrat Alternates", 10.5F);
+            this.label12.Location = new System.Drawing.Point(58, 248);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(746, 39);
+            this.label12.Size = new System.Drawing.Size(727, 25);
             this.label12.TabIndex = 2;
-            this.label12.Text = "Study: Learn new words here.";
+            this.label12.Text = "Learn new words here.";
             // 
             // label13
             // 
             this.guna2Transition1.SetDecoration(this.label13, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label13.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(39, 281);
+            this.label13.Font = new System.Drawing.Font("Montserrat Alternates", 10.5F);
+            this.label13.Location = new System.Drawing.Point(58, 302);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(746, 39);
+            this.label13.Size = new System.Drawing.Size(727, 30);
             this.label13.TabIndex = 3;
-            this.label13.Text = "Revision: Revise your knowledge here by playing games.";
+            this.label13.Text = "Revise your knowledge here by playing games.";
             // 
             // label14
             // 
             this.guna2Transition1.SetDecoration(this.label14, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label14.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(39, 320);
+            this.label14.Font = new System.Drawing.Font("Montserrat Alternates", 10.5F);
+            this.label14.Location = new System.Drawing.Point(54, 352);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(746, 60);
+            this.label14.Size = new System.Drawing.Size(731, 31);
             this.label14.TabIndex = 4;
-            this.label14.Text = "Statistics: See and edit your information here. You can also see statistics about" +
-    " your study too.";
+            this.label14.Text = "Edit your information here. You can also see statistics about your study too.";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.guna2Transition1.SetDecoration(this.label17, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label17.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(27, 90);
+            this.label17.Location = new System.Drawing.Point(18, 81);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(230, 37);
             this.label17.TabIndex = 5;
@@ -490,6 +498,56 @@
             this.guna2CustomGradientPanel2.ShadowDecoration.Parent = this.guna2CustomGradientPanel2;
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(801, 58);
             this.guna2CustomGradientPanel2.TabIndex = 34;
+            // 
+            // label19
+            // 
+            this.guna2Transition1.SetDecoration(this.label19, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label19.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(43, 118);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(169, 29);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Library: ";
+            // 
+            // label20
+            // 
+            this.guna2Transition1.SetDecoration(this.label20, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label20.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(43, 169);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(169, 29);
+            this.label20.TabIndex = 8;
+            this.label20.Text = "Collection: ";
+            // 
+            // label21
+            // 
+            this.guna2Transition1.SetDecoration(this.label21, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label21.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(43, 219);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(169, 29);
+            this.label21.TabIndex = 9;
+            this.label21.Text = "Study: ";
+            // 
+            // label22
+            // 
+            this.guna2Transition1.SetDecoration(this.label22, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label22.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(43, 273);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(169, 29);
+            this.label22.TabIndex = 10;
+            this.label22.Text = "Revision: ";
+            // 
+            // label23
+            // 
+            this.guna2Transition1.SetDecoration(this.label23, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label23.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(43, 323);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(169, 29);
+            this.label23.TabIndex = 11;
+            this.label23.Text = "Statistics: ";
             // 
             // IntroductionForm
             // 
@@ -561,5 +619,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
     }
 }

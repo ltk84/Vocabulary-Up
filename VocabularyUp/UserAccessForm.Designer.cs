@@ -131,11 +131,11 @@
             // 
             this.lbUserLogin.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbUserLogin, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbUserLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
+            this.lbUserLogin.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold);
             this.lbUserLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbUserLogin.Location = new System.Drawing.Point(140, 34);
             this.lbUserLogin.Name = "lbUserLogin";
-            this.lbUserLogin.Size = new System.Drawing.Size(91, 32);
+            this.lbUserLogin.Size = new System.Drawing.Size(97, 37);
             this.lbUserLogin.TabIndex = 32;
             this.lbUserLogin.Text = "Login";
             // 
@@ -307,11 +307,11 @@
             // 
             this.lbSignup.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbSignup, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
+            this.lbSignup.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold);
             this.lbSignup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbSignup.Location = new System.Drawing.Point(129, 33);
             this.lbSignup.Name = "lbSignup";
-            this.lbSignup.Size = new System.Drawing.Size(123, 32);
+            this.lbSignup.Size = new System.Drawing.Size(128, 37);
             this.lbSignup.TabIndex = 12;
             this.lbSignup.Text = "Sign Up";
             // 
@@ -636,11 +636,11 @@
             // 
             this.label1.AutoSize = true;
             this.transitionPanel.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.label1.Location = new System.Drawing.Point(68, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(243, 32);
+            this.label1.Size = new System.Drawing.Size(261, 37);
             this.label1.TabIndex = 12;
             this.label1.Text = "Forget Password";
             // 
@@ -797,11 +797,11 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.transitionPanel.SetDecoration(this.label3, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Montserrat Alternates", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.label3.Location = new System.Drawing.Point(45, 82);
+            this.label3.Location = new System.Drawing.Point(48, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(277, 42);
+            this.label3.Size = new System.Drawing.Size(374, 61);
             this.label3.TabIndex = 52;
             this.label3.Text = "Vocabulary Up";
             // 
