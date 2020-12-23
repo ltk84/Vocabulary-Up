@@ -369,7 +369,8 @@ namespace VocabularyUp
                                 
                                 isWin = true;
                                 this.AcceptButton = btnClose;
-                                btnClose.Show();                            
+                                btnClose.Show();
+                                 btnDetails.Show();
                                 timerUpdate.Stop();
                                this.Focus();
                             ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 10);
@@ -391,6 +392,7 @@ namespace VocabularyUp
             {
                 isGameOver = true;
                 btnClose.Show();
+                btnDetails.Show();
                 this.AcceptButton = btnClose;
                 timerUpdate.Stop();
                 this.Focus();
@@ -768,7 +770,39 @@ namespace VocabularyUp
             this.Close();
         }
 
-      
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            Form backgroundForm = new Form();
+            try
+            {
+                using (DetailsGameForm detailForm = new DetailsGameForm(userChoices))
+                {
+                    backgroundForm.StartPosition = FormStartPosition.Manual;
+                    backgroundForm.FormBorderStyle = FormBorderStyle.None;
+                    backgroundForm.Opacity = .70d;
+                    backgroundForm.BackColor = Color.Black;
+                    backgroundForm.Size = this.Size;
+                    backgroundForm.TopMost = true;
+                    backgroundForm.Location = this.Location;
+                    backgroundForm.ShowInTaskbar = false;
+                    backgroundForm.Show();
+
+                    detailForm.Owner = backgroundForm;
+                    detailForm.ShowDialog();
+
+                    backgroundForm.Dispose();
+                }
+                this.Focus();
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                backgroundForm.Dispose();
+            }
+        }
 
         public void InitPlayer(int idSkin)
         {
