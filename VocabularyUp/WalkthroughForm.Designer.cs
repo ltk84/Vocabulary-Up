@@ -30,7 +30,7 @@ namespace VocabularyUp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WalkthroughForm));
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.pbIconHealth = new System.Windows.Forms.PictureBox();
@@ -74,9 +74,10 @@ namespace VocabularyUp
             this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.timerBullet = new System.Windows.Forms.Timer(this.components);
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
+            this.timerQuestion = new System.Windows.Forms.Timer(this.components);
+            this.timerEffect = new System.Windows.Forms.Timer(this.components);
             this.pgbHealth = new VocabularyUp.SuperProgressBar();
             this.pgbMonsterHealth = new VocabularyUp.SuperProgressBar();
-            this.timerQuestion = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
@@ -788,22 +789,32 @@ namespace VocabularyUp
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Leaf;
             this.guna2Transition1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 1F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 1F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation1;
+            // 
+            // timerQuestion
+            // 
+            this.timerQuestion.Interval = 1000;
+            this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
+            // 
+            // timerEffect
+            // 
+            this.timerEffect.Interval = 50;
+            this.timerEffect.Tick += new System.EventHandler(this.timerEffect_Tick);
             // 
             // pgbHealth
             // 
@@ -824,11 +835,6 @@ namespace VocabularyUp
             this.pgbMonsterHealth.Size = new System.Drawing.Size(464, 24);
             this.pgbMonsterHealth.TabIndex = 4;
             this.pgbMonsterHealth.Visible = false;
-            // 
-            // timerQuestion
-            // 
-            this.timerQuestion.Interval = 1000;
-            this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
             // 
             // WalkthroughForm
             // 
@@ -912,5 +918,6 @@ namespace VocabularyUp
         private System.Windows.Forms.Timer timerBullet;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
         private System.Windows.Forms.Timer timerQuestion;
+        private System.Windows.Forms.Timer timerEffect;
     }
 }

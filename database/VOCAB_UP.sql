@@ -71,6 +71,9 @@ CREATE TABLE USER_CHARACTER
 select* from CHARACTER
 delete from user_character
 delete from character
+insert into USER_CHARACTER
+values
+	(1, 0)
 INSERT INTO CHARACTER
 VALUES 
 	(0, 'KNIGHT', 5, 100, 100),
@@ -955,4 +958,5 @@ values
 		(1, 3, N'vũ khí 1'),
 		(1, 3, N'vũ khí 2'),
 
-		select * from CHARACTER
+		delete from USER_CHARACTER
+		delete from CHARACTER

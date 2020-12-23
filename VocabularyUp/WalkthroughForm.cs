@@ -23,7 +23,7 @@ namespace VocabularyUp
         private bool isFinalRound;
         private int currentHealth = 0;
         private TrashTalkingForm trashTalkForm;
-
+        private int idSkin;
         private int isPress = 0;
         private List<UserChoice> userChoices = new List<UserChoice>();
         private List<Quiz> questions = new List<Quiz>();
@@ -31,6 +31,7 @@ namespace VocabularyUp
         private int isCorrect;
         private int turn;
         private int time = 0;
+        private int count = 0;
 
         public WalkthroughForm(int idCol, int idSkin)
         {
@@ -49,7 +50,7 @@ namespace VocabularyUp
             isFinalRound = false;
             turn = 0;
             pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 150);
-
+            this.idSkin = idSkin;
         }
 
         public void InitPlayer(int idSkin)
@@ -63,7 +64,7 @@ namespace VocabularyUp
             ManageUserAction.LoadPlayerStat(idSkin, player);
         }
 
-        public  void InitCollecion(int idCol)
+        public void InitCollecion(int idCol)
         {
             choseCol = ManageUserAction.GetItemOfAllCollection(idCol);
         }
@@ -73,8 +74,8 @@ namespace VocabularyUp
             monsters = new List<Monster>();
             for (int i = 0; i < 3; i++)
             {
-                
-                Image image = Image.FromFile("../../db/Monsters/" + (i+1).ToString() + ".png");
+
+                Image image = Image.FromFile("../../db/Monsters/" + (i + 1).ToString() + ".png");
                 image.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 Size size = new Size(80, 80);
                 int y = rd.Next(Screen.PrimaryScreen.Bounds.Height * 2 / 3, Screen.PrimaryScreen.Bounds.Height - size.Height);
@@ -83,15 +84,15 @@ namespace VocabularyUp
 
                 Monster mon;
                 int v = rd.Next(10, 20);
-                
+
 
                 if (i == 2)
                 {
-                     //location = new Point(((1) * Screen.PrimaryScreen.Bounds.Width / 4), y);
+                    //location = new Point(((1) * Screen.PrimaryScreen.Bounds.Width / 4), y);
                     location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 4), Screen.PrimaryScreen.Bounds.Height * 2 / 3);
                     size = new Size(160, 160);
                     mon = new Monster(image, location, size, 0, null, true);
-                }    
+                }
                 else
                     mon = new Monster(image, location, size, v, null, false);
 
@@ -101,7 +102,7 @@ namespace VocabularyUp
         public void LoadBackGround()
         {
             this.BackgroundImage = Image.FromFile("../../db/Backgrounds/maps/map_1.jpg");
-            
+
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -151,7 +152,7 @@ namespace VocabularyUp
                     if (player.isCollision(monsters[i]))
                     {
                         timerUpdate.Stop();
-                        
+
 
                         if (monsters[i].IsBoss == true)
                         {
@@ -173,7 +174,7 @@ namespace VocabularyUp
                                 else
                                 {
                                     player.Location = new Point(0, this.ClientSize.Height / 2);
-                                    currentHealth -= 10;
+                                    currentHealth -= 1;
                                 }
 
                                 isCorrect = -1;
@@ -186,7 +187,7 @@ namespace VocabularyUp
                                 //currentQuiz++;
                                 guna2Transition1.ShowSync(pnlQuestion);
                                 pnlQuestion.Show();
-                                
+
                             }
                         }
                     }
@@ -215,7 +216,7 @@ namespace VocabularyUp
                     {
                         if (isCorrect == 1)
                         {
-                            
+
                             ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
                             //this.Invalidate();
                             bullets.Clear();
@@ -234,7 +235,7 @@ namespace VocabularyUp
                             //player.Location = new Point(0, this.ClientSize.Height / 2);
                         }
 
-                        
+
 
                         //ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
                         //guna2Transition1.ShowSync(pnlQuestion);
@@ -268,7 +269,7 @@ namespace VocabularyUp
                         timerUpdate.Start();
                     }
 
-                    
+
                     //else
                     //{
                     //    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
@@ -296,8 +297,8 @@ namespace VocabularyUp
 
         }
 
-        
-       
+
+
         public void OpenTrashTalk(int idMonster, string charTrashTalk, string monTrashTalk)
         {
             Form backgroundForm = new Form();
@@ -442,7 +443,7 @@ namespace VocabularyUp
                 {
                     int index;
                     string vie = "a";
-                    
+
                     do
                     {
                         index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
@@ -451,7 +452,7 @@ namespace VocabularyUp
                             MessageBox.Show("a");
                     } while (ManageUserAction.GetMainFlashCards()[index].Eng == "Cover");
 
-                    
+
 
                     if (fakeAnswers.IndexOf(vie) < 0 && vie != ManageUserAction.GetMainFlashCards()[i].Viet)
                     {
@@ -567,7 +568,7 @@ namespace VocabularyUp
             btnD.BorderThickness = 0;
         }
 
-       
+
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
@@ -625,32 +626,34 @@ namespace VocabularyUp
             {
                 for (int i = bullets.Count - 1; i >= 0; i--)
                 {
-                    if (bullets[i].IsBoom)
-                    {
-                        monsters[0].Image = Image.FromFile("../../db/Monsters/3.png");
-                        bullets.RemoveAt(i);
-                        //this.Invalidate();
-                        break;
-                    }
+                    //if (bullets[i].IsBoom)
+                    //{
+                    //    monsters[0].Image = Image.FromFile("../../db/Monsters/3.png");
+                    //    bullets.RemoveAt(i);
+                    //    //this.Invalidate();
+                    //    break;
+                    //}
 
                     bool isCol = false;
                     if (bullets[i].isCollision(monsters[0]) == true)
                     {
                         isCol = true;
-                        
+
                         //MessageBox.Show("a");
                         //bullets[i].IsBoom = true;
-                        monsters[0].Image = Image.FromFile("../../db/Monsters/4.png");
+                        //monsters[0].Image = Image.FromFile("../../db/Monsters/4.png");
                         //this.Invalidate();
                         if (pgbMonsterHealth.Value - 20 > 0)
                             pgbMonsterHealth.Value -= 20;
                         else
                             pgbMonsterHealth.Value = 0;
 
-                        ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-                        //currentQuiz++;
+                        bullets.RemoveAt(i);
+                        timerEffect.Start();
+                        //ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                        ////currentQuiz++;
 
-                        guna2Transition1.ShowSync(pnlQuestion);
+                        //guna2Transition1.ShowSync(pnlQuestion);
                         //pnlQuestion.Show();
                         timerQuestion.Start();
                     }
@@ -665,14 +668,14 @@ namespace VocabularyUp
             {
                 for (int i = bullets.Count - 1; i >= 0; i--)
                 {
-                    if (bullets[i].IsBoom)
-                    {
-                        //monsters[0].Image = Image.FromFile("../../db/Monsters/3.png");
-                        player.Image = Image.FromFile("../../db/Characters/2.png");
-                        bullets.RemoveAt(i);
-                        //this.Invalidate();
-                        break;
-                    }
+                    //if (bullets[i].IsBoom)
+                    //{
+                    //    //monsters[0].Image = Image.FromFile("../../db/Monsters/3.png");
+                    //    player.Image = Image.FromFile("../../db/Characters/2.png");
+                    //    bullets.RemoveAt(i);
+                    //    //this.Invalidate();
+                    //    break;
+                    //}
 
                     bool isCol = false;
                     if (bullets[i].isCollision(player) == true)
@@ -680,17 +683,23 @@ namespace VocabularyUp
                         isCol = true;
                         //MessageBox.Show("a");
                         //bullets[i].IsBoom = true;
-                        player.Image = Image.FromFile("../../db/Monsters/4.png");
+                        //player.Image = Image.FromFile("../../db/Monsters/4.png");
                         //this.Invalidate();
-                        if (currentHealth - 10 > 0)
-                            currentHealth -= 10;
+                        //MessageBox.Show("Before: " + currentHealth.ToString());
+                        if (currentHealth - 1 > 0)
+                            currentHealth -= 1;
                         else
                             currentHealth = 0;
+                        //MessageBox.Show("After: " + currentHealth.ToString());
+                        bullets.RemoveAt(i);
+                        timerEffect.Start();
 
-                        ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-                        guna2Transition1.ShowSync(pnlQuestion);
+                        //ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                        //guna2Transition1.ShowSync(pnlQuestion);
                         //pnlQuestion.Show();
                         timerQuestion.Start();
+
+                        //player.Image = Image.FromFile("../../db/Characters/" + idSkin.ToString() + ".png");
                     }
 
                     if (isCol == false)
@@ -738,6 +747,34 @@ namespace VocabularyUp
                     currentQuiz++;
                 }
                 time = 0;
+            }
+        }
+
+        private void timerEffect_Tick(object sender, EventArgs e)
+        {
+            count++;
+            if (turn == 1)
+            {
+                monsters[0].Image = Image.FromFile("../../db/Monsters/5.png");
+            }
+            else if (turn == 2)
+            {
+                player.Image = Image.FromFile("../../db/Characters/Hit/" + idSkin.ToString() +".png");
+            }
+
+            if (count == 2)
+            {
+                if (turn == 2)
+                    player.Image = Image.FromFile("../../db/Characters/" + idSkin.ToString() + ".png");
+                else
+                    monsters[0].Image = Image.FromFile("../../db/Monsters/3.png");
+
+                timerEffect.Stop();
+
+                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                guna2Transition1.ShowSync(pnlQuestion);
+
+                count = 0;
             }
         }
     }
