@@ -19,10 +19,8 @@ namespace VocabularyUp
         private List<Treasure> treasures;
         private List<MonsterMaze> monsters;
         private int currentHealth = 0;
-        private GameMCForm gameForm;
         private List<Quiz> questions = new List<Quiz>();
         private int isCorrect;
-        private bool isFinalRound;
         private Collection choosedCol;
         private List<UserChoice> userChoices = new List<UserChoice>();
         private int currentQuiz = 0;
@@ -47,7 +45,6 @@ namespace VocabularyUp
             currentHealth = player.Health;
             isCorrect = -1;
             isBossCorrect = -1;
-            isFinalRound = false;
             isWin = false;
             this.DoubleBuffered = true;
         }
