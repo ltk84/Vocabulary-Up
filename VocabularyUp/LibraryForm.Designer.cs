@@ -36,10 +36,10 @@
             this.cbCollection = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnToCollection = new Guna.UI2.WinForms.Guna2Button();
             this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pnlDash = new System.Windows.Forms.Panel();
             this.btnPronun = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lbMain = new System.Windows.Forms.Label();
             this.pbMain = new System.Windows.Forms.PictureBox();
-            this.pnlDash = new System.Windows.Forms.Panel();
             this.pnlSearching = new System.Windows.Forms.Panel();
             this.btnSearch = new Guna.UI2.WinForms.Guna2ImageButton();
             this.txtSearching = new Guna.UI2.WinForms.Guna2TextBox();
@@ -137,10 +137,10 @@
             // pnlTab
             // 
             this.pnlTab.BorderRadius = 20;
+            this.pnlTab.Controls.Add(this.pnlDash);
             this.pnlTab.Controls.Add(this.btnPronun);
             this.pnlTab.Controls.Add(this.lbMain);
             this.pnlTab.Controls.Add(this.pbMain);
-            this.pnlTab.Controls.Add(this.pnlDash);
             this.pnlTab.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
@@ -153,6 +153,15 @@
             this.pnlTab.Size = new System.Drawing.Size(394, 420);
             this.pnlTab.TabIndex = 0;
             this.pnlTab.Click += new System.EventHandler(this.pnlTab_Click);
+            // 
+            // pnlDash
+            // 
+            this.pnlDash.BackColor = System.Drawing.Color.White;
+            this.pnlDash.Location = new System.Drawing.Point(19, 345);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlDash.Name = "pnlDash";
+            this.pnlDash.Size = new System.Drawing.Size(355, 5);
+            this.pnlDash.TabIndex = 11;
             // 
             // btnPronun
             // 
@@ -179,7 +188,7 @@
             this.lbMain.ForeColor = System.Drawing.Color.White;
             this.lbMain.Location = new System.Drawing.Point(0, 343);
             this.lbMain.Name = "lbMain";
-            this.lbMain.Size = new System.Drawing.Size(394, 72);
+            this.lbMain.Size = new System.Drawing.Size(395, 71);
             this.lbMain.TabIndex = 7;
             this.lbMain.Text = "Welcome";
             this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -196,15 +205,6 @@
             this.pbMain.TabIndex = 8;
             this.pbMain.TabStop = false;
             this.pbMain.Click += new System.EventHandler(this.pbMain_Click);
-            // 
-            // pnlDash
-            // 
-            this.pnlDash.BackColor = System.Drawing.Color.White;
-            this.pnlDash.Location = new System.Drawing.Point(19, 345);
-            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnlDash.Name = "pnlDash";
-            this.pnlDash.Size = new System.Drawing.Size(355, 5);
-            this.pnlDash.TabIndex = 11;
             // 
             // pnlSearching
             // 

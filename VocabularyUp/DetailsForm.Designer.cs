@@ -82,7 +82,7 @@
             // 
             this.splitContainer1.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Location = new System.Drawing.Point(4, 12);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -95,7 +95,7 @@
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.pnlDetails);
             this.splitContainer1.Size = new System.Drawing.Size(983, 505);
-            this.splitContainer1.SplitterDistance = 497;
+            this.splitContainer1.SplitterDistance = 496;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -103,7 +103,7 @@
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -116,8 +116,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.lvWrongWord);
-            this.splitContainer2.Size = new System.Drawing.Size(497, 505);
-            this.splitContainer2.SplitterDistance = 252;
+            this.splitContainer2.Size = new System.Drawing.Size(496, 505);
+            this.splitContainer2.SplitterDistance = 251;
             this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -151,7 +151,7 @@
             this.lvCorrectWord.FullRowSelect = true;
             this.lvCorrectWord.HideSelection = false;
             this.lvCorrectWord.Location = new System.Drawing.Point(53, 26);
-            this.lvCorrectWord.Margin = new System.Windows.Forms.Padding(4);
+            this.lvCorrectWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvCorrectWord.Name = "lvCorrectWord";
             this.lvCorrectWord.Size = new System.Drawing.Size(412, 200);
             this.lvCorrectWord.TabIndex = 0;
@@ -179,7 +179,7 @@
             this.lvWrongWord.FullRowSelect = true;
             this.lvWrongWord.HideSelection = false;
             this.lvWrongWord.Location = new System.Drawing.Point(53, 26);
-            this.lvWrongWord.Margin = new System.Windows.Forms.Padding(4);
+            this.lvWrongWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvWrongWord.Name = "lvWrongWord";
             this.lvWrongWord.Size = new System.Drawing.Size(412, 200);
             this.lvWrongWord.TabIndex = 1;
@@ -344,7 +344,7 @@
             this.ClientSize = new System.Drawing.Size(1000, 519);
             this.Controls.Add(this.pnlTopicSelection);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DetailsForm";
             this.Text = "DetailsForm";
             this.pnlTopicSelection.ResumeLayout(false);

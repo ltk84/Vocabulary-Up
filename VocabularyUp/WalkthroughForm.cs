@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -15,12 +16,19 @@ namespace VocabularyUp
         private Collection choosedCol;
         private Player player;
         private List<Monster> monsters;
+        private Size size_Normal = new Size(80, 80);
+        private Size size_Boss = new Size(160, 160);
         private bool isGameOver;
         private Random rd = new Random();
+        private bool isFinalRound;
         private int currentHealth = 0;
-
-        private GameMCForm gameForm;
         private TrashTalkingForm trashTalkForm;
+
+        private int isPress = 0;
+        private List<UserChoice> userChoices = new List<UserChoice>();
+        private List<Quiz> questions = new List<Quiz>();
+        private int currentQuiz = 0;
+        private int isCorrect;
         public WalkthroughForm(int idCol, int idSkin)
         {
             InitializeComponent();
@@ -28,9 +36,16 @@ namespace VocabularyUp
             InitCollecion(idCol);
             InitPlayer(idSkin);
             InitMonster();
+            ManageUserAction.UpdateGameMainFlashCards();
+            InitQuiz();
+            //ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
             timerUpdate.Start();
             isGameOver = false;
             currentHealth = player.Health;
+            isCorrect = -1;
+            isFinalRound = false;
+            pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 150);
+
         }
 
         public void InitPlayer(int idSkin)
@@ -51,21 +66,13 @@ namespace VocabularyUp
 
         public void InitMonster()
         {
-            //Image image = Image.FromFile("../../db/Monsters/3.png");
-            //image.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            //Point location = new Point(this.ClientSize.Width/ 2 , this.ClientSize.Height / 2);
-            //Size size = new Size(150, 150);
-
-            //monster = new Monster(image, location, size, null);
-
             monsters = new List<Monster>();
             for (int i = 0; i < 3; i++)
             {
                 
                 Image image = Image.FromFile("../../db/Monsters/" + (i+1).ToString() + ".png");
                 image.RotateFlip(RotateFlipType.RotateNoneFlipX);
-                Size size = new Size(80, 80);
-                int y = rd.Next(Screen.PrimaryScreen.Bounds.Height * 2 / 3, Screen.PrimaryScreen.Bounds.Height - size.Height);
+                int y = rd.Next(Screen.PrimaryScreen.Bounds.Height * 2 / 3, Screen.PrimaryScreen.Bounds.Height - size_Normal.Height);
                 Point location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 4), y);
 
 
@@ -77,19 +84,18 @@ namespace VocabularyUp
                 {
                      //location = new Point(((1) * Screen.PrimaryScreen.Bounds.Width / 4), y);
                     location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 4), Screen.PrimaryScreen.Bounds.Height * 2 / 3);
-                    size = new Size(160, 160);
-                    mon = new Monster(image, location, size, 0, null, true);
+                    mon = new Monster(image, location, size_Boss, 0, null, true);
                 }    
                 else
-                    mon = new Monster(image, location, size, v, null, false);
+                    mon = new Monster(image, location, size_Normal, v, null, false);
 
                 monsters.Add(mon);
             }
         }
         public void LoadBackGround()
         {
-            this.BackgroundImage = Image.FromFile("../../db/Backgrounds/maps/map_1.jpg");
-            
+            Random rd = new Random();
+            this.BackgroundImage = Image.FromFile("../../db/Backgrounds/maps/map_" + rd.Next(1,6).ToString() +".jpg");
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -107,7 +113,11 @@ namespace VocabularyUp
             {
                 SizeF Size = e.Graphics.MeasureString("Game Over", new Font("Arial", 20));
                 e.Graphics.DrawString("Game Over", new Font("Arial", 20), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, this.Height / 2 - Size.Height / 2));
-            }
+
+
+                btnClose.Location = new Point(this.Width / 2 - (int)Size.Width / 2 - btnClose.Size.Width / 2, this.Height / 2 - (int)Size.Height / 2 + btnClose.Size.Height / 2 + 15);
+                btnDetails.Location = new Point(this.Width / 2 - (int)Size.Width / 2 + btnDetails.Size.Width / 2 + 40, this.Height / 2 - (int)Size.Height / 2 + btnDetails.Size.Height / 2 + 15);
+            }   
         }
 
         int a = 1;
@@ -125,6 +135,8 @@ namespace VocabularyUp
                     if (player.isCollision(monsters[i]))
                     {
                         timerUpdate.Stop();
+                        
+
                         if (monsters[i].IsBoss == true)
                         {
                             //timerUpdate.Stop();
@@ -134,28 +146,47 @@ namespace VocabularyUp
                         }
                         else
                         {
-                            OpenGameForm();
+                            //OpenGameForm();
+                            //ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                            //currentQuiz++;
+                            //pnlQuestion.Show();
 
-                            if (gameForm.IsCorrect == true)
+                            if (isCorrect >= 0)
                             {
-                                //if (monsters[i].IsBoss)
-                                //    isGameOver = true;
-                                monsters[i].IsDeath = true;
-                                monsters.Remove(monsters[i]);
-                                ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
+                                if (isCorrect == 1)
+                                {
+                                    // Init dead.
+                                    PictureBox pb = new PictureBox();
+                                    pb.BackColor = Color.Transparent;
+                                    pb.Image = Image.FromFile("../../db/Monsters/dead.png");
+                                    pb.Location = monsters[i].Location;
+                                    pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                                    pb.Size = size_Normal;
+                                    pb.Show();
+                                    this.Controls.Add(pb);
+                                    //
+                                    monsters[i].IsDeath = true;
+                                    monsters.Remove(monsters[i]);
+                                    ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
+                                }
+                                else
+                                {
+                                    currentHealth -= 1;
+                                    player.Location = new Point(0, this.ClientSize.Height / 2);
+                                }
+
+                                isCorrect = -1;
+                                timerUpdate.Start();
                             }
                             else
                             {
-                                currentHealth -= 1;
-                                player.Location = new Point(0, this.ClientSize.Height / 2);
+                                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                                //currentQuiz++;
+                                pnlQuestion.Show();
                             }
 
-                            if (player.Health == 0)
-                            {
-                                isGameOver = true;
-                            }
+                            
 
-                            timerUpdate.Start();
                         }
                     }
 
@@ -174,50 +205,108 @@ namespace VocabularyUp
                 if (j >= 0 && monsters[j].IsBoss == true)
                 {
                     InitFinalRound();
+                    isFinalRound = true;
                 }
+
+                if (isFinalRound == true)
+                {
+
+                    
+
+                    if (isCorrect >= 0)
+                    {
+                        if (isCorrect == 1)
+                        {
+                            pgbMonsterHealth.Value -= 50;
+                            ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
+                        }
+                        else
+                        {
+                            currentHealth -= 1;
+                            //player.Location = new Point(0, this.ClientSize.Height / 2);
+                        }
+
+                        
+
+                        ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                        pnlQuestion.Show();
+
+                        if (currentHealth == 0 || pgbMonsterHealth.Value == 0)
+                        {
+                            isGameOver = true;
+                            pnlQuestion.Hide();
+                        }
+
+
+                        isCorrect = -1;
+                        timerUpdate.Start();
+                    }
+
+                    
+                    //else
+                    //{
+                    //    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                    //    //currentQuiz++;
+                    //    pnlQuestion.Show();
+                    //}
+                }
+                
+
+               
+
                 double percent = (((double) currentHealth) / player.Health) * 100;
                 pgbHealth.Value =   (int) percent;
                 lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
                 this.Invalidate();
+                this.Focus();
+
+
+            }
+            else
+            {
+                btnDetails.Visible = true;
+                btnClose.Visible = true;
             }
 
         }
 
-        private void OpenGameForm()
-        {
-            Form backgroundForm = new Form();
-            try
-            {
-                using (gameForm = new GameMCForm())
-                {
-                    backgroundForm.StartPosition = FormStartPosition.Manual;
-                    backgroundForm.FormBorderStyle = FormBorderStyle.None;
-                    backgroundForm.Opacity = .70d;
-                    backgroundForm.BackColor = Color.Black;
-                    backgroundForm.Size = this.Size;
-                    backgroundForm.TopMost = true;
-                    backgroundForm.Location = this.Location;
-                    backgroundForm.ShowInTaskbar = false;
-                    backgroundForm.Show();
+        //private void OpenGameForm()
+        //{
+        //    Form backgroundForm = new Form();
+        //    try
+        //    {
+        //        using (gameForm = new GameMCForm())
+        //        {
+        //            backgroundForm.StartPosition = FormStartPosition.Manual;
+        //            backgroundForm.FormBorderStyle = FormBorderStyle.None;
+        //            backgroundForm.Opacity = .70d;
+        //            backgroundForm.BackColor = Color.Black;
+        //            backgroundForm.Size = this.Size;
+        //            backgroundForm.TopMost = true;
+        //            backgroundForm.Location = this.Location;
+        //            backgroundForm.ShowInTaskbar = false;
+        //            backgroundForm.Show();
 
-                    gameForm.Owner = backgroundForm;
-                    gameForm.ShowDialog();
+        //            gameForm.Owner = backgroundForm;
+        //            gameForm.ShowDialog();
 
-                    backgroundForm.Dispose();
-                }
-                this.Focus();
-            }
-            catch (Exception)
-            {
+        //            backgroundForm.Dispose();
+        //        }
+        //        this.Focus();
+        //    }
+        //    catch (Exception)
+        //    {
 
-            }
-            finally
-            {
-                backgroundForm.Dispose();
-            }
+        //    }
+        //    finally
+        //    {
+        //        backgroundForm.Dispose();
+        //    }
             
                
-        }
+        //}
+
+       
         public void OpenTrashTalk(int idMonster, string charTrashTalk, string monTrashTalk)
         {
             Form backgroundForm = new Form();
@@ -262,40 +351,23 @@ namespace VocabularyUp
             }
 
             // Relocate, resize.
-            player.X = Screen.PrimaryScreen.Bounds.Width / 4 - player.Size.Width;
-            player.Y = Screen.PrimaryScreen.Bounds.Height * 2 / 3;
-            player.Size = new Size(150, 150);
+            player.X = Screen.PrimaryScreen.Bounds.Width / 4 - player.Size.Width - 50;
+            player.Y = Screen.PrimaryScreen.Bounds.Height * 2 / 3 + 50;
+            player.Size = new Size(100, 100);
             monsters[0].X = Screen.PrimaryScreen.Bounds.Width * 3 / 4;
-            monsters[0].Y = player.Y + player.Size.Height - monsters[0].Size.Height;
-            monsters[0].Size = new Size(200, 200);
+            monsters[0].Y = player.Y + player.Size.Height - monsters[0].Size.Height - 50;
+            monsters[0].Size = new Size(250, 250);
 
             // Init boss's health.
             pgbMonsterHealth.Show();
-            pgbMonsterHealth.Location = new Point(Screen.PrimaryScreen.Bounds.Width - pgbMonsterHealth.Size.Width - 50, pnlInfo.Location.X + pgbHealth.Location.X);
+            pgbMonsterHealth.Location = new Point(Screen.PrimaryScreen.Bounds.Width - pgbMonsterHealth.Size.Width - 50, pnlInfo.Location.Y + pgbHealth.Location.Y);
             pgbMonsterHealth.Value = 100;
-            //pnlMonsterHealth.Show();
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    PictureBox pbHealth = new PictureBox();
-            //    pbHealth.Image = Image.FromFile("../../icons/health.png");
-            //    pbHealth.SizeMode = PictureBoxSizeMode.StretchImage;
-            //    pbHealth.Dock = DockStyle.Right;
-            //    pbHealth.Width -= 20;
-            //    pnlMonsterHealth.Controls.Add(pbHealth);
-            //}
-            //// Init player's health
-            //pnlPlayerHealth.Show();
-            //for (int i = 0; i < player.Health / 10; i++)
-            //{
-            //    PictureBox pbHealth = new PictureBox();
-            //    pbHealth.Image = Image.FromFile("../../icons/health.png");
-            //    pbHealth.SizeMode = PictureBoxSizeMode.StretchImage;
-            //    pbHealth.Dock = DockStyle.Left;
-            //    pbHealth.Width -= 20;
-            //    pnlPlayerHealth.Controls.Add(pbHealth);
-            //}
 
+            // Init questions.
+            ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
 
+            pnlQuestion.Show();
+            pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 150);
             this.Invalidate();
         }
 
@@ -318,6 +390,221 @@ namespace VocabularyUp
                 case Keys.Space:
                     break;
             }
+        }
+        public void ChangeFlashCard(string content, int id)
+        {
+            lbMain.Text = content;
+            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
+            InitAnswer();
+
+            isPress = 0;
+        }
+        private void InitAnswer()
+        {
+            Random rd = new Random();
+            UserChoice u = new UserChoice(-1, rd.Next(1, 5));
+            userChoices.Add(u);
+            switch (userChoices[currentQuiz].Correct)
+            {
+                case 1:
+                    btnA.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnB.Text = questions[currentQuiz].FakeAnswers[0];
+                    btnC.Text = questions[currentQuiz].FakeAnswers[1];
+                    btnD.Text = questions[currentQuiz].FakeAnswers[2];
+                    break;
+                case 2:
+                    btnB.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnA.Text = questions[currentQuiz].FakeAnswers[0];
+                    btnC.Text = questions[currentQuiz].FakeAnswers[1];
+                    btnD.Text = questions[currentQuiz].FakeAnswers[2];
+                    break;
+                case 3:
+                    btnC.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnB.Text = questions[currentQuiz].FakeAnswers[0];
+                    btnA.Text = questions[currentQuiz].FakeAnswers[1];
+                    btnD.Text = questions[currentQuiz].FakeAnswers[2];
+                    break;
+                case 4:
+                    btnD.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnB.Text = questions[currentQuiz].FakeAnswers[0];
+                    btnC.Text = questions[currentQuiz].FakeAnswers[1];
+                    btnA.Text = questions[currentQuiz].FakeAnswers[2];
+                    break;
+            }
+        }
+
+        private void InitQuiz()
+        {
+            for (int i = 0; i < ManageUserAction.GetMainFlashCards().Count; i++)
+            {
+                List<string> fakeAnswers = new List<string>();
+                List<string> backupAnswers = new List<string>() { "Trúcc Trúc", "Cẩm Nhi", "Ngọc Hà", "Minh Trâm", "Thái Mỹ", "Thanh Thúy", "Trúc Mai", "Thanh Trúc", "Khánh An", "Kim Nga", "Anh Thư" };
+                Random rd = new Random();
+                while (fakeAnswers.Count != 3)
+                {
+                    int index;
+                    string vie = "a";
+                    
+                    do
+                    {
+                        index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
+                        vie = ManageUserAction.GetMainFlashCards()[index].Viet;
+                        if (ManageUserAction.GetMainFlashCards()[index].Eng == "Cover")
+                            MessageBox.Show("a");
+                    } while (ManageUserAction.GetMainFlashCards()[index].Eng == "Cover");
+
+                    
+
+                    if (fakeAnswers.IndexOf(vie) < 0 && vie != ManageUserAction.GetMainFlashCards()[i].Viet)
+                    {
+                        fakeAnswers.Add(vie);
+                    }
+                }
+                Quiz q = new Quiz(ManageUserAction.GetMainFlashCards()[i]);
+                q.SetFakeAnswers(fakeAnswers[0], fakeAnswers[1], fakeAnswers[2]);
+                questions.Add(q);
+            }
+        }
+
+        private void btnA_Click(object sender, EventArgs e)
+        {
+            if (userChoices[currentQuiz].IsDone == false)
+            {
+                userChoices[currentQuiz].Selected = 1;
+                //btnA.FillColor = Color.FromArgb(107, 216, 255);
+                //btnB.FillColor = Color.FromArgb(17, 223, 158);
+                //btnC.FillColor = Color.FromArgb(17, 223, 158);
+                //btnD.FillColor = Color.FromArgb(17, 223, 158);
+                btnA.BorderThickness = 5;
+                btnB.BorderThickness = 0;
+                btnC.BorderThickness = 0;
+                btnD.BorderThickness = 0;
+                isPress = 1;
+            }
+        }
+
+        private void btnB_Click(object sender, EventArgs e)
+        {
+            if (userChoices[currentQuiz].IsDone == false)
+            {
+                userChoices[currentQuiz].Selected = 2;
+                //btnB.FillColor = Color.FromArgb(107, 216, 255);
+                //btnA.FillColor = Color.FromArgb(17, 223, 158);
+                //btnC.FillColor = Color.FromArgb(17, 223, 158);
+                //btnD.FillColor = Color.FromArgb(17, 223, 158);
+                btnA.BorderThickness = 0;
+                btnB.BorderThickness = 5;
+                btnC.BorderThickness = 0;
+                btnD.BorderThickness = 0;
+                isPress = 1;
+            }
+        }
+
+        private void btnC_Click(object sender, EventArgs e)
+        {
+            if (userChoices[currentQuiz].IsDone == false)
+            {
+                userChoices[currentQuiz].Selected = 3;
+                //btnC.FillColor = Color.FromArgb(107, 216, 255);
+                //btnA.FillColor = Color.FromArgb(17, 223, 158);
+                //btnB.FillColor = Color.FromArgb(17, 223, 158);
+                //btnD.FillColor = Color.FromArgb(17, 223, 158);
+                btnA.BorderThickness = 0;
+                btnB.BorderThickness = 0;
+                btnC.BorderThickness = 5;
+                btnD.BorderThickness = 0;
+                isPress = 1;
+            }
+        }
+
+        private void btnD_Click(object sender, EventArgs e)
+        {
+            if (userChoices[currentQuiz].IsDone == false)
+            {
+                userChoices[currentQuiz].Selected = 4;
+                //btnD.FillColor = Color.FromArgb(107, 216, 255);
+                //btnA.FillColor = Color.FromArgb(17, 223, 158);
+                //btnB.FillColor = Color.FromArgb(17, 223, 158);
+                //btnC.FillColor = Color.FromArgb(17, 223, 158);
+                btnA.BorderThickness = 0;
+                btnB.BorderThickness = 0;
+                btnC.BorderThickness = 0;
+                btnD.BorderThickness = 5;
+                isPress = 1;
+            }
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            userChoices[currentQuiz].CorrectAns = questions[currentQuiz].GetFlashCard().Eng;
+            if (userChoices[currentQuiz].IsDone == false && isPress == 1)
+            {
+                //ReloadButton();
+                userChoices[currentQuiz].IsDone = true;
+                if (userChoices[currentQuiz].Selected == userChoices[currentQuiz].Correct)
+                {
+                    isCorrect = 1;
+                }
+                else
+                    isCorrect = 0;
+            }
+
+            if (userChoices[currentQuiz].Selected != -1)
+            {
+                pnlQuestion.Hide();
+                timerUpdate.Start();
+                currentQuiz++;
+            }
+
+        }
+
+        private void pnlQuestion_VisibleChanged(object sender, EventArgs e)
+        {
+            btnA.BorderThickness = 0;
+            btnB.BorderThickness = 0;
+            btnC.BorderThickness = 0;
+            btnD.BorderThickness = 0;
+        }
+
+       
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            Form backgroundForm = new Form();
+            try
+            {
+                using (DetailsGameForm detailForm = new DetailsGameForm(userChoices))
+                {
+                    backgroundForm.StartPosition = FormStartPosition.Manual;
+                    backgroundForm.FormBorderStyle = FormBorderStyle.None;
+                    backgroundForm.Opacity = .70d;
+                    backgroundForm.BackColor = Color.Black;
+                    backgroundForm.Size = this.Size;
+                    backgroundForm.TopMost = true;
+                    backgroundForm.Location = this.Location;
+                    backgroundForm.ShowInTaskbar = false;
+                    backgroundForm.Show();
+
+                    detailForm.Owner = backgroundForm;
+                    detailForm.ShowDialog();
+
+                    backgroundForm.Dispose();
+                }
+                this.Focus();
+            }
+            catch (Exception)
+            {
+
+            }
+            finally
+            {
+                backgroundForm.Dispose();
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

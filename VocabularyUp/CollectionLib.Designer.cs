@@ -129,10 +129,10 @@
             // pnlTab
             // 
             this.pnlTab.BorderRadius = 20;
+            this.pnlTab.Controls.Add(this.pnlDash);
             this.pnlTab.Controls.Add(this.btnPronun);
             this.pnlTab.Controls.Add(this.lbMain);
             this.pnlTab.Controls.Add(this.pbMain);
-            this.pnlTab.Controls.Add(this.pnlDash);
             this.pnlTab.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));

@@ -300,5 +300,29 @@ namespace VocabularyUp
                     break;
             }
         }
+
+        private void btnTutorial_MouseHover(object sender, EventArgs e)
+        {
+            string tutorial = "";
+            switch (currentTab)
+            {
+                case 1:
+                    tutorial = "Library: \n- Nhấn vào flashcard để chuyển sang tiếng Việt/tiếng Anh.\n- Ấn bên trái/phải flashcard để chuyển flashcard.\n- Có thể thêm flashcard đang hiện vào bộ sưu tập bằng nút có hình dấu cộng bên dưới.";
+                    break;
+                case 2:
+                    tutorial = "Collection: \n- Nhấn đúp vào bộ sưu tập để xem những flashcards có trong đó, chức năng bên trong đó sẽ tương tự library.\n- Có thể thêm, đổi tên, xóa bộ sưu tập bằng ba nút hiển thị ở bên phải.";
+                    break;
+                case 3:
+                    tutorial = "Study: \n- Chọn hình thức học (bên trái) và chủ đề (bên phải) để có thể bắt đầu vào học.";
+                    break;
+                case 4:
+                    tutorial = "Revision: \n- Chọn nhân vật, sau đó chọn chế độ chơi để có thể vừa ôn tập vừa giải trí những từ vựng đã học.\n- Có thể vào cửa hàng ở góc trên bên phải để mua nhân vật mình thích.\n- Kim cương có thể tích lũy thông qua việc ôn tập.";
+                    break;
+                case 5:
+                    tutorial = "Statistics: \n- Có thể thay đổi thông tin, mật khẩu người dùng trong mục Info (phần điều hướng bên trái).\n- Thông tin thống kê từ vựng đã học ở mục Result (phần điều hướng bên trái).";
+                    break;
+            }
+            ttTutorial.SetToolTip(btnTutorial, tutorial);
+        }
     }
 }

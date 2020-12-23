@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RevisionForm));
             this.pnlRevision = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlChoosePlay = new System.Windows.Forms.Panel();
-            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
-            this.btnStart = new Guna.UI2.WinForms.Guna2Button();
-            this.btnChooseType = new Guna.UI2.WinForms.Guna2Button();
             this.pnlType = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlType_3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.lbChallenge = new System.Windows.Forms.Label();
@@ -41,6 +38,9 @@
             this.lbWalkthrough = new System.Windows.Forms.Label();
             this.pnlType_1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.lbMaze = new System.Windows.Forms.Label();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
+            this.btnStart = new Guna.UI2.WinForms.Guna2Button();
+            this.btnChooseType = new Guna.UI2.WinForms.Guna2Button();
             this.pbCurrency = new System.Windows.Forms.PictureBox();
             this.lbDiamond = new System.Windows.Forms.Label();
             this.btnToggle = new System.Windows.Forms.Button();
@@ -49,6 +49,7 @@
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
             this.pbCharacter = new System.Windows.Forms.PictureBox();
             this.btnShop = new Guna.UI2.WinForms.Guna2Button();
+            this.lbNotification = new System.Windows.Forms.Label();
             this.pnlRevision.SuspendLayout();
             this.pnlChoosePlay.SuspendLayout();
             this.pnlType.SuspendLayout();
@@ -65,15 +66,16 @@
             this.pnlRevision.Controls.Add(this.pnlChoosePlay);
             this.pnlRevision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRevision.Location = new System.Drawing.Point(0, 0);
-            this.pnlRevision.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlRevision.Margin = new System.Windows.Forms.Padding(2);
             this.pnlRevision.Name = "pnlRevision";
             this.pnlRevision.ShadowDecoration.Parent = this.pnlRevision;
-            this.pnlRevision.Size = new System.Drawing.Size(1000, 519);
+            this.pnlRevision.Size = new System.Drawing.Size(750, 422);
             this.pnlRevision.TabIndex = 0;
             // 
             // pnlChoosePlay
             // 
             this.pnlChoosePlay.BackColor = System.Drawing.Color.Transparent;
+            this.pnlChoosePlay.Controls.Add(this.lbNotification);
             this.pnlChoosePlay.Controls.Add(this.pnlType);
             this.pnlChoosePlay.Controls.Add(this.btnBack);
             this.pnlChoosePlay.Controls.Add(this.btnStart);
@@ -88,11 +90,109 @@
             this.pnlChoosePlay.Controls.Add(this.btnShop);
             this.pnlChoosePlay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChoosePlay.Location = new System.Drawing.Point(0, 0);
-            this.pnlChoosePlay.Margin = new System.Windows.Forms.Padding(4);
             this.pnlChoosePlay.Name = "pnlChoosePlay";
-            this.pnlChoosePlay.Size = new System.Drawing.Size(1000, 519);
+            this.pnlChoosePlay.Size = new System.Drawing.Size(750, 422);
             this.pnlChoosePlay.TabIndex = 23;
             this.pnlChoosePlay.VisibleChanged += new System.EventHandler(this.pnlChoosePlay_VisibleChanged);
+            // 
+            // pnlType
+            // 
+            this.pnlType.BorderColor = System.Drawing.Color.Transparent;
+            this.pnlType.Controls.Add(this.pnlType_3);
+            this.pnlType.Controls.Add(this.pnlType_2);
+            this.pnlType.Controls.Add(this.pnlType_1);
+            this.pnlType.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.pnlType.Location = new System.Drawing.Point(40, 28);
+            this.pnlType.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlType.Name = "pnlType";
+            this.pnlType.ShadowDecoration.Parent = this.pnlType;
+            this.pnlType.Size = new System.Drawing.Size(664, 323);
+            this.pnlType.TabIndex = 26;
+            this.pnlType.Visible = false;
+            // 
+            // pnlType_3
+            // 
+            this.pnlType_3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlType_3.BackgroundImage")));
+            this.pnlType_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlType_3.BorderColor = System.Drawing.Color.White;
+            this.pnlType_3.Controls.Add(this.lbChallenge);
+            this.pnlType_3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlType_3.Location = new System.Drawing.Point(442, 0);
+            this.pnlType_3.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlType_3.Name = "pnlType_3";
+            this.pnlType_3.ShadowDecoration.Parent = this.pnlType_3;
+            this.pnlType_3.Size = new System.Drawing.Size(221, 323);
+            this.pnlType_3.TabIndex = 1;
+            this.pnlType_3.Click += new System.EventHandler(this.pnlType_3_Click);
+            // 
+            // lbChallenge
+            // 
+            this.lbChallenge.BackColor = System.Drawing.Color.Transparent;
+            this.lbChallenge.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbChallenge.ForeColor = System.Drawing.Color.White;
+            this.lbChallenge.Location = new System.Drawing.Point(12, 33);
+            this.lbChallenge.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbChallenge.Name = "lbChallenge";
+            this.lbChallenge.Size = new System.Drawing.Size(83, 102);
+            this.lbChallenge.TabIndex = 2;
+            this.lbChallenge.Text = "Come and Fight";
+            this.lbChallenge.Click += new System.EventHandler(this.lbChallenge_Click);
+            // 
+            // pnlType_2
+            // 
+            this.pnlType_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlType_2.BackgroundImage")));
+            this.pnlType_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlType_2.BorderColor = System.Drawing.Color.White;
+            this.pnlType_2.Controls.Add(this.lbWalkthrough);
+            this.pnlType_2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlType_2.Location = new System.Drawing.Point(221, 0);
+            this.pnlType_2.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlType_2.Name = "pnlType_2";
+            this.pnlType_2.ShadowDecoration.Parent = this.pnlType_2;
+            this.pnlType_2.Size = new System.Drawing.Size(221, 323);
+            this.pnlType_2.TabIndex = 1;
+            this.pnlType_2.Click += new System.EventHandler(this.pnlType_2_Click);
+            // 
+            // lbWalkthrough
+            // 
+            this.lbWalkthrough.BackColor = System.Drawing.Color.Transparent;
+            this.lbWalkthrough.Font = new System.Drawing.Font("Montserrat Alternates", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWalkthrough.ForeColor = System.Drawing.Color.White;
+            this.lbWalkthrough.Location = new System.Drawing.Point(26, 86);
+            this.lbWalkthrough.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbWalkthrough.Name = "lbWalkthrough";
+            this.lbWalkthrough.Size = new System.Drawing.Size(191, 136);
+            this.lbWalkthrough.TabIndex = 1;
+            this.lbWalkthrough.Text = "The Monster Cave";
+            this.lbWalkthrough.Click += new System.EventHandler(this.lbWalkthrough_Click);
+            // 
+            // pnlType_1
+            // 
+            this.pnlType_1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlType_1.BackgroundImage")));
+            this.pnlType_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlType_1.BorderColor = System.Drawing.Color.White;
+            this.pnlType_1.Controls.Add(this.lbMaze);
+            this.pnlType_1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlType_1.Location = new System.Drawing.Point(0, 0);
+            this.pnlType_1.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlType_1.Name = "pnlType_1";
+            this.pnlType_1.ShadowDecoration.Parent = this.pnlType_1;
+            this.pnlType_1.Size = new System.Drawing.Size(221, 323);
+            this.pnlType_1.TabIndex = 0;
+            this.pnlType_1.Click += new System.EventHandler(this.pnlType_1_Click);
+            // 
+            // lbMaze
+            // 
+            this.lbMaze.BackColor = System.Drawing.Color.Transparent;
+            this.lbMaze.Font = new System.Drawing.Font("Montserrat Alternates", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMaze.ForeColor = System.Drawing.Color.White;
+            this.lbMaze.Location = new System.Drawing.Point(20, 51);
+            this.lbMaze.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMaze.Name = "lbMaze";
+            this.lbMaze.Size = new System.Drawing.Size(184, 215);
+            this.lbMaze.TabIndex = 0;
+            this.lbMaze.Text = "The Mysterious Maze";
+            this.lbMaze.Click += new System.EventHandler(this.lbMaze_Click);
             // 
             // btnBack
             // 
@@ -103,10 +203,11 @@
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.HoverState.Parent = this.btnBack;
-            this.btnBack.Location = new System.Drawing.Point(285, 449);
+            this.btnBack.Location = new System.Drawing.Point(214, 365);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.ShadowDecoration.Parent = this.btnBack;
-            this.btnBack.Size = new System.Drawing.Size(180, 45);
+            this.btnBack.Size = new System.Drawing.Size(135, 37);
             this.btnBack.TabIndex = 29;
             this.btnBack.Text = "Back";
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -120,10 +221,11 @@
             this.btnStart.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnStart.ForeColor = System.Drawing.Color.White;
             this.btnStart.HoverState.Parent = this.btnStart;
-            this.btnStart.Location = new System.Drawing.Point(540, 449);
+            this.btnStart.Location = new System.Drawing.Point(405, 365);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2);
             this.btnStart.Name = "btnStart";
             this.btnStart.ShadowDecoration.Parent = this.btnStart;
-            this.btnStart.Size = new System.Drawing.Size(180, 45);
+            this.btnStart.Size = new System.Drawing.Size(135, 37);
             this.btnStart.TabIndex = 28;
             this.btnStart.Text = "Start";
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
@@ -137,113 +239,21 @@
             this.btnChooseType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseType.ForeColor = System.Drawing.Color.White;
             this.btnChooseType.HoverState.Parent = this.btnChooseType;
-            this.btnChooseType.Location = new System.Drawing.Point(409, 449);
+            this.btnChooseType.Location = new System.Drawing.Point(307, 365);
+            this.btnChooseType.Margin = new System.Windows.Forms.Padding(2);
             this.btnChooseType.Name = "btnChooseType";
             this.btnChooseType.ShadowDecoration.Parent = this.btnChooseType;
-            this.btnChooseType.Size = new System.Drawing.Size(180, 45);
+            this.btnChooseType.Size = new System.Drawing.Size(135, 37);
             this.btnChooseType.TabIndex = 27;
             this.btnChooseType.Text = "Let\'s play";
             this.btnChooseType.Click += new System.EventHandler(this.btnChooseType_Click);
             // 
-            // pnlType
-            // 
-            this.pnlType.BorderColor = System.Drawing.Color.Transparent;
-            this.pnlType.Controls.Add(this.pnlType_3);
-            this.pnlType.Controls.Add(this.pnlType_2);
-            this.pnlType.Controls.Add(this.pnlType_1);
-            this.pnlType.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.pnlType.Location = new System.Drawing.Point(54, 34);
-            this.pnlType.Name = "pnlType";
-            this.pnlType.ShadowDecoration.Parent = this.pnlType;
-            this.pnlType.Size = new System.Drawing.Size(885, 398);
-            this.pnlType.TabIndex = 26;
-            this.pnlType.Visible = false;
-            // 
-            // pnlType_3
-            // 
-            this.pnlType_3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlType_3.BackgroundImage")));
-            this.pnlType_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlType_3.BorderColor = System.Drawing.Color.White;
-            this.pnlType_3.Controls.Add(this.lbChallenge);
-            this.pnlType_3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlType_3.Location = new System.Drawing.Point(590, 0);
-            this.pnlType_3.Name = "pnlType_3";
-            this.pnlType_3.ShadowDecoration.Parent = this.pnlType_3;
-            this.pnlType_3.Size = new System.Drawing.Size(295, 398);
-            this.pnlType_3.TabIndex = 1;
-            this.pnlType_3.Click += new System.EventHandler(this.pnlType_3_Click);
-            // 
-            // lbChallenge
-            // 
-            this.lbChallenge.BackColor = System.Drawing.Color.Transparent;
-            this.lbChallenge.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbChallenge.ForeColor = System.Drawing.Color.White;
-            this.lbChallenge.Location = new System.Drawing.Point(16, 41);
-            this.lbChallenge.Name = "lbChallenge";
-            this.lbChallenge.Size = new System.Drawing.Size(111, 125);
-            this.lbChallenge.TabIndex = 2;
-            this.lbChallenge.Text = "Come and Fight";
-            this.lbChallenge.Click += new System.EventHandler(this.lbChallenge_Click);
-            // 
-            // pnlType_2
-            // 
-            this.pnlType_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlType_2.BackgroundImage")));
-            this.pnlType_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlType_2.BorderColor = System.Drawing.Color.White;
-            this.pnlType_2.Controls.Add(this.lbWalkthrough);
-            this.pnlType_2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlType_2.Location = new System.Drawing.Point(295, 0);
-            this.pnlType_2.Name = "pnlType_2";
-            this.pnlType_2.ShadowDecoration.Parent = this.pnlType_2;
-            this.pnlType_2.Size = new System.Drawing.Size(295, 398);
-            this.pnlType_2.TabIndex = 1;
-            this.pnlType_2.Click += new System.EventHandler(this.pnlType_2_Click);
-            // 
-            // lbWalkthrough
-            // 
-            this.lbWalkthrough.BackColor = System.Drawing.Color.Transparent;
-            this.lbWalkthrough.Font = new System.Drawing.Font("Montserrat Alternates", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWalkthrough.ForeColor = System.Drawing.Color.White;
-            this.lbWalkthrough.Location = new System.Drawing.Point(34, 106);
-            this.lbWalkthrough.Name = "lbWalkthrough";
-            this.lbWalkthrough.Size = new System.Drawing.Size(255, 167);
-            this.lbWalkthrough.TabIndex = 1;
-            this.lbWalkthrough.Text = "The Monster Cave";
-            this.lbWalkthrough.Click += new System.EventHandler(this.lbWalkthrough_Click);
-            // 
-            // pnlType_1
-            // 
-            this.pnlType_1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlType_1.BackgroundImage")));
-            this.pnlType_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlType_1.BorderColor = System.Drawing.Color.White;
-            this.pnlType_1.Controls.Add(this.lbMaze);
-            this.pnlType_1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlType_1.Location = new System.Drawing.Point(0, 0);
-            this.pnlType_1.Name = "pnlType_1";
-            this.pnlType_1.ShadowDecoration.Parent = this.pnlType_1;
-            this.pnlType_1.Size = new System.Drawing.Size(295, 398);
-            this.pnlType_1.TabIndex = 0;
-            this.pnlType_1.Click += new System.EventHandler(this.pnlType_1_Click);
-            // 
-            // lbMaze
-            // 
-            this.lbMaze.BackColor = System.Drawing.Color.Transparent;
-            this.lbMaze.Font = new System.Drawing.Font("Montserrat Alternates", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMaze.ForeColor = System.Drawing.Color.White;
-            this.lbMaze.Location = new System.Drawing.Point(27, 63);
-            this.lbMaze.Name = "lbMaze";
-            this.lbMaze.Size = new System.Drawing.Size(245, 265);
-            this.lbMaze.TabIndex = 0;
-            this.lbMaze.Text = "The Mysterious Maze";
-            this.lbMaze.Click += new System.EventHandler(this.lbMaze_Click);
-            // 
             // pbCurrency
             // 
             this.pbCurrency.Image = ((System.Drawing.Image)(resources.GetObject("pbCurrency.Image")));
-            this.pbCurrency.Location = new System.Drawing.Point(839, 48);
-            this.pbCurrency.Margin = new System.Windows.Forms.Padding(4);
+            this.pbCurrency.Location = new System.Drawing.Point(629, 39);
             this.pbCurrency.Name = "pbCurrency";
-            this.pbCurrency.Size = new System.Drawing.Size(28, 23);
+            this.pbCurrency.Size = new System.Drawing.Size(21, 19);
             this.pbCurrency.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCurrency.TabIndex = 25;
             this.pbCurrency.TabStop = false;
@@ -252,19 +262,17 @@
             // 
             this.lbDiamond.AutoSize = true;
             this.lbDiamond.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDiamond.Location = new System.Drawing.Point(797, 48);
-            this.lbDiamond.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbDiamond.Location = new System.Drawing.Point(598, 39);
             this.lbDiamond.Name = "lbDiamond";
-            this.lbDiamond.Size = new System.Drawing.Size(37, 23);
+            this.lbDiamond.Size = new System.Drawing.Size(33, 19);
             this.lbDiamond.TabIndex = 24;
             this.lbDiamond.Text = "100";
             // 
             // btnToggle
             // 
-            this.btnToggle.Location = new System.Drawing.Point(17, 65);
-            this.btnToggle.Margin = new System.Windows.Forms.Padding(4);
+            this.btnToggle.Location = new System.Drawing.Point(13, 53);
             this.btnToggle.Name = "btnToggle";
-            this.btnToggle.Size = new System.Drawing.Size(13, 12);
+            this.btnToggle.Size = new System.Drawing.Size(10, 10);
             this.btnToggle.TabIndex = 23;
             this.btnToggle.Text = "0";
             this.btnToggle.UseVisualStyleBackColor = true;
@@ -272,15 +280,14 @@
             // 
             // lbName
             // 
-            this.lbName.AutoSize = true;
             this.lbName.BackColor = System.Drawing.Color.Transparent;
             this.lbName.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(420, 120);
-            this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbName.Location = new System.Drawing.Point(0, 98);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(102, 37);
+            this.lbName.Size = new System.Drawing.Size(750, 30);
             this.lbName.TabIndex = 21;
             this.lbName.Text = "Name";
+            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnPrevious
             // 
@@ -296,11 +303,11 @@
             this.btnPrevious.HoverState.Parent = this.btnPrevious;
             this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
             this.btnPrevious.ImageSize = new System.Drawing.Size(30, 45);
-            this.btnPrevious.Location = new System.Drawing.Point(227, 236);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPrevious.Location = new System.Drawing.Point(170, 192);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.ShadowDecoration.Parent = this.btnPrevious;
-            this.btnPrevious.Size = new System.Drawing.Size(67, 71);
+            this.btnPrevious.Size = new System.Drawing.Size(50, 58);
             this.btnPrevious.TabIndex = 20;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
@@ -317,21 +324,20 @@
             this.btnNext.HoverState.Parent = this.btnNext;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageSize = new System.Drawing.Size(30, 45);
-            this.btnNext.Location = new System.Drawing.Point(704, 236);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNext.Location = new System.Drawing.Point(528, 192);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
             this.btnNext.ShadowDecoration.Parent = this.btnNext;
-            this.btnNext.Size = new System.Drawing.Size(67, 71);
+            this.btnNext.Size = new System.Drawing.Size(50, 58);
             this.btnNext.TabIndex = 19;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // pbCharacter
             // 
             this.pbCharacter.BackColor = System.Drawing.Color.Transparent;
-            this.pbCharacter.Location = new System.Drawing.Point(344, 176);
-            this.pbCharacter.Margin = new System.Windows.Forms.Padding(4);
+            this.pbCharacter.Location = new System.Drawing.Point(258, 143);
             this.pbCharacter.Name = "pbCharacter";
-            this.pbCharacter.Size = new System.Drawing.Size(305, 175);
+            this.pbCharacter.Size = new System.Drawing.Size(229, 142);
             this.pbCharacter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCharacter.TabIndex = 0;
             this.pbCharacter.TabStop = false;
@@ -346,22 +352,37 @@
             this.btnShop.ForeColor = System.Drawing.Color.White;
             this.btnShop.HoverState.Parent = this.btnShop;
             this.btnShop.Image = ((System.Drawing.Image)(resources.GetObject("btnShop.Image")));
-            this.btnShop.Location = new System.Drawing.Point(794, 78);
+            this.btnShop.Location = new System.Drawing.Point(596, 63);
+            this.btnShop.Margin = new System.Windows.Forms.Padding(2);
             this.btnShop.Name = "btnShop";
             this.btnShop.ShadowDecoration.Parent = this.btnShop;
-            this.btnShop.Size = new System.Drawing.Size(89, 45);
+            this.btnShop.Size = new System.Drawing.Size(67, 37);
             this.btnShop.TabIndex = 3;
             this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
             // 
+            // lbNotification
+            // 
+            this.lbNotification.BackColor = System.Drawing.Color.Transparent;
+            this.lbNotification.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lbNotification.ForeColor = System.Drawing.Color.Black;
+            this.lbNotification.Location = new System.Drawing.Point(230, 9);
+            this.lbNotification.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNotification.Name = "lbNotification";
+            this.lbNotification.Size = new System.Drawing.Size(293, 40);
+            this.lbNotification.TabIndex = 30;
+            this.lbNotification.Text = "Hoc them tu di thang nhoc !";
+            this.lbNotification.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbNotification.Visible = false;
+            // 
             // RevisionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.ClientSize = new System.Drawing.Size(1000, 519);
+            this.ClientSize = new System.Drawing.Size(750, 422);
             this.Controls.Add(this.pnlRevision);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RevisionForm";
             this.Text = "RevisionForm";
             this.pnlRevision.ResumeLayout(false);
@@ -380,24 +401,25 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlRevision;
-        private System.Windows.Forms.PictureBox pbCharacter;
+        private System.Windows.Forms.Panel pnlChoosePlay;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlType;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnlType_3;
+        private System.Windows.Forms.Label lbChallenge;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnlType_2;
+        private System.Windows.Forms.Label lbWalkthrough;
+        private Guna.UI2.WinForms.Guna2GradientPanel pnlType_1;
+        private System.Windows.Forms.Label lbMaze;
+        private Guna.UI2.WinForms.Guna2Button btnBack;
+        private Guna.UI2.WinForms.Guna2Button btnStart;
+        private Guna.UI2.WinForms.Guna2Button btnChooseType;
+        private System.Windows.Forms.PictureBox pbCurrency;
+        private System.Windows.Forms.Label lbDiamond;
+        public System.Windows.Forms.Button btnToggle;
         private System.Windows.Forms.Label lbName;
         private Guna.UI2.WinForms.Guna2Button btnPrevious;
         private Guna.UI2.WinForms.Guna2Button btnNext;
-        private System.Windows.Forms.Panel pnlChoosePlay;
-        public System.Windows.Forms.Button btnToggle;
-        private System.Windows.Forms.PictureBox pbCurrency;
-        private System.Windows.Forms.Label lbDiamond;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlType;
-        private Guna.UI2.WinForms.Guna2GradientPanel pnlType_3;
-        private Guna.UI2.WinForms.Guna2GradientPanel pnlType_2;
-        private Guna.UI2.WinForms.Guna2GradientPanel pnlType_1;
-        private Guna.UI2.WinForms.Guna2Button btnChooseType;
-        private Guna.UI2.WinForms.Guna2Button btnStart;
-        private System.Windows.Forms.Label lbChallenge;
-        private System.Windows.Forms.Label lbWalkthrough;
-        private System.Windows.Forms.Label lbMaze;
-        private Guna.UI2.WinForms.Guna2Button btnBack;
+        private System.Windows.Forms.PictureBox pbCharacter;
         private Guna.UI2.WinForms.Guna2Button btnShop;
+        private System.Windows.Forms.Label lbNotification;
     }
 }

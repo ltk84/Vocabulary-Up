@@ -72,6 +72,12 @@
     <Compile Include="CampaignForm.Designer.cs">
       <DependentUpon>CampaignForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetailsGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailsGameForm.Designer.cs">
+      <DependentUpon>DetailsGameForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameMCForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,11 @@
     </Compile>
     <Compile Include="MazeGameFrom.Designer.cs">
       <DependentUpon>MazeGameFrom.cs</DependentUpon>
+    <Compile Include="LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Monster.cs" />
     <Compile Include="MonsterMaze.cs" />
@@ -262,6 +273,9 @@
     <EmbeddedResource Include="DetailsForm.resx">
       <DependentUpon>DetailsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DetailsGameForm.resx">
+      <DependentUpon>DetailsGameForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Display_CampaignForm.resx">
       <DependentUpon>Display_CampaignForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MazeGameFrom.resx">
       <DependentUpon>MazeGameFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="ResultForm.resx">
@@ -335,6 +352,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StatisticsForm.resx">
       <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuperLabel.resx">
+      <DependentUpon>SuperLabel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrashTalkingForm.resx">
       <DependentUpon>TrashTalkingForm.cs</DependentUpon>

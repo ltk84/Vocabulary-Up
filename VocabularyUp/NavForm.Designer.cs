@@ -54,6 +54,8 @@
             this.dashFix1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.swDarkMode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.lbDarkMode = new System.Windows.Forms.Label();
+            this.btnTutorial = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ttTutorial = new System.Windows.Forms.ToolTip(this.components);
             this.barTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconNav)).BeginInit();
             this.pnlNavigation.SuspendLayout();
@@ -447,9 +449,36 @@
             this.lbDarkMode.ForeColor = System.Drawing.Color.White;
             this.lbDarkMode.Location = new System.Drawing.Point(945, 48);
             this.lbDarkMode.Name = "lbDarkMode";
-            this.lbDarkMode.Size = new System.Drawing.Size(87, 18);
+            this.lbDarkMode.Size = new System.Drawing.Size(93, 19);
             this.lbDarkMode.TabIndex = 24;
             this.lbDarkMode.Text = "Dark mode";
+            // 
+            // btnTutorial
+            // 
+            this.btnTutorial.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnTutorial.CheckedState.Parent = this.btnTutorial;
+            this.btnTutorial.HoverState.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnTutorial.HoverState.Parent = this.btnTutorial;
+            this.btnTutorial.Image = ((System.Drawing.Image)(resources.GetObject("btnTutorial.Image")));
+            this.btnTutorial.ImageRotate = 0F;
+            this.btnTutorial.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnTutorial.Location = new System.Drawing.Point(56, 45);
+            this.btnTutorial.Name = "btnTutorial";
+            this.btnTutorial.PressedState.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnTutorial.PressedState.Parent = this.btnTutorial;
+            this.btnTutorial.Size = new System.Drawing.Size(54, 48);
+            this.btnTutorial.TabIndex = 25;
+            this.ttTutorial.SetToolTip(this.btnTutorial, "test");
+            this.btnTutorial.MouseHover += new System.EventHandler(this.btnTutorial_MouseHover);
+            // 
+            // ttTutorial
+            // 
+            this.ttTutorial.AutomaticDelay = 100;
+            this.ttTutorial.AutoPopDelay = 300000;
+            this.ttTutorial.InitialDelay = 100;
+            this.ttTutorial.ReshowDelay = 20;
+            this.ttTutorial.ShowAlways = true;
+            this.ttTutorial.ToolTipTitle = "Tutorial";
             // 
             // NavForm
             // 
@@ -457,6 +486,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(1063, 650);
+            this.Controls.Add(this.btnTutorial);
             this.Controls.Add(this.lbDarkMode);
             this.Controls.Add(this.swDarkMode);
             this.Controls.Add(this.dashFix1);
@@ -507,6 +537,8 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel dashCollectionTab;
         private System.Windows.Forms.Label lbDarkMode;
         private Guna.UI2.WinForms.Guna2ToggleSwitch swDarkMode;
+        private Guna.UI2.WinForms.Guna2ImageButton btnTutorial;
+        private System.Windows.Forms.ToolTip ttTutorial;
     }
 }
 

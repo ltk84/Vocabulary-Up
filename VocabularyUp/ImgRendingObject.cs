@@ -87,7 +87,7 @@ namespace VocabularyUp
 
         public Bullet Attack()
         {
-            Image image = Image.FromFile("../../");
+            Image image = Image.FromFile("../../db/Fires/bullet.png");
             return new Bullet(image, this.location, this.size, 10);
         }
     }
