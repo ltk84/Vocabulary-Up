@@ -201,7 +201,10 @@ namespace VocabularyUp
             {
                 MazeGameFrom mgf = new MazeGameFrom(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
                 mgf.TopMost = true;
+
                 mgf.Show();
+                mgf.OpenTrashTalk(5, "Hello", "Lo cc!");
+
             }
             else
             {

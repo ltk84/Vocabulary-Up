@@ -73,6 +73,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pbInfo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.countDown = new System.Windows.Forms.Timer(this.components);
             this.countDownText = new System.Windows.Forms.Timer(this.components);
             this.pnlUserLogin.SuspendLayout();
@@ -82,6 +83,7 @@
             this.pnlForgetPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // elipseForm
@@ -116,11 +118,11 @@
             // 
             this.lbForget.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbForget, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbForget.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F, System.Drawing.FontStyle.Bold);
+            this.lbForget.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.lbForget.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(96)))), ((int)(((byte)(68)))));
             this.lbForget.Location = new System.Drawing.Point(81, 283);
             this.lbForget.Name = "lbForget";
-            this.lbForget.Size = new System.Drawing.Size(143, 19);
+            this.lbForget.Size = new System.Drawing.Size(137, 17);
             this.lbForget.TabIndex = 33;
             this.lbForget.Text = "Forget password?";
             this.lbForget.Click += new System.EventHandler(this.lbForget_Click);
@@ -129,11 +131,11 @@
             // 
             this.lbUserLogin.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbUserLogin, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbUserLogin.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold);
+            this.lbUserLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.lbUserLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbUserLogin.Location = new System.Drawing.Point(140, 34);
             this.lbUserLogin.Name = "lbUserLogin";
-            this.lbUserLogin.Size = new System.Drawing.Size(99, 39);
+            this.lbUserLogin.Size = new System.Drawing.Size(91, 32);
             this.lbUserLogin.TabIndex = 32;
             this.lbUserLogin.Text = "Login";
             // 
@@ -141,11 +143,11 @@
             // 
             this.lbRemember_Login.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbRemember_Login, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbRemember_Login.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F, System.Drawing.FontStyle.Bold);
+            this.lbRemember_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.lbRemember_Login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbRemember_Login.Location = new System.Drawing.Point(120, 209);
             this.lbRemember_Login.Name = "lbRemember_Login";
-            this.lbRemember_Login.Size = new System.Drawing.Size(120, 19);
+            this.lbRemember_Login.Size = new System.Drawing.Size(111, 17);
             this.lbRemember_Login.TabIndex = 23;
             this.lbRemember_Login.Text = "Remember me";
             // 
@@ -173,11 +175,11 @@
             // 
             this.lbNoAccount_Login.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbNoAccount_Login, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbNoAccount_Login.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
+            this.lbNoAccount_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.lbNoAccount_Login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbNoAccount_Login.Location = new System.Drawing.Point(107, 330);
             this.lbNoAccount_Login.Name = "lbNoAccount_Login";
-            this.lbNoAccount_Login.Size = new System.Drawing.Size(176, 19);
+            this.lbNoAccount_Login.Size = new System.Drawing.Size(158, 17);
             this.lbNoAccount_Login.TabIndex = 27;
             this.lbNoAccount_Login.Text = "Don\'t have an account?";
             this.lbNoAccount_Login.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -305,11 +307,11 @@
             // 
             this.lbSignup.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbSignup, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbSignup.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold);
+            this.lbSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.lbSignup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbSignup.Location = new System.Drawing.Point(129, 33);
             this.lbSignup.Name = "lbSignup";
-            this.lbSignup.Size = new System.Drawing.Size(131, 39);
+            this.lbSignup.Size = new System.Drawing.Size(123, 32);
             this.lbSignup.TabIndex = 12;
             this.lbSignup.Text = "Sign Up";
             // 
@@ -344,11 +346,11 @@
             // 
             this.lbLoginAccess_SignUp.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbLoginAccess_SignUp, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbLoginAccess_SignUp.Font = new System.Drawing.Font("Montserrat Alternates", 10.2F, System.Drawing.FontStyle.Bold);
+            this.lbLoginAccess_SignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.lbLoginAccess_SignUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbLoginAccess_SignUp.Location = new System.Drawing.Point(259, 380);
             this.lbLoginAccess_SignUp.Name = "lbLoginAccess_SignUp";
-            this.lbLoginAccess_SignUp.Size = new System.Drawing.Size(65, 23);
+            this.lbLoginAccess_SignUp.Size = new System.Drawing.Size(61, 20);
             this.lbLoginAccess_SignUp.TabIndex = 5;
             this.lbLoginAccess_SignUp.Text = "Log in";
             this.lbLoginAccess_SignUp.Click += new System.EventHandler(this.lbLoginAccess_SignUp_Click);
@@ -571,11 +573,11 @@
             // 
             this.lbCountDown.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbCountDown, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbCountDown.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
+            this.lbCountDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.lbCountDown.ForeColor = System.Drawing.Color.White;
             this.lbCountDown.Location = new System.Drawing.Point(146, 72);
             this.lbCountDown.Name = "lbCountDown";
-            this.lbCountDown.Size = new System.Drawing.Size(91, 19);
+            this.lbCountDown.Size = new System.Drawing.Size(79, 17);
             this.lbCountDown.TabIndex = 16;
             this.lbCountDown.Text = "Please wait";
             this.lbCountDown.Visible = false;
@@ -599,11 +601,11 @@
             // 
             this.lblBack.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lblBack, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblBack.Font = new System.Drawing.Font("Montserrat Alternates", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lblBack.Location = new System.Drawing.Point(37, 334);
             this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(56, 23);
+            this.lblBack.Size = new System.Drawing.Size(51, 20);
             this.lblBack.TabIndex = 14;
             this.lblBack.Text = "Back";
             this.lblBack.Visible = false;
@@ -634,11 +636,11 @@
             // 
             this.label1.AutoSize = true;
             this.transitionPanel.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.label1.Location = new System.Drawing.Point(68, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 39);
+            this.label1.Size = new System.Drawing.Size(243, 32);
             this.label1.TabIndex = 12;
             this.label1.Text = "Forget Password";
             // 
@@ -646,11 +648,11 @@
             // 
             this.label2.AutoSize = true;
             this.transitionPanel.SetDecoration(this.label2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label2.Font = new System.Drawing.Font("Montserrat Alternates", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.label2.Location = new System.Drawing.Point(289, 334);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 23);
+            this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Log in";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -691,7 +693,7 @@
             this.txtPassForget.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassForget.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassForget.FocusedState.Parent = this.txtPassForget;
-            this.txtPassForget.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPassForget.Font = new System.Drawing.Font("NSimSun", 9F);
             this.txtPassForget.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassForget.HoverState.Parent = this.txtPassForget;
             this.txtPassForget.Location = new System.Drawing.Point(77, 102);
@@ -795,11 +797,11 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.transitionPanel.SetDecoration(this.label3, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label3.Font = new System.Drawing.Font("Montserrat Alternates ExtraBold", 22F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.label3.Location = new System.Drawing.Point(45, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(321, 51);
+            this.label3.Size = new System.Drawing.Size(277, 42);
             this.label3.TabIndex = 52;
             this.label3.Text = "Vocabulary Up";
             // 
@@ -828,6 +830,19 @@
             this.guna2PictureBox1.TabIndex = 54;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.transitionPanel.SetDecoration(this.pictureBox2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(874, 44);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(52, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 55;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // countDown
             // 
             this.countDown.Interval = 5000;
@@ -847,6 +862,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(930, 616);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.pbInfo);
             this.Controls.Add(this.label3);
@@ -871,6 +887,7 @@
             this.pnlForgetPass.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -922,5 +939,6 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2PictureBox pbInfo;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
