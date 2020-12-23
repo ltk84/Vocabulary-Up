@@ -48,7 +48,6 @@
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.lbDiamond = new System.Windows.Forms.Label();
             this.pbDiamond = new System.Windows.Forms.PictureBox();
-            this.pgbHealth = new VocabularyUp.SuperProgressBar();
             this.pbIconHealth = new System.Windows.Forms.PictureBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -70,6 +69,8 @@
             this.guna2Transition = new Guna.UI2.WinForms.Guna2Transition();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
+            this.timerQuestion = new System.Windows.Forms.Timer(this.components);
+            this.pgbHealth = new VocabularyUp.SuperProgressBar();
             this.pnlQuestion.SuspendLayout();
             this.pnlFlashCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
@@ -334,7 +335,7 @@
             this.lbDiamond.ForeColor = System.Drawing.Color.White;
             this.lbDiamond.Location = new System.Drawing.Point(318, 14);
             this.lbDiamond.Name = "lbDiamond";
-            this.lbDiamond.Size = new System.Drawing.Size(23, 25);
+            this.lbDiamond.Size = new System.Drawing.Size(18, 20);
             this.lbDiamond.TabIndex = 5;
             this.lbDiamond.Text = "0";
             // 
@@ -349,15 +350,6 @@
             this.pbDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDiamond.TabIndex = 4;
             this.pbDiamond.TabStop = false;
-            // 
-            // pgbHealth
-            // 
-            this.pgbHealth.BackColor = System.Drawing.Color.White;
-            this.guna2Transition.SetDecoration(this.pgbHealth, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pgbHealth.Location = new System.Drawing.Point(48, 14);
-            this.pgbHealth.Name = "pgbHealth";
-            this.pgbHealth.Size = new System.Drawing.Size(199, 25);
-            this.pgbHealth.TabIndex = 3;
             // 
             // pbIconHealth
             // 
@@ -614,6 +606,20 @@
             this.btnDetails.Visible = false;
             this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
+            // timerQuestion
+            // 
+            this.timerQuestion.Interval = 1000;
+            this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
+            // 
+            // pgbHealth
+            // 
+            this.pgbHealth.BackColor = System.Drawing.Color.White;
+            this.guna2Transition.SetDecoration(this.pgbHealth, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pgbHealth.Location = new System.Drawing.Point(48, 14);
+            this.pgbHealth.Name = "pgbHealth";
+            this.pgbHealth.Size = new System.Drawing.Size(199, 25);
+            this.pgbHealth.TabIndex = 3;
+            // 
             // MazeGameFrom
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -698,5 +704,6 @@
         private Guna.UI2.WinForms.Guna2Transition guna2Transition;
         private Guna.UI2.WinForms.Guna2Button btnClose;
         private Guna.UI2.WinForms.Guna2Button btnDetails;
+        private System.Windows.Forms.Timer timerQuestion;
     }
 }

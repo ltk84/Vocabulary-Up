@@ -29,6 +29,7 @@ namespace VocabularyUp
         private int isBossCorrect;
         private bool isBoss;
         private bool isWin;
+        private int time = 0;
 
         public MazeGameFrom(int idCol, int idSkin)
         {
@@ -316,7 +317,8 @@ namespace VocabularyUp
                                 else
                                 {
                                     ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-                                    //currentQuiz++;
+                                //currentQuiz++;
+                                    timerQuestion.Start();
                                     guna2Transition.ShowSync(pnlQuestion);
                                 }
                             
@@ -347,6 +349,7 @@ namespace VocabularyUp
                                 ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
                                 //currentQuiz++;
                                 guna2Transition.ShowSync(pnlQuestion);
+                                timerQuestion.Start();
                                 //pnlQuestion.Show();
                             }
                         }
@@ -518,6 +521,8 @@ namespace VocabularyUp
             {
                 pnlQuestion.Hide();
                 timerUpdate.Start();
+                timerQuestion.Stop();
+                time = 0;
                 currentQuiz++;
             }
         }
@@ -801,6 +806,51 @@ namespace VocabularyUp
             finally
             {
                 backgroundForm.Dispose();
+            }
+        }
+
+        private void timerQuestion_Tick(object sender, EventArgs e)
+        {
+            if (timerQuestion.Enabled == false)
+                return;
+
+            time++;
+            lbTimer.Text = (60 - time).ToString();
+            if (time < 50)
+            {
+                lbTimer.ForeColor = Color.Black;
+            }
+            else
+            {
+                lbTimer.ForeColor = Color.Red;
+            }
+            if (time == 60)
+            {
+                timerQuestion.Stop();
+                currentHealth -= 1;
+                pnlQuestion.Hide();
+                timerUpdate.Start();
+
+                int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
+                Size size = new Size(s - 5, s - 5);
+                player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
+                //if (isFinalRound == false)
+                //{
+                //    pnlQuestion.Hide();
+                //    //currentHealth -= 10;
+                //    timerUpdate.Start();
+                //    player.Location = new Point(0, this.ClientSize.Height / 2);
+                //}
+                //else
+                //{
+                //    //currentHealth -= 10;
+                //    bullets.Add(monsters[0].Attack());
+                //    turn = 2;
+                //    timerBullet.Start();
+                //    timerUpdate.Start();
+                //    currentQuiz++;
+                //}
+                time = 0;
             }
         }
 
