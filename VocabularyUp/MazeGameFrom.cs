@@ -30,7 +30,7 @@ namespace VocabularyUp
         private TrashTalkingForm trashTalking;
         private int isBossCorrect;
         private bool isBoss;
-        private bool isLimit;
+        private bool isWin;
 
         public MazeGameFrom(int idCol, int idSkin)
         {
@@ -48,7 +48,7 @@ namespace VocabularyUp
             isCorrect = -1;
             isBossCorrect = -1;
             isFinalRound = false;
-            isLimit = false;
+            isWin = false;
             this.DoubleBuffered = true;
         }
 
@@ -313,8 +313,7 @@ namespace VocabularyUp
                                     currentHealth -= 10;
                                     player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
                                     isBossCorrect = -1;
-                                    isBoss = false;
-                                    isLimit = false;
+                                    isBoss = false;                                    
                                     timerUpdate.Start();
                                 }
                                 else
@@ -339,7 +338,7 @@ namespace VocabularyUp
                                 {
                                     int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
                                     Size size = new Size(s - 5, s - 5);
-                                    currentHealth -= 50;
+                                    currentHealth -= 10;
                                     player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
                                 }
 
@@ -370,11 +369,14 @@ namespace VocabularyUp
                             {
                                 treasures.Remove(treasures[i]);
                                 MessageBox.Show("Chục mừng bạn đã tìm ra đc khó báu cuối cùng và được 10 KiemCuong");
-                                timerUpdate.Stop();
-                                this.Close();
-                                ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 10);
                                 
-                             
+                                isWin = true;
+                                this.AcceptButton = btnClose;
+                                btnClose.Show();                            
+                                timerUpdate.Stop();
+                               this.Focus();
+                            ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 10);
+                                
                             }
                             else
                             {
@@ -391,7 +393,10 @@ namespace VocabularyUp
             if (currentHealth <= 0 )
             {
                 isGameOver = true;
+                btnClose.Show();
+                this.AcceptButton = btnClose;
                 timerUpdate.Stop();
+                this.Focus();
             }    
             
             //di chuyen cua monster 0
@@ -761,9 +766,12 @@ namespace VocabularyUp
                 player.Y = panel14.Location.Y - player.Size.Height;
         }
 
-        
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-        
+      
 
         public void InitPlayer(int idSkin)
         {
@@ -795,8 +803,14 @@ namespace VocabularyUp
 
             if (isGameOver)
             {
-                SizeF Size = e.Graphics.MeasureString("Game Over", new Font("Arial", 20));
+                SizeF Size = e.Graphics.MeasureString("Game Over", new Font("Arial", 30));
                 e.Graphics.DrawString("Game Over", new Font("Arial", 20), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, (this.Height / 2 - Size.Height / 2)+20));
+            }
+
+            if (isWin)
+            {
+                SizeF Size = e.Graphics.MeasureString("Good job em !", new Font("Arial", 30));
+                e.Graphics.DrawString("Good job em !", new Font("Arial", 30), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, (this.Height / 2 - Size.Height / 2) + 20));
             }
         }
 
