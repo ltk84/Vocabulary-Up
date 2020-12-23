@@ -28,6 +28,9 @@ namespace VocabularyUp
         private int currentQuiz = 0;
         private int isPress = 0;
         private TrashTalkingForm trashTalking;
+        private int isBossCorrect;
+        private bool isBoss;
+        private bool isLimit;
 
         public MazeGameFrom(int idCol, int idSkin)
         {
@@ -43,7 +46,9 @@ namespace VocabularyUp
             isGameOver = false;
             currentHealth = player.Health;
             isCorrect = -1;
+            isBossCorrect = -1;
             isFinalRound = false;
+            isLimit = false;
             this.DoubleBuffered = true;
         }
 
@@ -175,7 +180,7 @@ namespace VocabularyUp
             mon4 = new MonsterMaze(image4, location4, size4, 1, null, false);
             mon5 = new MonsterMaze(image1, location5, size5, 1, null, false);
             mon6 = new MonsterMaze(image2, location6, size6, 1, null, false);
-            monLast = new MonsterMaze(imageLast, locationLast, sizeLast, 0, null, false);
+            monLast = new MonsterMaze(imageLast, locationLast, sizeLast, 0, null, true);
 
             monsters.Add(mon1);
             monsters.Add(mon2);
@@ -184,8 +189,6 @@ namespace VocabularyUp
             monsters.Add(mon5);
             monsters.Add(mon6);
             monsters.Add(monLast);
-
-
         }
         private void InitTreasure()
         {
@@ -281,11 +284,46 @@ namespace VocabularyUp
                     if (player.isCollision(monsters[i]))
                     {
                         this.Focus();
-                        
+
                         //monsters[i].IsDeath = true;
                         if (monsters[i].IsDeath == true)
                         {
                             monsters[i].Image = Image.FromFile("../../db/Treasure/rip.png");
+                        }
+                        else if (monsters[i].IsBoss == true )
+                        {           
+                                isBoss = true;
+                                timerUpdate.Stop();
+                                if (isBossCorrect > 4)
+                                {
+
+                                    if (isBossCorrect == 5)
+                                    {
+                                        monsters[i].IsDeath = true;
+                                        monsters[i].Image = Image.FromFile("../../db/Treasure/rip.png");
+                                    }
+
+
+                                    timerUpdate.Start();
+                                }
+                                else if (isBossCorrect == 0)
+                                {
+                                    int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
+                                    Size size = new Size(s - 5, s - 5);
+                                    currentHealth -= 10;
+                                    player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
+                                    isBossCorrect = -1;
+                                    isBoss = false;
+                                    isLimit = false;
+                                    timerUpdate.Start();
+                                }
+                                else
+                                {
+                                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                                    //currentQuiz++;
+                                    guna2Transition.ShowSync(pnlQuestion);
+                                }
+                            
                         }
                         else
                         {
@@ -301,7 +339,7 @@ namespace VocabularyUp
                                 {
                                     int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
                                     Size size = new Size(s - 5, s - 5);
-                                    currentHealth -= 10;
+                                    currentHealth -= 50;
                                     player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
                                 }
 
@@ -332,9 +370,10 @@ namespace VocabularyUp
                             {
                                 treasures.Remove(treasures[i]);
                                 MessageBox.Show("Chục mừng bạn đã tìm ra đc khó báu cuối cùng và được 10 KiemCuong");
-                            this.Close();
+                                timerUpdate.Stop();
+                                this.Close();
                                 ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 10);
-                                isGameOver = true;
+                                
                              
                             }
                             else
@@ -349,7 +388,11 @@ namespace VocabularyUp
                 }
             }
             
-
+            if (currentHealth <= 0 )
+            {
+                isGameOver = true;
+                timerUpdate.Stop();
+            }    
             
             //di chuyen cua monster 0
             if (monsters[0].IsDeath == false)
@@ -430,7 +473,6 @@ namespace VocabularyUp
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-
             btnA.BorderThickness = 0;
             btnB.BorderThickness = 0;
             btnC.BorderThickness = 0;
@@ -439,13 +481,33 @@ namespace VocabularyUp
             if (userChoices[currentQuiz].IsDone == false && isPress == 1)
             {
                 //ReloadButton();
-                userChoices[currentQuiz].IsDone = true;
-                if (userChoices[currentQuiz].Selected == userChoices[currentQuiz].Correct)
+                if (isBoss == false)
                 {
-                    isCorrect = 1;
+                    userChoices[currentQuiz].IsDone = true;
+                    if (userChoices[currentQuiz].Selected == userChoices[currentQuiz].Correct)
+                    {
+                        isCorrect = 1;
+                    }
+                    else
+                        isCorrect = 0;
                 }
                 else
-                    isCorrect = 0;
+                {
+                    userChoices[currentQuiz].IsDone = true;
+                    if (userChoices[currentQuiz].Selected == userChoices[currentQuiz].Correct)
+                    {
+                        if (isBossCorrect == -1)
+                        {
+                            isBossCorrect = isBossCorrect + 2;
+                        }
+                        else isBossCorrect++;
+                    }
+                    else
+                    {
+                        isBossCorrect = 0;
+                        
+                    }
+                }    
             }
 
             if (userChoices[currentQuiz].Selected != -1)
@@ -707,7 +769,7 @@ namespace VocabularyUp
         {
             Image image = Image.FromFile("../../db/Characters/" + idSkin.ToString() + ".png");
             int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
-            Size size = new Size(s-5,s-5);
+            Size size = new Size(s-5,s-5);           
             Point location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
 
             player = new PlayerMaze(image, location, size, 15);
@@ -729,6 +791,12 @@ namespace VocabularyUp
             foreach (var mon in monsters)
             {
                 mon.Draw(g);
+            }
+
+            if (isGameOver)
+            {
+                SizeF Size = e.Graphics.MeasureString("Game Over", new Font("Arial", 20));
+                e.Graphics.DrawString("Game Over", new Font("Arial", 20), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, (this.Height / 2 - Size.Height / 2)+20));
             }
         }
 
