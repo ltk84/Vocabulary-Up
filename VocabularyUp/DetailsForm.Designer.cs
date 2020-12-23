@@ -72,16 +72,17 @@
             this.pnlTopicSelection.Controls.Add(this.splitContainer1);
             this.pnlTopicSelection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTopicSelection.Location = new System.Drawing.Point(0, 0);
-            this.pnlTopicSelection.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTopicSelection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTopicSelection.Name = "pnlTopicSelection";
             this.pnlTopicSelection.ShadowDecoration.Parent = this.pnlTopicSelection;
-            this.pnlTopicSelection.Size = new System.Drawing.Size(750, 422);
+            this.pnlTopicSelection.Size = new System.Drawing.Size(1000, 519);
             this.pnlTopicSelection.TabIndex = 11;
             // 
             // splitContainer1
             // 
             this.splitContainer1.BackColor = System.Drawing.Color.White;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 10);
+            this.splitContainer1.Location = new System.Drawing.Point(4, 12);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -93,14 +94,16 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.pnlDetails);
-            this.splitContainer1.Size = new System.Drawing.Size(737, 410);
-            this.splitContainer1.SplitterDistance = 372;
+            this.splitContainer1.Size = new System.Drawing.Size(983, 505);
+            this.splitContainer1.SplitterDistance = 496;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.splitContainer2.Name = "splitContainer2";
             this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -113,8 +116,9 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.lvWrongWord);
-            this.splitContainer2.Size = new System.Drawing.Size(372, 410);
-            this.splitContainer2.SplitterDistance = 204;
+            this.splitContainer2.Size = new System.Drawing.Size(496, 505);
+            this.splitContainer2.SplitterDistance = 251;
+            this.splitContainer2.SplitterWidth = 5;
             this.splitContainer2.TabIndex = 0;
             // 
             // btnBack
@@ -129,11 +133,11 @@
             this.btnBack.HoverState.Parent = this.btnBack;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnBack.Location = new System.Drawing.Point(6, 12);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBack.Location = new System.Drawing.Point(8, 15);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.ShadowDecoration.Parent = this.btnBack;
-            this.btnBack.Size = new System.Drawing.Size(28, 32);
+            this.btnBack.Size = new System.Drawing.Size(37, 39);
             this.btnBack.TabIndex = 15;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -142,13 +146,14 @@
             this.lvCorrectWord.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnIndexCorrect,
             this.columnNameCorrect});
-            this.lvCorrectWord.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvCorrectWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvCorrectWord.ForeColor = System.Drawing.Color.LawnGreen;
             this.lvCorrectWord.FullRowSelect = true;
             this.lvCorrectWord.HideSelection = false;
-            this.lvCorrectWord.Location = new System.Drawing.Point(40, 21);
+            this.lvCorrectWord.Location = new System.Drawing.Point(53, 26);
+            this.lvCorrectWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvCorrectWord.Name = "lvCorrectWord";
-            this.lvCorrectWord.Size = new System.Drawing.Size(310, 163);
+            this.lvCorrectWord.Size = new System.Drawing.Size(412, 200);
             this.lvCorrectWord.TabIndex = 0;
             this.lvCorrectWord.UseCompatibleStateImageBehavior = false;
             this.lvCorrectWord.View = System.Windows.Forms.View.Details;
@@ -169,13 +174,14 @@
             this.lvWrongWord.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnIndexWrong,
             this.columnNameWrong});
-            this.lvWrongWord.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvWrongWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvWrongWord.ForeColor = System.Drawing.Color.Red;
             this.lvWrongWord.FullRowSelect = true;
             this.lvWrongWord.HideSelection = false;
-            this.lvWrongWord.Location = new System.Drawing.Point(40, 21);
+            this.lvWrongWord.Location = new System.Drawing.Point(53, 26);
+            this.lvWrongWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvWrongWord.Name = "lvWrongWord";
-            this.lvWrongWord.Size = new System.Drawing.Size(310, 163);
+            this.lvWrongWord.Size = new System.Drawing.Size(412, 200);
             this.lvWrongWord.TabIndex = 1;
             this.lvWrongWord.UseCompatibleStateImageBehavior = false;
             this.lvWrongWord.View = System.Windows.Forms.View.Details;
@@ -196,10 +202,10 @@
             this.pnlDetails.BackColor = System.Drawing.Color.Transparent;
             this.pnlDetails.Controls.Add(this.pnlToCollection);
             this.pnlDetails.Controls.Add(this.pnlTab);
-            this.pnlDetails.Location = new System.Drawing.Point(23, 12);
-            this.pnlDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlDetails.Location = new System.Drawing.Point(31, 15);
+            this.pnlDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDetails.Name = "pnlDetails";
-            this.pnlDetails.Size = new System.Drawing.Size(298, 382);
+            this.pnlDetails.Size = new System.Drawing.Size(397, 470);
             this.pnlDetails.TabIndex = 10;
             // 
             // pnlToCollection
@@ -207,11 +213,11 @@
             this.pnlToCollection.Controls.Add(this.cbCollection);
             this.pnlToCollection.Controls.Add(this.btnToCollection);
             this.pnlToCollection.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlToCollection.Location = new System.Drawing.Point(0, 351);
-            this.pnlToCollection.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlToCollection.Location = new System.Drawing.Point(0, 432);
+            this.pnlToCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlToCollection.Name = "pnlToCollection";
             this.pnlToCollection.ShadowDecoration.Parent = this.pnlToCollection;
-            this.pnlToCollection.Size = new System.Drawing.Size(298, 31);
+            this.pnlToCollection.Size = new System.Drawing.Size(397, 38);
             this.pnlToCollection.TabIndex = 11;
             // 
             // cbCollection
@@ -229,10 +235,10 @@
             this.cbCollection.ItemHeight = 30;
             this.cbCollection.ItemsAppearance.Parent = this.cbCollection;
             this.cbCollection.Location = new System.Drawing.Point(0, 0);
-            this.cbCollection.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCollection.Name = "cbCollection";
             this.cbCollection.ShadowDecoration.Parent = this.cbCollection;
-            this.cbCollection.Size = new System.Drawing.Size(264, 36);
+            this.cbCollection.Size = new System.Drawing.Size(351, 36);
             this.cbCollection.TabIndex = 13;
             // 
             // btnToCollection
@@ -247,11 +253,11 @@
             this.btnToCollection.ForeColor = System.Drawing.Color.Black;
             this.btnToCollection.HoverState.Parent = this.btnToCollection;
             this.btnToCollection.Image = ((System.Drawing.Image)(resources.GetObject("btnToCollection.Image")));
-            this.btnToCollection.Location = new System.Drawing.Point(268, 0);
-            this.btnToCollection.Margin = new System.Windows.Forms.Padding(2);
+            this.btnToCollection.Location = new System.Drawing.Point(357, 0);
+            this.btnToCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnToCollection.Name = "btnToCollection";
             this.btnToCollection.ShadowDecoration.Parent = this.btnToCollection;
-            this.btnToCollection.Size = new System.Drawing.Size(30, 31);
+            this.btnToCollection.Size = new System.Drawing.Size(40, 38);
             this.btnToCollection.TabIndex = 0;
             this.btnToCollection.Click += new System.EventHandler(this.btnToCollection_Click);
             // 
@@ -266,11 +272,11 @@
             this.pnlTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.pnlTab.Location = new System.Drawing.Point(2, 2);
-            this.pnlTab.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTab.Location = new System.Drawing.Point(3, 2);
+            this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
-            this.pnlTab.Size = new System.Drawing.Size(296, 341);
+            this.pnlTab.Size = new System.Drawing.Size(395, 420);
             this.pnlTab.TabIndex = 0;
             this.pnlTab.Click += new System.EventHandler(this.pnlTab_Click);
             // 
@@ -284,23 +290,22 @@
             this.btnPronun.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.Image")));
             this.btnPronun.ImageRotate = 0F;
             this.btnPronun.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnPronun.Location = new System.Drawing.Point(257, 297);
-            this.btnPronun.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPronun.Location = new System.Drawing.Point(343, 366);
+            this.btnPronun.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPronun.Name = "btnPronun";
             this.btnPronun.PressedState.Parent = this.btnPronun;
-            this.btnPronun.Size = new System.Drawing.Size(24, 31);
+            this.btnPronun.Size = new System.Drawing.Size(32, 38);
             this.btnPronun.TabIndex = 14;
             this.btnPronun.Click += new System.EventHandler(this.btnPronun_Click);
             // 
             // lbMain
             // 
             this.lbMain.BackColor = System.Drawing.Color.Transparent;
-            this.lbMain.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.lbMain.ForeColor = System.Drawing.Color.White;
-            this.lbMain.Location = new System.Drawing.Point(1, 288);
-            this.lbMain.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMain.Location = new System.Drawing.Point(1, 354);
             this.lbMain.Name = "lbMain";
-            this.lbMain.Size = new System.Drawing.Size(293, 40);
+            this.lbMain.Size = new System.Drawing.Size(391, 49);
             this.lbMain.TabIndex = 7;
             this.lbMain.Text = "Welcome";
             this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -309,10 +314,10 @@
             // pbMain
             // 
             this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
-            this.pbMain.Location = new System.Drawing.Point(15, 19);
-            this.pbMain.Margin = new System.Windows.Forms.Padding(2);
+            this.pbMain.Location = new System.Drawing.Point(20, 23);
+            this.pbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbMain.Name = "pbMain";
-            this.pbMain.Size = new System.Drawing.Size(266, 260);
+            this.pbMain.Size = new System.Drawing.Size(355, 320);
             this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMain.TabIndex = 8;
             this.pbMain.TabStop = false;
@@ -321,10 +326,10 @@
             // pnlDash
             // 
             this.pnlDash.BackColor = System.Drawing.Color.White;
-            this.pnlDash.Location = new System.Drawing.Point(16, 282);
-            this.pnlDash.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlDash.Location = new System.Drawing.Point(21, 347);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDash.Name = "pnlDash";
-            this.pnlDash.Size = new System.Drawing.Size(266, 4);
+            this.pnlDash.Size = new System.Drawing.Size(355, 5);
             this.pnlDash.TabIndex = 11;
             // 
             // timerSpeaker
@@ -333,12 +338,13 @@
             // 
             // DetailsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(750, 422);
+            this.ClientSize = new System.Drawing.Size(1000, 519);
             this.Controls.Add(this.pnlTopicSelection);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DetailsForm";
             this.Text = "DetailsForm";
             this.pnlTopicSelection.ResumeLayout(false);

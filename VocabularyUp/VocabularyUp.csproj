@@ -84,7 +84,20 @@
     <Compile Include="GameMCForm.Designer.cs">
       <DependentUpon>GameMCForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImgMazeObject.cs" />
     <Compile Include="ImgRendingObject.cs" />
+    <Compile Include="IntroductionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntroductionForm.Designer.cs">
+      <DependentUpon>IntroductionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MazeGameFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MazeGameFrom.Designer.cs">
+      <DependentUpon>MazeGameFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,7 +105,9 @@
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Monster.cs" />
+    <Compile Include="MonsterMaze.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="PlayerMaze.cs" />
     <Compile Include="Skin.cs" />
     <Compile Include="Collection.cs" />
     <Compile Include="CollectionLib.cs">
@@ -235,6 +250,7 @@
     <Compile Include="TrashTalkingForm.Designer.cs">
       <DependentUpon>TrashTalkingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Treasure.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserAccessForm.cs">
       <SubType>Form</SubType>
@@ -276,11 +292,17 @@
     <EmbeddedResource Include="GameMCForm.resx">
       <DependentUpon>GameMCForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IntroductionForm.resx">
+      <DependentUpon>IntroductionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ItemForm.resx">
       <DependentUpon>ItemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LearningForm.resx">
       <DependentUpon>LearningForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MazeGameFrom.resx">
+      <DependentUpon>MazeGameFrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>

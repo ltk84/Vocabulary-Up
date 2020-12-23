@@ -16,14 +16,14 @@ namespace VocabularyUp
         }
         public bool IsBoom { get => isBoom; set => isBoom = value; }
 
-        public override bool isCollision(ImgRendingObject obj)
-        {
-            bool isCol = base.isCollision(obj);
-            if (isCol)
-            {
-                this.isBoom = true;
-            }
-            return isCol;
-        }
+        //public override bool isCollision(ImgRendingObject obj)
+        //{
+        //    bool isCol = base.isCollision(obj);
+        //    if (isCol)
+        //    {
+        //        this.isBoom = true;
+        //    }
+        //    return isCol;
+        //}
     }
 }

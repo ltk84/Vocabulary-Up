@@ -102,7 +102,7 @@
             // lbMain
             // 
             this.lbMain.BackColor = System.Drawing.Color.Transparent;
-            this.lbMain.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.lbMain.ForeColor = System.Drawing.Color.White;
             this.lbMain.Location = new System.Drawing.Point(-3, 345);
             this.lbMain.Name = "lbMain";
@@ -200,10 +200,10 @@
             // pnlTab
             // 
             this.pnlTab.BorderRadius = 20;
+            this.pnlTab.Controls.Add(this.pnlDash);
             this.pnlTab.Controls.Add(this.btnPronun);
             this.pnlTab.Controls.Add(this.lbMain);
             this.pnlTab.Controls.Add(this.pbMain);
-            this.pnlTab.Controls.Add(this.pnlDash);
             this.pnlTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
@@ -239,11 +239,11 @@
             // 
             this.lbTime.AutoSize = true;
             this.lbTime.BackColor = System.Drawing.Color.Transparent;
-            this.lbTime.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Bold);
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lbTime.Location = new System.Drawing.Point(756, 14);
             this.lbTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(53, 28);
+            this.lbTime.Size = new System.Drawing.Size(48, 25);
             this.lbTime.TabIndex = 61;
             this.lbTime.Text = "600";
             // 

@@ -21,6 +21,7 @@ namespace VocabularyUp
         MailMessage msg;
         string verifiedCode;
         int iCountDown = 5;
+        IntroductionForm introduction = new IntroductionForm();
         public UserAccessForm()
         {
             InitializeComponent();
@@ -298,6 +299,12 @@ namespace VocabularyUp
 
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            introduction.ShowDialog();
+            this.Show();
+        }
         private void InitLoadingForm(int currentID)
         {
             pnlUserLogin.Visible = true;
