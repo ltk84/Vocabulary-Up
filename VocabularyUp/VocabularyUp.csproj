@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="MazeGameFrom.Designer.cs">
       <DependentUpon>MazeGameFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>

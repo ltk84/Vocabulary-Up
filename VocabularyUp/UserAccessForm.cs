@@ -304,6 +304,7 @@ namespace VocabularyUp
             this.Hide();
             introduction.ShowDialog();
             this.Show();
+        }
         private void InitLoadingForm(int currentID)
         {
             pnlUserLogin.Visible = true;

@@ -294,3 +294,15 @@ D:\UIT\LTTQ\Dự án\Vocabulary-Up\Đồ án\Vocabulary-Up\VocabularyUp\obj\Debu
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Đồ án\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\Đồ án\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.pdb
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.IntroductionForm.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.DetailsGameForm.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.IntroductionForm.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.MazeGameFrom.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.LoadingForm.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.SuperLabel.resources
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe.licenses
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\bin\Debug\DevExpress.XtraBars.v20.1.dll
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\bin\Debug\DevExpress.XtraBars.v20.1.xml
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\bin\Debug\de\DevExpress.XtraBars.v20.1.resources.dll
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\bin\Debug\es\DevExpress.XtraBars.v20.1.resources.dll
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\bin\Debug\ja\DevExpress.XtraBars.v20.1.resources.dll
+C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\bin\Debug\ru\DevExpress.XtraBars.v20.1.resources.dll
