@@ -58,7 +58,7 @@ namespace VocabularyUp
 
         public void InitPlayer(int idSkin)
         {
-            Image image = Image.FromFile("../../db/Characters/" + idSkin.ToString() + ".png");
+            Image image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Characters/" + idSkin.ToString() + ".png");
             Point location = new Point(0, Screen.PrimaryScreen.Bounds.Height / 2);
             Size size = new Size(100, 100);
 
@@ -78,7 +78,7 @@ namespace VocabularyUp
             for (int i = 0; i < 3; i++)
             {
 
-                Image image = Image.FromFile("../../db/Monsters/" + (i + 1).ToString() + ".png");
+                Image image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Monsters/" + (i + 1).ToString() + ".png");
                 image.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 int y = rd.Next(Screen.PrimaryScreen.Bounds.Height * 2 / 3, Screen.PrimaryScreen.Bounds.Height - size_Normal.Height);
                 Point location = new Point(((i + 1) * Screen.PrimaryScreen.Bounds.Width / 4), y);
@@ -103,7 +103,7 @@ namespace VocabularyUp
         public void LoadBackGround()
         {
             Random rd = new Random();
-            this.BackgroundImage = Image.FromFile("../../db/Backgrounds/maps/map_" + rd.Next(1,6).ToString() +".jpg");
+            this.BackgroundImage = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Backgrounds/maps/map_" + rd.Next(1,6).ToString() +".jpg");
 
         }
 
@@ -171,7 +171,7 @@ namespace VocabularyUp
                                     // Init dead.
                                     PictureBox pb = new PictureBox();
                                     pb.BackColor = Color.Transparent;
-                                    pb.Image = Image.FromFile("../../db/Monsters/dead.png");
+                                    pb.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Monsters/dead.png");
                                     pb.Location = monsters[i].Location;
                                     pb.SizeMode = PictureBoxSizeMode.StretchImage;
                                     pb.Size = size_Normal;
@@ -395,7 +395,7 @@ namespace VocabularyUp
         public void ChangeFlashCard(string content, int id)
         {
             lbMain.Text = content;
-            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
+            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + id.ToString() + ".jpg");
             InitAnswer();
 
             isPress = 0;
@@ -758,22 +758,22 @@ namespace VocabularyUp
             count++;
             if (turn == 1)
             {
-                Image image = Image.FromFile("../../db/Monsters/Hit/3.png");
+                Image image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Monsters/Hit/3.png");
                 image.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 monsters[0].Image = image;
             }
             else if (turn == 2)
             {
-                player.Image = Image.FromFile("../../db/Characters/Hit/" + idSkin.ToString() +".png");
+                player.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Characters/Hit/" + idSkin.ToString() +".png");
             }
 
             if (count == 2)
             {
                 if (turn == 2)
-                    player.Image = Image.FromFile("../../db/Characters/" + idSkin.ToString() + ".png");
+                    player.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Characters/" + idSkin.ToString() + ".png");
                 else
                 {
-                    Image image = Image.FromFile("../../db/Monsters/3.png");
+                    Image image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Monsters/3.png");
                     image.RotateFlip(RotateFlipType.RotateNoneFlipX);
                     monsters[0].Image = image;
 

@@ -97,7 +97,7 @@ namespace VocabularyUp
         public void ChangeFlashCard(string content, int id)
         {
             lbMain_FB.Text = content;
-            pbMain_FB.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
+            pbMain_FB.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + id.ToString() + ".jpg");
             lbCorrectAnswer.Text = userChoices[currentQuiz].CorrectAns;
             if (userChoices[currentQuiz].IsDone == true)
                 btnNext.Enabled = true;

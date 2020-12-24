@@ -108,47 +108,47 @@ namespace VocabularyUp
             if (Level <= 1)
             {
                 lbCapBac.Text = "Beginner";
-                imageLevel.Image = Image.FromFile("../../db/Rankings/Iron 1.png");
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Iron 1.png");
             }
             else if (Level == 2)
             {
                 lbCapBac.Text = "High Beginner";
-                imageLevel.Image = Image.FromFile("../../db/Rankings/Iron 3.png");
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Iron 3.png");
             }
             else if (Level == 3)
             {
                 lbCapBac.Text = "Low Intermediate";
-                imageLevel.Image = Image.FromFile("../../db/Rankings/Bronze 3.png");
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Bronze 3.png");
             }
             else if (Level == 4)
             {
                 lbCapBac.Text = "Intermediate";
-                imageLevel.Image = Image.FromFile("../../db/Rankings/Silver 3.png");
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Silver 3.png");
             }
             else if (Level == 5)
             {
                 lbCapBac.Text = "High Intermediate";
-                imageLevel.Image = Image.FromFile("../../db/Rankings/Gold 3.png");
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Gold 3.png");
             }
             else if (Level == 6)
             {
                 lbCapBac.Text = "Low Advanced";
-                imageLevel.Image = Image.FromFile("../../db/Rankings/Platinum 3.png");
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Platinum 3.png");
             }
             else if (Level == 7)
             {
                 lbCapBac.Text = "Advanced";
-                imageLevel.Image = Image.FromFile("../../db/Rankings/Diamond 3.png");
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Diamond 3.png");
             }
             else if (Level == 8)
             {
                 lbCapBac.Text = "Master";
-                imageLevel.Image = Image.FromFile("../../db/Rankings/Immortal 3.png");
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Immortal 3.png");
             }
             else if (Level > 8)
             { 
             lbCapBac.Text = "Challenge";
-            imageLevel.Image = Image.FromFile("../../db/Rankings/Master Vocab.png");
+            imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Master Vocab.png");
             }
 
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -87,7 +88,7 @@ namespace VocabularyUp
 
         public Bullet Attack()
         {
-            Image image = Image.FromFile("../../db/Fires/bullet.png");
+            Image image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_database") + "Fires/bullet.png");
             return new Bullet(image, this.location, this.size, 100);
         }
     }

@@ -46,8 +46,8 @@ namespace VocabularyUp
         private void UpdateTheme()
         {
             this.pnlMainNav.BackColor = primary;
-            this.btnBack.Image = Image.FromFile("../../icons/back_arrow_dark.png");
-            this.btnDone.Image = Image.FromFile("../../icons/done_dark.png");
+            this.btnBack.Image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_icons") + "back_arrow_dark.png");
+            this.btnDone.Image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_icons") + "done_dark.png");
             this.btnToCollection.FillColor = primary;
             this.pnlTab.FillColor = primary;
             this.pnlTab.FillColor2 = primary;
@@ -57,7 +57,7 @@ namespace VocabularyUp
         public void ChangeFlashCard(string content, int id)
         {
             lbMain.Text = content;
-            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
+            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + id.ToString() + ".jpg");
         }
 
         private void btnRight_Click(object sender, EventArgs e)

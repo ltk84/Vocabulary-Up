@@ -42,7 +42,7 @@ namespace VocabularyUp
                 secondary = Color.FromArgb(7, 96, 68);
             }
             this.pnlTopicSelection.BackColor = primary;
-            this.btnBack.Image = Image.FromFile("../../icons/back_arrow_dark.png");
+            this.btnBack.Image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_icons") + "back_arrow_dark.png");
             this.btnToCollection.FillColor = primary;
             this.pnlTab.FillColor = primary;
             this.pnlTab.FillColor2 = primary;
@@ -101,7 +101,7 @@ namespace VocabularyUp
             try
             {
                 lbMain.Text = content;
-                pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
+                pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + id.ToString() + ".jpg");
             }
             catch (Exception)
             {

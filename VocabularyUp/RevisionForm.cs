@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -63,7 +64,7 @@ namespace VocabularyUp
         public void LoadPictureBoxCharacter(int currentChar)
         {
             int idChar = ManageUserAction.GetOwnCharacterList()[currentChar].ID;
-            pbCharacter.Image = Image.FromFile("../../db/Characters/" + idChar.ToString() + ".png");
+            pbCharacter.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Characters/" + idChar.ToString() + ".png");
             Changelabel(ManageUserAction.GetOwnCharacterList()[currentChar].Name);
         }
 

@@ -88,7 +88,7 @@ namespace VocabularyUp
         public void ChangeFlashCard(string content, int id)
         {
             lbMain.Text = content;
-            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
+            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + id.ToString() + ".jpg");
             InitAnswer();
 
             isPress = 0;
@@ -142,11 +142,11 @@ namespace VocabularyUp
         {
             monsters = new List<MonsterMaze>();
             MonsterMaze mon1, mon2, mon3, mon4, mon5, mon6, monLast;
-            Image image1 = Image.FromFile("../../db/Monsters/a_1.png");
-            Image image2 = Image.FromFile("../../db/Monsters/a_2.png");
-            Image image3 = Image.FromFile("../../db/Monsters/a_4.png");
-            Image image4 = Image.FromFile("../../db/Monsters/a_5.png");
-            Image imageLast = Image.FromFile("../../db/Monsters/5.png");
+            Image image1 = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Monsters/a_1.png");
+            Image image2 = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Monsters/a_2.png");
+            Image image3 = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Monsters/a_4.png");
+            Image image4 = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Monsters/a_5.png");
+            Image imageLast = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Monsters/5.png");
             Size size = new Size(50,50);
            
             int s1 = wall2.Location.X - panel2.Width;
@@ -192,7 +192,7 @@ namespace VocabularyUp
         {
             treasures = new List<Treasure>();
             Treasure trea1, trea2, trea3, trea4, trea5, trea6, treaLast;
-            Image image = Image.FromFile("../../db/Treasure/treasure.png");
+            Image image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Treasure/treasure.png");
             Size size = new Size(50, 50);
 
             int s1 = panel5.Location.Y - panel1.Location.Y - panel1.Height;
@@ -228,7 +228,7 @@ namespace VocabularyUp
             int sLast = panel5.Location.Y - panel11.Location.Y - panel11.Height;
             Size sizeLast = new Size(sLast - 10, sLast);
             Point locationLast = new Point(panel1.Location.X + panel1.Width, panel11.Location.Y + panel11.Height);
-            Image imageLast = Image.FromFile("../../db/Treasure/LastTreasure.png");
+            Image imageLast = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Treasure/LastTreasure.png");
             treaLast = new Treasure(imageLast, locationLast, sizeLast, 0, true);
             treasures.Add(trea1);
             treasures.Add(trea2);
@@ -286,7 +286,7 @@ namespace VocabularyUp
                         //monsters[i].IsDeath = true;
                         if (monsters[i].IsDeath == true)
                         {
-                            monsters[i].Image = Image.FromFile("../../db/Treasure/rip.png");
+                            monsters[i].Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Treasure/rip.png");
                         }
                         else if (monsters[i].IsBoss == true )
                         {           
@@ -298,7 +298,7 @@ namespace VocabularyUp
                                     if (isBossCorrect == 5)
                                     {
                                         monsters[i].IsDeath = true;
-                                        monsters[i].Image = Image.FromFile("../../db/Treasure/rip.png");
+                                        monsters[i].Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Treasure/rip.png");
                                     }
 
 
@@ -331,7 +331,7 @@ namespace VocabularyUp
                                 if (isCorrect == 1)
                                 {
                                     monsters[i].IsDeath = true;
-                                    monsters[i].Image = Image.FromFile("../../db/Treasure/rip.png");                                    
+                                    monsters[i].Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Treasure/rip.png");                                    
                                 }
                                 else
                                 {
@@ -470,7 +470,7 @@ namespace VocabularyUp
 
         public void LoadBackGround()
         {
-            this.BackgroundImage = Image.FromFile("../../db/Backgrounds/mazeReal.jpg");
+            this.BackgroundImage = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Backgrounds/mazeReal.jpg");
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -856,7 +856,7 @@ namespace VocabularyUp
 
         public void InitPlayer(int idSkin)
         {
-            Image image = Image.FromFile("../../db/Characters/" + idSkin.ToString() + ".png");
+            Image image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Characters/" + idSkin.ToString() + ".png");
             int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
             Size size = new Size(s-5,s-5);           
             Point location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);

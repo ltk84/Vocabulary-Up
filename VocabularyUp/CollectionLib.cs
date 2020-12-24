@@ -52,12 +52,12 @@ namespace VocabularyUp
             this.pnlTab.FillColor3 = primary;
             this.pnlTab.FillColor4 = primary;
             this.btnRemoveFromCollection.FillColor = primary;
-            this.btnBack.Image = Image.FromFile("../../icons/back_arrow_dark.png");
+            this.btnBack.Image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_icons") + "back_arrow_dark.png");
         }
         public void ChangeFlashCard(string content, int id)
         {
             lbMain.Text = content;
-            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
+            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + id.ToString() + ".jpg");
         }
 
         private void ToTheRight()

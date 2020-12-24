@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -38,7 +39,7 @@ namespace VocabularyUp
 
         public void ChangeInfo(int id, string name, int price)
         {
-            string link = "../../db/Characters/" + id.ToString() + ".png";
+            string link = @ConfigurationManager.AppSettings.Get("imgPath_database") + "Characters/" + id.ToString() + ".png";
             Image image = Image.FromFile(link);
             pbChar.Image = image;
             lbName.Text = name;
