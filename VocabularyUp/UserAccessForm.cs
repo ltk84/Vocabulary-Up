@@ -21,7 +21,7 @@ namespace VocabularyUp
         MailMessage msg;
         string verifiedCode;
         int iCountDown = 5;
-        IntroductionForm introduction = new IntroductionForm();
+        IntroductionForm introduction;
         public UserAccessForm()
         {
             InitializeComponent();
@@ -302,6 +302,7 @@ namespace VocabularyUp
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Hide();
+            introduction = new IntroductionForm();
             introduction.ShowDialog();
             this.Show();
         }

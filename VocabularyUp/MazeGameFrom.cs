@@ -308,7 +308,7 @@ namespace VocabularyUp
                                 {
                                     int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
                                     Size size = new Size(s - 5, s - 5);
-                                    currentHealth -= 10;
+                                    currentHealth -= 1;
                                     player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
                                     isBossCorrect = -1;
                                     isBoss = false;                                    
@@ -337,7 +337,7 @@ namespace VocabularyUp
                                 {
                                     int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
                                     Size size = new Size(s - 5, s - 5);
-                                    currentHealth -= 10;
+                                    currentHealth -= 1;
                                     player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
                                 }
 
