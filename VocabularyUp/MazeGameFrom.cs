@@ -8,6 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Synthesis;
+using System.Media;
+using WMPLib;
+
 
 namespace VocabularyUp
 {
@@ -29,6 +33,10 @@ namespace VocabularyUp
         private int isBossCorrect;
         private bool isBoss;
         private bool isWin;
+        private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
+        private SoundPlayer soundPlayer= new SoundPlayer();
+        private WMPLib.WindowsMediaPlayer mediaPlayer = new WMPLib.WindowsMediaPlayer();
+        private WMPLib.WindowsMediaPlayer music = new WMPLib.WindowsMediaPlayer();    
 
         public MazeGameFrom(int idCol, int idSkin)
         {
@@ -40,6 +48,7 @@ namespace VocabularyUp
             InitQuiz();            
             InitCollecion(idCol);
             InitPlayer(idSkin);
+            LoadMusic();
             timerUpdate.Start();
             isGameOver = false;
             currentHealth = player.Health;
@@ -50,6 +59,12 @@ namespace VocabularyUp
         }
 
 
+        private void LoadMusic()
+        {
+            mediaPlayer.URL = "MusicMazeGame.mp3";
+            mediaPlayer.settings.volume = 20;
+            mediaPlayer.controls.play();
+        }
 
         private void InitAnswer()
         {
@@ -271,8 +286,7 @@ namespace VocabularyUp
             player.HandleOutsideClient(this);
             HandleNotThroughtWall();
             this.Focus();
-             
-
+            
 
             if (!isGameOver)
             {
@@ -288,7 +302,8 @@ namespace VocabularyUp
                             monsters[i].Image = Image.FromFile("../../db/Treasure/rip.png");
                         }
                         else if (monsters[i].IsBoss == true )
-                        {           
+                        {
+                                mediaPlayer.controls.pause();
                                 isBoss = true;
                                 timerUpdate.Stop();
                                 if (isBossCorrect > 4)
@@ -307,7 +322,7 @@ namespace VocabularyUp
                                 {
                                     int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
                                     Size size = new Size(s - 5, s - 5);
-                                    currentHealth -= 10;
+                                    currentHealth -= 80;
                                     player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
                                     isBossCorrect = -1;
                                     isBoss = false;                                    
@@ -323,6 +338,7 @@ namespace VocabularyUp
                         }
                         else
                         {
+                            mediaPlayer.controls.pause();
                             timerUpdate.Stop();
                             if (isCorrect >= 0)
                             {
@@ -335,7 +351,7 @@ namespace VocabularyUp
                                 {
                                     int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
                                     Size size = new Size(s - 5, s - 5);
-                                    currentHealth -= 10;
+                                    currentHealth -= 80;
                                     player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
                                 }
 
@@ -364,9 +380,13 @@ namespace VocabularyUp
                         
                             if (treasures[i].IsLastTreasure == true)
                             {
+                                mediaPlayer.controls.stop();
                                 treasures.Remove(treasures[i]);
                                 MessageBox.Show("Chục mừng bạn đã tìm ra đc khó báu cuối cùng và được 10 KiemCuong");
-                                
+                                mediaPlayer.controls.stop();
+
+                                music.URL = "win1.mp3";
+                                music.controls.play();
                                 isWin = true;
                                 this.AcceptButton = btnClose;
                                 btnClose.Show();
@@ -378,6 +398,7 @@ namespace VocabularyUp
                             }
                             else
                             {
+
                                 treasures.Remove(treasures[i]);
                                 //MessageBox.Show("Khó báu cỏ, bạn được 1 kim cương!");
                                 ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
@@ -387,17 +408,24 @@ namespace VocabularyUp
                     }
                 }
             }
+
             
             if (currentHealth <= 0 )
             {
                 isGameOver = true;
+
+                mediaPlayer.controls.stop();
+
+                music.URL = "lose1.mp3";
+                music.controls.play();
                 btnClose.Show();
                 btnDetails.Show();
                 this.AcceptButton = btnClose;
                 timerUpdate.Stop();
                 this.Focus();
             }    
-            
+             
+
             //di chuyen cua monster 0
             if (monsters[0].IsDeath == false)
             {
@@ -458,7 +486,6 @@ namespace VocabularyUp
                     monsters[5].Cur = Direction1.Up;
             }
 
-
             double percent = (((double)currentHealth) / player.Health) * 100;
             pgbHealth.Value = (int)percent;
             lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
@@ -472,11 +499,15 @@ namespace VocabularyUp
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
+            music.controls.stop();
+            mediaPlayer.controls.stop();
             this.Close();
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            string correct = " correct";
+            string incorrect = " incorrect";
             btnA.BorderThickness = 0;
             btnB.BorderThickness = 0;
             btnC.BorderThickness = 0;
@@ -490,10 +521,29 @@ namespace VocabularyUp
                     userChoices[currentQuiz].IsDone = true;
                     if (userChoices[currentQuiz].Selected == userChoices[currentQuiz].Correct)
                     {
+
                         isCorrect = 1;
+                        synthesizer.Rate = 1;
+                        synthesizer.Volume = 100;
+                        synthesizer.Speak(correct);
+                        music.URL = "correct.mp3";
+                        music.controls.play();
+
+                        mediaPlayer.URL = "MusicMazeGame.mp3";
+                        mediaPlayer.controls.play();
                     }
                     else
+                    {
+                        synthesizer.Rate = 1;
+                        synthesizer.Volume = 100;
+                        synthesizer.Speak(incorrect);
                         isCorrect = 0;
+                        music.URL = "incorrect.mp3";
+                        music.controls.play();
+
+                        mediaPlayer.URL = "MusicMazeGame.mp3";
+                        mediaPlayer.controls.play();
+                    }
                 }
                 else
                 {
@@ -505,11 +555,31 @@ namespace VocabularyUp
                             isBossCorrect = isBossCorrect + 2;
                         }
                         else isBossCorrect++;
+                        music.URL = "correct.mp3";
+                        music.controls.play();
+                        synthesizer.Rate = 1;
+                        synthesizer.Volume = 100;
+                        synthesizer.Speak(correct);
+                        
+                        if (isBossCorrect == 5)
+                        {
+                            mediaPlayer.URL = "MazeGame.mp3";
+                            mediaPlayer.controls.play();
+                        }    
+
                     }
                     else
                     {
                         isBossCorrect = 0;
-                        
+                        music.URL = "incorrect.mp3";
+                        music.controls.play();
+                        synthesizer.Rate = 1;
+                        synthesizer.Volume = 100;
+                        synthesizer.Speak(incorrect);
+
+                        mediaPlayer.URL = "MazeGame.mp3";
+                        mediaPlayer.controls.play();
+
                     }
                 }    
             }
@@ -767,6 +837,8 @@ namespace VocabularyUp
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            music.controls.stop();
+            mediaPlayer.controls.stop();
             this.Close();
         }
 
@@ -836,12 +908,14 @@ namespace VocabularyUp
             {
                 SizeF Size = e.Graphics.MeasureString("Game Over", new Font("Arial", 30));
                 e.Graphics.DrawString("Game Over", new Font("Arial", 20), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, (this.Height / 2 - Size.Height / 2)+20));
+            
             }
 
             if (isWin)
             {
                 SizeF Size = e.Graphics.MeasureString("Good job em !", new Font("Arial", 30));
-                e.Graphics.DrawString("Good job em !", new Font("Arial", 30), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, (this.Height / 2 - Size.Height / 2) + 20));
+                e.Graphics.DrawString("Good job em !", new Font("Arial", 30), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, (this.Height / 2 - Size.Height / 2) + 20));                
+                
             }
         }
 
