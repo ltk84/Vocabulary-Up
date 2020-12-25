@@ -790,5 +790,10 @@ namespace VocabularyUp
                 count = 0;
             }
         }
+
+        private void guna2Button12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
