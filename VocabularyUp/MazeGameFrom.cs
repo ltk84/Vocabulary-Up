@@ -30,6 +30,7 @@ namespace VocabularyUp
         private bool isBoss;
         private bool isWin;
         private int time = 0;
+        private bool inFighting = false;
 
         public MazeGameFrom(int idCol, int idSkin)
         {
@@ -47,7 +48,9 @@ namespace VocabularyUp
             isCorrect = -1;
             isBossCorrect = -1;
             isWin = false;
+            Point locationLast = new Point(panel12.Location.X, panel11.Location.Y+panel11.Height);
             this.DoubleBuffered = true;
+            player.Location = locationLast;
         }
 
 
@@ -240,30 +243,33 @@ namespace VocabularyUp
         }
         private void PlayerMaze_PriviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            switch (e.KeyCode)
+            if (inFighting == false)
             {
-                case Keys.Left:
-                    player.Move(Direction1.Left);
-                    goLeft = true;
-                    goDown = goRight = goUp = false;
-                    break;
-                case Keys.Right:
-                    player.Move(Direction1.Right);
-                    goRight = true;
-                    goDown = goUp = goLeft = false;
-                    break;
-                case Keys.Up:
-                    player.Move(Direction1.Up);
-                    goUp = true;
-                    goLeft = goRight = goDown = false;
-                    break;
-                case Keys.Down:
-                    player.Move(Direction1.Down);
-                    goDown = true;
-                    goLeft = goRight = goUp = false;
-                    break;
-                default:
-                    break;
+                switch (e.KeyCode)
+                {
+                    case Keys.Left:
+                        player.Move(Direction1.Left);
+                        goLeft = true;
+                        goDown = goRight = goUp = false;
+                        break;
+                    case Keys.Right:
+                        player.Move(Direction1.Right);
+                        goRight = true;
+                        goDown = goUp = goLeft = false;
+                        break;
+                    case Keys.Up:
+                        player.Move(Direction1.Up);
+                        goUp = true;
+                        goLeft = goRight = goDown = false;
+                        break;
+                    case Keys.Down:
+                        player.Move(Direction1.Down);
+                        goDown = true;
+                        goLeft = goRight = goUp = false;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
 
@@ -272,7 +278,6 @@ namespace VocabularyUp
             player.HandleOutsideClient(this);
             HandleNotThroughtWall();
             this.Focus();
-             
 
 
             if (!isGameOver)
@@ -282,6 +287,10 @@ namespace VocabularyUp
                     if (player.isCollision(monsters[i]))
                     {
                         this.Focus();
+                        if (monsters[i].IsDeath == false)
+                            inFighting = true;
+                        else
+                            inFighting = false;
 
                         //monsters[i].IsDeath = true;
                         if (monsters[i].IsDeath == true)
@@ -309,9 +318,10 @@ namespace VocabularyUp
                                     int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
                                     Size size = new Size(s - 5, s - 5);
                                     currentHealth -= 1;
-                                    player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
+                                    //player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
                                     isBossCorrect = -1;
-                                    isBoss = false;                                    
+                                    isBoss = false;
+                                    inFighting = false;
                                     timerUpdate.Start();
                                 }
                                 else
@@ -338,6 +348,7 @@ namespace VocabularyUp
                                     int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
                                     Size size = new Size(s - 5, s - 5);
                                     currentHealth -= 1;
+                                    inFighting = false;
                                     player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
                                 }
 
@@ -353,8 +364,7 @@ namespace VocabularyUp
                                 //pnlQuestion.Show();
                             }
                         }
-                    
-                       
+
 
 
                     }
@@ -365,27 +375,30 @@ namespace VocabularyUp
                     if (player.isCollision(treasures[i]))
                     {
                         
-                            if (treasures[i].IsLastTreasure == true)
-                            {
-                                treasures.Remove(treasures[i]);
-                                MessageBox.Show("Chục mừng bạn đã tìm ra đc khó báu cuối cùng và được 10 KiemCuong");
+                        if (treasures[i].IsLastTreasure == true)
+                        {
+                            treasures.Remove(treasures[i]);
+                            //MessageBox.Show("Chục mừng bạn đã tìm ra đc khó báu cuối cùng và được 10 KiemCuong");
                                 
-                                isWin = true;
-                                this.AcceptButton = btnClose;
-                                btnClose.Show();
-                                 btnDetails.Show();
-                                timerUpdate.Stop();
-                               this.Focus();
+                            isWin = true;
+                            this.AcceptButton = btnClose;
+                            btnClose.Show();
+                            btnDetails.Show();
+                            timerUpdate.Stop();
+                            this.Focus();
                             ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 10);
-                                
-                            }
-                            else
-                            {
-                                treasures.Remove(treasures[i]);
-                                //MessageBox.Show("Khó báu cỏ, bạn được 1 kim cương!");
-                                ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
+                            lbFinal.Text = "Congratulations!";
+                            lbFinal.ForeColor = Color.Lime;
+                            pnlFinal.Location = new Point(this.ClientSize.Width / 2 - pnlFinal.Size.Width / 2, this.ClientSize.Height / 2 - pnlFinal.Size.Height / 2);
+                            guna2Transition.ShowSync(pnlFinal);
+                        }
+                        else
+                        {
+                            treasures.Remove(treasures[i]);
+                            //MessageBox.Show("Khó báu cỏ, bạn được 1 kim cương!");
+                            ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
 
-                            }
+                        }
                         
                     }
                 }
@@ -398,6 +411,7 @@ namespace VocabularyUp
                 btnDetails.Show();
                 this.AcceptButton = btnClose;
                 timerUpdate.Stop();
+                guna2Transition.ShowSync(pnlFinal);
                 this.Focus();
             }    
             
@@ -524,6 +538,7 @@ namespace VocabularyUp
                 timerQuestion.Stop();
                 time = 0;
                 currentQuiz++;
+                inFighting = false;
             }
         }
 
@@ -830,26 +845,12 @@ namespace VocabularyUp
                 currentHealth -= 1;
                 pnlQuestion.Hide();
                 timerUpdate.Start();
-
+                inFighting = false;
                 int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
                 Size size = new Size(s - 5, s - 5);
                 player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
-                //if (isFinalRound == false)
-                //{
-                //    pnlQuestion.Hide();
-                //    //currentHealth -= 10;
-                //    timerUpdate.Start();
-                //    player.Location = new Point(0, this.ClientSize.Height / 2);
-                //}
-                //else
-                //{
-                //    //currentHealth -= 10;
-                //    bullets.Add(monsters[0].Attack());
-                //    turn = 2;
-                //    timerBullet.Start();
-                //    timerUpdate.Start();
-                //    currentQuiz++;
-                //}
+                
+
                 time = 0;
             }
         }

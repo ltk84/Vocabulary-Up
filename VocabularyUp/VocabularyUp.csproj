@@ -78,12 +78,6 @@
     <Compile Include="DetailsGameForm.Designer.cs">
       <DependentUpon>DetailsGameForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameMCForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GameMCForm.Designer.cs">
-      <DependentUpon>GameMCForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ImgMazeObject.cs" />
     <Compile Include="ImgRendingObject.cs" />
     <Compile Include="IntroductionForm.cs">
@@ -279,9 +273,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FinalForm.resx">
       <DependentUpon>FinalForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GameMCForm.resx">
-      <DependentUpon>GameMCForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IntroductionForm.resx">
       <DependentUpon>IntroductionForm.cs</DependentUpon>

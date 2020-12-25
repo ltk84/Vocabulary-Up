@@ -13,11 +13,39 @@ namespace VocabularyUp
 {
     public partial class ItemForm : Form
     {
-        ShopForm shop;
+        ShopForm shop; 
+        bool darkMode = false;
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
+        Color foreColor = Color.White;
         public ItemForm(ShopForm shop)
         {
             InitializeComponent();
+            darkMode = ManageUserAction.GetDarkMode();
+            UpdateTheme();
             this.shop = shop;
+        }
+
+        private void UpdateTheme()
+        {
+            if (darkMode)
+            {
+                primary = Color.FromArgb(50, 74, 95);
+                secondary = Color.FromArgb(27, 42, 65);
+                foreColor = Color.White;
+            }
+            else
+            {
+                primary = Color.FromArgb(17, 223, 158);
+                secondary = Color.FromArgb(7, 96, 68);
+                foreColor = Color.Black;
+            }
+            this.pnlItem.FillColor = primary;
+            this.pnlItem.FillColor2 = primary;
+            this.pnlItem.FillColor3 = primary;
+            this.pnlItem.FillColor4 = primary;
+            this.pnlItem.BorderColor = secondary;
+            this.lbName.ForeColor = foreColor;
         }
 
         private void button1_Click(object sender, EventArgs e)

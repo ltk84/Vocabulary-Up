@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,5 +22,10 @@ namespace VocabularyUp
         public Direction Cur { get => cur; set => cur = value; }
         public bool IsDeath { get => isDeath; set => isDeath = value; }
         public bool IsBoss { get => isBoss; set => isBoss = value; }
+        public override Bullet Attack(int idWeapon)
+        {
+            Image image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_database") + "Fires/m_1.png");
+            return new Bullet(image, new Point(this.Location.X, this.Location.Y + this.Size.Height / 2), new Size(this.Size.Width / 2, this.Size.Height / 2), 100);
+        }
     }
 }

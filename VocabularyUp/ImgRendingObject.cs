@@ -86,9 +86,10 @@ namespace VocabularyUp
             return this.Rect.IntersectsWith(obj.Rect);
         }
 
-        public Bullet Attack()
+        virtual public Bullet Attack(int idWeapon)
         {
-            Image image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_database") + "Fires/bullet.png");
+            Image image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_database") + "Fires/" + idWeapon.ToString() + ".png");
+            //Image image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_database") + "Fires/bullet.png");
             return new Bullet(image, this.location, this.size, 100);
         }
     }
