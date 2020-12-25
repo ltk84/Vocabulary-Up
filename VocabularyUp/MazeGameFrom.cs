@@ -518,8 +518,7 @@ namespace VocabularyUp
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            string correct = " correct";
-            string incorrect = " incorrect";
+
             btnA.BorderThickness = 0;
             btnB.BorderThickness = 0;
             btnC.BorderThickness = 0;
@@ -565,10 +564,7 @@ namespace VocabularyUp
                         else isBossCorrect++;
                         music.URL = "correct.mp3";
                         music.controls.play();
-                        synthesizer.Rate = 1;
-                        synthesizer.Volume = 100;
-                        synthesizer.Speak(correct);
-                        
+
                         if (isBossCorrect == 5)
                         {
                             mediaPlayer.URL = "MazeGame.mp3";
@@ -581,9 +577,7 @@ namespace VocabularyUp
                         isBossCorrect = 0;
                         music.URL = "incorrect.mp3";
                         music.controls.play();
-                        synthesizer.Rate = 1;
-                        synthesizer.Volume = 100;
-                        synthesizer.Speak(incorrect);
+                        
 
                         mediaPlayer.URL = "MazeGame.mp3";
                         mediaPlayer.controls.play();
@@ -930,24 +924,25 @@ namespace VocabularyUp
             }
         }
 
-        private void btnMusic_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (sound == 1)
-            {                
-                btnMusic.Image = Image.FromFile("../../icons/sound-off.png");
+            {
+                pictureBox1.Image = Image.FromFile("../../icons/sound-off.png");
                 mediaPlayer.settings.volume = 0;
                 music.settings.volume = 0;
                 last10s.settings.volume = 0;
                 sound = 0;
-            }    
+            }
             else
             {
-                btnMusic.Image = Image.FromFile("../../icons/sound.png");
+              
+                pictureBox1.Image = Image.FromFile("../../icons/sound.png");
                 mediaPlayer.settings.volume = 20;
                 music.settings.volume = 100;
                 last10s.settings.volume = 20;
                 sound = 1;
-            }    
+            }
         }
 
         public void InitPlayer(int idSkin)

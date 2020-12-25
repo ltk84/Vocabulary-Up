@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MazeGameFrom));
-            Guna.UI2.AnimatorNS.Animation animation3 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.pnlQuestion = new System.Windows.Forms.Panel();
             this.lbTimer = new System.Windows.Forms.Label();
@@ -43,8 +43,7 @@
             this.pnlDash = new System.Windows.Forms.Panel();
             this.lbMain = new System.Windows.Forms.Label();
             this.pbMain = new System.Windows.Forms.PictureBox();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.btnMusic = new Guna.UI2.WinForms.Guna2Button();
+            this.aaa = new System.Windows.Forms.Panel();
             this.btnReturn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.lbDiamond = new System.Windows.Forms.Label();
@@ -72,14 +71,16 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.timerQuestion = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlQuestion.SuspendLayout();
             this.pnlFlashCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
-            this.panel16.SuspendLayout();
+            this.aaa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timerUpdate
@@ -285,40 +286,19 @@
             this.pbMain.TabIndex = 13;
             this.pbMain.TabStop = false;
             // 
-            // panel16
+            // aaa
             // 
-            this.panel16.BackColor = System.Drawing.SystemColors.Control;
-            this.panel16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel16.BackgroundImage")));
-            this.panel16.Controls.Add(this.btnMusic);
-            this.panel16.Controls.Add(this.btnReturn);
-            this.panel16.Controls.Add(this.pnlInfo);
-            this.guna2Transition.SetDecoration(this.panel16, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.panel16.Location = new System.Drawing.Point(0, 0);
-            this.panel16.Margin = new System.Windows.Forms.Padding(4);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(1000, 100);
-            this.panel16.TabIndex = 34;
-            // 
-            // btnMusic
-            // 
-            this.btnMusic.BackColor = System.Drawing.Color.Transparent;
-            this.btnMusic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMusic.BorderRadius = 50;
-            this.btnMusic.CheckedState.Parent = this.btnMusic;
-            this.btnMusic.CustomImages.Parent = this.btnMusic;
-            this.guna2Transition.SetDecoration(this.btnMusic, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnMusic.Enabled = false;
-            this.btnMusic.FillColor = System.Drawing.Color.Transparent;
-            this.btnMusic.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnMusic.ForeColor = System.Drawing.Color.White;
-            this.btnMusic.HoverState.Parent = this.btnMusic;
-            this.btnMusic.Image = ((System.Drawing.Image)(resources.GetObject("btnMusic.Image")));
-            this.btnMusic.Location = new System.Drawing.Point(892, 3);
-            this.btnMusic.Name = "btnMusic";
-            this.btnMusic.ShadowDecoration.Parent = this.btnMusic;
-            this.btnMusic.Size = new System.Drawing.Size(42, 36);
-            this.btnMusic.TabIndex = 20;
-            this.btnMusic.Click += new System.EventHandler(this.btnMusic_Click);
+            this.aaa.BackColor = System.Drawing.SystemColors.Control;
+            this.aaa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("aaa.BackgroundImage")));
+            this.aaa.Controls.Add(this.pictureBox1);
+            this.aaa.Controls.Add(this.btnReturn);
+            this.aaa.Controls.Add(this.pnlInfo);
+            this.guna2Transition.SetDecoration(this.aaa, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.aaa.Location = new System.Drawing.Point(0, 0);
+            this.aaa.Margin = new System.Windows.Forms.Padding(4);
+            this.aaa.Name = "aaa";
+            this.aaa.Size = new System.Drawing.Size(1000, 100);
+            this.aaa.TabIndex = 34;
             // 
             // btnReturn
             // 
@@ -575,22 +555,22 @@
             // 
             this.guna2Transition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Leaf;
             this.guna2Transition.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 1F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.guna2Transition.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 1F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.guna2Transition.DefaultAnimation = animation1;
             // 
             // btnClose
             // 
@@ -645,6 +625,20 @@
             this.timerQuestion.Interval = 1000;
             this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Transition.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(891, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // MazeGameFrom
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -652,7 +646,7 @@
             this.Controls.Add(this.btnDetails);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pnlQuestion);
-            this.Controls.Add(this.panel16);
+            this.Controls.Add(this.aaa);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel10);
@@ -679,12 +673,13 @@
             this.pnlQuestion.ResumeLayout(false);
             this.pnlFlashCard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
-            this.panel16.ResumeLayout(false);
+            this.aaa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -708,7 +703,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Timer timerUpdate;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel aaa;
         private System.Windows.Forms.Panel pnlInfo;
         private System.Windows.Forms.Label lbDiamond;
         private System.Windows.Forms.PictureBox pbDiamond;
@@ -730,6 +725,6 @@
         private Guna.UI2.WinForms.Guna2Button btnClose;
         private Guna.UI2.WinForms.Guna2Button btnDetails;
         private System.Windows.Forms.Timer timerQuestion;
-        private Guna.UI2.WinForms.Guna2Button btnMusic;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
