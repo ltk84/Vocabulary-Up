@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RevisionForm));
             this.pnlRevision = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lbNotification = new System.Windows.Forms.Label();
             this.pnlChoosePlay = new System.Windows.Forms.Panel();
+            this.btnLeft2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRight2 = new Guna.UI2.WinForms.Guna2Button();
             this.pnlType = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.pnlType_3 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.lbChallenge = new System.Windows.Forms.Label();
-            this.pnlType_2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.lbWalkthrough = new System.Windows.Forms.Label();
             this.pnlType_1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lbWalkthrough = new System.Windows.Forms.Label();
+            this.pnlType_2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.lbMaze = new System.Windows.Forms.Label();
+            this.pbWeapon = new System.Windows.Forms.PictureBox();
             this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.btnStart = new Guna.UI2.WinForms.Guna2Button();
             this.btnChooseType = new Guna.UI2.WinForms.Guna2Button();
@@ -49,13 +53,14 @@
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
             this.pbCharacter = new System.Windows.Forms.PictureBox();
             this.btnShop = new Guna.UI2.WinForms.Guna2Button();
-            this.lbNotification = new System.Windows.Forms.Label();
+            this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlRevision.SuspendLayout();
             this.pnlChoosePlay.SuspendLayout();
             this.pnlType.SuspendLayout();
-            this.pnlType_3.SuspendLayout();
-            this.pnlType_2.SuspendLayout();
             this.pnlType_1.SuspendLayout();
+            this.pnlType_2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbWeapon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrency)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCharacter)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +68,9 @@
             // pnlRevision
             // 
             this.pnlRevision.BorderRadius = 20;
+            this.pnlRevision.Controls.Add(this.lbNotification);
             this.pnlRevision.Controls.Add(this.pnlChoosePlay);
+            this.guna2Transition1.SetDecoration(this.pnlRevision, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlRevision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRevision.Location = new System.Drawing.Point(0, 0);
             this.pnlRevision.Margin = new System.Windows.Forms.Padding(2);
@@ -72,10 +79,24 @@
             this.pnlRevision.Size = new System.Drawing.Size(750, 422);
             this.pnlRevision.TabIndex = 0;
             // 
+            // lbNotification
+            // 
+            this.lbNotification.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.lbNotification, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lbNotification.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 13F, System.Drawing.FontStyle.Bold);
+            this.lbNotification.ForeColor = System.Drawing.Color.Black;
+            this.lbNotification.Location = new System.Drawing.Point(205, 9);
+            this.lbNotification.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNotification.Name = "lbNotification";
+            this.lbNotification.Size = new System.Drawing.Size(347, 54);
+            this.lbNotification.TabIndex = 30;
+            this.lbNotification.Text = "Bạn cần ít nhất 20 từ để bắt đầu ôn";
+            this.lbNotification.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbNotification.Visible = false;
+            // 
             // pnlChoosePlay
             // 
             this.pnlChoosePlay.BackColor = System.Drawing.Color.Transparent;
-            this.pnlChoosePlay.Controls.Add(this.lbNotification);
             this.pnlChoosePlay.Controls.Add(this.pnlType);
             this.pnlChoosePlay.Controls.Add(this.btnBack);
             this.pnlChoosePlay.Controls.Add(this.btnStart);
@@ -83,11 +104,15 @@
             this.pnlChoosePlay.Controls.Add(this.pbCurrency);
             this.pnlChoosePlay.Controls.Add(this.lbDiamond);
             this.pnlChoosePlay.Controls.Add(this.btnToggle);
-            this.pnlChoosePlay.Controls.Add(this.lbName);
             this.pnlChoosePlay.Controls.Add(this.btnPrevious);
             this.pnlChoosePlay.Controls.Add(this.btnNext);
             this.pnlChoosePlay.Controls.Add(this.pbCharacter);
             this.pnlChoosePlay.Controls.Add(this.btnShop);
+            this.pnlChoosePlay.Controls.Add(this.btnLeft2);
+            this.pnlChoosePlay.Controls.Add(this.btnRight2);
+            this.pnlChoosePlay.Controls.Add(this.pbWeapon);
+            this.pnlChoosePlay.Controls.Add(this.lbName);
+            this.guna2Transition1.SetDecoration(this.pnlChoosePlay, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlChoosePlay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlChoosePlay.Location = new System.Drawing.Point(0, 0);
             this.pnlChoosePlay.Name = "pnlChoosePlay";
@@ -95,110 +120,142 @@
             this.pnlChoosePlay.TabIndex = 23;
             this.pnlChoosePlay.VisibleChanged += new System.EventHandler(this.pnlChoosePlay_VisibleChanged);
             // 
+            // btnLeft2
+            // 
+            this.btnLeft2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnLeft2.BackColor = System.Drawing.Color.Transparent;
+            this.btnLeft2.BorderRadius = 15;
+            this.btnLeft2.CheckedState.Parent = this.btnLeft2;
+            this.btnLeft2.CustomImages.Parent = this.btnLeft2;
+            this.guna2Transition1.SetDecoration(this.btnLeft2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnLeft2.Enabled = false;
+            this.btnLeft2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.btnLeft2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLeft2.ForeColor = System.Drawing.Color.Black;
+            this.btnLeft2.HoverState.Parent = this.btnLeft2;
+            this.btnLeft2.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft2.Image")));
+            this.btnLeft2.ImageSize = new System.Drawing.Size(30, 45);
+            this.btnLeft2.Location = new System.Drawing.Point(46, 118);
+            this.btnLeft2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLeft2.Name = "btnLeft2";
+            this.btnLeft2.ShadowDecoration.Parent = this.btnLeft2;
+            this.btnLeft2.Size = new System.Drawing.Size(50, 45);
+            this.btnLeft2.TabIndex = 32;
+            this.btnLeft2.Click += new System.EventHandler(this.btnLeft2_Click);
+            // 
+            // btnRight2
+            // 
+            this.btnRight2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnRight2.BackColor = System.Drawing.Color.Transparent;
+            this.btnRight2.BorderRadius = 15;
+            this.btnRight2.CheckedState.Parent = this.btnRight2;
+            this.btnRight2.CustomImages.Parent = this.btnRight2;
+            this.guna2Transition1.SetDecoration(this.btnRight2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnRight2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.btnRight2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRight2.ForeColor = System.Drawing.Color.Black;
+            this.btnRight2.HoverState.Parent = this.btnRight2;
+            this.btnRight2.Image = ((System.Drawing.Image)(resources.GetObject("btnRight2.Image")));
+            this.btnRight2.ImageSize = new System.Drawing.Size(30, 45);
+            this.btnRight2.Location = new System.Drawing.Point(122, 117);
+            this.btnRight2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRight2.Name = "btnRight2";
+            this.btnRight2.ShadowDecoration.Parent = this.btnRight2;
+            this.btnRight2.Size = new System.Drawing.Size(50, 46);
+            this.btnRight2.TabIndex = 31;
+            this.btnRight2.Click += new System.EventHandler(this.btnRight2_Click);
+            // 
             // pnlType
             // 
             this.pnlType.BorderColor = System.Drawing.Color.Transparent;
-            this.pnlType.Controls.Add(this.pnlType_3);
-            this.pnlType.Controls.Add(this.pnlType_2);
             this.pnlType.Controls.Add(this.pnlType_1);
+            this.pnlType.Controls.Add(this.pnlType_2);
             this.pnlType.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.pnlType.Location = new System.Drawing.Point(40, 28);
+            this.guna2Transition1.SetDecoration(this.pnlType, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pnlType.Location = new System.Drawing.Point(46, 39);
             this.pnlType.Margin = new System.Windows.Forms.Padding(2);
             this.pnlType.Name = "pnlType";
             this.pnlType.ShadowDecoration.Parent = this.pnlType;
-            this.pnlType.Size = new System.Drawing.Size(664, 323);
+            this.pnlType.Size = new System.Drawing.Size(658, 313);
             this.pnlType.TabIndex = 26;
             this.pnlType.Visible = false;
             // 
-            // pnlType_3
+            // pnlType_1
             // 
-            this.pnlType_3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlType_3.BackgroundImage")));
-            this.pnlType_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlType_3.BorderColor = System.Drawing.Color.White;
-            this.pnlType_3.Controls.Add(this.lbChallenge);
-            this.pnlType_3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlType_3.Location = new System.Drawing.Point(442, 0);
-            this.pnlType_3.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlType_3.Name = "pnlType_3";
-            this.pnlType_3.ShadowDecoration.Parent = this.pnlType_3;
-            this.pnlType_3.Size = new System.Drawing.Size(221, 323);
-            this.pnlType_3.TabIndex = 1;
-            this.pnlType_3.Click += new System.EventHandler(this.pnlType_3_Click);
+            this.pnlType_1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlType_1.BackgroundImage")));
+            this.pnlType_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlType_1.BorderColor = System.Drawing.Color.White;
+            this.pnlType_1.Controls.Add(this.lbWalkthrough);
+            this.guna2Transition1.SetDecoration(this.pnlType_1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pnlType_1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlType_1.Location = new System.Drawing.Point(0, 0);
+            this.pnlType_1.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlType_1.Name = "pnlType_1";
+            this.pnlType_1.ShadowDecoration.Parent = this.pnlType_1;
+            this.pnlType_1.Size = new System.Drawing.Size(329, 313);
+            this.pnlType_1.TabIndex = 0;
+            this.pnlType_1.Click += new System.EventHandler(this.pnlType_1_Click);
             // 
-            // lbChallenge
+            // lbWalkthrough
             // 
-            this.lbChallenge.BackColor = System.Drawing.Color.Transparent;
-            this.lbChallenge.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbChallenge.ForeColor = System.Drawing.Color.White;
-            this.lbChallenge.Location = new System.Drawing.Point(12, 33);
-            this.lbChallenge.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbChallenge.Name = "lbChallenge";
-            this.lbChallenge.Size = new System.Drawing.Size(83, 102);
-            this.lbChallenge.TabIndex = 2;
-            this.lbChallenge.Text = "Come and Fight";
-            this.lbChallenge.Click += new System.EventHandler(this.lbChallenge_Click);
+            this.lbWalkthrough.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.lbWalkthrough, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lbWalkthrough.Font = new System.Drawing.Font("Montserrat Alternates", 26F, System.Drawing.FontStyle.Bold);
+            this.lbWalkthrough.ForeColor = System.Drawing.Color.White;
+            this.lbWalkthrough.Location = new System.Drawing.Point(14, 55);
+            this.lbWalkthrough.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbWalkthrough.Name = "lbWalkthrough";
+            this.lbWalkthrough.Size = new System.Drawing.Size(255, 248);
+            this.lbWalkthrough.TabIndex = 1;
+            this.lbWalkthrough.Text = "The Monster Cave";
+            this.lbWalkthrough.Click += new System.EventHandler(this.lbWalkthrough_Click);
             // 
             // pnlType_2
             // 
             this.pnlType_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlType_2.BackgroundImage")));
             this.pnlType_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlType_2.BorderColor = System.Drawing.Color.White;
-            this.pnlType_2.Controls.Add(this.lbWalkthrough);
-            this.pnlType_2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlType_2.Location = new System.Drawing.Point(221, 0);
+            this.pnlType_2.Controls.Add(this.lbMaze);
+            this.guna2Transition1.SetDecoration(this.pnlType_2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pnlType_2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlType_2.Location = new System.Drawing.Point(329, 0);
             this.pnlType_2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlType_2.Name = "pnlType_2";
             this.pnlType_2.ShadowDecoration.Parent = this.pnlType_2;
-            this.pnlType_2.Size = new System.Drawing.Size(221, 323);
+            this.pnlType_2.Size = new System.Drawing.Size(329, 313);
             this.pnlType_2.TabIndex = 1;
             this.pnlType_2.Click += new System.EventHandler(this.pnlType_2_Click);
-            // 
-            // lbWalkthrough
-            // 
-            this.lbWalkthrough.BackColor = System.Drawing.Color.Transparent;
-            this.lbWalkthrough.Font = new System.Drawing.Font("Montserrat Alternates", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWalkthrough.ForeColor = System.Drawing.Color.White;
-            this.lbWalkthrough.Location = new System.Drawing.Point(26, 86);
-            this.lbWalkthrough.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbWalkthrough.Name = "lbWalkthrough";
-            this.lbWalkthrough.Size = new System.Drawing.Size(191, 136);
-            this.lbWalkthrough.TabIndex = 1;
-            this.lbWalkthrough.Text = "The Monster Cave";
-            this.lbWalkthrough.Click += new System.EventHandler(this.lbWalkthrough_Click);
-            // 
-            // pnlType_1
-            // 
-            this.pnlType_1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlType_1.BackgroundImage")));
-            this.pnlType_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlType_1.BorderColor = System.Drawing.Color.White;
-            this.pnlType_1.Controls.Add(this.lbMaze);
-            this.pnlType_1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlType_1.Location = new System.Drawing.Point(0, 0);
-            this.pnlType_1.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlType_1.Name = "pnlType_1";
-            this.pnlType_1.ShadowDecoration.Parent = this.pnlType_1;
-            this.pnlType_1.Size = new System.Drawing.Size(221, 323);
-            this.pnlType_1.TabIndex = 0;
-            this.pnlType_1.Click += new System.EventHandler(this.pnlType_1_Click);
             // 
             // lbMaze
             // 
             this.lbMaze.BackColor = System.Drawing.Color.Transparent;
-            this.lbMaze.Font = new System.Drawing.Font("Montserrat Alternates", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Transition1.SetDecoration(this.lbMaze, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lbMaze.Font = new System.Drawing.Font("Montserrat Alternates", 26F, System.Drawing.FontStyle.Bold);
             this.lbMaze.ForeColor = System.Drawing.Color.White;
-            this.lbMaze.Location = new System.Drawing.Point(20, 51);
+            this.lbMaze.Location = new System.Drawing.Point(22, 55);
             this.lbMaze.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMaze.Name = "lbMaze";
-            this.lbMaze.Size = new System.Drawing.Size(184, 215);
+            this.lbMaze.Size = new System.Drawing.Size(291, 239);
             this.lbMaze.TabIndex = 0;
             this.lbMaze.Text = "The Mysterious Maze";
             this.lbMaze.Click += new System.EventHandler(this.lbMaze_Click);
+            // 
+            // pbWeapon
+            // 
+            this.guna2Transition1.SetDecoration(this.pbWeapon, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pbWeapon.Location = new System.Drawing.Point(69, 39);
+            this.pbWeapon.Name = "pbWeapon";
+            this.pbWeapon.Size = new System.Drawing.Size(82, 73);
+            this.pbWeapon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbWeapon.TabIndex = 30;
+            this.pbWeapon.TabStop = false;
             // 
             // btnBack
             // 
             this.btnBack.BorderRadius = 20;
             this.btnBack.CheckedState.Parent = this.btnBack;
             this.btnBack.CustomImages.Parent = this.btnBack;
+            this.guna2Transition1.SetDecoration(this.btnBack, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnBack.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnBack.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnBack.ForeColor = System.Drawing.Color.White;
@@ -217,6 +274,7 @@
             this.btnStart.BorderRadius = 20;
             this.btnStart.CheckedState.Parent = this.btnStart;
             this.btnStart.CustomImages.Parent = this.btnStart;
+            this.guna2Transition1.SetDecoration(this.btnStart, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnStart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnStart.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnStart.ForeColor = System.Drawing.Color.White;
@@ -235,6 +293,7 @@
             this.btnChooseType.BorderRadius = 20;
             this.btnChooseType.CheckedState.Parent = this.btnChooseType;
             this.btnChooseType.CustomImages.Parent = this.btnChooseType;
+            this.guna2Transition1.SetDecoration(this.btnChooseType, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnChooseType.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnChooseType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseType.ForeColor = System.Drawing.Color.White;
@@ -250,6 +309,7 @@
             // 
             // pbCurrency
             // 
+            this.guna2Transition1.SetDecoration(this.pbCurrency, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pbCurrency.Image = ((System.Drawing.Image)(resources.GetObject("pbCurrency.Image")));
             this.pbCurrency.Location = new System.Drawing.Point(629, 39);
             this.pbCurrency.Name = "pbCurrency";
@@ -261,6 +321,7 @@
             // lbDiamond
             // 
             this.lbDiamond.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lbDiamond, Guna.UI2.AnimatorNS.DecorationType.None);
             this.lbDiamond.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDiamond.Location = new System.Drawing.Point(598, 39);
             this.lbDiamond.Name = "lbDiamond";
@@ -270,6 +331,7 @@
             // 
             // btnToggle
             // 
+            this.guna2Transition1.SetDecoration(this.btnToggle, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnToggle.Location = new System.Drawing.Point(13, 53);
             this.btnToggle.Name = "btnToggle";
             this.btnToggle.Size = new System.Drawing.Size(10, 10);
@@ -281,6 +343,7 @@
             // lbName
             // 
             this.lbName.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.lbName, Guna.UI2.AnimatorNS.DecorationType.None);
             this.lbName.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.Location = new System.Drawing.Point(0, 98);
             this.lbName.Name = "lbName";
@@ -296,6 +359,7 @@
             this.btnPrevious.BorderRadius = 15;
             this.btnPrevious.CheckedState.Parent = this.btnPrevious;
             this.btnPrevious.CustomImages.Parent = this.btnPrevious;
+            this.guna2Transition1.SetDecoration(this.btnPrevious, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnPrevious.Enabled = false;
             this.btnPrevious.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnPrevious.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -318,6 +382,7 @@
             this.btnNext.BorderRadius = 15;
             this.btnNext.CheckedState.Parent = this.btnNext;
             this.btnNext.CustomImages.Parent = this.btnNext;
+            this.guna2Transition1.SetDecoration(this.btnNext, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnNext.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnNext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.Black;
@@ -335,6 +400,7 @@
             // pbCharacter
             // 
             this.pbCharacter.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.pbCharacter, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pbCharacter.Location = new System.Drawing.Point(258, 143);
             this.pbCharacter.Name = "pbCharacter";
             this.pbCharacter.Size = new System.Drawing.Size(229, 142);
@@ -347,6 +413,7 @@
             this.btnShop.BorderRadius = 15;
             this.btnShop.CheckedState.Parent = this.btnShop;
             this.btnShop.CustomImages.Parent = this.btnShop;
+            this.guna2Transition1.SetDecoration(this.btnShop, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btnShop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnShop.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnShop.ForeColor = System.Drawing.Color.White;
@@ -360,19 +427,31 @@
             this.btnShop.TabIndex = 3;
             this.btnShop.Click += new System.EventHandler(this.btnShop_Click);
             // 
-            // lbNotification
+            // guna2Transition1
             // 
-            this.lbNotification.BackColor = System.Drawing.Color.Transparent;
-            this.lbNotification.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
-            this.lbNotification.ForeColor = System.Drawing.Color.Black;
-            this.lbNotification.Location = new System.Drawing.Point(230, 9);
-            this.lbNotification.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbNotification.Name = "lbNotification";
-            this.lbNotification.Size = new System.Drawing.Size(293, 40);
-            this.lbNotification.TabIndex = 30;
-            this.lbNotification.Text = "Hoc them tu di thang nhoc !";
-            this.lbNotification.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbNotification.Visible = false;
+            this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizBlind;
+            this.guna2Transition1.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation1;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // RevisionForm
             // 
@@ -381,6 +460,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(750, 422);
             this.Controls.Add(this.pnlRevision);
+            this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RevisionForm";
@@ -389,9 +469,9 @@
             this.pnlChoosePlay.ResumeLayout(false);
             this.pnlChoosePlay.PerformLayout();
             this.pnlType.ResumeLayout(false);
-            this.pnlType_3.ResumeLayout(false);
-            this.pnlType_2.ResumeLayout(false);
             this.pnlType_1.ResumeLayout(false);
+            this.pnlType_2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbWeapon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCurrency)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCharacter)).EndInit();
             this.ResumeLayout(false);
@@ -403,8 +483,6 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlRevision;
         private System.Windows.Forms.Panel pnlChoosePlay;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlType;
-        private Guna.UI2.WinForms.Guna2GradientPanel pnlType_3;
-        private System.Windows.Forms.Label lbChallenge;
         private Guna.UI2.WinForms.Guna2GradientPanel pnlType_2;
         private System.Windows.Forms.Label lbWalkthrough;
         private Guna.UI2.WinForms.Guna2GradientPanel pnlType_1;
@@ -421,5 +499,10 @@
         private System.Windows.Forms.PictureBox pbCharacter;
         private Guna.UI2.WinForms.Guna2Button btnShop;
         private System.Windows.Forms.Label lbNotification;
+        private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
+        private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2Button btnLeft2;
+        private Guna.UI2.WinForms.Guna2Button btnRight2;
+        private System.Windows.Forms.PictureBox pbWeapon;
     }
 }

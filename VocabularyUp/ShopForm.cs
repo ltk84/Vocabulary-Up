@@ -34,29 +34,13 @@ namespace VocabularyUp
             this.btnExit.FillColor = primary;
         }
 
-        public void LoadShop()
-        {
-            this.flpShop.Controls.Clear();
-            foreach (var character in ManageSystem.GetAllCharacter())
-            {
-                if (!ManageUserAction.CheckExistCharacter(character))
-                {
-                    ItemForm item = new ItemForm(this);
-                    item.ChangeInfo(character.ID, character.Name, character.Price);
-                    item.TopLevel = false;
-                    item.FormBorderStyle = FormBorderStyle.None;
-                    item.Show();
-                    flpShop.Controls.Add(item);
-                }
-            }
-        }
+        
 
         public void LoadAllCharacter()
         {
             this.flpShop.Controls.Clear();
             foreach (var character in ManageSystem.GetAllCharacter())
-            {                
-                    
+            {  
                 ItemForm item = new ItemForm(this);
                 item.ChangeInfo(character.ID, character.Name, character.Price);
                 item.TopLevel = false;
@@ -99,11 +83,6 @@ namespace VocabularyUp
         {
             ManageUserAction.UpdateDiamondAfterBuy(num);
             LoadDiamondLabel();
-        }
-
-        private void btnCate_All_Click(object sender, EventArgs e)
-        {
-            LoadAllCharacter();
         }
     }
 }

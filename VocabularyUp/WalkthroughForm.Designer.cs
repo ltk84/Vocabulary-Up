@@ -76,6 +76,8 @@ namespace VocabularyUp
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.timerQuestion = new System.Windows.Forms.Timer(this.components);
             this.timerEffect = new System.Windows.Forms.Timer(this.components);
+            this.pnlFinal = new System.Windows.Forms.Panel();
+            this.lbFinal = new System.Windows.Forms.Label();
             this.pgbHealth = new VocabularyUp.SuperProgressBar();
             this.pgbMonsterHealth = new VocabularyUp.SuperProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
@@ -90,6 +92,7 @@ namespace VocabularyUp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlFlashCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
+            this.pnlFinal.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerUpdate
@@ -749,11 +752,11 @@ namespace VocabularyUp
             this.btnClose.HoverState.Parent = this.btnClose;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageSize = new System.Drawing.Size(60, 45);
-            this.btnClose.Location = new System.Drawing.Point(210, 405);
+            this.btnClose.Location = new System.Drawing.Point(94, 155);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.ShadowDecoration.Parent = this.btnClose;
-            this.btnClose.Size = new System.Drawing.Size(108, 58);
+            this.btnClose.Size = new System.Drawing.Size(144, 71);
             this.btnClose.TabIndex = 53;
             this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -772,11 +775,11 @@ namespace VocabularyUp
             this.btnDetails.HoverState.Parent = this.btnDetails;
             this.btnDetails.Image = ((System.Drawing.Image)(resources.GetObject("btnDetails.Image")));
             this.btnDetails.ImageSize = new System.Drawing.Size(50, 40);
-            this.btnDetails.Location = new System.Drawing.Point(453, 405);
+            this.btnDetails.Location = new System.Drawing.Point(316, 155);
             this.btnDetails.Margin = new System.Windows.Forms.Padding(2);
             this.btnDetails.Name = "btnDetails";
             this.btnDetails.ShadowDecoration.Parent = this.btnDetails;
-            this.btnDetails.Size = new System.Drawing.Size(108, 58);
+            this.btnDetails.Size = new System.Drawing.Size(144, 71);
             this.btnDetails.TabIndex = 54;
             this.btnDetails.Visible = false;
             this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
@@ -816,6 +819,33 @@ namespace VocabularyUp
             this.timerEffect.Interval = 50;
             this.timerEffect.Tick += new System.EventHandler(this.timerEffect_Tick);
             // 
+            // pnlFinal
+            // 
+            this.pnlFinal.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFinal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlFinal.BackgroundImage")));
+            this.pnlFinal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlFinal.Controls.Add(this.btnDetails);
+            this.pnlFinal.Controls.Add(this.btnClose);
+            this.pnlFinal.Controls.Add(this.lbFinal);
+            this.guna2Transition1.SetDecoration(this.pnlFinal, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pnlFinal.Location = new System.Drawing.Point(151, 122);
+            this.pnlFinal.Name = "pnlFinal";
+            this.pnlFinal.Size = new System.Drawing.Size(567, 288);
+            this.pnlFinal.TabIndex = 55;
+            this.pnlFinal.Visible = false;
+            // 
+            // lbFinal
+            // 
+            this.guna2Transition1.SetDecoration(this.lbFinal, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lbFinal.Font = new System.Drawing.Font("Montserrat Alternates", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFinal.ForeColor = System.Drawing.Color.Red;
+            this.lbFinal.Location = new System.Drawing.Point(0, 52);
+            this.lbFinal.Name = "lbFinal";
+            this.lbFinal.Size = new System.Drawing.Size(564, 62);
+            this.lbFinal.TabIndex = 0;
+            this.lbFinal.Text = "Game Over";
+            this.lbFinal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pgbHealth
             // 
             this.pgbHealth.BackColor = System.Drawing.Color.White;
@@ -842,8 +872,7 @@ namespace VocabularyUp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(868, 533);
-            this.Controls.Add(this.btnDetails);
-            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.pnlFinal);
             this.Controls.Add(this.pnlQuestion);
             this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.pgbMonsterHealth);
@@ -867,6 +896,7 @@ namespace VocabularyUp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlFlashCard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
+            this.pnlFinal.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -919,5 +949,7 @@ namespace VocabularyUp
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
         private System.Windows.Forms.Timer timerQuestion;
         private System.Windows.Forms.Timer timerEffect;
+        private System.Windows.Forms.Panel pnlFinal;
+        private System.Windows.Forms.Label lbFinal;
     }
 }

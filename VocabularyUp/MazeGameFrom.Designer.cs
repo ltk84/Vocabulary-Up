@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MazeGameFrom));
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.pnlQuestion = new System.Windows.Forms.Panel();
             this.lbTimer = new System.Windows.Forms.Label();
@@ -70,6 +70,8 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.timerQuestion = new System.Windows.Forms.Timer(this.components);
+            this.pnlFinal = new System.Windows.Forms.Panel();
+            this.lbFinal = new System.Windows.Forms.Label();
             this.pgbHealth = new VocabularyUp.SuperProgressBar();
             this.pnlQuestion.SuspendLayout();
             this.pnlFlashCard.SuspendLayout();
@@ -79,6 +81,7 @@
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
+            this.pnlFinal.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerUpdate
@@ -542,22 +545,22 @@
             // 
             this.guna2Transition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Leaf;
             this.guna2Transition.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 1F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.guna2Transition.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 1F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.guna2Transition.DefaultAnimation = animation2;
             // 
             // btnClose
             // 
@@ -574,7 +577,7 @@
             this.btnClose.HoverState.Parent = this.btnClose;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageSize = new System.Drawing.Size(60, 45);
-            this.btnClose.Location = new System.Drawing.Point(362, 597);
+            this.btnClose.Location = new System.Drawing.Point(94, 155);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
             this.btnClose.ShadowDecoration.Parent = this.btnClose;
@@ -597,7 +600,7 @@
             this.btnDetails.HoverState.Parent = this.btnDetails;
             this.btnDetails.Image = ((System.Drawing.Image)(resources.GetObject("btnDetails.Image")));
             this.btnDetails.ImageSize = new System.Drawing.Size(50, 40);
-            this.btnDetails.Location = new System.Drawing.Point(584, 597);
+            this.btnDetails.Location = new System.Drawing.Point(316, 155);
             this.btnDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDetails.Name = "btnDetails";
             this.btnDetails.ShadowDecoration.Parent = this.btnDetails;
@@ -610,6 +613,33 @@
             // 
             this.timerQuestion.Interval = 1000;
             this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
+            // 
+            // pnlFinal
+            // 
+            this.pnlFinal.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFinal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlFinal.BackgroundImage")));
+            this.pnlFinal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlFinal.Controls.Add(this.btnDetails);
+            this.pnlFinal.Controls.Add(this.btnClose);
+            this.pnlFinal.Controls.Add(this.lbFinal);
+            this.guna2Transition.SetDecoration(this.pnlFinal, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pnlFinal.Location = new System.Drawing.Point(265, 250);
+            this.pnlFinal.Name = "pnlFinal";
+            this.pnlFinal.Size = new System.Drawing.Size(567, 288);
+            this.pnlFinal.TabIndex = 52;
+            this.pnlFinal.Visible = false;
+            // 
+            // lbFinal
+            // 
+            this.guna2Transition.SetDecoration(this.lbFinal, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lbFinal.Font = new System.Drawing.Font("Montserrat Alternates", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFinal.ForeColor = System.Drawing.Color.Red;
+            this.lbFinal.Location = new System.Drawing.Point(0, 52);
+            this.lbFinal.Name = "lbFinal";
+            this.lbFinal.Size = new System.Drawing.Size(564, 62);
+            this.lbFinal.TabIndex = 0;
+            this.lbFinal.Text = "Game Over";
+            this.lbFinal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pgbHealth
             // 
@@ -624,8 +654,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1000, 700);
-            this.Controls.Add(this.btnDetails);
-            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.pnlFinal);
             this.Controls.Add(this.pnlQuestion);
             this.Controls.Add(this.panel16);
             this.Controls.Add(this.panel15);
@@ -660,6 +689,7 @@
             this.pnlInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).EndInit();
+            this.pnlFinal.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -705,5 +735,7 @@
         private Guna.UI2.WinForms.Guna2Button btnClose;
         private Guna.UI2.WinForms.Guna2Button btnDetails;
         private System.Windows.Forms.Timer timerQuestion;
+        private System.Windows.Forms.Panel pnlFinal;
+        private System.Windows.Forms.Label lbFinal;
     }
 }

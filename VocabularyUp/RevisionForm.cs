@@ -18,6 +18,7 @@ namespace VocabularyUp
         bool darkMode = false;
         ShopForm shop;
         int currentChar = 0;
+        int curentWeapon = 1;
         int type = 0;
         public RevisionForm()
         {
@@ -32,6 +33,8 @@ namespace VocabularyUp
             }
            
             LoadPictureBoxCharacter(currentChar);
+            LoadPictureBoxWeapon(curentWeapon);
+
             shop = new ShopForm(this.pnlChoosePlay);
             LoadDiamondLabel();
         }
@@ -46,6 +49,8 @@ namespace VocabularyUp
             this.btnShop.FillColor = primary;
             this.btnPrevious.FillColor = primary;
             this.btnNext.FillColor = primary;
+            this.btnLeft2.FillColor = primary;
+            this.btnRight2.FillColor = primary;
         }
 
         public void LoadShop()
@@ -56,9 +61,6 @@ namespace VocabularyUp
             this.pnlRevision.Controls.Add(shop);
             shop.Dock = DockStyle.Fill;
             shop.Show();
-            //this.Parent.Show();
-           
-            //HideMenu();
         }
 
         public void LoadPictureBoxCharacter(int currentChar)
@@ -66,6 +68,11 @@ namespace VocabularyUp
             int idChar = ManageUserAction.GetOwnCharacterList()[currentChar].ID;
             pbCharacter.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Characters/" + idChar.ToString() + ".png");
             Changelabel(ManageUserAction.GetOwnCharacterList()[currentChar].Name);
+        }
+
+        public void LoadPictureBoxWeapon(int idWeapon)
+        {
+            pbWeapon.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("ImgPath_database") + "Fires/" + idWeapon.ToString() + ".png");
         }
 
         public void Changelabel(string name)
@@ -139,19 +146,12 @@ namespace VocabularyUp
             lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
         }
 
-        private void pnlType_3_Click(object sender, EventArgs e)
-        {
-            pnlType_1.BorderThickness = 0;
-            pnlType_2.BorderThickness = 0;
-            pnlType_3.BorderThickness = 5;
-            type = 3;
-        }
+        
 
         private void pnlType_2_Click(object sender, EventArgs e)
         {
             pnlType_1.BorderThickness = 0;
             pnlType_2.BorderThickness = 5;
-            pnlType_3.BorderThickness = 0;
             type = 2;
         }
 
@@ -159,13 +159,12 @@ namespace VocabularyUp
         {
             pnlType_1.BorderThickness = 5;
             pnlType_2.BorderThickness = 0;
-            pnlType_3.BorderThickness = 0;
             type = 1;
         }
 
         private void btnChooseType_Click(object sender, EventArgs e)
         {
-            if (ManageUserAction.GetItemOfAllCollection(0).ListFL.Count >= 15)
+            if (ManageUserAction.GetItemOfAllCollection(0).ListFL.Count >= 20)
             {
                 pnlType.Show();
                 btnChooseType.Hide();
@@ -175,23 +174,19 @@ namespace VocabularyUp
             }
             else
             {
-                lbNotification.Visible = true;
+                guna2Transition1.ShowSync(lbNotification);
+                timer1.Start();
             }
         }
 
         private void lbMaze_Click(object sender, EventArgs e)
         {
-            pnlType_1_Click(sender, e);
+            pnlType_2_Click(sender, e);
         }
 
         private void lbWalkthrough_Click(object sender, EventArgs e)
         {
-            pnlType_2_Click(sender, e);
-        }
-
-        private void lbChallenge_Click(object sender, EventArgs e)
-        {
-            pnlType_3_Click(sender, e);
+            pnlType_1_Click(sender, e);
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -201,7 +196,7 @@ namespace VocabularyUp
 
             if (type == 1)
             {
-                WalkthroughForm wtf = new WalkthroughForm(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
+                WalkthroughForm wtf = new WalkthroughForm(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID, curentWeapon);
                 wtf.TopMost = true;
                 wtf.Show();
                 wtf.OpenTrashTalk(0, "Thằng rác rưởi, tránh ra!", "Bước qua xác tao này, thằng nhóc!");
@@ -214,9 +209,6 @@ namespace VocabularyUp
                 mgf.OpenTrashTalk(5, "Hello", "Lo cc!");
 
             }
-            else
-            {
-            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -225,6 +217,46 @@ namespace VocabularyUp
             btnChooseType.Show();
             btnStart.Hide();
             btnBack.Hide();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbNotification.Hide();
+            timer1.Stop();
+        }
+
+        private void btnRight2_Click(object sender, EventArgs e)
+        {
+            if (curentWeapon > 3)
+                return;
+
+            if (btnLeft2.Enabled == false)
+                btnLeft2.Enabled = true;
+
+            curentWeapon++;
+
+            if (curentWeapon == 3)
+                btnRight2.Enabled = false;
+
+            LoadPictureBoxWeapon(curentWeapon);
+            //this.Focus();
+        }
+
+        private void btnLeft2_Click(object sender, EventArgs e)
+        {
+            if (curentWeapon < 1)
+                return;
+
+            if (btnRight2.Enabled == false)
+                btnRight2.Enabled = true;
+
+            curentWeapon--;
+
+            if (curentWeapon == 1)
+                btnLeft2.Enabled = false;
+
+            LoadPictureBoxWeapon(curentWeapon);
+            //this.Focus();
         }
     }
 }
