@@ -37,6 +37,7 @@ namespace VocabularyUp
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.lbDiamond = new System.Windows.Forms.Label();
             this.pbDiamond = new System.Windows.Forms.PictureBox();
+            this.pgbHealth = new VocabularyUp.SuperProgressBar();
             this.pnlQuestion = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -74,12 +75,11 @@ namespace VocabularyUp
             this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.timerBullet = new System.Windows.Forms.Timer(this.components);
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
-            this.timerQuestion = new System.Windows.Forms.Timer(this.components);
-            this.timerEffect = new System.Windows.Forms.Timer(this.components);
             this.pnlFinal = new System.Windows.Forms.Panel();
             this.lbFinal = new System.Windows.Forms.Label();
-            this.pgbHealth = new VocabularyUp.SuperProgressBar();
             this.pgbMonsterHealth = new VocabularyUp.SuperProgressBar();
+            this.timerQuestion = new System.Windows.Forms.Timer(this.components);
+            this.timerEffect = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
@@ -155,6 +155,16 @@ namespace VocabularyUp
             this.pbDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDiamond.TabIndex = 4;
             this.pbDiamond.TabStop = false;
+            // 
+            // pgbHealth
+            // 
+            this.pgbHealth.BackColor = System.Drawing.Color.White;
+            this.guna2Transition1.SetDecoration(this.pgbHealth, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pgbHealth.Location = new System.Drawing.Point(49, 16);
+            this.pgbHealth.Margin = new System.Windows.Forms.Padding(2);
+            this.pgbHealth.Name = "pgbHealth";
+            this.pgbHealth.Size = new System.Drawing.Size(213, 20);
+            this.pgbHealth.TabIndex = 3;
             // 
             // pnlQuestion
             // 
@@ -809,16 +819,6 @@ namespace VocabularyUp
             animation1.TransparencyCoeff = 0F;
             this.guna2Transition1.DefaultAnimation = animation1;
             // 
-            // timerQuestion
-            // 
-            this.timerQuestion.Interval = 1000;
-            this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
-            // 
-            // timerEffect
-            // 
-            this.timerEffect.Interval = 50;
-            this.timerEffect.Tick += new System.EventHandler(this.timerEffect_Tick);
-            // 
             // pnlFinal
             // 
             this.pnlFinal.BackColor = System.Drawing.Color.Transparent;
@@ -846,16 +846,6 @@ namespace VocabularyUp
             this.lbFinal.Text = "Game Over";
             this.lbFinal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pgbHealth
-            // 
-            this.pgbHealth.BackColor = System.Drawing.Color.White;
-            this.guna2Transition1.SetDecoration(this.pgbHealth, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pgbHealth.Location = new System.Drawing.Point(49, 16);
-            this.pgbHealth.Margin = new System.Windows.Forms.Padding(2);
-            this.pgbHealth.Name = "pgbHealth";
-            this.pgbHealth.Size = new System.Drawing.Size(213, 20);
-            this.pgbHealth.TabIndex = 3;
-            // 
             // pgbMonsterHealth
             // 
             this.guna2Transition1.SetDecoration(this.pgbMonsterHealth, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -865,6 +855,15 @@ namespace VocabularyUp
             this.pgbMonsterHealth.Size = new System.Drawing.Size(464, 24);
             this.pgbMonsterHealth.TabIndex = 4;
             this.pgbMonsterHealth.Visible = false;
+            // 
+            // timerQuestion
+            // 
+            this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
+            // 
+            // timerEffect
+            // 
+            this.timerEffect.Interval = 50;
+            this.timerEffect.Tick += new System.EventHandler(this.timerEffect_Tick);
             // 
             // WalkthroughForm
             // 
