@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace VocabularyUp
 {
@@ -34,7 +35,11 @@ namespace VocabularyUp
         private int turn;
         private int time = 0;
         private int count = 0;
+        private int sound = 1;
         private bool inFighting = false;
+        private bool isWin = false;
+        private bool isBoss = false;
+        private WMPLib.WindowsMediaPlayer mediaPlayer, music, bullet, last10s;
 
         public WalkthroughForm(int idCol, int idSkin)
         {
@@ -45,6 +50,7 @@ namespace VocabularyUp
             InitMonster();
             ManageUserAction.UpdateGameMainFlashCards();
             InitQuiz();
+            LoadingMusic();
             //ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
             timerUpdate.Start();
             isGameOver = false;
@@ -56,6 +62,22 @@ namespace VocabularyUp
             this.idSkin = idSkin;
         }
 
+        private void LoadingMusic()
+        {
+            mediaPlayer = new WMPLib.WindowsMediaPlayer();
+            mediaPlayer.URL = "WalkThroughGame.mp3";
+            mediaPlayer.settings.volume = 10;
+            mediaPlayer.controls.play();
+
+            bullet = new WMPLib.WindowsMediaPlayer();
+            bullet.URL = "bullet.mp3";
+
+            music = new WMPLib.WindowsMediaPlayer();
+
+            last10s = new WMPLib.WindowsMediaPlayer();
+            last10s.URL = "10s.mp3";
+            last10s.settings.volume = 10;
+        }
         public void InitPlayer(int idSkin)
         {
             Image image = Image.FromFile("../../db/Characters/" + idSkin.ToString() + ".png");
@@ -146,6 +168,7 @@ namespace VocabularyUp
             player.HandleOutsideClient(this);
             int j = -1;
 
+
             if (!isGameOver)
             {
                 for (int i = monsters.Count - 1; i >= 0; i--)
@@ -154,9 +177,11 @@ namespace VocabularyUp
                     if (player.isCollision(monsters[i]))
                     {
                         timerUpdate.Stop();
-
+                        
                         if (monsters[i].IsBoss == true)
                         {
+                            
+                            mediaPlayer.controls.stop();
                             //timerUpdate.Stop();
                             OpenTrashTalk(i, "Mày đây rồi, thằng khốn! Chạy đâu cho thoát!", "Bố đã làm gì mày đâu?");
                             j = i;
@@ -164,6 +189,7 @@ namespace VocabularyUp
                         }
                         else
                         {
+                            //mediaPlayer.controls.pause();
                             if (isCorrect >= 0)
                             {
                                 if (isCorrect == 1)
@@ -185,14 +211,18 @@ namespace VocabularyUp
                                 else
                                 {
                                     player.Location = new Point(0, this.ClientSize.Height / 2);
-                                    currentHealth -= 1;
+                                    currentHealth -= 10;
                                 }
 
                                 isCorrect = -1;
                                 timerUpdate.Start();
+                                inFighting = false;
                             }
                             else
                             {
+                                if (monsters[i].IsDeath == false)
+                                    mediaPlayer.controls.pause();
+                                inFighting = true;
                                 timerQuestion.Start();
                                 ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
                                 //currentQuiz++;
@@ -222,6 +252,7 @@ namespace VocabularyUp
 
                 if (isFinalRound == true)
                 {
+                    mediaPlayer.controls.pause();
                     if (isCorrect >= 0)
                     {
                         if (isCorrect == 1)
@@ -247,38 +278,13 @@ namespace VocabularyUp
 
 
 
-                        //ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-                        //guna2Transition1.ShowSync(pnlQuestion);
-                        //pnlQuestion.Show();
-                        //timerQuestion.Start();
-
-
-                        //if (currentHealth <= 0 || pgbMonsterHealth.Value <= 0)
-                        //{
-                        //    isGameOver = true;
-                        //    pnlQuestion.Hide();
-                        //}
-
-                        //if (bullet.IsBoom)
-                        //{
-                        //    bullet = null;
-                        //}
-
-                        //bool isCol = false;
-                        //if (bullet.isCollision(monsters[0]))
-                        //{
-                        //    isCol = true;
-                        //    bullet.IsBoom = true;
-                        //}
-                        //if (isCol == false)
-                        //{
-                        //    bullet.Move(Direction.Right);
-                        //}
+                        
 
                         isCorrect = -1;
                         timerUpdate.Start();
                     }
                 }
+                 
 
                 if (currentHealth > 0)
                 {
@@ -296,9 +302,21 @@ namespace VocabularyUp
                 btnClose.Visible = true;
                 btnDetails.Visible = true;
             }
+            if (currentHealth <= 0)
+            {
+                isGameOver = true;
+                music.URL = "lose1.mp3";
+                music.controls.play();
+                btnClose.Show();
+                btnDetails.Show();
+                this.AcceptButton = btnClose;
+                timerUpdate.Stop();
+                this.Focus();
 
+            }    
         }
 
+        
 
 
         public void OpenTrashTalk(int idMonster, string charTrashTalk, string monTrashTalk)
@@ -545,9 +563,21 @@ namespace VocabularyUp
                 if (userChoices[currentQuiz].Selected == userChoices[currentQuiz].Correct)
                 {
                     isCorrect = 1;
+                    music.URL = "correct.mp3";
+                    music.controls.play();
+
+                    mediaPlayer.URL = "WalkThroughGame.mp3";
+                    mediaPlayer.controls.play();
                 }
                 else
+                {
                     isCorrect = 0;
+                    music.URL = "incorrect.mp3";
+                    music.controls.play();
+
+                    mediaPlayer.URL = "WalkThroughGame.mp3";
+                    mediaPlayer.controls.play();
+                }
             }
 
             if (userChoices[currentQuiz].Selected != -1)
@@ -609,6 +639,9 @@ namespace VocabularyUp
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            mediaPlayer.controls.stop();
+            music.controls.stop();
+
             this.Close();
         }
 
@@ -616,6 +649,8 @@ namespace VocabularyUp
         {
             if (currentHealth <= 0 || pgbMonsterHealth.Value <= 0)
             {
+                mediaPlayer.controls.stop();
+                music.URL = "win1.mp3";
                 isGameOver = true;
                 pnlQuestion.Hide();
                 timerBullet.Stop();
@@ -641,7 +676,7 @@ namespace VocabularyUp
                     if (bullets[i].isCollision(monsters[0]) == true)
                     {
                         isCol = true;
-
+                        bullet.controls.play();
                         //MessageBox.Show("a");
                         //bullets[i].IsBoom = true;
                         //monsters[0].Image = Image.FromFile("../../db/Monsters/4.png");
@@ -683,6 +718,7 @@ namespace VocabularyUp
                     bool isCol = false;
                     if (bullets[i].isCollision(player) == true)
                     {
+                        bullet.controls.play();
                         isCol = true;
                         //MessageBox.Show("a");
                         //bullets[i].IsBoom = true;
@@ -715,12 +751,63 @@ namespace VocabularyUp
 
         }
 
+        private void WalkthroughForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            mediaPlayer.controls.stop();
+            music.controls.stop();
+
+            this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (sound == 1)
+            {
+                pictureBox4.Image = Image.FromFile("../../icons/sound-off.png");
+                mediaPlayer.settings.volume = 0;
+                music.settings.volume = 0;
+                last10s.settings.volume = 0;
+                bullet.settings.volume = 0;
+                sound = 0;
+            }
+            else
+            {
+
+                pictureBox4.Image = Image.FromFile("../../icons/sound.png");
+                mediaPlayer.settings.volume = 10;
+                music.settings.volume = 100;
+                last10s.settings.volume = 10;
+                bullet.settings.volume = 100;
+                sound = 1;
+            }
+        }
+
         private void timerQuestion_Tick(object sender, EventArgs e)
         {
             if (timerQuestion.Enabled == false)
                 return;
 
             time++;
+            if (time == 50)
+            {
+                last10s.URL = "10s.mp3";
+                last10s.controls.play();
+            }
             lbTimer.Text = (60 - time).ToString();
             if (time < 50)
             {
