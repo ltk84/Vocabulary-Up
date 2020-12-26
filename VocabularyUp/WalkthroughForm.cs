@@ -38,7 +38,6 @@ namespace VocabularyUp
         private int sound = 1;
         private bool inFighting = false;
         private bool isWin;
-        private bool isBoss = false;
         private WMPLib.WindowsMediaPlayer mediaPlayer, music, bullet, last10s,click;
 
         public WalkthroughForm(int idCol, int idSkin, int idWeapon)
@@ -51,14 +50,13 @@ namespace VocabularyUp
             ManageUserAction.UpdateGameMainFlashCards();
             InitQuiz();
             LoadingMusic();
-            //ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
             timerUpdate.Start();
             isGameOver = false;
             currentHealth = player.Health;
             isCorrect = -1;
             isFinalRound = false;
             turn = 0;
-            pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 150);
+            pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 100);
             this.idSkin = idSkin;
             this.idWeapon = idWeapon;
         }
@@ -72,16 +70,17 @@ namespace VocabularyUp
 
             bullet = new WMPLib.WindowsMediaPlayer();
             bullet.URL = "bullet.mp3";
+            bullet.controls.stop();
 
             music = new WMPLib.WindowsMediaPlayer();
 
             click = new WMPLib.WindowsMediaPlayer();
             click.URL = "click.mp3";
-
+            click.controls.stop();
 
             last10s = new WMPLib.WindowsMediaPlayer();
             last10s.URL = "10s.mp3";
-            last10s.settings.volume = 10;
+            last10s.controls.stop();
         }
         public void InitPlayer(int idSkin)
         {
@@ -148,27 +147,13 @@ namespace VocabularyUp
             {
                 b.Draw(g);
             }
-
-            
-
-            //if (isGameOver)
-            //{
-            //    //SizeF Size = e.Graphics.MeasureString("Game Over", new Font("Arial", 20));
-            //    //e.Graphics.DrawString("Game Over", new Font("Arial", 20), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, this.Height / 2 - Size.Height / 2));
-
-
-            //    btnClose.Location = new Point(this.Width / 2 - (int)Size.Width / 2 - btnClose.Size.Width / 2, this.Height / 2 - (int)Size.Height / 2 + btnClose.Size.Height / 2 + 15);
-            //    btnDetails.Location = new Point(this.Width / 2 - (int)Size.Width / 2 + btnDetails.Size.Width / 2 + 40, this.Height / 2 - (int)Size.Height / 2 + btnDetails.Size.Height / 2 + 15);
-            //}
         }
 
-        int a = 1;
 
         private void timerUpdate_Tick(object sender, EventArgs e)
         {
             player.HandleOutsideClient(this);
             int j = -1;
-
 
             if (!isGameOver)
             {
@@ -211,7 +196,7 @@ namespace VocabularyUp
                                 else
                                 {
                                     player.Location = new Point(0, this.ClientSize.Height / 2);
-                                    currentHealth -= 10;
+                                    currentHealth -= 1;
                                 }
 
                                 isCorrect = -1;
@@ -226,7 +211,6 @@ namespace VocabularyUp
                                 timerQuestion.Start();
                                 ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
                                 
-                                //guna2Transition1.ShowSync(pnlQuestion);
                                 pnlQuestion.Show();
                             }
                         }
@@ -289,6 +273,9 @@ namespace VocabularyUp
                     currentHealth = 0;
                     isGameOver = true;
                     isWin = false;
+
+                    music.URL = "lose1.mp3";
+                    music.controls.play();
                 }
 
                 lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
@@ -303,18 +290,22 @@ namespace VocabularyUp
                 btnDetails.Visible = true;
                 HandleGameOver();
             }
-            if (currentHealth <= 0)
-            {
-                isGameOver = true;
-                music.URL = "lose1.mp3";
-                music.controls.play();
-                btnClose.Show();
-                btnDetails.Show();
-                this.AcceptButton = btnClose;
-                timerUpdate.Stop();
-                this.Focus();
 
-            }    
+            //if (currentHealth <= 0)
+            //{
+            //    isGameOver = true;
+
+            //    music.URL = "lose1.mp3";
+            //    music.controls.play();
+
+            //    btnClose.Show();
+            //    btnDetails.Show();
+            //    this.AcceptButton = btnClose;
+            //    timerUpdate.Stop();
+
+            //    this.Focus();
+
+            //}    
         }
 
         private void HandleGameOver()
@@ -395,7 +386,7 @@ namespace VocabularyUp
             guna2Transition1.ShowSync(pnlQuestion);
             pnlQuestion.Show();
             timerQuestion.Start();
-            pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 150);
+            pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 100);
 
             //bullets.Add(player.Attack());
 
@@ -662,8 +653,6 @@ namespace VocabularyUp
                 this.Invalidate();
             }
 
-            //MessageBox.Show("a");
-
             if (turn == 1)
             {
                 for (int i = bullets.Count - 1; i >= 0; i--)
@@ -673,10 +662,6 @@ namespace VocabularyUp
                     {
                         isCol = true;
                         bullet.controls.play();
-                        //MessageBox.Show("a");
-                        //bullets[i].IsBoom = true;
-                        //monsters[0].Image = Image.FromFile("../../db/Monsters/4.png");
-                        //this.Invalidate();
                         if (pgbMonsterHealth.Value - 20 > 0)
                             pgbMonsterHealth.Value -= 20;
                         else
@@ -742,21 +727,6 @@ namespace VocabularyUp
 
         }
 
-        private void WalkthroughForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
             click.controls.play();
@@ -771,7 +741,7 @@ namespace VocabularyUp
             click.controls.play();
             if (sound == 1)
             {
-                pictureBox4.Image = Image.FromFile("../../icons/sound-off.png");
+                pbSound.Image = Image.FromFile("../../icons/sound-off.png");
                 mediaPlayer.settings.volume = 0;
                 music.settings.volume = 0;
                 last10s.settings.volume = 0;
@@ -781,7 +751,7 @@ namespace VocabularyUp
             else
             {
 
-                pictureBox4.Image = Image.FromFile("../../icons/sound.png");
+                pbSound.Image = Image.FromFile("../../icons/sound.png");
                 mediaPlayer.settings.volume = 10;
                 music.settings.volume = 100;
                 last10s.settings.volume = 10;
@@ -801,7 +771,9 @@ namespace VocabularyUp
                 last10s.URL = "10s.mp3";
                 last10s.controls.play();
             }
+
             lbTimer.Text = (60 - time).ToString();
+
             if (time < 50)
             {
                 lbTimer.ForeColor = Color.Black;
@@ -810,9 +782,11 @@ namespace VocabularyUp
             {
                 lbTimer.ForeColor = Color.Red;
             }
+
             if (time == 60)
             {
                 timerQuestion.Stop();
+
                 if (isFinalRound == false)
                 {
                     pnlQuestion.Hide();
@@ -827,6 +801,7 @@ namespace VocabularyUp
                     timerBullet.Start();
                     timerUpdate.Start();
                     currentQuiz++;
+                    inFighting = false;
                 }
                 time = 0;
             }
@@ -866,18 +841,8 @@ namespace VocabularyUp
                     guna2Transition1.ShowSync(pnlQuestion);
                 }
 
-                //if (isFinalRound == true)
-                //{
-                //    timerUpdate.Start();
-                //}
-
                 count = 0;
             }
-        }
-
-        private void guna2Button12_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

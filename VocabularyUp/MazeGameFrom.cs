@@ -62,7 +62,7 @@ namespace VocabularyUp
             isWin = false;
             Point locationLast = new Point(panel12.Location.X, panel11.Location.Y+panel11.Height);
             this.DoubleBuffered = true;
-            player.Location = locationLast;
+            //player.Location = locationLast;
         }
 
 
@@ -71,10 +71,7 @@ namespace VocabularyUp
             mediaPlayer.URL = "MazeGame.mp3";
             mediaPlayer.settings.volume = 20;
             mediaPlayer.controls.play();
-
             click.URL = "click.mp3";
-            
-
             last10s.settings.volume = 10;
         }
 
@@ -301,7 +298,10 @@ namespace VocabularyUp
             player.HandleOutsideClient(this);
             HandleNotThroughtWall();
             this.Focus();
-
+            if (mediaPlayer.status == "Stopped")
+            {
+                mediaPlayer.controls.play();
+            }
             if (!isGameOver)
             {
                 for (int i = 0; i < monsters.Count; i++)
@@ -314,12 +314,11 @@ namespace VocabularyUp
                         else
                             inFighting = false;
 
-                        //monsters[i].IsDeath = true;
                         if (monsters[i].IsDeath == true)
                         {
                             monsters[i].Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Treasure/rip.png");
                         }
-                        else if (monsters[i].IsBoss == true )
+                        else if (monsters[i].IsBoss == true)
                         {
                                 mediaPlayer.controls.pause();
                                 isBoss = true;
@@ -355,7 +354,8 @@ namespace VocabularyUp
                                     guna2Transition.ShowSync(pnlQuestion);
                                     time = 0;
                                     lbTimer.Text = (60).ToString();
-                                    timerQuestion.Start();
+                                    //timerQuestion.Start();
+
                                 
                                 }
                             
@@ -559,8 +559,8 @@ namespace VocabularyUp
                         music.URL = "correct.mp3";
                         music.controls.play();
 
-                        mediaPlayer.URL = "MazeGame.mp3";
-                        mediaPlayer.controls.play();
+                        //mediaPlayer.URL = "MazeGame.mp3";
+                        //mediaPlayer.controls.play();
                     }
                     else
                     {
@@ -569,8 +569,8 @@ namespace VocabularyUp
                         music.URL = "incorrect.mp3";
                         music.controls.play();
 
-                        mediaPlayer.URL = "MazeGame.mp3";
-                        mediaPlayer.controls.play();
+                        //mediaPlayer.URL = "MazeGame.mp3";
+                        //mediaPlayer.controls.play();
                     }
                 }
                 else
@@ -938,17 +938,19 @@ namespace VocabularyUp
             {
                 last10s.controls.pause();
                 timerQuestion.Stop();
-                mediaPlayer.URL = "MazeGame.mp3";
-                mediaPlayer.controls.play();
+                music.URL = "lose1.mp3";
+                music.controls.play();
+                //mediaPlayer.URL = "MazeGame.mp3";
+                //mediaPlayer.controls.play();
                 pnlQuestion.Hide();
-                currentHealth -= 10;
+                currentHealth -= 1;
                 pnlQuestion.Hide();
                 timerUpdate.Start();
                 inFighting = false;
                 int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
                 Size size = new Size(s - 5, s - 5);
                 player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
-
+                
                 time = 0;
             }
         }
@@ -1001,20 +1003,6 @@ namespace VocabularyUp
             foreach (var mon in monsters)
             {
                 mon.Draw(g);
-            }
-
-            if (isGameOver)
-            {
-                SizeF Size = e.Graphics.MeasureString("Game Over", new Font("Arial", 30));
-                e.Graphics.DrawString("Game Over", new Font("Arial", 20), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, (this.Height / 2 - Size.Height / 2)+20));
-            
-            }
-
-            if (isWin)
-            {
-                SizeF Size = e.Graphics.MeasureString("Good job em !", new Font("Arial", 30));
-                e.Graphics.DrawString("Good job em !", new Font("Arial", 30), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, (this.Height / 2 - Size.Height / 2) + 20));                
-                
             }
         }
 
