@@ -39,7 +39,7 @@ namespace VocabularyUp
         private bool inFighting = false;
         private bool isWin = false;
         private bool isBoss = false;
-        private WMPLib.WindowsMediaPlayer mediaPlayer, music, bullet, last10s;
+        private WMPLib.WindowsMediaPlayer mediaPlayer, music, bullet, last10s,click;
 
         public WalkthroughForm(int idCol, int idSkin)
         {
@@ -73,6 +73,10 @@ namespace VocabularyUp
             bullet.URL = "bullet.mp3";
 
             music = new WMPLib.WindowsMediaPlayer();
+
+            click = new WMPLib.WindowsMediaPlayer();
+            click.URL = "click.mp3";
+
 
             last10s = new WMPLib.WindowsMediaPlayer();
             last10s.URL = "10s.mp3";
@@ -487,6 +491,7 @@ namespace VocabularyUp
 
         private void btnA_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 1;
@@ -504,6 +509,7 @@ namespace VocabularyUp
 
         private void btnB_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 2;
@@ -521,6 +527,7 @@ namespace VocabularyUp
 
         private void btnC_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 3;
@@ -538,6 +545,7 @@ namespace VocabularyUp
 
         private void btnD_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 4;
@@ -555,6 +563,7 @@ namespace VocabularyUp
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             userChoices[currentQuiz].CorrectAns = questions[currentQuiz].GetFlashCard().Eng;
             if (userChoices[currentQuiz].IsDone == false && isPress == 1)
             {
@@ -605,6 +614,7 @@ namespace VocabularyUp
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             Form backgroundForm = new Form();
             try
             {
@@ -639,6 +649,7 @@ namespace VocabularyUp
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             mediaPlayer.controls.stop();
             music.controls.stop();
 
@@ -768,6 +779,7 @@ namespace VocabularyUp
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
+            click.controls.play();
             mediaPlayer.controls.stop();
             music.controls.stop();
 
@@ -776,6 +788,7 @@ namespace VocabularyUp
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (sound == 1)
             {
                 pictureBox4.Image = Image.FromFile("../../icons/sound-off.png");

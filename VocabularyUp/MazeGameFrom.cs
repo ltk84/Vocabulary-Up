@@ -40,6 +40,7 @@ namespace VocabularyUp
         private WMPLib.WindowsMediaPlayer mediaPlayer = new WMPLib.WindowsMediaPlayer();
         private WMPLib.WindowsMediaPlayer music = new WMPLib.WindowsMediaPlayer();
         private WMPLib.WindowsMediaPlayer last10s = new WMPLib.WindowsMediaPlayer();
+        private WMPLib.WindowsMediaPlayer click = new WMPLib.WindowsMediaPlayer();
 
         public MazeGameFrom(int idCol, int idSkin)
         {
@@ -67,6 +68,9 @@ namespace VocabularyUp
             mediaPlayer.URL = "MazeGame.mp3";
             mediaPlayer.settings.volume = 20;
             mediaPlayer.controls.play();
+
+            click.URL = "click.mp3";
+            
 
             last10s.settings.volume = 10;
         }
@@ -511,6 +515,7 @@ namespace VocabularyUp
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             music.controls.stop();
             mediaPlayer.controls.stop();
             this.Close();
@@ -518,7 +523,7 @@ namespace VocabularyUp
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-
+            click.controls.play();
             btnA.BorderThickness = 0;
             btnB.BorderThickness = 0;
             btnC.BorderThickness = 0;
@@ -597,6 +602,7 @@ namespace VocabularyUp
 
         private void btnA_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 1;
@@ -614,6 +620,7 @@ namespace VocabularyUp
 
         private void btnB_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 2;
@@ -631,6 +638,7 @@ namespace VocabularyUp
 
         private void btnC_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 3;
@@ -648,6 +656,7 @@ namespace VocabularyUp
 
         private void btnD_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 4;
@@ -840,6 +849,7 @@ namespace VocabularyUp
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             music.controls.stop();
             mediaPlayer.controls.stop();
             this.Close();
@@ -847,6 +857,7 @@ namespace VocabularyUp
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             Form backgroundForm = new Form();
             try
             {
@@ -926,6 +937,7 @@ namespace VocabularyUp
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (sound == 1)
             {
                 pictureBox1.Image = Image.FromFile("../../icons/sound-off.png");
