@@ -225,3 +225,13 @@ D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Deb
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.WalkthroughForm.resources
 D:\UIT\LTTQ\Dự án\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe.licenses
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csprojAssemblyReference.cache
+D:\UIT\LTTQ\Dá»± Ã¡n\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\bin\Debug\Interop.WMPLib.dll
+D:\UIT\LTTQ\Dá»± Ã¡n\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\bin\Debug\AxInterop.WMPLib.dll
+D:\UIT\LTTQ\Dá»± Ã¡n\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\Interop.WMPLib.dll
+D:\UIT\LTTQ\Dá»± Ã¡n\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\AxInterop.WMPLib.dll
+D:\UIT\LTTQ\Dá»± Ã¡n\Vocabulary-Up\New folder\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.ResolveComReference.cache
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\Interop.WMPLib.dll
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\AxInterop.WMPLib.dll
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.ResolveComReference.cache
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\bin\Debug\Interop.WMPLib.dll
+D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\bin\Debug\AxInterop.WMPLib.dll

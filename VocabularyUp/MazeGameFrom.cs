@@ -8,6 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Synthesis;
+using System.Media;
+using WMPLib;
+
 
 namespace VocabularyUp
 {
@@ -27,10 +31,17 @@ namespace VocabularyUp
         private int isPress = 0;
         private TrashTalkingForm trashTalking;
         private int isBossCorrect;
+        private int time=0;
+        private int sound = 1;
         private bool isBoss;
         private bool isWin;
-        private int time = 0;
         private bool inFighting = false;
+        private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
+        private SoundPlayer soundPlayer= new SoundPlayer();
+        private WMPLib.WindowsMediaPlayer mediaPlayer = new WMPLib.WindowsMediaPlayer();
+        private WMPLib.WindowsMediaPlayer music = new WMPLib.WindowsMediaPlayer();
+        private WMPLib.WindowsMediaPlayer last10s = new WMPLib.WindowsMediaPlayer();
+        private WMPLib.WindowsMediaPlayer click = new WMPLib.WindowsMediaPlayer();
 
         public MazeGameFrom(int idCol, int idSkin)
         {
@@ -42,6 +53,7 @@ namespace VocabularyUp
             InitQuiz();            
             InitCollecion(idCol);
             InitPlayer(idSkin);
+            LoadMusic();
             timerUpdate.Start();
             isGameOver = false;
             currentHealth = player.Health;
@@ -54,6 +66,17 @@ namespace VocabularyUp
         }
 
 
+        private void LoadMusic()
+        {
+            mediaPlayer.URL = "MazeGame.mp3";
+            mediaPlayer.settings.volume = 20;
+            mediaPlayer.controls.play();
+
+            click.URL = "click.mp3";
+            
+
+            last10s.settings.volume = 10;
+        }
 
         private void InitAnswer()
         {
@@ -279,7 +302,6 @@ namespace VocabularyUp
             HandleNotThroughtWall();
             this.Focus();
 
-
             if (!isGameOver)
             {
                 for (int i = 0; i < monsters.Count; i++)
@@ -298,7 +320,8 @@ namespace VocabularyUp
                             monsters[i].Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Treasure/rip.png");
                         }
                         else if (monsters[i].IsBoss == true )
-                        {           
+                        {
+                                mediaPlayer.controls.pause();
                                 isBoss = true;
                                 timerUpdate.Stop();
                                 if (isBossCorrect > 4)
@@ -330,11 +353,16 @@ namespace VocabularyUp
                                 //currentQuiz++;
                                     timerQuestion.Start();
                                     guna2Transition.ShowSync(pnlQuestion);
+                                    time = 0;
+                                    lbTimer.Text = (60).ToString();
+                                    timerQuestion.Start();
+                                
                                 }
                             
                         }
                         else
                         {
+                            mediaPlayer.controls.pause();
                             timerUpdate.Stop();
                             if (isCorrect >= 0)
                             {
@@ -360,7 +388,9 @@ namespace VocabularyUp
                                 ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
                                 //currentQuiz++;
                                 guna2Transition.ShowSync(pnlQuestion);
+                                lbTimer.Text = (60).ToString();
                                 timerQuestion.Start();
+                                time = 0;
                                 //pnlQuestion.Show();
                             }
                         }
@@ -377,7 +407,11 @@ namespace VocabularyUp
                         
                         if (treasures[i].IsLastTreasure == true)
                         {
+                            mediaPlayer.controls.stop();
                             treasures.Remove(treasures[i]);
+                            mediaPlayer.controls.stop();
+                            music.URL = "win1.mp3";
+                            music.controls.play();
                             //MessageBox.Show("Chục mừng bạn đã tìm ra đc khó báu cuối cùng và được 10 KiemCuong");
                                 
                             isWin = true;
@@ -394,6 +428,8 @@ namespace VocabularyUp
                         }
                         else
                         {
+                            music.URL = "bonus.mp3";
+                            music.controls.play();
                             treasures.Remove(treasures[i]);
                             //MessageBox.Show("Khó báu cỏ, bạn được 1 kim cương!");
                             ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
@@ -403,10 +439,16 @@ namespace VocabularyUp
                     }
                 }
             }
+
             
             if (currentHealth <= 0 )
             {
                 isGameOver = true;
+
+                mediaPlayer.controls.stop();
+
+                music.URL = "lose1.mp3";
+                music.controls.play();
                 btnClose.Show();
                 btnDetails.Show();
                 this.AcceptButton = btnClose;
@@ -414,7 +456,8 @@ namespace VocabularyUp
                 guna2Transition.ShowSync(pnlFinal);
                 this.Focus();
             }    
-            
+             
+
             //di chuyen cua monster 0
             if (monsters[0].IsDeath == false)
             {
@@ -475,7 +518,6 @@ namespace VocabularyUp
                     monsters[5].Cur = Direction1.Up;
             }
 
-
             double percent = (((double)currentHealth) / player.Health) * 100;
             pgbHealth.Value = (int)percent;
             lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
@@ -489,11 +531,15 @@ namespace VocabularyUp
 
         private void btnReturn_Click(object sender, EventArgs e)
         {
+            click.controls.play();
+            music.controls.stop();
+            mediaPlayer.controls.stop();
             this.Close();
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             btnA.BorderThickness = 0;
             btnB.BorderThickness = 0;
             btnC.BorderThickness = 0;
@@ -507,10 +553,25 @@ namespace VocabularyUp
                     userChoices[currentQuiz].IsDone = true;
                     if (userChoices[currentQuiz].Selected == userChoices[currentQuiz].Correct)
                     {
+
                         isCorrect = 1;
+
+                        music.URL = "correct.mp3";
+                        music.controls.play();
+
+                        mediaPlayer.URL = "MazeGame.mp3";
+                        mediaPlayer.controls.play();
                     }
                     else
+                    {
+
                         isCorrect = 0;
+                        music.URL = "incorrect.mp3";
+                        music.controls.play();
+
+                        mediaPlayer.URL = "MazeGame.mp3";
+                        mediaPlayer.controls.play();
+                    }
                 }
                 else
                 {
@@ -522,17 +583,33 @@ namespace VocabularyUp
                             isBossCorrect = isBossCorrect + 2;
                         }
                         else isBossCorrect++;
+                        music.URL = "correct.mp3";
+                        music.controls.play();
+
+                        if (isBossCorrect == 5)
+                        {
+                            mediaPlayer.URL = "MazeGame.mp3";
+                            mediaPlayer.controls.play();
+                        }    
+
                     }
                     else
                     {
                         isBossCorrect = 0;
+                        music.URL = "incorrect.mp3";
+                        music.controls.play();
                         
+
+                        mediaPlayer.URL = "MazeGame.mp3";
+                        mediaPlayer.controls.play();
+
                     }
                 }    
             }
 
             if (userChoices[currentQuiz].Selected != -1)
             {
+                timerQuestion.Stop();
                 pnlQuestion.Hide();
                 timerUpdate.Start();
                 timerQuestion.Stop();
@@ -544,6 +621,7 @@ namespace VocabularyUp
 
         private void btnA_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 1;
@@ -561,6 +639,7 @@ namespace VocabularyUp
 
         private void btnB_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 2;
@@ -578,6 +657,7 @@ namespace VocabularyUp
 
         private void btnC_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 3;
@@ -595,6 +675,7 @@ namespace VocabularyUp
 
         private void btnD_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 4;
@@ -787,11 +868,15 @@ namespace VocabularyUp
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            click.controls.play();
+            music.controls.stop();
+            mediaPlayer.controls.stop();
             this.Close();
         }
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
+            click.controls.play();
             Form backgroundForm = new Form();
             try
             {
@@ -824,12 +909,22 @@ namespace VocabularyUp
             }
         }
 
+        private void lbTimer_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void timerQuestion_Tick(object sender, EventArgs e)
         {
             if (timerQuestion.Enabled == false)
                 return;
 
             time++;
+            if (time == 49)
+            {
+                last10s.URL = "10s.mp3";
+                last10s.controls.play();
+            }    
             lbTimer.Text = (60 - time).ToString();
             if (time < 50)
             {
@@ -841,17 +936,42 @@ namespace VocabularyUp
             }
             if (time == 60)
             {
+                last10s.controls.pause();
                 timerQuestion.Stop();
-                currentHealth -= 1;
+                mediaPlayer.URL = "MazeGame.mp3";
+                mediaPlayer.controls.play();
+                pnlQuestion.Hide();
+                currentHealth -= 10;
                 pnlQuestion.Hide();
                 timerUpdate.Start();
                 inFighting = false;
                 int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
                 Size size = new Size(s - 5, s - 5);
                 player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
-                
 
                 time = 0;
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            click.controls.play();
+            if (sound == 1)
+            {
+                pictureBox1.Image = Image.FromFile("../../icons/sound-off.png");
+                mediaPlayer.settings.volume = 0;
+                music.settings.volume = 0;
+                last10s.settings.volume = 0;
+                sound = 0;
+            }
+            else
+            {
+              
+                pictureBox1.Image = Image.FromFile("../../icons/sound.png");
+                mediaPlayer.settings.volume = 20;
+                music.settings.volume = 100;
+                last10s.settings.volume = 20;
+                sound = 1;
             }
         }
 
@@ -887,12 +1007,14 @@ namespace VocabularyUp
             {
                 SizeF Size = e.Graphics.MeasureString("Game Over", new Font("Arial", 30));
                 e.Graphics.DrawString("Game Over", new Font("Arial", 20), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, (this.Height / 2 - Size.Height / 2)+20));
+            
             }
 
             if (isWin)
             {
                 SizeF Size = e.Graphics.MeasureString("Good job em !", new Font("Arial", 30));
-                e.Graphics.DrawString("Good job em !", new Font("Arial", 30), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, (this.Height / 2 - Size.Height / 2) + 20));
+                e.Graphics.DrawString("Good job em !", new Font("Arial", 30), new SolidBrush(Color.White), new PointF(this.Width / 2 - Size.Width / 2, (this.Height / 2 - Size.Height / 2) + 20));                
+                
             }
         }
 
