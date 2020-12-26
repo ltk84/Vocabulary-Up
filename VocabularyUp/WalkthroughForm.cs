@@ -683,6 +683,7 @@ namespace VocabularyUp
                     pnlQuestion.Hide();
                     timerUpdate.Start();
                     player.Location = new Point(0, this.ClientSize.Height / 2);
+                    currentHealth--;
                 }
                 else
                 {
