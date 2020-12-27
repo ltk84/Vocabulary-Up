@@ -44,10 +44,12 @@
             this.lbMain = new System.Windows.Forms.Label();
             this.pbMain = new System.Windows.Forms.PictureBox();
             this.aaa = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnReturn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.lbDiamond = new System.Windows.Forms.Label();
             this.pbDiamond = new System.Windows.Forms.PictureBox();
+            this.pgbHealth = new VocabularyUp.SuperProgressBar();
             this.pbIconHealth = new System.Windows.Forms.PictureBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -69,21 +71,19 @@
             this.guna2Transition = new Guna.UI2.WinForms.Guna2Transition();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
-            this.timerQuestion = new System.Windows.Forms.Timer(this.components);
             this.pnlFinal = new System.Windows.Forms.Panel();
             this.lbFinal = new System.Windows.Forms.Label();
-            this.pgbHealth = new VocabularyUp.SuperProgressBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timerQuestion = new System.Windows.Forms.Timer(this.components);
             this.pnlQuestion.SuspendLayout();
             this.pnlFlashCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
             this.aaa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
             this.pnlFinal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timerUpdate
@@ -303,6 +303,20 @@
             this.aaa.Size = new System.Drawing.Size(1000, 100);
             this.aaa.TabIndex = 34;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Transition.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(891, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // btnReturn
             // 
             this.btnReturn.BackColor = System.Drawing.Color.Transparent;
@@ -357,6 +371,15 @@
             this.pbDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbDiamond.TabIndex = 4;
             this.pbDiamond.TabStop = false;
+            // 
+            // pgbHealth
+            // 
+            this.pgbHealth.BackColor = System.Drawing.Color.White;
+            this.guna2Transition.SetDecoration(this.pgbHealth, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pgbHealth.Location = new System.Drawing.Point(48, 14);
+            this.pgbHealth.Name = "pgbHealth";
+            this.pgbHealth.Size = new System.Drawing.Size(199, 25);
+            this.pgbHealth.TabIndex = 3;
             // 
             // pbIconHealth
             // 
@@ -613,12 +636,6 @@
             this.btnDetails.Visible = false;
             this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
-            // timerQuestion
-            // 
-            this.timerQuestion.Enabled = true;
-            this.timerQuestion.Interval = 1000;
-            this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
-            // 
             // pnlFinal
             // 
             this.pnlFinal.BackColor = System.Drawing.Color.Transparent;
@@ -646,27 +663,11 @@
             this.lbFinal.Text = "Game Over";
             this.lbFinal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pgbHealth
+            // timerQuestion
             // 
-            this.pgbHealth.BackColor = System.Drawing.Color.White;
-            this.guna2Transition.SetDecoration(this.pgbHealth, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pgbHealth.Location = new System.Drawing.Point(48, 14);
-            this.pgbHealth.Name = "pgbHealth";
-            this.pgbHealth.Size = new System.Drawing.Size(199, 25);
-            this.pgbHealth.TabIndex = 3;// 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Transition.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(891, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 33);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.timerQuestion.Enabled = true;
+            this.timerQuestion.Interval = 1000;
+            this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
             // 
             // MazeGameFrom
             // 
@@ -702,13 +703,13 @@
             this.pnlFlashCard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
             this.aaa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).EndInit();
             this.pnlFinal.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

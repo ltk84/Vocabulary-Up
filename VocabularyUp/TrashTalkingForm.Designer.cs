@@ -41,20 +41,20 @@
             // 
             // pbCharacter
             // 
-            this.pbCharacter.Location = new System.Drawing.Point(44, 136);
+            this.pbCharacter.Location = new System.Drawing.Point(44, 78);
             this.pbCharacter.Margin = new System.Windows.Forms.Padding(2);
             this.pbCharacter.Name = "pbCharacter";
-            this.pbCharacter.Size = new System.Drawing.Size(299, 364);
+            this.pbCharacter.Size = new System.Drawing.Size(342, 422);
             this.pbCharacter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCharacter.TabIndex = 0;
             this.pbCharacter.TabStop = false;
             // 
             // pbMonster
             // 
-            this.pbMonster.Location = new System.Drawing.Point(778, 136);
+            this.pbMonster.Location = new System.Drawing.Point(778, 78);
             this.pbMonster.Margin = new System.Windows.Forms.Padding(2);
             this.pbMonster.Name = "pbMonster";
-            this.pbMonster.Size = new System.Drawing.Size(299, 364);
+            this.pbMonster.Size = new System.Drawing.Size(342, 422);
             this.pbMonster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMonster.TabIndex = 1;
             this.pbMonster.TabStop = false;
@@ -70,7 +70,7 @@
             this.pnlTrashTalk.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTrashTalk.Name = "pnlTrashTalk";
             this.pnlTrashTalk.ShadowDecoration.Parent = this.pnlTrashTalk;
-            this.pnlTrashTalk.Size = new System.Drawing.Size(1034, 172);
+            this.pnlTrashTalk.Size = new System.Drawing.Size(1076, 172);
             this.pnlTrashTalk.TabIndex = 2;
             this.pnlTrashTalk.Click += new System.EventHandler(this.pnlTrashTalk_Click);
             // 
@@ -82,7 +82,7 @@
             this.lbTrashTalk.Location = new System.Drawing.Point(26, 23);
             this.lbTrashTalk.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTrashTalk.Name = "lbTrashTalk";
-            this.lbTrashTalk.Size = new System.Drawing.Size(980, 128);
+            this.lbTrashTalk.Size = new System.Drawing.Size(1032, 128);
             this.lbTrashTalk.TabIndex = 3;
             this.lbTrashTalk.Click += new System.EventHandler(this.lbTrashTalk_Click);
             // 
@@ -96,7 +96,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Turquoise;
-            this.ClientSize = new System.Drawing.Size(1040, 640);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.pnlTrashTalk);
             this.Controls.Add(this.pbMonster);
             this.Controls.Add(this.pbCharacter);
@@ -108,6 +108,7 @@
             this.Text = "TrashTalkingForm";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Turquoise;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.TrashTalkingForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCharacter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMonster)).EndInit();

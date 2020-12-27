@@ -68,10 +68,10 @@ namespace VocabularyUp
 
         private void LoadMusic()
         {
-            mediaPlayer.URL = "MazeGame.mp3";
+            mediaPlayer.URL = ConfigurationManager.AppSettings.Get("musicPath") + "MazeGame.mp3";
             mediaPlayer.settings.volume = 20;
             mediaPlayer.controls.play();
-            click.URL = "click.mp3";
+            click.URL = ConfigurationManager.AppSettings.Get("musicPath") + "click.mp3";
             last10s.settings.volume = 10;
         }
 
@@ -320,49 +320,51 @@ namespace VocabularyUp
                         }
                         else if (monsters[i].IsBoss == true)
                         {
-                                mediaPlayer.controls.pause();
-                                isBoss = true;
-                                timerUpdate.Stop();
-                                if (isBossCorrect > 4)
+                            // mediaPlayer.controls.pause();
+                            isBoss = true;
+                            //timerUpdate.Stop();
+                            if (isCorrect == 1)
+                            {
+                                isCorrect = -1;
+                                if (isBossCorrect == 5)
                                 {
-
-                                    if (isBossCorrect == 5)
-                                    {
-                                        monsters[i].IsDeath = true;
-                                        monsters[i].Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Treasure/rip.png");
-                                    }
-
-
-                                    timerUpdate.Start();
+                                    monsters[i].IsDeath = true;
+                                    monsters[i].Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Treasure/rip.png");
+                                    //isCorrect = 1;
                                 }
-                                else if (isBossCorrect == 0)
-                                {
-                                    int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
-                                    Size size = new Size(s - 5, s - 5);
-                                    currentHealth -= 1;
-                                    //player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
-                                    isBossCorrect = -1;
-                                    isBoss = false;
-                                    inFighting = false;
-                                    timerUpdate.Start();
-                                }
-                                else
-                                {
-                                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-                                //currentQuiz++;
-                                    timerQuestion.Start();
-                                    guna2Transition.ShowSync(pnlQuestion);
-                                    time = 0;
-                                    lbTimer.Text = (60).ToString();
-                                    //timerQuestion.Start();
 
+                                timerUpdate.Start();
+                            }
+                            else if (isCorrect == 0)
+                            {
+                                //int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
+                                //Size size = new Size(s - 5, s - 5);
+                                currentHealth -= 1;
+                                //player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
+                                //isBossCorrect = -1;
+                                //isBoss = false;
+                                inFighting = false;
+                                //timerUpdate.Start();
+                                //isCorrect = -1;
                                 
-                                }
+                            }
+
+                            if (monsters[i].IsDeath == false)
+                            {
+                                timerUpdate.Stop();
+                                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                                timerQuestion.Start();
+                                guna2Transition.ShowSync(pnlQuestion);
+                                time = 0;
+                                lbTimer.Text = (60).ToString();
+                            }
                             
+                            
+
                         }
                         else
                         {
-                            mediaPlayer.controls.pause();
+                            //mediaPlayer.controls.pause();
                             timerUpdate.Stop();
                             if (isCorrect >= 0)
                             {
@@ -404,18 +406,16 @@ namespace VocabularyUp
                 {
                     if (player.isCollision(treasures[i]))
                     {
-                        
                         if (treasures[i].IsLastTreasure == true)
                         {
                             mediaPlayer.controls.stop();
                             treasures.Remove(treasures[i]);
                             mediaPlayer.controls.stop();
-                            music.URL = "win1.mp3";
+                            music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "win1.mp3";
                             music.controls.play();
                             //MessageBox.Show("Chục mừng bạn đã tìm ra đc khó báu cuối cùng và được 10 KiemCuong");
                                 
                             isWin = true;
-                            this.AcceptButton = btnClose;
                             btnClose.Show();
                             btnDetails.Show();
                             timerUpdate.Stop();
@@ -428,7 +428,7 @@ namespace VocabularyUp
                         }
                         else
                         {
-                            music.URL = "bonus.mp3";
+                            music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "bonus.mp3";
                             music.controls.play();
                             treasures.Remove(treasures[i]);
                             //MessageBox.Show("Khó báu cỏ, bạn được 1 kim cương!");
@@ -447,7 +447,7 @@ namespace VocabularyUp
 
                 mediaPlayer.controls.stop();
 
-                music.URL = "lose1.mp3";
+                music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "lose1.mp3";
                 music.controls.play();
                 btnClose.Show();
                 btnDetails.Show();
@@ -547,7 +547,6 @@ namespace VocabularyUp
             userChoices[currentQuiz].CorrectAns = questions[currentQuiz].GetFlashCard().Eng;
             if (userChoices[currentQuiz].IsDone == false && isPress == 1)
             {
-                //ReloadButton();
                 if (isBoss == false)
                 {
                     userChoices[currentQuiz].IsDone = true;
@@ -555,22 +554,15 @@ namespace VocabularyUp
                     {
 
                         isCorrect = 1;
-
-                        music.URL = "correct.mp3";
+                        music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "correct.mp3";
                         music.controls.play();
-
-                        //mediaPlayer.URL = "MazeGame.mp3";
-                        //mediaPlayer.controls.play();
                     }
                     else
                     {
 
                         isCorrect = 0;
-                        music.URL = "incorrect.mp3";
+                        music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "incorrect.mp3";
                         music.controls.play();
-
-                        //mediaPlayer.URL = "MazeGame.mp3";
-                        //mediaPlayer.controls.play();
                     }
                 }
                 else
@@ -582,27 +574,25 @@ namespace VocabularyUp
                         {
                             isBossCorrect = isBossCorrect + 2;
                         }
-                        else isBossCorrect++;
-                        music.URL = "correct.mp3";
+                        else 
+                            isBossCorrect++;
+                        isCorrect = 1;
+                        music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "correct.mp3";
                         music.controls.play();
 
-                        if (isBossCorrect == 5)
-                        {
-                            mediaPlayer.URL = "MazeGame.mp3";
-                            mediaPlayer.controls.play();
-                        }    
+                        //if (isBossCorrect == 5)
+                        //{
+                        //    mediaPlayer.URL = ConfigurationManager.AppSettings.Get("musicPath") + "MazeGame.mp3";
+                        //    mediaPlayer.controls.play();
+                        //}    
 
                     }
                     else
                     {
-                        isBossCorrect = 0;
-                        music.URL = "incorrect.mp3";
+                        //isBossCorrect = 0;
+                        music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "incorrect.mp3";
                         music.controls.play();
-                        
-
-                        mediaPlayer.URL = "MazeGame.mp3";
-                        mediaPlayer.controls.play();
-
+                        isCorrect = 0;
                     }
                 }    
             }
@@ -922,7 +912,7 @@ namespace VocabularyUp
             time++;
             if (time == 49)
             {
-                last10s.URL = "10s.mp3";
+                last10s.URL = ConfigurationManager.AppSettings.Get("musicPath") + "10s.mp3";
                 last10s.controls.play();
             }    
             lbTimer.Text = (60 - time).ToString();
@@ -938,8 +928,8 @@ namespace VocabularyUp
             {
                 last10s.controls.pause();
                 timerQuestion.Stop();
-                music.URL = "lose1.mp3";
-                music.controls.play();
+                //music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "lose1.mp3";
+                //music.controls.play();
                 //mediaPlayer.URL = "MazeGame.mp3";
                 //mediaPlayer.controls.play();
                 pnlQuestion.Hide();
@@ -947,9 +937,14 @@ namespace VocabularyUp
                 pnlQuestion.Hide();
                 timerUpdate.Start();
                 inFighting = false;
-                int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
-                Size size = new Size(s - 5, s - 5);
-                player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
+                if (isBoss == false)
+                {
+                    int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
+                    Size size = new Size(s - 5, s - 5);
+                    player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
+                }
+                isCorrect = 0;
+                currentQuiz++;
                 
                 time = 0;
             }
