@@ -330,6 +330,7 @@ namespace VocabularyUp
                                 {
                                     monsters[i].IsDeath = true;
                                     monsters[i].Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Treasure/rip.png");
+                                    
                                     //isCorrect = 1;
                                 }
 
@@ -352,9 +353,17 @@ namespace VocabularyUp
                             if (monsters[i].IsDeath == false)
                             {
                                 timerUpdate.Stop();
-                                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-                                timerQuestion.Start();
-                                guna2Transition.ShowSync(pnlQuestion);
+                                if (currentHealth > 0)
+                                {
+                                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                                    timerQuestion.Start();
+                                    guna2Transition.ShowSync(pnlQuestion);
+                                }
+                                else
+                                {
+                                    isGameOver = true;
+                                    isWin = false;
+                                }    
                                 time = 0;
                                 lbTimer.Text = (60).ToString();
                             }
@@ -387,11 +396,14 @@ namespace VocabularyUp
                             }
                             else
                             {
-                                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-                                //currentQuiz++;
-                                guna2Transition.ShowSync(pnlQuestion);
-                                lbTimer.Text = (60).ToString();
-                                timerQuestion.Start();
+                                if (currentHealth > 0)
+                                {
+                                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                                    //currentQuiz++;
+                                    guna2Transition.ShowSync(pnlQuestion);
+                                    lbTimer.Text = (60).ToString();
+                                    timerQuestion.Start();
+                                }
                                 time = 0;
                                 //pnlQuestion.Show();
                             }

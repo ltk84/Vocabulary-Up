@@ -206,7 +206,7 @@ namespace VocabularyUp
                 MazeGameFrom mgf = new MazeGameFrom(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
                 mgf.TopMost = true;
                 mgf.Show();
-                mgf.OpenTrashTalk(5, "Hello", "Lo cc!");
+                mgf.OpenTrashTalk(5, "Cái rương ở đâu?", "Bước qua xác ta đã!");
 
             }
         }

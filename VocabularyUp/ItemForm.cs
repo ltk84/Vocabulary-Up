@@ -53,7 +53,7 @@ namespace VocabularyUp
             int price = Int32.Parse(lbPrice.Text);
             if (shop.GetCurrentDiamond() >= price)
             {
-                MessageBox.Show(this.lbName.Text);
+                //MessageBox.Show(this.lbName.Text);
                 ManageUserAction.AddToOwnCharacterList(lbName.Text);
                 //shop.LoadShop();
                 shop.LoadAllCharacter();
@@ -61,7 +61,7 @@ namespace VocabularyUp
             }
             else
             {
-                MessageBox.Show("Khong du tien kia thang loz !");
+                MessageBox.Show("Not enough diamond!");
             }
         }
 

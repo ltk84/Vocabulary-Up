@@ -32,6 +32,7 @@ namespace VocabularyUp
             this.currentTopic = currentTopic;
             this.campaign = campaign;
             InitQuiz();
+            InitAnswer();
             ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
         }
 
@@ -95,7 +96,8 @@ namespace VocabularyUp
         {
             lbMain.Text = content;
             pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + id.ToString() + ".jpg");
-            InitAnswer();
+            //if (userChoices[currentQuiz].IsDone == false)
+                //InitAnswer();
             if (userChoices[currentQuiz].IsDone == true)
                 btnNext.Enabled = true;
             else
@@ -105,35 +107,39 @@ namespace VocabularyUp
         private void InitAnswer()
         {
             Random rd = new Random();
-            UserChoice u = new UserChoice(-1, rd.Next(1, 5));
-            userChoices.Add(u);
-            switch (userChoices[currentQuiz].Correct)
+            foreach (var item in questions)
             {
-                case 1: 
-                    btnA.Text = questions[currentQuiz].GetFlashCard().Viet;
-                    btnB.Text = questions[currentQuiz].FakeAnswers[0];
-                    btnC.Text = questions[currentQuiz].FakeAnswers[1];
-                    btnD.Text = questions[currentQuiz].FakeAnswers[2];
-                    break;
-                case 2:
-                    btnB.Text = questions[currentQuiz].GetFlashCard().Viet;
-                    btnA.Text = questions[currentQuiz].FakeAnswers[0];
-                    btnC.Text = questions[currentQuiz].FakeAnswers[1];
-                    btnD.Text = questions[currentQuiz].FakeAnswers[2];
-                    break;
-                case 3:
-                    btnC.Text = questions[currentQuiz].GetFlashCard().Viet;
-                    btnB.Text = questions[currentQuiz].FakeAnswers[0];
-                    btnA.Text = questions[currentQuiz].FakeAnswers[1];
-                    btnD.Text = questions[currentQuiz].FakeAnswers[2];
-                    break;
-                case 4:
-                    btnD.Text = questions[currentQuiz].GetFlashCard().Viet;
-                    btnB.Text = questions[currentQuiz].FakeAnswers[0];
-                    btnC.Text = questions[currentQuiz].FakeAnswers[1];
-                    btnA.Text = questions[currentQuiz].FakeAnswers[2];
-                    break;
-            }    
+                UserChoice u = new UserChoice(-1, rd.Next(1, 5));
+                userChoices.Add(u);
+                switch (userChoices[currentQuiz].Correct)
+                {
+                    case 1:
+                        btnA.Text = questions[currentQuiz].GetFlashCard().Viet;
+                        btnB.Text = questions[currentQuiz].FakeAnswers[0];
+                        btnC.Text = questions[currentQuiz].FakeAnswers[1];
+                        btnD.Text = questions[currentQuiz].FakeAnswers[2];
+                        break;
+                    case 2:
+                        btnB.Text = questions[currentQuiz].GetFlashCard().Viet;
+                        btnA.Text = questions[currentQuiz].FakeAnswers[0];
+                        btnC.Text = questions[currentQuiz].FakeAnswers[1];
+                        btnD.Text = questions[currentQuiz].FakeAnswers[2];
+                        break;
+                    case 3:
+                        btnC.Text = questions[currentQuiz].GetFlashCard().Viet;
+                        btnB.Text = questions[currentQuiz].FakeAnswers[0];
+                        btnA.Text = questions[currentQuiz].FakeAnswers[1];
+                        btnD.Text = questions[currentQuiz].FakeAnswers[2];
+                        break;
+                    case 4:
+                        btnD.Text = questions[currentQuiz].GetFlashCard().Viet;
+                        btnB.Text = questions[currentQuiz].FakeAnswers[0];
+                        btnC.Text = questions[currentQuiz].FakeAnswers[1];
+                        btnA.Text = questions[currentQuiz].FakeAnswers[2];
+                        break;
+                }
+            }
+              
         }
 
         private void InitQuiz()

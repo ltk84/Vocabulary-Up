@@ -115,51 +115,66 @@ namespace VocabularyUp
         {
             allCollections.Clear();
             SqlConnection connection = new SqlConnection(constr);
-            connection.Open();
-
-            //Chuan bi cau lenh query viet bang SQL 
-            String sqlQuery = "select distinct ID_COLLECTION, COLLECTION_NAME from USER_FLASHCARD where ID_USER = " + currentUser.IdUser.ToString();
-            //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-
-            //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
-            SqlDataReader reader = command.ExecuteReader();
-
-            //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
-            while (reader.HasRows)
+            try
             {
-                if (reader.Read() == false) break;
+                connection.Open();
 
-                Collection c = new Collection(reader.GetInt32(0), reader.GetString(1), UpdateFlashCardOfCollection(reader.GetInt32(0)));
+                //Chuan bi cau lenh query viet bang SQL 
+                String sqlQuery = "select distinct ID_COLLECTION, COLLECTION_NAME from USER_FLASHCARD where ID_USER = " + currentUser.IdUser.ToString();
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
 
-                allCollections.Add(c);
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                SqlDataReader reader = command.ExecuteReader();
+
+                //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+
+                    Collection c = new Collection(reader.GetInt32(0), reader.GetString(1), UpdateFlashCardOfCollection(reader.GetInt32(0)));
+
+                    allCollections.Add(c);
+                }
             }
+            finally
+            {
+                connection.Close();
+            }
+            
         }
 
         public static List<FlashCard> UpdateFlashCardOfCollection(int idCollection)
         {
             List<FlashCard> flashCards = new List<FlashCard>();
-
             SqlConnection connection = new SqlConnection(constr);
-            connection.Open();
-
-            //Chuan bi cau lenh query viet bang SQL 
-            String sqlQuery = "select id_card, eng, vie, pronunciation, field from USER_FLASHCARD, flashcard where USER_FLASHCARD.ID_CARD = FLASHCARD.ID and ID_USER = " + currentUser.IdUser.ToString() + " and id_collection = " + idCollection.ToString();
-            //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-
-            //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
-            SqlDataReader reader = command.ExecuteReader();
-
-            //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
-            while (reader.HasRows)
+            try 
             {
-                if (reader.Read() == false) break;
-                FlashCard f = new FlashCard(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
+                connection.Open();
 
-                flashCards.Add(f);
+                //Chuan bi cau lenh query viet bang SQL 
+                String sqlQuery = "select id_card, eng, vie, pronunciation, field from USER_FLASHCARD, flashcard where USER_FLASHCARD.ID_CARD = FLASHCARD.ID and ID_USER = " + currentUser.IdUser.ToString() + " and id_collection = " + idCollection.ToString();
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                SqlDataReader reader = command.ExecuteReader();
+
+                //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    FlashCard f = new FlashCard(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
+
+                    flashCards.Add(f);
+                }
+                return flashCards;
             }
-            return flashCards;
+            finally
+            {
+                connection.Close();
+            }
+            
         }
 
         // CONNECT ĐẾN DATABASE ĐỂ LOAD REVISE FLASHCARD
@@ -708,26 +723,34 @@ namespace VocabularyUp
         {
             ownSkin.Clear();
             SqlConnection connection = new SqlConnection(constr);
-            connection.Open();
-
-            //Chuan bi cau lenh query viet bang SQL 
-            String sqlQuery = "select c.ID, c.NAME, c.PRICE from USER_character u_c, CHARACTER c where u_c.id_char = c.id and ID_USER = " + currentUser.IdUser.ToString();
-            
-            //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-
-            //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
-            SqlDataReader reader = command.ExecuteReader();
-
-            //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
-            while (reader.HasRows)
+            try
             {
-                if (reader.Read() == false) break;
+                connection.Open();
 
-                Skin c = new Skin(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2));
+                //Chuan bi cau lenh query viet bang SQL 
+                String sqlQuery = "select c.ID, c.NAME, c.PRICE from USER_character u_c, CHARACTER c where u_c.id_char = c.id and ID_USER = " + currentUser.IdUser.ToString();
 
-                ownSkin.Add(c);
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                SqlDataReader reader = command.ExecuteReader();
+
+                //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+
+                    Skin c = new Skin(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2));
+
+                    ownSkin.Add(c);
+                }
             }
+            finally
+            {
+                connection.Close();
+            }
+           
         }
 
         public static List<Skin> GetOwnCharacterList()
@@ -788,20 +811,27 @@ namespace VocabularyUp
         public static void LoadCurrency()
         {
             SqlConnection connection = new SqlConnection(constr);
-            connection.Open();
-
-            String sqlQuery = "SELECT DIAMOND FROM USER_INFO WHERE ID_user = @ID";
-
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-            command.Parameters.AddWithValue("@ID", currentUser.IdUser);
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.HasRows)
+            try
             {
-                if (reader.Read() == false) break;
+                connection.Open();
 
-                currentUser.Diamond = reader.GetInt32(0);
+                String sqlQuery = "SELECT DIAMOND FROM USER_INFO WHERE ID_user = @ID";
+
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID", currentUser.IdUser);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+
+                    currentUser.Diamond = reader.GetInt32(0);
+                }
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 
@@ -872,41 +902,55 @@ namespace VocabularyUp
         public static void LoadPlayerStat(int id, Player player)
         {
             SqlConnection connection = new SqlConnection(constr);
-            connection.Open();
-
-            String sqlQuery = "SELECT NAME, HEALTH, DAMAGE FROM CHARACTER WHERE ID = @ID";
-
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-            command.Parameters.AddWithValue("@ID", id);
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.HasRows)
+            try
             {
-                if (reader.Read() == false) break;
-                player.Name = reader.GetString(0);
-                player.Health = reader.GetInt32(1);
-                player.Damage = reader.GetInt32(2);
+                connection.Open();
+
+                String sqlQuery = "SELECT NAME, HEALTH, DAMAGE FROM CHARACTER WHERE ID = @ID";
+
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID", id);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    player.Name = reader.GetString(0);
+                    player.Health = reader.GetInt32(1);
+                    player.Damage = reader.GetInt32(2);
+                }
+            }
+            finally
+            {
+                connection.Close();
             }
         }
         public static void LoadPlayerMazeStat(int id, PlayerMaze player)
         {
             SqlConnection connection = new SqlConnection(constr);
-            connection.Open();
-
-            String sqlQuery = "SELECT NAME, HEALTH, DAMAGE FROM CHARACTER WHERE ID = @ID";
-
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-            command.Parameters.AddWithValue("@ID", id);
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.HasRows)
+            try
             {
-                if (reader.Read() == false) break;
-                player.Name = reader.GetString(0);
-                player.Health = reader.GetInt32(1);
-                player.Damage = reader.GetInt32(2);
+                connection.Open();
+
+                String sqlQuery = "SELECT NAME, HEALTH, DAMAGE FROM CHARACTER WHERE ID = @ID";
+
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID", id);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    player.Name = reader.GetString(0);
+                    player.Health = reader.GetInt32(1);
+                    player.Damage = reader.GetInt32(2);
+                }
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 
