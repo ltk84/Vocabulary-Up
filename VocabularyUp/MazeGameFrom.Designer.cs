@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MazeGameFrom));
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation2 = new Guna.UI2.AnimatorNS.Animation();
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.pnlQuestion = new System.Windows.Forms.Panel();
             this.lbTimer = new System.Windows.Forms.Label();
@@ -44,6 +44,7 @@
             this.lbMain = new System.Windows.Forms.Label();
             this.pbMain = new System.Windows.Forms.PictureBox();
             this.aaa = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnReturn = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.lbDiamond = new System.Windows.Forms.Label();
@@ -71,16 +72,17 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.timerQuestion = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlQuestion.SuspendLayout();
             this.pnlFlashCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
             this.aaa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).BeginInit();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // timerUpdate
@@ -94,6 +96,7 @@
             this.pnlQuestion.BackColor = System.Drawing.Color.Tan;
             this.pnlQuestion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlQuestion.BackgroundImage")));
             this.pnlQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlQuestion.Controls.Add(this.pictureBox2);
             this.pnlQuestion.Controls.Add(this.lbTimer);
             this.pnlQuestion.Controls.Add(this.btnConfirm);
             this.pnlQuestion.Controls.Add(this.btnB);
@@ -299,6 +302,20 @@
             this.aaa.Name = "aaa";
             this.aaa.Size = new System.Drawing.Size(1000, 100);
             this.aaa.TabIndex = 34;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Transition.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(891, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnReturn
             // 
@@ -522,9 +539,10 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.guna2Transition.SetDecoration(this.panel4, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.panel4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel4.Location = new System.Drawing.Point(25, 100);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
@@ -555,22 +573,22 @@
             // 
             this.guna2Transition.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Leaf;
             this.guna2Transition.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 1F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.guna2Transition.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 1F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.guna2Transition.DefaultAnimation = animation2;
             // 
             // btnClose
             // 
@@ -625,19 +643,17 @@
             this.timerQuestion.Interval = 1000;
             this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
             // 
-            // pictureBox1
+            // pictureBox2
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Transition.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(891, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 33);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition.SetDecoration(this.pictureBox2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(630, 47);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(43, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 52;
+            this.pictureBox2.TabStop = false;
             // 
             // MazeGameFrom
             // 
@@ -674,12 +690,13 @@
             this.pnlFlashCard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
             this.aaa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReturn)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -726,5 +743,6 @@
         private Guna.UI2.WinForms.Guna2Button btnDetails;
         private System.Windows.Forms.Timer timerQuestion;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

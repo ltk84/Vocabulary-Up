@@ -321,7 +321,7 @@ namespace VocabularyUp
                                     if (isBossCorrect == 5)
                                     {
                                         monsters[i].IsDeath = true;
-                                        monsters[i].Image = Image.FromFile("../../db/Treasure/rip.png");
+                                       // monsters[i].Image = Image.FromFile("../../db/Treasure/rip.png");
                                     }
 
 
@@ -358,7 +358,7 @@ namespace VocabularyUp
                                 if (isCorrect == 1)
                                 {
                                     monsters[i].IsDeath = true;
-                                    monsters[i].Image = Image.FromFile("../../db/Treasure/rip.png");                                    
+                                    //monsters[i].Image = Image.FromFile("../../db/Treasure/rip.png");                                    
                                 }
                                 else
                                 {
@@ -425,7 +425,7 @@ namespace VocabularyUp
                 }
             }
 
-            
+            //thua
             if (currentHealth <= 0 )
             {
                 isGameOver = true;
@@ -440,7 +440,14 @@ namespace VocabularyUp
                 timerUpdate.Stop();
                 this.Focus();
             }    
-             
+             // rip monster
+            for (int i =0;i <monsters.Count;i++)
+            {
+                if (monsters[i].IsDeath == true)
+                {
+                    monsters[i].Image = Image.FromFile("../../db/Treasure/rip.png");
+                }    
+            }    
 
             //di chuyen cua monster 0
             if (monsters[0].IsDeath == false)

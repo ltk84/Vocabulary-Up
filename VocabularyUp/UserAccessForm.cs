@@ -315,6 +315,11 @@ namespace VocabularyUp
             this.Hide();
             ClearTextBox();
         }
+
+        private void pnlSignup_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

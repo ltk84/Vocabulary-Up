@@ -107,7 +107,7 @@
             this.transitionPanel.SetDecoration(this.pnlUserLogin, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlUserLogin.FillColor = System.Drawing.Color.Transparent;
             this.pnlUserLogin.FillColor2 = System.Drawing.Color.Transparent;
-            this.pnlUserLogin.Location = new System.Drawing.Point(514, 162);
+            this.pnlUserLogin.Location = new System.Drawing.Point(508, 147);
             this.pnlUserLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlUserLogin.Name = "pnlUserLogin";
             this.pnlUserLogin.ShadowDecoration.Parent = this.pnlUserLogin;
@@ -131,11 +131,11 @@
             // 
             this.lbUserLogin.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbUserLogin, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbUserLogin.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold);
+            this.lbUserLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.lbUserLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbUserLogin.Location = new System.Drawing.Point(140, 34);
             this.lbUserLogin.Name = "lbUserLogin";
-            this.lbUserLogin.Size = new System.Drawing.Size(97, 37);
+            this.lbUserLogin.Size = new System.Drawing.Size(91, 32);
             this.lbUserLogin.TabIndex = 32;
             this.lbUserLogin.Text = "Login";
             // 
@@ -230,6 +230,7 @@
             // 
             this.txtPassword_Login.Animated = true;
             this.txtPassword_Login.BorderRadius = 8;
+            this.txtPassword_Login.BorderThickness = 3;
             this.txtPassword_Login.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.transitionPanel.SetDecoration(this.txtPassword_Login, Guna.UI2.AnimatorNS.DecorationType.None);
             this.txtPassword_Login.DefaultText = "";
@@ -238,9 +239,10 @@
             this.txtPassword_Login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword_Login.DisabledState.Parent = this.txtPassword_Login;
             this.txtPassword_Login.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassword_Login.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPassword_Login.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.txtPassword_Login.FocusedState.Parent = this.txtPassword_Login;
             this.txtPassword_Login.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPassword_Login.ForeColor = System.Drawing.Color.Gray;
             this.txtPassword_Login.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword_Login.HoverState.Parent = this.txtPassword_Login;
             this.txtPassword_Login.Location = new System.Drawing.Point(75, 150);
@@ -258,6 +260,7 @@
             // 
             this.txtUsename_Login.Animated = true;
             this.txtUsename_Login.BorderRadius = 8;
+            this.txtUsename_Login.BorderThickness = 3;
             this.txtUsename_Login.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.transitionPanel.SetDecoration(this.txtUsename_Login, Guna.UI2.AnimatorNS.DecorationType.None);
             this.txtUsename_Login.DefaultText = "";
@@ -266,9 +269,10 @@
             this.txtUsename_Login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsename_Login.DisabledState.Parent = this.txtUsename_Login;
             this.txtUsename_Login.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtUsename_Login.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUsename_Login.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.txtUsename_Login.FocusedState.Parent = this.txtUsename_Login;
             this.txtUsename_Login.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtUsename_Login.ForeColor = System.Drawing.Color.Gray;
             this.txtUsename_Login.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsename_Login.HoverState.Parent = this.txtUsename_Login;
             this.txtUsename_Login.Location = new System.Drawing.Point(75, 89);
@@ -295,30 +299,33 @@
             this.transitionPanel.SetDecoration(this.pnlSignup, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlSignup.FillColor = System.Drawing.Color.Transparent;
             this.pnlSignup.FillColor2 = System.Drawing.Color.Transparent;
-            this.pnlSignup.Location = new System.Drawing.Point(514, 162);
+            this.pnlSignup.Location = new System.Drawing.Point(508, 147);
             this.pnlSignup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlSignup.Name = "pnlSignup";
             this.pnlSignup.ShadowDecoration.Parent = this.pnlSignup;
             this.pnlSignup.Size = new System.Drawing.Size(389, 416);
             this.pnlSignup.TabIndex = 13;
             this.pnlSignup.Visible = false;
+            this.pnlSignup.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSignup_Paint);
             // 
             // lbSignup
             // 
             this.lbSignup.AutoSize = true;
             this.transitionPanel.SetDecoration(this.lbSignup, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbSignup.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold);
+            this.lbSignup.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold);
             this.lbSignup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbSignup.Location = new System.Drawing.Point(129, 33);
             this.lbSignup.Name = "lbSignup";
-            this.lbSignup.Size = new System.Drawing.Size(128, 37);
+            this.lbSignup.Size = new System.Drawing.Size(123, 32);
             this.lbSignup.TabIndex = 12;
             this.lbSignup.Text = "Sign Up";
             // 
             // txtEmail_SignUp
             // 
             this.txtEmail_SignUp.Animated = true;
+            this.txtEmail_SignUp.BorderColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtEmail_SignUp.BorderRadius = 8;
+            this.txtEmail_SignUp.BorderThickness = 3;
             this.txtEmail_SignUp.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.transitionPanel.SetDecoration(this.txtEmail_SignUp, Guna.UI2.AnimatorNS.DecorationType.None);
             this.txtEmail_SignUp.DefaultText = "";
@@ -327,7 +334,7 @@
             this.txtEmail_SignUp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtEmail_SignUp.DisabledState.Parent = this.txtEmail_SignUp;
             this.txtEmail_SignUp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmail_SignUp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail_SignUp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.txtEmail_SignUp.FocusedState.Parent = this.txtEmail_SignUp;
             this.txtEmail_SignUp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEmail_SignUp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -358,7 +365,9 @@
             // txtRePassword_SignUp
             // 
             this.txtRePassword_SignUp.Animated = true;
+            this.txtRePassword_SignUp.BorderColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtRePassword_SignUp.BorderRadius = 8;
+            this.txtRePassword_SignUp.BorderThickness = 3;
             this.txtRePassword_SignUp.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.transitionPanel.SetDecoration(this.txtRePassword_SignUp, Guna.UI2.AnimatorNS.DecorationType.None);
             this.txtRePassword_SignUp.DefaultText = "";
@@ -367,7 +376,7 @@
             this.txtRePassword_SignUp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtRePassword_SignUp.DisabledState.Parent = this.txtRePassword_SignUp;
             this.txtRePassword_SignUp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRePassword_SignUp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRePassword_SignUp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.txtRePassword_SignUp.FocusedState.Parent = this.txtRePassword_SignUp;
             this.txtRePassword_SignUp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtRePassword_SignUp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -407,7 +416,9 @@
             // txtPassword_SignUp
             // 
             this.txtPassword_SignUp.Animated = true;
+            this.txtPassword_SignUp.BorderColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtPassword_SignUp.BorderRadius = 8;
+            this.txtPassword_SignUp.BorderThickness = 3;
             this.txtPassword_SignUp.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.transitionPanel.SetDecoration(this.txtPassword_SignUp, Guna.UI2.AnimatorNS.DecorationType.None);
             this.txtPassword_SignUp.DefaultText = "";
@@ -416,7 +427,7 @@
             this.txtPassword_SignUp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassword_SignUp.DisabledState.Parent = this.txtPassword_SignUp;
             this.txtPassword_SignUp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassword_SignUp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPassword_SignUp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.txtPassword_SignUp.FocusedState.Parent = this.txtPassword_SignUp;
             this.txtPassword_SignUp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPassword_SignUp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -435,7 +446,9 @@
             // txtUsername_SignUp
             // 
             this.txtUsername_SignUp.Animated = true;
+            this.txtUsername_SignUp.BorderColor = System.Drawing.SystemColors.ActiveBorder;
             this.txtUsername_SignUp.BorderRadius = 8;
+            this.txtUsername_SignUp.BorderThickness = 3;
             this.txtUsername_SignUp.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.transitionPanel.SetDecoration(this.txtUsername_SignUp, Guna.UI2.AnimatorNS.DecorationType.None);
             this.txtUsername_SignUp.DefaultText = "";
@@ -444,7 +457,7 @@
             this.txtUsername_SignUp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtUsername_SignUp.DisabledState.Parent = this.txtUsername_SignUp;
             this.txtUsername_SignUp.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtUsername_SignUp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtUsername_SignUp.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.txtUsername_SignUp.FocusedState.Parent = this.txtUsername_SignUp;
             this.txtUsername_SignUp.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtUsername_SignUp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -561,7 +574,7 @@
             this.transitionPanel.SetDecoration(this.pnlForgetPass, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pnlForgetPass.FillColor = System.Drawing.Color.Transparent;
             this.pnlForgetPass.FillColor2 = System.Drawing.Color.Transparent;
-            this.pnlForgetPass.Location = new System.Drawing.Point(514, 162);
+            this.pnlForgetPass.Location = new System.Drawing.Point(508, 147);
             this.pnlForgetPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlForgetPass.Name = "pnlForgetPass";
             this.pnlForgetPass.ShadowDecoration.Parent = this.pnlForgetPass;
@@ -636,11 +649,11 @@
             // 
             this.label1.AutoSize = true;
             this.transitionPanel.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.label1.Location = new System.Drawing.Point(68, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 37);
+            this.label1.Size = new System.Drawing.Size(243, 32);
             this.label1.TabIndex = 12;
             this.label1.Text = "Forget Password";
             // 
@@ -683,6 +696,7 @@
             // 
             this.txtPassForget.Animated = true;
             this.txtPassForget.BorderRadius = 8;
+            this.txtPassForget.BorderThickness = 3;
             this.txtPassForget.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.transitionPanel.SetDecoration(this.txtPassForget, Guna.UI2.AnimatorNS.DecorationType.None);
             this.txtPassForget.DefaultText = "";
@@ -691,7 +705,7 @@
             this.txtPassForget.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPassForget.DisabledState.Parent = this.txtPassForget;
             this.txtPassForget.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassForget.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPassForget.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.txtPassForget.FocusedState.Parent = this.txtPassForget;
             this.txtPassForget.Font = new System.Drawing.Font("NSimSun", 9F);
             this.txtPassForget.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -712,6 +726,7 @@
             // 
             this.txtValidateCode.Animated = true;
             this.txtValidateCode.BorderRadius = 8;
+            this.txtValidateCode.BorderThickness = 3;
             this.txtValidateCode.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.transitionPanel.SetDecoration(this.txtValidateCode, Guna.UI2.AnimatorNS.DecorationType.None);
             this.txtValidateCode.DefaultText = "";
@@ -720,7 +735,7 @@
             this.txtValidateCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtValidateCode.DisabledState.Parent = this.txtValidateCode;
             this.txtValidateCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtValidateCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtValidateCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.txtValidateCode.FocusedState.Parent = this.txtValidateCode;
             this.txtValidateCode.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtValidateCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -740,6 +755,7 @@
             // 
             this.txtCheckEmail.Animated = true;
             this.txtCheckEmail.BorderRadius = 8;
+            this.txtCheckEmail.BorderThickness = 3;
             this.txtCheckEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.transitionPanel.SetDecoration(this.txtCheckEmail, Guna.UI2.AnimatorNS.DecorationType.None);
             this.txtCheckEmail.DefaultText = "";
@@ -748,7 +764,7 @@
             this.txtCheckEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtCheckEmail.DisabledState.Parent = this.txtCheckEmail;
             this.txtCheckEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCheckEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCheckEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.txtCheckEmail.FocusedState.Parent = this.txtCheckEmail;
             this.txtCheckEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCheckEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -767,6 +783,7 @@
             // 
             this.txtRePassForget.Animated = true;
             this.txtRePassForget.BorderRadius = 8;
+            this.txtRePassForget.BorderThickness = 3;
             this.txtRePassForget.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.transitionPanel.SetDecoration(this.txtRePassForget, Guna.UI2.AnimatorNS.DecorationType.None);
             this.txtRePassForget.DefaultText = "";
@@ -775,7 +792,7 @@
             this.txtRePassForget.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtRePassForget.DisabledState.Parent = this.txtRePassForget;
             this.txtRePassForget.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRePassForget.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRePassForget.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.txtRePassForget.FocusedState.Parent = this.txtRePassForget;
             this.txtRePassForget.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtRePassForget.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -797,11 +814,11 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.transitionPanel.SetDecoration(this.label3, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label3.Font = new System.Drawing.Font("Montserrat Alternates", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.label3.Location = new System.Drawing.Point(48, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(374, 61);
+            this.label3.Size = new System.Drawing.Size(318, 51);
             this.label3.TabIndex = 52;
             this.label3.Text = "Vocabulary Up";
             // 
@@ -862,14 +879,14 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(930, 616);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.guna2PictureBox1);
+            this.Controls.Add(this.pnlUserLogin);
+            this.Controls.Add(this.pnlForgetPass);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pbInfo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pnlTitleBar);
-            this.Controls.Add(this.pnlForgetPass);
             this.Controls.Add(this.pnlSignup);
-            this.Controls.Add(this.pnlUserLogin);
             this.transitionPanel.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
