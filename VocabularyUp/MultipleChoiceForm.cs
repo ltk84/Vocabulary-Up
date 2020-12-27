@@ -97,20 +97,9 @@ namespace VocabularyUp
             lbMain.Text = content;
             pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + id.ToString() + ".jpg");
             //if (userChoices[currentQuiz].IsDone == false)
-                //InitAnswer();
-            if (userChoices[currentQuiz].IsDone == true)
-                btnNext.Enabled = true;
-            else
-                btnNext.Enabled = false;
-            isPress = 0;
-        }
-        private void InitAnswer()
-        {
-            Random rd = new Random();
-            foreach (var item in questions)
-            {
-                UserChoice u = new UserChoice(-1, rd.Next(1, 5));
-                userChoices.Add(u);
+            //InitAnswer();
+
+            
                 switch (userChoices[currentQuiz].Correct)
                 {
                     case 1:
@@ -138,6 +127,48 @@ namespace VocabularyUp
                         btnA.Text = questions[currentQuiz].FakeAnswers[2];
                         break;
                 }
+            
+
+            if (userChoices[currentQuiz].IsDone == true)
+                btnNext.Enabled = true;
+            else
+                btnNext.Enabled = false;
+            isPress = 0;
+        }
+        private void InitAnswer()
+        {
+            Random rd = new Random();
+            foreach (var item in questions)
+            {
+                UserChoice u = new UserChoice(-1, rd.Next(1, 5));
+                userChoices.Add(u);
+                //switch (userChoices[currentQuiz].Correct)
+                //{
+                //    case 1:
+                //        btnA.Text = questions[currentQuiz].GetFlashCard().Viet;
+                //        btnB.Text = questions[currentQuiz].FakeAnswers[0];
+                //        btnC.Text = questions[currentQuiz].FakeAnswers[1];
+                //        btnD.Text = questions[currentQuiz].FakeAnswers[2];
+                //        break;
+                //    case 2:
+                //        btnB.Text = questions[currentQuiz].GetFlashCard().Viet;
+                //        btnA.Text = questions[currentQuiz].FakeAnswers[0];
+                //        btnC.Text = questions[currentQuiz].FakeAnswers[1];
+                //        btnD.Text = questions[currentQuiz].FakeAnswers[2];
+                //        break;
+                //    case 3:
+                //        btnC.Text = questions[currentQuiz].GetFlashCard().Viet;
+                //        btnB.Text = questions[currentQuiz].FakeAnswers[0];
+                //        btnA.Text = questions[currentQuiz].FakeAnswers[1];
+                //        btnD.Text = questions[currentQuiz].FakeAnswers[2];
+                //        break;
+                //    case 4:
+                //        btnD.Text = questions[currentQuiz].GetFlashCard().Viet;
+                //        btnB.Text = questions[currentQuiz].FakeAnswers[0];
+                //        btnC.Text = questions[currentQuiz].FakeAnswers[1];
+                //        btnA.Text = questions[currentQuiz].FakeAnswers[2];
+                //        break;
+                //}
             }
               
         }
