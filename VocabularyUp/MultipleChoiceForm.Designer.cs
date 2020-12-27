@@ -68,17 +68,20 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.timerMultiple = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlQuiz.SuspendLayout();
             this.pnlFlashCard.SuspendLayout();
             this.pnlTab.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlQuiz
             // 
             this.pnlQuiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlQuiz.BorderRadius = 20;
+            this.pnlQuiz.Controls.Add(this.pictureBox1);
             this.pnlQuiz.Controls.Add(this.lbTimer);
             this.pnlQuiz.Controls.Add(this.btnPointer10);
             this.pnlQuiz.Controls.Add(this.btnPointer9);
@@ -111,19 +114,21 @@
             this.pnlQuiz.Controls.Add(this.panel1);
             this.pnlQuiz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlQuiz.Location = new System.Drawing.Point(0, 0);
-            this.pnlQuiz.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlQuiz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlQuiz.Name = "pnlQuiz";
             this.pnlQuiz.ShadowDecoration.Parent = this.pnlQuiz;
-            this.pnlQuiz.Size = new System.Drawing.Size(750, 422);
+            this.pnlQuiz.Size = new System.Drawing.Size(1000, 519);
             this.pnlQuiz.TabIndex = 10;
+            this.pnlQuiz.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlQuiz_Paint);
             // 
             // lbTimer
             // 
             this.lbTimer.BackColor = System.Drawing.Color.Transparent;
-            this.lbTimer.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimer.Location = new System.Drawing.Point(515, 71);
+            this.lbTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimer.Location = new System.Drawing.Point(687, 87);
+            this.lbTimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTimer.Name = "lbTimer";
-            this.lbTimer.Size = new System.Drawing.Size(70, 23);
+            this.lbTimer.Size = new System.Drawing.Size(93, 28);
             this.lbTimer.TabIndex = 38;
             this.lbTimer.Text = "60";
             this.lbTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,12 +142,12 @@
             this.btnPointer10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer10.ForeColor = System.Drawing.Color.White;
             this.btnPointer10.HoverState.Parent = this.btnPointer10;
-            this.btnPointer10.Location = new System.Drawing.Point(706, 24);
-            this.btnPointer10.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPointer10.Location = new System.Drawing.Point(941, 30);
+            this.btnPointer10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPointer10.Name = "btnPointer10";
             this.btnPointer10.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnPointer10.ShadowDecoration.Parent = this.btnPointer10;
-            this.btnPointer10.Size = new System.Drawing.Size(11, 11);
+            this.btnPointer10.Size = new System.Drawing.Size(15, 14);
             this.btnPointer10.TabIndex = 37;
             this.btnPointer10.Visible = false;
             // 
@@ -155,12 +160,12 @@
             this.btnPointer9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer9.ForeColor = System.Drawing.Color.White;
             this.btnPointer9.HoverState.Parent = this.btnPointer9;
-            this.btnPointer9.Location = new System.Drawing.Point(668, 24);
-            this.btnPointer9.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPointer9.Location = new System.Drawing.Point(891, 30);
+            this.btnPointer9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPointer9.Name = "btnPointer9";
             this.btnPointer9.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnPointer9.ShadowDecoration.Parent = this.btnPointer9;
-            this.btnPointer9.Size = new System.Drawing.Size(11, 11);
+            this.btnPointer9.Size = new System.Drawing.Size(15, 14);
             this.btnPointer9.TabIndex = 36;
             this.btnPointer9.Visible = false;
             // 
@@ -173,12 +178,12 @@
             this.btnPointer8.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer8.ForeColor = System.Drawing.Color.White;
             this.btnPointer8.HoverState.Parent = this.btnPointer8;
-            this.btnPointer8.Location = new System.Drawing.Point(631, 24);
-            this.btnPointer8.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPointer8.Location = new System.Drawing.Point(841, 30);
+            this.btnPointer8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPointer8.Name = "btnPointer8";
             this.btnPointer8.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnPointer8.ShadowDecoration.Parent = this.btnPointer8;
-            this.btnPointer8.Size = new System.Drawing.Size(11, 11);
+            this.btnPointer8.Size = new System.Drawing.Size(15, 14);
             this.btnPointer8.TabIndex = 35;
             this.btnPointer8.Visible = false;
             // 
@@ -191,12 +196,12 @@
             this.btnPointer7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer7.ForeColor = System.Drawing.Color.White;
             this.btnPointer7.HoverState.Parent = this.btnPointer7;
-            this.btnPointer7.Location = new System.Drawing.Point(593, 24);
-            this.btnPointer7.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPointer7.Location = new System.Drawing.Point(791, 30);
+            this.btnPointer7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPointer7.Name = "btnPointer7";
             this.btnPointer7.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnPointer7.ShadowDecoration.Parent = this.btnPointer7;
-            this.btnPointer7.Size = new System.Drawing.Size(11, 11);
+            this.btnPointer7.Size = new System.Drawing.Size(15, 14);
             this.btnPointer7.TabIndex = 34;
             this.btnPointer7.Visible = false;
             // 
@@ -209,12 +214,12 @@
             this.btnPointer6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer6.ForeColor = System.Drawing.Color.White;
             this.btnPointer6.HoverState.Parent = this.btnPointer6;
-            this.btnPointer6.Location = new System.Drawing.Point(556, 24);
-            this.btnPointer6.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPointer6.Location = new System.Drawing.Point(741, 30);
+            this.btnPointer6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPointer6.Name = "btnPointer6";
             this.btnPointer6.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnPointer6.ShadowDecoration.Parent = this.btnPointer6;
-            this.btnPointer6.Size = new System.Drawing.Size(11, 11);
+            this.btnPointer6.Size = new System.Drawing.Size(15, 14);
             this.btnPointer6.TabIndex = 33;
             this.btnPointer6.Visible = false;
             // 
@@ -227,12 +232,12 @@
             this.btnPointer5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer5.ForeColor = System.Drawing.Color.White;
             this.btnPointer5.HoverState.Parent = this.btnPointer5;
-            this.btnPointer5.Location = new System.Drawing.Point(518, 24);
-            this.btnPointer5.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPointer5.Location = new System.Drawing.Point(691, 30);
+            this.btnPointer5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPointer5.Name = "btnPointer5";
             this.btnPointer5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnPointer5.ShadowDecoration.Parent = this.btnPointer5;
-            this.btnPointer5.Size = new System.Drawing.Size(11, 11);
+            this.btnPointer5.Size = new System.Drawing.Size(15, 14);
             this.btnPointer5.TabIndex = 32;
             this.btnPointer5.Visible = false;
             // 
@@ -245,12 +250,12 @@
             this.btnPointer4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer4.ForeColor = System.Drawing.Color.White;
             this.btnPointer4.HoverState.Parent = this.btnPointer4;
-            this.btnPointer4.Location = new System.Drawing.Point(481, 24);
-            this.btnPointer4.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPointer4.Location = new System.Drawing.Point(641, 30);
+            this.btnPointer4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPointer4.Name = "btnPointer4";
             this.btnPointer4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnPointer4.ShadowDecoration.Parent = this.btnPointer4;
-            this.btnPointer4.Size = new System.Drawing.Size(11, 11);
+            this.btnPointer4.Size = new System.Drawing.Size(15, 14);
             this.btnPointer4.TabIndex = 31;
             this.btnPointer4.Visible = false;
             // 
@@ -263,12 +268,12 @@
             this.btnPointer3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer3.ForeColor = System.Drawing.Color.White;
             this.btnPointer3.HoverState.Parent = this.btnPointer3;
-            this.btnPointer3.Location = new System.Drawing.Point(443, 24);
-            this.btnPointer3.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPointer3.Location = new System.Drawing.Point(591, 30);
+            this.btnPointer3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPointer3.Name = "btnPointer3";
             this.btnPointer3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnPointer3.ShadowDecoration.Parent = this.btnPointer3;
-            this.btnPointer3.Size = new System.Drawing.Size(11, 11);
+            this.btnPointer3.Size = new System.Drawing.Size(15, 14);
             this.btnPointer3.TabIndex = 30;
             this.btnPointer3.Visible = false;
             // 
@@ -281,12 +286,12 @@
             this.btnPointer2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer2.ForeColor = System.Drawing.Color.White;
             this.btnPointer2.HoverState.Parent = this.btnPointer2;
-            this.btnPointer2.Location = new System.Drawing.Point(406, 24);
-            this.btnPointer2.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPointer2.Location = new System.Drawing.Point(541, 30);
+            this.btnPointer2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPointer2.Name = "btnPointer2";
             this.btnPointer2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnPointer2.ShadowDecoration.Parent = this.btnPointer2;
-            this.btnPointer2.Size = new System.Drawing.Size(11, 11);
+            this.btnPointer2.Size = new System.Drawing.Size(15, 14);
             this.btnPointer2.TabIndex = 29;
             this.btnPointer2.Visible = false;
             // 
@@ -299,12 +304,12 @@
             this.btnPointer1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnPointer1.ForeColor = System.Drawing.Color.White;
             this.btnPointer1.HoverState.Parent = this.btnPointer1;
-            this.btnPointer1.Location = new System.Drawing.Point(368, 24);
-            this.btnPointer1.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPointer1.Location = new System.Drawing.Point(491, 30);
+            this.btnPointer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPointer1.Name = "btnPointer1";
             this.btnPointer1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnPointer1.ShadowDecoration.Parent = this.btnPointer1;
-            this.btnPointer1.Size = new System.Drawing.Size(11, 11);
+            this.btnPointer1.Size = new System.Drawing.Size(15, 14);
             this.btnPointer1.TabIndex = 28;
             // 
             // guna2CircleButton9
@@ -316,12 +321,12 @@
             this.guna2CircleButton9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton9.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton9.HoverState.Parent = this.guna2CircleButton9;
-            this.guna2CircleButton9.Location = new System.Drawing.Point(702, 19);
-            this.guna2CircleButton9.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2CircleButton9.Location = new System.Drawing.Point(936, 23);
+            this.guna2CircleButton9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CircleButton9.Name = "guna2CircleButton9";
             this.guna2CircleButton9.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton9.ShadowDecoration.Parent = this.guna2CircleButton9;
-            this.guna2CircleButton9.Size = new System.Drawing.Size(19, 20);
+            this.guna2CircleButton9.Size = new System.Drawing.Size(25, 25);
             this.guna2CircleButton9.TabIndex = 26;
             // 
             // guna2CircleButton10
@@ -333,12 +338,12 @@
             this.guna2CircleButton10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton10.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton10.HoverState.Parent = this.guna2CircleButton10;
-            this.guna2CircleButton10.Location = new System.Drawing.Point(664, 19);
-            this.guna2CircleButton10.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2CircleButton10.Location = new System.Drawing.Point(885, 23);
+            this.guna2CircleButton10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CircleButton10.Name = "guna2CircleButton10";
             this.guna2CircleButton10.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton10.ShadowDecoration.Parent = this.guna2CircleButton10;
-            this.guna2CircleButton10.Size = new System.Drawing.Size(19, 20);
+            this.guna2CircleButton10.Size = new System.Drawing.Size(25, 25);
             this.guna2CircleButton10.TabIndex = 25;
             // 
             // guna2CircleButton7
@@ -350,12 +355,12 @@
             this.guna2CircleButton7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton7.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton7.HoverState.Parent = this.guna2CircleButton7;
-            this.guna2CircleButton7.Location = new System.Drawing.Point(627, 19);
-            this.guna2CircleButton7.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2CircleButton7.Location = new System.Drawing.Point(836, 23);
+            this.guna2CircleButton7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CircleButton7.Name = "guna2CircleButton7";
             this.guna2CircleButton7.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton7.ShadowDecoration.Parent = this.guna2CircleButton7;
-            this.guna2CircleButton7.Size = new System.Drawing.Size(19, 20);
+            this.guna2CircleButton7.Size = new System.Drawing.Size(25, 25);
             this.guna2CircleButton7.TabIndex = 24;
             // 
             // guna2CircleButton8
@@ -367,12 +372,12 @@
             this.guna2CircleButton8.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton8.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton8.HoverState.Parent = this.guna2CircleButton8;
-            this.guna2CircleButton8.Location = new System.Drawing.Point(590, 19);
-            this.guna2CircleButton8.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2CircleButton8.Location = new System.Drawing.Point(787, 23);
+            this.guna2CircleButton8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CircleButton8.Name = "guna2CircleButton8";
             this.guna2CircleButton8.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton8.ShadowDecoration.Parent = this.guna2CircleButton8;
-            this.guna2CircleButton8.Size = new System.Drawing.Size(19, 20);
+            this.guna2CircleButton8.Size = new System.Drawing.Size(25, 25);
             this.guna2CircleButton8.TabIndex = 23;
             // 
             // guna2CircleButton5
@@ -384,12 +389,12 @@
             this.guna2CircleButton5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton5.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton5.HoverState.Parent = this.guna2CircleButton5;
-            this.guna2CircleButton5.Location = new System.Drawing.Point(552, 19);
-            this.guna2CircleButton5.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2CircleButton5.Location = new System.Drawing.Point(736, 23);
+            this.guna2CircleButton5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CircleButton5.Name = "guna2CircleButton5";
             this.guna2CircleButton5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton5.ShadowDecoration.Parent = this.guna2CircleButton5;
-            this.guna2CircleButton5.Size = new System.Drawing.Size(19, 20);
+            this.guna2CircleButton5.Size = new System.Drawing.Size(25, 25);
             this.guna2CircleButton5.TabIndex = 22;
             // 
             // guna2CircleButton6
@@ -401,12 +406,12 @@
             this.guna2CircleButton6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton6.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton6.HoverState.Parent = this.guna2CircleButton6;
-            this.guna2CircleButton6.Location = new System.Drawing.Point(514, 19);
-            this.guna2CircleButton6.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2CircleButton6.Location = new System.Drawing.Point(685, 23);
+            this.guna2CircleButton6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CircleButton6.Name = "guna2CircleButton6";
             this.guna2CircleButton6.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton6.ShadowDecoration.Parent = this.guna2CircleButton6;
-            this.guna2CircleButton6.Size = new System.Drawing.Size(19, 20);
+            this.guna2CircleButton6.Size = new System.Drawing.Size(25, 25);
             this.guna2CircleButton6.TabIndex = 21;
             // 
             // guna2CircleButton3
@@ -418,12 +423,12 @@
             this.guna2CircleButton3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton3.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton3.HoverState.Parent = this.guna2CircleButton3;
-            this.guna2CircleButton3.Location = new System.Drawing.Point(477, 19);
-            this.guna2CircleButton3.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2CircleButton3.Location = new System.Drawing.Point(636, 23);
+            this.guna2CircleButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CircleButton3.Name = "guna2CircleButton3";
             this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton3.ShadowDecoration.Parent = this.guna2CircleButton3;
-            this.guna2CircleButton3.Size = new System.Drawing.Size(19, 20);
+            this.guna2CircleButton3.Size = new System.Drawing.Size(25, 25);
             this.guna2CircleButton3.TabIndex = 20;
             // 
             // guna2CircleButton4
@@ -435,12 +440,12 @@
             this.guna2CircleButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton4.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton4.HoverState.Parent = this.guna2CircleButton4;
-            this.guna2CircleButton4.Location = new System.Drawing.Point(440, 19);
-            this.guna2CircleButton4.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2CircleButton4.Location = new System.Drawing.Point(587, 23);
+            this.guna2CircleButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CircleButton4.Name = "guna2CircleButton4";
             this.guna2CircleButton4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton4.ShadowDecoration.Parent = this.guna2CircleButton4;
-            this.guna2CircleButton4.Size = new System.Drawing.Size(19, 20);
+            this.guna2CircleButton4.Size = new System.Drawing.Size(25, 25);
             this.guna2CircleButton4.TabIndex = 19;
             // 
             // guna2CircleButton2
@@ -452,12 +457,12 @@
             this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton2.HoverState.Parent = this.guna2CircleButton2;
-            this.guna2CircleButton2.Location = new System.Drawing.Point(402, 19);
-            this.guna2CircleButton2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2CircleButton2.Location = new System.Drawing.Point(536, 23);
+            this.guna2CircleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CircleButton2.Name = "guna2CircleButton2";
             this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton2.ShadowDecoration.Parent = this.guna2CircleButton2;
-            this.guna2CircleButton2.Size = new System.Drawing.Size(19, 20);
+            this.guna2CircleButton2.Size = new System.Drawing.Size(25, 25);
             this.guna2CircleButton2.TabIndex = 18;
             // 
             // guna2CircleButton1
@@ -469,12 +474,12 @@
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(364, 19);
-            this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(485, 23);
+            this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(19, 20);
+            this.guna2CircleButton1.Size = new System.Drawing.Size(25, 25);
             this.guna2CircleButton1.TabIndex = 17;
             // 
             // btnPrevious
@@ -491,11 +496,11 @@
             this.btnPrevious.HoverState.Parent = this.btnPrevious;
             this.btnPrevious.Image = ((System.Drawing.Image)(resources.GetObject("btnPrevious.Image")));
             this.btnPrevious.ImageSize = new System.Drawing.Size(30, 45);
-            this.btnPrevious.Location = new System.Drawing.Point(440, 303);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPrevious.Location = new System.Drawing.Point(587, 373);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.ShadowDecoration.Parent = this.btnPrevious;
-            this.btnPrevious.Size = new System.Drawing.Size(50, 58);
+            this.btnPrevious.Size = new System.Drawing.Size(67, 71);
             this.btnPrevious.TabIndex = 16;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
@@ -513,11 +518,11 @@
             this.btnNext.HoverState.Parent = this.btnNext;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
             this.btnNext.ImageSize = new System.Drawing.Size(30, 45);
-            this.btnNext.Location = new System.Drawing.Point(620, 303);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNext.Location = new System.Drawing.Point(827, 373);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNext.Name = "btnNext";
             this.btnNext.ShadowDecoration.Parent = this.btnNext;
-            this.btnNext.Size = new System.Drawing.Size(50, 58);
+            this.btnNext.Size = new System.Drawing.Size(67, 71);
             this.btnNext.TabIndex = 15;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -534,11 +539,11 @@
             this.btnConfirm.HoverState.Parent = this.btnConfirm;
             this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
             this.btnConfirm.ImageSize = new System.Drawing.Size(60, 45);
-            this.btnConfirm.Location = new System.Drawing.Point(501, 303);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfirm.Location = new System.Drawing.Point(668, 373);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
-            this.btnConfirm.Size = new System.Drawing.Size(108, 58);
+            this.btnConfirm.Size = new System.Drawing.Size(144, 71);
             this.btnConfirm.TabIndex = 14;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -550,14 +555,14 @@
             this.btnB.CheckedState.Parent = this.btnB;
             this.btnB.CustomImages.Parent = this.btnB;
             this.btnB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.btnB.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.btnB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnB.ForeColor = System.Drawing.Color.White;
             this.btnB.HoverState.Parent = this.btnB;
-            this.btnB.Location = new System.Drawing.Point(562, 124);
-            this.btnB.Margin = new System.Windows.Forms.Padding(2);
+            this.btnB.Location = new System.Drawing.Point(749, 153);
+            this.btnB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnB.Name = "btnB";
             this.btnB.ShadowDecoration.Parent = this.btnB;
-            this.btnB.Size = new System.Drawing.Size(135, 58);
+            this.btnB.Size = new System.Drawing.Size(180, 71);
             this.btnB.TabIndex = 12;
             this.btnB.Click += new System.EventHandler(this.btnB_Click);
             // 
@@ -569,14 +574,14 @@
             this.btnA.CheckedState.Parent = this.btnA;
             this.btnA.CustomImages.Parent = this.btnA;
             this.btnA.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.btnA.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.btnA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnA.ForeColor = System.Drawing.Color.White;
             this.btnA.HoverState.Parent = this.btnA;
-            this.btnA.Location = new System.Drawing.Point(413, 124);
-            this.btnA.Margin = new System.Windows.Forms.Padding(2);
+            this.btnA.Location = new System.Drawing.Point(551, 153);
+            this.btnA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnA.Name = "btnA";
             this.btnA.ShadowDecoration.Parent = this.btnA;
-            this.btnA.Size = new System.Drawing.Size(135, 58);
+            this.btnA.Size = new System.Drawing.Size(180, 71);
             this.btnA.TabIndex = 10;
             this.btnA.Click += new System.EventHandler(this.btnA_Click);
             // 
@@ -588,14 +593,14 @@
             this.btnD.CheckedState.Parent = this.btnD;
             this.btnD.CustomImages.Parent = this.btnD;
             this.btnD.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.btnD.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.btnD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnD.ForeColor = System.Drawing.Color.White;
             this.btnD.HoverState.Parent = this.btnD;
-            this.btnD.Location = new System.Drawing.Point(562, 203);
-            this.btnD.Margin = new System.Windows.Forms.Padding(2);
+            this.btnD.Location = new System.Drawing.Point(749, 250);
+            this.btnD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnD.Name = "btnD";
             this.btnD.ShadowDecoration.Parent = this.btnD;
-            this.btnD.Size = new System.Drawing.Size(135, 58);
+            this.btnD.Size = new System.Drawing.Size(180, 71);
             this.btnD.TabIndex = 13;
             this.btnD.Click += new System.EventHandler(this.btnD_Click);
             // 
@@ -607,14 +612,14 @@
             this.btnC.CheckedState.Parent = this.btnC;
             this.btnC.CustomImages.Parent = this.btnC;
             this.btnC.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.btnC.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.btnC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnC.ForeColor = System.Drawing.Color.White;
             this.btnC.HoverState.Parent = this.btnC;
-            this.btnC.Location = new System.Drawing.Point(413, 203);
-            this.btnC.Margin = new System.Windows.Forms.Padding(2);
+            this.btnC.Location = new System.Drawing.Point(551, 250);
+            this.btnC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnC.Name = "btnC";
             this.btnC.ShadowDecoration.Parent = this.btnC;
-            this.btnC.Size = new System.Drawing.Size(135, 58);
+            this.btnC.Size = new System.Drawing.Size(180, 71);
             this.btnC.TabIndex = 11;
             this.btnC.Click += new System.EventHandler(this.btnC_Click);
             // 
@@ -622,10 +627,10 @@
             // 
             this.pnlFlashCard.BackColor = System.Drawing.Color.Transparent;
             this.pnlFlashCard.Controls.Add(this.pnlTab);
-            this.pnlFlashCard.Location = new System.Drawing.Point(45, 2);
-            this.pnlFlashCard.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlFlashCard.Location = new System.Drawing.Point(60, 2);
+            this.pnlFlashCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlFlashCard.Name = "pnlFlashCard";
-            this.pnlFlashCard.Size = new System.Drawing.Size(296, 422);
+            this.pnlFlashCard.Size = new System.Drawing.Size(395, 519);
             this.pnlFlashCard.TabIndex = 9;
             // 
             // pnlTab
@@ -634,11 +639,11 @@
             this.pnlTab.Controls.Add(this.guna2CustomGradientPanel1);
             this.pnlTab.FillColor3 = System.Drawing.Color.Snow;
             this.pnlTab.FillColor4 = System.Drawing.Color.Snow;
-            this.pnlTab.Location = new System.Drawing.Point(0, 37);
-            this.pnlTab.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTab.Location = new System.Drawing.Point(0, 46);
+            this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
-            this.pnlTab.Size = new System.Drawing.Size(296, 349);
+            this.pnlTab.Size = new System.Drawing.Size(395, 430);
             this.pnlTab.TabIndex = 0;
             // 
             // guna2CustomGradientPanel1
@@ -653,21 +658,20 @@
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(296, 341);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(395, 420);
             this.guna2CustomGradientPanel1.TabIndex = 1;
             // 
             // lbMain
             // 
             this.lbMain.BackColor = System.Drawing.Color.Transparent;
-            this.lbMain.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.lbMain.ForeColor = System.Drawing.Color.White;
-            this.lbMain.Location = new System.Drawing.Point(1, 280);
-            this.lbMain.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMain.Location = new System.Drawing.Point(1, 345);
             this.lbMain.Name = "lbMain";
-            this.lbMain.Size = new System.Drawing.Size(293, 47);
+            this.lbMain.Size = new System.Drawing.Size(391, 58);
             this.lbMain.TabIndex = 7;
             this.lbMain.Text = "Welcome";
             this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -675,10 +679,10 @@
             // pbMain
             // 
             this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
-            this.pbMain.Location = new System.Drawing.Point(14, 17);
-            this.pbMain.Margin = new System.Windows.Forms.Padding(2);
+            this.pbMain.Location = new System.Drawing.Point(19, 21);
+            this.pbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbMain.Name = "pbMain";
-            this.pbMain.Size = new System.Drawing.Size(266, 260);
+            this.pbMain.Size = new System.Drawing.Size(355, 320);
             this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMain.TabIndex = 8;
             this.pbMain.TabStop = false;
@@ -686,19 +690,19 @@
             // pnlDash
             // 
             this.pnlDash.BackColor = System.Drawing.Color.White;
-            this.pnlDash.Location = new System.Drawing.Point(14, 280);
-            this.pnlDash.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlDash.Location = new System.Drawing.Point(19, 345);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDash.Name = "pnlDash";
-            this.pnlDash.Size = new System.Drawing.Size(266, 4);
+            this.pnlDash.Size = new System.Drawing.Size(355, 5);
             this.pnlDash.TabIndex = 11;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.panel1.Location = new System.Drawing.Point(380, 28);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(507, 34);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(326, 2);
+            this.panel1.Size = new System.Drawing.Size(435, 2);
             this.panel1.TabIndex = 27;
             // 
             // timerMultiple
@@ -706,15 +710,26 @@
             this.timerMultiple.Interval = 1000;
             this.timerMultiple.Tick += new System.EventHandler(this.timerMultiple_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(669, 79);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 39);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 39;
+            this.pictureBox1.TabStop = false;
+            // 
             // MultipleChoiceForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(750, 422);
+            this.ClientSize = new System.Drawing.Size(1000, 519);
             this.Controls.Add(this.pnlQuiz);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MultipleChoiceForm";
             this.Text = "MultipleChoiceForm";
             this.pnlQuiz.ResumeLayout(false);
@@ -722,6 +737,7 @@
             this.pnlTab.ResumeLayout(false);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -766,5 +782,6 @@
         private Guna.UI2.WinForms.Guna2CircleButton btnPointer2;
         private System.Windows.Forms.Label lbTimer;
         private System.Windows.Forms.Timer timerMultiple;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

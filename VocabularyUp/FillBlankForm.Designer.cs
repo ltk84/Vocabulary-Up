@@ -66,17 +66,20 @@
             this.pbMain_FB = new System.Windows.Forms.PictureBox();
             this.pnlDash_FB = new System.Windows.Forms.Panel();
             this.timerFillBlank = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlQuizFB.SuspendLayout();
             this.pnlFlashCard_FB.SuspendLayout();
             this.pnlTab_FB.SuspendLayout();
             this.guna2CustomGradientPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain_FB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlQuizFB
             // 
             this.pnlQuizFB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlQuizFB.BorderRadius = 20;
+            this.pnlQuizFB.Controls.Add(this.pictureBox1);
             this.pnlQuizFB.Controls.Add(this.lbTimer);
             this.pnlQuizFB.Controls.Add(this.btnPointer10);
             this.pnlQuizFB.Controls.Add(this.btnPointer9);
@@ -117,7 +120,7 @@
             // lbTimer
             // 
             this.lbTimer.BackColor = System.Drawing.Color.Transparent;
-            this.lbTimer.Font = new System.Drawing.Font("Montserrat Alternates", 12F, System.Drawing.FontStyle.Bold);
+            this.lbTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lbTimer.Location = new System.Drawing.Point(649, 80);
             this.lbTimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTimer.Name = "lbTimer";
@@ -500,7 +503,7 @@
             // lbCorrectAnswer
             // 
             this.lbCorrectAnswer.BackColor = System.Drawing.Color.Transparent;
-            this.lbCorrectAnswer.Font = new System.Drawing.Font("Montserrat Alternates", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCorrectAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCorrectAnswer.Image = ((System.Drawing.Image)(resources.GetObject("lbCorrectAnswer.Image")));
             this.lbCorrectAnswer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbCorrectAnswer.Location = new System.Drawing.Point(593, 127);
@@ -649,7 +652,7 @@
             // lbMain_FB
             // 
             this.lbMain_FB.BackColor = System.Drawing.Color.Transparent;
-            this.lbMain_FB.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lbMain_FB.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.lbMain_FB.ForeColor = System.Drawing.Color.White;
             this.lbMain_FB.Location = new System.Drawing.Point(1, 352);
             this.lbMain_FB.Name = "lbMain_FB";
@@ -683,6 +686,17 @@
             this.timerFillBlank.Interval = 1000;
             this.timerFillBlank.Tick += new System.EventHandler(this.timerFillBlank_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(651, 74);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 39);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 60;
+            this.pictureBox1.TabStop = false;
+            // 
             // FillBlankForm
             // 
             this.AcceptButton = this.btnConfirm;
@@ -700,6 +714,7 @@
             this.pnlTab_FB.ResumeLayout(false);
             this.guna2CustomGradientPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMain_FB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -742,5 +757,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbTimer;
         private System.Windows.Forms.Timer timerFillBlank;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

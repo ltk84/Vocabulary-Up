@@ -48,11 +48,13 @@
             this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.btnRight = new Guna.UI2.WinForms.Guna2Button();
             this.timerLearning = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
             this.pnlLib.SuspendLayout();
             this.pnlToCollection.SuspendLayout();
             this.pnlTab.SuspendLayout();
             this.pnlMainNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -220,6 +222,7 @@
             // 
             this.pnlMainNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlMainNav.BorderRadius = 20;
+            this.pnlMainNav.Controls.Add(this.pictureBox1);
             this.pnlMainNav.Controls.Add(this.lbTime);
             this.pnlMainNav.Controls.Add(this.lbTimer);
             this.pnlMainNav.Controls.Add(this.btnDone);
@@ -320,6 +323,17 @@
             this.timerLearning.Interval = 1000;
             this.timerLearning.Tick += new System.EventHandler(this.timerLearning_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(709, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 39);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
+            // 
             // LearningForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -337,6 +351,7 @@
             this.pnlTab.ResumeLayout(false);
             this.pnlMainNav.ResumeLayout(false);
             this.pnlMainNav.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -370,5 +385,6 @@
         private System.Windows.Forms.Label lbTimer;
         private System.Windows.Forms.Timer timerLearning;
         private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

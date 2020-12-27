@@ -479,5 +479,10 @@ namespace VocabularyUp
             timerMultiple.Enabled = true;
             timerMultiple.Start();
         }
+
+        private void pnlQuiz_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

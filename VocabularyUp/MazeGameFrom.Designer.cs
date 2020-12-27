@@ -74,6 +74,7 @@
             this.pnlFinal = new System.Windows.Forms.Panel();
             this.lbFinal = new System.Windows.Forms.Label();
             this.timerQuestion = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlQuestion.SuspendLayout();
             this.pnlFlashCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
@@ -84,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
             this.pnlFinal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // timerUpdate
@@ -97,6 +99,7 @@
             this.pnlQuestion.BackColor = System.Drawing.Color.Tan;
             this.pnlQuestion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlQuestion.BackgroundImage")));
             this.pnlQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlQuestion.Controls.Add(this.pictureBox2);
             this.pnlQuestion.Controls.Add(this.lbTimer);
             this.pnlQuestion.Controls.Add(this.btnConfirm);
             this.pnlQuestion.Controls.Add(this.btnB);
@@ -654,7 +657,7 @@
             // lbFinal
             // 
             this.guna2Transition.SetDecoration(this.lbFinal, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbFinal.Font = new System.Drawing.Font("Montserrat Alternates", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFinal.ForeColor = System.Drawing.Color.Red;
             this.lbFinal.Location = new System.Drawing.Point(0, 52);
             this.lbFinal.Name = "lbFinal";
@@ -668,6 +671,18 @@
             this.timerQuestion.Enabled = true;
             this.timerQuestion.Interval = 1000;
             this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition.SetDecoration(this.pictureBox2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(621, 54);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 52;
+            this.pictureBox2.TabStop = false;
             // 
             // MazeGameFrom
             // 
@@ -711,6 +726,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).EndInit();
             this.pnlFinal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -759,5 +775,6 @@
         private System.Windows.Forms.Panel pnlFinal;
         private System.Windows.Forms.Label lbFinal;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
