@@ -637,6 +637,7 @@ namespace VocabularyUp
         private void btnClose_Click(object sender, EventArgs e)
         {
             click.controls.play();
+            last10s.controls.stop();
             mediaPlayer.controls.stop();
             music.controls.stop();
 
@@ -731,6 +732,7 @@ namespace VocabularyUp
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
             click.controls.play();
+            last10s.controls.stop();
             mediaPlayer.controls.stop();
             music.controls.stop();
 
