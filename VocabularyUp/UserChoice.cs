@@ -24,6 +24,7 @@ namespace VocabularyUp
         {
             this.correctAns = correctAns;
             this.answer = answer;
+            this.correct = -1;
         }
 
         public int Selected { get => selected; set => selected = value; }

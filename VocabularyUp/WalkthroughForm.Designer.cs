@@ -30,7 +30,7 @@ namespace VocabularyUp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation4 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WalkthroughForm));
             this.timerUpdate = new System.Windows.Forms.Timer(this.components);
             this.pbIconHealth = new System.Windows.Forms.PictureBox();
@@ -39,6 +39,21 @@ namespace VocabularyUp
             this.pbDiamond = new System.Windows.Forms.PictureBox();
             this.pgbHealth = new VocabularyUp.SuperProgressBar();
             this.pnlQuestion = new System.Windows.Forms.Panel();
+            this.lbTimer = new System.Windows.Forms.Label();
+            this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
+            this.btnB = new Guna.UI2.WinForms.Guna2Button();
+            this.btnA = new Guna.UI2.WinForms.Guna2Button();
+            this.btnD = new Guna.UI2.WinForms.Guna2Button();
+            this.btnC = new Guna.UI2.WinForms.Guna2Button();
+            this.pnlFlashCard = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
@@ -50,24 +65,9 @@ namespace VocabularyUp
             this.panel9 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbTimer = new System.Windows.Forms.Label();
-            this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
-            this.btnB = new Guna.UI2.WinForms.Guna2Button();
-            this.btnA = new Guna.UI2.WinForms.Guna2Button();
-            this.btnD = new Guna.UI2.WinForms.Guna2Button();
-            this.btnC = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlFlashCard = new System.Windows.Forms.Panel();
             this.pnlDash = new System.Windows.Forms.Panel();
             this.lbMain = new System.Windows.Forms.Label();
             this.pbMain = new System.Windows.Forms.PictureBox();
@@ -75,8 +75,10 @@ namespace VocabularyUp
             this.btnDetails = new Guna.UI2.WinForms.Guna2Button();
             this.timerBullet = new System.Windows.Forms.Timer(this.components);
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
+            this.pbReturn = new System.Windows.Forms.PictureBox();
             this.pnlFinal = new System.Windows.Forms.Panel();
             this.lbFinal = new System.Windows.Forms.Label();
+            this.pbSound = new System.Windows.Forms.PictureBox();
             this.pgbMonsterHealth = new VocabularyUp.SuperProgressBar();
             this.timerQuestion = new System.Windows.Forms.Timer(this.components);
             this.timerEffect = new System.Windows.Forms.Timer(this.components);
@@ -84,15 +86,17 @@ namespace VocabularyUp
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
             this.pnlQuestion.SuspendLayout();
+            this.pnlFlashCard.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlFlashCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReturn)).BeginInit();
             this.pnlFinal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSound)).BeginInit();
             this.SuspendLayout();
             // 
             // timerUpdate
@@ -134,12 +138,12 @@ namespace VocabularyUp
             this.lbDiamond.AutoSize = true;
             this.lbDiamond.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.lbDiamond, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbDiamond.Font = new System.Drawing.Font("Montserrat Alternates", 12F);
+            this.lbDiamond.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbDiamond.ForeColor = System.Drawing.Color.White;
             this.lbDiamond.Location = new System.Drawing.Point(45, 49);
             this.lbDiamond.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDiamond.Name = "lbDiamond";
-            this.lbDiamond.Size = new System.Drawing.Size(21, 22);
+            this.lbDiamond.Size = new System.Drawing.Size(18, 20);
             this.lbDiamond.TabIndex = 5;
             this.lbDiamond.Text = "0";
             // 
@@ -160,10 +164,10 @@ namespace VocabularyUp
             // 
             this.pgbHealth.BackColor = System.Drawing.Color.White;
             this.guna2Transition1.SetDecoration(this.pgbHealth, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pgbHealth.Location = new System.Drawing.Point(49, 16);
+            this.pgbHealth.Location = new System.Drawing.Point(37, 13);
             this.pgbHealth.Margin = new System.Windows.Forms.Padding(2);
             this.pgbHealth.Name = "pgbHealth";
-            this.pgbHealth.Size = new System.Drawing.Size(213, 20);
+            this.pgbHealth.Size = new System.Drawing.Size(160, 16);
             this.pgbHealth.TabIndex = 3;
             // 
             // pnlQuestion
@@ -171,8 +175,6 @@ namespace VocabularyUp
             this.pnlQuestion.BackColor = System.Drawing.Color.Transparent;
             this.pnlQuestion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlQuestion.BackgroundImage")));
             this.pnlQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlQuestion.Controls.Add(this.panel4);
-            this.pnlQuestion.Controls.Add(this.panel1);
             this.pnlQuestion.Controls.Add(this.lbTimer);
             this.pnlQuestion.Controls.Add(this.btnConfirm);
             this.pnlQuestion.Controls.Add(this.btnB);
@@ -181,7 +183,7 @@ namespace VocabularyUp
             this.pnlQuestion.Controls.Add(this.btnC);
             this.pnlQuestion.Controls.Add(this.pnlFlashCard);
             this.guna2Transition1.SetDecoration(this.pnlQuestion, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pnlQuestion.Location = new System.Drawing.Point(51, 2);
+            this.pnlQuestion.Location = new System.Drawing.Point(79, 124);
             this.pnlQuestion.Margin = new System.Windows.Forms.Padding(2);
             this.pnlQuestion.Name = "pnlQuestion";
             this.pnlQuestion.Size = new System.Drawing.Size(746, 364);
@@ -189,196 +191,146 @@ namespace VocabularyUp
             this.pnlQuestion.Visible = false;
             this.pnlQuestion.VisibleChanged += new System.EventHandler(this.pnlQuestion_VisibleChanged);
             // 
-            // panel4
+            // lbTimer
             // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.guna2Button12);
-            this.panel4.Controls.Add(this.guna2Button13);
-            this.panel4.Controls.Add(this.guna2Button14);
-            this.panel4.Controls.Add(this.guna2Button15);
-            this.panel4.Controls.Add(this.guna2Button16);
-            this.panel4.Controls.Add(this.panel8);
-            this.guna2Transition1.SetDecoration(this.panel4, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.panel4.Location = new System.Drawing.Point(2, 2);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(746, 364);
-            this.panel4.TabIndex = 53;
-            this.panel4.Visible = false;
+            this.lbTimer.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.lbTimer, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lbTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbTimer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimer.ForeColor = System.Drawing.Color.White;
+            this.lbTimer.Location = new System.Drawing.Point(479, 46);
+            this.lbTimer.Name = "lbTimer";
+            this.lbTimer.Size = new System.Drawing.Size(70, 23);
+            this.lbTimer.TabIndex = 51;
+            this.lbTimer.Text = "60";
+            this.lbTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // btnConfirm
             // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Transition1.SetDecoration(this.label5, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(479, 46);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 23);
-            this.label5.TabIndex = 51;
-            this.label5.Text = "60";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnConfirm.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirm.BackgroundImage")));
+            this.btnConfirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirm.CheckedState.Parent = this.btnConfirm;
+            this.btnConfirm.CustomImages.Parent = this.btnConfirm;
+            this.guna2Transition1.SetDecoration(this.btnConfirm, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnConfirm.FillColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.Black;
+            this.btnConfirm.HoverState.Parent = this.btnConfirm;
+            this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
+            this.btnConfirm.ImageSize = new System.Drawing.Size(60, 45);
+            this.btnConfirm.Location = new System.Drawing.Point(458, 246);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
+            this.btnConfirm.Size = new System.Drawing.Size(108, 58);
+            this.btnConfirm.TabIndex = 50;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // guna2Button12
+            // btnB
             // 
-            this.guna2Button12.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.guna2Button12.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Button12.BackgroundImage")));
-            this.guna2Button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Button12.CheckedState.Parent = this.guna2Button12;
-            this.guna2Button12.CustomImages.Parent = this.guna2Button12;
-            this.guna2Transition1.SetDecoration(this.guna2Button12, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button12.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button12.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button12.HoverState.Parent = this.guna2Button12;
-            this.guna2Button12.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button12.Image")));
-            this.guna2Button12.ImageSize = new System.Drawing.Size(60, 45);
-            this.guna2Button12.Location = new System.Drawing.Point(458, 246);
-            this.guna2Button12.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button12.Name = "guna2Button12";
-            this.guna2Button12.ShadowDecoration.Parent = this.guna2Button12;
-            this.guna2Button12.Size = new System.Drawing.Size(108, 58);
-            this.guna2Button12.TabIndex = 50;
+            this.btnB.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnB.BackColor = System.Drawing.Color.Transparent;
+            this.btnB.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnB.BackgroundImage")));
+            this.btnB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnB.BorderColor = System.Drawing.Color.White;
+            this.btnB.CheckedState.Parent = this.btnB;
+            this.btnB.CustomImages.Parent = this.btnB;
+            this.guna2Transition1.SetDecoration(this.btnB, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnB.FillColor = System.Drawing.Color.Transparent;
+            this.btnB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnB.ForeColor = System.Drawing.Color.White;
+            this.btnB.HoverState.Parent = this.btnB;
+            this.btnB.Location = new System.Drawing.Point(519, 88);
+            this.btnB.Margin = new System.Windows.Forms.Padding(2);
+            this.btnB.Name = "btnB";
+            this.btnB.ShadowDecoration.Parent = this.btnB;
+            this.btnB.Size = new System.Drawing.Size(135, 58);
+            this.btnB.TabIndex = 48;
+            this.btnB.Click += new System.EventHandler(this.btnB_Click);
             // 
-            // guna2Button13
+            // btnA
             // 
-            this.guna2Button13.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.guna2Button13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Button13.BackgroundImage")));
-            this.guna2Button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Button13.BorderColor = System.Drawing.Color.White;
-            this.guna2Button13.CheckedState.Parent = this.guna2Button13;
-            this.guna2Button13.CustomImages.Parent = this.guna2Button13;
-            this.guna2Transition1.SetDecoration(this.guna2Button13, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button13.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button13.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button13.ForeColor = System.Drawing.Color.White;
-            this.guna2Button13.HoverState.Parent = this.guna2Button13;
-            this.guna2Button13.Location = new System.Drawing.Point(519, 88);
-            this.guna2Button13.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button13.Name = "guna2Button13";
-            this.guna2Button13.ShadowDecoration.Parent = this.guna2Button13;
-            this.guna2Button13.Size = new System.Drawing.Size(135, 58);
-            this.guna2Button13.TabIndex = 48;
+            this.btnA.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnA.BackColor = System.Drawing.Color.Transparent;
+            this.btnA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnA.BackgroundImage")));
+            this.btnA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnA.BorderColor = System.Drawing.Color.White;
+            this.btnA.CheckedState.Parent = this.btnA;
+            this.btnA.CustomImages.Parent = this.btnA;
+            this.guna2Transition1.SetDecoration(this.btnA, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnA.FillColor = System.Drawing.Color.Transparent;
+            this.btnA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnA.ForeColor = System.Drawing.Color.White;
+            this.btnA.HoverState.Parent = this.btnA;
+            this.btnA.Location = new System.Drawing.Point(370, 88);
+            this.btnA.Margin = new System.Windows.Forms.Padding(2);
+            this.btnA.Name = "btnA";
+            this.btnA.ShadowDecoration.Parent = this.btnA;
+            this.btnA.Size = new System.Drawing.Size(135, 58);
+            this.btnA.TabIndex = 46;
+            this.btnA.Click += new System.EventHandler(this.btnA_Click);
             // 
-            // guna2Button14
+            // btnD
             // 
-            this.guna2Button14.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.guna2Button14.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Button14.BackgroundImage")));
-            this.guna2Button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Button14.BorderColor = System.Drawing.Color.White;
-            this.guna2Button14.CheckedState.Parent = this.guna2Button14;
-            this.guna2Button14.CustomImages.Parent = this.guna2Button14;
-            this.guna2Transition1.SetDecoration(this.guna2Button14, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button14.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button14.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button14.ForeColor = System.Drawing.Color.White;
-            this.guna2Button14.HoverState.Parent = this.guna2Button14;
-            this.guna2Button14.Location = new System.Drawing.Point(370, 88);
-            this.guna2Button14.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button14.Name = "guna2Button14";
-            this.guna2Button14.ShadowDecoration.Parent = this.guna2Button14;
-            this.guna2Button14.Size = new System.Drawing.Size(135, 58);
-            this.guna2Button14.TabIndex = 46;
+            this.btnD.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnD.BackColor = System.Drawing.Color.Transparent;
+            this.btnD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnD.BackgroundImage")));
+            this.btnD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnD.BorderColor = System.Drawing.Color.White;
+            this.btnD.CheckedState.Parent = this.btnD;
+            this.btnD.CustomImages.Parent = this.btnD;
+            this.guna2Transition1.SetDecoration(this.btnD, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnD.FillColor = System.Drawing.Color.Transparent;
+            this.btnD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnD.ForeColor = System.Drawing.Color.White;
+            this.btnD.HoverState.Parent = this.btnD;
+            this.btnD.Location = new System.Drawing.Point(519, 167);
+            this.btnD.Margin = new System.Windows.Forms.Padding(2);
+            this.btnD.Name = "btnD";
+            this.btnD.ShadowDecoration.Parent = this.btnD;
+            this.btnD.Size = new System.Drawing.Size(135, 58);
+            this.btnD.TabIndex = 49;
+            this.btnD.Click += new System.EventHandler(this.btnD_Click);
             // 
-            // guna2Button15
+            // btnC
             // 
-            this.guna2Button15.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.guna2Button15.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Button15.BackgroundImage")));
-            this.guna2Button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Button15.BorderColor = System.Drawing.Color.White;
-            this.guna2Button15.CheckedState.Parent = this.guna2Button15;
-            this.guna2Button15.CustomImages.Parent = this.guna2Button15;
-            this.guna2Transition1.SetDecoration(this.guna2Button15, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button15.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button15.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button15.ForeColor = System.Drawing.Color.White;
-            this.guna2Button15.HoverState.Parent = this.guna2Button15;
-            this.guna2Button15.Location = new System.Drawing.Point(519, 167);
-            this.guna2Button15.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button15.Name = "guna2Button15";
-            this.guna2Button15.ShadowDecoration.Parent = this.guna2Button15;
-            this.guna2Button15.Size = new System.Drawing.Size(135, 58);
-            this.guna2Button15.TabIndex = 49;
+            this.btnC.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnC.BackColor = System.Drawing.Color.Transparent;
+            this.btnC.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnC.BackgroundImage")));
+            this.btnC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnC.BorderColor = System.Drawing.Color.White;
+            this.btnC.CheckedState.Parent = this.btnC;
+            this.btnC.CustomImages.Parent = this.btnC;
+            this.guna2Transition1.SetDecoration(this.btnC, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnC.FillColor = System.Drawing.Color.Transparent;
+            this.btnC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnC.ForeColor = System.Drawing.Color.White;
+            this.btnC.HoverState.Parent = this.btnC;
+            this.btnC.Location = new System.Drawing.Point(370, 167);
+            this.btnC.Margin = new System.Windows.Forms.Padding(2);
+            this.btnC.Name = "btnC";
+            this.btnC.ShadowDecoration.Parent = this.btnC;
+            this.btnC.Size = new System.Drawing.Size(135, 58);
+            this.btnC.TabIndex = 47;
+            this.btnC.Click += new System.EventHandler(this.btnC_Click);
             // 
-            // guna2Button16
+            // pnlFlashCard
             // 
-            this.guna2Button16.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.guna2Button16.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Button16.BackgroundImage")));
-            this.guna2Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.guna2Button16.BorderColor = System.Drawing.Color.White;
-            this.guna2Button16.CheckedState.Parent = this.guna2Button16;
-            this.guna2Button16.CustomImages.Parent = this.guna2Button16;
-            this.guna2Transition1.SetDecoration(this.guna2Button16, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button16.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button16.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button16.ForeColor = System.Drawing.Color.White;
-            this.guna2Button16.HoverState.Parent = this.guna2Button16;
-            this.guna2Button16.Location = new System.Drawing.Point(370, 167);
-            this.guna2Button16.Margin = new System.Windows.Forms.Padding(2);
-            this.guna2Button16.Name = "guna2Button16";
-            this.guna2Button16.ShadowDecoration.Parent = this.guna2Button16;
-            this.guna2Button16.Size = new System.Drawing.Size(135, 58);
-            this.guna2Button16.TabIndex = 47;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel8.Controls.Add(this.panel9);
-            this.panel8.Controls.Add(this.label6);
-            this.panel8.Controls.Add(this.pictureBox3);
-            this.guna2Transition1.SetDecoration(this.panel8, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.panel8.Location = new System.Drawing.Point(26, 20);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(264, 323);
-            this.panel8.TabIndex = 45;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.White;
-            this.guna2Transition1.SetDecoration(this.panel9, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.panel9.Location = new System.Drawing.Point(22, 214);
-            this.panel9.Margin = new System.Windows.Forms.Padding(2);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(217, 4);
-            this.panel9.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Transition1.SetDecoration(this.label6, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label6.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(2, 227);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(260, 77);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Welcome";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox3
-            // 
-            this.guna2Transition1.SetDecoration(this.pictureBox3, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(22, 19);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(217, 184);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
+            this.pnlFlashCard.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFlashCard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlFlashCard.BackgroundImage")));
+            this.pnlFlashCard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlFlashCard.Controls.Add(this.panel1);
+            this.pnlFlashCard.Controls.Add(this.pnlDash);
+            this.pnlFlashCard.Controls.Add(this.lbMain);
+            this.pnlFlashCard.Controls.Add(this.pbMain);
+            this.guna2Transition1.SetDecoration(this.pnlFlashCard, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pnlFlashCard.Location = new System.Drawing.Point(26, 20);
+            this.pnlFlashCard.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlFlashCard.Name = "pnlFlashCard";
+            this.pnlFlashCard.Size = new System.Drawing.Size(264, 323);
+            this.pnlFlashCard.TabIndex = 45;
             // 
             // panel1
             // 
@@ -393,7 +345,7 @@ namespace VocabularyUp
             this.panel1.Controls.Add(this.guna2Button5);
             this.panel1.Controls.Add(this.panel2);
             this.guna2Transition1.SetDecoration(this.panel1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.panel1.Location = new System.Drawing.Point(8, 8);
+            this.panel1.Location = new System.Drawing.Point(24, 67);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(746, 364);
@@ -447,7 +399,7 @@ namespace VocabularyUp
             this.guna2Button2.CustomImages.Parent = this.guna2Button2;
             this.guna2Transition1.SetDecoration(this.guna2Button2, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.Location = new System.Drawing.Point(519, 88);
@@ -468,7 +420,7 @@ namespace VocabularyUp
             this.guna2Button3.CustomImages.Parent = this.guna2Button3;
             this.guna2Transition1.SetDecoration(this.guna2Button3, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button3.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
             this.guna2Button3.Location = new System.Drawing.Point(370, 88);
@@ -489,7 +441,7 @@ namespace VocabularyUp
             this.guna2Button4.CustomImages.Parent = this.guna2Button4;
             this.guna2Transition1.SetDecoration(this.guna2Button4, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Button4.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button4.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
             this.guna2Button4.Location = new System.Drawing.Point(519, 167);
@@ -510,7 +462,7 @@ namespace VocabularyUp
             this.guna2Button5.CustomImages.Parent = this.guna2Button5;
             this.guna2Transition1.SetDecoration(this.guna2Button5, Guna.UI2.AnimatorNS.DecorationType.None);
             this.guna2Button5.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button5.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.guna2Button5.ForeColor = System.Drawing.Color.White;
             this.guna2Button5.HoverState.Parent = this.guna2Button5;
             this.guna2Button5.Location = new System.Drawing.Point(370, 167);
@@ -525,6 +477,7 @@ namespace VocabularyUp
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -534,6 +487,197 @@ namespace VocabularyUp
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(264, 323);
             this.panel2.TabIndex = 45;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.guna2Button12);
+            this.panel4.Controls.Add(this.guna2Button13);
+            this.panel4.Controls.Add(this.guna2Button14);
+            this.panel4.Controls.Add(this.guna2Button15);
+            this.panel4.Controls.Add(this.guna2Button16);
+            this.panel4.Controls.Add(this.panel8);
+            this.guna2Transition1.SetDecoration(this.panel4, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.panel4.Location = new System.Drawing.Point(8, 59);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(746, 364);
+            this.panel4.TabIndex = 53;
+            this.panel4.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.label5, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(479, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 23);
+            this.label5.TabIndex = 51;
+            this.label5.Text = "60";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2Button12
+            // 
+            this.guna2Button12.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.guna2Button12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Button12.BackgroundImage")));
+            this.guna2Button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button12.CheckedState.Parent = this.guna2Button12;
+            this.guna2Button12.CustomImages.Parent = this.guna2Button12;
+            this.guna2Transition1.SetDecoration(this.guna2Button12, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Button12.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button12.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button12.HoverState.Parent = this.guna2Button12;
+            this.guna2Button12.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button12.Image")));
+            this.guna2Button12.ImageSize = new System.Drawing.Size(60, 45);
+            this.guna2Button12.Location = new System.Drawing.Point(458, 246);
+            this.guna2Button12.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button12.Name = "guna2Button12";
+            this.guna2Button12.ShadowDecoration.Parent = this.guna2Button12;
+            this.guna2Button12.Size = new System.Drawing.Size(108, 58);
+            this.guna2Button12.TabIndex = 50;
+            // 
+            // guna2Button13
+            // 
+            this.guna2Button13.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.guna2Button13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Button13.BackgroundImage")));
+            this.guna2Button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button13.BorderColor = System.Drawing.Color.White;
+            this.guna2Button13.CheckedState.Parent = this.guna2Button13;
+            this.guna2Button13.CustomImages.Parent = this.guna2Button13;
+            this.guna2Transition1.SetDecoration(this.guna2Button13, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Button13.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button13.ForeColor = System.Drawing.Color.White;
+            this.guna2Button13.HoverState.Parent = this.guna2Button13;
+            this.guna2Button13.Location = new System.Drawing.Point(519, 88);
+            this.guna2Button13.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button13.Name = "guna2Button13";
+            this.guna2Button13.ShadowDecoration.Parent = this.guna2Button13;
+            this.guna2Button13.Size = new System.Drawing.Size(135, 58);
+            this.guna2Button13.TabIndex = 48;
+            // 
+            // guna2Button14
+            // 
+            this.guna2Button14.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.guna2Button14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Button14.BackgroundImage")));
+            this.guna2Button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button14.BorderColor = System.Drawing.Color.White;
+            this.guna2Button14.CheckedState.Parent = this.guna2Button14;
+            this.guna2Button14.CustomImages.Parent = this.guna2Button14;
+            this.guna2Transition1.SetDecoration(this.guna2Button14, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Button14.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button14.ForeColor = System.Drawing.Color.White;
+            this.guna2Button14.HoverState.Parent = this.guna2Button14;
+            this.guna2Button14.Location = new System.Drawing.Point(370, 88);
+            this.guna2Button14.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button14.Name = "guna2Button14";
+            this.guna2Button14.ShadowDecoration.Parent = this.guna2Button14;
+            this.guna2Button14.Size = new System.Drawing.Size(135, 58);
+            this.guna2Button14.TabIndex = 46;
+            // 
+            // guna2Button15
+            // 
+            this.guna2Button15.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.guna2Button15.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Button15.BackgroundImage")));
+            this.guna2Button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button15.BorderColor = System.Drawing.Color.White;
+            this.guna2Button15.CheckedState.Parent = this.guna2Button15;
+            this.guna2Button15.CustomImages.Parent = this.guna2Button15;
+            this.guna2Transition1.SetDecoration(this.guna2Button15, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Button15.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button15.ForeColor = System.Drawing.Color.White;
+            this.guna2Button15.HoverState.Parent = this.guna2Button15;
+            this.guna2Button15.Location = new System.Drawing.Point(519, 167);
+            this.guna2Button15.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button15.Name = "guna2Button15";
+            this.guna2Button15.ShadowDecoration.Parent = this.guna2Button15;
+            this.guna2Button15.Size = new System.Drawing.Size(135, 58);
+            this.guna2Button15.TabIndex = 49;
+            // 
+            // guna2Button16
+            // 
+            this.guna2Button16.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.guna2Button16.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Button16.BackgroundImage")));
+            this.guna2Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button16.BorderColor = System.Drawing.Color.White;
+            this.guna2Button16.CheckedState.Parent = this.guna2Button16;
+            this.guna2Button16.CustomImages.Parent = this.guna2Button16;
+            this.guna2Transition1.SetDecoration(this.guna2Button16, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Button16.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button16.ForeColor = System.Drawing.Color.White;
+            this.guna2Button16.HoverState.Parent = this.guna2Button16;
+            this.guna2Button16.Location = new System.Drawing.Point(370, 167);
+            this.guna2Button16.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button16.Name = "guna2Button16";
+            this.guna2Button16.ShadowDecoration.Parent = this.guna2Button16;
+            this.guna2Button16.Size = new System.Drawing.Size(135, 58);
+            this.guna2Button16.TabIndex = 47;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel8.Controls.Add(this.panel9);
+            this.panel8.Controls.Add(this.label6);
+            this.panel8.Controls.Add(this.pictureBox3);
+            this.guna2Transition1.SetDecoration(this.panel8, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.panel8.Location = new System.Drawing.Point(26, 20);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(264, 323);
+            this.panel8.TabIndex = 45;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.guna2Transition1.SetDecoration(this.panel9, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.panel9.Location = new System.Drawing.Point(22, 214);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(217, 4);
+            this.panel9.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.label6, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(2, 227);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(260, 77);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Welcome";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox3
+            // 
+            this.guna2Transition1.SetDecoration(this.pictureBox3, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(22, 19);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(217, 184);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
             // 
             // panel3
             // 
@@ -549,7 +693,7 @@ namespace VocabularyUp
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.label2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label2.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(2, 227);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -571,146 +715,6 @@ namespace VocabularyUp
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // lbTimer
-            // 
-            this.lbTimer.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Transition1.SetDecoration(this.lbTimer, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbTimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbTimer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimer.ForeColor = System.Drawing.Color.White;
-            this.lbTimer.Location = new System.Drawing.Point(479, 46);
-            this.lbTimer.Name = "lbTimer";
-            this.lbTimer.Size = new System.Drawing.Size(70, 23);
-            this.lbTimer.TabIndex = 51;
-            this.lbTimer.Text = "60";
-            this.lbTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
-            this.btnConfirm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConfirm.BackgroundImage")));
-            this.btnConfirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirm.CheckedState.Parent = this.btnConfirm;
-            this.btnConfirm.CustomImages.Parent = this.btnConfirm;
-            this.guna2Transition1.SetDecoration(this.btnConfirm, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnConfirm.FillColor = System.Drawing.Color.Transparent;
-            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.ForeColor = System.Drawing.Color.Black;
-            this.btnConfirm.HoverState.Parent = this.btnConfirm;
-            this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
-            this.btnConfirm.ImageSize = new System.Drawing.Size(60, 45);
-            this.btnConfirm.Location = new System.Drawing.Point(458, 246);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
-            this.btnConfirm.Size = new System.Drawing.Size(108, 58);
-            this.btnConfirm.TabIndex = 50;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // btnB
-            // 
-            this.btnB.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnB.BackColor = System.Drawing.Color.Transparent;
-            this.btnB.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnB.BackgroundImage")));
-            this.btnB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnB.BorderColor = System.Drawing.Color.White;
-            this.btnB.CheckedState.Parent = this.btnB;
-            this.btnB.CustomImages.Parent = this.btnB;
-            this.guna2Transition1.SetDecoration(this.btnB, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnB.FillColor = System.Drawing.Color.Transparent;
-            this.btnB.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.btnB.ForeColor = System.Drawing.Color.White;
-            this.btnB.HoverState.Parent = this.btnB;
-            this.btnB.Location = new System.Drawing.Point(519, 88);
-            this.btnB.Margin = new System.Windows.Forms.Padding(2);
-            this.btnB.Name = "btnB";
-            this.btnB.ShadowDecoration.Parent = this.btnB;
-            this.btnB.Size = new System.Drawing.Size(135, 58);
-            this.btnB.TabIndex = 48;
-            this.btnB.Click += new System.EventHandler(this.btnB_Click);
-            // 
-            // btnA
-            // 
-            this.btnA.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnA.BackColor = System.Drawing.Color.Transparent;
-            this.btnA.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnA.BackgroundImage")));
-            this.btnA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnA.BorderColor = System.Drawing.Color.White;
-            this.btnA.CheckedState.Parent = this.btnA;
-            this.btnA.CustomImages.Parent = this.btnA;
-            this.guna2Transition1.SetDecoration(this.btnA, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnA.FillColor = System.Drawing.Color.Transparent;
-            this.btnA.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.btnA.ForeColor = System.Drawing.Color.White;
-            this.btnA.HoverState.Parent = this.btnA;
-            this.btnA.Location = new System.Drawing.Point(370, 88);
-            this.btnA.Margin = new System.Windows.Forms.Padding(2);
-            this.btnA.Name = "btnA";
-            this.btnA.ShadowDecoration.Parent = this.btnA;
-            this.btnA.Size = new System.Drawing.Size(135, 58);
-            this.btnA.TabIndex = 46;
-            this.btnA.Click += new System.EventHandler(this.btnA_Click);
-            // 
-            // btnD
-            // 
-            this.btnD.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnD.BackColor = System.Drawing.Color.Transparent;
-            this.btnD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnD.BackgroundImage")));
-            this.btnD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnD.BorderColor = System.Drawing.Color.White;
-            this.btnD.CheckedState.Parent = this.btnD;
-            this.btnD.CustomImages.Parent = this.btnD;
-            this.guna2Transition1.SetDecoration(this.btnD, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnD.FillColor = System.Drawing.Color.Transparent;
-            this.btnD.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.btnD.ForeColor = System.Drawing.Color.White;
-            this.btnD.HoverState.Parent = this.btnD;
-            this.btnD.Location = new System.Drawing.Point(519, 167);
-            this.btnD.Margin = new System.Windows.Forms.Padding(2);
-            this.btnD.Name = "btnD";
-            this.btnD.ShadowDecoration.Parent = this.btnD;
-            this.btnD.Size = new System.Drawing.Size(135, 58);
-            this.btnD.TabIndex = 49;
-            this.btnD.Click += new System.EventHandler(this.btnD_Click);
-            // 
-            // btnC
-            // 
-            this.btnC.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnC.BackColor = System.Drawing.Color.Transparent;
-            this.btnC.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnC.BackgroundImage")));
-            this.btnC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnC.BorderColor = System.Drawing.Color.White;
-            this.btnC.CheckedState.Parent = this.btnC;
-            this.btnC.CustomImages.Parent = this.btnC;
-            this.guna2Transition1.SetDecoration(this.btnC, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.btnC.FillColor = System.Drawing.Color.Transparent;
-            this.btnC.Font = new System.Drawing.Font("Montserrat Alternates Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.btnC.ForeColor = System.Drawing.Color.White;
-            this.btnC.HoverState.Parent = this.btnC;
-            this.btnC.Location = new System.Drawing.Point(370, 167);
-            this.btnC.Margin = new System.Windows.Forms.Padding(2);
-            this.btnC.Name = "btnC";
-            this.btnC.ShadowDecoration.Parent = this.btnC;
-            this.btnC.Size = new System.Drawing.Size(135, 58);
-            this.btnC.TabIndex = 47;
-            this.btnC.Click += new System.EventHandler(this.btnC_Click);
-            // 
-            // pnlFlashCard
-            // 
-            this.pnlFlashCard.BackColor = System.Drawing.Color.Transparent;
-            this.pnlFlashCard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlFlashCard.BackgroundImage")));
-            this.pnlFlashCard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlFlashCard.Controls.Add(this.pnlDash);
-            this.pnlFlashCard.Controls.Add(this.lbMain);
-            this.pnlFlashCard.Controls.Add(this.pbMain);
-            this.guna2Transition1.SetDecoration(this.pnlFlashCard, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pnlFlashCard.Location = new System.Drawing.Point(26, 20);
-            this.pnlFlashCard.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlFlashCard.Name = "pnlFlashCard";
-            this.pnlFlashCard.Size = new System.Drawing.Size(264, 323);
-            this.pnlFlashCard.TabIndex = 45;
-            // 
             // pnlDash
             // 
             this.pnlDash.BackColor = System.Drawing.Color.White;
@@ -725,7 +729,7 @@ namespace VocabularyUp
             // 
             this.lbMain.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.lbMain, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lbMain.Font = new System.Drawing.Font("Montserrat Alternates SemiBold", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
             this.lbMain.ForeColor = System.Drawing.Color.White;
             this.lbMain.Location = new System.Drawing.Point(2, 227);
             this.lbMain.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -762,11 +766,11 @@ namespace VocabularyUp
             this.btnClose.HoverState.Parent = this.btnClose;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageSize = new System.Drawing.Size(60, 45);
-            this.btnClose.Location = new System.Drawing.Point(94, 155);
+            this.btnClose.Location = new System.Drawing.Point(76, 114);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.ShadowDecoration.Parent = this.btnClose;
-            this.btnClose.Size = new System.Drawing.Size(144, 71);
+            this.btnClose.Size = new System.Drawing.Size(108, 58);
             this.btnClose.TabIndex = 53;
             this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -785,11 +789,11 @@ namespace VocabularyUp
             this.btnDetails.HoverState.Parent = this.btnDetails;
             this.btnDetails.Image = ((System.Drawing.Image)(resources.GetObject("btnDetails.Image")));
             this.btnDetails.ImageSize = new System.Drawing.Size(50, 40);
-            this.btnDetails.Location = new System.Drawing.Point(316, 155);
+            this.btnDetails.Location = new System.Drawing.Point(235, 112);
             this.btnDetails.Margin = new System.Windows.Forms.Padding(2);
             this.btnDetails.Name = "btnDetails";
             this.btnDetails.ShadowDecoration.Parent = this.btnDetails;
-            this.btnDetails.Size = new System.Drawing.Size(144, 71);
+            this.btnDetails.Size = new System.Drawing.Size(108, 58);
             this.btnDetails.TabIndex = 54;
             this.btnDetails.Visible = false;
             this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
@@ -802,22 +806,37 @@ namespace VocabularyUp
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Leaf;
             this.guna2Transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 1F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation1;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation4;
+            // 
+            // pbReturn
+            // 
+            this.pbReturn.BackColor = System.Drawing.Color.Transparent;
+            this.pbReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Transition1.SetDecoration(this.pbReturn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pbReturn.Image = ((System.Drawing.Image)(resources.GetObject("pbReturn.Image")));
+            this.pbReturn.Location = new System.Drawing.Point(314, 34);
+            this.pbReturn.Margin = new System.Windows.Forms.Padding(2);
+            this.pbReturn.Name = "pbReturn";
+            this.pbReturn.Size = new System.Drawing.Size(37, 33);
+            this.pbReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbReturn.TabIndex = 55;
+            this.pbReturn.TabStop = false;
+            this.pbReturn.Click += new System.EventHandler(this.pictureBox2_Click_1);
             // 
             // pnlFinal
             // 
@@ -825,12 +844,13 @@ namespace VocabularyUp
             this.pnlFinal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlFinal.BackgroundImage")));
             this.pnlFinal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlFinal.Controls.Add(this.btnDetails);
-            this.pnlFinal.Controls.Add(this.btnClose);
             this.pnlFinal.Controls.Add(this.lbFinal);
+            this.pnlFinal.Controls.Add(this.btnClose);
             this.guna2Transition1.SetDecoration(this.pnlFinal, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pnlFinal.Location = new System.Drawing.Point(151, 122);
+            this.pnlFinal.Location = new System.Drawing.Point(113, 99);
+            this.pnlFinal.Margin = new System.Windows.Forms.Padding(2);
             this.pnlFinal.Name = "pnlFinal";
-            this.pnlFinal.Size = new System.Drawing.Size(567, 288);
+            this.pnlFinal.Size = new System.Drawing.Size(425, 234);
             this.pnlFinal.TabIndex = 55;
             this.pnlFinal.Visible = false;
             // 
@@ -839,12 +859,27 @@ namespace VocabularyUp
             this.guna2Transition1.SetDecoration(this.lbFinal, Guna.UI2.AnimatorNS.DecorationType.None);
             this.lbFinal.Font = new System.Drawing.Font("Montserrat Alternates", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFinal.ForeColor = System.Drawing.Color.Red;
-            this.lbFinal.Location = new System.Drawing.Point(0, 52);
+            this.lbFinal.Location = new System.Drawing.Point(0, 42);
+            this.lbFinal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFinal.Name = "lbFinal";
-            this.lbFinal.Size = new System.Drawing.Size(564, 62);
+            this.lbFinal.Size = new System.Drawing.Size(423, 50);
             this.lbFinal.TabIndex = 0;
             this.lbFinal.Text = "Game Over";
             this.lbFinal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pbSound
+            // 
+            this.pbSound.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.pbSound, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pbSound.Image = ((System.Drawing.Image)(resources.GetObject("pbSound.Image")));
+            this.pbSound.Location = new System.Drawing.Point(320, 72);
+            this.pbSound.Margin = new System.Windows.Forms.Padding(2);
+            this.pbSound.Name = "pbSound";
+            this.pbSound.Size = new System.Drawing.Size(30, 32);
+            this.pbSound.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSound.TabIndex = 56;
+            this.pbSound.TabStop = false;
+            this.pbSound.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // pgbMonsterHealth
             // 
@@ -858,6 +893,7 @@ namespace VocabularyUp
             // 
             // timerQuestion
             // 
+            this.timerQuestion.Interval = 1000;
             this.timerQuestion.Tick += new System.EventHandler(this.timerQuestion_Tick);
             // 
             // timerEffect
@@ -870,13 +906,16 @@ namespace VocabularyUp
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(868, 533);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.pnlFinal);
+            this.Controls.Add(this.pbSound);
+            this.Controls.Add(this.pbReturn);
             this.Controls.Add(this.pnlQuestion);
             this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.pgbMonsterHealth);
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "WalkthroughForm";
             this.Text = "WalkthroughForm";
@@ -887,15 +926,17 @@ namespace VocabularyUp
             this.pnlInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).EndInit();
             this.pnlQuestion.ResumeLayout(false);
+            this.pnlFlashCard.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlFlashCard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReturn)).EndInit();
             this.pnlFinal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbSound)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -950,5 +991,7 @@ namespace VocabularyUp
         private System.Windows.Forms.Timer timerEffect;
         private System.Windows.Forms.Panel pnlFinal;
         private System.Windows.Forms.Label lbFinal;
+        private System.Windows.Forms.PictureBox pbReturn;
+        private System.Windows.Forms.PictureBox pbSound;
     }
 }

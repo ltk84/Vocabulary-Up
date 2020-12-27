@@ -47,6 +47,11 @@ namespace VocabularyUp
         public void ChangeLabel()
         {
             int correct = 0, wrong = 0;
+            if (userChoices.Count < 10)
+            {
+                wrong = 10 - userChoices.Count;
+            }    
+
             foreach (var choice in userChoices)
             {
                 if (choice.Selected == choice.Correct)
