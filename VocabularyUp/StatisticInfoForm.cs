@@ -14,13 +14,40 @@ namespace VocabularyUp
 {
     public partial class StatisticInfoForm : Form
     {
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
+        bool darkMode = false;
         public StatisticInfoForm()
         {
             InitializeComponent();
+            darkMode = ManageUserAction.GetDarkMode();
+            if (darkMode)
+                UpdateTheme();
             Update();
             Level();
         }
-
+        private void UpdateTheme()
+        {
+            this.guna2CustomGradientPanel1.BackColor = primary;
+            this.guna2CustomGradientPanel1.FillColor = secondary;
+            this.guna2CustomGradientPanel1.FillColor2 = secondary;
+            this.guna2CustomGradientPanel1.FillColor3 = secondary;
+            this.guna2CustomGradientPanel1.FillColor4 = secondary;
+            this.guna2CustomGradientPanel2.BackColor = primary;
+            this.guna2CustomGradientPanel2.FillColor = secondary;
+            this.guna2CustomGradientPanel2.FillColor2 = secondary;
+            this.guna2CustomGradientPanel2.FillColor3 = secondary;
+            this.guna2CustomGradientPanel2.FillColor4 = secondary;
+            this.guna2CustomGradientPanel3.BackColor = primary;
+            this.guna2GradientPanel3.BackColor = secondary;
+            this.guna2GradientPanel4.BackColor = secondary;
+            this.btnSaveEdit.FillColor = primary;
+            this.btSavePassword.FillColor = primary;
+            this.btEditProfile.FillColor = primary;
+            this.guna2Button2.FillColor = primary;
+            this.guna2Button1.FillColor = primary;
+            this.btChangePass.FillColor = primary;
+        }
 
         private void Update()
         {
@@ -71,38 +98,59 @@ namespace VocabularyUp
 
 
             int Level, Percent;
-            
-            
+
+
             Level = a / 50;
             Percent = a % 50;
-           
+
             lbLevel.Text = Level.ToString();
             pbLevel.Value = Percent * 2;
             if (Level <= 1)
             {
                 lbCapBac.Text = "Beginner";
-                imageLevel.Image = Image.FromFile("../../db/Rankings/Iron 3.png");
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Iron 1.png");
             }
             else if (Level == 2)
+            {
                 lbCapBac.Text = "High Beginner";
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Iron 3.png");
+            }
             else if (Level == 3)
+            {
                 lbCapBac.Text = "Low Intermediate";
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Bronze 3.png");
+            }
             else if (Level == 4)
+            {
                 lbCapBac.Text = "Intermediate";
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Silver 3.png");
+            }
             else if (Level == 5)
+            {
                 lbCapBac.Text = "High Intermediate";
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Gold 3.png");
+            }
             else if (Level == 6)
             {
                 lbCapBac.Text = "Low Advanced";
-                imageLevel.Image = Image.FromFile("../../db/Rankings/Gold 3.png");
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Platinum 3.png");
             }
             else if (Level == 7)
+            {
                 lbCapBac.Text = "Advanced";
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Diamond 3.png");
+            }
             else if (Level == 8)
+            {
                 lbCapBac.Text = "Master";
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Immortal 3.png");
+            }
             else if (Level > 8)
-                lbCapBac.Text = "Challenge";
-                
+            { 
+            lbCapBac.Text = "Challenge";
+            imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Master Vocab.png");
+            }
+
         }
        
         private void btnSaveEdit_Click(object sender, EventArgs e)

@@ -12,144 +12,6 @@ namespace VocabularyUp
 {
     public partial class NavForm : Form
     {
-        //int flag = 1;
-        //FlashCard curMainFl = null;
-        //FlashCard curReviseFl = null;
-        //MainForm mainTab = new MainForm();
-        //ReviseForm reviseTab = new ReviseForm();
-        //StatisticsForm statisticsTab = new StatisticsForm();
-        //UserAccessForm userAccess;
-        //int currentID;
-
-        //public NavForm(UserAccessForm userAccess, int currentID)
-        //{
-        //    this.userAccess = userAccess;
-        //    this.currentID = currentID;
-        //    InitializeComponent();
-
-        //    // Update UserID và Connect đến database để load ReFlashCard của User 
-        //    ManageUserAction.UpdateUserInfo(currentID);
-
-        //    // Connect đến database để load MainFlashCard
-        //    ManageUserAction.UpdateMainFlashCard(currentID);
-
-        //    // Chuyển đến MainTab
-        //    ToMainTab();
-        //}
-
-        //private void btnMain_Click(object sender, EventArgs e)
-        //{
-        //    ToMainTab();
-        //    btnMain.Font = new Font("Microsoft Sans Serif", 9.75f, FontStyle.Bold);
-        //    btnRevise.Font = new Font("Microsoft Sans Serif", 9f, FontStyle.Regular);
-        //    btnStatistics.Font = new Font("Microsoft Sans Serif", 9f, FontStyle.Regular);
-        //}
-
-        //private void ToMainTab()
-        //{
-        //    mainTab.TopLevel = false;
-        //    pnlTab.Controls.Clear();
-        //    pnlTab.Controls.Add(mainTab);
-        //    mainTab.FormBorderStyle = FormBorderStyle.None;
-        //    mainTab.Show();
-        //    flag = 1;
-        //}
-
-        //private void btnRevise_Click(object sender, EventArgs e)
-        //{
-        //    ToReviseTab();
-        //    btnRevise.Font = new Font("Microsoft Sans Serif", 9.75f, FontStyle.Bold);
-        //    btnMain.Font = new Font("Microsoft Sans Serif", 9f, FontStyle.Regular);
-        //    btnStatistics.Font = new Font("Microsoft Sans Serif", 9f, FontStyle.Regular);
-        //}
-
-        //private void ToReviseTab()
-        //{
-        //    reviseTab.TopLevel = false;
-        //    pnlTab.Controls.Clear();
-        //    pnlTab.Controls.Add(reviseTab);
-        //    reviseTab.FormBorderStyle = FormBorderStyle.None;
-        //    reviseTab.Show();
-        //    flag = 2;
-        //}
-
-        //private void btnStatistics_Click(object sender, EventArgs e)
-        //{
-        //    ToStatisticsTab();
-        //    btnStatistics.Font = new Font("Microsoft Sans Serif", 9.75f, FontStyle.Bold);
-        //    btnMain.Font = new Font("Microsoft Sans Serif", 9f, FontStyle.Regular);
-        //    btnRevise.Font = new Font("Microsoft Sans Serif", 9f, FontStyle.Regular);
-        //}
-
-        //private void ToStatisticsTab()
-        //{
-        //    statisticsTab.TopLevel = false;
-        //    pnlTab.Controls.Clear();
-        //    pnlTab.Controls.Add(statisticsTab);
-        //    statisticsTab.FormBorderStyle = FormBorderStyle.None;
-        //    //statisticsTab.Dock = DockStyle.Fill;
-        //    UpdateStatistics();
-        //    statisticsTab.Show();
-        //    flag = 3;
-        //}
-
-        //private void UpdateStatistics()
-        //{
-        //    ManageUserAction.UpdateTotalWord();
-        //    statisticsTab.UpdateInfo(ManageSystem.GetUserInfo(currentID-1).Username, ManageSystem.GetUserInfo(currentID-1).Email, ManageSystem.GetUserInfo(currentID-1).BeginDate, ManageSystem.GetUserInfo(currentID-1).TotalWord);
-        //}
-
-        //// LOAD FLASHCARD TIẾP THEO
-        //private void NextFlashCard()
-        //{
-        //    if (flag == 1)
-        //    {
-        //        FlashCard tempt = ManageUserAction.RandomMainFlashCard();
-        //        while (tempt == curMainFl)
-        //        {
-        //            tempt = ManageUserAction.RandomMainFlashCard();
-        //        }
-        //        curMainFl = tempt;
-        //        mainTab.ChangeLabelMain(curMainFl.Eng, curMainFl.IdCard);
-        //    }
-        //    else if (flag == 2)
-        //    {
-        //        FlashCard tempt = ManageUserAction.RandomReviseFlashCard();
-        //        while (tempt == curReviseFl)
-        //        {
-        //            tempt = ManageUserAction.RandomReviseFlashCard();
-        //        }
-        //        curReviseFl = tempt;
-        //        reviseTab.ChangeLabelRevise(curReviseFl.Eng, curReviseFl.IdCard);
-        //    }
-        //}
-
-        //private void btnRight_Click(object sender, EventArgs e)
-        //{
-        //    if (curMainFl != null)
-        //    {
-        //        if (flag == 1 && curMainFl.IdCard != -1)
-        //        {
-        //            ManageUserAction.RemoveMain(curMainFl);
-        //            ManageUserAction.AddRevise(curMainFl);
-        //        }
-        //    }
-        //    NextFlashCard();
-        //}
-
-        //private void btnLeft_Click(object sender, EventArgs e)
-        //{
-        //    if (curReviseFl != null)
-        //    {
-        //        if (flag == 2 && curReviseFl.IdCard != -1)
-        //        {
-        //            ManageUserAction.RemoveRevise(curReviseFl);
-        //            ManageUserAction.AddMain(curReviseFl);
-        //        }
-        //    }
-        //    NextFlashCard();
-        //}
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             userAccess.Show();
@@ -170,37 +32,11 @@ namespace VocabularyUp
             this.WindowState = FormWindowState.Minimized;
         }
 
-        //private void NavForm_KeyUp(object sender, KeyEventArgs e)
-        //{
-        //    if (e.KeyData == Keys.Left)
-        //    {
-        //        if (curReviseFl != null)
-        //        {
-        //            if (flag == 2 && curReviseFl.IdCard != -1)
-        //            {
-        //                ManageUserAction.RemoveRevise(curReviseFl);
-        //                ManageUserAction.AddMain(curReviseFl);
-        //            }
-        //        }
-        //        NextFlashCard();
-        //    }
-        //    else if (e.KeyData == Keys.Right)
-        //    {
-        //        if (curMainFl != null)
-        //        {
-        //            if (flag == 1 && curMainFl.IdCard != -1)
-        //            {
-        //                ManageUserAction.RemoveMain(curMainFl);
-        //                ManageUserAction.AddRevise(curMainFl);
-        //            }
-        //        }
-        //        NextFlashCard();
-        //    }
-        //}
-
-
         // User Info
         UserAccessForm userAccess;
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
+        bool darkMode = false;
         int currentID;
 
         // Tabs
@@ -209,6 +45,7 @@ namespace VocabularyUp
         CollectionForm collectionTab;
         RevisionForm revisionTab;
         StatisticForm statisticTab;
+        int currentTab = 0;
         //int flag = 0;
 
         public NavForm(UserAccessForm userAccess, int currentID)
@@ -217,9 +54,15 @@ namespace VocabularyUp
             this.currentID = currentID;
             InitializeComponent();
 
+
             // Update UserID và Connect đến database để load ReFlashCard của User 
             ManageUserAction.UpdateUserInfo(currentID);
-
+            darkMode = ManageUserAction.GetDarkMode();
+            //
+            if (darkMode)
+                swDarkMode.Checked = true;
+            else
+                swDarkMode.Checked = false;
             //
             ManageUserAction.InitAllCollections();
             campaignTab = new CampaignForm();
@@ -234,30 +77,9 @@ namespace VocabularyUp
             ToCampaignTab();
         }
 
-        //private void CloseCurrentTab()
-        //{
-        //    switch (flag)
-        //    {
-        //        case 1:
-        //            libraryTab.Close();
-        //            break;
-        //        case 2:
-        //            collectionTab.Close();
-        //            break;
-        //        case 3:
-        //            campaignTab.Close();
-        //            break;
-        //        case 4:
-        //            revisionTab.Close();
-        //            break;
-        //        case 5:
-        //            statisticTab.Close();
-        //            break;
-        //    }
-        //}
-
         private void ToCampaignTab()
         {
+            currentTab = 3;
             dashLibraryTab.Hide();
             dashCollectionTab.Hide();
             dashCampaignTab.Show();
@@ -274,6 +96,7 @@ namespace VocabularyUp
 
         private void ToRevisionTab()
         {
+            currentTab = 4;
             dashLibraryTab.Hide();
             dashCollectionTab.Hide();
             dashCampaignTab.Hide();
@@ -285,10 +108,12 @@ namespace VocabularyUp
             pnlTab.Controls.Add(revisionTab);
             revisionTab.FormBorderStyle = FormBorderStyle.None;
             revisionTab.Show();
+            revisionTab.Parent = this.pnlTab;
         }
 
         private void ToLibraryTab()
         {
+            currentTab = 1;
             dashLibraryTab.Show();
             dashCollectionTab.Hide();
             dashCampaignTab.Hide();
@@ -305,6 +130,7 @@ namespace VocabularyUp
 
         private void ToCollectionTab()
         {
+            currentTab = 2;
             dashLibraryTab.Hide();
             dashCollectionTab.Show();
             dashCampaignTab.Hide();
@@ -321,6 +147,7 @@ namespace VocabularyUp
 
         private void ToStatisticTab()
         {
+            currentTab =5;
             dashLibraryTab.Hide();
             dashCollectionTab.Hide();
             dashCampaignTab.Hide();
@@ -364,6 +191,138 @@ namespace VocabularyUp
         private void NavForm_Load(object sender, EventArgs e)
         {
 
+        }
+        private void UpdateTheme()
+        {
+            if (darkMode)
+            {
+                primary = Color.FromArgb(50, 74, 95);
+                secondary = Color.FromArgb(27, 42, 65);
+            }
+            else
+            {
+                primary = Color.FromArgb(17, 223, 158);
+                secondary = Color.FromArgb(7, 96, 68);
+            }
+            this.BackColor = primary;
+            this.barTop.BackColor = primary;
+            this.barTop.FillColor = primary;
+            this.barTop.FillColor2 = primary;
+            this.dashFix1.FillColor = primary;
+            this.dashFix1.FillColor2 = primary;
+            this.dashFix1.FillColor3 = primary;
+            this.dashFix1.FillColor4 = primary;
+            this.dashFix2.FillColor = primary;
+            this.dashFix2.FillColor2 = primary;
+            this.dashFix2.FillColor3 = primary;
+            this.dashFix2.FillColor4 = primary;
+            this.pnlTab.BackColor = primary;
+            this.dashCampaignTab.FillColor = primary;
+            this.dashCampaignTab.FillColor2 = primary;
+            this.dashCampaignTab.FillColor3 = primary;
+            this.dashCampaignTab.FillColor4 = primary;
+            this.dashCollectionTab.FillColor = primary;
+            this.dashCollectionTab.FillColor2 = primary;
+            this.dashCollectionTab.FillColor3 = primary;
+            this.dashCollectionTab.FillColor4 = primary;
+            this.dashLibraryTab.FillColor = primary;
+            this.dashLibraryTab.FillColor2 = primary;
+            this.dashLibraryTab.FillColor3 = primary;
+            this.dashLibraryTab.FillColor4 = primary;
+            this.dashRevisionTab.FillColor = primary;
+            this.dashRevisionTab.FillColor2 = primary;
+            this.dashRevisionTab.FillColor3 = primary;
+            this.dashRevisionTab.FillColor4 = primary;
+            this.dashStatisticTab.FillColor = primary;
+            this.dashStatisticTab.FillColor2 = primary;
+            this.dashStatisticTab.FillColor3 = primary;
+            this.dashStatisticTab.FillColor4 = primary;
+        }
+
+        private void swDarkMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (swDarkMode.Checked)
+            {
+                ManageUserAction.ChangeDarkMode(true);
+            }
+            else
+            {
+                ManageUserAction.ChangeDarkMode(false);
+            }
+            darkMode = ManageUserAction.GetDarkMode();
+            UpdateTheme();
+            RefreshTab();
+        }
+
+        private void RefreshTab()
+        {
+            switch (currentTab)
+            {
+                case 1:
+                    campaignTab = new CampaignForm();
+                    libraryTab = new LibraryForm();
+                    collectionTab = new CollectionForm();
+                    revisionTab = new RevisionForm();
+                    statisticTab = new StatisticForm();
+                    ToLibraryTab();
+                    break;
+                case 2:
+                    campaignTab = new CampaignForm();
+                    libraryTab = new LibraryForm();
+                    collectionTab = new CollectionForm();
+                    revisionTab = new RevisionForm();
+                    statisticTab = new StatisticForm();
+                    ToCollectionTab();
+                    break;
+                case 3:
+                    campaignTab = new CampaignForm();
+                    libraryTab = new LibraryForm();
+                    collectionTab = new CollectionForm();
+                    revisionTab = new RevisionForm();
+                    statisticTab = new StatisticForm();
+                    ToCampaignTab();
+                    break;
+                case 4:
+                    campaignTab = new CampaignForm();
+                    libraryTab = new LibraryForm();
+                    collectionTab = new CollectionForm();
+                    revisionTab = new RevisionForm();
+                    statisticTab = new StatisticForm();
+                    ToRevisionTab();
+                    break;
+                case 5:
+                    campaignTab = new CampaignForm();
+                    libraryTab = new LibraryForm();
+                    collectionTab = new CollectionForm();
+                    revisionTab = new RevisionForm();
+                    statisticTab = new StatisticForm();
+                    ToStatisticTab();
+                    break;
+            }
+        }
+
+        private void btnTutorial_MouseHover(object sender, EventArgs e)
+        {
+            string tutorial = "";
+            switch (currentTab)
+            {
+                case 1:
+                    tutorial = "Library: \n- Nhấn vào flashcard để chuyển sang tiếng Việt/tiếng Anh.\n- Ấn bên trái/phải flashcard để chuyển flashcard.\n- Có thể thêm flashcard đang hiện vào bộ sưu tập bằng nút có hình dấu cộng bên dưới.";
+                    break;
+                case 2:
+                    tutorial = "Collection: \n- Nhấn đúp vào bộ sưu tập để xem những flashcards có trong đó, chức năng bên trong đó sẽ tương tự library.\n- Có thể thêm, đổi tên, xóa bộ sưu tập bằng ba nút hiển thị ở bên phải.";
+                    break;
+                case 3:
+                    tutorial = "Study: \n- Chọn hình thức học (bên trái) và chủ đề (bên phải) để có thể bắt đầu vào học.";
+                    break;
+                case 4:
+                    tutorial = "Revision: \n- Chọn nhân vật, sau đó chọn chế độ chơi để có thể vừa ôn tập vừa giải trí những từ vựng đã học.\n- Có thể vào cửa hàng ở góc trên bên phải để mua nhân vật mình thích.\n- Kim cương có thể tích lũy thông qua việc ôn tập.";
+                    break;
+                case 5:
+                    tutorial = "Statistics: \n- Có thể thay đổi thông tin, mật khẩu người dùng trong mục Info (phần điều hướng bên trái).\n- Thông tin thống kê từ vựng đã học ở mục Result (phần điều hướng bên trái).";
+                    break;
+            }
+            ttTutorial.SetToolTip(btnTutorial, tutorial);
         }
     }
 }

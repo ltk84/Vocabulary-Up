@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace VocabularyUp
 {
-    public partial class Display_CampaignForm : Form
+    public partial class IntroductionForm : Form
     {
-        public Display_CampaignForm()
+        public IntroductionForm()
         {
             InitializeComponent();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

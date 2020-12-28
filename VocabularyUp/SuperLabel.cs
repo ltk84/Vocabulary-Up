@@ -11,8 +11,9 @@ using System.ComponentModel;
 namespace VocabularyUp
 {
 	public class SuperLabel: Label
-	{
-		private bool bFlip = true;
+    {
+        private SuperProgressBar superProgressBar1;
+        private bool bFlip = true;
 
 		public SuperLabel()
 		{
@@ -63,5 +64,20 @@ namespace VocabularyUp
 				this.Invalidate();
 			}
 		}
-	}
+
+        private void InitializeComponent()
+        {
+            this.superProgressBar1 = new VocabularyUp.SuperProgressBar();
+            this.SuspendLayout();
+            // 
+            // superProgressBar1
+            // 
+            this.superProgressBar1.Location = new System.Drawing.Point(0, 0);
+            this.superProgressBar1.Name = "superProgressBar1";
+            this.superProgressBar1.Size = new System.Drawing.Size(100, 23);
+            this.superProgressBar1.TabIndex = 0;
+            this.ResumeLayout(false);
+
+        }
+    }
 }

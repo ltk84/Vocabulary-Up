@@ -21,7 +21,7 @@ namespace VocabularyUp
         public void ChangeLabelRevise(string content, int id)
         {
             lbRevise.Text = content;
-            pbRevise.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
+            pbRevise.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + id.ToString() + ".jpg");
         }
     }
 }

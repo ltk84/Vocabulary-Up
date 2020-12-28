@@ -14,13 +14,33 @@ namespace VocabularyUp
     {
         StatisticInfoForm statisticInfo = new StatisticInfoForm();
         StatisticResultForm statisticResult = new StatisticResultForm();
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
+        bool darkMode = false;
         public StatisticForm()
         {
             InitializeComponent();
+            darkMode = ManageUserAction.GetDarkMode();
+            if (darkMode)
+                UpdateTheme();
             ToStatisticInfo();
             update();
         }
         
+        private void UpdateTheme()
+        {
+            this.BackColor = primary;
+            this.guna2CustomGradientPanel1.BackColor = primary;
+            this.guna2CustomGradientPanel1.FillColor = primary;
+            this.guna2CustomGradientPanel1.FillColor2 = primary;
+            this.guna2CustomGradientPanel1.FillColor3 = primary;
+            this.guna2CustomGradientPanel1.FillColor4 = primary;
+            this.pnlShowStatistic.BackColor = primary;
+            this.guna2CustomGradientPanel2.FillColor = secondary;
+            this.guna2CustomGradientPanel2.FillColor2 = secondary;
+            this.guna2CustomGradientPanel2.FillColor3 = secondary;
+            this.guna2CustomGradientPanel2.FillColor4 = secondary;
+        }
         
         public void update()
         {
@@ -33,6 +53,8 @@ namespace VocabularyUp
         }
         private void ToStatisticInfo()
         {
+            dashInfo.Show();
+            dashResult.Hide();
             statisticInfo.TopLevel = false;
             pnlShowStatistic.Controls.Clear();
             pnlShowStatistic.Controls.Add(statisticInfo);
@@ -41,6 +63,8 @@ namespace VocabularyUp
 
         private void ToStatisticResult()
         {
+            dashResult.Show();
+            dashInfo.Hide();
             statisticResult.TopLevel = false;
             pnlShowStatistic.Controls.Clear();
             pnlShowStatistic.Controls.Add(statisticResult);

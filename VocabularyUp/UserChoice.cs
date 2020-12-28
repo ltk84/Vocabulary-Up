@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VocabularyUp
 {
-    class UserChoice
+    public class UserChoice
     {
         private int selected;
         private int correct;
@@ -24,6 +24,7 @@ namespace VocabularyUp
         {
             this.correctAns = correctAns;
             this.answer = answer;
+            this.correct = -1;
         }
 
         public int Selected { get => selected; set => selected = value; }

@@ -19,9 +19,16 @@ namespace VocabularyUp
         FlashCard curFlashCard;
         Collection curCollection;
         CollectionForm collectionTab;
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
+        bool darkMode = false;
         public CollectionLib(CollectionForm collectionTab, int idCollection)
         {
             InitializeComponent();
+            darkMode = ManageUserAction.GetDarkMode();
+            //
+            if (darkMode)
+                UpdateTheme();
             //
             this.collectionTab = collectionTab;
             this.KeyPreview = true;
@@ -35,11 +42,22 @@ namespace VocabularyUp
             lbCollectionName.Text = curCollection.NameCollection;
             curFlashCard = curCollection.ListFL[index];
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
+            InitAutoCompleteTextBox();
+        }
+        private void UpdateTheme()
+        {
+            this.pnlMainNav.BackColor = primary;
+            this.pnlTab.FillColor = primary;
+            this.pnlTab.FillColor2 = primary;
+            this.pnlTab.FillColor3 = primary;
+            this.pnlTab.FillColor4 = primary;
+            this.btnRemoveFromCollection.FillColor = primary;
+            this.btnBack.Image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_icons") + "back_arrow_dark.png");
         }
         public void ChangeFlashCard(string content, int id)
         {
             lbMain.Text = content;
-            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
+            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + id.ToString() + ".jpg");
         }
 
         private void ToTheRight()
@@ -74,15 +92,26 @@ namespace VocabularyUp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            int iTemp = SearchFlashCard(txtSearching.Text);
+            int iTemp = SearchFlashCardEng(txtSearching.Text);
             if (iTemp >= 0)
                 index = iTemp;
+            else
+            {
+                iTemp = SearchFlashCardVie(txtSearching.Text);
+                if (iTemp >= 0)
+                    index = iTemp;
+            }    
+
             curFlashCard = curCollection.ListFL[index];
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
         }
-        private int SearchFlashCard(string content)
+        private int SearchFlashCardEng(string content)
         {
             return curCollection.ListFL.FindIndex(f => f.Eng == content);
+        }
+        private int SearchFlashCardVie(string content)
+        {
+            return curCollection.ListFL.FindIndex(f => f.Viet == content);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -150,6 +179,19 @@ namespace VocabularyUp
         private void lbMain_Click(object sender, EventArgs e)
         {
             ChangeLabel();
+        }
+
+        private void InitAutoCompleteTextBox()
+        {
+            AutoCompleteStringCollection data = new AutoCompleteStringCollection();
+            for (int i = 0; i < curCollection.ListFL.Count; i++)
+            {
+                data.Add(curCollection.ListFL[i].Eng);
+                data.Add(curCollection.ListFL[i].Viet);
+            }
+            txtSearching.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtSearching.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtSearching.AutoCompleteCustomSource = data;
         }
     }
 }

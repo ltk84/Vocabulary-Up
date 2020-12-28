@@ -15,39 +15,81 @@ namespace VocabularyUp
     {
         int type = -1;
         int currentTopic = -1;
+        bool darkMode = false;
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
+        Color foreColor = Color.White;
         public CampaignForm()
         {
             InitializeComponent();
+            darkMode = ManageUserAction.GetDarkMode();
+            UpdateTheme();
+            this.KeyPreview = true;
+        }
+
+        private void UpdateTheme()
+        {
+            if (darkMode)
+            {
+                primary = Color.FromArgb(50, 74, 95);
+                secondary = Color.FromArgb(27, 42, 65);
+                foreColor = Color.White;
+            }
+            else
+            {
+                primary = Color.FromArgb(17, 223, 158);
+                secondary = Color.FromArgb(7, 96, 68);
+                foreColor = Color.Black;
+            }    
+            this.pnlTopicSelection.BackColor = primary;
+            this.label3.ForeColor = primary;
+            this.guna2CustomGradientPanel2.FillColor = primary;
+            this.guna2CustomGradientPanel2.FillColor2 = primary;
+            this.guna2CustomGradientPanel2.FillColor3 = primary;
+            this.guna2CustomGradientPanel2.FillColor4 = primary;
+            this.guna2CustomGradientPanel3.FillColor = primary;
+            this.guna2CustomGradientPanel3.FillColor2 = primary;
+            this.guna2CustomGradientPanel3.FillColor3 = primary;
+            this.guna2CustomGradientPanel3.FillColor4 = primary;
+            this.btnConfirm.FillColor = primary;
+        }
+
+        public int GetType()
+        {
+            return type;
         }
 
         private void Start()
         {
-            ////MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
-            //FillBlankForm quiz = new FillBlankForm(currentTopic);
-            //quiz.TopLevel = false;
-            ////pnlCampaignCate.Controls.Clear();
-            //pnlTopicSelection.Hide();
-            //pnlCampaignCate.Controls.Add(quiz);
-            //quiz.FormBorderStyle = FormBorderStyle.None;
-            //quiz.Show();
-            //
-
             FillBlankForm fillBQuiz = new FillBlankForm(currentTopic, this);
+
+            if (fillBQuiz.result == 0)
+            {
+                FinalForm f = new FinalForm(pnlTopicSelection);
+                f.TopLevel = false;
+                pnlTopicSelection.Hide();
+                pnlCampaignCate.Controls.Add(f);
+                f.FormBorderStyle = FormBorderStyle.None;
+                f.Show();
+                this.Reset();
+                return;
+            }
+
             MultipleChoiceForm multiQuiz = new MultipleChoiceForm(currentTopic, this);
             LearningForm learning = new LearningForm(currentTopic, this, fillBQuiz, multiQuiz);
+
+            
 
             learning.TopLevel = false;
             pnlTopicSelection.Hide();
             pnlCampaignCate.Controls.Add(learning);
             learning.FormBorderStyle = FormBorderStyle.None;
             learning.Show();
+            learning.StartTimerLearning();
 
             if (type == 0)
             {
-                //MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
-                //FillBlankForm quiz = new FillBlankForm(currentTopic, this);
                 fillBQuiz.TopLevel = false;
-                //pnlCampaignCate.Controls.Clear();
                 pnlTopicSelection.Hide();
                 pnlCampaignCate.Controls.Add(fillBQuiz);
                 fillBQuiz.FormBorderStyle = FormBorderStyle.None;
@@ -55,17 +97,25 @@ namespace VocabularyUp
             }
             else
             {
-                //MultipleChoiceForm quiz = new MultipleChoiceForm(currentTopic);
-                //FillBlankForm quiz = new FillBlankForm(currentTopic, this);
                 multiQuiz.TopLevel = false;
-                //pnlCampaignCate.Controls.Clear();
                 pnlTopicSelection.Hide();
                 pnlCampaignCate.Controls.Add(multiQuiz);
                 multiQuiz.FormBorderStyle = FormBorderStyle.None;
                 multiQuiz.Show();
             }
+            
+        }
 
-
+        public void InitResult(List<UserChoice> userChoices)
+        {
+            ResultForm result = new ResultForm(userChoices, pnlTopicSelection);
+            result.TopLevel = false;
+            result.ChangeLabel();
+            pnlCampaignCate.Controls.Add(result);
+            result.FormBorderStyle = FormBorderStyle.None;
+            result.TopMost = true;
+            result.Show();
+            pnlTopicSelection.Hide();
         }
 
         public void Reset()
@@ -73,8 +123,12 @@ namespace VocabularyUp
             type = -1;
             currentTopic = -1;
             ResetColorButton();
-            btnMultipleChoice.FillColor = Color.FromArgb(192, 255, 192);
-            btnFilBlank.FillColor = Color.FromArgb(192, 255, 192);
+            btnMultipleChoice.FillColor = primary;
+            lbMultipleChoice.BackColor = primary;
+            lbMultipleChoice.ForeColor = foreColor;
+            btnFilBlank.FillColor = primary;
+            lbFillBlank.BackColor = primary;
+            lbFillBlank.ForeColor = foreColor;
         }
         public void Return()
         {
@@ -84,23 +138,57 @@ namespace VocabularyUp
 
         private void ResetColorButton()
         {
-            btnAnimals.FillColor = Color.FromArgb(192, 255, 192);
-            btnPlants.FillColor = Color.FromArgb(192, 255, 192);
-            btnSport.FillColor = Color.FromArgb(192, 255, 192);
-            btnTechnology.FillColor = Color.FromArgb(192, 255, 192);
-            btnJob.FillColor = Color.FromArgb(192, 255, 192);
-            btnFoodaDrinks.FillColor = Color.FromArgb(192, 255, 192);
-            btnFruits.FillColor = Color.FromArgb(192, 255, 192);
-            btnClothing.FillColor = Color.FromArgb(192, 255, 192);
+            btnAnimals.FillColor = primary;
+            btnAnimals.ForeColor = foreColor;
+            lbAnimals.BackColor = primary;
+            lbAnimals.ForeColor = foreColor;
+
+            btnPlants.FillColor = primary;
+            btnPlants.ForeColor = foreColor;
+            lbPlants.BackColor = primary;
+            lbPlants.ForeColor = foreColor;
+
+            btnSport.FillColor = primary;
+            btnSport.ForeColor = foreColor;
+            lbSport.BackColor = primary;
+            lbSport.ForeColor = foreColor;
+
+            btnTechnology.FillColor = primary;
+            btnTechnology.ForeColor = foreColor;
+            lbTechnology.BackColor = primary;
+            lbTechnology.ForeColor = foreColor;
+
+            btnJob.FillColor = primary;
+            btnJob.ForeColor = foreColor;
+            lbJob.BackColor = primary;
+            lbJob.ForeColor = foreColor;
+
+            btnFoodaDrinks.FillColor = primary;
+            btnFoodaDrinks.ForeColor = foreColor;
+            lbFoodaDrinks.BackColor = primary;
+            lbFoodaDrinks.ForeColor = foreColor;
+
+            btnFruits.FillColor = primary;
+            btnFruits.ForeColor = foreColor;
+            lbFruits.BackColor = primary;
+            lbFruits.ForeColor = foreColor;
+
+            btnClothing.FillColor = primary;
+            btnClothing.ForeColor = foreColor;
+            lbClothing.BackColor = primary;
+            lbClothing.ForeColor = foreColor;
         }
 
         private void btnAnimals_Click(object sender, EventArgs e)
         {
             ResetColorButton();
             currentTopic = 1; 
-            if (btnAnimals.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnAnimals.FillColor == primary)
             {
-                btnAnimals.FillColor = Color.FromArgb(10, 182, 194);
+                btnAnimals.FillColor = secondary;
+                lbAnimals.BackColor = secondary;
+                lbAnimals.ForeColor = Color.White;
+                btnAnimals.ForeColor = Color.White;
             }
             
         }
@@ -109,9 +197,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnPlants.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnPlants.FillColor == primary)
             {
-                btnPlants.FillColor = Color.FromArgb(10, 182, 194);
+                btnPlants.FillColor = secondary;
+                lbPlants.BackColor = secondary;
+                lbPlants.ForeColor = Color.White;
+                btnPlants.ForeColor = Color.White;
             }
             
             currentTopic = 2;
@@ -121,9 +212,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnFruits.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnFruits.FillColor == primary)
             {
-                btnFruits.FillColor = Color.FromArgb(10, 182, 194);
+                btnFruits.FillColor = secondary;
+                lbFruits.BackColor = secondary;
+                lbFruits.ForeColor = Color.White;
+                btnFruits.ForeColor = Color.White;
             }
             
             currentTopic = 3;
@@ -133,9 +227,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnJob.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnJob.FillColor == primary)
             {
-                btnJob.FillColor = Color.FromArgb(10, 182, 194);
+                btnJob.FillColor = secondary;
+                lbJob.BackColor = secondary;
+                lbJob.ForeColor = Color.White;
+                btnJob.ForeColor = Color.White;
             }
            
             currentTopic = 4;
@@ -145,9 +242,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnFoodaDrinks.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnFoodaDrinks.FillColor == primary)
             {
-                btnFoodaDrinks.FillColor = Color.FromArgb(10, 182, 194);
+                btnFoodaDrinks.FillColor = secondary;
+                lbFoodaDrinks.BackColor = secondary;
+                lbFoodaDrinks.ForeColor = Color.White;
+                btnFoodaDrinks.ForeColor = Color.White;
             }
             
             currentTopic = 5;
@@ -157,9 +257,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnSport.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnSport.FillColor == primary)
             {
-                btnSport.FillColor = Color.FromArgb(10, 182, 194);
+                btnSport.FillColor = secondary;
+                lbSport.BackColor = secondary;
+                lbSport.ForeColor = Color.White;
+                btnSport.ForeColor = Color.White;
             }
             
             currentTopic = 6;
@@ -169,9 +272,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnClothing.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnClothing.FillColor == primary)
             {
-                btnClothing.FillColor = Color.FromArgb(10, 182, 194);
+                btnClothing.FillColor = secondary;
+                lbClothing.BackColor = secondary;
+                lbClothing.ForeColor = Color.White;
+                btnClothing.ForeColor = Color.White;
             }
             
             currentTopic = 7;
@@ -181,9 +287,12 @@ namespace VocabularyUp
         {
             ResetColorButton();
 
-            if (btnTechnology.FillColor == Color.FromArgb(192, 255, 192))
+            if (btnTechnology.FillColor == primary)
             {
-                btnTechnology.FillColor = Color.FromArgb(10, 182, 194);
+                btnTechnology.FillColor = secondary;
+                lbTechnology.BackColor = secondary;
+                lbTechnology.ForeColor = Color.White;
+                btnTechnology.ForeColor = Color.White;
             }
             
             currentTopic = 8;
@@ -192,24 +301,85 @@ namespace VocabularyUp
         private void btnMultipleChoice_Click(object sender, EventArgs e)
         {
             type = 1;
-            btnMultipleChoice.FillColor = Color.FromArgb(192, 255, 192);
-            btnFilBlank.FillColor = Color.FromArgb(192, 255, 192);
-            btnMultipleChoice.FillColor = Color.FromArgb(10, 182, 194);
-            
+            //btnMultipleChoice.FillColor = primary;
+            btnFilBlank.FillColor = primary;
+            btnFilBlank.ForeColor = foreColor;
+            lbFillBlank.BackColor = primary;
+            lbFillBlank.ForeColor = foreColor;
+            btnMultipleChoice.FillColor = secondary;
+            lbMultipleChoice.BackColor = secondary;
+            lbMultipleChoice.ForeColor = Color.White;
+
         }
 
         private void btnFilBlank_Click(object sender, EventArgs e)
         {
             type = 0;
-            btnMultipleChoice.FillColor = Color.FromArgb(192, 255, 192);
-            btnFilBlank.FillColor = Color.FromArgb(192, 255, 192);
-            btnFilBlank.FillColor = Color.FromArgb(10, 182, 194);
+            btnMultipleChoice.FillColor = primary;
+            btnMultipleChoice.ForeColor = foreColor;
+            lbMultipleChoice.BackColor = primary;
+            lbMultipleChoice.ForeColor = foreColor;
+            btnFilBlank.FillColor = secondary;
+            lbFillBlank.BackColor = secondary;
+            lbFillBlank.ForeColor = Color.White;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             if (type >= 0 && currentTopic > 0)
+            {
                 Start();
+            }
+        }
+
+        private void lbMultipleChoice_Click(object sender, EventArgs e)
+        {
+            btnMultipleChoice_Click(sender, e);
+        }
+
+        private void lbFillBlank_Click(object sender, EventArgs e)
+        {
+            btnFilBlank_Click(sender, e);
+        }
+
+        private void lbAnimals_Click(object sender, EventArgs e)
+        {
+            btnAnimals_Click(sender, e);
+        }
+
+        private void lbPlants_Click(object sender, EventArgs e)
+        {
+            btnPlants_Click(sender, e);
+        }
+
+        private void lbFruits_Click(object sender, EventArgs e)
+        {
+            btnFruits_Click(sender, e);
+        }
+
+        private void lbJob_Click(object sender, EventArgs e)
+        {
+            btnJob_Click(sender, e);
+        }
+
+        private void lbFoodaDrinks_Click(object sender, EventArgs e)
+        {
+            btnFoodaDrinks_Click(sender, e);
+        }
+
+        private void lbSport_Click(object sender, EventArgs e)
+        {
+            btnSport_Click(sender, e);
+        }
+
+        private void lbClothing_Click(object sender, EventArgs e)
+        {
+            btnClothing_Click(sender, e);
+        }
+
+        private void lbTechnology_Click(object sender, EventArgs e)
+        {
+            btnTechnology_Click(sender, e);
         }
     }
 }

@@ -42,14 +42,19 @@
             this.btnToCollection = new Guna.UI2.WinForms.Guna2Button();
             this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlMainNav = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.lbTime = new System.Windows.Forms.Label();
+            this.lbTimer = new System.Windows.Forms.Label();
             this.btnDone = new Guna.UI2.WinForms.Guna2Button();
             this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.btnRight = new Guna.UI2.WinForms.Guna2Button();
+            this.timerLearning = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
             this.pnlLib.SuspendLayout();
             this.pnlToCollection.SuspendLayout();
             this.pnlTab.SuspendLayout();
             this.pnlMainNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -70,10 +75,11 @@
             this.btnLeft.HoverState.Parent = this.btnLeft;
             this.btnLeft.Image = ((System.Drawing.Image)(resources.GetObject("btnLeft.Image")));
             this.btnLeft.ImageSize = new System.Drawing.Size(115, 130);
-            this.btnLeft.Location = new System.Drawing.Point(0, 37);
+            this.btnLeft.Location = new System.Drawing.Point(0, 46);
+            this.btnLeft.Margin = new System.Windows.Forms.Padding(4);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.ShadowDecoration.Parent = this.btnLeft;
-            this.btnLeft.Size = new System.Drawing.Size(227, 386);
+            this.btnLeft.Size = new System.Drawing.Size(303, 475);
             this.btnLeft.TabIndex = 7;
             this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
@@ -87,22 +93,22 @@
             this.btnPronun.Image = ((System.Drawing.Image)(resources.GetObject("btnPronun.Image")));
             this.btnPronun.ImageRotate = 0F;
             this.btnPronun.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnPronun.Location = new System.Drawing.Point(256, 294);
-            this.btnPronun.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPronun.Location = new System.Drawing.Point(341, 362);
+            this.btnPronun.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPronun.Name = "btnPronun";
             this.btnPronun.PressedState.Parent = this.btnPronun;
-            this.btnPronun.Size = new System.Drawing.Size(24, 31);
+            this.btnPronun.Size = new System.Drawing.Size(32, 38);
             this.btnPronun.TabIndex = 14;
             this.btnPronun.Click += new System.EventHandler(this.btnPronun_Click);
             // 
             // lbMain
             // 
             this.lbMain.BackColor = System.Drawing.Color.Transparent;
-            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold);
-            this.lbMain.Location = new System.Drawing.Point(-2, 294);
-            this.lbMain.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lbMain.ForeColor = System.Drawing.Color.White;
+            this.lbMain.Location = new System.Drawing.Point(-3, 345);
             this.lbMain.Name = "lbMain";
-            this.lbMain.Size = new System.Drawing.Size(296, 31);
+            this.lbMain.Size = new System.Drawing.Size(395, 68);
             this.lbMain.TabIndex = 7;
             this.lbMain.Text = "Welcome";
             this.lbMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -111,10 +117,10 @@
             // pbMain
             // 
             this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
-            this.pbMain.Location = new System.Drawing.Point(14, 17);
-            this.pbMain.Margin = new System.Windows.Forms.Padding(2);
+            this.pbMain.Location = new System.Drawing.Point(19, 21);
+            this.pbMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbMain.Name = "pbMain";
-            this.pbMain.Size = new System.Drawing.Size(266, 260);
+            this.pbMain.Size = new System.Drawing.Size(355, 320);
             this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMain.TabIndex = 8;
             this.pbMain.TabStop = false;
@@ -123,10 +129,10 @@
             // pnlDash
             // 
             this.pnlDash.BackColor = System.Drawing.Color.White;
-            this.pnlDash.Location = new System.Drawing.Point(14, 280);
-            this.pnlDash.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlDash.Location = new System.Drawing.Point(19, 345);
+            this.pnlDash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDash.Name = "pnlDash";
-            this.pnlDash.Size = new System.Drawing.Size(266, 4);
+            this.pnlDash.Size = new System.Drawing.Size(355, 5);
             this.pnlDash.TabIndex = 11;
             // 
             // pnlLib
@@ -134,10 +140,10 @@
             this.pnlLib.BackColor = System.Drawing.Color.Transparent;
             this.pnlLib.Controls.Add(this.pnlToCollection);
             this.pnlLib.Controls.Add(this.pnlTab);
-            this.pnlLib.Location = new System.Drawing.Point(227, 37);
-            this.pnlLib.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlLib.Location = new System.Drawing.Point(303, 46);
+            this.pnlLib.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlLib.Name = "pnlLib";
-            this.pnlLib.Size = new System.Drawing.Size(296, 386);
+            this.pnlLib.Size = new System.Drawing.Size(395, 475);
             this.pnlLib.TabIndex = 9;
             // 
             // pnlToCollection
@@ -145,11 +151,11 @@
             this.pnlToCollection.Controls.Add(this.cbCollection);
             this.pnlToCollection.Controls.Add(this.btnToCollection);
             this.pnlToCollection.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlToCollection.Location = new System.Drawing.Point(0, 345);
-            this.pnlToCollection.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlToCollection.Location = new System.Drawing.Point(0, 425);
+            this.pnlToCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlToCollection.Name = "pnlToCollection";
             this.pnlToCollection.ShadowDecoration.Parent = this.pnlToCollection;
-            this.pnlToCollection.Size = new System.Drawing.Size(296, 41);
+            this.pnlToCollection.Size = new System.Drawing.Size(395, 50);
             this.pnlToCollection.TabIndex = 11;
             // 
             // cbCollection
@@ -167,10 +173,10 @@
             this.cbCollection.ItemHeight = 30;
             this.cbCollection.ItemsAppearance.Parent = this.cbCollection;
             this.cbCollection.Location = new System.Drawing.Point(0, 0);
-            this.cbCollection.Margin = new System.Windows.Forms.Padding(2);
+            this.cbCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCollection.Name = "cbCollection";
             this.cbCollection.ShadowDecoration.Parent = this.cbCollection;
-            this.cbCollection.Size = new System.Drawing.Size(258, 36);
+            this.cbCollection.Size = new System.Drawing.Size(343, 36);
             this.cbCollection.TabIndex = 13;
             // 
             // btnToCollection
@@ -180,33 +186,35 @@
             this.btnToCollection.CheckedState.Parent = this.btnToCollection;
             this.btnToCollection.CustomImages.Parent = this.btnToCollection;
             this.btnToCollection.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnToCollection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnToCollection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.btnToCollection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToCollection.ForeColor = System.Drawing.Color.Black;
             this.btnToCollection.HoverState.Parent = this.btnToCollection;
             this.btnToCollection.Image = ((System.Drawing.Image)(resources.GetObject("btnToCollection.Image")));
-            this.btnToCollection.Location = new System.Drawing.Point(262, 0);
-            this.btnToCollection.Margin = new System.Windows.Forms.Padding(2);
+            this.btnToCollection.Location = new System.Drawing.Point(350, 0);
+            this.btnToCollection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnToCollection.Name = "btnToCollection";
             this.btnToCollection.ShadowDecoration.Parent = this.btnToCollection;
-            this.btnToCollection.Size = new System.Drawing.Size(34, 41);
+            this.btnToCollection.Size = new System.Drawing.Size(45, 50);
             this.btnToCollection.TabIndex = 0;
             this.btnToCollection.Click += new System.EventHandler(this.btnToCollection_Click);
             // 
             // pnlTab
             // 
             this.pnlTab.BorderRadius = 20;
+            this.pnlTab.Controls.Add(this.pnlDash);
             this.pnlTab.Controls.Add(this.btnPronun);
             this.pnlTab.Controls.Add(this.lbMain);
             this.pnlTab.Controls.Add(this.pbMain);
-            this.pnlTab.Controls.Add(this.pnlDash);
-            this.pnlTab.FillColor2 = System.Drawing.Color.LightGreen;
-            this.pnlTab.FillColor3 = System.Drawing.Color.LightGreen;
-            this.pnlTab.Location = new System.Drawing.Point(2, 2);
-            this.pnlTab.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTab.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlTab.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.pnlTab.Location = new System.Drawing.Point(3, 2);
+            this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
-            this.pnlTab.Size = new System.Drawing.Size(296, 341);
+            this.pnlTab.Size = new System.Drawing.Size(395, 420);
             this.pnlTab.TabIndex = 0;
             this.pnlTab.Click += new System.EventHandler(this.pnlTab_Click);
             // 
@@ -214,6 +222,9 @@
             // 
             this.pnlMainNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlMainNav.BorderRadius = 20;
+            this.pnlMainNav.Controls.Add(this.pictureBox1);
+            this.pnlMainNav.Controls.Add(this.lbTime);
+            this.pnlMainNav.Controls.Add(this.lbTimer);
             this.pnlMainNav.Controls.Add(this.btnDone);
             this.pnlMainNav.Controls.Add(this.btnBack);
             this.pnlMainNav.Controls.Add(this.pnlLib);
@@ -221,11 +232,32 @@
             this.pnlMainNav.Controls.Add(this.btnRight);
             this.pnlMainNav.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMainNav.Location = new System.Drawing.Point(0, 0);
-            this.pnlMainNav.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlMainNav.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlMainNav.Name = "pnlMainNav";
             this.pnlMainNav.ShadowDecoration.Parent = this.pnlMainNav;
-            this.pnlMainNav.Size = new System.Drawing.Size(750, 422);
+            this.pnlMainNav.Size = new System.Drawing.Size(1000, 519);
             this.pnlMainNav.TabIndex = 14;
+            // 
+            // lbTime
+            // 
+            this.lbTime.AutoSize = true;
+            this.lbTime.BackColor = System.Drawing.Color.Transparent;
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lbTime.Location = new System.Drawing.Point(756, 14);
+            this.lbTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(48, 25);
+            this.lbTime.TabIndex = 61;
+            this.lbTime.Text = "600";
+            // 
+            // lbTimer
+            // 
+            this.lbTimer.BackColor = System.Drawing.Color.Transparent;
+            this.lbTimer.Location = new System.Drawing.Point(797, 14);
+            this.lbTimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbTimer.Name = "lbTimer";
+            this.lbTimer.Size = new System.Drawing.Size(64, 28);
+            this.lbTimer.TabIndex = 60;
             // 
             // btnDone
             // 
@@ -239,11 +271,11 @@
             this.btnDone.HoverState.Parent = this.btnDone;
             this.btnDone.Image = ((System.Drawing.Image)(resources.GetObject("btnDone.Image")));
             this.btnDone.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnDone.Location = new System.Drawing.Point(651, 5);
-            this.btnDone.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDone.Location = new System.Drawing.Point(868, 6);
+            this.btnDone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDone.Name = "btnDone";
             this.btnDone.ShadowDecoration.Parent = this.btnDone;
-            this.btnDone.Size = new System.Drawing.Size(34, 32);
+            this.btnDone.Size = new System.Drawing.Size(45, 39);
             this.btnDone.TabIndex = 59;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
@@ -259,11 +291,11 @@
             this.btnBack.HoverState.Parent = this.btnBack;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnBack.Location = new System.Drawing.Point(20, 5);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBack.Location = new System.Drawing.Point(27, 6);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.ShadowDecoration.Parent = this.btnBack;
-            this.btnBack.Size = new System.Drawing.Size(34, 32);
+            this.btnBack.Size = new System.Drawing.Size(45, 39);
             this.btnBack.TabIndex = 14;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -278,21 +310,38 @@
             this.btnRight.HoverState.Parent = this.btnRight;
             this.btnRight.Image = ((System.Drawing.Image)(resources.GetObject("btnRight.Image")));
             this.btnRight.ImageSize = new System.Drawing.Size(115, 130);
-            this.btnRight.Location = new System.Drawing.Point(523, 37);
+            this.btnRight.Location = new System.Drawing.Point(697, 46);
+            this.btnRight.Margin = new System.Windows.Forms.Padding(4);
             this.btnRight.Name = "btnRight";
             this.btnRight.ShadowDecoration.Parent = this.btnRight;
-            this.btnRight.Size = new System.Drawing.Size(227, 386);
+            this.btnRight.Size = new System.Drawing.Size(303, 475);
             this.btnRight.TabIndex = 8;
             this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
             // 
+            // timerLearning
+            // 
+            this.timerLearning.Interval = 1000;
+            this.timerLearning.Tick += new System.EventHandler(this.timerLearning_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(709, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(49, 39);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 40;
+            this.pictureBox1.TabStop = false;
+            // 
             // LearningForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 422);
+            this.ClientSize = new System.Drawing.Size(1000, 519);
             this.Controls.Add(this.pnlMainNav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LearningForm";
             this.Text = "LearningForm";
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LearningForm_KeyUp);
@@ -301,6 +350,8 @@
             this.pnlToCollection.ResumeLayout(false);
             this.pnlTab.ResumeLayout(false);
             this.pnlMainNav.ResumeLayout(false);
+            this.pnlMainNav.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -331,5 +382,9 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnlToCollection;
         private Guna.UI2.WinForms.Guna2ComboBox cbCollection;
         private Guna.UI2.WinForms.Guna2Button btnToCollection;
+        private System.Windows.Forms.Label lbTimer;
+        private System.Windows.Forms.Timer timerLearning;
+        private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

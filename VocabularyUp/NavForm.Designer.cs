@@ -52,6 +52,10 @@
             this.pnlTab = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.dashFix2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.dashFix1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.swDarkMode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.lbDarkMode = new System.Windows.Forms.Label();
+            this.btnTutorial = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.ttTutorial = new System.Windows.Forms.ToolTip(this.components);
             this.barTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconNav)).BeginInit();
             this.pnlNavigation.SuspendLayout();
@@ -65,8 +69,8 @@
             this.barTop.Controls.Add(this.btnFullScr);
             this.barTop.Controls.Add(this.btnExit);
             this.barTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
-            this.barTop.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(236)))), ((int)(((byte)(141)))));
+            this.barTop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.barTop.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.barTop.Location = new System.Drawing.Point(0, 0);
             this.barTop.Margin = new System.Windows.Forms.Padding(4);
             this.barTop.Name = "barTop";
@@ -93,6 +97,7 @@
             this.pbIconNav.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbIconNav.BackgroundImage")));
             this.pbIconNav.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pbIconNav.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbIconNav.Enabled = false;
             this.pbIconNav.Location = new System.Drawing.Point(0, 0);
             this.pbIconNav.Margin = new System.Windows.Forms.Padding(4);
             this.pbIconNav.Name = "pbIconNav";
@@ -188,10 +193,10 @@
             this.pnlNavigation.Controls.Add(this.btnCollection);
             this.pnlNavigation.Controls.Add(this.btnLib);
             this.pnlNavigation.Controls.Add(this.btnStatistic);
-            this.pnlNavigation.Location = new System.Drawing.Point(181, 51);
+            this.pnlNavigation.Location = new System.Drawing.Point(181, 50);
             this.pnlNavigation.Margin = new System.Windows.Forms.Padding(4);
             this.pnlNavigation.Name = "pnlNavigation";
-            this.pnlNavigation.Size = new System.Drawing.Size(730, 35);
+            this.pnlNavigation.Size = new System.Drawing.Size(731, 34);
             this.pnlNavigation.TabIndex = 12;
             // 
             // dashStatisticTab
@@ -203,9 +208,10 @@
             this.dashStatisticTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashStatisticTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashStatisticTab.Location = new System.Drawing.Point(575, 28);
+            this.dashStatisticTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dashStatisticTab.Name = "dashStatisticTab";
             this.dashStatisticTab.ShadowDecoration.Parent = this.dashStatisticTab;
-            this.dashStatisticTab.Size = new System.Drawing.Size(140, 3);
+            this.dashStatisticTab.Size = new System.Drawing.Size(140, 2);
             this.dashStatisticTab.TabIndex = 6;
             // 
             // dashRevisionTab
@@ -217,9 +223,10 @@
             this.dashRevisionTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashRevisionTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashRevisionTab.Location = new System.Drawing.Point(435, 28);
+            this.dashRevisionTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dashRevisionTab.Name = "dashRevisionTab";
             this.dashRevisionTab.ShadowDecoration.Parent = this.dashRevisionTab;
-            this.dashRevisionTab.Size = new System.Drawing.Size(140, 3);
+            this.dashRevisionTab.Size = new System.Drawing.Size(140, 2);
             this.dashRevisionTab.TabIndex = 5;
             // 
             // dashCampaignTab
@@ -231,9 +238,10 @@
             this.dashCampaignTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashCampaignTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashCampaignTab.Location = new System.Drawing.Point(295, 28);
+            this.dashCampaignTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dashCampaignTab.Name = "dashCampaignTab";
             this.dashCampaignTab.ShadowDecoration.Parent = this.dashCampaignTab;
-            this.dashCampaignTab.Size = new System.Drawing.Size(140, 3);
+            this.dashCampaignTab.Size = new System.Drawing.Size(140, 2);
             this.dashCampaignTab.TabIndex = 4;
             // 
             // dashCollectionTab
@@ -245,9 +253,10 @@
             this.dashCollectionTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashCollectionTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashCollectionTab.Location = new System.Drawing.Point(155, 28);
+            this.dashCollectionTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dashCollectionTab.Name = "dashCollectionTab";
             this.dashCollectionTab.ShadowDecoration.Parent = this.dashCollectionTab;
-            this.dashCollectionTab.Size = new System.Drawing.Size(140, 3);
+            this.dashCollectionTab.Size = new System.Drawing.Size(140, 2);
             this.dashCollectionTab.TabIndex = 3;
             // 
             // dashLibraryTab
@@ -259,9 +268,10 @@
             this.dashLibraryTab.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashLibraryTab.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashLibraryTab.Location = new System.Drawing.Point(15, 28);
+            this.dashLibraryTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dashLibraryTab.Name = "dashLibraryTab";
             this.dashLibraryTab.ShadowDecoration.Parent = this.dashLibraryTab;
-            this.dashLibraryTab.Size = new System.Drawing.Size(140, 3);
+            this.dashLibraryTab.Size = new System.Drawing.Size(140, 2);
             this.dashLibraryTab.TabIndex = 2;
             // 
             // btnRevision
@@ -271,17 +281,17 @@
             this.btnRevision.CheckedState.Parent = this.btnRevision;
             this.btnRevision.CustomImages.Parent = this.btnRevision;
             this.btnRevision.FillColor = System.Drawing.Color.White;
-            this.btnRevision.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F);
+            this.btnRevision.Font = new System.Drawing.Font("Montserrat Alternates", 10F);
             this.btnRevision.ForeColor = System.Drawing.Color.Black;
             this.btnRevision.HoverState.Parent = this.btnRevision;
             this.btnRevision.Location = new System.Drawing.Point(435, 0);
             this.btnRevision.Margin = new System.Windows.Forms.Padding(4);
             this.btnRevision.Name = "btnRevision";
             this.btnRevision.ShadowDecoration.Parent = this.btnRevision;
-            this.btnRevision.Size = new System.Drawing.Size(140, 35);
+            this.btnRevision.Size = new System.Drawing.Size(140, 34);
             this.btnRevision.TabIndex = 4;
             this.btnRevision.Text = "Revision";
-            this.btnRevision.TextOffset = new System.Drawing.Point(0, -2);
+            this.btnRevision.TextOffset = new System.Drawing.Point(0, -1);
             this.btnRevision.Click += new System.EventHandler(this.btnRevision_Click);
             // 
             // btnCampaign
@@ -291,17 +301,17 @@
             this.btnCampaign.CheckedState.Parent = this.btnCampaign;
             this.btnCampaign.CustomImages.Parent = this.btnCampaign;
             this.btnCampaign.FillColor = System.Drawing.Color.White;
-            this.btnCampaign.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F);
+            this.btnCampaign.Font = new System.Drawing.Font("Montserrat Alternates", 10F);
             this.btnCampaign.ForeColor = System.Drawing.Color.Black;
             this.btnCampaign.HoverState.Parent = this.btnCampaign;
             this.btnCampaign.Location = new System.Drawing.Point(295, 0);
             this.btnCampaign.Margin = new System.Windows.Forms.Padding(4);
             this.btnCampaign.Name = "btnCampaign";
             this.btnCampaign.ShadowDecoration.Parent = this.btnCampaign;
-            this.btnCampaign.Size = new System.Drawing.Size(140, 35);
+            this.btnCampaign.Size = new System.Drawing.Size(140, 34);
             this.btnCampaign.TabIndex = 3;
-            this.btnCampaign.Text = "Campagin";
-            this.btnCampaign.TextOffset = new System.Drawing.Point(0, -2);
+            this.btnCampaign.Text = "Study";
+            this.btnCampaign.TextOffset = new System.Drawing.Point(0, -1);
             this.btnCampaign.Click += new System.EventHandler(this.btnCampaign_Click);
             // 
             // btnCollection
@@ -311,17 +321,17 @@
             this.btnCollection.CheckedState.Parent = this.btnCollection;
             this.btnCollection.CustomImages.Parent = this.btnCollection;
             this.btnCollection.FillColor = System.Drawing.Color.White;
-            this.btnCollection.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F);
+            this.btnCollection.Font = new System.Drawing.Font("Montserrat Alternates", 10F);
             this.btnCollection.ForeColor = System.Drawing.Color.Black;
             this.btnCollection.HoverState.Parent = this.btnCollection;
             this.btnCollection.Location = new System.Drawing.Point(155, 0);
             this.btnCollection.Margin = new System.Windows.Forms.Padding(4);
             this.btnCollection.Name = "btnCollection";
             this.btnCollection.ShadowDecoration.Parent = this.btnCollection;
-            this.btnCollection.Size = new System.Drawing.Size(140, 35);
+            this.btnCollection.Size = new System.Drawing.Size(140, 34);
             this.btnCollection.TabIndex = 2;
             this.btnCollection.Text = "Collections";
-            this.btnCollection.TextOffset = new System.Drawing.Point(0, -2);
+            this.btnCollection.TextOffset = new System.Drawing.Point(0, -1);
             this.btnCollection.Click += new System.EventHandler(this.btnCollection_Click);
             // 
             // btnLib
@@ -333,7 +343,7 @@
             this.btnLib.CheckedState.Parent = this.btnLib;
             this.btnLib.CustomImages.Parent = this.btnLib;
             this.btnLib.FillColor = System.Drawing.Color.White;
-            this.btnLib.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLib.Font = new System.Drawing.Font("Montserrat Alternates", 10F);
             this.btnLib.ForeColor = System.Drawing.Color.Black;
             this.btnLib.HoverState.Parent = this.btnLib;
             this.btnLib.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -341,10 +351,10 @@
             this.btnLib.Margin = new System.Windows.Forms.Padding(4);
             this.btnLib.Name = "btnLib";
             this.btnLib.ShadowDecoration.Parent = this.btnLib;
-            this.btnLib.Size = new System.Drawing.Size(180, 35);
+            this.btnLib.Size = new System.Drawing.Size(180, 34);
             this.btnLib.TabIndex = 1;
             this.btnLib.Text = "Library";
-            this.btnLib.TextOffset = new System.Drawing.Point(0, -2);
+            this.btnLib.TextOffset = new System.Drawing.Point(0, -1);
             this.btnLib.Click += new System.EventHandler(this.btnLib_Click);
             // 
             // btnStatistic
@@ -356,17 +366,17 @@
             this.btnStatistic.CheckedState.Parent = this.btnStatistic;
             this.btnStatistic.CustomImages.Parent = this.btnStatistic;
             this.btnStatistic.FillColor = System.Drawing.Color.White;
-            this.btnStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistic.Font = new System.Drawing.Font("Montserrat Alternates", 10F);
             this.btnStatistic.ForeColor = System.Drawing.Color.Black;
             this.btnStatistic.HoverState.Parent = this.btnStatistic;
             this.btnStatistic.Location = new System.Drawing.Point(548, 0);
             this.btnStatistic.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatistic.Name = "btnStatistic";
             this.btnStatistic.ShadowDecoration.Parent = this.btnStatistic;
-            this.btnStatistic.Size = new System.Drawing.Size(180, 35);
+            this.btnStatistic.Size = new System.Drawing.Size(180, 34);
             this.btnStatistic.TabIndex = 5;
             this.btnStatistic.Text = "Statistics";
-            this.btnStatistic.TextOffset = new System.Drawing.Point(0, -2);
+            this.btnStatistic.TextOffset = new System.Drawing.Point(0, -1);
             this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
             // 
             // pnlTab
@@ -378,7 +388,7 @@
             this.pnlTab.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTab.Name = "pnlTab";
             this.pnlTab.ShadowDecoration.Parent = this.pnlTab;
-            this.pnlTab.Size = new System.Drawing.Size(1000, 520);
+            this.pnlTab.Size = new System.Drawing.Size(1000, 519);
             this.pnlTab.TabIndex = 0;
             // 
             // dashFix2
@@ -390,6 +400,7 @@
             this.dashFix2.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashFix2.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashFix2.Location = new System.Drawing.Point(151, 84);
+            this.dashFix2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dashFix2.Name = "dashFix2";
             this.dashFix2.ShadowDecoration.Parent = this.dashFix2;
             this.dashFix2.Size = new System.Drawing.Size(780, 2);
@@ -403,11 +414,71 @@
             this.dashFix1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashFix1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.dashFix1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.dashFix1.Location = new System.Drawing.Point(151, 51);
+            this.dashFix1.Location = new System.Drawing.Point(151, 50);
+            this.dashFix1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dashFix1.Name = "dashFix1";
             this.dashFix1.ShadowDecoration.Parent = this.dashFix1;
             this.dashFix1.Size = new System.Drawing.Size(780, 1);
             this.dashFix1.TabIndex = 1;
+            // 
+            // swDarkMode
+            // 
+            this.swDarkMode.CheckedState.BorderColor = System.Drawing.Color.Black;
+            this.swDarkMode.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.swDarkMode.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.swDarkMode.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.swDarkMode.CheckedState.Parent = this.swDarkMode;
+            this.swDarkMode.Location = new System.Drawing.Point(970, 68);
+            this.swDarkMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.swDarkMode.Name = "swDarkMode";
+            this.swDarkMode.ShadowDecoration.Parent = this.swDarkMode;
+            this.swDarkMode.Size = new System.Drawing.Size(35, 20);
+            this.swDarkMode.TabIndex = 23;
+            this.swDarkMode.UncheckedState.BorderColor = System.Drawing.Color.White;
+            this.swDarkMode.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.swDarkMode.UncheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(74)))), ((int)(((byte)(95)))));
+            this.swDarkMode.UncheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(74)))), ((int)(((byte)(95)))));
+            this.swDarkMode.UncheckedState.Parent = this.swDarkMode;
+            this.swDarkMode.CheckedChanged += new System.EventHandler(this.swDarkMode_CheckedChanged);
+            // 
+            // lbDarkMode
+            // 
+            this.lbDarkMode.AutoSize = true;
+            this.lbDarkMode.BackColor = System.Drawing.Color.Transparent;
+            this.lbDarkMode.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDarkMode.ForeColor = System.Drawing.Color.White;
+            this.lbDarkMode.Location = new System.Drawing.Point(945, 48);
+            this.lbDarkMode.Name = "lbDarkMode";
+            this.lbDarkMode.Size = new System.Drawing.Size(93, 19);
+            this.lbDarkMode.TabIndex = 24;
+            this.lbDarkMode.Text = "Dark mode";
+            // 
+            // btnTutorial
+            // 
+            this.btnTutorial.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.btnTutorial.CheckedState.Parent = this.btnTutorial;
+            this.btnTutorial.HoverState.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnTutorial.HoverState.Parent = this.btnTutorial;
+            this.btnTutorial.Image = ((System.Drawing.Image)(resources.GetObject("btnTutorial.Image")));
+            this.btnTutorial.ImageRotate = 0F;
+            this.btnTutorial.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnTutorial.Location = new System.Drawing.Point(56, 45);
+            this.btnTutorial.Name = "btnTutorial";
+            this.btnTutorial.PressedState.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnTutorial.PressedState.Parent = this.btnTutorial;
+            this.btnTutorial.Size = new System.Drawing.Size(54, 48);
+            this.btnTutorial.TabIndex = 25;
+            this.ttTutorial.SetToolTip(this.btnTutorial, "test");
+            this.btnTutorial.MouseHover += new System.EventHandler(this.btnTutorial_MouseHover);
+            // 
+            // ttTutorial
+            // 
+            this.ttTutorial.AutomaticDelay = 100;
+            this.ttTutorial.AutoPopDelay = 300000;
+            this.ttTutorial.InitialDelay = 100;
+            this.ttTutorial.ReshowDelay = 20;
+            this.ttTutorial.ShowAlways = true;
+            this.ttTutorial.ToolTipTitle = "Tutorial";
             // 
             // NavForm
             // 
@@ -415,11 +486,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.ClientSize = new System.Drawing.Size(1063, 650);
+            this.Controls.Add(this.btnTutorial);
+            this.Controls.Add(this.lbDarkMode);
+            this.Controls.Add(this.swDarkMode);
             this.Controls.Add(this.dashFix1);
             this.Controls.Add(this.dashFix2);
             this.Controls.Add(this.pnlTab);
             this.Controls.Add(this.pnlNavigation);
             this.Controls.Add(this.barTop);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -432,6 +507,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbIconNav)).EndInit();
             this.pnlNavigation.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -459,6 +535,10 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel dashRevisionTab;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel dashCampaignTab;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel dashCollectionTab;
+        private System.Windows.Forms.Label lbDarkMode;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch swDarkMode;
+        private Guna.UI2.WinForms.Guna2ImageButton btnTutorial;
+        private System.Windows.Forms.ToolTip ttTutorial;
     }
 }
 

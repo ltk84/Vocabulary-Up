@@ -14,6 +14,7 @@ namespace VocabularyUp
         private static User currentUser;
         private static List<FlashCard> mainFlashCard = new List<FlashCard>();
         private static List<Collection> allCollections = new List<Collection>();
+        private static List<Skin> ownSkin = new List<Skin>();
         private static string constr = @ConfigurationManager.AppSettings.Get("connectString");
 
         // Add collection
@@ -114,58 +115,66 @@ namespace VocabularyUp
         {
             allCollections.Clear();
             SqlConnection connection = new SqlConnection(constr);
-            connection.Open();
-
-            //Chuan bi cau lenh query viet bang SQL 
-            String sqlQuery = "select distinct ID_COLLECTION, COLLECTION_NAME from USER_FLASHCARD where ID_USER = " + currentUser.IdUser.ToString();
-            //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-
-            //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
-            SqlDataReader reader = command.ExecuteReader();
-
-            //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
-            while (reader.HasRows)
+            try
             {
-                if (reader.Read() == false) break;
+                connection.Open();
 
-                Collection c = new Collection(reader.GetInt32(0), reader.GetString(1), UpdateFlashCardOfCollection(reader.GetInt32(0)));
+                //Chuan bi cau lenh query viet bang SQL 
+                String sqlQuery = "select distinct ID_COLLECTION, COLLECTION_NAME from USER_FLASHCARD where ID_USER = " + currentUser.IdUser.ToString();
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
 
-                allCollections.Add(c);
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                SqlDataReader reader = command.ExecuteReader();
+
+                //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+
+                    Collection c = new Collection(reader.GetInt32(0), reader.GetString(1), UpdateFlashCardOfCollection(reader.GetInt32(0)));
+
+                    allCollections.Add(c);
+                }
             }
-
-            //if (allCollections.Count == 0)
-            //{
-            //    allCollections.Add(new Collection(0, "HOCED", UpdateFlashCardOfCollection(0)));
-            //    AddCollection("HOCED");
-            //    allCollections[0].ListFL.Add(new FlashCard(0, "Cover", "", "", ""));
-            //}
+            finally
+            {
+                connection.Close();
+            }
+            
         }
 
         public static List<FlashCard> UpdateFlashCardOfCollection(int idCollection)
         {
             List<FlashCard> flashCards = new List<FlashCard>();
-
             SqlConnection connection = new SqlConnection(constr);
-            connection.Open();
-
-            //Chuan bi cau lenh query viet bang SQL 
-            String sqlQuery = "select id_card, eng, vie, pronunciation, field from USER_FLASHCARD, flashcard where USER_FLASHCARD.ID_CARD = FLASHCARD.ID and ID_USER = " + currentUser.IdUser.ToString() + " and id_collection = " + idCollection.ToString();
-            //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
-            SqlCommand command = new SqlCommand(sqlQuery, connection);
-
-            //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
-            SqlDataReader reader = command.ExecuteReader();
-
-            //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
-            while (reader.HasRows)
+            try 
             {
-                if (reader.Read() == false) break;
-                FlashCard f = new FlashCard(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
+                connection.Open();
 
-                flashCards.Add(f);
+                //Chuan bi cau lenh query viet bang SQL 
+                String sqlQuery = "select id_card, eng, vie, pronunciation, field from USER_FLASHCARD, flashcard where USER_FLASHCARD.ID_CARD = FLASHCARD.ID and ID_USER = " + currentUser.IdUser.ToString() + " and id_collection = " + idCollection.ToString();
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                SqlDataReader reader = command.ExecuteReader();
+
+                //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    FlashCard f = new FlashCard(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
+
+                    flashCards.Add(f);
+                }
+                return flashCards;
             }
-            return flashCards;
+            finally
+            {
+                connection.Close();
+            }
+            
         }
 
         // CONNECT ĐẾN DATABASE ĐỂ LOAD REVISE FLASHCARD
@@ -212,7 +221,7 @@ namespace VocabularyUp
         }
 
         // CONNECT ĐẾN DATABASE ĐỂ LOAD MAIN FLASHCARD
-        public static void UpdateMainFlashCard(int currentTopic)
+        public static int UpdateMainFlashCard(int currentTopic)
         {
             mainFlashCard.Clear();
             string nameTopic = null;
@@ -274,6 +283,23 @@ namespace VocabularyUp
             {
                 //Dong ket noi sau khi thao tac ket thuc
                 connection.Close();
+            }
+
+            if (mainFlashCard.Count == 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+
+        public static void UpdateGameMainFlashCards()
+        {
+            mainFlashCard.Clear();
+            Random rd = new Random();
+            while (mainFlashCard.Count < 25)
+            {
+                int index = rd.Next(1, ManageUserAction.GetItemOfAllCollection(0).ListFL.Count);
+                mainFlashCard.Add(ManageUserAction.GetItemOfAllCollection(0).ListFL[index]);
             }
         }
         public static int CalculateProgress(int currentTopic, int id)
@@ -693,5 +719,274 @@ namespace VocabularyUp
             return mainFlashCard;
         }
         
+        public static void UpdateOwnCharacter()
+        {
+            ownSkin.Clear();
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                connection.Open();
+
+                //Chuan bi cau lenh query viet bang SQL 
+                String sqlQuery = "select c.ID, c.NAME, c.PRICE from USER_character u_c, CHARACTER c where u_c.id_char = c.id and ID_USER = " + currentUser.IdUser.ToString();
+
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai 
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
+                SqlDataReader reader = command.ExecuteReader();
+
+                //Su dung reader de doc tung dong du lieu va cho vao list allFlashCards 
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+
+                    Skin c = new Skin(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2));
+
+                    ownSkin.Add(c);
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+           
+        }
+
+        public static List<Skin> GetOwnCharacterList()
+        {
+            return ownSkin;
+        }
+
+        public static bool CheckExistCharacter(Skin ch)
+        {
+            foreach (var cha in ownSkin)
+            {
+                if (cha.ID == ch.ID)
+                    return true;
+            }
+            return false;
+        }
+
+        public static void AddToOwnCharacterList(string name)
+        {
+            foreach (var c in ManageSystem.GetAllCharacter())
+            {
+                if (c.Name == name)
+                {
+                    ownSkin.Add(c);
+                    InsertIntoOwnCharacter(c);
+                    return;
+                }
+            }
+        }
+
+        public static void InsertIntoOwnCharacter(Skin ch)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                connection.Open();
+                String sqlQuery = "insert into USER_CHARACTER (ID_USER, ID_CHAR) values(@ID_USER, @ID_CHARACTER)";
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID_USER", currentUser.IdUser);
+                command.Parameters.AddWithValue("@ID_CHARACTER", ch.ID);
+
+                int rs = command.ExecuteNonQuery();
+                if (rs != 1)
+                {
+                    throw new Exception("Failed Query");
+                }
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public static void LoadCurrency()
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                connection.Open();
+
+                String sqlQuery = "SELECT DIAMOND FROM USER_INFO WHERE ID_user = @ID";
+
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID", currentUser.IdUser);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+
+                    currentUser.Diamond = reader.GetInt32(0);
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public static int GetDiamond()
+        {
+            return currentUser.Diamond;
+        }
+        public static void UpdateDiamond(int d)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "UPDATE USER_INFO SET DIAMOND = @D WHERE ID_USER = @ID";
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@D", d);
+                command.Parameters.AddWithValue("@ID", currentUser.IdUser);
+
+                //Thuc hien cau truy van
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
+            currentUser.Diamond = d;
+        }
+        public static void UpdateDiamondAfterBuy(int num)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "UPDATE USER_INFO SET DIAMOND = @D WHERE ID_USER = @ID";
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@D", currentUser.Diamond - num);
+                command.Parameters.AddWithValue("@ID", currentUser.IdUser);
+
+                //Thuc hien cau truy van
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
+
+            currentUser.Diamond = currentUser.Diamond - num;
+        }
+
+        public static void LoadPlayerStat(int id, Player player)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                connection.Open();
+
+                String sqlQuery = "SELECT NAME, HEALTH, DAMAGE FROM CHARACTER WHERE ID = @ID";
+
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID", id);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    player.Name = reader.GetString(0);
+                    player.Health = reader.GetInt32(1);
+                    player.Damage = reader.GetInt32(2);
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public static void LoadPlayerMazeStat(int id, PlayerMaze player)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                connection.Open();
+
+                String sqlQuery = "SELECT NAME, HEALTH, DAMAGE FROM CHARACTER WHERE ID = @ID";
+
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@ID", id);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.HasRows)
+                {
+                    if (reader.Read() == false) break;
+                    player.Name = reader.GetString(0);
+                    player.Health = reader.GetInt32(1);
+                    player.Damage = reader.GetInt32(2);
+                }
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+
+        public static bool GetDarkMode()
+        {
+            return currentUser.DarkMode;
+        }
+        public static void ChangeDarkMode(bool check)
+        {
+            SqlConnection connection = new SqlConnection(constr);
+            try
+            {
+                //Mo ket noi
+                connection.Open();
+                //Chuan bi cau lenh query viet bang SQL
+                String sqlQuery = "UPDATE USER_INFO SET DARKMODE = @DARKMODE WHERE ID_USER = @ID";
+                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+                command.Parameters.AddWithValue("@DARKMODE", check);
+                command.Parameters.AddWithValue("@ID", currentUser.IdUser);
+
+                //Thuc hien cau truy van
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                //xu ly khi ket noi co van de
+                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+            }
+            finally
+            {
+                //Dong ket noi sau khi thao tac ket thuc
+                connection.Close();
+            }
+            currentUser.DarkMode = check;
+        }
     }
 }

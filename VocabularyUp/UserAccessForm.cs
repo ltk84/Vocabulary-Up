@@ -21,9 +21,11 @@ namespace VocabularyUp
         MailMessage msg;
         string verifiedCode;
         int iCountDown = 5;
+        IntroductionForm introduction;
         public UserAccessForm()
         {
             InitializeComponent();
+            DoubleBuffered = true;
             ManageSystem.ConnectDatabase();
         }
 
@@ -58,7 +60,9 @@ namespace VocabularyUp
             if (ManageSystem.CheckLoginIfValid(txtUsename_Login.Text, txtPassword_Login.Text))
             {
                 if (ManageSystem.CheckSignIn(txtUsename_Login.Text, encodedPassword))
-                    ToNavTab(ManageSystem.GetUserID(txtUsename_Login.Text));
+                {
+                    InitLoadingForm(ManageSystem.GetUserID(txtUsename_Login.Text));
+                }
                 else
                     MessageBox.Show("Username or Password is not correct", "Notification");
             }
@@ -87,10 +91,9 @@ namespace VocabularyUp
             {
                 if (ManageSystem.CheckSignUp(txtUsername_SignUp.Text, txtEmail_SignUp.Text, txtPassword_SignUp.Text, txtRePassword_SignUp.Text))
                 {
-                    
                     string encodedPassword = ManageSystem.EncryptPassword(txtPassword_SignUp.Text);
                     ManageSystem.AddUser(txtUsername_SignUp.Text, txtEmail_SignUp.Text, encodedPassword);
-                    ToNavTab(ManageSystem.GetUserID(txtUsername_SignUp.Text));
+                    InitLoadingForm(ManageSystem.GetUserID(txtUsername_SignUp.Text));
                 }
                 else
                     return;
@@ -139,55 +142,64 @@ namespace VocabularyUp
             ClearTextBox();
         }
 
+        
+
         private void btnCheckEmail_Click(object sender, EventArgs e)
         {
-            int idUser = ManageSystem.SearchEmail(txtCheckEmail.Text);
-            if (idUser == -1) MessageBox.Show("Email không tồn tại!", "Message",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            if (ManageSystem.CheckForInternetConnection())
+            {
+                int idUser = ManageSystem.SearchEmail(txtCheckEmail.Text);
+                if (idUser == -1) MessageBox.Show("Email không tồn tại!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+
+                    txtPassForget.Visible = true;
+                    txtRePassForget.Visible = true;
+                    txtValidateCode.Visible = true;
+                    lblBack.Visible = true;
+                    btnConfirm.Visible = true;
+                    txtCheckEmail.Visible = false;
+                    btnCheckEmail.Visible = false;
+                    this.AcceptButton = this.btnConfirm;
+                    ClearTextBox();
+                    string code = GenerateCode();
+                    string tk = "vocabularyup1903";
+                    string mk = "123456789vn";
+                    string port = "587";
+                    string SMTP = "smtp.gmail.com";
+                    string Messge = "Mã xác nhận của bạn là : " + code;
+                    string To = txtCheckEmail.Text;
+                    string cc = "";
+                    string subject = "Your Code";
+                    login = new NetworkCredential(tk, mk);
+                    client = new SmtpClient(SMTP);
+                    client.Port = Convert.ToInt32(port);
+                    client.EnableSsl = checkBox.Checked;
+                    client.Credentials = login;
+                    msg = new MailMessage { From = new MailAddress(tk + SMTP.Replace("smtp.", "@"), "Trung tâm Vocabulary-Up", Encoding.UTF8) };
+                    msg.To.Add(new MailAddress(To));
+                    if (!string.IsNullOrEmpty(cc))
+                        msg.To.Add(new MailAddress(cc));
+                    msg.Subject = subject;
+                    msg.Body = Messge;
+                    msg.BodyEncoding = Encoding.UTF8;
+                    msg.IsBodyHtml = true;
+                    msg.Priority = MailPriority.Normal;
+                    msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+                    client.SendCompleted += new SendCompletedEventHandler(SendOrPostCallback);
+                    string userstate = "Sending...";
+                    client.SendAsync(msg, userstate);
+                    verifiedCode = code;
+                    countDown.Start();
+                    countDownText.Start();
+                    btnCheckEmail.Enabled = false;
+                }
+            }
             else
             {
-
-                txtPassForget.Visible = true;
-                txtRePassForget.Visible = true;
-                txtValidateCode.Visible = true;
-                lblBack.Visible = true;
-                btnConfirm.Visible = true;
-                txtCheckEmail.Visible = false;
-                btnCheckEmail.Visible = false;
-                this.AcceptButton = this.btnConfirm;
-                ClearTextBox();
-                string code = GenerateCode();
-                string tk = "vocabularyup1903";
-                string mk = "123456789vn";
-                string port = "587";
-                string SMTP = "smtp.gmail.com";
-                string Messge = "Mã xác nhận của bạn là : " + code;
-                string To = txtCheckEmail.Text;
-                string cc = "";
-                string subject = "Your Code";
-                //     txtMessage.Text = "Mã xác nhận của bạn là : " + code.ToString();
-                login = new NetworkCredential(tk, mk);
-                client = new SmtpClient(SMTP);
-                client.Port = Convert.ToInt32(port);
-                client.EnableSsl = checkBox.Checked;
-                client.Credentials = login;
-                msg = new MailMessage { From = new MailAddress(tk + SMTP.Replace("smtp.", "@"), "Trung tâm Vocabulary-Up", Encoding.UTF8) };
-                msg.To.Add(new MailAddress(To));
-                if (!string.IsNullOrEmpty(cc))
-                    msg.To.Add(new MailAddress(cc));
-                msg.Subject = subject;
-                msg.Body = Messge;
-                msg.BodyEncoding = Encoding.UTF8;
-                msg.IsBodyHtml = true;
-                msg.Priority = MailPriority.Normal;
-                msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-                client.SendCompleted += new SendCompletedEventHandler(SendOrPostCallback);
-                string userstate = "Sending...";
-                client.SendAsync(msg, userstate);
-                verifiedCode = code;
-                countDown.Start();
-                countDownText.Start();
-                btnCheckEmail.Enabled = false;
-            }
+                MessageBox.Show("Kết nối có vấn đề!");
+            }    
+            
         }
 
         private void ClearForget()
@@ -250,7 +262,7 @@ namespace VocabularyUp
             {
                 ManageSystem.UpdateNewPassword(ManageSystem.GetUserID_Email(txtCheckEmail.Text), txtPassForget.Text);
                 ManageSystem.UpdateNewPasswordToDatabase(ManageSystem.GetUserID_Email(txtCheckEmail.Text), txtPassForget.Text);
-                MessageBox.Show("du ma m xong r do !");
+                MessageBox.Show("Done");
                 pnlForgetPass.Visible = false;
                 pnlUserLogin.Visible = true;
                 pnlSignup.Visible = false;
@@ -292,6 +304,24 @@ namespace VocabularyUp
                 lbCountDown.Show();
             CountDownLabel();
 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            introduction = new IntroductionForm();
+            introduction.ShowDialog();
+            this.Show();
+        }
+        private void InitLoadingForm(int currentID)
+        {
+            pnlUserLogin.Visible = true;
+            pnlSignup.Visible = false;
+            transitionPanel.HideSync(pnlSignup);
+            LoadingForm loadingForm = new LoadingForm(this, currentID);
+            loadingForm.Show();
+            this.Hide();
+            ClearTextBox();
         }
     }
 }

@@ -18,13 +18,30 @@ namespace VocabularyUp
         SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         private static int index = 0;
         FlashCard curFlashCard;
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
+        bool darkMode = false;
         public LibraryForm()
         {
             InitializeComponent();
+            darkMode = ManageUserAction.GetDarkMode();
+            if (darkMode)
+                UpdateTheme();
             this.KeyPreview = true;
             ManageSystem.InitLibrary();
             curFlashCard = ManageSystem.GetFlashCard(index);
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
+            InitAutoCompleteTextBox();
+        }
+
+        private void UpdateTheme()
+        {
+            this.pnlMainNav.BackColor = primary;
+            this.btnToCollection.FillColor = primary;
+            this.pnlTab.FillColor = primary;
+            this.pnlTab.FillColor2 = primary;
+            this.pnlTab.FillColor3 = primary;
+            this.pnlTab.FillColor4 = primary;
         }
 
         public void ChangeFlashCard(string content, int id)
@@ -32,7 +49,7 @@ namespace VocabularyUp
             try
             {
                 lbMain.Text = content;
-                pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
+                pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + id.ToString() + ".jpg");
             }
             catch (Exception)
             {
@@ -62,9 +79,17 @@ namespace VocabularyUp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            int iTemp = ManageSystem.SearchFlashCard(txtSearching.Text);
-            if (iTemp >= 0)
-                index = iTemp;
+            FlashCard fl = ManageSystem.SearchFlashCardEng(txtSearching.Text);
+            if (fl != null)
+                index = fl.IdCard;
+            else
+            {
+                fl = ManageSystem.SearchFlashCardVie(txtSearching.Text);
+                if (fl != null)
+                    index = fl.IdCard;
+                else
+                    return;
+            }
             curFlashCard = ManageSystem.GetFlashCard(index);
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
         }
@@ -95,14 +120,14 @@ namespace VocabularyUp
             string pronun = " " + curFlashCard.Eng;
             synthesizer.Rate = 1;
             synthesizer.Volume = 100;
-            timer1.Start();
+            timerSpeaker.Start();
             btnPronun.Enabled = false;
             synthesizer.Speak(pronun);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Stop();
+            timerSpeaker.Stop();
             btnPronun.Enabled = true;
         }
 
@@ -136,6 +161,19 @@ namespace VocabularyUp
         private void lbMain_Click(object sender, EventArgs e)
         {
             ChangeLabel();
+        }
+
+        private void InitAutoCompleteTextBox()
+        {
+            AutoCompleteStringCollection data = new AutoCompleteStringCollection();
+            for (int i = 0; i < ManageSystem.CountAllFlashCards(); i++)
+            {
+                data.Add(ManageSystem.GetFlashCard(i).Eng);
+                data.Add(ManageSystem.GetFlashCard(i).Viet);
+            }
+            txtSearching.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtSearching.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtSearching.AutoCompleteCustomSource = data;
         }
     }
 }

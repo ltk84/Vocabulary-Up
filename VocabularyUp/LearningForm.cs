@@ -14,6 +14,9 @@ namespace VocabularyUp
 {
     public partial class LearningForm : Form
     {
+        Color primary = Color.FromArgb(50, 74, 95);
+        Color secondary = Color.FromArgb(27, 42, 65);
+        bool darkMode = false;
         SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         private static int index = 0;
         List<FlashCard> flList = new List<FlashCard>();
@@ -21,24 +24,40 @@ namespace VocabularyUp
         CampaignForm campaignForm;
         FillBlankForm fillBQuiz;
         MultipleChoiceForm multiQuiz;
+        int time = 0;
+        
 
         public LearningForm(int currentTopic, CampaignForm campaignForm, FillBlankForm fillBquiz, MultipleChoiceForm multiQuiz)
         {
             InitializeComponent();
+            darkMode = ManageUserAction.GetDarkMode();
+            if (darkMode)
+                UpdateTheme();
             this.KeyPreview = true;
             this.campaignForm = campaignForm;
             this.fillBQuiz = fillBquiz;
             this.multiQuiz = multiQuiz;
             this.currentTopic = currentTopic;
-            //ManageUserAction.UpdateMainFlashCard(currentTopic);
             flList = ManageUserAction.GetMainFlashCards();
             LoadComboBox(); 
             ChangeFlashCard(flList[index].Eng, flList[index].IdCard);
         }
+
+        private void UpdateTheme()
+        {
+            this.pnlMainNav.BackColor = primary;
+            this.btnBack.Image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_icons") + "back_arrow_dark.png");
+            this.btnDone.Image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_icons") + "done_dark.png");
+            this.btnToCollection.FillColor = primary;
+            this.pnlTab.FillColor = primary;
+            this.pnlTab.FillColor2 = primary;
+            this.pnlTab.FillColor3 = primary;
+            this.pnlTab.FillColor4 = primary;
+        }
         public void ChangeFlashCard(string content, int id)
         {
             lbMain.Text = content;
-            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath") + id.ToString() + ".jpg");
+            pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + id.ToString() + ".jpg");
         }
 
         private void btnRight_Click(object sender, EventArgs e)
@@ -78,6 +97,7 @@ namespace VocabularyUp
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.campaignForm.Return();
+            this.timerLearning.Stop();
             this.multiQuiz.Close();
             this.fillBQuiz.Close();
             this.Close();
@@ -85,6 +105,11 @@ namespace VocabularyUp
 
         private void btnDone_Click(object sender, EventArgs e)
         {
+            timerLearning.Stop();
+            if (campaignForm.GetType() == 0)
+                this.fillBQuiz.StartTimer();
+            else
+                this.multiQuiz.StartTimer();
             this.Close();
         }
 
@@ -137,6 +162,32 @@ namespace VocabularyUp
         private void lbMain_Click(object sender, EventArgs e)
         {
             ChangeLabel();
+        }
+
+        private void timerLearning_Tick(object sender, EventArgs e)
+        {
+            time++;
+            lbTime.Text = (600 - time).ToString();
+            if (time < 590)
+            {
+                lbTime.ForeColor = Color.Black;
+            }
+            else
+            {
+                lbTime.ForeColor = Color.Red;
+            }
+            if (time == 600)
+            {
+                timerLearning.Stop();
+                multiQuiz.StartTimer();
+                fillBQuiz.StartTimer();
+                this.Close();
+            }
+        }
+
+        public void StartTimerLearning()
+        {
+            timerLearning.Start();
         }
     }
 }
