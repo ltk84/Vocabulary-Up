@@ -62,7 +62,6 @@ namespace VocabularyUp
                 if (ManageSystem.CheckSignIn(txtUsename_Login.Text, encodedPassword))
                 {
                     InitLoadingForm(ManageSystem.GetUserID(txtUsename_Login.Text));
-                    //ToNavTab(ManageSystem.GetUserID(txtUsename_Login.Text));
                 }
                 else
                     MessageBox.Show("Username or Password is not correct", "Notification");
@@ -95,7 +94,6 @@ namespace VocabularyUp
                     string encodedPassword = ManageSystem.EncryptPassword(txtPassword_SignUp.Text);
                     ManageSystem.AddUser(txtUsername_SignUp.Text, txtEmail_SignUp.Text, encodedPassword);
                     InitLoadingForm(ManageSystem.GetUserID(txtUsername_SignUp.Text));
-                    //ToNavTab(ManageSystem.GetUserID(txtUsername_SignUp.Text));
                 }
                 else
                     return;
@@ -144,55 +142,64 @@ namespace VocabularyUp
             ClearTextBox();
         }
 
+        
+
         private void btnCheckEmail_Click(object sender, EventArgs e)
         {
-            int idUser = ManageSystem.SearchEmail(txtCheckEmail.Text);
-            if (idUser == -1) MessageBox.Show("Email không tồn tại!", "Message",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            if (ManageSystem.CheckForInternetConnection())
+            {
+                int idUser = ManageSystem.SearchEmail(txtCheckEmail.Text);
+                if (idUser == -1) MessageBox.Show("Email không tồn tại!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+
+                    txtPassForget.Visible = true;
+                    txtRePassForget.Visible = true;
+                    txtValidateCode.Visible = true;
+                    lblBack.Visible = true;
+                    btnConfirm.Visible = true;
+                    txtCheckEmail.Visible = false;
+                    btnCheckEmail.Visible = false;
+                    this.AcceptButton = this.btnConfirm;
+                    ClearTextBox();
+                    string code = GenerateCode();
+                    string tk = "vocabularyup1903";
+                    string mk = "123456789vn";
+                    string port = "587";
+                    string SMTP = "smtp.gmail.com";
+                    string Messge = "Mã xác nhận của bạn là : " + code;
+                    string To = txtCheckEmail.Text;
+                    string cc = "";
+                    string subject = "Your Code";
+                    login = new NetworkCredential(tk, mk);
+                    client = new SmtpClient(SMTP);
+                    client.Port = Convert.ToInt32(port);
+                    client.EnableSsl = checkBox.Checked;
+                    client.Credentials = login;
+                    msg = new MailMessage { From = new MailAddress(tk + SMTP.Replace("smtp.", "@"), "Trung tâm Vocabulary-Up", Encoding.UTF8) };
+                    msg.To.Add(new MailAddress(To));
+                    if (!string.IsNullOrEmpty(cc))
+                        msg.To.Add(new MailAddress(cc));
+                    msg.Subject = subject;
+                    msg.Body = Messge;
+                    msg.BodyEncoding = Encoding.UTF8;
+                    msg.IsBodyHtml = true;
+                    msg.Priority = MailPriority.Normal;
+                    msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
+                    client.SendCompleted += new SendCompletedEventHandler(SendOrPostCallback);
+                    string userstate = "Sending...";
+                    client.SendAsync(msg, userstate);
+                    verifiedCode = code;
+                    countDown.Start();
+                    countDownText.Start();
+                    btnCheckEmail.Enabled = false;
+                }
+            }
             else
             {
-
-                txtPassForget.Visible = true;
-                txtRePassForget.Visible = true;
-                txtValidateCode.Visible = true;
-                lblBack.Visible = true;
-                btnConfirm.Visible = true;
-                txtCheckEmail.Visible = false;
-                btnCheckEmail.Visible = false;
-                this.AcceptButton = this.btnConfirm;
-                ClearTextBox();
-                string code = GenerateCode();
-                string tk = "vocabularyup1903";
-                string mk = "123456789vn";
-                string port = "587";
-                string SMTP = "smtp.gmail.com";
-                string Messge = "Mã xác nhận của bạn là : " + code;
-                string To = txtCheckEmail.Text;
-                string cc = "";
-                string subject = "Your Code";
-                //     txtMessage.Text = "Mã xác nhận của bạn là : " + code.ToString();
-                login = new NetworkCredential(tk, mk);
-                client = new SmtpClient(SMTP);
-                client.Port = Convert.ToInt32(port);
-                client.EnableSsl = checkBox.Checked;
-                client.Credentials = login;
-                msg = new MailMessage { From = new MailAddress(tk + SMTP.Replace("smtp.", "@"), "Trung tâm Vocabulary-Up", Encoding.UTF8) };
-                msg.To.Add(new MailAddress(To));
-                if (!string.IsNullOrEmpty(cc))
-                    msg.To.Add(new MailAddress(cc));
-                msg.Subject = subject;
-                msg.Body = Messge;
-                msg.BodyEncoding = Encoding.UTF8;
-                msg.IsBodyHtml = true;
-                msg.Priority = MailPriority.Normal;
-                msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-                client.SendCompleted += new SendCompletedEventHandler(SendOrPostCallback);
-                string userstate = "Sending...";
-                client.SendAsync(msg, userstate);
-                verifiedCode = code;
-                countDown.Start();
-                countDownText.Start();
-                btnCheckEmail.Enabled = false;
-            }
+                MessageBox.Show("Kết nối có vấn đề!");
+            }    
+            
         }
 
         private void ClearForget()

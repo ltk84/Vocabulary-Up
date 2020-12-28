@@ -319,7 +319,6 @@ namespace VocabularyUp
             btnMultipleChoice.ForeColor = foreColor;
             lbMultipleChoice.BackColor = primary;
             lbMultipleChoice.ForeColor = foreColor;
-            //btnFilBlank.FillColor = primary;
             btnFilBlank.FillColor = secondary;
             lbFillBlank.BackColor = secondary;
             lbFillBlank.ForeColor = Color.White;

@@ -167,8 +167,6 @@ namespace VocabularyUp
                         
                         if (monsters[i].IsBoss == true)
                         {
-
-                            //mediaPlayer.controls.stop();
                             mediaPlayer.URL = ConfigurationManager.AppSettings.Get("musicPath") + "BossFight.mp3";
                             mediaPlayer.controls.play();
                             OpenTrashTalk(i, "Mày đây rồi, thằng khốn! Chạy đâu cho thoát!", "Bố đã làm gì mày đâu?");
@@ -177,7 +175,6 @@ namespace VocabularyUp
                         }
                         else
                         {
-                            //mediaPlayer.controls.pause();
                             if (isCorrect >= 0)
                             {
                                 if (isCorrect == 1)
@@ -194,7 +191,6 @@ namespace VocabularyUp
 
                                     monsters.Remove(monsters[i]);
 
-                                    //this.Invalidate();
                                     ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
                                 }
                                 else
@@ -238,7 +234,6 @@ namespace VocabularyUp
 
                 if (isFinalRound == true)
                 {
-                    //mediaPlayer.controls.pause();
                     if (isCorrect >= 0)
                     {
                         if (isCorrect == 1)
@@ -391,7 +386,6 @@ namespace VocabularyUp
             timerQuestion.Start();
             pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 100);
 
-            //bullets.Add(player.Attack());
 
             this.Invalidate();
         }
@@ -562,18 +556,12 @@ namespace VocabularyUp
                     isCorrect = 1;
                     music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "correct.mp3";
                     music.controls.play();
-
-                    //mediaPlayer.URL = "WalkThroughGame.mp3";
-                    //mediaPlayer.controls.play();
                 }
                 else
                 {
                     isCorrect = 0;
                     music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "incorrect.mp3";
                     music.controls.play();
-
-                    //mediaPlayer.URL = "WalkThroughGame.mp3";
-                    //mediaPlayer.controls.play();
                 }
             }
 

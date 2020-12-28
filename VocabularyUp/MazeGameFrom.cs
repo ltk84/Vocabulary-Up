@@ -62,7 +62,6 @@ namespace VocabularyUp
             isWin = false;
             Point locationLast = new Point(panel12.Location.X, panel11.Location.Y+panel11.Height);
             this.DoubleBuffered = true;
-            //player.Location = locationLast;
         }
 
 
@@ -320,9 +319,7 @@ namespace VocabularyUp
                         }
                         else if (monsters[i].IsBoss == true)
                         {
-                            // mediaPlayer.controls.pause();
                             isBoss = true;
-                            //timerUpdate.Stop();
                             if (isCorrect == 1)
                             {
                                 isCorrect = -1;
@@ -331,22 +328,14 @@ namespace VocabularyUp
                                     monsters[i].IsDeath = true;
                                     monsters[i].Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Treasure/rip.png");
                                     
-                                    //isCorrect = 1;
                                 }
 
                                 timerUpdate.Start();
                             }
                             else if (isCorrect == 0)
                             {
-                                //int s = wall1.Location.X - (panel2.Location.X + panel2.Width);
-                                //Size size = new Size(s - 5, s - 5);
                                 currentHealth -= 1;
-                                //player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
-                                //isBossCorrect = -1;
-                                //isBoss = false;
                                 inFighting = false;
-                                //timerUpdate.Start();
-                                //isCorrect = -1;
                                 
                             }
 
@@ -372,8 +361,7 @@ namespace VocabularyUp
 
                         }
                         else
-                        {
-                            //mediaPlayer.controls.pause();
+                        {   
                             timerUpdate.Stop();
                             if (isCorrect >= 0)
                             {
@@ -399,13 +387,11 @@ namespace VocabularyUp
                                 if (currentHealth > 0)
                                 {
                                     ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
-                                    //currentQuiz++;
                                     guna2Transition.ShowSync(pnlQuestion);
                                     lbTimer.Text = (60).ToString();
                                     timerQuestion.Start();
                                 }
                                 time = 0;
-                                //pnlQuestion.Show();
                             }
                         }
 
@@ -425,7 +411,6 @@ namespace VocabularyUp
                             mediaPlayer.controls.stop();
                             music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "win1.mp3";
                             music.controls.play();
-                            //MessageBox.Show("Chục mừng bạn đã tìm ra đc khó báu cuối cùng và được 10 KiemCuong");
                                 
                             isWin = true;
                             btnClose.Show();
@@ -443,7 +428,6 @@ namespace VocabularyUp
                             music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "bonus.mp3";
                             music.controls.play();
                             treasures.Remove(treasures[i]);
-                            //MessageBox.Show("Khó báu cỏ, bạn được 1 kim cương!");
                             ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
 
                         }
@@ -591,18 +575,11 @@ namespace VocabularyUp
                             isBossCorrect++;
                         isCorrect = 1;
                         music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "correct.mp3";
-                        music.controls.play();
-
-                        //if (isBossCorrect == 5)
-                        //{
-                        //    mediaPlayer.URL = ConfigurationManager.AppSettings.Get("musicPath") + "MazeGame.mp3";
-                        //    mediaPlayer.controls.play();
-                        //}    
+                        music.controls.play();  
 
                     }
                     else
                     {
-                        //isBossCorrect = 0;
                         music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "incorrect.mp3";
                         music.controls.play();
                         isCorrect = 0;
@@ -628,10 +605,6 @@ namespace VocabularyUp
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 1;
-                //btnA.FillColor = Color.FromArgb(107, 216, 255);
-                //btnB.FillColor = Color.FromArgb(17, 223, 158);
-                //btnC.FillColor = Color.FromArgb(17, 223, 158);
-                //btnD.FillColor = Color.FromArgb(17, 223, 158);
                 btnA.BorderThickness = 5;
                 btnB.BorderThickness = 0;
                 btnC.BorderThickness = 0;
@@ -646,10 +619,6 @@ namespace VocabularyUp
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 2;
-                //btnB.FillColor = Color.FromArgb(107, 216, 255);
-                //btnA.FillColor = Color.FromArgb(17, 223, 158);
-                //btnC.FillColor = Color.FromArgb(17, 223, 158);
-                //btnD.FillColor = Color.FromArgb(17, 223, 158);
                 btnA.BorderThickness = 0;
                 btnB.BorderThickness = 5;
                 btnC.BorderThickness = 0;
@@ -664,10 +633,6 @@ namespace VocabularyUp
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 3;
-                //btnC.FillColor = Color.FromArgb(107, 216, 255);
-                //btnA.FillColor = Color.FromArgb(17, 223, 158);
-                //btnB.FillColor = Color.FromArgb(17, 223, 158);
-                //btnD.FillColor = Color.FromArgb(17, 223, 158);
                 btnA.BorderThickness = 0;
                 btnB.BorderThickness = 0;
                 btnC.BorderThickness = 5;
@@ -682,10 +647,6 @@ namespace VocabularyUp
             if (userChoices[currentQuiz].IsDone == false)
             {
                 userChoices[currentQuiz].Selected = 4;
-                //btnD.FillColor = Color.FromArgb(107, 216, 255);
-                //btnA.FillColor = Color.FromArgb(17, 223, 158);
-                //btnB.FillColor = Color.FromArgb(17, 223, 158);
-                //btnC.FillColor = Color.FromArgb(17, 223, 158);
                 btnA.BorderThickness = 0;
                 btnB.BorderThickness = 0;
                 btnC.BorderThickness = 0;
@@ -942,10 +903,6 @@ namespace VocabularyUp
             {
                 last10s.controls.pause();
                 timerQuestion.Stop();
-                //music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "lose1.mp3";
-                //music.controls.play();
-                //mediaPlayer.URL = "MazeGame.mp3";
-                //mediaPlayer.controls.play();
                 pnlQuestion.Hide();
                 currentHealth -= 1;
                 pnlQuestion.Hide();

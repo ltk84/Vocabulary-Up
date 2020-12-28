@@ -163,7 +163,6 @@ namespace VocabularyUp
                 ManageUserAction.RenameCollection(oldName, newName);
             }
             ManageUserAction.InitAllCollections();
-            //lvCollection.BeginInvoke(new MethodInvoker(() => UpdateListView()));
             
 
         }
@@ -185,7 +184,6 @@ namespace VocabularyUp
             CollectionLib library = new CollectionLib(this, idCollection);
             library.TopLevel = false;
             pnlCollection.Hide();
-            //pnlCollection.Controls.Clear();
             pnlTab.Controls.Clear();
             pnlTab.Controls.Add(library);
             library.FormBorderStyle = FormBorderStyle.None;
