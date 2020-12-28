@@ -544,6 +544,7 @@ namespace VocabularyUp
         private void btnReturn_Click(object sender, EventArgs e)
         {
             click.controls.play();
+            last10s.controls.stop();
             music.controls.stop();
             mediaPlayer.controls.stop();
             this.Close();
@@ -871,6 +872,7 @@ namespace VocabularyUp
         private void btnClose_Click(object sender, EventArgs e)
         {
             click.controls.play();
+            last10s.controls.stop();
             music.controls.stop();
             mediaPlayer.controls.stop();
             this.Close();
@@ -991,7 +993,7 @@ namespace VocabularyUp
             Size size = new Size(s-5,s-5);           
             Point location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
 
-            player = new PlayerMaze(image, location, size, 15);
+            player = new PlayerMaze(image, location, size, 10);
 
             ManageUserAction.LoadPlayerMazeStat(idSkin, player);
         }
