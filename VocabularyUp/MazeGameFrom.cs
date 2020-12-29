@@ -35,6 +35,7 @@ namespace VocabularyUp
         private bool isBoss;
         private bool isWin;
         private bool inFighting = false;
+        private Direction curDir;
         private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         private SoundPlayer soundPlayer= new SoundPlayer();
         private WMPLib.WindowsMediaPlayer mediaPlayer = new WMPLib.WindowsMediaPlayer();
@@ -79,25 +80,25 @@ namespace VocabularyUp
             switch (userChoices[currentQuiz].Correct)
             {
                 case 1:
-                    btnA.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnA.Text = questions[currentQuiz].GetFlashCard().Eng;
                     btnB.Text = questions[currentQuiz].FakeAnswers[0];
                     btnC.Text = questions[currentQuiz].FakeAnswers[1];
                     btnD.Text = questions[currentQuiz].FakeAnswers[2];
                     break;
                 case 2:
-                    btnB.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnB.Text = questions[currentQuiz].GetFlashCard().Eng;
                     btnA.Text = questions[currentQuiz].FakeAnswers[0];
                     btnC.Text = questions[currentQuiz].FakeAnswers[1];
                     btnD.Text = questions[currentQuiz].FakeAnswers[2];
                     break;
                 case 3:
-                    btnC.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnC.Text = questions[currentQuiz].GetFlashCard().Eng;
                     btnB.Text = questions[currentQuiz].FakeAnswers[0];
                     btnA.Text = questions[currentQuiz].FakeAnswers[1];
                     btnD.Text = questions[currentQuiz].FakeAnswers[2];
                     break;
                 case 4:
-                    btnD.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnD.Text = questions[currentQuiz].GetFlashCard().Eng;
                     btnB.Text = questions[currentQuiz].FakeAnswers[0];
                     btnC.Text = questions[currentQuiz].FakeAnswers[1];
                     btnA.Text = questions[currentQuiz].FakeAnswers[2];
@@ -124,28 +125,14 @@ namespace VocabularyUp
                 while (fakeAnswers.Count != 3)
                 {
                     int index;
-                    string vie = "a";
-                    if (ManageUserAction.GetMainFlashCards().Count > 3)
-                    {
-                        do
-                        {
-                            index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
-                            vie = ManageUserAction.GetMainFlashCards()[index].Viet;
-                        } while (vie == "");
+                    string eng = "";
 
-                    }
-                    else
-                    {
-                        do
-                        {
-                            index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
-                            vie = ManageUserAction.GetMainFlashCards()[index].Viet;
-                        } while (vie == "");
-                    }
+                    index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
+                    eng = ManageUserAction.GetMainFlashCards()[index].Eng;
 
-                    if (fakeAnswers.IndexOf(vie) < 0 && vie != ManageUserAction.GetMainFlashCards()[i].Viet)
+                    if (fakeAnswers.IndexOf(eng) < 0 && eng != ManageUserAction.GetMainFlashCards()[i].Eng)
                     {
-                        fakeAnswers.Add(vie);
+                        fakeAnswers.Add(eng);
                     }
                 }
                 Quiz q = new Quiz(ManageUserAction.GetMainFlashCards()[i]);
@@ -284,6 +271,18 @@ namespace VocabularyUp
                     default:
                         break;
                 }
+
+                // Lật hình của nhân vật theo hướng di chuyển
+                if (goLeft && curDir == Direction.Right)
+                {
+                    player.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                    curDir = Direction.Left;
+                }
+                else if (goRight && curDir != Direction.Right)
+                {
+                    player.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                    curDir = Direction.Right;
+                }
             }
         }
 
@@ -339,7 +338,7 @@ namespace VocabularyUp
                                 timerUpdate.Stop();
                                 if (currentHealth > 0)
                                 {
-                                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
                                     timerQuestion.Start();
                                     guna2Transition.ShowSync(pnlQuestion);
                                 }
@@ -381,7 +380,7 @@ namespace VocabularyUp
                             {
                                 if (currentHealth > 0)
                                 {
-                                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
                                     guna2Transition.ShowSync(pnlQuestion);
                                     lbTimer.Text = (60).ToString();
                                     timerQuestion.Start();
@@ -943,6 +942,8 @@ namespace VocabularyUp
             player = new PlayerMaze(image, location, size, 10);
 
             ManageUserAction.LoadPlayerMazeStat(idSkin, player);
+
+            curDir = Direction.Right;
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -965,9 +966,12 @@ namespace VocabularyUp
         public void OpenTrashTalk(int idMonster, string charTrashTalk, string monTrashTalk)
         {
             Form backgroundForm = new Form();
+            Image image = monsters[idMonster].Image;
+
             try
             {
-                using (trashTalking = new TrashTalkingForm(player.Image, monsters[idMonster].Image, charTrashTalk, monTrashTalk))
+                image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                using (trashTalking = new TrashTalkingForm(player.Image, image , charTrashTalk, monTrashTalk))
                 {
                     backgroundForm.StartPosition = FormStartPosition.Manual;
                     backgroundForm.FormBorderStyle = FormBorderStyle.None;

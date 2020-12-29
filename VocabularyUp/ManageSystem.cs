@@ -330,18 +330,52 @@ namespace VocabularyUp
             return users.Count();
         }
 
+        public static bool CheckStringIfValid(string s)
+        {
+            foreach (var c in s)
+            {
+                try
+                {
+                    int num = Convert.ToInt32(c);
+                    if (num < 48 || (num > 57 && num < 65) || (num > 90 && num < 97) || num > 123)
+                    {
+                        return false;
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Can not convert!");
+                    throw;
+                }
+                finally
+                {
+
+                }
+                
+            }
+            return true;
+        }
+
         // KIÊM TRA HỢP LỆ KHI ĐĂNG NHẬP
         public static bool CheckLoginIfValid(string username, string password)
         {
-            if (username == "" || password == "")
+            if (username == "" || password == "" || CheckStringIfValid(username) == false || CheckStringIfValid(password) == false)
             {
                 if (username == "")
                 {
                     MessageBox.Show("Username can not be empty", "Notification");
                 }
-                else
+                else if (password == "")
                 {
                     MessageBox.Show("Password can not be empty", "Notification");
+                }
+                else if (CheckStringIfValid(username) == false)
+                {
+                    MessageBox.Show("Username has invalid character", "Notification");
+                }
+                else
+                {
+                    MessageBox.Show("Password has invalid character", "Notification");
                 }
                 return false;
             }
@@ -372,16 +406,16 @@ namespace VocabularyUp
                 if (u.Username == username  || u.Email == email)
                 {
                     MessageBox.Show("Username or Email has existed", "Notification");
-                    return false;
                 }
                 else if (password != rePassword)
                 {
                     MessageBox.Show("Password is not match Repassword", "Notification");
-                    return false;
                 }
-
+                return false;
             }
+
             TaiKhoan = username;
+
             // Không trùng thì cho đăng ký
             return true;
         }
@@ -404,6 +438,24 @@ namespace VocabularyUp
             else if (!IsValidEmail(email))
             {
                 MessageBox.Show("Email is not valid", "Notification");
+                return false;
+            }
+
+            if (!CheckStringIfValid(username))
+            {
+                MessageBox.Show("Username has invalid character", "Notification");
+                return false;
+            }
+
+            if (!CheckStringIfValid(email))
+            {
+                MessageBox.Show("Email has invalid character", "Notification");
+                return false;
+            }
+
+            if (!CheckStringIfValid(password))
+            {
+                MessageBox.Show("Password has invalid character", "Notification");
                 return false;
             }
 

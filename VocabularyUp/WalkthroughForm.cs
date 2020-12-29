@@ -207,7 +207,7 @@ namespace VocabularyUp
                             { 
                                 inFighting = true;
                                 timerQuestion.Start();
-                                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                                ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
                                 
                                 pnlQuestion.Show();
                             }
@@ -380,7 +380,7 @@ namespace VocabularyUp
             pgbMonsterHealth.Value = 100;
 
             // Init questions.
-            ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+            ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
             guna2Transition1.ShowSync(pnlQuestion);
             pnlQuestion.Show();
             timerQuestion.Start();
@@ -412,6 +412,7 @@ namespace VocabularyUp
                 }
             }
         }
+
         public void ChangeFlashCard(string content, int id)
         {
             lbMain.Text = content;
@@ -420,6 +421,7 @@ namespace VocabularyUp
 
             isPress = 0;
         }
+
         private void InitAnswer()
         {
             Random rd = new Random();
@@ -428,25 +430,25 @@ namespace VocabularyUp
             switch (userChoices[currentQuiz].Correct)
             {
                 case 1:
-                    btnA.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnA.Text = questions[currentQuiz].GetFlashCard().Eng;
                     btnB.Text = questions[currentQuiz].FakeAnswers[0];
                     btnC.Text = questions[currentQuiz].FakeAnswers[1];
                     btnD.Text = questions[currentQuiz].FakeAnswers[2];
                     break;
                 case 2:
-                    btnB.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnB.Text = questions[currentQuiz].GetFlashCard().Eng;
                     btnA.Text = questions[currentQuiz].FakeAnswers[0];
                     btnC.Text = questions[currentQuiz].FakeAnswers[1];
                     btnD.Text = questions[currentQuiz].FakeAnswers[2];
                     break;
                 case 3:
-                    btnC.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnC.Text = questions[currentQuiz].GetFlashCard().Eng;
                     btnB.Text = questions[currentQuiz].FakeAnswers[0];
                     btnA.Text = questions[currentQuiz].FakeAnswers[1];
                     btnD.Text = questions[currentQuiz].FakeAnswers[2];
                     break;
                 case 4:
-                    btnD.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnD.Text = questions[currentQuiz].GetFlashCard().Eng;
                     btnB.Text = questions[currentQuiz].FakeAnswers[0];
                     btnC.Text = questions[currentQuiz].FakeAnswers[1];
                     btnA.Text = questions[currentQuiz].FakeAnswers[2];
@@ -464,19 +466,14 @@ namespace VocabularyUp
                 while (fakeAnswers.Count != 3)
                 {
                     int index;
-                    string vie = "a";
+                    string eng = "";
 
-                    do
-                    {
-                        index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
-                        vie = ManageUserAction.GetMainFlashCards()[index].Viet;
-                        if (ManageUserAction.GetMainFlashCards()[index].Eng == "Cover")
-                            MessageBox.Show("a");
-                    } while (ManageUserAction.GetMainFlashCards()[index].Eng == "Cover");
+                    index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
+                    eng = ManageUserAction.GetMainFlashCards()[index].Eng;
 
-                    if (fakeAnswers.IndexOf(vie) < 0 && vie != ManageUserAction.GetMainFlashCards()[i].Viet)
+                    if (fakeAnswers.IndexOf(eng) < 0 && eng != ManageUserAction.GetMainFlashCards()[i].Eng)
                     {
-                        fakeAnswers.Add(vie);
+                        fakeAnswers.Add(eng);
                     }
                 }
                 Quiz q = new Quiz(ManageUserAction.GetMainFlashCards()[i]);
@@ -825,7 +822,7 @@ namespace VocabularyUp
 
                 if (currentHealth > 0 && pgbMonsterHealth.Value > 0)
                 {
-                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
                     guna2Transition1.ShowSync(pnlQuestion);
                 }
 

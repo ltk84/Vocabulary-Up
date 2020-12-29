@@ -146,7 +146,7 @@ namespace VocabularyUp
         private void btnSaveEdit_Click(object sender, EventArgs e)
         {
             if (txtHoTen.Text == "")
-                MessageBox.Show("Bạn vui lòng điền đẩy đủ thông tin");
+                MessageBox.Show("Please fill in all the information!");
             else
             {
                 if (CheckValidName(txtHoTen.Text))
@@ -172,7 +172,7 @@ namespace VocabularyUp
                 }    
                 else
                 {
-                    MessageBox.Show("Họ tên không được chứ ký tự đặc biệt hoặc số.");
+                    MessageBox.Show("Name has invalid character and number!");
                 }
                 ClearTextbox();
             }
@@ -206,13 +206,17 @@ namespace VocabularyUp
         {
             if (txtOldPass.Text == "") 
                 MessageBox.Show("Password can not be empty");
+            else if (ManageSystem.CheckStringIfValid(txtOldPass.Text))
+                MessageBox.Show("Password can not have invalid character");
+            else if (ManageSystem.CheckStringIfValid(txtNewPass.Text))
+                MessageBox.Show("Password can not have invalid character");
             else
             {
                 string ePassword = ManageSystem.EncryptPassword(txtOldPass.Text);
                 if (!ManageSystem.Pass(ePassword)) { MessageBox.Show("Old password is not correct", "Thông báo"); }
                 else if (txtNewPass.Text == "") MessageBox.Show("Password can not be empty");
                 else if (txtNewPass.Text != txtReNewPass.Text) MessageBox.Show("Re-Password is not correct");
-                else if (txtNewPass.Text == txtOldPass.Text) MessageBox.Show("Không được dùng mật khẩu củ");
+                else if (txtNewPass.Text == txtOldPass.Text) MessageBox.Show("The new password is the same as the old password");
                 else
                 {
                     string TK = ManageSystem.TK();
