@@ -129,7 +129,6 @@
             this.lbTimer.TabIndex = 51;
             this.lbTimer.Text = "60";
             this.lbTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbTimer.Click += new System.EventHandler(this.lbTimer_Click);
             // 
             // btnConfirm
             // 

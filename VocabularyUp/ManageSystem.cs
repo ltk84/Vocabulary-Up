@@ -134,7 +134,6 @@ namespace VocabularyUp
                     command.Parameters.AddWithValue("@pass", password);
                     //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
                     int rs = command.ExecuteNonQuery();
-                    //command.ExecuteNonQuery();
                     //Su dung reader de doc tung dong du lieu
                     //va thuc hien thao tac xu ly mong muon voi du lieu doc len
                     if (rs != 1)
@@ -242,8 +241,6 @@ namespace VocabularyUp
             
 
         }
-
-
 
         // THÊM NHỮNG THÔNG TIN PHỤ CỦA USER VÀO TRONG DATABASE
         public static void AddUserInfoToDatabase(string email, string ngSinh, DateTime beginDate, string name,int totalWord, int hiWCount, int reWCount,string gioiTinh)
@@ -456,11 +453,7 @@ namespace VocabularyUp
             }
             else
                 MessageBox.Show("Kết nối có vấn đề!");
-
-
         }
-
-
 
         // LẤY ID CỦA USER THÔNG QUA USERNAME
         public static int GetUserID(string username)
@@ -555,7 +548,6 @@ namespace VocabularyUp
         {
             string encrytedPass = GetMd5HashWithMySecurityAlgo(md5Hash, newPass);
 
-            //string constr = @"Server=DESKTOP-52N97T0\SQLEXPRESS;Database=todo;User Id=sa;Password=*****;";
             SqlConnection connection = new SqlConnection(connString);
             try
             {
@@ -624,7 +616,6 @@ namespace VocabularyUp
 
         public static void InitCharacter(int currentId)
         {
-            
             SqlConnection connection = new SqlConnection(connString);
             try
             {

@@ -9,12 +9,14 @@ using System.Windows.Forms;
 namespace VocabularyUp
 {
     enum Direction1 { Up, Down, Left, Right };
+
     abstract class ImgMazeObject
     {
         Image image;
         Point location;
         Size size;
         int speed;
+
         protected ImgMazeObject(Image image, Point location, Size size, int speed)
         {
             this.image = image;
@@ -22,6 +24,7 @@ namespace VocabularyUp
             this.size = size;
             this.speed = speed;
         }
+
         public Image Image { get => image; set => image = value; }
         public Point Location { get => location; set => location = value; }
         public int X { get => location.X; set => location.X = value; }
@@ -35,6 +38,7 @@ namespace VocabularyUp
         {
             g.DrawImage(this.image, new Rectangle(this.location, this.size), new Rectangle(0, 0, this.image.Width, this.image.Height), GraphicsUnit.Pixel);
         }
+
         public void Move(Direction1 dir)
         {
             switch (dir)
@@ -55,6 +59,7 @@ namespace VocabularyUp
                     break;
             }
         }     
+
         public void HandleOutsideClient(Form f)
         {
                 int x = location.X;
@@ -75,7 +80,8 @@ namespace VocabularyUp
 
                 location.X = x;
                 location.Y = y;
-         }
+        }
+
         virtual public bool isCollision(ImgMazeObject obj)
         {
             return this.rec.IntersectsWith(obj.rec);

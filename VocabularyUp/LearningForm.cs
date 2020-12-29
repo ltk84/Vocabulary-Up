@@ -25,7 +25,6 @@ namespace VocabularyUp
         FillBlankForm fillBQuiz;
         MultipleChoiceForm multiQuiz;
         int time = 0;
-        
 
         public LearningForm(int currentTopic, CampaignForm campaignForm, FillBlankForm fillBquiz, MultipleChoiceForm multiQuiz)
         {
@@ -54,6 +53,7 @@ namespace VocabularyUp
             this.pnlTab.FillColor3 = primary;
             this.pnlTab.FillColor4 = primary;
         }
+
         public void ChangeFlashCard(string content, int id)
         {
             lbMain.Text = content;
@@ -118,6 +118,7 @@ namespace VocabularyUp
             timer1.Stop();
             btnPronun.Enabled = true;
         }
+
         public void LoadComboBox()
         {
             cbCollection.Items.Clear();
@@ -126,13 +127,13 @@ namespace VocabularyUp
                 cbCollection.Items.Add(ManageUserAction.GetItemOfAllCollection(i).NameCollection);
             }
         }
+
         public void AddFlashCard()
         {
             ManageUserAction.AddFlashCardToCollection(cbCollection.SelectedIndex + 1, flList[index]);
             ManageUserAction.AddFlashCardToDatabase(cbCollection.SelectedIndex + 1, cbCollection.SelectedItem.ToString(), flList[index]);
         }
         
-
         private void LearningForm_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Right)

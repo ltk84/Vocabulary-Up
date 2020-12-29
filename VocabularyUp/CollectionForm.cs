@@ -32,10 +32,10 @@ namespace VocabularyUp
             this.btnDel.FillColor = primary;
         }
 
-        public void LoadImageListView()
-        {
-            imageList1.Images.Add("Collection", Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_icons") + "book_80px.png"));
-        }
+        //public void LoadImageListView()
+        //{
+        //    imageList1.Images.Add("Collection", Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_icons") + "book_80px.png"));
+        //}
 
         public void LoadListView()
         {
@@ -166,6 +166,7 @@ namespace VocabularyUp
             
 
         }
+
         private void UpdateListView()
         {
             ManageUserAction.InitAllCollections();
@@ -179,6 +180,7 @@ namespace VocabularyUp
                 ToCollectionLib(ManageUserAction.GetCollectionId(lvCollection.SelectedItems[0].Text));
             }    
         }
+
         private void ToCollectionLib(int idCollection)
         {
             CollectionLib library = new CollectionLib(this, idCollection);
@@ -191,6 +193,7 @@ namespace VocabularyUp
             pnlTab.Show();
             library.Show();
         }
+
         public void ProShow()
         {
             this.Show();
@@ -198,6 +201,7 @@ namespace VocabularyUp
             pnlTab.Visible = false;
             pnlTab.Hide();
         }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchingText = txtSearching.Text;

@@ -33,10 +33,12 @@ namespace VocabularyUp
         public int V { get => v; set => v = value; }
 
         public Rectangle Rect { get => new Rectangle(this.location, this.size); }
+
         virtual public void Draw(Graphics g)
         {
             g.DrawImage(this.image, new Rectangle(this.location, this.size), new Rectangle(0, 0, this.image.Width, this.image.Height), GraphicsUnit.Pixel);
         }
+
         public void Move(Direction dir)
         {
             switch (dir)
@@ -89,7 +91,6 @@ namespace VocabularyUp
         virtual public Bullet Attack(int idWeapon)
         {
             Image image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_database") + "Fires/" + idWeapon.ToString() + ".png");
-            //Image image = Image.FromFile(@ConfigurationManager.AppSettings.Get("imgPath_database") + "Fires/bullet.png");
             return new Bullet(image, this.location, this.size, 100);
         }
     }

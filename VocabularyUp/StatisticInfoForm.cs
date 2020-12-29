@@ -58,18 +58,8 @@ namespace VocabularyUp
             lblHoTen.Text = a[1];
             lblGioiTinh.Text = a[2];
             lblGmail.Text = a[3];
-
         }
 
-        private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2CustomGradientPanel2_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
         private void ClearTextbox()
         {
             txtDate.Text = "";
@@ -79,6 +69,7 @@ namespace VocabularyUp
             txtNewPass.Text = "";
             txtReNewPass.Text = "";
         }
+
         private void btEditProfile_Click(object sender, EventArgs e)
         {
             pnlEdit.Visible = true;
@@ -96,15 +87,14 @@ namespace VocabularyUp
         {
             int a = ManageUserAction.GetItemOfAllCollection(0).ListFL.Count();
 
-
             int Level, Percent;
-
 
             Level = a / 50;
             Percent = a % 50;
 
             lbLevel.Text = Level.ToString();
             pbLevel.Value = Percent * 2;
+
             if (Level <= 1)
             {
                 lbCapBac.Text = "Beginner";
@@ -147,15 +137,14 @@ namespace VocabularyUp
             }
             else if (Level > 8)
             { 
-            lbCapBac.Text = "Challenge";
-            imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Master Vocab.png");
+                lbCapBac.Text = "Challenge";
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Master Vocab.png");
             }
 
         }
        
         private void btnSaveEdit_Click(object sender, EventArgs e)
         {
-
             if (txtHoTen.Text == "")
                 MessageBox.Show("Bạn vui lòng điền đẩy đủ thông tin");
             else
@@ -199,27 +188,6 @@ namespace VocabularyUp
             }
             return true;
         }
-        
-        //private bool CheckValidDate(string str)
-        //{
-        //    DateTime temp;
-        //    if (DateTime.TryParse(str, out temp))
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
-
-        //private bool CheckGender(string str)
-        //{
-        //    string male = "nam";
-        //    string female = "nữ";
-        //    if (str.ToLower() != male || str.ToLower() != female) return false;
-        //    else return true;
-        //}    
 
         private void btChangePass_Click(object sender, EventArgs e)
         {
@@ -236,8 +204,8 @@ namespace VocabularyUp
 
         private void btSavePassword_Click(object sender, EventArgs e)
         {
-
-            if (txtOldPass.Text == "") MessageBox.Show("Password can not be empty");
+            if (txtOldPass.Text == "") 
+                MessageBox.Show("Password can not be empty");
             else
             {
                 string ePassword = ManageSystem.EncryptPassword(txtOldPass.Text);
@@ -262,21 +230,9 @@ namespace VocabularyUp
                     pnlSavePass.Visible = false;
                     pnlSavePass.Enabled = false;
 
-
                     ClearTextbox();
-
                 }
             }
-        }
-
-        private void pnlSavePass_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblGmail_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

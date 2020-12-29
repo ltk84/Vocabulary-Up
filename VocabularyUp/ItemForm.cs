@@ -18,6 +18,7 @@ namespace VocabularyUp
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
         Color foreColor = Color.White;
+
         public ItemForm(ShopForm shop)
         {
             InitializeComponent();
@@ -53,9 +54,7 @@ namespace VocabularyUp
             int price = Int32.Parse(lbPrice.Text);
             if (shop.GetCurrentDiamond() >= price)
             {
-                //MessageBox.Show(this.lbName.Text);
                 ManageUserAction.AddToOwnCharacterList(lbName.Text);
-                //shop.LoadShop();
                 shop.LoadAllCharacter();
                 shop.UpdateDiamond(price);
             }

@@ -27,10 +27,12 @@ namespace VocabularyUp
             this.charTrashTalk = charTrashTalk;
             this.monTrashTalk = monTrashTalk;
         }
+
         private void LoadCharacter()
         {
             pbCharacter.Image = imgCharacter;
         }
+
         private void LoadMonster()
         {
             pbMonster.Image = imgMonster;
@@ -64,6 +66,7 @@ namespace VocabularyUp
         {
             Next();
         }
+
         private void Next()
         {
             if (lbTrashTalk.Text == monTrashTalk)

@@ -131,7 +131,6 @@
             this.pnlPersonalDetails.ShadowDecoration.Parent = this.pnlPersonalDetails;
             this.pnlPersonalDetails.Size = new System.Drawing.Size(451, 388);
             this.pnlPersonalDetails.TabIndex = 1;
-            this.pnlPersonalDetails.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel2_Paint);
             // 
             // btChangePass
             // 
@@ -260,7 +259,6 @@
             this.lblGmail.Size = new System.Drawing.Size(52, 19);
             this.lblGmail.TabIndex = 4;
             this.lblGmail.Text = "Gmail";
-            this.lblGmail.Click += new System.EventHandler(this.lblGmail_Click);
             // 
             // panel2
             // 
@@ -341,7 +339,6 @@
             this.pnlSavePass.Size = new System.Drawing.Size(451, 388);
             this.pnlSavePass.TabIndex = 15;
             this.pnlSavePass.Visible = false;
-            this.pnlSavePass.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSavePass_Paint);
             // 
             // guna2Button2
             // 
@@ -947,7 +944,6 @@
             this.pnlEdit.Size = new System.Drawing.Size(451, 388);
             this.pnlEdit.TabIndex = 6;
             this.pnlEdit.Visible = false;
-            this.pnlEdit.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2CustomGradientPanel2_Paint_1);
             // 
             // guna2CustomGradientPanel3
             // 

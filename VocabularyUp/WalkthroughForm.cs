@@ -386,7 +386,6 @@ namespace VocabularyUp
             timerQuestion.Start();
             pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 100);
 
-
             this.Invalidate();
         }
 
@@ -474,8 +473,6 @@ namespace VocabularyUp
                         if (ManageUserAction.GetMainFlashCards()[index].Eng == "Cover")
                             MessageBox.Show("a");
                     } while (ManageUserAction.GetMainFlashCards()[index].Eng == "Cover");
-
-
 
                     if (fakeAnswers.IndexOf(vie) < 0 && vie != ManageUserAction.GetMainFlashCards()[i].Viet)
                     {
@@ -584,8 +581,6 @@ namespace VocabularyUp
             btnC.BorderThickness = 0;
             btnD.BorderThickness = 0;
         }
-
-
 
         private void btnDetails_Click(object sender, EventArgs e)
         {

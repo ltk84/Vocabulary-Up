@@ -25,7 +25,6 @@ namespace VocabularyUp
         private int currentHealth = 0;
         private List<Quiz> questions = new List<Quiz>();
         private int isCorrect;
-        private Collection choosedCol;
         private List<UserChoice> userChoices = new List<UserChoice>();
         private int currentQuiz = 0;
         private int isPress = 0;
@@ -43,15 +42,14 @@ namespace VocabularyUp
         private WMPLib.WindowsMediaPlayer last10s = new WMPLib.WindowsMediaPlayer();
         private WMPLib.WindowsMediaPlayer click = new WMPLib.WindowsMediaPlayer();
 
-        public MazeGameFrom(int idCol, int idSkin)
+        public MazeGameFrom(int idSkin)
         {
             InitializeComponent();
             LoadBackGround();
             InitTreasure();
             InitMonster();
             ManageUserAction.UpdateGameMainFlashCards();
-            InitQuiz();            
-            InitCollecion(idCol);
+            InitQuiz();
             InitPlayer(idSkin);
             LoadMusic();
             timerUpdate.Start();
@@ -63,7 +61,6 @@ namespace VocabularyUp
             Point locationLast = new Point(panel12.Location.X, panel11.Location.Y+panel11.Height);
             this.DoubleBuffered = true;
         }
-
 
         private void LoadMusic()
         {
@@ -107,6 +104,7 @@ namespace VocabularyUp
                     break;
             }
         }
+
         public void ChangeFlashCard(string content, int id)
         {
             lbMain.Text = content;
@@ -115,12 +113,7 @@ namespace VocabularyUp
 
             isPress = 0;
         }
-        private void InitCollecion(int idCol)
-        {
-            
-            choosedCol = ManageUserAction.GetItemOfAllCollection(idCol);
-            
-        }
+
         private void InitQuiz()
         {
             for (int i = 0; i < ManageUserAction.GetMainFlashCards().Count; i++)
@@ -160,6 +153,7 @@ namespace VocabularyUp
                 questions.Add(q);
             }
         }
+
         private void InitMonster()
         {
             monsters = new List<MonsterMaze>();
@@ -260,6 +254,7 @@ namespace VocabularyUp
             treasures.Add(trea6);
             treasures.Add(treaLast);
         }
+
         private void PlayerMaze_PriviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             if (inFighting == false)
@@ -874,11 +869,6 @@ namespace VocabularyUp
             }
         }
 
-        private void lbTimer_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void timerQuestion_Tick(object sender, EventArgs e)
         {
             if (timerQuestion.Enabled == false)
@@ -1005,8 +995,6 @@ namespace VocabularyUp
                 backgroundForm.Dispose();
             }
         }
-
-
 
     }
 }

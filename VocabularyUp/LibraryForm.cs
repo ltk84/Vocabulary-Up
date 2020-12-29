@@ -21,6 +21,7 @@ namespace VocabularyUp
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
         bool darkMode = false;
+
         public LibraryForm()
         {
             InitializeComponent();
@@ -140,6 +141,7 @@ namespace VocabularyUp
             else if (e.KeyCode == Keys.Left)
                 btnLeft_Click(sender, e);
         }
+
         private void ChangeLabel()
         {
             if (lbMain.Text == curFlashCard.Eng)

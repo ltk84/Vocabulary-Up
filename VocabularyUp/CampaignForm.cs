@@ -78,8 +78,6 @@ namespace VocabularyUp
             MultipleChoiceForm multiQuiz = new MultipleChoiceForm(currentTopic, this);
             LearningForm learning = new LearningForm(currentTopic, this, fillBQuiz, multiQuiz);
 
-            
-
             learning.TopLevel = false;
             pnlTopicSelection.Hide();
             pnlCampaignCate.Controls.Add(learning);
@@ -103,7 +101,6 @@ namespace VocabularyUp
                 multiQuiz.FormBorderStyle = FormBorderStyle.None;
                 multiQuiz.Show();
             }
-            
         }
 
         public void InitResult(List<UserChoice> userChoices)

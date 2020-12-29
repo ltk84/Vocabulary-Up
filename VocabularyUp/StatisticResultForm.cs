@@ -61,14 +61,6 @@ namespace VocabularyUp
             pbClothing.Value = ManageUserAction.CalculateProgress(7, ID);
             pbTechnology.Value = ManageUserAction.CalculateProgress(8, ID);
         }
-        private void label7_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void pbar_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
