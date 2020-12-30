@@ -14,10 +14,11 @@ namespace VocabularyUp
         private string correctAns;
         private string answer;
 
-        public UserChoice(int selected, int correct)
+        public UserChoice(int selected, int correct, string correctAns)
         {
             this.selected = selected;
             this.correct = correct;
+            this.correctAns = correctAns;
         }
 
         public UserChoice(string correctAns, string answer)

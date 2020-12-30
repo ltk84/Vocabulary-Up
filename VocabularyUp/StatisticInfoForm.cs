@@ -158,7 +158,7 @@ namespace VocabularyUp
                         gender = "Nữ";
                     else
                         gender = "Bê đê";
-                        string TK = ManageSystem.TK();
+                    string TK = ManageSystem.TK();
                     int ID = ManageSystem.GetUserID(TK);
                     ManageSystem.AddInfoPersonal(ID, dtpNgaySinh.Value.ToString("dd/MM/yyyy"), txtHoTen.Text, gender);
                     MessageBox.Show("Save Succes!");

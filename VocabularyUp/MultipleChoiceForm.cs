@@ -138,10 +138,9 @@ namespace VocabularyUp
             Random rd = new Random();
             foreach (var item in questions)
             {
-                UserChoice u = new UserChoice(-1, rd.Next(1, 5));
+                UserChoice u = new UserChoice(-1, rd.Next(1, 5), item.GetFlashCard().Eng);
                 userChoices.Add(u);
             }
-              
         }
 
         private void InitQuiz()

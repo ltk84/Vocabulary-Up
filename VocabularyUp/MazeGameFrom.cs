@@ -75,7 +75,7 @@ namespace VocabularyUp
         private void InitAnswer()
         {
             Random rd = new Random();
-            UserChoice u = new UserChoice(-1, rd.Next(1, 5));
+            UserChoice u = new UserChoice(-1, rd.Next(1, 5), questions[currentQuiz].GetFlashCard().Eng);
             userChoices.Add(u);
             switch (userChoices[currentQuiz].Correct)
             {
@@ -348,7 +348,7 @@ namespace VocabularyUp
                                     isWin = false;
                                 }    
                                 time = 0;
-                                lbTimer.Text = (60).ToString();
+                                lbTimer.Text = (30).ToString();
                             }
                             
                             
@@ -382,15 +382,12 @@ namespace VocabularyUp
                                 {
                                     ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
                                     guna2Transition.ShowSync(pnlQuestion);
-                                    lbTimer.Text = (60).ToString();
+                                    lbTimer.Text = (30).ToString();
                                     timerQuestion.Start();
                                 }
                                 time = 0;
                             }
                         }
-
-
-
                     }
                 }
 
@@ -419,7 +416,7 @@ namespace VocabularyUp
                         }
                         else
                         {
-                            music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "bonus.mp3";
+                            music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "coin.mp3";
                             music.controls.play();
                             treasures.Remove(treasures[i]);
                             ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
@@ -874,13 +871,14 @@ namespace VocabularyUp
                 return;
 
             time++;
-            if (time == 49)
+            if (time == 19)
             {
                 last10s.URL = ConfigurationManager.AppSettings.Get("musicPath") + "10s.mp3";
+                last10s.settings.volume = 30;
                 last10s.controls.play();
             }    
-            lbTimer.Text = (60 - time).ToString();
-            if (time < 50)
+            lbTimer.Text = (30 - time).ToString();
+            if (time < 20)
             {
                 lbTimer.ForeColor = Color.Black;
             }
@@ -888,7 +886,7 @@ namespace VocabularyUp
             {
                 lbTimer.ForeColor = Color.Red;
             }
-            if (time == 60)
+            if (time == 30)
             {
                 last10s.controls.pause();
                 timerQuestion.Stop();
@@ -903,7 +901,6 @@ namespace VocabularyUp
                     Size size = new Size(s - 5, s - 5);
                     player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
                 }
-                isCorrect = 0;
                 currentQuiz++;
                 
                 time = 0;

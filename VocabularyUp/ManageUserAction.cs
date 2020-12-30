@@ -299,7 +299,8 @@ namespace VocabularyUp
             while (mainFlashCard.Count < 25)
             {
                 int index = rd.Next(1, ManageUserAction.GetItemOfAllCollection(0).ListFL.Count);
-                mainFlashCard.Add(ManageUserAction.GetItemOfAllCollection(0).ListFL[index]);
+                if (mainFlashCard.IndexOf(ManageUserAction.GetItemOfAllCollection(0).ListFL[index]) < 0)
+                    mainFlashCard.Add(ManageUserAction.GetItemOfAllCollection(0).ListFL[index]);
             }
         }
         public static int CalculateProgress(int currentTopic, int id)
@@ -557,10 +558,9 @@ namespace VocabularyUp
                 //Thuc hien cau truy van
                 command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                //xu ly khi ket noi co van de
-                //MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+                MessageBox.Show("Kết nối có vấn đề!");
             }
             finally
             {

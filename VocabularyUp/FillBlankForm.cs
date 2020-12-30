@@ -305,8 +305,8 @@ namespace VocabularyUp
             if (timerFillBlank.Enabled == false)
                 return;
             time++;
-            lbTimer.Text = (60 - time).ToString();
-            if (time < 50)
+            lbTimer.Text = (120 - time).ToString();
+            if (time < 110)
             {
                 lbTimer.ForeColor = Color.Black;
             }
@@ -314,7 +314,7 @@ namespace VocabularyUp
             {
                 lbTimer.ForeColor = Color.Red;
             }
-            if (time == 60)
+            if (time == 120)
             {
                 timerFillBlank.Stop();
                 campaignForm.Reset();

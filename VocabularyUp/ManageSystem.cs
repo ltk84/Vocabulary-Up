@@ -406,12 +406,13 @@ namespace VocabularyUp
                 if (u.Username == username  || u.Email == email)
                 {
                     MessageBox.Show("Username or Email has existed", "Notification");
+                    return false;
                 }
                 else if (password != rePassword)
                 {
                     MessageBox.Show("Password is not match Repassword", "Notification");
+                    return false;
                 }
-                return false;
             }
 
             TaiKhoan = username;
@@ -447,7 +448,7 @@ namespace VocabularyUp
                 return false;
             }
 
-            if (!CheckStringIfValid(email))
+            if (!CheckStringIfValid(email.Substring(0, email.IndexOf("@"))))
             {
                 MessageBox.Show("Email has invalid character", "Notification");
                 return false;
@@ -527,7 +528,6 @@ namespace VocabularyUp
                     return user.IdUser;
             }
             return -1;
-            // Cải tiến thuật toán bằng bảng băm
         }
 
         // MÃ HÓA PASSWORD

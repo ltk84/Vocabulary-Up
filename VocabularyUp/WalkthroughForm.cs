@@ -425,7 +425,7 @@ namespace VocabularyUp
         private void InitAnswer()
         {
             Random rd = new Random();
-            UserChoice u = new UserChoice(-1, rd.Next(1, 5));
+            UserChoice u = new UserChoice(-1, rd.Next(1, 5), questions[currentQuiz].GetFlashCard().Eng);
             userChoices.Add(u);
             switch (userChoices[currentQuiz].Correct)
             {
