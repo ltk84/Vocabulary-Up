@@ -22,9 +22,7 @@ C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\Vo
 C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.csproj.CopyComplete
 C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.exe
 C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.pdb
-C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.MainForm.resources
 C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.ReviseForm.resources
-C:\Everything2\UIT\LapTrinhTrucQuan\DoAn\Vocabulary-Up\VocabularyUp\obj\Debug\VocabularyUp.StatisticsForm.resources
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.exe.config
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.exe
 D:\UIT\PROJECTS\LAPTRINHTRUCQUAN\DOAN\Vocabulary-Up\VocabularyUp\bin\Debug\VocabularyUp.pdb

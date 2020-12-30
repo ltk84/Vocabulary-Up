@@ -47,6 +47,10 @@ namespace VocabularyUp
             this.guna2CustomGradientPanel2.FillColor2 = primary;
             this.guna2CustomGradientPanel2.FillColor3 = primary;
             this.guna2CustomGradientPanel2.FillColor4 = primary;
+            this.guna2CustomGradientPanel4.FillColor = primary;
+            this.guna2CustomGradientPanel4.FillColor2 = primary;
+            this.guna2CustomGradientPanel4.FillColor3 = primary;
+            this.guna2CustomGradientPanel4.FillColor4 = primary;
             this.guna2CustomGradientPanel3.FillColor = primary;
             this.guna2CustomGradientPanel3.FillColor2 = primary;
             this.guna2CustomGradientPanel3.FillColor3 = primary;

@@ -59,6 +59,7 @@ namespace VocabularyUp
             pnlQuestion.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - pnlQuestion.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2 - pnlQuestion.Height / 2 - 100);
             this.idSkin = idSkin;
             this.idWeapon = idWeapon;
+            pnlInfo.Location = new Point(Screen.PrimaryScreen.Bounds.Width - 20 - pnlInfo.Size.Width, 20);
         }
 
         private void LoadingMusic()
@@ -376,7 +377,7 @@ namespace VocabularyUp
 
             // Init boss's health.
             pgbMonsterHealth.Show();
-            pgbMonsterHealth.Location = new Point(Screen.PrimaryScreen.Bounds.Width - pgbMonsterHealth.Size.Width - 50, pnlInfo.Location.Y + pgbHealth.Location.Y);
+            pgbMonsterHealth.Location = new Point(50 + pgbMonsterHealth.Size.Width, pnlInfo.Location.Y + pgbHealth.Location.Y);
             pgbMonsterHealth.Value = 100;
 
             // Init questions.

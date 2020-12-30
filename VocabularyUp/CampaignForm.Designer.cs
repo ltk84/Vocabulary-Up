@@ -44,7 +44,6 @@
             this.lbPlants = new System.Windows.Forms.Label();
             this.lbAnimals = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,6 +58,8 @@
             this.btnPlants = new Guna.UI2.WinForms.Guna2Button();
             this.btnClothing = new Guna.UI2.WinForms.Guna2Button();
             this.btnFruits = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.pnlCampaignCate.SuspendLayout();
             this.pnlTopicSelection.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +81,8 @@
             // 
             this.pnlTopicSelection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlTopicSelection.BorderRadius = 20;
+            this.pnlTopicSelection.Controls.Add(this.guna2CustomGradientPanel4);
+            this.pnlTopicSelection.Controls.Add(this.guna2CustomGradientPanel2);
             this.pnlTopicSelection.Controls.Add(this.lbFillBlank);
             this.pnlTopicSelection.Controls.Add(this.lbMultipleChoice);
             this.pnlTopicSelection.Controls.Add(this.btnMultipleChoice);
@@ -93,7 +96,6 @@
             this.pnlTopicSelection.Controls.Add(this.lbPlants);
             this.pnlTopicSelection.Controls.Add(this.lbAnimals);
             this.pnlTopicSelection.Controls.Add(this.guna2CustomGradientPanel3);
-            this.pnlTopicSelection.Controls.Add(this.guna2CustomGradientPanel2);
             this.pnlTopicSelection.Controls.Add(this.label4);
             this.pnlTopicSelection.Controls.Add(this.guna2CustomGradientPanel1);
             this.pnlTopicSelection.Controls.Add(this.label3);
@@ -119,11 +121,11 @@
             // lbFillBlank
             // 
             this.lbFillBlank.AutoSize = true;
-            this.lbFillBlank.Font = new System.Drawing.Font("Montserrat Alternates", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFillBlank.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
             this.lbFillBlank.ForeColor = System.Drawing.Color.White;
-            this.lbFillBlank.Location = new System.Drawing.Point(130, 454);
+            this.lbFillBlank.Location = new System.Drawing.Point(664, 389);
             this.lbFillBlank.Name = "lbFillBlank";
-            this.lbFillBlank.Size = new System.Drawing.Size(91, 23);
+            this.lbFillBlank.Size = new System.Drawing.Size(74, 19);
             this.lbFillBlank.TabIndex = 27;
             this.lbFillBlank.Text = "Fill Blank";
             this.lbFillBlank.Click += new System.EventHandler(this.lbFillBlank_Click);
@@ -131,11 +133,11 @@
             // lbMultipleChoice
             // 
             this.lbMultipleChoice.AutoSize = true;
-            this.lbMultipleChoice.Font = new System.Drawing.Font("Montserrat Alternates", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMultipleChoice.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
             this.lbMultipleChoice.ForeColor = System.Drawing.Color.White;
-            this.lbMultipleChoice.Location = new System.Drawing.Point(105, 294);
+            this.lbMultipleChoice.Location = new System.Drawing.Point(360, 389);
             this.lbMultipleChoice.Name = "lbMultipleChoice";
-            this.lbMultipleChoice.Size = new System.Drawing.Size(150, 23);
+            this.lbMultipleChoice.Size = new System.Drawing.Size(121, 19);
             this.lbMultipleChoice.TabIndex = 26;
             this.lbMultipleChoice.Text = "Multiple Choice";
             this.lbMultipleChoice.Click += new System.EventHandler(this.lbMultipleChoice_Click);
@@ -153,12 +155,12 @@
             this.btnMultipleChoice.HoverState.Parent = this.btnMultipleChoice;
             this.btnMultipleChoice.Image = ((System.Drawing.Image)(resources.GetObject("btnMultipleChoice.Image")));
             this.btnMultipleChoice.ImageOffset = new System.Drawing.Point(0, -9);
-            this.btnMultipleChoice.ImageSize = new System.Drawing.Size(65, 65);
-            this.btnMultipleChoice.Location = new System.Drawing.Point(85, 186);
+            this.btnMultipleChoice.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnMultipleChoice.Location = new System.Drawing.Point(294, 336);
             this.btnMultipleChoice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMultipleChoice.Name = "btnMultipleChoice";
             this.btnMultipleChoice.ShadowDecoration.Parent = this.btnMultipleChoice;
-            this.btnMultipleChoice.Size = new System.Drawing.Size(184, 146);
+            this.btnMultipleChoice.Size = new System.Drawing.Size(253, 85);
             this.btnMultipleChoice.TabIndex = 10;
             this.btnMultipleChoice.Click += new System.EventHandler(this.btnMultipleChoice_Click);
             // 
@@ -173,13 +175,13 @@
             this.btnFilBlank.ForeColor = System.Drawing.Color.Black;
             this.btnFilBlank.HoverState.Parent = this.btnFilBlank;
             this.btnFilBlank.Image = ((System.Drawing.Image)(resources.GetObject("btnFilBlank.Image")));
-            this.btnFilBlank.ImageOffset = new System.Drawing.Point(0, -8);
-            this.btnFilBlank.ImageSize = new System.Drawing.Size(60, 60);
-            this.btnFilBlank.Location = new System.Drawing.Point(85, 344);
+            this.btnFilBlank.ImageOffset = new System.Drawing.Point(0, -6);
+            this.btnFilBlank.ImageSize = new System.Drawing.Size(45, 45);
+            this.btnFilBlank.Location = new System.Drawing.Point(574, 336);
             this.btnFilBlank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFilBlank.Name = "btnFilBlank";
             this.btnFilBlank.ShadowDecoration.Parent = this.btnFilBlank;
-            this.btnFilBlank.Size = new System.Drawing.Size(184, 146);
+            this.btnFilBlank.Size = new System.Drawing.Size(253, 85);
             this.btnFilBlank.TabIndex = 9;
             this.btnFilBlank.Click += new System.EventHandler(this.btnFilBlank_Click);
             // 
@@ -189,7 +191,7 @@
             this.lbTechnology.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbTechnology.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
             this.lbTechnology.ForeColor = System.Drawing.Color.White;
-            this.lbTechnology.Location = new System.Drawing.Point(822, 345);
+            this.lbTechnology.Location = new System.Drawing.Point(726, 288);
             this.lbTechnology.Name = "lbTechnology";
             this.lbTechnology.Size = new System.Drawing.Size(91, 19);
             this.lbTechnology.TabIndex = 25;
@@ -202,7 +204,7 @@
             this.lbClothing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbClothing.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
             this.lbClothing.ForeColor = System.Drawing.Color.White;
-            this.lbClothing.Location = new System.Drawing.Point(835, 257);
+            this.lbClothing.Location = new System.Drawing.Point(739, 200);
             this.lbClothing.Name = "lbClothing";
             this.lbClothing.Size = new System.Drawing.Size(69, 19);
             this.lbClothing.TabIndex = 24;
@@ -215,7 +217,7 @@
             this.lbSport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbSport.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
             this.lbSport.ForeColor = System.Drawing.Color.White;
-            this.lbSport.Location = new System.Drawing.Point(703, 345);
+            this.lbSport.Location = new System.Drawing.Point(607, 288);
             this.lbSport.Name = "lbSport";
             this.lbSport.Size = new System.Drawing.Size(47, 19);
             this.lbSport.TabIndex = 23;
@@ -228,7 +230,7 @@
             this.lbFoodaDrinks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbFoodaDrinks.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
             this.lbFoodaDrinks.ForeColor = System.Drawing.Color.White;
-            this.lbFoodaDrinks.Location = new System.Drawing.Point(674, 257);
+            this.lbFoodaDrinks.Location = new System.Drawing.Point(578, 200);
             this.lbFoodaDrinks.Name = "lbFoodaDrinks";
             this.lbFoodaDrinks.Size = new System.Drawing.Size(100, 19);
             this.lbFoodaDrinks.TabIndex = 22;
@@ -241,7 +243,7 @@
             this.lbJob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbJob.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
             this.lbJob.ForeColor = System.Drawing.Color.White;
-            this.lbJob.Location = new System.Drawing.Point(570, 345);
+            this.lbJob.Location = new System.Drawing.Point(474, 288);
             this.lbJob.Name = "lbJob";
             this.lbJob.Size = new System.Drawing.Size(34, 19);
             this.lbJob.TabIndex = 21;
@@ -254,7 +256,7 @@
             this.lbFruits.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbFruits.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
             this.lbFruits.ForeColor = System.Drawing.Color.White;
-            this.lbFruits.Location = new System.Drawing.Point(566, 257);
+            this.lbFruits.Location = new System.Drawing.Point(470, 200);
             this.lbFruits.Name = "lbFruits";
             this.lbFruits.Size = new System.Drawing.Size(48, 19);
             this.lbFruits.TabIndex = 20;
@@ -267,7 +269,7 @@
             this.lbPlants.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbPlants.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
             this.lbPlants.ForeColor = System.Drawing.Color.White;
-            this.lbPlants.Location = new System.Drawing.Point(422, 345);
+            this.lbPlants.Location = new System.Drawing.Point(326, 288);
             this.lbPlants.Name = "lbPlants";
             this.lbPlants.Size = new System.Drawing.Size(53, 19);
             this.lbPlants.TabIndex = 19;
@@ -280,7 +282,7 @@
             this.lbAnimals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.lbAnimals.Font = new System.Drawing.Font("Montserrat Alternates", 7.8F);
             this.lbAnimals.ForeColor = System.Drawing.Color.White;
-            this.lbAnimals.Location = new System.Drawing.Point(411, 257);
+            this.lbAnimals.Location = new System.Drawing.Point(315, 200);
             this.lbAnimals.Name = "lbAnimals";
             this.lbAnimals.Size = new System.Drawing.Size(68, 19);
             this.lbAnimals.TabIndex = 18;
@@ -294,26 +296,12 @@
             this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CustomGradientPanel3.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(581, 178);
+            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(294, 325);
             this.guna2CustomGradientPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
             this.guna2CustomGradientPanel3.ShadowDecoration.Parent = this.guna2CustomGradientPanel3;
-            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(149, 2);
+            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(533, 2);
             this.guna2CustomGradientPanel3.TabIndex = 16;
-            // 
-            // guna2CustomGradientPanel2
-            // 
-            this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(123, 173);
-            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.ShadowDecoration.Parent = this.guna2CustomGradientPanel2;
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(100, 2);
-            this.guna2CustomGradientPanel2.TabIndex = 15;
             // 
             // label4
             // 
@@ -321,7 +309,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Montserrat Alternates", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(186, 85);
+            this.label4.Location = new System.Drawing.Point(158, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(658, 33);
             this.label4.TabIndex = 15;
@@ -335,7 +323,7 @@
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.Black;
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.Black;
             this.guna2CustomGradientPanel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(474, 81);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(471, 81);
             this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
@@ -348,7 +336,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Montserrat Alternates ExtraBold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.label3.Location = new System.Drawing.Point(328, 23);
+            this.label3.Location = new System.Drawing.Point(325, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(349, 55);
             this.label3.TabIndex = 13;
@@ -357,13 +345,13 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(574, 136);
+            this.label1.Font = new System.Drawing.Font("Montserrat Alternates", 11F);
+            this.label1.Location = new System.Drawing.Point(121, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 39);
             this.label1.TabIndex = 12;
             this.label1.Text = "Category";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnConfirm
             // 
@@ -377,7 +365,7 @@
             this.btnConfirm.HoverState.Parent = this.btnConfirm;
             this.btnConfirm.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirm.Image")));
             this.btnConfirm.ImageSize = new System.Drawing.Size(50, 40);
-            this.btnConfirm.Location = new System.Drawing.Point(598, 418);
+            this.btnConfirm.Location = new System.Drawing.Point(504, 432);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
@@ -398,7 +386,7 @@
             this.btnTechnology.Image = ((System.Drawing.Image)(resources.GetObject("btnTechnology.Image")));
             this.btnTechnology.ImageOffset = new System.Drawing.Point(0, -8);
             this.btnTechnology.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnTechnology.Location = new System.Drawing.Point(811, 287);
+            this.btnTechnology.Location = new System.Drawing.Point(715, 230);
             this.btnTechnology.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTechnology.Name = "btnTechnology";
             this.btnTechnology.ShadowDecoration.Parent = this.btnTechnology;
@@ -409,13 +397,13 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Montserrat Alternates", 16.2F);
-            this.label2.Location = new System.Drawing.Point(78, 127);
+            this.label2.Font = new System.Drawing.Font("Montserrat Alternates", 11F);
+            this.label2.Location = new System.Drawing.Point(111, 325);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 46);
+            this.label2.Size = new System.Drawing.Size(163, 46);
             this.label2.TabIndex = 8;
             this.label2.Text = "Type";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnFoodaDrinks
             // 
@@ -430,7 +418,7 @@
             this.btnFoodaDrinks.Image = ((System.Drawing.Image)(resources.GetObject("btnFoodaDrinks.Image")));
             this.btnFoodaDrinks.ImageOffset = new System.Drawing.Point(0, -9);
             this.btnFoodaDrinks.ImageSize = new System.Drawing.Size(45, 45);
-            this.btnFoodaDrinks.Location = new System.Drawing.Point(670, 199);
+            this.btnFoodaDrinks.Location = new System.Drawing.Point(574, 142);
             this.btnFoodaDrinks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFoodaDrinks.Name = "btnFoodaDrinks";
             this.btnFoodaDrinks.ShadowDecoration.Parent = this.btnFoodaDrinks;
@@ -451,7 +439,7 @@
             this.btnSport.Image = ((System.Drawing.Image)(resources.GetObject("btnSport.Image")));
             this.btnSport.ImageOffset = new System.Drawing.Point(0, -9);
             this.btnSport.ImageSize = new System.Drawing.Size(45, 45);
-            this.btnSport.Location = new System.Drawing.Point(670, 287);
+            this.btnSport.Location = new System.Drawing.Point(574, 230);
             this.btnSport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSport.Name = "btnSport";
             this.btnSport.ShadowDecoration.Parent = this.btnSport;
@@ -472,7 +460,7 @@
             this.btnAnimals.Image = ((System.Drawing.Image)(resources.GetObject("btnAnimals.Image")));
             this.btnAnimals.ImageOffset = new System.Drawing.Point(2, -9);
             this.btnAnimals.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnAnimals.Location = new System.Drawing.Point(390, 199);
+            this.btnAnimals.Location = new System.Drawing.Point(294, 142);
             this.btnAnimals.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAnimals.Name = "btnAnimals";
             this.btnAnimals.ShadowDecoration.Parent = this.btnAnimals;
@@ -493,7 +481,7 @@
             this.btnJob.Image = ((System.Drawing.Image)(resources.GetObject("btnJob.Image")));
             this.btnJob.ImageOffset = new System.Drawing.Point(0, -9);
             this.btnJob.ImageSize = new System.Drawing.Size(45, 45);
-            this.btnJob.Location = new System.Drawing.Point(531, 287);
+            this.btnJob.Location = new System.Drawing.Point(435, 230);
             this.btnJob.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnJob.Name = "btnJob";
             this.btnJob.ShadowDecoration.Parent = this.btnJob;
@@ -514,7 +502,7 @@
             this.btnPlants.Image = ((System.Drawing.Image)(resources.GetObject("btnPlants.Image")));
             this.btnPlants.ImageOffset = new System.Drawing.Point(0, -9);
             this.btnPlants.ImageSize = new System.Drawing.Size(45, 45);
-            this.btnPlants.Location = new System.Drawing.Point(390, 287);
+            this.btnPlants.Location = new System.Drawing.Point(294, 230);
             this.btnPlants.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPlants.Name = "btnPlants";
             this.btnPlants.ShadowDecoration.Parent = this.btnPlants;
@@ -535,7 +523,7 @@
             this.btnClothing.Image = ((System.Drawing.Image)(resources.GetObject("btnClothing.Image")));
             this.btnClothing.ImageOffset = new System.Drawing.Point(0, -8);
             this.btnClothing.ImageSize = new System.Drawing.Size(45, 45);
-            this.btnClothing.Location = new System.Drawing.Point(811, 199);
+            this.btnClothing.Location = new System.Drawing.Point(715, 142);
             this.btnClothing.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClothing.Name = "btnClothing";
             this.btnClothing.ShadowDecoration.Parent = this.btnClothing;
@@ -556,13 +544,41 @@
             this.btnFruits.Image = ((System.Drawing.Image)(resources.GetObject("btnFruits.Image")));
             this.btnFruits.ImageOffset = new System.Drawing.Point(1, -8);
             this.btnFruits.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnFruits.Location = new System.Drawing.Point(531, 199);
+            this.btnFruits.Location = new System.Drawing.Point(435, 142);
             this.btnFruits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFruits.Name = "btnFruits";
             this.btnFruits.ShadowDecoration.Parent = this.btnFruits;
             this.btnFruits.Size = new System.Drawing.Size(112, 85);
             this.btnFruits.TabIndex = 2;
             this.btnFruits.Click += new System.EventHandler(this.btnFruits_Click);
+            // 
+            // guna2CustomGradientPanel2
+            // 
+            this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(218, 365);
+            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
+            this.guna2CustomGradientPanel2.ShadowDecoration.Parent = this.guna2CustomGradientPanel2;
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(49, 1);
+            this.guna2CustomGradientPanel2.TabIndex = 17;
+            // 
+            // guna2CustomGradientPanel4
+            // 
+            this.guna2CustomGradientPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.guna2CustomGradientPanel4.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.guna2CustomGradientPanel4.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
+            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(184, 168);
+            this.guna2CustomGradientPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
+            this.guna2CustomGradientPanel4.ShadowDecoration.Parent = this.guna2CustomGradientPanel4;
+            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(92, 1);
+            this.guna2CustomGradientPanel4.TabIndex = 28;
             // 
             // CampaignForm
             // 
@@ -598,7 +614,6 @@
         private Guna.UI2.WinForms.Guna2Button btnConfirm;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private System.Windows.Forms.Label label3;
@@ -612,5 +627,7 @@
         private System.Windows.Forms.Label lbAnimals;
         private System.Windows.Forms.Label lbMultipleChoice;
         private System.Windows.Forms.Label lbFillBlank;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel4;
     }
 }

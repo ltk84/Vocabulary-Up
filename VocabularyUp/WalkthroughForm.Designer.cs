@@ -39,6 +39,7 @@ namespace VocabularyUp
             this.pbDiamond = new System.Windows.Forms.PictureBox();
             this.pgbHealth = new VocabularyUp.SuperProgressBar();
             this.pnlQuestion = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbTimer = new System.Windows.Forms.Label();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
             this.btnB = new Guna.UI2.WinForms.Guna2Button();
@@ -82,11 +83,11 @@ namespace VocabularyUp
             this.pgbMonsterHealth = new VocabularyUp.SuperProgressBar();
             this.timerQuestion = new System.Windows.Forms.Timer(this.components);
             this.timerEffect = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconHealth)).BeginInit();
             this.pnlInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).BeginInit();
             this.pnlQuestion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.pnlFlashCard.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -98,7 +99,6 @@ namespace VocabularyUp
             ((System.ComponentModel.ISupportInitialize)(this.pbReturn)).BeginInit();
             this.pnlFinal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSound)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // timerUpdate
@@ -129,7 +129,7 @@ namespace VocabularyUp
             this.pnlInfo.Controls.Add(this.pgbHealth);
             this.pnlInfo.Controls.Add(this.pbIconHealth);
             this.guna2Transition1.SetDecoration(this.pnlInfo, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pnlInfo.Location = new System.Drawing.Point(27, 27);
+            this.pnlInfo.Location = new System.Drawing.Point(1185, 27);
             this.pnlInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlInfo.Name = "pnlInfo";
             this.pnlInfo.Size = new System.Drawing.Size(385, 110);
@@ -192,6 +192,18 @@ namespace VocabularyUp
             this.pnlQuestion.TabIndex = 6;
             this.pnlQuestion.Visible = false;
             this.pnlQuestion.VisibleChanged += new System.EventHandler(this.pnlQuestion_VisibleChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.pictureBox2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(620, 54);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 34);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 57;
+            this.pictureBox2.TabStop = false;
             // 
             // lbTimer
             // 
@@ -831,7 +843,7 @@ namespace VocabularyUp
             this.pbReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2Transition1.SetDecoration(this.pbReturn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pbReturn.Image = ((System.Drawing.Image)(resources.GetObject("pbReturn.Image")));
-            this.pbReturn.Location = new System.Drawing.Point(419, 42);
+            this.pbReturn.Location = new System.Drawing.Point(22, 11);
             this.pbReturn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbReturn.Name = "pbReturn";
             this.pbReturn.Size = new System.Drawing.Size(49, 41);
@@ -873,7 +885,7 @@ namespace VocabularyUp
             this.pbSound.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.pbSound, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pbSound.Image = ((System.Drawing.Image)(resources.GetObject("pbSound.Image")));
-            this.pbSound.Location = new System.Drawing.Point(427, 89);
+            this.pbSound.Location = new System.Drawing.Point(31, 73);
             this.pbSound.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbSound.Name = "pbSound";
             this.pbSound.Size = new System.Drawing.Size(40, 39);
@@ -902,18 +914,6 @@ namespace VocabularyUp
             this.timerEffect.Interval = 50;
             this.timerEffect.Tick += new System.EventHandler(this.timerEffect_Tick);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Transition1.SetDecoration(this.pictureBox2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(620, 54);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 34);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 57;
-            this.pictureBox2.TabStop = false;
-            // 
             // WalkthroughForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -930,7 +930,7 @@ namespace VocabularyUp
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WalkthroughForm";
             this.Text = "WalkthroughForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -940,6 +940,7 @@ namespace VocabularyUp
             this.pnlInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbDiamond)).EndInit();
             this.pnlQuestion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlFlashCard.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -951,7 +952,6 @@ namespace VocabularyUp
             ((System.ComponentModel.ISupportInitialize)(this.pbReturn)).EndInit();
             this.pnlFinal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbSound)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
