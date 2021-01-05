@@ -189,6 +189,17 @@ namespace VocabularyUp
             return true;
         }
 
+        private bool CheckValidPass(string str)
+        {
+            string invalid = ".,:;`'/+-(){}[]<>*&^%$#@!?~/\\=\t\n";
+            for (int i = 0; i < invalid.Length; i++)
+            {
+                if (str.Contains(invalid[i]))
+                    return false;
+            }
+            return true;
+        }
+
         private void btChangePass_Click(object sender, EventArgs e)
         {
             pnlEdit.Visible = false;
@@ -204,11 +215,11 @@ namespace VocabularyUp
 
         private void btSavePassword_Click(object sender, EventArgs e)
         {
-            if (txtOldPass.Text == "") 
+            if (txtOldPass.Text == "")
                 MessageBox.Show("Password can not be empty");
-            else if (ManageSystem.CheckStringIfValid(txtOldPass.Text))
+            else if (CheckValidPass(txtOldPass.Text) == false)
                 MessageBox.Show("Password can not have invalid character");
-            else if (ManageSystem.CheckStringIfValid(txtNewPass.Text))
+            else if (CheckValidPass(txtNewPass.Text) == false)
                 MessageBox.Show("Password can not have invalid character");
             else
             {

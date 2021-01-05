@@ -901,6 +901,7 @@ namespace VocabularyUp
                     Size size = new Size(s - 5, s - 5);
                     player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
                 }
+                last10s.controls.stop();
                 currentQuiz++;
                 
                 time = 0;
@@ -912,7 +913,7 @@ namespace VocabularyUp
             click.controls.play();
             if (sound == 1)
             {
-                pictureBox1.Image = Image.FromFile("../../icons/sound-off.png");
+                pictureBox1.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_icons") + "sound-off.png");
                 mediaPlayer.settings.volume = 0;
                 music.settings.volume = 0;
                 last10s.settings.volume = 0;
@@ -920,8 +921,7 @@ namespace VocabularyUp
             }
             else
             {
-              
-                pictureBox1.Image = Image.FromFile("../../icons/sound.png");
+                pictureBox1.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_icons") + "sound.png");
                 mediaPlayer.settings.volume = 20;
                 music.settings.volume = 100;
                 last10s.settings.volume = 20;

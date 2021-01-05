@@ -725,7 +725,7 @@ namespace VocabularyUp
             click.controls.play();
             if (sound == 1)
             {
-                pbSound.Image = Image.FromFile("../../icons/sound-off.png");
+                pbSound.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_icons") + "sound-off.png");
                 mediaPlayer.settings.volume = 0;
                 music.settings.volume = 0;
                 last10s.settings.volume = 0;
@@ -735,8 +735,7 @@ namespace VocabularyUp
             }
             else
             {
-
-                pbSound.Image = Image.FromFile("../../icons/sound.png");
+                pbSound.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_icons") + "sound.png");
                 mediaPlayer.settings.volume = 10;
                 music.settings.volume = 100;
                 last10s.settings.volume = 10;
@@ -789,6 +788,7 @@ namespace VocabularyUp
                     timerUpdate.Start();
                 }
                 currentQuiz++;
+                last10s.controls.stop();
                 time = 0;
             }
         }
