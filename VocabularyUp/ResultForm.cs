@@ -27,6 +27,7 @@ namespace VocabularyUp
             this.panel = panel;
             this.userChoices = userChoices;
         }
+
         private void UpdateTheme()
         {
             if (darkMode)
@@ -82,7 +83,6 @@ namespace VocabularyUp
             details.TopLevel = false;
             this.pnlResultForm.Hide();
             this.Controls.Add(details);
-           // details.TopMost = true;
             details.FormBorderStyle = FormBorderStyle.None;
             details.Show();
         }

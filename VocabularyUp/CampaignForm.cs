@@ -47,6 +47,10 @@ namespace VocabularyUp
             this.guna2CustomGradientPanel2.FillColor2 = primary;
             this.guna2CustomGradientPanel2.FillColor3 = primary;
             this.guna2CustomGradientPanel2.FillColor4 = primary;
+            this.guna2CustomGradientPanel4.FillColor = primary;
+            this.guna2CustomGradientPanel4.FillColor2 = primary;
+            this.guna2CustomGradientPanel4.FillColor3 = primary;
+            this.guna2CustomGradientPanel4.FillColor4 = primary;
             this.guna2CustomGradientPanel3.FillColor = primary;
             this.guna2CustomGradientPanel3.FillColor2 = primary;
             this.guna2CustomGradientPanel3.FillColor3 = primary;
@@ -78,8 +82,6 @@ namespace VocabularyUp
             MultipleChoiceForm multiQuiz = new MultipleChoiceForm(currentTopic, this);
             LearningForm learning = new LearningForm(currentTopic, this, fillBQuiz, multiQuiz);
 
-            
-
             learning.TopLevel = false;
             pnlTopicSelection.Hide();
             pnlCampaignCate.Controls.Add(learning);
@@ -103,7 +105,6 @@ namespace VocabularyUp
                 multiQuiz.FormBorderStyle = FormBorderStyle.None;
                 multiQuiz.Show();
             }
-            
         }
 
         public void InitResult(List<UserChoice> userChoices)

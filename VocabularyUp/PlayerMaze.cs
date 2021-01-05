@@ -19,5 +19,6 @@ namespace VocabularyUp
         public string Name { get => name; set => name = value; }
         public int Health { get => health; set => health = value; }
         public int Damage { get => damage; set => damage = value; }
+        
     }
 }

@@ -23,11 +23,8 @@ namespace VocabularyUp
             this.DoubleBuffered = true;
         }
 
-
-
         private void Timer_Tick(object sender, EventArgs e)
         {
-
             pbLoading.Value += 1;
             lbPercentLoading.Text = pbLoading.Value.ToString();
             if (pbLoading.Value == 100)
@@ -35,15 +32,15 @@ namespace VocabularyUp
                 ToNavTab(ID);
                 this.Close();
             }
-
         }
+
         private void ToNavTab(int currentID)
         {
 
             NavForm navTab = new NavForm(userAccess, currentID);
             navTab.Show();
             this.Hide();
-
         }
+
     }
 }

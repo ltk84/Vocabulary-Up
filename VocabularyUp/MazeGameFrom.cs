@@ -25,7 +25,6 @@ namespace VocabularyUp
         private int currentHealth = 0;
         private List<Quiz> questions = new List<Quiz>();
         private int isCorrect;
-        private Collection choosedCol;
         private List<UserChoice> userChoices = new List<UserChoice>();
         private int currentQuiz = 0;
         private int isPress = 0;
@@ -36,6 +35,7 @@ namespace VocabularyUp
         private bool isBoss;
         private bool isWin;
         private bool inFighting = false;
+        private Direction curDir;
         private SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         private SoundPlayer soundPlayer= new SoundPlayer();
         private WMPLib.WindowsMediaPlayer mediaPlayer = new WMPLib.WindowsMediaPlayer();
@@ -43,15 +43,14 @@ namespace VocabularyUp
         private WMPLib.WindowsMediaPlayer last10s = new WMPLib.WindowsMediaPlayer();
         private WMPLib.WindowsMediaPlayer click = new WMPLib.WindowsMediaPlayer();
 
-        public MazeGameFrom(int idCol, int idSkin)
+        public MazeGameFrom(int idSkin)
         {
             InitializeComponent();
             LoadBackGround();
             InitTreasure();
             InitMonster();
             ManageUserAction.UpdateGameMainFlashCards();
-            InitQuiz();            
-            InitCollecion(idCol);
+            InitQuiz();
             InitPlayer(idSkin);
             LoadMusic();
             timerUpdate.Start();
@@ -63,7 +62,6 @@ namespace VocabularyUp
             Point locationLast = new Point(panel12.Location.X, panel11.Location.Y+panel11.Height);
             this.DoubleBuffered = true;
         }
-
 
         private void LoadMusic()
         {
@@ -77,36 +75,37 @@ namespace VocabularyUp
         private void InitAnswer()
         {
             Random rd = new Random();
-            UserChoice u = new UserChoice(-1, rd.Next(1, 5));
+            UserChoice u = new UserChoice(-1, rd.Next(1, 5), questions[currentQuiz].GetFlashCard().Eng);
             userChoices.Add(u);
             switch (userChoices[currentQuiz].Correct)
             {
                 case 1:
-                    btnA.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnA.Text = questions[currentQuiz].GetFlashCard().Eng;
                     btnB.Text = questions[currentQuiz].FakeAnswers[0];
                     btnC.Text = questions[currentQuiz].FakeAnswers[1];
                     btnD.Text = questions[currentQuiz].FakeAnswers[2];
                     break;
                 case 2:
-                    btnB.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnB.Text = questions[currentQuiz].GetFlashCard().Eng;
                     btnA.Text = questions[currentQuiz].FakeAnswers[0];
                     btnC.Text = questions[currentQuiz].FakeAnswers[1];
                     btnD.Text = questions[currentQuiz].FakeAnswers[2];
                     break;
                 case 3:
-                    btnC.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnC.Text = questions[currentQuiz].GetFlashCard().Eng;
                     btnB.Text = questions[currentQuiz].FakeAnswers[0];
                     btnA.Text = questions[currentQuiz].FakeAnswers[1];
                     btnD.Text = questions[currentQuiz].FakeAnswers[2];
                     break;
                 case 4:
-                    btnD.Text = questions[currentQuiz].GetFlashCard().Viet;
+                    btnD.Text = questions[currentQuiz].GetFlashCard().Eng;
                     btnB.Text = questions[currentQuiz].FakeAnswers[0];
                     btnC.Text = questions[currentQuiz].FakeAnswers[1];
                     btnA.Text = questions[currentQuiz].FakeAnswers[2];
                     break;
             }
         }
+
         public void ChangeFlashCard(string content, int id)
         {
             lbMain.Text = content;
@@ -115,12 +114,7 @@ namespace VocabularyUp
 
             isPress = 0;
         }
-        private void InitCollecion(int idCol)
-        {
-            
-            choosedCol = ManageUserAction.GetItemOfAllCollection(idCol);
-            
-        }
+
         private void InitQuiz()
         {
             for (int i = 0; i < ManageUserAction.GetMainFlashCards().Count; i++)
@@ -131,28 +125,14 @@ namespace VocabularyUp
                 while (fakeAnswers.Count != 3)
                 {
                     int index;
-                    string vie = "a";
-                    if (ManageUserAction.GetMainFlashCards().Count > 3)
-                    {
-                        do
-                        {
-                            index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
-                            vie = ManageUserAction.GetMainFlashCards()[index].Viet;
-                        } while (vie == "");
+                    string eng = "";
 
-                    }
-                    else
-                    {
-                        do
-                        {
-                            index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
-                            vie = ManageUserAction.GetMainFlashCards()[index].Viet;
-                        } while (vie == "");
-                    }
+                    index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
+                    eng = ManageUserAction.GetMainFlashCards()[index].Eng;
 
-                    if (fakeAnswers.IndexOf(vie) < 0 && vie != ManageUserAction.GetMainFlashCards()[i].Viet)
+                    if (fakeAnswers.IndexOf(eng) < 0 && eng != ManageUserAction.GetMainFlashCards()[i].Eng)
                     {
-                        fakeAnswers.Add(vie);
+                        fakeAnswers.Add(eng);
                     }
                 }
                 Quiz q = new Quiz(ManageUserAction.GetMainFlashCards()[i]);
@@ -160,6 +140,7 @@ namespace VocabularyUp
                 questions.Add(q);
             }
         }
+
         private void InitMonster()
         {
             monsters = new List<MonsterMaze>();
@@ -260,6 +241,7 @@ namespace VocabularyUp
             treasures.Add(trea6);
             treasures.Add(treaLast);
         }
+
         private void PlayerMaze_PriviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             if (inFighting == false)
@@ -288,6 +270,18 @@ namespace VocabularyUp
                         break;
                     default:
                         break;
+                }
+
+                // Lật hình của nhân vật theo hướng di chuyển
+                if (goLeft && curDir == Direction.Right)
+                {
+                    player.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                    curDir = Direction.Left;
+                }
+                else if (goRight && curDir != Direction.Right)
+                {
+                    player.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                    curDir = Direction.Right;
                 }
             }
         }
@@ -344,7 +338,7 @@ namespace VocabularyUp
                                 timerUpdate.Stop();
                                 if (currentHealth > 0)
                                 {
-                                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
                                     timerQuestion.Start();
                                     guna2Transition.ShowSync(pnlQuestion);
                                 }
@@ -354,7 +348,7 @@ namespace VocabularyUp
                                     isWin = false;
                                 }    
                                 time = 0;
-                                lbTimer.Text = (60).ToString();
+                                lbTimer.Text = (30).ToString();
                             }
                             
                             
@@ -386,17 +380,14 @@ namespace VocabularyUp
                             {
                                 if (currentHealth > 0)
                                 {
-                                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
                                     guna2Transition.ShowSync(pnlQuestion);
-                                    lbTimer.Text = (60).ToString();
+                                    lbTimer.Text = (30).ToString();
                                     timerQuestion.Start();
                                 }
                                 time = 0;
                             }
                         }
-
-
-
                     }
                 }
 
@@ -425,7 +416,7 @@ namespace VocabularyUp
                         }
                         else
                         {
-                            music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "bonus.mp3";
+                            music.URL = ConfigurationManager.AppSettings.Get("musicPath") + "coin.mp3";
                             music.controls.play();
                             treasures.Remove(treasures[i]);
                             ManageUserAction.UpdateDiamond(ManageUserAction.GetDiamond() + 1);
@@ -874,24 +865,20 @@ namespace VocabularyUp
             }
         }
 
-        private void lbTimer_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void timerQuestion_Tick(object sender, EventArgs e)
         {
             if (timerQuestion.Enabled == false)
                 return;
 
             time++;
-            if (time == 49)
+            if (time == 19)
             {
                 last10s.URL = ConfigurationManager.AppSettings.Get("musicPath") + "10s.mp3";
+                last10s.settings.volume = 30;
                 last10s.controls.play();
             }    
-            lbTimer.Text = (60 - time).ToString();
-            if (time < 50)
+            lbTimer.Text = (30 - time).ToString();
+            if (time < 20)
             {
                 lbTimer.ForeColor = Color.Black;
             }
@@ -899,7 +886,7 @@ namespace VocabularyUp
             {
                 lbTimer.ForeColor = Color.Red;
             }
-            if (time == 60)
+            if (time == 30)
             {
                 last10s.controls.pause();
                 timerQuestion.Stop();
@@ -914,7 +901,7 @@ namespace VocabularyUp
                     Size size = new Size(s - 5, s - 5);
                     player.Location = new Point(wall1.Location.X - size.Width, panel4.Location.Y + panel4.Size.Height);
                 }
-                isCorrect = 0;
+                last10s.controls.stop();
                 currentQuiz++;
                 
                 time = 0;
@@ -926,7 +913,7 @@ namespace VocabularyUp
             click.controls.play();
             if (sound == 1)
             {
-                pictureBox1.Image = Image.FromFile("../../icons/sound-off.png");
+                pictureBox1.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_icons") + "sound-off.png");
                 mediaPlayer.settings.volume = 0;
                 music.settings.volume = 0;
                 last10s.settings.volume = 0;
@@ -934,8 +921,7 @@ namespace VocabularyUp
             }
             else
             {
-              
-                pictureBox1.Image = Image.FromFile("../../icons/sound.png");
+                pictureBox1.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_icons") + "sound.png");
                 mediaPlayer.settings.volume = 20;
                 music.settings.volume = 100;
                 last10s.settings.volume = 20;
@@ -953,6 +939,8 @@ namespace VocabularyUp
             player = new PlayerMaze(image, location, size, 10);
 
             ManageUserAction.LoadPlayerMazeStat(idSkin, player);
+
+            curDir = Direction.Right;
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -975,9 +963,12 @@ namespace VocabularyUp
         public void OpenTrashTalk(int idMonster, string charTrashTalk, string monTrashTalk)
         {
             Form backgroundForm = new Form();
+            Image image = monsters[idMonster].Image;
+
             try
             {
-                using (trashTalking = new TrashTalkingForm(player.Image, monsters[idMonster].Image, charTrashTalk, monTrashTalk))
+                image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                using (trashTalking = new TrashTalkingForm(player.Image, image , charTrashTalk, monTrashTalk))
                 {
                     backgroundForm.StartPosition = FormStartPosition.Manual;
                     backgroundForm.FormBorderStyle = FormBorderStyle.None;
@@ -1005,8 +996,6 @@ namespace VocabularyUp
                 backgroundForm.Dispose();
             }
         }
-
-
 
     }
 }

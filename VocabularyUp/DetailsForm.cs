@@ -20,6 +20,7 @@ namespace VocabularyUp
         SpeechSynthesizer synthesizer = new SpeechSynthesizer();
         ResultForm resForm;
         FlashCard curFlashCard;
+
         public DetailsForm(ResultForm resForm)
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace VocabularyUp
             LoadListView();
             LoadComboBox();
         }
+
         private void UpdateTheme()
         {
             if (darkMode)
@@ -48,11 +50,6 @@ namespace VocabularyUp
             this.pnlTab.FillColor2 = primary;
             this.pnlTab.FillColor3 = primary;
             this.pnlTab.FillColor4 = primary;
-        }
-
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         public void LoadComboBox()
@@ -142,6 +139,7 @@ namespace VocabularyUp
                     AddFlashCard();
             }
         }
+
         public void AddFlashCard()
         {
             if (curFlashCard == null)
@@ -150,6 +148,7 @@ namespace VocabularyUp
             ManageUserAction.AddFlashCardToCollection(cbCollection.SelectedIndex + 1, curFlashCard);
             ManageUserAction.AddFlashCardToDatabase(cbCollection.SelectedIndex + 1, cbCollection.SelectedItem.ToString(), curFlashCard);
         }
+
         private void btnPronun_Click(object sender, EventArgs e)
         {
             if (curFlashCard != null)
@@ -162,6 +161,7 @@ namespace VocabularyUp
                 synthesizer.Speak(pronun);
             }
         }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             timerSpeaker.Stop();

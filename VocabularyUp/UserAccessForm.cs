@@ -101,18 +101,6 @@ namespace VocabularyUp
             else
                 return;
         }
-        
-        private void ToNavTab(int currentID)
-        {
-            pnlUserLogin.Visible = true;
-            pnlSignup.Visible = false;
-            transitionPanel.HideSync(pnlSignup);
-            this.AcceptButton = this.btnLogin;
-            NavForm navTab = new NavForm(this, currentID);
-            navTab.Show();
-            this.Hide();
-            ClearTextBox();
-        }
                
         private void lbForget_Click(object sender, EventArgs e)
         {
@@ -141,8 +129,6 @@ namespace VocabularyUp
             this.AcceptButton = this.btnLogin;
             ClearTextBox();
         }
-
-        
 
         private void btnCheckEmail_Click(object sender, EventArgs e)
         {
@@ -313,6 +299,7 @@ namespace VocabularyUp
             introduction.ShowDialog();
             this.Show();
         }
+
         private void InitLoadingForm(int currentID)
         {
             pnlUserLogin.Visible = true;

@@ -119,7 +119,6 @@
             this.pnlQuiz.ShadowDecoration.Parent = this.pnlQuiz;
             this.pnlQuiz.Size = new System.Drawing.Size(1000, 519);
             this.pnlQuiz.TabIndex = 10;
-            this.pnlQuiz.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlQuiz_Paint);
             // 
             // lbTimer
             // 

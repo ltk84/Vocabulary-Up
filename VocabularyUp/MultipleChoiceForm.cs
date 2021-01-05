@@ -33,7 +33,7 @@ namespace VocabularyUp
             this.campaign = campaign;
             InitQuiz();
             InitAnswer();
-            ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+            ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
         }
 
         private void UpdateTheme()
@@ -92,42 +92,39 @@ namespace VocabularyUp
             this.btnConfirm.FillColor = primary;
             this.panel1.BackColor = primary;
         }
+
         public void ChangeFlashCard(string content, int id)
         {
             lbMain.Text = content;
             pbMain.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + id.ToString() + ".jpg");
-            //if (userChoices[currentQuiz].IsDone == false)
-            //InitAnswer();
-
             
-                switch (userChoices[currentQuiz].Correct)
-                {
-                    case 1:
-                        btnA.Text = questions[currentQuiz].GetFlashCard().Viet;
-                        btnB.Text = questions[currentQuiz].FakeAnswers[0];
-                        btnC.Text = questions[currentQuiz].FakeAnswers[1];
-                        btnD.Text = questions[currentQuiz].FakeAnswers[2];
-                        break;
-                    case 2:
-                        btnB.Text = questions[currentQuiz].GetFlashCard().Viet;
-                        btnA.Text = questions[currentQuiz].FakeAnswers[0];
-                        btnC.Text = questions[currentQuiz].FakeAnswers[1];
-                        btnD.Text = questions[currentQuiz].FakeAnswers[2];
-                        break;
-                    case 3:
-                        btnC.Text = questions[currentQuiz].GetFlashCard().Viet;
-                        btnB.Text = questions[currentQuiz].FakeAnswers[0];
-                        btnA.Text = questions[currentQuiz].FakeAnswers[1];
-                        btnD.Text = questions[currentQuiz].FakeAnswers[2];
-                        break;
-                    case 4:
-                        btnD.Text = questions[currentQuiz].GetFlashCard().Viet;
-                        btnB.Text = questions[currentQuiz].FakeAnswers[0];
-                        btnC.Text = questions[currentQuiz].FakeAnswers[1];
-                        btnA.Text = questions[currentQuiz].FakeAnswers[2];
-                        break;
-                }
-            
+            switch (userChoices[currentQuiz].Correct)
+            {
+                case 1:
+                    btnA.Text = questions[currentQuiz].GetFlashCard().Eng;
+                    btnB.Text = questions[currentQuiz].FakeAnswers[0];
+                    btnC.Text = questions[currentQuiz].FakeAnswers[1];
+                    btnD.Text = questions[currentQuiz].FakeAnswers[2];
+                    break;
+                case 2:
+                    btnB.Text = questions[currentQuiz].GetFlashCard().Eng;
+                    btnA.Text = questions[currentQuiz].FakeAnswers[0];
+                    btnC.Text = questions[currentQuiz].FakeAnswers[1];
+                    btnD.Text = questions[currentQuiz].FakeAnswers[2];
+                    break;
+                case 3:
+                    btnC.Text = questions[currentQuiz].GetFlashCard().Eng;
+                    btnB.Text = questions[currentQuiz].FakeAnswers[0];
+                    btnA.Text = questions[currentQuiz].FakeAnswers[1];
+                    btnD.Text = questions[currentQuiz].FakeAnswers[2];
+                    break;
+                case 4:
+                    btnD.Text = questions[currentQuiz].GetFlashCard().Eng;
+                    btnB.Text = questions[currentQuiz].FakeAnswers[0];
+                    btnC.Text = questions[currentQuiz].FakeAnswers[1];
+                    btnA.Text = questions[currentQuiz].FakeAnswers[2];
+                    break;
+            }
 
             if (userChoices[currentQuiz].IsDone == true)
                 btnNext.Enabled = true;
@@ -135,42 +132,15 @@ namespace VocabularyUp
                 btnNext.Enabled = false;
             isPress = 0;
         }
+
         private void InitAnswer()
         {
             Random rd = new Random();
             foreach (var item in questions)
             {
-                UserChoice u = new UserChoice(-1, rd.Next(1, 5));
+                UserChoice u = new UserChoice(-1, rd.Next(1, 5), item.GetFlashCard().Eng);
                 userChoices.Add(u);
-                //switch (userChoices[currentQuiz].Correct)
-                //{
-                //    case 1:
-                //        btnA.Text = questions[currentQuiz].GetFlashCard().Viet;
-                //        btnB.Text = questions[currentQuiz].FakeAnswers[0];
-                //        btnC.Text = questions[currentQuiz].FakeAnswers[1];
-                //        btnD.Text = questions[currentQuiz].FakeAnswers[2];
-                //        break;
-                //    case 2:
-                //        btnB.Text = questions[currentQuiz].GetFlashCard().Viet;
-                //        btnA.Text = questions[currentQuiz].FakeAnswers[0];
-                //        btnC.Text = questions[currentQuiz].FakeAnswers[1];
-                //        btnD.Text = questions[currentQuiz].FakeAnswers[2];
-                //        break;
-                //    case 3:
-                //        btnC.Text = questions[currentQuiz].GetFlashCard().Viet;
-                //        btnB.Text = questions[currentQuiz].FakeAnswers[0];
-                //        btnA.Text = questions[currentQuiz].FakeAnswers[1];
-                //        btnD.Text = questions[currentQuiz].FakeAnswers[2];
-                //        break;
-                //    case 4:
-                //        btnD.Text = questions[currentQuiz].GetFlashCard().Viet;
-                //        btnB.Text = questions[currentQuiz].FakeAnswers[0];
-                //        btnC.Text = questions[currentQuiz].FakeAnswers[1];
-                //        btnA.Text = questions[currentQuiz].FakeAnswers[2];
-                //        break;
-                //}
             }
-              
         }
 
         private void InitQuiz()
@@ -183,21 +153,21 @@ namespace VocabularyUp
                 while (fakeAnswers.Count != 3)
                 {
                     int index;
-                    string vie;
+                    string eng;
                     if (ManageUserAction.GetMainFlashCards().Count > 3)
                     {
                         index = rd.Next(0, ManageUserAction.GetMainFlashCards().Count);
-                        vie = ManageUserAction.GetMainFlashCards()[index].Viet;
+                        eng = ManageUserAction.GetMainFlashCards()[index].Eng;
                     }
                     else
                     {
                         index = rd.Next(0, backupAnswers.Count);
-                        vie = backupAnswers[index];
+                        eng = backupAnswers[index];
                     }
                     
-                    if (fakeAnswers.IndexOf(vie) < 0 && vie != ManageUserAction.GetMainFlashCards()[i].Viet)
+                    if (fakeAnswers.IndexOf(eng) < 0 && eng != ManageUserAction.GetMainFlashCards()[i].Eng)
                     {
-                        fakeAnswers.Add(vie);
+                        fakeAnswers.Add(eng);
                     }
                 }
                 Quiz q = new Quiz(ManageUserAction.GetMainFlashCards()[i]);
@@ -276,23 +246,20 @@ namespace VocabularyUp
                 btnPrevious.Enabled = true;
                 currentQuiz++; 
                 if (ManageUserAction.GetMainFlashCards().Count > 1)
-                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
             }
-
             else if (currentQuiz != questions.Count - 1)
             {
                 currentQuiz++;
                 if (ManageUserAction.GetMainFlashCards().Count > 1)
-                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+                    ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
             }
-                
             else 
             {
                 btnNext.Enabled = false;
                 campaign.Reset();
                 campaign.InitResult(userChoices);
                 timerMultiple.Stop();
-                //InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
             MovePointer(currentQuiz);
@@ -310,7 +277,6 @@ namespace VocabularyUp
                 campaign.Reset();
                 campaign.InitResult(userChoices);
                 timerMultiple.Stop();
-                //InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }    
 
@@ -328,14 +294,13 @@ namespace VocabularyUp
                 currentQuiz--;
             }
 
-            ChangeFlashCard(questions[currentQuiz].GetFlashCard().Eng, questions[currentQuiz].GetFlashCard().IdCard);
+            ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
             MovePointer(currentQuiz);
 
             if (userChoices[currentQuiz].IsDone)
                 ReloadButton();
             else
                 ResetButton();
-
         }
 
         private void MovePointer(int currentQuiz)
@@ -392,6 +357,7 @@ namespace VocabularyUp
             btnB.FillColor = primary;
             btnC.FillColor = primary;
         }
+
         private void ReloadButton()
         {
             btnA.FillColor = primary;
@@ -469,7 +435,6 @@ namespace VocabularyUp
                 timerMultiple.Stop();
                 campaign.Reset();
                 campaign.InitResult(userChoices);
-               // InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
         }
@@ -480,9 +445,5 @@ namespace VocabularyUp
             timerMultiple.Start();
         }
 
-        private void pnlQuiz_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

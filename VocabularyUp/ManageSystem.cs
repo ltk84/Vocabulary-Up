@@ -134,7 +134,6 @@ namespace VocabularyUp
                     command.Parameters.AddWithValue("@pass", password);
                     //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
                     int rs = command.ExecuteNonQuery();
-                    //command.ExecuteNonQuery();
                     //Su dung reader de doc tung dong du lieu
                     //va thuc hien thao tac xu ly mong muon voi du lieu doc len
                     if (rs != 1)
@@ -243,8 +242,6 @@ namespace VocabularyUp
 
         }
 
-
-
         // THÊM NHỮNG THÔNG TIN PHỤ CỦA USER VÀO TRONG DATABASE
         public static void AddUserInfoToDatabase(string email, string ngSinh, DateTime beginDate, string name,int totalWord, int hiWCount, int reWCount,string gioiTinh)
         {
@@ -333,18 +330,52 @@ namespace VocabularyUp
             return users.Count();
         }
 
+        public static bool CheckStringIfValid(string s)
+        {
+            foreach (var c in s)
+            {
+                try
+                {
+                    int num = Convert.ToInt32(c);
+                    if (num < 48 || (num > 57 && num < 65) || (num > 90 && num < 97) || num > 123)
+                    {
+                        return false;
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Can not convert!");
+                    throw;
+                }
+                finally
+                {
+
+                }
+                
+            }
+            return true;
+        }
+
         // KIÊM TRA HỢP LỆ KHI ĐĂNG NHẬP
         public static bool CheckLoginIfValid(string username, string password)
         {
-            if (username == "" || password == "")
+            if (username == "" || password == "" || CheckStringIfValid(username) == false || CheckStringIfValid(password) == false)
             {
                 if (username == "")
                 {
                     MessageBox.Show("Username can not be empty", "Notification");
                 }
-                else
+                else if (password == "")
                 {
                     MessageBox.Show("Password can not be empty", "Notification");
+                }
+                else if (CheckStringIfValid(username) == false)
+                {
+                    MessageBox.Show("Username has invalid character", "Notification");
+                }
+                else
+                {
+                    MessageBox.Show("Password has invalid character", "Notification");
                 }
                 return false;
             }
@@ -382,9 +413,10 @@ namespace VocabularyUp
                     MessageBox.Show("Password is not match Repassword", "Notification");
                     return false;
                 }
-
             }
+
             TaiKhoan = username;
+
             // Không trùng thì cho đăng ký
             return true;
         }
@@ -407,6 +439,24 @@ namespace VocabularyUp
             else if (!IsValidEmail(email))
             {
                 MessageBox.Show("Email is not valid", "Notification");
+                return false;
+            }
+
+            if (!CheckStringIfValid(username))
+            {
+                MessageBox.Show("Username has invalid character", "Notification");
+                return false;
+            }
+
+            if (!CheckStringIfValid(email.Substring(0, email.IndexOf("@"))))
+            {
+                MessageBox.Show("Email has invalid character", "Notification");
+                return false;
+            }
+
+            if (!CheckStringIfValid(password))
+            {
+                MessageBox.Show("Password has invalid character", "Notification");
                 return false;
             }
 
@@ -456,11 +506,7 @@ namespace VocabularyUp
             }
             else
                 MessageBox.Show("Kết nối có vấn đề!");
-
-
         }
-
-
 
         // LẤY ID CỦA USER THÔNG QUA USERNAME
         public static int GetUserID(string username)
@@ -482,7 +528,6 @@ namespace VocabularyUp
                     return user.IdUser;
             }
             return -1;
-            // Cải tiến thuật toán bằng bảng băm
         }
 
         // MÃ HÓA PASSWORD
@@ -555,7 +600,6 @@ namespace VocabularyUp
         {
             string encrytedPass = GetMd5HashWithMySecurityAlgo(md5Hash, newPass);
 
-            //string constr = @"Server=DESKTOP-52N97T0\SQLEXPRESS;Database=todo;User Id=sa;Password=*****;";
             SqlConnection connection = new SqlConnection(connString);
             try
             {
@@ -624,7 +668,6 @@ namespace VocabularyUp
 
         public static void InitCharacter(int currentId)
         {
-            
             SqlConnection connection = new SqlConnection(connString);
             try
             {

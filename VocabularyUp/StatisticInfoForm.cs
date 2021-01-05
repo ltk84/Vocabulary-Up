@@ -58,18 +58,8 @@ namespace VocabularyUp
             lblHoTen.Text = a[1];
             lblGioiTinh.Text = a[2];
             lblGmail.Text = a[3];
-
         }
 
-        private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2CustomGradientPanel2_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
         private void ClearTextbox()
         {
             txtDate.Text = "";
@@ -79,6 +69,7 @@ namespace VocabularyUp
             txtNewPass.Text = "";
             txtReNewPass.Text = "";
         }
+
         private void btEditProfile_Click(object sender, EventArgs e)
         {
             pnlEdit.Visible = true;
@@ -96,15 +87,14 @@ namespace VocabularyUp
         {
             int a = ManageUserAction.GetItemOfAllCollection(0).ListFL.Count();
 
-
             int Level, Percent;
-
 
             Level = a / 50;
             Percent = a % 50;
 
             lbLevel.Text = Level.ToString();
             pbLevel.Value = Percent * 2;
+
             if (Level <= 1)
             {
                 lbCapBac.Text = "Beginner";
@@ -147,17 +137,16 @@ namespace VocabularyUp
             }
             else if (Level > 8)
             { 
-            lbCapBac.Text = "Challenge";
-            imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Master Vocab.png");
+                lbCapBac.Text = "Challenge";
+                imageLevel.Image = Image.FromFile(ConfigurationManager.AppSettings.Get("imgPath_database") + "Rankings/Master Vocab.png");
             }
 
         }
        
         private void btnSaveEdit_Click(object sender, EventArgs e)
         {
-
             if (txtHoTen.Text == "")
-                MessageBox.Show("Bạn vui lòng điền đẩy đủ thông tin");
+                MessageBox.Show("Please fill in all the information!");
             else
             {
                 if (CheckValidName(txtHoTen.Text))
@@ -169,7 +158,7 @@ namespace VocabularyUp
                         gender = "Nữ";
                     else
                         gender = "Bê đê";
-                        string TK = ManageSystem.TK();
+                    string TK = ManageSystem.TK();
                     int ID = ManageSystem.GetUserID(TK);
                     ManageSystem.AddInfoPersonal(ID, dtpNgaySinh.Value.ToString("dd/MM/yyyy"), txtHoTen.Text, gender);
                     MessageBox.Show("Save Succes!");
@@ -183,7 +172,7 @@ namespace VocabularyUp
                 }    
                 else
                 {
-                    MessageBox.Show("Họ tên không được chứ ký tự đặc biệt hoặc số.");
+                    MessageBox.Show("Name has invalid character and number!");
                 }
                 ClearTextbox();
             }
@@ -199,27 +188,17 @@ namespace VocabularyUp
             }
             return true;
         }
-        
-        //private bool CheckValidDate(string str)
-        //{
-        //    DateTime temp;
-        //    if (DateTime.TryParse(str, out temp))
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-        //}
 
-        //private bool CheckGender(string str)
-        //{
-        //    string male = "nam";
-        //    string female = "nữ";
-        //    if (str.ToLower() != male || str.ToLower() != female) return false;
-        //    else return true;
-        //}    
+        private bool CheckValidPass(string str)
+        {
+            string invalid = ".,:;`'/+-(){}[]<>*&^%$#@!?~/\\=\t\n";
+            for (int i = 0; i < invalid.Length; i++)
+            {
+                if (str.Contains(invalid[i]))
+                    return false;
+            }
+            return true;
+        }
 
         private void btChangePass_Click(object sender, EventArgs e)
         {
@@ -236,15 +215,19 @@ namespace VocabularyUp
 
         private void btSavePassword_Click(object sender, EventArgs e)
         {
-
-            if (txtOldPass.Text == "") MessageBox.Show("Password can not be empty");
+            if (txtOldPass.Text == "")
+                MessageBox.Show("Password can not be empty");
+            else if (CheckValidPass(txtOldPass.Text) == false)
+                MessageBox.Show("Password can not have invalid character");
+            else if (CheckValidPass(txtNewPass.Text) == false)
+                MessageBox.Show("Password can not have invalid character");
             else
             {
                 string ePassword = ManageSystem.EncryptPassword(txtOldPass.Text);
                 if (!ManageSystem.Pass(ePassword)) { MessageBox.Show("Old password is not correct", "Thông báo"); }
                 else if (txtNewPass.Text == "") MessageBox.Show("Password can not be empty");
                 else if (txtNewPass.Text != txtReNewPass.Text) MessageBox.Show("Re-Password is not correct");
-                else if (txtNewPass.Text == txtOldPass.Text) MessageBox.Show("Không được dùng mật khẩu củ");
+                else if (txtNewPass.Text == txtOldPass.Text) MessageBox.Show("The new password is the same as the old password");
                 else
                 {
                     string TK = ManageSystem.TK();
@@ -262,21 +245,9 @@ namespace VocabularyUp
                     pnlSavePass.Visible = false;
                     pnlSavePass.Enabled = false;
 
-
                     ClearTextbox();
-
                 }
             }
-        }
-
-        private void pnlSavePass_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblGmail_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

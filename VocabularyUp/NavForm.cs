@@ -46,7 +46,6 @@ namespace VocabularyUp
         RevisionForm revisionTab;
         StatisticForm statisticTab;
         int currentTab = 0;
-        //int flag = 0;
 
         public NavForm(UserAccessForm userAccess, int currentID)
         {
@@ -70,8 +69,6 @@ namespace VocabularyUp
             collectionTab = new CollectionForm();
             revisionTab = new RevisionForm();
             statisticTab = new StatisticForm();
-            // Connect đến database để load MainFlashCard
-            //ManageUserAction.UpdateMainFlashCard();
 
             // Khởi tạo Campaign Tab
             ToCampaignTab();
@@ -188,10 +185,6 @@ namespace VocabularyUp
             ToStatisticTab();
         }
 
-        private void NavForm_Load(object sender, EventArgs e)
-        {
-
-        }
         private void UpdateTheme()
         {
             if (darkMode)

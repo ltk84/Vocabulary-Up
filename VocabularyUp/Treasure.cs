@@ -15,7 +15,6 @@ namespace VocabularyUp
         {
             this.isLastTreasure = isLastTreasure;
         }
-
         public bool IsDeath { get => isDeath; set => isDeath = value; }
         public bool IsLastTreasure { get => isLastTreasure; set => isLastTreasure = value; }
     }

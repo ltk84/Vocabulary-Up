@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularyUp", "VocabularyUp.csproj", "{FC96820F-2A24-4864-A231-1B60B84B3BAB}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup\Setup.vdproj", "{32295BE7-7D11-4B92-878A-94D191AE090C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1E688BA6-06C1-49BB-8EB0-79470AAD3D85}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup\Setup.vdproj", "{4B6353A6-47BD-4735-A6D4-92FD672DD5B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,14 +19,16 @@ Global
 		{FC96820F-2A24-4864-A231-1B60B84B3BAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC96820F-2A24-4864-A231-1B60B84B3BAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC96820F-2A24-4864-A231-1B60B84B3BAB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{32295BE7-7D11-4B92-878A-94D191AE090C}.Debug|Any CPU.ActiveCfg = Debug
-		{32295BE7-7D11-4B92-878A-94D191AE090C}.Release|Any CPU.ActiveCfg = Release
+		{4B6353A6-47BD-4735-A6D4-92FD672DD5B7}.Debug|Any CPU.ActiveCfg = Debug
+		{4B6353A6-47BD-4735-A6D4-92FD672DD5B7}.Debug|Any CPU.Build.0 = Debug
+		{4B6353A6-47BD-4735-A6D4-92FD672DD5B7}.Release|Any CPU.ActiveCfg = Release
+		{4B6353A6-47BD-4735-A6D4-92FD672DD5B7}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B74CF70C-34A8-4AC6-975A-730C406C335E}
 		RESX_SortFileContentOnSave = True
+		SolutionGuid = {B74CF70C-34A8-4AC6-975A-730C406C335E}
 	EndGlobalSection
 EndGlobal

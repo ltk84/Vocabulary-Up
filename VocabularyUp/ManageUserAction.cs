@@ -299,7 +299,8 @@ namespace VocabularyUp
             while (mainFlashCard.Count < 25)
             {
                 int index = rd.Next(1, ManageUserAction.GetItemOfAllCollection(0).ListFL.Count);
-                mainFlashCard.Add(ManageUserAction.GetItemOfAllCollection(0).ListFL[index]);
+                if (mainFlashCard.IndexOf(ManageUserAction.GetItemOfAllCollection(0).ListFL[index]) < 0)
+                    mainFlashCard.Add(ManageUserAction.GetItemOfAllCollection(0).ListFL[index]);
             }
         }
         public static int CalculateProgress(int currentTopic, int id)
@@ -322,16 +323,16 @@ namespace VocabularyUp
                     nameTopic = "Job";
                     break;
                 case 5:
-                    nameTopic = "Food and Drinks"; // khac
+                    nameTopic = "Food and Drinks"; 
                     break;
                 case 6:
-                    nameTopic = "Sport"; // khac
+                    nameTopic = "Sport"; 
                     break;
                 case 7:
-                    nameTopic = "Clothing"; //
+                    nameTopic = "Clothing"; 
                     break;
                 case 8:
-                    nameTopic = "Technology"; //
+                    nameTopic = "Technology"; 
                     break;
             }
             SqlConnection connection = new SqlConnection(constr);
@@ -386,16 +387,16 @@ namespace VocabularyUp
                     nameTopic = "Job";
                     break;
                 case 5:
-                    nameTopic = "Food and Drinks"; // khac
+                    nameTopic = "Food and Drinks";
                     break;
                 case 6:
-                    nameTopic = "Sport"; // khac
+                    nameTopic = "Sport";
                     break;
                 case 7:
-                    nameTopic = "Clothing"; //
+                    nameTopic = "Clothing"; 
                     break;
                 case 8:
-                    nameTopic = "Technology"; //
+                    nameTopic = "Technology"; 
                     break;
             }
             SqlConnection connection = new SqlConnection(constr);
@@ -431,141 +432,11 @@ namespace VocabularyUp
             return countA;
         }
 
-
-
-        // TẠO 1 RANDOM FLASHCARD TRONG MAINFLASHCARD
-        public static FlashCard RandomMainFlashCard()
-        {
-            if (mainFlashCard.Count == 0)
-            {
-                FlashCard phaDaoFl = new FlashCard(-1, "I love you", "Anh yêu em!", "Thật đó!", "");
-                return phaDaoFl;
-            }
-            var rd = new Random();
-            int i = rd.Next(0, mainFlashCard.Count);
-            return mainFlashCard[i];
-        }
-
-        // TẠO 1 RANDOM FLASHCARD TRONG REVISEFLASHCARD
-        public static FlashCard RandomReviseFlashCard()
-        {
-            if (currentUser.ReFlashCard.Count == 0)
-            {
-                FlashCard phaDaoFl = new FlashCard(-1, "Learn more", "Chăm chỉ lên nào!", "Có làm mới có ăn.",  "");
-                return phaDaoFl;
-            }
-            var rd = new Random();
-            int i = rd.Next(0, currentUser.ReFlashCard.Count);
-            return currentUser.ReFlashCard[i];
-        }
-
-        // an trai revise
-        public static void AddMain(FlashCard fl)
-        {
-            mainFlashCard.Add(fl);
-        }
-
-        // an phai main
-        public static void RemoveMain(FlashCard fl)
-        {
-            mainFlashCard.Remove(fl);
-        }
-
-        // an phai main
-        public static void AddRevise(FlashCard fl)
-        {
-            currentUser.ReFlashCard.Add(fl);
-            InsertIntoDB(fl);
-        }
-
-        // an trai revise
-        public static void RemoveRevise(FlashCard fl)
-        {
-            currentUser.ReFlashCard.Remove(fl);
-            DeleteFromDB(fl);
-        }
-
-        // INSERT FLASHCARD VÀO DATABASE
-        public static void InsertIntoDB(FlashCard fl)
-        {
-            SqlConnection connection = new SqlConnection(constr);
-            try
-            {
-                //Mo ket noi
-                connection.Open();
-                //Chuan bi cau lenh query viet bang SQL
-                String sqlQuery = "insert into USER_FLASHCARD (ID_USER, ID_CARD) values(@ID_USER, @ID_CARD)";
-                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
-                SqlCommand command = new SqlCommand(sqlQuery, connection);
-                command.Parameters.AddWithValue("@ID_USER", currentUser.IdUser);
-                command.Parameters.AddWithValue("@ID_CARD", fl.IdCard);
-
-                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
-                int rs = command.ExecuteNonQuery();
-                //Su dung reader de doc tung dong du lieu
-                //va thuc hien thao tac xu ly mong muon voi du lieu doc len
-                if (rs != 1)
-                {
-                    throw new Exception("Failed Query");
-                }
-            }
-            catch (InvalidCastException)
-            {
-                //xu ly khi ket noi co van de
-                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
-            }
-            finally
-            {
-                //Dong ket noi sau khi thao tac ket thuc
-                connection.Close();
-            }
-        }
-        
-        // REMOVE FLASHCARD KHỎI DATABASE
-        public static void DeleteFromDB(FlashCard fl)
-        {
-            SqlConnection connection = new SqlConnection(constr);
-            try
-            {
-                //Mo ket noi
-                connection.Open();
-                //Chuan bi cau lenh query viet bang SQL
-                String sqlQuery = "delete from USER_FLASHCARD where ID_CARD = @ID_CARD and ID_USER = @ID_USER";
-                //Tao mot Sqlcommand de thuc hien cau lenh truy van da chuan bi voi ket noi hien tai
-                SqlCommand command = new SqlCommand(sqlQuery, connection);
-                command.Parameters.AddWithValue("@ID_CARD", fl.IdCard);
-                command.Parameters.AddWithValue("@ID_USER", currentUser.IdUser);
-
-                //Thuc hien cau truy van va nhan ve mot doi tuong reader ho tro do du lieu
-                int rs = command.ExecuteNonQuery();
-                //Su dung reader de doc tung dong du lieu
-                //va thuc hien thao tac xu ly mong muon voi du lieu doc len
-                if (rs != 1)
-                {
-                    throw new Exception("Failed Query");
-                }
-            }
-            catch (InvalidCastException)
-            {
-                //xu ly khi ket noi co van de
-                MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
-            }
-            finally
-            {
-                //Dong ket noi sau khi thao tac ket thuc
-                connection.Close();
-            }
-        }
-
-        public static void UpdateTotalWord()
-        {
-            currentUser.TotalWord = ManageSystem.GetUserInfo(currentUser.IdUser - 1).ReFlashCard.Count();
-        }
-
         public static Collection GetItemOfAllCollection(int id)
         {
             return allCollections[id];
         }
+
         public static int GetCollectionId(string name)
         {
             foreach (var collection in allCollections)
@@ -628,6 +499,7 @@ namespace VocabularyUp
                 connection.Close();
             }
         }
+
         public static void DeleteFlashCardFromDatabase(int idCollection, FlashCard fl)
         {
             SqlConnection connection = new SqlConnection(constr);
@@ -686,10 +558,9 @@ namespace VocabularyUp
                 //Thuc hien cau truy van
                 command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                //xu ly khi ket noi co van de
-                //MessageBox.Show("Ket noi xay ra loi hoac doc du lieu bi loi");
+                MessageBox.Show("Kết nối có vấn đề!");
             }
             finally
             {
@@ -713,6 +584,7 @@ namespace VocabularyUp
             }
             return findedList;
         }
+
         //
         public static List<FlashCard> GetMainFlashCards()
         {
@@ -839,6 +711,7 @@ namespace VocabularyUp
         {
             return currentUser.Diamond;
         }
+
         public static void UpdateDiamond(int d)
         {
             SqlConnection connection = new SqlConnection(constr);
@@ -868,6 +741,7 @@ namespace VocabularyUp
             }
             currentUser.Diamond = d;
         }
+
         public static void UpdateDiamondAfterBuy(int num)
         {
             SqlConnection connection = new SqlConnection(constr);
@@ -926,6 +800,7 @@ namespace VocabularyUp
                 connection.Close();
             }
         }
+
         public static void LoadPlayerMazeStat(int id, PlayerMaze player)
         {
             SqlConnection connection = new SqlConnection(constr);
@@ -954,11 +829,11 @@ namespace VocabularyUp
             }
         }
 
-
         public static bool GetDarkMode()
         {
             return currentUser.DarkMode;
         }
+
         public static void ChangeDarkMode(bool check)
         {
             SqlConnection connection = new SqlConnection(constr);

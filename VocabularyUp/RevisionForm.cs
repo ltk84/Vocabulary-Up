@@ -86,8 +86,6 @@ namespace VocabularyUp
             LoadShop();
         }
 
-       
-
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (currentChar == ManageUserAction.GetOwnCharacterList().Count - 1)
@@ -121,10 +119,9 @@ namespace VocabularyUp
 
         private void pnlChoosePlay_VisibleChanged(object sender, EventArgs e)
         {
-            if (currentChar == ManageUserAction.GetOwnCharacterList().Count - 1)// && btnToggle.Text == "1")
+            if (currentChar == ManageUserAction.GetOwnCharacterList().Count - 1)
             {
                 btnNext.Enabled = true;
-                //btnToggle.Text = "0";
             }
 
             if (ManageUserAction.GetOwnCharacterList().Count > 1 && currentChar != ManageUserAction.GetOwnCharacterList().Count - 1)
@@ -145,8 +142,6 @@ namespace VocabularyUp
             ManageUserAction.LoadCurrency();
             lbDiamond.Text = ManageUserAction.GetDiamond().ToString();
         }
-
-        
 
         private void pnlType_2_Click(object sender, EventArgs e)
         {
@@ -203,7 +198,7 @@ namespace VocabularyUp
             }
             else if (type == 2)
             {
-                MazeGameFrom mgf = new MazeGameFrom(0, ManageUserAction.GetOwnCharacterList()[currentChar].ID);
+                MazeGameFrom mgf = new MazeGameFrom(ManageUserAction.GetOwnCharacterList()[currentChar].ID);
                 mgf.TopMost = true;
                 mgf.Show();
                 mgf.OpenTrashTalk(5, "Cái rương ở đâu?", "Bước qua xác ta đã!");
@@ -239,7 +234,6 @@ namespace VocabularyUp
                 btnRight2.Enabled = false;
 
             LoadPictureBoxWeapon(curentWeapon);
-            //this.Focus();
         }
 
         private void btnLeft2_Click(object sender, EventArgs e)
@@ -256,7 +250,6 @@ namespace VocabularyUp
                 btnLeft2.Enabled = false;
 
             LoadPictureBoxWeapon(curentWeapon);
-            //this.Focus();
         }
     }
 }

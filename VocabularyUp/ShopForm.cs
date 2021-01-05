@@ -27,14 +27,13 @@ namespace VocabularyUp
             this.panel = p;
             LoadDiamondLabel();
         }
+
         private void UpdateTheme()
         {
             this.BackColor = primary;
             this.pnlShop.BackColor = primary;
             this.btnExit.FillColor = primary;
         }
-
-        
 
         public void LoadAllCharacter()
         {

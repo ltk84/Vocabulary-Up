@@ -960,3 +960,9 @@ values
 
 		delete from USER_CHARACTER
 		delete from CHARACTER
+		select * from FLASHCARD
+		where FIELD = 'animals'
+
+		select * from USERS, USER_INFO
+		where USERs.ID = USER_INFO.ID_USER
+

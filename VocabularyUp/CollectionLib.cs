@@ -22,6 +22,7 @@ namespace VocabularyUp
         Color primary = Color.FromArgb(50, 74, 95);
         Color secondary = Color.FromArgb(27, 42, 65);
         bool darkMode = false;
+
         public CollectionLib(CollectionForm collectionTab, int idCollection)
         {
             InitializeComponent();
@@ -105,10 +106,12 @@ namespace VocabularyUp
             curFlashCard = curCollection.ListFL[index];
             ChangeFlashCard(curFlashCard.Eng, curFlashCard.IdCard);
         }
+
         private int SearchFlashCardEng(string content)
         {
             return curCollection.ListFL.FindIndex(f => f.Eng == content);
         }
+
         private int SearchFlashCardVie(string content)
         {
             return curCollection.ListFL.FindIndex(f => f.Viet == content);
@@ -124,6 +127,7 @@ namespace VocabularyUp
         {
             RemoveFlashCard();
         }
+
         public void RemoveFlashCard()
         {
             if (ManageUserAction.IsFlashCardExist(curCollection.IdCollection, curFlashCard.IdCard) && curFlashCard.IdCard != 0)

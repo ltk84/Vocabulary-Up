@@ -24,6 +24,7 @@ namespace VocabularyUp
         CampaignForm campaignForm;
         int time = 0;
         public int result = 1;
+
         public FillBlankForm(int currentTopic, CampaignForm campaignForm)
         {
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace VocabularyUp
             InitAnswer();
             ChangeFlashCard(questions[currentQuiz].GetFlashCard().Viet, questions[currentQuiz].GetFlashCard().IdCard);
         }
+
         private void UpdateTheme()
         {
             if (darkMode)
@@ -94,6 +96,7 @@ namespace VocabularyUp
             this.btnConfirm.FillColor = primary;
             this.panel1.BackColor = primary;
         }
+
         public void ChangeFlashCard(string content, int id)
         {
             lbMain_FB.Text = content;
@@ -104,6 +107,7 @@ namespace VocabularyUp
             else
                 btnNext.Enabled = false;
         }
+
         private void InitQuiz()
         {
             for (int i = 0; i < ManageUserAction.GetMainFlashCards().Count; i++)
@@ -296,16 +300,13 @@ namespace VocabularyUp
             }
         }
 
-       
-
-
         private void timerFillBlank_Tick(object sender, EventArgs e)
         {
             if (timerFillBlank.Enabled == false)
                 return;
             time++;
-            lbTimer.Text = (60 - time).ToString();
-            if (time < 50)
+            lbTimer.Text = (120 - time).ToString();
+            if (time < 110)
             {
                 lbTimer.ForeColor = Color.Black;
             }
@@ -313,17 +314,14 @@ namespace VocabularyUp
             {
                 lbTimer.ForeColor = Color.Red;
             }
-            if (time == 60)
+            if (time == 120)
             {
                 timerFillBlank.Stop();
                 campaignForm.Reset();
                 campaignForm.InitResult(userChoices);
-                //InitResult(10 - wrongAns, wrongAns);
                 this.Close();
             }
         }
-
-
 
         public void StartTimer()
         {

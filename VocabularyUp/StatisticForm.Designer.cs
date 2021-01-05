@@ -55,21 +55,21 @@
             this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.ShadowDecoration.Parent = this.guna2CustomGradientPanel1;
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1000, 519);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(750, 422);
             this.guna2CustomGradientPanel1.TabIndex = 4;
             // 
             // pnlShowStatistic
             // 
             this.pnlShowStatistic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
             this.pnlShowStatistic.BorderRadius = 20;
-            this.pnlShowStatistic.Location = new System.Drawing.Point(197, 2);
-            this.pnlShowStatistic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlShowStatistic.Location = new System.Drawing.Point(148, 2);
+            this.pnlShowStatistic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlShowStatistic.Name = "pnlShowStatistic";
             this.pnlShowStatistic.ShadowDecoration.Parent = this.pnlShowStatistic;
-            this.pnlShowStatistic.Size = new System.Drawing.Size(789, 514);
+            this.pnlShowStatistic.Size = new System.Drawing.Size(592, 418);
             this.pnlShowStatistic.TabIndex = 1;
             // 
             // guna2CustomGradientPanel2
@@ -89,29 +89,29 @@
             this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(149)))), ((int)(((byte)(105)))));
             this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(149)))), ((int)(((byte)(105)))));
             this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(149)))), ((int)(((byte)(105)))));
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(3, 2);
-            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(2, 2);
+            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
             this.guna2CustomGradientPanel2.ShadowDecoration.Parent = this.guna2CustomGradientPanel2;
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(221, 514);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(166, 418);
             this.guna2CustomGradientPanel2.TabIndex = 0;
             // 
             // dashResult
             // 
             this.dashResult.BackColor = System.Drawing.Color.White;
-            this.dashResult.Location = new System.Drawing.Point(187, 250);
-            this.dashResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dashResult.Location = new System.Drawing.Point(140, 203);
+            this.dashResult.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dashResult.Name = "dashResult";
-            this.dashResult.Size = new System.Drawing.Size(5, 52);
+            this.dashResult.Size = new System.Drawing.Size(4, 42);
             this.dashResult.TabIndex = 14;
             // 
             // dashInfo
             // 
             this.dashInfo.BackColor = System.Drawing.Color.White;
-            this.dashInfo.Location = new System.Drawing.Point(187, 188);
-            this.dashInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dashInfo.Location = new System.Drawing.Point(140, 153);
+            this.dashInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dashInfo.Name = "dashInfo";
-            this.dashInfo.Size = new System.Drawing.Size(5, 52);
+            this.dashInfo.Size = new System.Drawing.Size(4, 42);
             this.dashInfo.TabIndex = 13;
             // 
             // label2
@@ -119,9 +119,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat Alternates", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 123);
+            this.label2.Location = new System.Drawing.Point(9, 100);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 21);
+            this.label2.Size = new System.Drawing.Size(77, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Begin date:";
             // 
@@ -130,9 +131,10 @@
             this.lblBeginDate.AutoSize = true;
             this.lblBeginDate.Font = new System.Drawing.Font("Montserrat Alternates", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBeginDate.ForeColor = System.Drawing.Color.White;
-            this.lblBeginDate.Location = new System.Drawing.Point(110, 151);
+            this.lblBeginDate.Location = new System.Drawing.Point(81, 116);
+            this.lblBeginDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBeginDate.Name = "lblBeginDate";
-            this.lblBeginDate.Size = new System.Drawing.Size(79, 21);
+            this.lblBeginDate.Size = new System.Drawing.Size(63, 16);
             this.lblBeginDate.TabIndex = 7;
             this.lblBeginDate.Text = "0/0/2000";
             // 
@@ -142,10 +144,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Montserrat Alternates", 10F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(3, 248);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(2, 202);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(189, 54);
+            this.button2.Size = new System.Drawing.Size(142, 44);
             this.button2.TabIndex = 6;
             this.button2.Text = "Result";
             this.button2.UseVisualStyleBackColor = true;
@@ -157,10 +159,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Montserrat Alternates", 10F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 186);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(2, 151);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 54);
+            this.button1.Size = new System.Drawing.Size(142, 44);
             this.button1.TabIndex = 5;
             this.button1.Text = "Info";
             this.button1.UseVisualStyleBackColor = true;
@@ -172,9 +174,10 @@
             this.lblTen.AutoSize = true;
             this.lblTen.Font = new System.Drawing.Font("Montserrat Alternates Medium", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTen.ForeColor = System.Drawing.Color.White;
-            this.lblTen.Location = new System.Drawing.Point(9, 97);
+            this.lblTen.Location = new System.Drawing.Point(-1, 77);
+            this.lblTen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTen.Name = "lblTen";
-            this.lblTen.Size = new System.Drawing.Size(167, 21);
+            this.lblTen.Size = new System.Drawing.Size(145, 16);
             this.lblTen.TabIndex = 2;
             this.lblTen.Text = "Lương Thiện Phước";
             // 
@@ -182,25 +185,25 @@
             // 
             this.guna2CirclePictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.guna2CirclePictureBox1.Image = global::VocabularyUp.Properties.Resources.images;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(55, 9);
-            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(41, 7);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(93, 84);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(70, 68);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 0;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
             // StatisticForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(223)))), ((int)(((byte)(158)))));
-            this.ClientSize = new System.Drawing.Size(1000, 519);
+            this.ClientSize = new System.Drawing.Size(750, 422);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "StatisticForm";
             this.Text = "StatisticForm";
             this.guna2CustomGradientPanel1.ResumeLayout(false);

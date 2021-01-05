@@ -51,6 +51,7 @@ namespace VocabularyUp
             lblBeginDate.Text = a[4];
             statisticResult.UpdateInfoResult();
         }
+
         private void ToStatisticInfo()
         {
             dashInfo.Show();
@@ -70,12 +71,12 @@ namespace VocabularyUp
             pnlShowStatistic.Controls.Add(statisticResult);
             statisticResult.Show();
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             ToStatisticInfo();
             update();
         }
-        
         
         private void button2_Click(object sender, EventArgs e)
         {
@@ -83,6 +84,5 @@ namespace VocabularyUp
             update();
         }
 
-       
     }
 }
